@@ -226,10 +226,9 @@ export const ROLES: Record<string, string> = {
   unrelated: "This file has nothing to do with the change.",
 };
 
-/** Stage 3's question. Chosen on dev (recall@5 0.536 to 0.583), measured once on test (0.539 to 0.572). */
 export const CHOICE_QUESTION = "Which file must be edited to implement the change described in `task`?";
 
-/** The broader wording won in the spike: 0.66 vs 0.59 recall@10 for "requires editing". */
+/** "Reading or editing" ranks better than "editing" alone: files the change only reads matter too. */
 export function relevanceQuestion(key: string): string {
   return `Implementing the change described in \`task\` requires reading or editing the file in \`${key}\`.`;
 }

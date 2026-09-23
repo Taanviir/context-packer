@@ -1,9 +1,9 @@
 export const MAX_SKETCH_CHARS = 1_200;
 
-// The patterns the Jev evaluation measured. They are Kotlin-shaped; other languages get path and package only.
+// Kotlin-shaped declaration keywords. Other languages keep only lines that happen to use them.
 const DECL = /^(?:[\w@]+(?:\([^)]*\))?\s+)*?(class|interface|object|fun|typealias|val|var)\b/;
 const SIGNATURE_END = /\s[{=]\s|\s\{$|\{$/;
-// The Laya benchmark used a wider keyword set; keep its inputs reproducible.
+// Laya's sketches use a wider keyword set that also covers Python, JS and Rust declarations.
 const LAYA_DECL = /^(?:[\w@]+(?:\([^)]*\))?\s+)*?(class|interface|object|fun|typealias|val|var|def|function|struct|enum|trait|impl)\b/;
 const LAYA_SIGNATURE_END = /\s[{=]\s|\s\{$|\{$|:$/;
 

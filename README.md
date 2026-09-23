@@ -3,18 +3,14 @@
 Ranks the source files a coding task needs, so an agent starts with the right files instead of searching for them.
 Use it from the command line, as an MCP server, or as a Claude Code hook that adds the files to every prompt.
 
-This is a standalone port of the context engine from the
-[IntelliJev hackathon plugin](https://github.com/Taanviir/hackathon-jetbrains-202609/tree/main/plugins/context-packer).
-It runs without an IDE.
-
 ```
 $ context-packer pack "Add exponential backoff with jitter to Jev HTTP retries" -p jev -n 3
-Picked 3 of 52 files in 1.8 s. Paths are relative to /work/hackathon.
+Picked 3 of 15 files in 1.7 s. Paths are relative to /home/me/context-packer.
 score  path
-0.96   plugins/context-packer/src/main/kotlin/dev/contextpacker/jev/JevClient.kt  (edit)
-0.39   plugins/intellijev/src/main/kotlin/dev/intellijev/core/JevClient.kt  (edit)
-0.27   plugins/context-packer/src/test/kotlin/dev/contextpacker/jev/JevClientTest.kt  (test)
-Provider: jev-latest; scored 52 candidates. 12 Jev requests, 90,769 input tokens, about $0.0038. ...
+0.93   src/jev.ts  (edit)
+0.29   src/service.ts
+0.28   test/service.test.ts  (test)
+Provider: jev-latest; scored 15 candidates. 6 Jev requests, 49,864 input tokens, about $0.0021. ...
 ```
 
 ## Providers
@@ -22,7 +18,7 @@ Provider: jev-latest; scored 52 candidates. 12 Jev requests, 90,769 input tokens
 | Provider | Needs | What it does |
 | --- | --- | --- |
 | `keywords` (default) | nothing | BM25 over paths and full source for every eligible file. No model calls, no cost. |
-| `jev` | `TYPESAFE_API_KEY` or `AI_GATEWAY_API_KEY` | The measured two-pass pipeline below, using TypeSafe's Jev decision model. A pack costs a few cents at most. |
+| `jev` | `TYPESAFE_API_KEY` or `AI_GATEWAY_API_KEY` | The two-pass pipeline below, using TypeSafe's Jev decision model. A pack costs a few cents at most. |
 | `laya` | a local Laya server | Scores a 60-file keyword shortlist, one short excerpt per request, on your own machine. |
 
 There is no automatic fallback. If you ask for Jev without a key, you get an error, not a keyword ranking labelled as Jev.
@@ -45,21 +41,6 @@ and cheaply, so it does the looking and the coding agent does the editing.
    each as edit, test, example or dependency when Jev is at least 50% sure.
 
 A failed batch scores its files zero and is reported. If every batch fails, the pack fails.
-
-## Results
-
-These numbers come from the original Kotlin plugin, measured on Koog commit history. They have not been re-measured with this port.
-The sketchers here produce the plugin's output exactly on its 80 fixture files (see `test/core.test.ts`), but the file
-collector differs from IntelliJ's.
-
-| 70 held-out Koog tasks, Kotlin files | recall@5 | recall@10 | recall@20 |
-| --- | --- | --- | --- |
-| BM25 keywords | 0.42 | 0.53 | 0.63 |
-| Jev + BM25 pipeline | 0.57 | 0.69 | 0.80 |
-
-In an eight-task Claude Code pilot, the hook with the Jev pipeline gave 25% fewer agent turns and 38% fewer searches.
-Laya did not beat full-source keyword search on its 30-task benchmark (recall@10 0.39 against 0.55).
-Details are in the [evaluation report](https://taanviir.github.io/hackathon-jetbrains-202609/main/context-packer-eval/).
 
 ## Install
 
@@ -91,8 +72,7 @@ in. The server keeps a single Jev client, so the token budget covers the whole s
 
 ### Claude Code hook
 
-Agents often trust their own search and skip an offered tool: in testing, headless Claude Code never called
-`pack_context`, even when told to. The hook avoids that by running before Claude sees the prompt and adding the ranked
+Agents often trust their own search and skip an offered tool, even when told to use it. The hook avoids that by running before Claude sees the prompt and adding the ranked
 files as context. Put this in `.claude/settings.json` or `.claude/settings.local.json`:
 
 ```json
@@ -108,26 +88,30 @@ Prompts under four words and slash commands are skipped. The hook stops after `C
 | --- | --- | --- |
 | `CONTEXT_PACKER_PROVIDER` | `keywords` | Provider for `pack` and `pack_context` when none is given |
 | `TYPESAFE_API_KEY` | | Jev through TypeSafe's API |
-| `AI_GATEWAY_API_KEY` | | Jev through Vercel AI Gateway. Much slower under load: it answered about 30% of calls in testing |
+| `AI_GATEWAY_API_KEY` | | Jev through Vercel AI Gateway. Rate-limits hard under load, so packs are much slower |
 | `JEV_BACKEND` | `auto` | `auto` (TypeSafe key first), `typesafe` or `gateway` |
 | `CONTEXT_PACKER_TOKEN_BUDGET` | `20000000` | Reported Jev input tokens per process before new packs are refused. Checked between packs, so it isn't a hard cap |
 | `CONTEXT_PACKER_COMPARE_TOP` | `1` | `0` turns off stage 3 |
 | `CONTEXT_PACKER_ROLES` | `1` | `0` turns off role labels |
 | `CONTEXT_PACKER_LAYA_URL` | `http://127.0.0.1:8770/api/predict` | Local Laya endpoint. Loopback HTTP only |
 | `CONTEXT_PACKER_LAYA_MODEL` | `english` | Laya model ID |
-| `CONTEXT_PACKER_EXTENSIONS` | all supported | Extension allowlist, such as `kt` to match the published evaluation |
+| `CONTEXT_PACKER_EXTENSIONS` | all supported | Extension allowlist, such as `kt` |
 | `CONTEXT_PACKER_HOOK_PROVIDER` | `keywords` | Provider the hook uses |
 | `CONTEXT_PACKER_HOOK_LIMIT` | `8` | Files the hook adds, 1 to 20 |
 | `CONTEXT_PACKER_HOOK_DEADLINE` | `25` | Seconds before the hook gives up. For CPU Laya, use 180 and a hook timeout of at least 190 |
 
-A Laya server that speaks this contract is in the hackathon repo:
-[`tools/laya_server.py`](https://github.com/Taanviir/hackathon-jetbrains-202609/blob/main/plugins/context-packer/tools/laya_server.py),
-with setup in [LAYA.md](https://github.com/Taanviir/hackathon-jetbrains-202609/blob/main/plugins/context-packer/LAYA.md).
+The Laya provider POSTs one file per request to the local endpoint and reads back a single probability:
+
+```json
+{"model": "english", "state": "File: src/jev.ts\n<excerpt>", "questions": {"relevant": {"type": "noul", "instructions": "..."}}}
+```
+
+It expects `{"answers": {"relevant": {"noul": 0.42}}}`, with optional `usage.input_tokens`.
 
 ## Limits
 
-- Accuracy has been measured on Kotlin in one repository. The Jev sketcher keeps the declaration keywords it was measured
-  with (`class`, `interface`, `object`, `fun`, `val`, `var`, `typealias`), so a Python or Go sketch has little beyond its path.
+- Sketches are Kotlin-shaped. The Jev sketcher looks for `class`, `interface`, `object`, `fun`, `val`, `var` and
+  `typealias`, so a Python or Go sketch has little beyond its path.
 - Tasks that mostly add new files are out of scope, because there is nothing to find yet.
 - Files are re-read on each CLI run. The MCP server caches file text by modification time.
 - Jev sends file sketches and source excerpts to TypeSafe or Vercel. Use `keywords` or `laya` for code that must stay
@@ -143,5 +127,4 @@ npm run typecheck
 npm run build    # dist/cli.js
 ```
 
-MIT licensed. Test fixtures in `test/fixtures/` contain excerpts of [JetBrains/koog](https://github.com/JetBrains/koog)
-(Apache-2.0).
+MIT licensed. See `test/fixtures/NOTICE` for the licence of the test fixtures.

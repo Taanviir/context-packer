@@ -116,7 +116,7 @@ export class ContextPacker {
 
   /**
    * TypeSafe's own API by default. Vercel AI Gateway with `JEV_BACKEND=gateway`, or when only a gateway key
-   * is set; it serves the same model but rate-limits hard (30-60 s a pack in testing).
+   * is set; it serves the same model but rate-limits hard, so a pack can take 30-60 s.
    */
   private jevClient(): JevClient {
     const typesafe = this.env.TYPESAFE_API_KEY?.trim();

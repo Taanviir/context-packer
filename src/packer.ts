@@ -8,14 +8,14 @@ export interface FileDoc {
 }
 
 export interface PackConfig {
-  /** Sketches per model call in pass 1, as measured. 100 also fits Jev's ~32k-token state limit; 150 doesn't. */
+  /** Sketches per model call in pass 1. 100 still fits Jev's ~32k-token state limit; 150 doesn't. */
   batch: number;
   /** How many of BM25's and pass 1's top files each go into the re-rank pool. */
   pool: number;
   /** Full-source files per model call in pass 2. */
   perCall: number;
   fullChars: number;
-  /** Weight of BM25 position against the model's score. 1.0 was chosen on the dev split. */
+  /** Weight of BM25 position against the model's score. */
   bm25Weight: number;
   keep: number;
   /** Stage 3: how many of the top files one comparative `choice` reorders, and how much its probability counts. */
@@ -99,8 +99,8 @@ export function isTest(path: string): boolean {
 }
 
 /**
- * The measured pipeline. A model alone on sketches loses to keyword search, but as a re-ranker over a pooled
- * shortlist, reading full source and fused with BM25, Jev lifted recall@10 on held-out tasks from 0.53 to 0.69.
+ * A model alone on sketches loses to keyword search. It earns its place as a re-ranker over a pooled
+ * shortlist, reading full source, with its score fused with BM25 rank.
  */
 export async function pack(
   task: string,
@@ -151,7 +151,7 @@ export async function pack(
   const ranked = [...pool].sort((a, b) => fused.get(b)! - fused.get(a)! || compare(a, b));
 
   // Stage 3 reorders the top K with one comparison; if it fails, the order above stands.
-  // Roles are a separate parallel call, so they can't shift the measured stage-3 answer.
+  // Roles are a separate parallel call, so they can't shift the stage-3 order.
   const top = ranked.slice(0, config.stage3K);
   const choiceJob = scorer.choose && top.length >= 2
     ? optional(async () => {
