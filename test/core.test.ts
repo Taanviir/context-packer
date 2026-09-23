@@ -4,17 +4,15 @@ import { rankBm25, tokens } from "../src/bm25.js";
 import { isTest, pack, packKeywords, ScorerUnavailableError, type FileDoc, type Items, type Scorer } from "../src/packer.js";
 import { layaSketch, sketch } from "../src/sketch.js";
 
-type Fixture = { cases: Array<{ path: string; text: string; sketch: string }> };
-const fixture = (name: string): Fixture => JSON.parse(readFileSync(new URL(`./fixtures/${name}`, import.meta.url), "utf8"));
+type Case = { file: string; path: string; jev: string; laya: string };
+const fixtures = new URL("./fixtures/", import.meta.url);
+const cases: Case[] = JSON.parse(readFileSync(new URL("sketches.json", fixtures), "utf8")).cases;
+const source = (c: Case) => readFileSync(new URL(`sketch-sources/${c.file}`, fixtures), "utf8");
 
+// Expected output comes from fixtures/make_sketches.py, a separate Python implementation.
 describe("sketch", () => {
-  it("matches the Python sketcher the Jev evaluation measured", () => {
-    for (const c of fixture("regex_parity.json").cases) expect(sketch(c.path, c.text), c.path).toBe(c.sketch);
-  });
-
-  it("matches the Laya benchmark's sketcher", () => {
-    for (const c of fixture("laya_regex_parity.json").cases) expect(layaSketch(c.path, c.text), c.path).toBe(c.sketch);
-  });
+  it.each(cases.map((c) => [c.file, c] as const))("jev sketch of %s", (_, c) => expect(sketch(c.path, source(c))).toBe(c.jev));
+  it.each(cases.map((c) => [c.file, c] as const))("laya sketch of %s", (_, c) => expect(layaSketch(c.path, source(c))).toBe(c.laya));
 });
 
 describe("bm25", () => {
@@ -24,32 +22,33 @@ describe("bm25", () => {
 
   it("ranks the file with the task's words first, ties by path", () => {
     const docs = new Map([
-      ["b.kt", "nothing here"],
-      ["a.kt", "nothing here"],
-      ["retry.kt", "fun retryWithBackoff() = exponential backoff"],
+      ["b.py", "nothing here"],
+      ["a.py", "nothing here"],
+      ["retry.py", "def retry_with_backoff(): exponential backoff"],
     ]);
-    expect(rankBm25("add exponential backoff to retries", docs)).toEqual(["retry.kt", "a.kt", "b.kt"]);
+    expect(rankBm25("add exponential backoff to retries", docs)).toEqual(["retry.py", "a.py", "b.py"]);
   });
 
   it("keyword packs expose ordinal ranks only", () => {
-    const result = packKeywords("backoff", new Map([["x/RetryTest.kt", "backoff"], ["y.kt", ""]]), 5);
-    expect(result.files.map((f) => [f.path, f.bm25Rank, f.score, f.isTest])).toEqual([["x/RetryTest.kt", 1, 0, true], ["y.kt", 2, 0, false]]);
+    const result = packKeywords("backoff", new Map([["x/retry_test.go", "backoff"], ["y.go", ""]]), 5);
+    expect(result.files.map((f) => [f.path, f.bm25Rank, f.score, f.isTest])).toEqual([["x/retry_test.go", 1, 0, true], ["y.go", 2, 0, false]]);
   });
 });
 
 describe("isTest", () => {
   it.each([
-    ["src/test/kotlin/Foo.kt", true],
-    ["src/FooTest.kt", true],
+    ["tests/unit/cache.py", true],
+    ["src/FooTests.cs", true],
     ["src/foo.test.ts", true],
     ["pkg/test_foo.py", true],
-    ["src/contest.kt", false],
-    ["src/Foo.kt", false],
+    ["src/contest.ts", false],
+    ["src/server_test.go", true],
+    ["src/foo.rs", false],
   ])("%s -> %s", (path, expected) => expect(isTest(path)).toBe(expected));
 });
 
 const docs = (n: number): FileDoc[] => Array.from({ length: n }, (_, i) => ({
-  path: `src/F${String(i).padStart(2, "0")}.kt`, sketch: `sketch ${i}`, text: i === 7 ? "backoff retry" : `file ${i}`,
+  path: `src/F${String(i).padStart(2, "0")}.ts`, sketch: `sketch ${i}`, text: i === 7 ? "backoff retry" : `file ${i}`,
 }));
 
 /** Relevance is 0.9 for files whose text mentions "backoff", else 0.1. */
@@ -59,7 +58,7 @@ function fakeScorer(overrides: Partial<Scorer> = {}): Scorer & { calls: Items[] 
     calls,
     async score(_task, items) {
       calls.push(items);
-      return new Map(items.map(([p, t]) => [p, t.includes("backoff") || p.endsWith("F03.kt") ? 0.9 : 0.1]));
+      return new Map(items.map(([p, t]) => [p, t.includes("backoff") || p.endsWith("F03.ts") ? 0.9 : 0.1]));
     },
     ...overrides,
   };
@@ -71,18 +70,18 @@ describe("pack", () => {
   it("pools BM25's and the sketch pass's top files, then fuses full-source scores with keyword rank", async () => {
     const scorer = fakeScorer();
     const result = await pack("add backoff", docs(12), scorer, small);
-    expect(result.files[0]!.path).toBe("src/F07.kt");
-    expect(result.files.map((f) => f.path)).toContain("src/F03.kt");
+    expect(result.files[0]!.path).toBe("src/F07.ts");
+    expect(result.files.map((f) => f.path)).toContain("src/F03.ts");
     expect(result.failedBatches).toBe(0);
     expect(scorer.calls[0]!.length).toBe(4);
   });
 
   it("stage 3 can reorder the top files", async () => {
     const scorer = fakeScorer({
-      async choose(_task, items) { return new Map(items.map(([p]) => [p, p.endsWith("F03.kt") ? 1 : 0])); },
+      async choose(_task, items) { return new Map(items.map(([p]) => [p, p.endsWith("F03.ts") ? 1 : 0])); },
     });
     const result = await pack("add backoff", docs(12), scorer, small);
-    expect(result.files[0]!.path).toBe("src/F03.kt");
+    expect(result.files[0]!.path).toBe("src/F03.ts");
   });
 
   it("a failed batch costs its files a zero, not the pack", async () => {
@@ -106,12 +105,12 @@ describe("pack", () => {
   it("labels roles only above the confidence threshold", async () => {
     const scorer = fakeScorer({
       async roles(_task, items) {
-        return new Map(items.map(([p]) => [p, new Map(p.endsWith("F07.kt") ? [["edit", 0.8], ["unrelated", 0.2]] : [["example", 0.4], ["unrelated", 0.6]])]));
+        return new Map(items.map(([p]) => [p, new Map(p.endsWith("F07.ts") ? [["edit", 0.8], ["unrelated", 0.2]] : [["example", 0.4], ["unrelated", 0.6]])]));
       },
     });
     const result = await pack("add backoff", docs(12), scorer, small);
     const byPath = new Map(result.files.map((f) => [f.path, f]));
-    expect(byPath.get("src/F07.kt")!.role).toBe("edit");
+    expect(byPath.get("src/F07.ts")!.role).toBe("edit");
     expect(result.files.filter((f) => f.role).length).toBe(1);
   });
 

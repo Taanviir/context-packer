@@ -22,8 +22,8 @@ describe("Jev", () => {
   it("asks one noul question per file and reads the probabilities", async () => {
     const { sent, impl } = fakeFetch([{ status: 200, body: fixture("systemone_noul.json") }]);
     const client = new JevClient({ apiKey: "k", fetch: impl });
-    const scores = await new JevScorer(client).score("task", [["a.kt", "A"], ["b.kt", "B"]]);
-    expect([...scores]).toEqual([["a.kt", 0.96], ["b.kt", 0.03]]);
+    const scores = await new JevScorer(client).score("task", [["a.ts", "A"], ["b.ts", "B"]]);
+    expect([...scores]).toEqual([["a.ts", 0.96], ["b.ts", 0.03]]);
     expect(sent[0]!.body.model).toBe("jev-latest");
     expect(sent[0]!.body.state).toEqual({ task: "task", f000: "A", f001: "B" });
     expect(sent[0]!.body.questions.f000.type).toBe("noul");
@@ -33,8 +33,8 @@ describe("Jev", () => {
   it("translates noul to boolean for the gateway and reads its answers", async () => {
     const { sent, impl } = fakeFetch([{ status: 200, body: fixture("gateway_boolean.json") }]);
     const client = new JevClient({ apiKey: "k", backend: "gateway", fetch: impl });
-    const scores = await new JevScorer(client).score("task", [["a.kt", "A"], ["b.kt", "B"]]);
-    expect(scores.get("a.kt")).toBe(0.96);
+    const scores = await new JevScorer(client).score("task", [["a.ts", "A"], ["b.ts", "B"]]);
+    expect(scores.get("a.ts")).toBe(0.96);
     expect(sent[0]!.body.questions.f000.type).toBe("boolean");
     expect(sent[0]!.headers["ai-model-id"]).toBe("typesafe-ai/jev");
     expect(client.calls[0]!.inputTokens).toBe(400);
@@ -82,10 +82,10 @@ describe("Laya", () => {
     const answer = JSON.stringify({ answers: { relevant: { noul: 0.4 } }, usage: { input_tokens: 90 } });
     const { sent, impl } = fakeFetch([{ status: 200, body: answer }, { status: 200, body: answer }]);
     const laya = new LayaScorer({ fetch: impl });
-    const scores = await laya.score("t", [["a.kt", "x".repeat(5000)], ["b.kt", "y"]]);
+    const scores = await laya.score("t", [["a.ts", "x".repeat(5000)], ["b.ts", "y"]]);
     expect([...scores.values()]).toEqual([0.4, 0.4]);
     expect(sent.length).toBe(2);
-    expect(sent[0]!.body.state.length).toBe("File: a.kt\n".length + 1000);
+    expect(sent[0]!.body.state.length).toBe("File: a.ts\n".length + 1000);
   });
 
   it("reports an unreachable server as a provider-wide outage", async () => {

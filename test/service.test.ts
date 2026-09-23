@@ -20,28 +20,28 @@ beforeAll(() => {
     mkdirSync(path.dirname(path.join(root, rel)), { recursive: true });
     writeFileSync(path.join(root, rel), text);
   };
-  write("src/http/Retry.kt", "package http\n/** Retries failed requests. */\nclass Retry { fun backoff() = exponentialBackoff() }\n");
-  write("src/http/Client.kt", "package http\nclass Client { fun send() = Retry() }\n");
-  write("src/test/RetryTest.kt", "class RetryTest { fun backoffGrows() {} }\n");
-  write("src/ui/Button.tsx", "export function Button() { return null }\n");
+  write("src/http/retry.ts", "/** Retries failed requests. */\nexport class Retry { backoff() { return exponentialBackoff(); } }\n");
+  write("src/http/client.ts", "export class Client { send() { return new Retry(); } }\n");
+  write("src/http/retry.test.ts", "it(\"backoff grows\", () => {});\n");
+  write("src/ui/button.tsx", "export function Button() { return null }\n");
   write("README.md", "exponential backoff retry backoff");
-  write("src/big.kt", "x".repeat(100_001));
-  write("src/blob.kt", Buffer.from([0x62, 0x00, 0x63]));
-  write("generated/Ignored.kt", "backoff backoff backoff");
+  write("src/big.ts", "x".repeat(100_001));
+  write("src/blob.ts", Buffer.from([0x62, 0x00, 0x63]));
+  write("generated/ignored.ts", "backoff backoff backoff");
   write(".gitignore", "generated/\n");
-  writeFileSync(path.join(outside, "Secret.kt"), "backoff backoff");
-  symlinkSync(path.join(outside, "Secret.kt"), path.join(root, "src/Linked.kt"));
+  writeFileSync(path.join(outside, "secret.ts"), "backoff backoff");
+  symlinkSync(path.join(outside, "secret.ts"), path.join(root, "src/linked.ts"));
   execFileSync("git", ["init", "-q"], { cwd: root });
 });
 
 describe("collect", () => {
   it("keeps source files and drops docs, ignored, oversized, binary and linked files", async () => {
     const files = await collect(root);
-    expect(files.map((f) => f.path)).toEqual(["src/http/Client.kt", "src/http/Retry.kt", "src/test/RetryTest.kt", "src/ui/Button.tsx"]);
+    expect(files.map((f) => f.path)).toEqual(["src/http/client.ts", "src/http/retry.test.ts", "src/http/retry.ts", "src/ui/button.tsx"]);
   });
 
   it("honours an extension allowlist", async () => {
-    expect((await collect(root, { extensions: ["tsx"] })).map((f) => f.path)).toEqual(["src/ui/Button.tsx"]);
+    expect((await collect(root, { extensions: ["tsx"] })).map((f) => f.path)).toEqual(["src/ui/button.tsx"]);
   });
 });
 
@@ -49,7 +49,7 @@ describe("ContextPacker", () => {
   it("packs with keywords by default and needs no key", async () => {
     const report = await new ContextPacker({}).pack({ task: "add exponential backoff to retries", root });
     expect(report.provider).toBe("keywords");
-    expect(report.result.files[0]!.path).toBe("src/http/Retry.kt");
+    expect(report.result.files[0]!.path).toBe("src/http/retry.ts");
     expect(report.costUsd).toBe(0);
   });
 
@@ -75,7 +75,7 @@ describe("ContextPacker", () => {
     }) as unknown as typeof fetch;
     const report = await new ContextPacker({ TYPESAFE_API_KEY: "k" }, fetchImpl).pack({ task: "add exponential backoff to retries", root, provider: "jev" });
     expect(report.model).toBe("jev-latest");
-    expect(report.result.files[0]!.path).toBe("src/http/Retry.kt");
+    expect(report.result.files[0]!.path).toBe("src/http/retry.ts");
     expect(report.result.files[0]!.role).toBe("edit");
     expect(report.costUsd).toBeCloseTo(report.inputTokens * 0.042 / 1e6);
   });
@@ -86,7 +86,7 @@ describe("hook", () => {
     const out = await runHook(JSON.stringify({ prompt: "add exponential backoff to retries", cwd: root }), {});
     const parsed = JSON.parse(out!);
     expect(parsed.hookSpecificOutput.hookEventName).toBe("UserPromptSubmit");
-    expect(parsed.hookSpecificOutput.additionalContext).toContain("src/http/Retry.kt");
+    expect(parsed.hookSpecificOutput.additionalContext).toContain("src/http/retry.ts");
   });
 
   it("stays silent for short prompts, slash commands and bad input", async () => {
@@ -107,7 +107,7 @@ describe("MCP server", () => {
     expect((await client.listTools()).tools.map((t) => t.name)).toEqual(["pack_context"]);
     const ok = await client.callTool({ name: "pack_context", arguments: { task: "add exponential backoff to retries", limit: 2 } });
     const text = (ok.content as Array<{ text: string }>)[0]!.text;
-    expect(text).toContain("#1   src/http/Retry.kt");
+    expect(text).toContain("#1   src/http/retry.ts");
     expect(text).toContain("Picked 2 of 4 files");
 
     const failed = await client.callTool({ name: "pack_context", arguments: { task: "add backoff", provider: "jev" } });

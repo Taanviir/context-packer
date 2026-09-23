@@ -1,0 +1,82 @@
+{
+ "cases": [
+  {
+   "file": "billing.cs",
+   "path": "src/billing.cs",
+   "jev": "path: src/billing.cs\n  - public class Line  // An invoice line.\n  - public interface ITaxRule\n  - public static class Totals  // Sums invoice lines.",
+   "laya": "path: src/billing.cs\n  - public class Line  // An invoice line.\n  - public interface ITaxRule\n  - public static class Totals  // Sums invoice lines.\n  - public enum Currency"
+  },
+  {
+   "file": "cache.py",
+   "path": "src/cache.py",
+   "jev": "path: src/cache.py\n- class LruCache:\n- class Stats: pass",
+   "laya": "path: src/cache.py\n- class LruCache\n  - def __init__(self, capacity: int)\n  - def get(self, key)\n  - def put(self, key, value)\n- def make_cache(capacity=128)\n- class Stats: pass"
+  },
+  {
+   "file": "crlf.ts",
+   "path": "src/crlf.ts",
+   "jev": "path: src/crlf.ts\n- class Crlf\n  - var run",
+   "laya": "path: src/crlf.ts\n- class Crlf\n  - var run"
+  },
+  {
+   "file": "deploy.sh",
+   "path": "src/deploy.sh",
+   "jev": "path: src/deploy.sh",
+   "laya": "path: src/deploy.sh\n- function build()\n- function upload"
+  },
+  {
+   "file": "empty.py",
+   "path": "src/empty.py",
+   "jev": "path: src/empty.py",
+   "laya": "path: src/empty.py"
+  },
+  {
+   "file": "events.ts",
+   "path": "src/events.ts",
+   "jev": "path: src/events.ts\n- export class Emitter<T>  // A typed event emitter.\n- export default interface Handler  // Default emitter shared by the app.",
+   "laya": "path: src/events.ts\n- export class Emitter<T>  // A typed event emitter.\n- export enum Priority\n- export default interface Handler  // Default emitter shared by the app."
+  },
+  {
+   "file": "long.ts",
+   "path": "src/long.ts",
+   "jev": "path: src/long.ts\n- export class Helper0  // Helper number 0.\n- export class Helper1  // Helper number 1.\n- export class Helper2  // Helper number 2.\n- export class Helper3  // Helper number 3.\n- export class Helper4  // Helper number 4.\n- export class Helper5  // Helper number 5.\n- export class Helper6  // Helper number 6.\n- export class Helper7  // Helper number 7.\n- export class Helper8  // Helper number 8.\n- export class Helper9  // Helper number 9.\n- export class Helper10  // Helper number 10.\n- export class Helper11  // Helper number 11.\n- export class Helper12  // Helper number 12.\n- export class Helper13  // Helper number 13.\n- export class Helper14  // Helper number 14.\n- export class Helper15  // Helper number 15.\n- export class Helper16  // Helper number 16.\n- export class Helper17  // Helper number 17.\n- export class Helper18  // Helper number 18.\n- export class Helper19  // Helper number 19.\n- export class Helper20  // Helper number 20.\n- export class Helper21  // Helper number 21.\n- export class Helper22  // Helper number 22.\n- export class Helper23  // Helper number 23.\n- export class Helper24  // Helper number 24.\n- export class Helper25  // Helper number 25.\n- expo",
+   "laya": "path: src/long.ts\n- export class Helper0  // Helper number 0.\n- export class Helper1  // Helper number 1.\n- export class Helper2  // Helper number 2.\n- export class Helper3  // Helper number 3.\n- export class Helper4  // Helper number 4.\n- export class Helper5  // Helper number 5.\n- export class Helper6  // Helper number 6.\n- export class Helper7  // Helper number 7.\n- export class Helper8  // Helper number 8.\n- export class Helper9  // Helper number 9.\n- export class Helper10  // Helper number 10.\n- export class Helper11  // Helper number 11.\n- export class Helper12  // Helper number 12.\n- export class Helper13  // Helper number 13.\n- export class Helper14  // Helper number 14.\n- export class Helper15  // Helper number 15.\n- export class Helper16  // Helper number 16.\n- export class Helper17  // Helper number 17.\n- export class Helper18  // Helper number 18.\n- export class Helper19  // Helper number 19.\n- export class Helper20  // Helper number 20.\n- export class Helper21  // Helper number 21.\n- export class Helper22  // Helper number 22.\n- export class Helper23  // Helper number 23.\n- export class Helper24  // Helper number 24.\n- export class Helper25  // Helper number 25.\n- expo"
+  },
+  {
+   "file": "queue.rs",
+   "path": "src/queue.rs",
+   "jev": "path: src/queue.rs",
+   "laya": "path: src/queue.rs\n- pub struct Queue<T>  // A bounded FIFO queue.\n- pub enum QueueError  // Errors a queue can return.\n- pub trait Drain\n- impl<T> Queue<T>"
+  },
+  {
+   "file": "retry.ts",
+   "path": "src/retry.ts",
+   "jev": "path: src/retry.ts\n- export interface RetryOptions  // Options for retrying a flaky call.\n- export class Retrier  // Retries with exponential backoff.\n- var legacyCounter  // Runs fn until it succeeds or attempts run out.",
+   "laya": "path: src/retry.ts\n- export interface RetryOptions  // Options for retrying a flaky call.\n- export class Retrier  // Retries with exponential backoff.\n- export function withRetry<T>(fn: () => Promise<T>)  // Runs fn until it succeeds or attempts run out.\n- var legacyCounter"
+  },
+  {
+   "file": "router.js",
+   "path": "src/router.js",
+   "jev": "path: src/router.js\n- class Router  // Dispatches a request to its handler.\n- var fallback",
+   "laya": "path: src/router.js\n- function route(path, handler)  // Registers a handler for a path.\n- async function dispatch(request)  // Dispatches a request to its handler.\n- class Router\n- var fallback"
+  },
+  {
+   "file": "server.go",
+   "path": "src/server.go",
+   "jev": "path: src/server.go\npackage server\n- var DefaultConfig  // New builds a server from cfg.",
+   "laya": "path: src/server.go\npackage server\n- type Config struct  // Config holds server settings.\n- type Server struct\n- var DefaultConfig  // New builds a server from cfg."
+  },
+  {
+   "file": "shapes.swift",
+   "path": "src/shapes.swift",
+   "jev": "path: src/shapes.swift\n  - var area: Double  // A 2D shape.\n  - var area: Double\n- class Square: Shape  // Squares have equal sides.\n  - var side: Double\n  - var area: Double",
+   "laya": "path: src/shapes.swift\n  - var area: Double  // A 2D shape.\n- struct Circle: Shape\n  - var area: Double\n- class Square: Shape  // Squares have equal sides.\n  - var side: Double\n  - var area: Double\n- enum Unit: String"
+  },
+  {
+   "file": "tokenizer.py",
+   "path": "src/tokenizer.py",
+   "jev": "path: src/tokenizer.py\n- class Tokenizer:\n  - class Options:",
+   "laya": "path: src/tokenizer.py\n- def tokens(text: str) -> list[str]\n- class Tokenizer\n  - def __init__(self, stopwords=None)\n  - def __call__(self, text)\n  - class Options\n- async def tokenize_all(texts)"
+  }
+ ]
+}
