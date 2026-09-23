@@ -1,0 +1,31 @@
+{
+  "name": "context-packer",
+  "version": "0.1.0",
+  "description": "Rank the source files a coding task needs, from the CLI, an MCP server, or a Claude Code hook",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "context-packer": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.1"
+  }
+}
