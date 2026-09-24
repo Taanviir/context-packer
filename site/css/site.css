@@ -52,15 +52,15 @@ code, kbd, pre { font-family: var(--font-mono); font-size: 0.9em; }
 @media (max-width: 420px) { .nav-links li:nth-child(n+3) { display: none; } }
 
 /* Stat-led hero */
-.hero { padding: var(--space-3xl) 0 var(--space-2xl); border-bottom: var(--rule-hair) solid var(--color-rule); }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: var(--space-2xl); align-items: start; }
+.hero { padding: var(--space-4xl) 0 var(--space-3xl); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: var(--space-3xl); align-items: center; }
 .figure { font: 600 var(--text-figure) / 0.9 var(--font-display); letter-spacing: -0.04em; color: var(--color-ink); }
 .figure .unit { font-size: 0.42em; letter-spacing: -0.02em; color: var(--color-accent); margin-left: 0.08em; }
-.hero h1 { font-size: var(--text-display); margin-top: var(--space-md); max-width: 16ch; }
-.hero .lede { margin-top: var(--space-lg); font-size: var(--text-lg); max-width: 46ch; }
-.hero .qualifier { margin-top: var(--space-md); font-size: var(--text-sm); color: var(--color-muted); max-width: 52ch; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-md) var(--space-lg); align-items: center; margin-top: var(--space-xl); }
-@media (max-width: 860px) { .hero-grid { grid-template-columns: minmax(0, 1fr); } }
+.hero h1 { font-size: var(--text-hero-line); line-height: 1.2; letter-spacing: -0.02em; margin-top: var(--space-sm); max-width: 22ch; }
+.hero .lede { margin-top: var(--space-xl); font-size: var(--text-lg); line-height: 1.65; max-width: 44ch; }
+.hero .qualifier { margin-top: var(--space-md); font-size: var(--text-sm); line-height: 1.6; color: var(--color-muted); max-width: 48ch; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-md) var(--space-lg); align-items: center; margin-top: var(--space-2xl); }
+@media (max-width: 860px) { .hero-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-2xl); } .hero { padding-top: var(--space-3xl); } }
 
 /* Terminal card: code as the hero, no drawn window chrome */
 .terminal { background: var(--color-graphite); color: var(--color-on-graphite); border-radius: var(--radius-md); box-shadow: 0 1px 2px var(--color-lift); overflow: hidden; }
