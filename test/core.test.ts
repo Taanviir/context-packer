@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { rankBm25, tokens } from "../src/bm25.js";
-import { isTest, pack, packKeywords, ScorerUnavailableError, type FileDoc, type Items, type Scorer } from "../src/packer.js";
+import { ContentRejectedError, isTest, pack, packKeywords, ScorerUnavailableError, type FileDoc, type Items, type Scorer } from "../src/packer.js";
 import { layaSketch, sketch } from "../src/sketch.js";
 
 type Case = { file: string; path: string; jev: string; laya: string };
@@ -91,6 +91,15 @@ describe("pack", () => {
     const result = await pack("add backoff", docs(12), flaky, small);
     expect(result.failedBatches).toBe(1);
     expect(result.files.length).toBeGreaterThan(0);
+  });
+
+  it("halves a rejected batch until only the offending file is lost", async () => {
+    const scorer = fakeScorer();
+    const picky: Scorer = { score: (task, items) => (items.some(([p]) => p.endsWith("F05.ts")) ? Promise.reject(new ContentRejectedError("blocked")) : scorer.score(task, items)) };
+    const result = await pack("add backoff", docs(12), picky, { ...small, batch: 12, perCall: 4 });
+    // F05 is in the one sketch batch of 12 and not in the pool, so only its own half-of-a-half fails.
+    expect(result.failedBatches).toBe(1);
+    expect(result.files[0]!.path).toBe("src/F07.ts");
   });
 
   it("refuses to pass off a keyword ranking as a model ranking when every sketch batch fails", async () => {

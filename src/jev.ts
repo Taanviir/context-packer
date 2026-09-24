@@ -1,4 +1,4 @@
-import type { Items, Scorer } from "./packer.js";
+import { ContentRejectedError, type Items, type Scorer } from "./packer.js";
 
 /** Where Jev is served from. Both take the same state and questions; they differ in envelope. */
 export const JEV_BACKENDS = {
@@ -135,8 +135,14 @@ export class JevClient {
         return { ...parsed, model: parsed.model || this.model };
       }
       lastStatus = response.status;
-      lastError = `${describe(response.status)} (HTTP ${response.status}): ${text.slice(0, 200)}`;
       const tokens = inputTokensIn(text);
+      if (response.status === 403 && /^\s*<(!doctype|html)/i.test(text)) {
+        // An HTML 403 is the edge firewall objecting to something in the request body, not an auth failure.
+        const message = "Jev's firewall blocked this request (HTTP 403 HTML page); something in the source text trips it";
+        this.record(started, 0, questions, message, false);
+        throw new ContentRejectedError(message);
+      }
+      lastError = `${describe(response.status)} (HTTP ${response.status}): ${text.slice(0, 200)}`;
       this.record(started, tokens ?? 0, questions, lastError, tokens !== null);
       if (!RETRY_STATUSES.has(response.status) && response.status < 500) break;
       wait = retryAfterMs(response.headers) ?? backoff(attempt + 1);

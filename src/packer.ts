@@ -1,4 +1,4 @@
-import { compare, rankBm25 } from "./bm25.js";
+import { compare, scoreBm25 } from "./bm25.js";
 
 /** One candidate file: a short structural sketch for the wide pass, full text for the narrow one. */
 export interface FileDoc {
@@ -52,7 +52,11 @@ export interface PackedFile {
   /** Fused score in 0..1; 0 for keyword-only ranking. */
   score: number;
   bm25Rank: number | null;
+  /** Occurrences of each task word in the file, for explaining a pick. */
+  matches: Record<string, number>;
   isTest: boolean;
+  /** Stage 3's probability that this is the file to edit, when it ran. */
+  choice?: number;
   role?: Role;
   roleConfidence?: number;
 }
@@ -82,6 +86,11 @@ export interface Scorer {
 /** A provider-wide failure: abort the pack rather than retrying the same outage for every file. */
 export class ScorerUnavailableError extends Error {
   override name = "ScorerUnavailableError";
+}
+
+/** The provider refused this request's content, not the provider as a whole: smaller batches may pass. */
+export class ContentRejectedError extends Error {
+  override name = "ContentRejectedError";
 }
 
 interface Scores {
@@ -116,7 +125,9 @@ export async function pack(
   const full = (paths: string[]): Items => paths.map((p) => [p, `path: ${p}\n${byPath.get(p)!.text.slice(0, config.fullChars)}`]);
 
   const pass1Job = scoreAll(scorer, task, docs.map((d) => [d.path, d.sketch]), config.batch, true);
-  const bm25Ranked = rankBm25(task, new Map(docs.map((d) => [d.path, d.text])));
+  const hits = scoreBm25(task, new Map(docs.map((d) => [d.path, d.text])));
+  const bm25Ranked = hits.map((h) => h.path);
+  const matchesOf = new Map(hits.map((h) => [h.path, h.matches]));
   const bm25Pool = bm25Ranked.slice(0, config.pool);
   const pass2a = config.overlapPasses ? scoreAll(scorer, task, full(bm25Pool), config.perCall, false) : null;
   // Keep a failing overlap from surfacing as an unhandled rejection while pass 1 is awaited.
@@ -187,7 +198,9 @@ export async function pack(
       relevance: relevance.get(p) ?? 0,
       score: (fused.get(p)! + config.stage3Weight * (choice?.get(p) ?? 0)) / scale,
       bm25Rank: pos === undefined ? null : pos + 1,
+      matches: matchesOf.get(p) ?? {},
       isTest: isTest(p),
+      ...(choice?.has(p) ? { choice: choice.get(p)! } : {}),
       ...(best && best[1] >= ROLE_MIN && best[0] !== "unrelated" ? { role: best[0] as Role } : {}),
       ...(best ? { roleConfidence: best[1] } : {}),
     };
@@ -209,11 +222,11 @@ export async function pack(
 export function packKeywords(task: string, docs: Map<string, string>, keep = 20): PackResult {
   if (!task.trim()) throw new RangeError("Task must not be blank");
   const started = performance.now();
-  const ranked = rankBm25(task, docs);
+  const hits = scoreBm25(task, docs);
   const elapsed = Math.round(performance.now() - started);
   return {
     task,
-    files: ranked.slice(0, keep).map((path, i) => ({ path, relevance: 0, score: 0, bm25Rank: i + 1, isTest: isTest(path) })),
+    files: hits.slice(0, keep).map(({ path, matches }, i) => ({ path, relevance: 0, score: 0, bm25Rank: i + 1, matches, isTest: isTest(path) })),
     candidates: docs.size,
     pass1Ms: elapsed,
     pass2Ms: 0,
@@ -242,17 +255,23 @@ function validate(task: string, docs: FileDoc[], c: PackConfig) {
 async function scoreAll(scorer: Scorer, task: string, items: Items, groupSize: number, failIfAll: boolean): Promise<Scores> {
   const groups: Items[] = [];
   for (let i = 0; i < items.length; i += groupSize) groups.push(items.slice(i, i + groupSize));
-  const parts = await Promise.all(groups.map(async (group) => {
+  // A rejected batch is halved until the file that trips the rejection is alone, so it costs only that file.
+  const scoreGroup = async (group: Items): Promise<Outcome<Map<string, number>>[]> => {
     try {
       const response = await scorer.score(task, group);
       if (!samePaths(response, group.map(([p]) => p))) throw new Error("Scorer must return exactly the requested paths");
       if (![...response.values()].every(isProbability)) throw new Error("Scorer probabilities must be finite and within [0, 1]");
-      return { ok: true as const, value: response };
+      return [{ ok: true, value: response }];
     } catch (error) {
       if (error instanceof ScorerUnavailableError) throw error;
-      return { ok: false as const, error };
+      if (error instanceof ContentRejectedError && group.length > 1) {
+        const half = Math.ceil(group.length / 2);
+        return (await Promise.all([scoreGroup(group.slice(0, half)), scoreGroup(group.slice(half))])).flat();
+      }
+      return [{ ok: false, error }];
     }
-  }));
+  };
+  const parts = (await Promise.all(groups.map(scoreGroup))).flat();
   const firstFailure = parts.find((p) => !p.ok);
   if (failIfAll && parts.length > 0 && parts.every((p) => !p.ok)) throw (firstFailure as { error: unknown }).error;
   const scores = new Map<string, number>();
