@@ -1,7 +1,7 @@
 /**
  * Runs one ranking variant over one split of the frozen tasks and writes per-task results.
  *
- *   npx tsx bench/run.ts <variant> <dev|test> [repo...]
+ *   pnpm tsx bench/run.ts <variant> <dev|test> [repo...]
  *
  * Jev responses are cached on disk by request body, so re-runs and variants that send identical
  * requests are free. BENCH_TOKEN_CAP (default 60M, about $2.50) stops the run before it bills more.

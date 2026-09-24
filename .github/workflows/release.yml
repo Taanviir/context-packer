@@ -12,25 +12,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org
-          cache: npm
+          cache: pnpm
       - name: Tag matches package and plugin versions
         run: |
           for f in package.json .claude-plugin/plugin.json; do
             test "v$(node -p "require('./$f').version")" = "$GITHUB_REF_NAME" || { echo "$f version differs from $GITHUB_REF_NAME"; exit 1; }
           done
           test "v$(node -p "require('./.claude-plugin/marketplace.json').plugins[0].version")" = "$GITHUB_REF_NAME"
-      - run: npm ci
-      # Trusted publishing: npm exchanges the workflow's OIDC token, so no NPM_TOKEN secret is stored.
-      # A version already on npm (such as the first one, published by hand) is left alone.
-      - run: |
-          if npm view "@taanviir/context-packer@${GITHUB_REF_NAME#v}" version >/dev/null 2>&1; then
-            echo "@taanviir/context-packer@${GITHUB_REF_NAME#v} is already on npm"
-          else
-            npm publish
+      - run: pnpm install --frozen-lockfile
+      # Trusted publishing: the npm CLI exchanges the workflow's OIDC token, so no NPM_TOKEN secret is stored.
+      # npm's read side can lag a new release by minutes, so "already published" is treated as done
+      # rather than checked beforehand.
+      - name: Publish to npm
+        run: |
+          set -o pipefail
+          if ! npm publish 2>&1 | tee publish.log; then
+            grep -q "cannot publish over the previously published versions" publish.log || exit 1
+            echo "${GITHUB_REF_NAME} is already on npm"
           fi
       - name: GitHub release
         run: gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 || gh release create "$GITHUB_REF_NAME" --generate-notes --verify-tag

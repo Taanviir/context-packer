@@ -1,0 +1,3 @@
+# esbuild's install script only verifies its binary; tsx runs without it.
+allowBuilds:
+  esbuild: false

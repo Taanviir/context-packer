@@ -3,7 +3,7 @@
  * commit modified are the answer. Files are later read as they were at the parent commit, so the
  * answer can't leak into the candidates.
  *
- *   npx tsx bench/mine.ts
+ *   pnpm tsx bench/mine.ts
  */
 import { createHash } from "node:crypto";
 import { mkdirSync, writeFileSync } from "node:fs";

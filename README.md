@@ -140,9 +140,9 @@ The difference between Jev and keywords is very likely between 4 and 15 more nee
 interval).
 
 ```
-npx tsx bench/mine.ts                 # freeze tasks from pinned history (repos cloned into bench/.cache/repos)
-npx tsx bench/run.ts jev test         # run a provider; Jev responses are cached by request
-npx tsx bench/report.ts               # bench/results/summary.json, with paired bootstrap intervals
+pnpm tsx bench/mine.ts                # freeze tasks from pinned history (repos cloned into bench/.cache/repos)
+pnpm tsx bench/run.ts jev test        # run a provider; Jev responses are cached by request
+pnpm tsx bench/report.ts              # bench/results/summary.json and runs.json, with paired bootstrap intervals
 ```
 
 What was tried and didn't ship: per-language file summaries for TypeScript, Python, Go and Rust
@@ -161,10 +161,10 @@ What was tried and didn't ship: per-language file summaries for TypeScript, Pyth
 ## Development
 
 ```
-npm install
-npm test          # unit tests; CONTEXT_PACKER_LAYA_LIVE=1 also runs against a local Laya server
-npm run typecheck
-npm run build     # dist/cli.js
+pnpm install
+pnpm test         # unit tests; CONTEXT_PACKER_LAYA_LIVE=1 also runs against a local Laya server
+pnpm typecheck
+pnpm build        # dist/cli.js
 node scripts/demo-cast.mjs <repo> > demo.cast   # re-record the README demo
 ```
 

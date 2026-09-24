@@ -2,7 +2,7 @@
  * Aggregates bench/results into summary.json: mean recall per repo, split and variant, and paired
  * bootstrap intervals for the differences that matter.
  *
- *   npx tsx bench/report.ts
+ *   pnpm tsx bench/report.ts
  */
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
