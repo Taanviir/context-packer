@@ -63,7 +63,7 @@
           <p>All requests run in parallel, up to 48 at once. On the benchmark repositories a pack took 2.5 seconds and about $0.007 on average.</p>
 
           <h2>Failing loudly</h2>
-          <p>A Jev batch that errors costs its files a zero for that pass, and the pack reports how many batches failed. If every batch fails, the pack fails. Quietly returning a keyword ranking labelled as Jev would be worse than an error. The same goes for a missing key: asking for Jev without one is an error, not a fallback.</p>
+          <p>A Jev batch that errors costs its files a zero for that pass, and the pack reports how many batches failed. If every batch fails, the pack fails. Quietly returning a keyword ranking labeled as Jev would be worse than an error. The same goes for a missing key: asking for Jev without one is an error, not a fallback.</p>
 
           <h2>Laya, locally</h2>
           <p>Laya is a small encoder that runs on a CPU. Its window is 512 tokens, so each request carries one file excerpt of at most 1,000 characters, and a 60-file keyword shortlist bounds the work. The server handles one request at a time.</p>
