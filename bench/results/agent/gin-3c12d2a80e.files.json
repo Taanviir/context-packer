@@ -1,0 +1,41 @@
+{
+ "id": "gin-3c12d2a80e",
+ "repo": "gin",
+ "arm": "files",
+ "model": "opus",
+ "request": "The panic recovery code converts stack trace bytes to strings and back unnecessarily when extracting function names — can you rework it to work with strings directly instead of byte slices, to cut down on allocations?",
+ "gold": [
+  "recovery.go",
+  "recovery_test.go"
+ ],
+ "handed": [
+  "recovery.go",
+  "tree.go",
+  "recovery_test.go",
+  "gin.go",
+  "utils.go",
+  "path.go",
+  "context.go",
+  "routergroup.go"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "recovery.go",
+  "recovery_test.go"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 0,
+ "turns": 13,
+ "tools": {
+  "Read": 2,
+  "Grep": 1,
+  "Bash": 3,
+  "Edit": 6
+ },
+ "inputTokens": 14290,
+ "outputTokens": 3955,
+ "cacheReadTokens": 173120,
+ "costUsd": 0.22798000000000002,
+ "ms": 46223,
+ "isError": false
+}

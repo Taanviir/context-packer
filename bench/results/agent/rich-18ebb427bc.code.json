@@ -1,0 +1,37 @@
+{
+ "id": "rich-18ebb427bc",
+ "repo": "rich",
+ "arm": "code",
+ "model": "opus",
+ "request": "Update the Unicode East Asian width data so character cell-width calculations reflect the latest wcwidth ranges (many code points' zero/double-width classifications have changed or expanded upstream).",
+ "gold": [
+  "rich/_cell_widths.py"
+ ],
+ "handed": [
+  "tools/make_terminal_widths.py",
+  "rich/_cell_widths.py",
+  "rich/cells.py",
+  "rich/console.py",
+  "benchmarks/snippets.py",
+  "tests/test_console.py",
+  "tests/test_cells.py",
+  "rich/tree.py"
+ ],
+ "hookSeen": true,
+ "edited": [],
+ "goldEdited": 0,
+ "extraEdits": 0,
+ "turns": 11,
+ "tools": {
+  "Bash": 5,
+  "Read": 2,
+  "Glob": 1,
+  "Grep": 2
+ },
+ "inputTokens": 13608,
+ "outputTokens": 2811,
+ "cacheReadTokens": 218550,
+ "costUsd": 0.208714,
+ "ms": 40809,
+ "isError": false
+}

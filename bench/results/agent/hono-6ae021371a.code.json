@@ -1,0 +1,39 @@
+{
+ "id": "hono-6ae021371a",
+ "repo": "hono",
+ "arm": "code",
+ "model": "opus",
+ "request": "When the client disconnects mid-request, the proxy should abort the upstream fetch too instead of letting it keep running — right now the original request's abort signal isn't passed through to the proxied request.",
+ "gold": [
+  "src/helper/proxy/index.test.ts",
+  "src/helper/proxy/index.ts"
+ ],
+ "handed": [
+  "src/helper/proxy/index.ts",
+  "src/adapter/aws-lambda/handler.ts",
+  "src/helper/streaming/stream.ts",
+  "src/context.test.ts",
+  "src/helper/proxy/index.test.ts",
+  "src/context.ts",
+  "src/client/types.ts",
+  "src/helper/streaming/sse.ts"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "src/helper/proxy/index.ts"
+ ],
+ "goldEdited": 0.5,
+ "extraEdits": 0,
+ "turns": 4,
+ "tools": {
+  "Read": 1,
+  "Edit": 1,
+  "Grep": 1
+ },
+ "inputTokens": 8241,
+ "outputTokens": 823,
+ "cacheReadTokens": 73366,
+ "costUsd": 0.0970292,
+ "ms": 18348,
+ "isError": false
+}

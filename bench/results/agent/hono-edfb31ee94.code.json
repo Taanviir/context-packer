@@ -1,0 +1,45 @@
+{
+ "id": "hono-edfb31ee94",
+ "repo": "hono",
+ "arm": "code",
+ "model": "opus",
+ "request": "When the `notFound()` handler throws an error, the app crashes instead of letting the error handler catch it. Make sure errors thrown inside the not-found handler go through the same error handling as other route errors.",
+ "gold": [
+  "deno_dist/hono.ts",
+  "deno_dist/utils/encode.ts",
+  "src/hono.test.ts",
+  "src/hono.ts"
+ ],
+ "handed": [
+  "src/compose.ts",
+  "src/hono.ts",
+  "deno_dist/hono.ts",
+  "deno_dist/compose.ts",
+  "src/context.ts",
+  "deno_dist/router/smart-router/router.ts",
+  "src/compose.test.ts",
+  "deno_dist/context.ts"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "deno_dist/compose.ts",
+  "deno_dist/hono.ts",
+  "src/compose.ts",
+  "src/hono.ts"
+ ],
+ "goldEdited": 0.5,
+ "extraEdits": 2,
+ "turns": 16,
+ "tools": {
+  "Read": 5,
+  "Grep": 1,
+  "Edit": 4,
+  "Bash": 5
+ },
+ "inputTokens": 16758,
+ "outputTokens": 5028,
+ "cacheReadTokens": 285243,
+ "costUsd": 0.2915766000000001,
+ "ms": 70097,
+ "isError": false
+}

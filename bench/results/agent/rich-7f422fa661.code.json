@@ -1,0 +1,38 @@
+{
+ "id": "rich-7f422fa661",
+ "repo": "rich",
+ "arm": "code",
+ "model": "opus",
+ "request": "When I call `pretty.install()` inside IPython, it should hook into IPython's own output formatting instead of just overriding `sys.displayhook`, so pretty-printed output still works properly in the IPython REPL. Fall back to the normal displayhook approach when not running under IPython.",
+ "gold": [
+  "rich/pretty.py"
+ ],
+ "handed": [
+  "rich/pretty.py",
+  "rich/console.py",
+  "rich/live.py",
+  "rich/progress.py",
+  "rich/traceback.py",
+  "rich/__init__.py",
+  "tests/test_pretty.py",
+  "rich/bar.py"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "rich/pretty.py"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 0,
+ "turns": 4,
+ "tools": {
+  "Read": 1,
+  "Edit": 1,
+  "Bash": 1
+ },
+ "inputTokens": 10950,
+ "outputTokens": 2626,
+ "cacheReadTokens": 77566,
+ "costUsd": 0.15560120000000002,
+ "ms": 35292,
+ "isError": false
+}

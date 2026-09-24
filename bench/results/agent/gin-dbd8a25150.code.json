@@ -1,0 +1,40 @@
+{
+ "id": "gin-dbd8a25150",
+ "repo": "gin",
+ "arm": "code",
+ "model": "opus",
+ "request": "Add a way to abort a request with a status code and a JSON body that skips HTML-escaping, similar to the existing JSON abort helper.",
+ "gold": [
+  "context.go",
+  "context_test.go"
+ ],
+ "handed": [
+  "context.go",
+  "context_test.go",
+  "render/render.go",
+  "gin.go",
+  "middleware_test.go",
+  "ginS/gins.go",
+  "binding/binding_nomsgpack.go",
+  "response_writer.go"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "context.go",
+  "context_test.go"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 0,
+ "turns": 7,
+ "tools": {
+  "Grep": 2,
+  "Edit": 3,
+  "Read": 1
+ },
+ "inputTokens": 10830,
+ "outputTokens": 1990,
+ "cacheReadTokens": 142254,
+ "costUsd": 0.15483480000000002,
+ "ms": 34371,
+ "isError": false
+}

@@ -1,0 +1,30 @@
+{
+ "id": "rich-9ba01ae52b",
+ "repo": "rich",
+ "arm": "none",
+ "model": "opus",
+ "request": "When terminal size detection falls back to the standard streams, it should try stdin first, then stdout, then stderr, using their file descriptors directly instead of opening the stream objects each time. Also make sure the legacy Windows rendering check only tests against stdout/stderr, not stdin.",
+ "gold": [
+  "rich/console.py"
+ ],
+ "handed": [],
+ "hookSeen": false,
+ "edited": [
+  "rich/console.py"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 0,
+ "turns": 12,
+ "tools": {
+  "Grep": 2,
+  "Read": 3,
+  "Edit": 5,
+  "Bash": 1
+ },
+ "inputTokens": 10616,
+ "outputTokens": 2646,
+ "cacheReadTokens": 131682,
+ "costUsd": 0.1641284,
+ "ms": 30329,
+ "isError": false
+}

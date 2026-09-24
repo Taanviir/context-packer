@@ -1,0 +1,30 @@
+{
+ "id": "prometheus-39aa66e46e",
+ "repo": "prometheus",
+ "arm": "none",
+ "model": "opus",
+ "request": "By default metrics get written to /tmp, which gets wiped on reboot and isn't obvious to users. Can we default the storage path to a directory relative to wherever the binary is run from instead?",
+ "gold": [
+  "main.go"
+ ],
+ "handed": [],
+ "hookSeen": false,
+ "edited": [
+  ".gitignore",
+  "main.go"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 1,
+ "turns": 9,
+ "tools": {
+  "Grep": 1,
+  "Bash": 5,
+  "Edit": 2
+ },
+ "inputTokens": 7408,
+ "outputTokens": 1376,
+ "cacheReadTokens": 122871,
+ "costUsd": 0.11130220000000002,
+ "ms": 22677,
+ "isError": false
+}

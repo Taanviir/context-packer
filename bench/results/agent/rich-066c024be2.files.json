@@ -1,0 +1,42 @@
+{
+ "id": "rich-066c024be2",
+ "repo": "rich",
+ "arm": "files",
+ "model": "opus",
+ "request": "When a panel's title or subtitle text has its own inline styling, the fill characters used to pad it to the border width end up styled too, or the fill overwrites the title's own style. The border style should only apply where the title doesn't already define one, and the padding characters should visually match the border regardless of the title's alignment (left, center, or right).",
+ "gold": [
+  "rich/panel.py",
+  "rich/text.py",
+  "tests/test_log.py",
+  "tests/test_panel.py"
+ ],
+ "handed": [
+  "rich/panel.py",
+  "rich/text.py",
+  "rich/console.py",
+  "rich/rule.py",
+  "rich/segment.py",
+  "rich/table.py",
+  "rich/box.py",
+  "rich/padding.py"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "rich/panel.py"
+ ],
+ "goldEdited": 0.25,
+ "extraEdits": 0,
+ "turns": 12,
+ "tools": {
+  "Read": 2,
+  "Grep": 1,
+  "Bash": 3,
+  "Edit": 5
+ },
+ "inputTokens": 15187,
+ "outputTokens": 4244,
+ "cacheReadTokens": 174888,
+ "costUsd": 0.24128960000000002,
+ "ms": 52202,
+ "isError": false
+}

@@ -107,7 +107,7 @@ $ context-packer pack "Add exponential backoff with jitter to Jev HTTP retries" 
 ### Include the code
 
 `--code N` (or `code: N` on the MCP tool) adds the most relevant lines of the top N files: short windows that mention
-the most distinct task words, about 8,000 characters in all, so the agent can often start without opening the files.
+the most distinct task words, about 8,000 characters in all. In the agent test it cut searches a little but not cost or time.
 For the hook, set `CONTEXT_PACKER_HOOK_CODE=3`.
 
 ## Configuration
@@ -151,6 +151,14 @@ pnpm tsx bench/mine.ts                # freeze tasks from pinned history (repos 
 pnpm tsx bench/run.ts jev test        # run a provider; Jev responses are cached by request
 pnpm tsx bench/report.ts              # bench/results/summary.json and runs.json, with paired bootstrap intervals
 ```
+
+With the task written the way a developer would ask (`bench/realistic.ts`), Jev put 91% of needed files in its top 10
+and keyword search 75%.
+
+Does that make Claude Code faster? `bench/agent.ts` ran Opus on 40 of the changes three times each: on its own, with the
+hook's file list, and with the file list plus code. It didn't: about 10 steps, $0.20 and 40 s per change in every arm,
+with differences small enough to be luck (`bench/results/agent-summary.json`). The changes were easy for Opus; large
+projects, many-file changes and weaker models are still untested.
 
 What was tried and didn't ship: per-language file summaries for TypeScript, Python, Go and Rust
 (`bench/lang-sketch.ts`) found as many files as the simple ones, within half a file per 100, and cost up to 58% more.

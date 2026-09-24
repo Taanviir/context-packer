@@ -1,0 +1,29 @@
+{
+ "id": "hono-a3d9f1371b",
+ "repo": "hono",
+ "arm": "none",
+ "model": "opus",
+ "request": "When a client disconnects mid-request, the SSE writer keeps blocking forever instead of noticing the disconnect and unblocking so the handler can finish.",
+ "gold": [
+  "deno_dist/utils/stream.ts",
+  "src/utils/stream.ts"
+ ],
+ "handed": [],
+ "hookSeen": false,
+ "edited": [
+  "src/utils/stream.ts"
+ ],
+ "goldEdited": 0.5,
+ "extraEdits": 0,
+ "turns": 3,
+ "tools": {
+  "Bash": 1,
+  "Edit": 1
+ },
+ "inputTokens": 8753,
+ "outputTokens": 1226,
+ "cacheReadTokens": 47624,
+ "costUsd": 0.10404479999999999,
+ "ms": 17863,
+ "isError": false
+}

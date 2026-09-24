@@ -1,0 +1,39 @@
+{
+ "id": "prometheus-79869d9a4d",
+ "repo": "prometheus",
+ "arm": "files",
+ "model": "opus",
+ "request": "There's a race condition around minValidTime in the head block — it's read and written without synchronization, so concurrent appenders can see a stale or torn value. Please make access to it atomic so truncation and appender creation can't race.",
+ "gold": [
+  "head.go"
+ ],
+ "handed": [
+  "head.go",
+  "db.go",
+  "wal.go",
+  "head_test.go",
+  "db_test.go",
+  "wal/wal.go",
+  "block.go",
+  "querier_test.go"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "head.go"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 0,
+ "turns": 12,
+ "tools": {
+  "Grep": 1,
+  "Read": 2,
+  "Bash": 2,
+  "Edit": 6
+ },
+ "inputTokens": 13822,
+ "outputTokens": 2781,
+ "cacheReadTokens": 123163,
+ "costUsd": 0.19078060000000002,
+ "ms": 37473,
+ "isError": false
+}

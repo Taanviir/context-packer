@@ -1,0 +1,32 @@
+{
+ "id": "gin-647535cd9b",
+ "repo": "gin",
+ "arm": "none",
+ "model": "opus",
+ "request": "I need a way to read query string or POST form parameters that are structured as a map, like `names[a]=x&names[b]=y`, and get back a `map[string]string` for a given key instead of just plain strings or slices.",
+ "gold": [
+  "context.go",
+  "context_test.go"
+ ],
+ "handed": [],
+ "hookSeen": false,
+ "edited": [
+  "context.go",
+  "context_test.go"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 0,
+ "turns": 9,
+ "tools": {
+  "Grep": 1,
+  "Read": 1,
+  "Bash": 3,
+  "Edit": 3
+ },
+ "inputTokens": 11322,
+ "outputTokens": 3177,
+ "cacheReadTokens": 159704,
+ "costUsd": 0.18599279999999999,
+ "ms": 41407,
+ "isError": false
+}
