@@ -59,6 +59,8 @@ function compare(a: TaskResult[], b: TaskResult[]) {
 
 const repos: Record<string, unknown> = {};
 const pooled: Record<string, Record<string, TaskResult[]>> = {};
+/** Large-project repos are reported as their own group, so adding them never moves the headline numbers. */
+const large: Record<string, Record<string, TaskResult[]>> = {};
 for (const repo of REPOS) {
   const perSplit: Record<string, unknown> = {};
   for (const split of SPLITS) {
@@ -69,7 +71,7 @@ for (const repo of REPOS) {
       if (!r) continue;
       loaded[v] = r;
       variants[v] = summarize(r);
-      ((pooled[split] ??= {})[v] ??= []).push(...r);
+      (((repo.minFiles ? large : pooled)[split] ??= {})[v] ??= []).push(...r);
     }
     const comparisons = Object.fromEntries(COMPARISONS.filter(([a, b]) => loaded[a] && loaded[b]).map(([a, b]) => [`${a} vs ${b}`, compare(loaded[a]!, loaded[b]!)]));
     perSplit[split] = { variants, comparisons };
@@ -79,7 +81,7 @@ for (const repo of REPOS) {
 
 // Comparisons pair tasks by id, so each one only covers repos where both variants ran. The pooled keyword
 // summary is restricted to the Jev repos for the same reason.
-const jevRepos = new Set(REPOS.filter((r) => r.jev).map((r) => r.name));
+const jevRepos = new Set(REPOS.filter((r) => r.jev && !r.minFiles).map((r) => r.name));
 const pooledSummary = Object.fromEntries(SPLITS.map((split) => {
   const sets = pooled[split] ?? {};
   const shown: Record<string, TaskResult[]> = { ...sets, keywords: (sets.keywords ?? []).filter((r) => jevRepos.has(r.id.split("-")[0]!)) };
@@ -89,7 +91,15 @@ const pooledSummary = Object.fromEntries(SPLITS.map((split) => {
   }];
 }));
 
-const summary = { generated: new Date().toISOString().slice(0, 10), repos, pooled: pooledSummary };
+const largeSummary = Object.fromEntries(SPLITS.map((split) => {
+  const sets = large[split] ?? {};
+  return [split, {
+    variants: Object.fromEntries(Object.entries(sets).map(([v, r]) => [v, summarize(r)])),
+    comparisons: Object.fromEntries(COMPARISONS.filter(([a, b]) => sets[a] && sets[b]).map(([a, b]) => [`${a} vs ${b}`, compare(sets[a]!, sets[b]!)])),
+  }];
+}));
+
+const summary = { generated: new Date().toISOString().slice(0, 10), repos, pooled: pooledSummary, large: largeSummary };
 writeFileSync(path.join(RESULTS, "summary.json"), JSON.stringify(summary, null, 1) + "\n");
 
 // Every task's ranking, for the run explorer. Paths are kept to the top 20 the runs recorded.

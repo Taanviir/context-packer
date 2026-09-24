@@ -27,12 +27,12 @@ export const TEST_SIZE = 30;
 const MAX_GOLD = 5;
 const NOT_A_TASK = /\b(bump|release|version|changelog|typo|readme|docs?|merge|revert|format(ting)?|lint|ci|deps|dependabot|prettier|rename|cleanup|refactor|chore|wip|update .*\.md)\b/i;
 
-/** Drops a conventional-commit prefix and a trailing PR number: "fix(jsx): handle x (#12)" -> "handle x". */
+/** Drops a ticket tag, a conventional-commit prefix and a trailing PR number: "[AIRFLOW-12] fix(jsx): handle x (#12)" -> "handle x". */
 export function taskText(subject: string): string {
-  return subject.replace(/^\w+(\([^)]*\))?!?:\s*/, "").replace(/\s*\(#\d+\)\s*$/, "").trim();
+  return subject.replace(/^\[[A-Z]+-[\dX]+\]\s*/, "").replace(/^\w+(\([^)]*\))?!?:\s*/, "").replace(/\s*\(#\d+\)\s*$/, "").trim();
 }
 
-function mine(name: string, head: string): { dev: Task[]; test: Task[]; eligible: number } {
+function mine(name: string, head: string, skip?: RegExp, minFiles = 0): { dev: Task[]; test: Task[]; eligible: number } {
   const repo = repoDir(name);
   const log = git(repo, ["log", "--no-merges", "--format=%x01%H %P%x00%s", "--name-status", "-z", head]);
   const eligible: Task[] = [];
@@ -43,7 +43,7 @@ function mine(name: string, head: string): { dev: Task[]; test: Task[]; eligible
     const subject = header.slice(nul + 1).split("\x00")[0]!;
     if (!commit || parents.length !== 1) continue;
     const task = taskText(subject);
-    if (task.split(/\s+/).length < 4 || NOT_A_TASK.test(subject)) continue;
+    if (task.split(/\s+/).length < 4 || NOT_A_TASK.test(subject) || skip?.test(subject)) continue;
 
     const fields = rest.split("\x00").filter(Boolean);
     const modified: string[] = [];
@@ -65,9 +65,19 @@ function mine(name: string, head: string): { dev: Task[]; test: Task[]; eligible
   const picked: Task[] = [];
   for (const { t } of order) {
     if (picked.length === DEV_SIZE + TEST_SIZE) break;
-    if (goldReadable(repo, t)) picked.push(t);
+    if (goldReadable(repo, t) && (minFiles === 0 || sourceFiles(repo, t.parent) >= minFiles)) picked.push(t);
   }
   return { dev: picked.slice(0, DEV_SIZE), test: picked.slice(DEV_SIZE), eligible: eligible.length };
+}
+
+/** Candidate count at a commit, by the same path and size rules the snapshot applies. */
+function sourceFiles(repo: string, sha: string): number {
+  return git(repo, ["ls-tree", "-r", "-l", "-z", sha]).split("\0").filter((line) => {
+    if (!line) return false;
+    const [meta, file] = line.split("\t") as [string, string];
+    const [mode, type, , size] = meta.split(/\s+/);
+    return type === "blob" && mode !== "120000" && Number(size) <= MAX_BYTES && isSourcePath(file);
+  }).length;
 }
 
 /** Every answer file must be a candidate at the parent commit, or the task can't be scored fairly. */
@@ -82,7 +92,7 @@ function goldReadable(repo: string, t: Task): boolean {
 if (import.meta.url === `file://${process.argv[1]}`) {
   mkdirSync(TASKS, { recursive: true });
   for (const r of REPOS) {
-    const { dev, test, eligible } = mine(r.name, r.head);
+    const { dev, test, eligible } = mine(r.name, r.head, r.skip, r.minFiles);
     writeFileSync(path.join(TASKS, `${r.name}.json`), JSON.stringify({ repo: r.name, url: r.url, head: r.head, eligible, dev, test }, null, 1) + "\n");
     console.log(`${r.name}: ${eligible} eligible commits, ${dev.length} dev, ${test.length} test`);
   }
