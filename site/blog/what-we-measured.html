@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>What 120 real changes showed · context-packer</title>
-  <meta name="description" content="Jev found more of the right files than keyword search on three of four projects. Per-language summaries didn't help, and a local model found fewer." />
+  <title>What the tests showed · context-packer</title>
+  <meta name="description" content="Jev finds the right files more often than keyword search, on small and big projects, but that did not make Claude Code faster on small changes." />
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,74 +32,41 @@
     <article>
       <header class="page-head">
         <div class="wrap">
-          <time class="mono-label" datetime="2026-09-24">24 Sep 2026</time>
-          <h1>What 120 real changes showed</h1>
-          <p class="lede">Jev found more of the right files than keyword search on three of four projects. An improvement I expected to help didn't, and the local model found fewer files than keyword search. The whole study cost about $2 of Jev usage.</p>
+          <time class="mono-label" datetime="2026-09-25">25 Sep 2026</time>
+          <h1>What the tests showed</h1>
+          <p class="lede">Jev finds the right files more often than keyword search, on small projects and big ones. That didn't make Claude Code faster on small changes. Here's how I found out, including what didn't work.</p>
         </div>
       </header>
       <section class="section">
         <div class="wrap"><div class="prose">
-          <h2 style="margin-top: 0">The setup</h2>
-          <p>A tool like this is only useful if the files it puts first are the ones the change needs. Git history already records that. So each test is a real past commit: its message is the task, the files it changed are the answer, and the tool sees the project as it was just before, so the answer can't leak in.</p>
-          <p>The score is one question: of the files the change needed, how many did the tool put in its top 10? If a change touched two files and both are in the top 10, that test scores 100%; one of them, 50%. The literature calls this recall@10.</p>
-          <p>Six projects, each frozen at one commit: hono (TypeScript, about 270 source files), rich (Python, 160), gin (Go, 73), prometheus (Go and TypeScript, 1,220), httpx (Python) and ripgrep (Rust). From each, a fixed order picks 10 changes for making decisions and 30 for testing, among commits that modify one to five existing files and add or delete none. Anything I tuned, I tuned on the first 10. The 30 test changes ran once per tool.</p>
+          <h2 style="margin-top: 0">The test</h2>
+          <p>A tool like this is only useful if the files it puts first are the ones a change needs. Git history already records that. So each test is a real past commit: its message is the task, the files it changed are the answer, and the tool sees the project as it was just before.</p>
+          <p>The score is simple. Of the files the change needed, how many made the top 10? I used real changes from six open-source projects, and made every decision on a separate set of changes, so the results weren't tuned to the tests.</p>
 
-          <h2>The main result</h2>
-          <p>Over the 120 test changes on the four projects Jev ran on, the share of needed files each tool found:</p>
-          <div class="table-scroll"><table class="data-table">
-            <thead><tr><th>Tool</th><th>In top 5</th><th>In top 10</th><th>In top 20</th><th>Time per search</th><th>Cost per search</th></tr></thead>
-            <tbody>
-              <tr><td>Keywords</td><td>56%</td><td>69%</td><td>79%</td><td>53 ms</td><td>$0</td></tr>
-              <tr><td>Jev</td><td>69%</td><td>78%</td><td>88%</td><td>2.5 s</td><td>$0.007</td></tr>
-            </tbody>
-          </table></div>
-          <p>So in the top 10, Jev finds 9 more needed files per 100. With 120 tests that could still be partly luck, so I checked with a bootstrap: the real gain is very likely between 4 and 15 per 100. In the top 5 it's 13 more (between 7 and 20). The gain is biggest where the list is shortest, which is where an agent looks first.</p>
-          <p>Project by project, Jev found 11 more per 100 on hono, 12 on rich and 14 on prometheus. Gin was a tie. Gin has only 73 source files and keyword search already found 87% of needed files there, so there was little left to find. The <a href="../findings.html">findings page</a> has the ranges for each project, and the <a href="../explorer.html">run explorer</a> shows every test.</p>
+          <h2>It finds the right files</h2>
+          <p>Plain keyword search put 69% of the needed files in its top 10. Jev put 78%. The gap was biggest in the top 5, where an agent looks first.</p>
+          <p>Commit messages are terse, though, and people type longer requests. So I had a language model rewrite each change as a request, without naming the files involved. With those, keyword search reached 75% and Jev 91%.</p>
 
-          <h2>The idea that didn't work</h2>
-          <p>The sketcher that summarizes each file for the wide pass looks for Kotlin keywords: <code>class</code>, <code>fun</code>, <code>val</code>, <code>object</code>. On a Python or Go file, that leaves little besides the path. Per-language rules looked like the obvious improvement, so I wrote them for TypeScript, Python, Go, Rust, C#, Swift and a few more, with docstrings and <code>///</code> comments.</p>
-          <p>On the 10 changes per project used for decisions, they tied. On the test changes they tied again: within half a file per 100 of the simple summaries. And they cost more, because richer summaries are longer: 58% more on prometheus.</p>
-          <p>The reason is in the pool size. Up to 120 files get a full-source read, and on repositories of 70 to 1,200 files, that pool already holds most of the answers, chosen partly by BM25. The sketch pass only has to add a few files to the pool, and a path plus a file name often does that as well as a list of declarations. So the per-language sketcher didn't ship. It stays in the benchmark folder so the result can be reproduced. Sketches may matter on much larger repositories, but I didn't measure that.</p>
+          <h2>Two things that didn't work</h2>
+          <p>Jev first reads a short summary of every file. I expected summaries tailored to each language to help. They didn't: the same files came out on top, at a higher cost, so they didn't ship.</p>
+          <p>Laya is a small model that runs on your own computer, so no code leaves it. It found fewer files than plain keyword search, which also runs locally, and took up to a minute per search. It's still there for anyone who needs everything local.</p>
 
-          <h2>The local model</h2>
-          <p>Laya is a small model that runs on your own CPU, so no code leaves the machine. It scores a 60-file keyword shortlist, one short excerpt at a time. On gin and httpx it found 81% of needed files in its top 10, where keyword search found 87%: about 6 fewer per 100, very likely between 2 and 10 fewer. Each search took 27 seconds on httpx and 54 on gin, all of it CPU.</p>
-          <p>So Laya is only worth it when code must not leave the machine, and even then keyword search, which also runs locally, did better on these tests.</p>
+          <h2>Big projects</h2>
+          <p>The first projects were small to medium, so I added vscode and airflow, using only changes from when they already had 8,000 to 11,000 files. Everything finds less in a codebase that size, but Jev kept its lead: 60% of needed files in its top 10, against 47% for keyword search, at about 5 seconds and a few cents a search.</p>
 
-          <h2>Faster keyword search, same answers</h2>
-          <p>On a 14,004-file checkout of VS Code, a keyword pack took 4.2 seconds and 740 MB, most of it building a term map for every word of every file. BM25 only needs counts for the query's own terms and each file's length. Counting just those brought ranking from 2.8 to 2.0 seconds and memory to 620 MB, and the results on all 180 keyword tests came out identical.</p>
+          <h2>It didn't make Claude Code faster, yet</h2>
+          <p>This was the question that mattered most. Claude Code with Opus made 40 of the changes three times: on its own, with Jev's file list, and with the list plus the most relevant lines of code.</p>
+          <p>All three took about 10 steps, 20 cents and 40 seconds a change. The changes were easy for Opus: it found the right files with a couple of searches, so a list had little to save. It's like handing a map to someone who already knows the neighborhood.</p>
+          <p>A trial on 10 changes had looked better, with a fifth fewer steps. The full 40 showed that was mostly those 10.</p>
 
-          <h2>Two bugs the benchmark found</h2>
-          <ul>
-            <li>Some Jev requests came back as HTTP 403 with an HTML page. The client reported "Jev rejected the API key", but the page was an edge firewall objecting to something in the source text. One such file cost its whole batch of six. Jev now reports it as rejected content, and the packer halves a rejected batch until only the offending file is lost.</li>
-            <li>The hook skipped "Stop writing to the SSE stream after the client aborts" as a conversational reply, because it starts with "stop". Only short prompts count as replies now.</li>
-          </ul>
-
-          <h2>Realistic requests</h2>
-          <p>Commit subjects are short and sometimes cryptic, so I also rewrote every test change as the request a developer would type, with a language model that saw the change but wasn't allowed to name its files or anything that only appears in the diff. With those requests, keyword search found 75% of needed files in its top 10 and Jev found 91%. The gap grew from 9 to 16 per 100.</p>
-
-          <h2>Large projects</h2>
-          <p>The main projects are small to medium, so I added two large ones, taking changes only from when they were already big: vscode at about 11,300 source files and airflow at about 8,100. Jev found 60% of needed files in its top 10 on both; keyword search found 42% on vscode and 52% on airflow. A search took 4 to 5 seconds and 3 to 6 cents. Everything finds less in a codebase that size, but Jev's lead holds, clearly on vscode and within luck on airflow.</p>
-
-          <h2>Does it make Claude Code faster?</h2>
-          <p>This was the question that mattered most, so I tested it directly. Claude Code with Opus made 40 of the test changes three times each: on its own, with the hook giving it Jev's file list, and with the file list plus the most relevant lines of code.</p>
-          <p>The answer, for these changes: no. All three versions took about ten steps, cost about 20 cents and finished in about 40 seconds. With the hook, Claude changed the right files a little more often (80% against 77%) and searched a little less, but every difference was small enough to be luck.</p>
-          <p>The reason is that these changes were easy for Opus. It found the right files with a couple of quick searches, so a list of suggestions had almost nothing to save. It's like handing a map to someone who already knows the neighborhood. A trial run on 10 changes had looked better, with a fifth fewer steps; the full 40 showed that was mostly those 10 changes.</p>
-          <p>So the tool is good at its own job, putting the right files first, but that hasn't yet turned into a faster agent. Where it might: large projects where searching takes many steps, changes that touch many files, and weaker models. Those are the next tests.</p>
-
-          <h2>What this doesn't show</h2>
-          <ul>
-            <li>The agent test measured steps, cost, time and which files changed, not whether each change was correct.</li>
-            <li>It used one strong model on small changes in projects of up to 1,200 files.</li>
-          </ul>
-
-          <h2>What it cost</h2>
-          <p>Every Jev run, the rejected sketcher, the realistic requests and the large projects included, billed 169 million input tokens: about $7.08, which used up the account's credits. The 120 agent runs used about a quarter of a five-hour Claude plan window. Responses are cached by request body, so re-running the published numbers costs nothing. The cache is attached to the release.</p>
-          <p class="meta">Method, per-repository intervals and the raw tables are on the <a href="../findings.html">findings page</a>.</p>
-        </div>
-        </div>
+          <h2>What's next</h2>
+          <p>The tool is good at its own job. What's untested is whether that saves work where searching is actually hard: large projects, changes that span many files, and weaker models that search less well. A test with Sonnet and Haiku had started when the Jev credits ran out. The harness picks up where it stopped.</p>
+          <p class="meta">The numbers, charts and limits are on the <a href="../findings.html">findings page</a>, and every test is in the <a href="../explorer.html">run explorer</a>.</p>
+        </div></div>
       </section>
     </article>
   </main>
+
   <footer class="footer">
     <div class="wrap">
       <span class="wordmark">context<span>·</span>packer</span>

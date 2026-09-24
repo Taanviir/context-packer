@@ -139,32 +139,24 @@ It expects `{"answers": {"relevant": {"noul": 0.42}}}`, with optional `usage.inp
 
 ## Benchmark
 
-Each test is a real commit: the message is the task, and the files it changed are the answer. The tool sees the
-project as it was before the commit. The score is the share of needed files that land in the top 10. Six projects are
-pinned: hono, rich, gin and prometheus (keywords and Jev), plus httpx and ripgrep (keywords). Laya ran on gin and
-httpx. Decisions were made on 10 changes per project; the reported numbers are 30 other changes per project, run once.
-The difference between Jev and keywords is very likely between 4 and 15 more needed files per 100 (a 95% bootstrap
-interval).
+Each test is a real past change: the commit message is the task, and the files it changed are the answer. The tool sees
+the project as it was just before. The score is how many of the needed files land in the top 10.
+
+| Question | Answer |
+| --- | --- |
+| Does it find the right files? | Yes: Jev 78%, keyword search 69%. With realistic requests, 91% and 75%. |
+| On big projects (8,000+ files)? | Yes, though everything finds less: Jev 60%, keyword search 47%. |
+| Does it make Claude Code faster? | Not on small changes: about 10 steps, $0.20 and 40 s with or without it (Opus, 40 changes). |
+
+Details, charts and limits are on the [findings page](https://taanviir.github.io/context-packer/findings.html).
 
 ```
-pnpm tsx bench/mine.ts                # freeze tasks from pinned history (repos cloned into bench/.cache/repos)
-pnpm tsx bench/run.ts jev test        # run a provider; Jev responses are cached by request
-pnpm tsx bench/report.ts              # bench/results/summary.json and runs.json, with paired bootstrap intervals
+pnpm tsx bench/mine.ts            # pick tasks from pinned history (repos cloned into bench/.cache/repos)
+pnpm tsx bench/run.ts jev test    # rank with one tool; Jev answers are cached, so reruns are free
+pnpm tsx bench/report.ts          # bench/results/summary.json and runs.json
+pnpm tsx bench/realistic.ts       # rewrite tasks as realistic requests
+pnpm tsx bench/agent.ts --report  # the Claude Code test
 ```
-
-With the task written the way a developer would ask (`bench/realistic.ts`), Jev put 91% of needed files in its top 10
-and keyword search 75%.
-
-On two large projects, vscode (about 11,300 files) and airflow (about 8,100), Jev put 60% of needed files in its top 10
-and keyword search 47%, at 4–5 s and $0.03–0.06 per search. These are reported separately from the numbers above.
-
-Does that make Claude Code faster? `bench/agent.ts` ran Opus on 40 of the changes three times each: on its own, with the
-hook's file list, and with the file list plus code. It didn't: about 10 steps, $0.20 and 40 s per change in every arm,
-with differences small enough to be luck (`bench/results/agent-summary.json`). The changes were easy for Opus; large
-projects, many-file changes and weaker models are still untested.
-
-What was tried and didn't ship: per-language file summaries for TypeScript, Python, Go and Rust
-(`bench/lang-sketch.ts`) found as many files as the simple ones, within half a file per 100, and cost up to 58% more.
 
 ## Limits
 

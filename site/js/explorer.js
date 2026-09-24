@@ -93,7 +93,7 @@
     const miss = document.createElement("span");
     miss.className = "miss";
     miss.textContent = missing ? `+${missing}` : "";
-    miss.title = missing ? `${missing} changed file${missing > 1 ? "s" : ""} not in the top 20` : "";
+    miss.title = missing ? `${missing} needed file${missing > 1 ? "s" : ""} not in the top 20` : "";
     wrap.append(tag, cells, miss);
     return wrap;
   }
