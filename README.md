@@ -155,6 +155,9 @@ pnpm tsx bench/report.ts              # bench/results/summary.json and runs.json
 With the task written the way a developer would ask (`bench/realistic.ts`), Jev put 91% of needed files in its top 10
 and keyword search 75%.
 
+On two large projects, vscode (about 11,300 files) and airflow (about 8,100), Jev put 60% of needed files in its top 10
+and keyword search 47%, at 4–5 s and $0.03–0.06 per search. These are reported separately from the numbers above.
+
 Does that make Claude Code faster? `bench/agent.ts` ran Opus on 40 of the changes three times each: on its own, with the
 hook's file list, and with the file list plus code. It didn't: about 10 steps, $0.20 and 40 s per change in every arm,
 with differences small enough to be luck (`bench/results/agent-summary.json`). The changes were easy for Opus; large

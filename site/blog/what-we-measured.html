@@ -77,6 +77,9 @@
           <h2>Realistic requests</h2>
           <p>Commit subjects are short and sometimes cryptic, so I also rewrote every test change as the request a developer would type, with a language model that saw the change but wasn't allowed to name its files or anything that only appears in the diff. With those requests, keyword search found 75% of needed files in its top 10 and Jev found 91%. The gap grew from 9 to 16 per 100.</p>
 
+          <h2>Large projects</h2>
+          <p>The main projects are small to medium, so I added two large ones, taking changes only from when they were already big: vscode at about 11,300 source files and airflow at about 8,100. Jev found 60% of needed files in its top 10 on both; keyword search found 42% on vscode and 52% on airflow. A search took 4 to 5 seconds and 3 to 6 cents. Everything finds less in a codebase that size, but Jev's lead holds, clearly on vscode and within luck on airflow.</p>
+
           <h2>Does it make Claude Code faster?</h2>
           <p>This was the question that mattered most, so I tested it directly. Claude Code with Opus made 40 of the test changes three times each: on its own, with the hook giving it Jev's file list, and with the file list plus the most relevant lines of code.</p>
           <p>The answer, for these changes: no. All three versions took about ten steps, cost about 20 cents and finished in about 40 seconds. With the hook, Claude changed the right files a little more often (80% against 77%) and searched a little less, but every difference was small enough to be luck.</p>
@@ -90,7 +93,7 @@
           </ul>
 
           <h2>What it cost</h2>
-          <p>Every Jev run, the rejected sketcher and the realistic requests included, billed 67.6 million input tokens: about $2.84. The 120 agent runs used about a quarter of a five-hour Claude plan window. Responses are cached by request body, so re-running the published numbers costs nothing. The cache is attached to the release.</p>
+          <p>Every Jev run, the rejected sketcher, the realistic requests and the large projects included, billed 169 million input tokens: about $7.08, which used up the account's credits. The 120 agent runs used about a quarter of a five-hour Claude plan window. Responses are cached by request body, so re-running the published numbers costs nothing. The cache is attached to the release.</p>
           <p class="meta">Method, per-repository intervals and the raw tables are on the <a href="../findings.html">findings page</a>.</p>
         </div>
         </div>

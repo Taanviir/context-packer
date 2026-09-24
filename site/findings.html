@@ -44,7 +44,7 @@
       <div class="wrap">
         <div class="prose">
           <h2 style="margin-top: 0">Project by project</h2>
-          <p>Thirty tests per project. Jev ran on hono, rich, gin and prometheus. Laya ran on gin and httpx. ripgrep has keyword search only.</p>
+          <p>Thirty tests per project. Jev ran on hono, rich, gin and prometheus, the main four, and on two large projects, airflow and vscode. Laya ran on gin and httpx. ripgrep has keyword search only.</p>
         </div>
         <figure class="chart" id="chart-repos"></figure>
 
@@ -84,6 +84,18 @@
         </table></div>
         <p>With realistic requests, Jev finds 16 more needed files per 100 in the top 10 than keyword search, plausibly between 11 and 22. The rewriter saw each change, so its wording may be a little more specific than a real person's; that helps both tools.</p>
 
+        <h2>Large projects</h2>
+        <p>The main four projects have about 70 to 1,200 source files. To see what happens at scale, 30 changes each were taken from vscode and airflow, only from points in their history where they already had 8,000 and 7,000 source files.</p>
+        <div class="table-scroll"><table class="data-table">
+          <thead><tr><th>Needed files found in the top 10</th><th>vscode (about 11,300 files)</th><th>airflow (about 8,100 files)</th></tr></thead>
+          <tbody>
+            <tr><td>Keyword search</td><td>42%</td><td>52%</td></tr>
+            <tr><td>Jev</td><td>60%</td><td>60%</td></tr>
+            <tr><td>Jev time and cost per search</td><td>5 s, $0.06</td><td>4 s, $0.03</td></tr>
+          </tbody>
+        </table></div>
+        <p>Across both, Jev finds 13 more needed files per 100 than keyword search, plausibly between 4 and 23. On vscode alone the gain is clear (18 more per 100); on airflow it could be chance. Both tools find less than on the smaller projects: in a very large codebase the right files are simply harder to pick out. These two projects are kept out of the headline numbers so those stay comparable.</p>
+
         <h2>Does it make Claude Code faster?</h2>
         <p>Finding the right files is only useful if it saves the agent work. To check, Claude Code (Opus) made 40 of the test changes three times each, in a clean copy of the project: on its own, with the hook handing it Jev's file list, and with the file list plus the most relevant lines of code.</p>
         <div class="table-scroll"><table class="data-table">
@@ -110,7 +122,7 @@
           <li>Tuning and test sets: a fixed order over eligible commits. The first 10 per project were used to make decisions, and the next 30 are the tests reported here, run once.</li>
           <li>Commit messages are short and often vaguer than a real request to an agent. Finding the right files is also not the same as making the right change; this benchmark measures only the first.</li>
           <li>Agent test: Claude Code with Opus, headless, one clean git worktree per run, the same tools and settings in every arm except the hook. 120 runs on 40 changes from hono, rich, gin and prometheus, with realistic requests. Scored on steps, tool calls, cost, time and whether it changed the files the real commit changed.</li>
-          <li>All file-finding runs together, including the per-language summaries that didn't ship, billed 68 million Jev input tokens, about $2.84.</li>
+          <li>All file-finding runs together, including the per-language summaries that didn't ship and the large projects, billed 169 million Jev input tokens, about $7.08. Jev with realistic requests on the large projects didn't run: the credits ran out.</li>
         </ul>
         <p>Browse every task and both rankings in the <a href="explorer.html">run explorer</a>.</p>
         <p>Everything is reproducible from the repository: <code>bench/mine.ts</code> freezes the tasks, <code>bench/run.ts</code> runs a provider, and <code>bench/report.ts</code> writes the summary this page draws from. Jev responses are cached by request, so a replay is free.</p>
