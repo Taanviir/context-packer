@@ -4,22 +4,30 @@ const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const COMMANDS = [
   { label: "Home", hint: "page", href: `${base}/` },
   { label: "Findings: the benchmark", hint: "page", href: `${base}/findings.html` },
-  { label: "Run explorer: every task, both rankings", hint: "page", href: `${base}/explorer.html` },
+  { label: "Run explorer: every test, two tools side by side", hint: "page", href: `${base}/explorer.html` },
+  { label: "Install", hint: "page", href: `${base}/#install` },
   { label: "Blog", hint: "page", href: `${base}/blog/` },
   { label: "How the ranking works", hint: "post", href: `${base}/blog/how-it-ranks.html` },
   { label: "What 120 real changes showed", hint: "post", href: `${base}/blog/what-we-measured.html` },
   { label: "Copy: npx @taanviir/context-packer pack", hint: "copy", copy: 'npx -y @taanviir/context-packer pack "describe the change"' },
+  { label: "Copy: /plugin marketplace add", hint: "copy", copy: "/plugin marketplace add Taanviir/context-packer" },
   { label: "Copy: claude mcp add", hint: "copy", copy: "claude mcp add context-packer -- npx -y @taanviir/context-packer mcp" },
   { label: "Source on GitHub", hint: "link", href: "https://github.com/Taanviir/context-packer" },
   { label: "Package on npm", hint: "link", href: "https://www.npmjs.com/package/@taanviir/context-packer" },
 ];
 
+const status = document.createElement("div");
+status.className = "visually-hidden";
+status.setAttribute("role", "status");
+document.body.append(status);
+const announce = (text) => { status.textContent = ""; requestAnimationFrame(() => { status.textContent = text; }); };
+
 function palette() {
   const root = document.createElement("div");
   root.className = "palette";
   root.innerHTML = `<div class="palette-box" role="dialog" aria-modal="true" aria-label="Command palette">
-    <input type="text" placeholder="Jump to a page or copy a command" aria-label="Search commands" autocomplete="off" />
-    <ul role="listbox"></ul></div>`;
+    <input type="text" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" placeholder="Jump to a page or copy a command" aria-label="Search pages and commands" autocomplete="off" />
+    <ul role="listbox" id="palette-list" aria-label="Results"></ul></div>`;
   document.body.append(root);
   const input = root.querySelector("input");
   const list = root.querySelector("ul");
@@ -29,8 +37,18 @@ function palette() {
 
   const render = () => {
     list.innerHTML = "";
+    input.removeAttribute("aria-activedescendant");
+    if (!items.length) {
+      const li = document.createElement("li");
+      li.className = "palette-empty";
+      li.textContent = "Nothing matches. Try \"install\" or \"blog\".";
+      list.append(li);
+      return;
+    }
     items.forEach((c, i) => {
       const li = document.createElement("li");
+      li.id = `palette-${i}`;
+      if (i === selected) input.setAttribute("aria-activedescendant", li.id);
       li.setAttribute("role", "option");
       li.setAttribute("aria-selected", String(i === selected));
       li.innerHTML = `<span></span><span class="hint"></span>`;
@@ -54,7 +72,10 @@ function palette() {
     opener?.focus();
   };
   const run = async (c) => {
-    if (c.copy) await navigator.clipboard?.writeText(c.copy).catch(() => {});
+    if (c.copy) {
+      const ok = await navigator.clipboard?.writeText(c.copy).then(() => true, () => false);
+      announce(ok ? `Copied ${c.copy}` : "Unable to copy. Select the command on the page and copy it.");
+    }
     close();
     if (c.href) location.href = c.href;
   };
@@ -85,8 +106,10 @@ function copyButtons() {
       try {
         await navigator.clipboard.writeText(text);
         button.textContent = "Copied";
+        announce("Copied");
       } catch {
         button.textContent = "Select and copy";
+        announce("Unable to copy. Select the command and copy it.");
       }
       setTimeout(() => { button.textContent = "Copy"; }, 1600);
     });
