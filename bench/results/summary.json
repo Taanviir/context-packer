@@ -946,6 +946,166 @@
     }
    }
   },
+  "airflow": {
+   "url": "https://github.com/apache/airflow",
+   "language": "Python",
+   "head": "8851f2f05d1f67668d2261ede444ae342f77fd8d",
+   "jev": true,
+   "dev": {
+    "variants": {},
+    "comparisons": {}
+   },
+   "test": {
+    "variants": {
+     "keywords": {
+      "tasks": 30,
+      "candidates": 8072,
+      "recall": {
+       "5": 0.441111111111111,
+       "10": 0.5244444444444444,
+       "20": 0.6477777777777778
+      },
+      "ms": 456,
+      "costUsd": 0,
+      "inputTokens": 0,
+      "failedBatches": 0
+     },
+     "jev": {
+      "tasks": 30,
+      "candidates": 8072,
+      "recall": {
+       "5": 0.5644444444444444,
+       "10": 0.5988888888888889,
+       "20": 0.7300000000000001
+      },
+      "ms": 3855,
+      "costUsd": 0.033975565400000005,
+      "inputTokens": 808942,
+      "failedBatches": 0
+     }
+    },
+    "comparisons": {
+     "jev vs keywords": {
+      "5": {
+       "diff": 0.12333333333333334,
+       "lo": 0.016666666666666666,
+       "hi": 0.25,
+       "tasks": 30
+      },
+      "10": {
+       "diff": 0.07444444444444445,
+       "lo": -0.05,
+       "hi": 0.2011111111111111,
+       "tasks": 30
+      },
+      "20": {
+       "diff": 0.08222222222222222,
+       "lo": -0.03333333333333333,
+       "hi": 0.19777777777777775,
+       "tasks": 30
+      }
+     }
+    }
+   },
+   "real": {
+    "variants": {
+     "keywords": {
+      "tasks": 28,
+      "candidates": 8013,
+      "recall": {
+       "5": 0.4285714285714285,
+       "10": 0.5297619047619048,
+       "20": 0.6797619047619047
+      },
+      "ms": 463,
+      "costUsd": 0,
+      "inputTokens": 0,
+      "failedBatches": 0
+     }
+    },
+    "comparisons": {}
+   }
+  },
+  "vscode": {
+   "url": "https://github.com/microsoft/vscode",
+   "language": "TypeScript",
+   "head": "ceeb50ecd8021211707307a9d44cf85120b68c02",
+   "jev": true,
+   "dev": {
+    "variants": {},
+    "comparisons": {}
+   },
+   "test": {
+    "variants": {
+     "keywords": {
+      "tasks": 30,
+      "candidates": 11298,
+      "recall": {
+       "5": 0.3733333333333333,
+       "10": 0.42,
+       "20": 0.611111111111111
+      },
+      "ms": 1000,
+      "costUsd": 0,
+      "inputTokens": 0,
+      "failedBatches": 0
+     },
+     "jev": {
+      "tasks": 30,
+      "candidates": 11298,
+      "recall": {
+       "5": 0.4988888888888889,
+       "10": 0.6033333333333333,
+       "20": 0.6444444444444444
+      },
+      "ms": 5119,
+      "costUsd": 0.060723032999999996,
+      "inputTokens": 1445787,
+      "failedBatches": 0
+     }
+    },
+    "comparisons": {
+     "jev vs keywords": {
+      "5": {
+       "diff": 0.12555555555555553,
+       "lo": -0.02777777777777778,
+       "hi": 0.28111111111111114,
+       "tasks": 30
+      },
+      "10": {
+       "diff": 0.18333333333333332,
+       "lo": 0.060000000000000005,
+       "hi": 0.32333333333333336,
+       "tasks": 30
+      },
+      "20": {
+       "diff": 0.03333333333333333,
+       "lo": -0.06666666666666667,
+       "hi": 0.13333333333333333,
+       "tasks": 30
+      }
+     }
+    }
+   },
+   "real": {
+    "variants": {
+     "keywords": {
+      "tasks": 30,
+      "candidates": 11298,
+      "recall": {
+       "5": 0.43333333333333335,
+       "10": 0.47333333333333333,
+       "20": 0.6022222222222223
+      },
+      "ms": 1019,
+      "costUsd": 0,
+      "inputTokens": 0,
+      "failedBatches": 0
+     }
+    },
+    "comparisons": {}
+   }
+  },
   "httpx": {
    "url": "https://github.com/encode/httpx",
    "language": "Python",
@@ -1343,6 +1503,82 @@
      }
     }
    }
+  }
+ },
+ "large": {
+  "dev": {
+   "variants": {},
+   "comparisons": {}
+  },
+  "test": {
+   "variants": {
+    "keywords": {
+     "tasks": 60,
+     "candidates": 9685,
+     "recall": {
+      "5": 0.40722222222222215,
+      "10": 0.47222222222222227,
+      "20": 0.6294444444444445
+     },
+     "ms": 728,
+     "costUsd": 0,
+     "inputTokens": 0,
+     "failedBatches": 0
+    },
+    "jev": {
+     "tasks": 60,
+     "candidates": 9685,
+     "recall": {
+      "5": 0.5316666666666666,
+      "10": 0.601111111111111,
+      "20": 0.6872222222222223
+     },
+     "ms": 4487,
+     "costUsd": 0.047349299200000014,
+     "inputTokens": 1127364,
+     "failedBatches": 0
+    }
+   },
+   "comparisons": {
+    "jev vs keywords": {
+     "5": {
+      "diff": 0.12444444444444445,
+      "lo": 0.030000000000000002,
+      "hi": 0.22388888888888883,
+      "tasks": 60
+     },
+     "10": {
+      "diff": 0.1288888888888889,
+      "lo": 0.03666666666666667,
+      "hi": 0.22555555555555556,
+      "tasks": 60
+     },
+     "20": {
+      "diff": 0.05777777777777778,
+      "lo": -0.020555555555555563,
+      "hi": 0.13555555555555557,
+      "tasks": 60
+     }
+    }
+   }
+  },
+  "real": {
+   "variants": {
+    "keywords": {
+     "tasks": 58,
+     "candidates": 9712,
+     "recall": {
+      "5": 0.43103448275862066,
+      "10": 0.5005747126436781,
+      "20": 0.639655172413793
+     },
+     "ms": 751,
+     "costUsd": 0,
+     "inputTokens": 0,
+     "failedBatches": 0
+    }
+   },
+   "comparisons": {}
   }
  }
 }

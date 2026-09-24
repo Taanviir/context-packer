@@ -5,3 +5,4 @@ dist/
 site/data/
 bench/.cache/
 .claude/worktrees/
+.claude/skills/

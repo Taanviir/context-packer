@@ -1,106 +1,108 @@
 {
- "tasks": 40,
- "metrics": {
-  "turns": {
-   "none": {
-    "mean": 10.375,
-    "better": 0,
-    "worse": 0
+ "opus": {
+  "tasks": 40,
+  "metrics": {
+   "turns": {
+    "none": {
+     "mean": 10.375,
+     "better": 0,
+     "worse": 0
+    },
+    "files": {
+     "mean": 10.325,
+     "better": 19,
+     "worse": 16
+    },
+    "code": {
+     "mean": 9.925,
+     "better": 21,
+     "worse": 15
+    }
    },
-   "files": {
-    "mean": 10.325,
-    "better": 19,
-    "worse": 16
+   "searches": {
+    "none": {
+     "mean": 4.45,
+     "better": 0,
+     "worse": 0
+    },
+    "files": {
+     "mean": 4.275,
+     "better": 18,
+     "worse": 15
+    },
+    "code": {
+     "mean": 3.75,
+     "better": 20,
+     "worse": 13
+    }
    },
-   "code": {
-    "mean": 9.925,
-    "better": 21,
-    "worse": 15
-   }
-  },
-  "searches": {
-   "none": {
-    "mean": 4.45,
-    "better": 0,
-    "worse": 0
+   "reads": {
+    "none": {
+     "mean": 1.8,
+     "better": 0,
+     "worse": 0
+    },
+    "files": {
+     "mean": 1.725,
+     "better": 11,
+     "worse": 14
+    },
+    "code": {
+     "mean": 1.825,
+     "better": 11,
+     "worse": 15
+    }
    },
-   "files": {
-    "mean": 4.275,
-    "better": 18,
-    "worse": 15
+   "needed files edited": {
+    "none": {
+     "mean": 0.7729166666666666,
+     "better": 0,
+     "worse": 0
+    },
+    "files": {
+     "mean": 0.7958333333333333,
+     "better": 6,
+     "worse": 2
+    },
+    "code": {
+     "mean": 0.7958333333333333,
+     "better": 6,
+     "worse": 2
+    }
    },
-   "code": {
-    "mean": 3.75,
-    "better": 20,
-    "worse": 13
-   }
-  },
-  "reads": {
-   "none": {
-    "mean": 1.8,
-    "better": 0,
-    "worse": 0
+   "cost $": {
+    "none": {
+     "mean": 0.20568861999999993,
+     "better": 0,
+     "worse": 0
+    },
+    "files": {
+     "mean": 0.19636023,
+     "better": 14,
+     "worse": 26
+    },
+    "code": {
+     "mean": 0.20334821,
+     "better": 12,
+     "worse": 28
+    }
    },
-   "files": {
-    "mean": 1.725,
-    "better": 11,
-    "worse": 14
-   },
-   "code": {
-    "mean": 1.825,
-    "better": 11,
-    "worse": 15
-   }
-  },
-  "needed files edited": {
-   "none": {
-    "mean": 0.7729166666666666,
-    "better": 0,
-    "worse": 0
-   },
-   "files": {
-    "mean": 0.7958333333333333,
-    "better": 6,
-    "worse": 2
-   },
-   "code": {
-    "mean": 0.7958333333333333,
-    "better": 6,
-    "worse": 2
-   }
-  },
-  "cost $": {
-   "none": {
-    "mean": 0.20568861999999993,
-    "better": 0,
-    "worse": 0
-   },
-   "files": {
-    "mean": 0.19636023,
-    "better": 14,
-    "worse": 26
-   },
-   "code": {
-    "mean": 0.20334821,
-    "better": 12,
-    "worse": 28
-   }
-  },
-  "time s": {
-   "none": {
-    "mean": 40.69444999999998,
-    "better": 0,
-    "worse": 0
-   },
-   "files": {
-    "mean": 42.755675000000004,
-    "better": 11,
-    "worse": 29
-   },
-   "code": {
-    "mean": 40.40947499999999,
-    "better": 13,
-    "worse": 27
+   "time s": {
+    "none": {
+     "mean": 40.69444999999998,
+     "better": 0,
+     "worse": 0
+    },
+    "files": {
+     "mean": 42.755675000000004,
+     "better": 11,
+     "worse": 29
+    },
+    "code": {
+     "mean": 40.40947499999999,
+     "better": 13,
+     "worse": 27
+    }
    }
   }
  }

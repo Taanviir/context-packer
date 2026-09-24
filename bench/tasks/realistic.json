@@ -539,5 +539,367 @@
  },
  "ripgrep-3bec8f3f0a": {
   "request": "When I print out the ignore-directory data structure during debugging, can it show up with a `{:?}` debug format instead of erroring that it doesn't implement Debug?"
+ },
+ "airflow-6e6d0af05e": {
+  "request": "Add support for AWS IAM, GCP, and Azure AD authentication in the Akeyless secrets backend, so it can authenticate using the cloud environment's identity instead of only static credentials or a pre-existing identity token. Currently those cloud auth methods only work through the hook, not the secrets backend."
+ },
+ "airflow-4251a9119c": {
+  "request": "When you decline a \"quit\" prompt during provider documentation prep, it should actually stop instead of continuing as if you'd confirmed."
+ },
+ "airflow-6b339c70c4": {
+  "request": "When DockerOperator pulls an image, logging every stream event floods the logs with repeated status lines for the same layer. Only log a layer's status when it actually changes, and keep a sensible message for plain string output too."
+ },
+ "airflow-3caa539092": {
+  "request": "When the scheduler marks task instances for a state change on SQLite or MySQL, it should lock those specific rows properly (skipping already-locked ones) instead of relying on the plain row-lock query, to avoid races with other processes updating the same rows."
+ },
+ "airflow-80c3fcd097": {
+  "request": "Bump the minimum required requests version for the databricks extra so it pulls in a newer release."
+ },
+ "airflow-29dbedfd0a": {
+  "request": "The password setter on the user auth model isn't hooked up right—assigning `.password` on a user doesn't actually hash and store it, so authentication with a freshly-set password fails. Fix the setter so it's correctly wired to the `password` property."
+ },
+ "airflow-308f1d0666": {
+  "request": "Add an option to gzip-compress the data before uploading to S3 in the Mongo-to-S3 transfer, and support a compression type on the S3 string upload so it's not always stored uncompressed."
+ },
+ "airflow-3f3d0f5c1e": {
+  "request": "Some Kubernetes API calls (including watch/event streams) can hang indefinitely because there's no client-side request timeout set, even when a server-side timeout is configured. Add a sensible default client-side timeout so these calls fail fast instead of hanging."
+ },
+ "airflow-9207e7d5e5": {
+  "request": "The BigQuery copy operator calls a hook method that's now deprecated and emits warnings. Update it to submit the copy job directly through the hook's job-insertion API instead, so we stop suppressing deprecation warnings just to keep the operator working."
+ },
+ "airflow-0cd76c07e1": {
+  "request": "When the task log panel is opened in fullscreen, the filter dropdowns for log source don't work right—the options list seems to render behind the fullscreen overlay. Can you make the log filters usable in fullscreen mode too?"
+ },
+ "airflow-fa60a7a02f": {
+  "request": "The retry logic on the API client's requests should back off using jitter and only retry actual transient failures (server errors and network errors), instead of relying on the current retry library, which is being deprecated/replaced. Please switch it to use tenacity for the retry handling, keeping the same retry count and wait-time config, and drop the special-case handling for HTTP 429 fallback wait."
+ },
+ "airflow-8871a9ef7b": {
+  "request": "Add a way to test whether the PagerDuty Events integration key is valid so we can verify the connection before relying on it, similar to connection testing on other hooks."
+ },
+ "airflow-5483ae4992": {
+  "request": "When deleting an existing variable before re-adding it in the set operation, make sure the delete uses the same database session as the rest of the operation, so it doesn't run as a separate transaction."
+ },
+ "airflow-9a6fc73aba": {
+  "request": "The self-upgrade instructions in the reinstall warning messages print the old command; update them to include the new \"setup\" subcommand so they show `setup self-upgrade` instead."
+ },
+ "airflow-00f9217b2a": {
+  "request": "When I mark a range of task instances as successful, it ends up altering the wrong instances entirely instead of just changing the ones I selected. Can you fix the logic so it actually modifies the intended set?"
+ },
+ "airflow-71954a52fc": {
+  "request": "The RBAC web UI shows a default start date of Jan 1, 2000 when a DAG has no runs yet, instead of using a proper UTC epoch — can we fix it so it uses the actual epoch in a timezone-safe way?"
+ },
+ "airflow-f5795f1d6e": {
+  "request": "The Docker image build step is failing intermittently because it writes its temporary container-id file into the project directory, which can collide or get left behind. Can you make it write that temp file to a proper temp directory instead?"
+ },
+ "airflow-e95cd988f9": {
+  "request": "The Segment analytics hook fails to import because the underlying package was renamed on PyPI—can you update it to import from the new package name instead of the old one?"
+ },
+ "airflow-772a865689": {
+  "request": "Integration test jobs sometimes fail outright because Docker Hub or another registry times out or throttles mid-pull, even though the failure has nothing to do with the tests themselves. Can we make the integration test run pull the needed images up front with retries and backoff, so a transient registry blip doesn't fail the whole job and force a full re-run?"
+ },
+ "airflow-490a382ed6": {
+  "request": "Example DAGs with fixed start dates should set `catchup=False` so scheduling them doesn't trigger a backlog of backfill runs for all the missed past intervals."
+ },
+ "airflow-c7c3bc7d36": {
+  "request": "The error alert is adding stray whitespace and newlines before each validation error line—can you fix it so the messages display cleanly without that extra indentation?"
+ },
+ "airflow-98f129f0cd": {
+  "request": "The duration chart's x-axis ticks are hard to read and don't respect the selected timezone. Also, while the dag runs are auto-refreshing, the chart shouldn't animate on every update — only when data changes for other reasons."
+ },
+ "airflow-165ea9ed0c": {
+  "request": "Add a way for the CLI to query a running worker's status—job count, current jobs, and its state (running, idle, draining, maintenance)—without shutting it down, similar to how it can already signal a shutdown or drain request."
+ },
+ "airflow-944e131141": {
+  "request": "When a user manually kills a running BigQuery insert-job task, the job should be cancelled immediately as part of that kill handling, rather than only being cancelled later when the trigger's run loop happens to catch a cancellation."
+ },
+ "airflow-fcec804ff5": {
+  "request": "Some masking tests are flaky on Python versions before 3.10 because the number of masked \"user:***\" occurrences in the logs isn't consistent. Update the test to just check that at least the expected number of matches appear, rather than an exact count."
+ },
+ "airflow-22453d037e": {
+  "request": "The Celery broker transport options config isn't being read as a real key/value section—right now it's hardcoded to only set a visibility timeout. Load the whole broker transport options section from config as a dict, converting values to int/float/bool where appropriate, instead of just wrapping a single hardcoded value."
+ },
+ "airflow-da565c9019": {
+  "request": "Our connections to the Kubernetes API sometimes hang forever if a load balancer or firewall silently drops an idle connection. Can we add a way to turn on TCP keepalive for the Kubernetes client, with configurable idle time, interval, and probe count, so those hangs get detected and cleaned up?"
+ },
+ "airflow-87d83a1ae3": {
+  "request": "The threshold check operator is failing after a hook update — it errors trying to index into the query result because the value returned for a single row is no longer wrapped in an extra list. Fix the operator (and its tests) to handle the unwrapped single-row tuple format."
+ },
+ "airflow-5e8be07b7a": {
+  "request": "Mapped task instances briefly show empty/zero state before the real data loads, even when cached data should be available. Make the mapped instances view always populate with the actual task data instead of defaulting to an empty list on load."
+ },
+ "airflow-e70bee00cd": {
+  "request": "The uploaded object's cache-control header isn't being set correctly in GCS — it's silently ignored so downloaded objects don't get cached as expected. Can you fix the upload function so passing a cache-control value actually applies it to the object?"
+ },
+ "vscode-29ab6980dc": {
+  "request": "Notifications with action buttons stay pinned when the window loses focus, but I want that only to apply to notifications that actually have prompt actions — plain notifications without focus should still auto-hide on their normal timer instead of repeatedly rescheduling."
+ },
+ "vscode-4537390895": {
+  "request": "Focus detection is unreliable in some browsers when the editor's input node sits inside a shadow root—clicking into it doesn't always get recognized as focused, which breaks things like context keys that depend on knowing whether the editor has focus. Can you fix the focus tracking so it correctly checks the active element within a shadow root too?"
+ },
+ "vscode-ed8c0e4e1d": {
+  "request": "Webviews sometimes send messages to the page before the custom resource protocol has finished registering, so early messages or resource loads can silently fail. Make sending a message to a webview wait until protocol registration has actually completed before delivering it."
+ },
+ "vscode-7a5abbfb7a": {
+  "request": "When falling back to a different query for an extension, include in the telemetry whether that fallback path was used, so we can tell fallback-driven lookups apart from regular ones."
+ },
+ "vscode-f2ef4d45f8": {
+  "request": "The inline hint color IDs for types and parameters don't follow the same dotted naming pattern as the other inline hint colors—can you rename them so they're nested under the main inline hint color prefix instead of having their own separate prefix?"
+ },
+ "vscode-8270e9efd0": {
+  "request": "Local action broadcasts go out to every connected client regardless of what it's subscribed to. Make the client only receive and log actions for resources it's actually subscribed to, including handling repeated subscribe/unsubscribe calls on the same resource correctly."
+ },
+ "vscode-3f3e35bf17": {
+  "request": "Terminal typeahead predicts backspace and right-arrow the same way it predicts regular characters, which puts the cursor in the wrong spot once you're near the edge of what's actually been typed on the line. Also, when a terminal is reset/relaunched, the old process manager is disposed too early and the typeahead state isn't reinitialized for the new process, causing errors."
+ },
+ "vscode-473ee7735e": {
+  "request": "The code action menu's list doesn't lay out or scroll correctly when it opens — the detail text and right-side decorator show but the list itself seems to be missing a layout pass, causing a scroll glitch. Please fix the scrolling error in the code action menu."
+ },
+ "vscode-de3740ae58": {
+  "request": "The settings search count badge doesn't match the theming used by the badge in the GUI editor—right now it turns a special error color when there are no results instead of using the standard badge foreground color. Make the search results count badge always use the same badge colors as the rest of the UI, and change the \"no results\" message text to \"No Settings Found\"."
+ },
+ "vscode-7c78640d86": {
+  "request": "When restoring editor history from saved state, some entries lack an editor resource and the app throws \"Cannot read properties of undefined (reading 'resource')\" on startup. Skip those malformed entries instead of crashing."
+ },
+ "vscode-b5d2081b3b": {
+  "request": "When I have multiple cursors and auto-indent triggers on typing a character (like a newline), it only applies the indentation at the first cursor instead of all of them. Can you make auto-indent work correctly for every cursor in a multi-cursor selection?"
+ },
+ "vscode-414e5dbf1f": {
+  "request": "The \"Install Additional Debuggers...\" menu item shows up even when no debugger extensions are installed. It should only appear once there's already at least one debugger available."
+ },
+ "vscode-252be64fbc": {
+  "request": "When revealing a list or tree item near the sticky scroll header, the scroll position ends up slightly off because it doesn't account for the sticky widget's actual height above the target item. Fix the scroll offset math so reveal and the scroll-position calculations correctly factor in that padding, ideally without needing the two-pass adjustment loop currently used for trees."
+ },
+ "vscode-26b621a773": {
+  "request": "When the language server restarts or is disposed while we're still showing the \"Initializing JS/TS language features\" progress notification, it throws an unhandled/rejected error instead of just quietly finishing. Make it resolve normally so canceling doesn't surface an error."
+ },
+ "vscode-8b3d6668bd": {
+  "request": "TypeScript error checking in partial/syntax-only mode isn't reporting diagnostics at all right now. Can we make it so syntax errors still get reported even when the server is only running in partial/syntax mode, instead of requiring full semantic support?"
+ },
+ "vscode-e1456dc6b2": {
+  "request": "The gear icon in the activity bar's manage/settings action looks wrong or inconsistent — can it use the correct settings gear icon instead?"
+ },
+ "vscode-1c3d278021": {
+  "request": "Several types in the extension host API allow missing values (like an unset diagnostic range, container name, command, or completion kind), but our type declarations don't mark them optional, so we get incorrect null-safety guarantees. Update these types to properly reflect where values can be undefined, and make the code that consumes them handle the missing case instead of assuming a value is always present."
+ },
+ "vscode-d5d90bed7b": {
+  "request": "Some settings registered by extensions get rejected as invalid or duplicate during the extension-unification work, even though they should be allowed through. Add a way to let specific setting keys skip that validation and duplicate check so they aren't stripped out or flagged."
+ },
+ "vscode-5c7748690d": {
+  "request": "When startup metrics are being appended to a file, always wait a fixed amount of time before writing them out, instead of only waiting when cached data wasn't produced yet."
+ },
+ "vscode-8844915863": {
+  "request": "When gathering npm scripts for a workspace folder, skip folders whose URI isn't a local file path (e.g. remote or virtual folders) instead of trying to read package.json from them."
+ },
+ "vscode-01fe17bb24": {
+  "request": "The exception widget crashes when showing a caught exception if the debug adapter doesn't send stack trace details — it should just show an empty message instead of throwing."
+ },
+ "vscode-bc1698456a": {
+  "request": "When the shell integration setting to hide the welcome message is off, appending that extra flag to the PowerShell launch args on Windows corrupts the argument string. Fix the additional-args handling so the flag gets inserted correctly regardless of whether the welcome message is shown or hidden."
+ },
+ "vscode-2f17337baf": {
+  "request": "Links inside settings descriptions aren't picking up the theme's link color, and the description text opacity is bleeding into the link making it look washed out. Can we make links in setting descriptions use the proper theme link color, independent of the description's dimmed opacity?"
+ },
+ "vscode-b334ca36b6": {
+  "request": "The dirty indicator on the open editors list only highlights the small text label, not the whole row, and the styling has gotten overly fussy — can you make the entire row reflect the dirty state and simplify the CSS?"
+ },
+ "vscode-4dbb6571ac": {
+  "request": "The integrated terminal keeps relaunching automatically even when the shell process exits with an error, and it doesn't close the panel when the terminal ends. Can we make it dismiss the terminal panel on exit instead, and only auto-restart when the process exits cleanly?"
+ },
+ "vscode-ae29089275": {
+  "request": "Object-type settings in the Settings editor don't show any validation error when the entered value doesn't match the schema's expected properties or pattern. Add validation so invalid object values are flagged with an error message, similar to how array settings are validated."
+ },
+ "vscode-3408691c13": {
+  "request": "When reloading a window that has no workspace open (an empty window), the app crashes or throws because it tries to restore untitled file backups for a workspace path that doesn't exist. Only try to restore untitled files when the window actually has a workspace open."
+ },
+ "vscode-cc3770ef34": {
+  "request": "In the find widget, when the selection start is at position 0, clearing the search shortcut selection doesn't work because 0 is treated as falsy. Fix the check so it only skips when start or end is actually null, not when it's zero."
+ },
+ "vscode-8206c49fe1": {
+  "request": "When an editor gains focus while another editor still has an active next-edit suggestion pending, that suggestion shouldn't be cancelled — only suggestions in other editors that aren't tied to that pending edit should stop. Right now focusing an editor kills inline suggestions in all other editors unconditionally, even when one of them is the source or target of a cross-file edit the user is in the middle of."
+ },
+ "vscode-e59c669633": {
+  "request": "When jumping to a command in the terminal's scrollback, jump to the actual command instead of just the raw marker position when command tracking data is available. Also improve the highlight styling so multi-line matches get an outline on every line, with distinct rounding on the topmost and bottommost lines."
+ },
+ "airflow-e5a88cc75a": {
+  "request": "Loading a serialized DAG whenever we fetch the latest DAG version was added recently, but it's unnecessary overhead here — stop eager-loading it and just load the task instances for that query."
+ },
+ "airflow-7c3eacc3cf": {
+  "request": "The UI log viewer crashes when fetching worker logs for a task instance that has no hostname set. Instead of crashing, it should show a clear message telling the user that the hostname isn't available and to check their hostname configuration."
+ },
+ "airflow-71a1f29213": {
+  "request": "When running Beam pipelines through Dataflow with Python or Go, setting a service account in the dataflow config doesn't actually get passed to the job — Java pipelines pick it up fine, but Python and Go jobs launch under the default service account instead. Each SDK should send the service account using the flag name it actually recognizes."
+ },
+ "airflow-bd06decb0d": {
+  "request": "Trigger error messages about a missing task instance use old-style percent placeholders, so the raised errors show the unformatted template with `%s` markers instead of the actual dag_id, task_id, run_id, and map_index values. Fix these so the raised errors contain the real values.",
+  "rejected": "it names dag_id, which appears only in the diff"
+ },
+ "airflow-0014422047": {
+  "request": "Connection secrets stored as JSON sometimes omit conn_type entirely. Deserializing these should still succeed instead of failing, and this backward-compatible behavior should be documented and covered by a test."
+ },
+ "airflow-c682ae0b5a": {
+  "request": "Auto-triage should flag PRs that still have open review comment threads from maintainers, not just failing CI or merge conflicts, so those don't get silently closed or merged without addressing the feedback."
+ },
+ "airflow-0d2011a3a5": {
+  "request": "Add support for specifying a client ID when authenticating to Databricks via Azure managed identity, so it works with a user-assigned managed identity instead of only the system-assigned one."
+ },
+ "airflow-027c7cfc27": {
+  "request": "When accessing a public repository with no Airflow connection configured, the bundle should still work instead of failing—only require a connection if the repository location isn't specified some other way."
+ },
+ "airflow-6a58dd9bd3": {
+  "request": "When the login form for the simple auth backend gets a failed authentication response, it just shows a generic or garbled error instead of the actual status and reason from the server. Please make it surface the real HTTP status and error detail so users can tell what went wrong."
+ },
+ "airflow-0cf2026e41": {
+  "request": "Requests to Keycloak's token endpoint fail when the configured server URL has a trailing slash, because it produces a double slash before \"realms\" that Keycloak rejects. Normalize the server URL so the token URL is built correctly regardless of trailing slashes."
+ },
+ "airflow-d2161ae04c": {
+  "request": "When any of the DAG run or task instance states in the Dashboard hits the state count cap, don't show percentage breakdowns for that group's states — since the true total is unknown once counting is capped, the computed percentages are misleading and should be hidden entirely rather than shown for just the capped state."
+ },
+ "airflow-c6cb72c208": {
+  "request": "When deciding whether to patch a pod to mark it as already checked, the condition mixes \"pod failed\" with \"user wants to keep the pod\" in one confusing boolean expression. Can you restructure the check so it's clear when the pod is being retained versus when it just hasn't succeeded, without changing the actual behavior?"
+ },
+ "airflow-43038e0118": {
+  "request": "The Azure Data Factory hook calls (updating a factory, dataflow, or trigger, and getting linked services or dataflows) are failing after upgrading azure-mgmt-datafactory to version 10. Please fix the hook so etag/if-match handling works correctly with the new SDK version."
+ },
+ "airflow-cdecb7efbb": {
+  "request": "The `--daemon` flag on the api-server forks and returns immediately, but in CI I need the option to keep it running in the foreground (backgrounded with `&`) instead, controlled by an environment variable, so logs stay attached to the process for debugging."
+ },
+ "airflow-b916de6dab": {
+  "request": "The active runs count on the Dag detail page includes queued runs, so it doesn't match what \"active runs\" should mean. It should only count runs that are actually executing, and the label next to it should reflect that it's the current active count (not a max)."
+ },
+ "airflow-d868c8c714": {
+  "request": "Breeze setup fails when a previous uv-based global install is corrupted: `uv tool list` silently drops the broken tool, so setup doesn't detect the leftover install or its ~/.local/bin/breeze shim, and can't recover or ask to remove it. Make setup detect this case too and handle it the same way it handles a normal legacy install."
+ },
+ "airflow-b72df7bd48": {
+  "request": "Scheduler tests that use a real executor are looping and polling too aggressively—can we back off the poll interval when no tasks are runnable and a real executor is in use, so it's not hammering external calls every second?"
+ },
+ "airflow-b9ff1d7769": {
+  "request": "`airflow dags list` shows the same DAG multiple times when it has more than one serialized version stored — it should only show each DAG ID once."
+ },
+ "airflow-905f4752d4": {
+  "request": "When building the provider LICENSE file, copy it into the top-level provider directory instead of the base package path, so it doesn't get bundled into a subpackage."
+ },
+ "airflow-2031171934": {
+  "request": "Can you add `ParamsDict` and `literal` to the top-level SDK exports so they can be imported directly like `Param`, instead of needing their internal module paths?"
+ },
+ "airflow-6206ea1b17": {
+  "request": "When someone is shown as the assigned user for a human-in-the-loop task, the display should show their user ID as well as their username, not just the username, so I can tell apart accounts with similar names when assigning them."
+ },
+ "airflow-db04a4ef8c": {
+  "request": "Some secrets backend implementations still override the connection/variable lookup methods with their old signature from before multi-team support was added, and calling them now throws a TypeError instead of returning the secret. Detect whether a given backend's method supports the newer team-scoped calling convention and only pass that extra argument when it does, so both old and new backends keep working.",
+  "rejected": "it names TypeError, which appears only in the diff"
+ },
+ "airflow-139cd980af": {
+  "request": "When importing pools or connections, I want to control what happens if an entry already exists, like we already support for variable imports. Add an option to choose whether existing entries get overwritten, skipped, or the import fails."
+ },
+ "airflow-16e1abaaea": {
+  "request": "The namespace-level logging config (a string of `<logger>=<level>` pairs) throws an unhandled error and crashes startup if an entry is malformed or has an invalid level name. Can we make this best-effort instead, skipping bad entries and logging an error for each one instead of raising?"
+ },
+ "airflow-b2a48f72ae": {
+  "request": "When triaging PRs with breeze, let me filter to only show PRs where a review is currently requested from me, instead of scanning through everything."
+ },
+ "airflow-a42b88b59a": {
+  "request": "Asset objects should be hashable with consistent hash values so equal assets hash the same way (e.g. for use in sets or as dict keys), but right now hashing fails or is unreliable because the underlying representation isn't hashable/deterministic."
+ },
+ "airflow-40f6ec1c60": {
+  "request": "The grid structure endpoint uses too much memory on DAGs with a lot of history — it loads all serialized DAG versions into memory at once before merging them. Can it process and merge each version one at a time and release it afterward instead, so peak memory stays low regardless of how many versions there are?"
+ },
+ "airflow-c0cbd097ea": {
+  "request": "When a Kubernetes pod's log output for a task spans multiple lines (e.g. a multi-line traceback), our progress callback fires once per raw line instead of once per complete log message, so the same logical log entry gets reported repeatedly. It should invoke the callback once per complete log line, and pass along which container it came from, the pod, and the line's timestamp."
+ },
+ "airflow-8850c326bd": {
+  "request": "The i18n locale check in CI is failing because it's picking up hidden scratch directories (like `.claude`) under the locales folder as if they were language codes, and treating them as missing translations. Can we make that check skip any directory whose name starts with a dot?"
+ },
+ "airflow-434c1cc9f2": {
+  "request": "The Kubernetes executor's task and result queues should let producers wait until items have actually been processed, not just enqueued, so we can properly track when queued work is done."
+ },
+ "vscode-5635ce9a00": {
+  "request": "Mouse events in the editor compute the editor's page position and the position relative to the editor for every event, even when callers never read those values. Can we make that computation lazy, so it only runs the first time each property is actually accessed?"
+ },
+ "vscode-4797e59d67": {
+  "request": "When I'm in an agent session with a file open in the editor, I want a quick way to attach that file as context to the chat, instead of having to drag it in or type its path manually."
+ },
+ "vscode-334c30150b": {
+  "request": "The monitoring status item's tooltip and detail text are too technical and jargon-heavy — can you rewrite the copy to plainly explain that agent usage is being monitored, where it's exported to, and whether sensitive content capture is on, instead of listing raw data categories?"
+ },
+ "vscode-cbfbdb0f51": {
+  "request": "Slash completions for skills are pulling from too many places and getting slow and hard to follow — can we simplify it so it just lists the skills already resolved for the current session, filtered by what's typed after the slash, without doing its own file reading or caching?"
+ },
+ "vscode-449d7cc584": {
+  "request": "The toolbar action labels for sessions repeat \"Session View\" in every button, which is redundant. Shorten them to just the verb (e.g. \"Pin\", \"Close\", \"Maximize\") for a cleaner toolbar."
+ },
+ "vscode-c8cdcb16dc": {
+  "request": "Our protocol doesn't notice when a connection dies silently if there are no unacknowledged messages waiting—both sides just send keepalives with nothing checking whether the other side is actually still responding. Can we add a check that fires a timeout event when we've gone too long without receiving any data, as long as the system isn't just under heavy load?"
+ },
+ "vscode-4b04bed81a": {
+  "request": "After a session host is upgraded and reconnects, its status stays stuck on \"incompatible\" instead of updating to reflect the new connection state. The status should only stay incompatible while there's genuinely no connection info for it yet; once the connection service reports a fresh status, that should take over."
+ },
+ "vscode-083af3b3af": {
+  "request": "The review plan tool got added to the tool set twice—once as a registered tool and once via the tool set registration. Please remove the extra registration so it's only added once."
+ },
+ "vscode-f436d18836": {
+  "request": "When I have multiple changeset operations like commit and pull request actions available in the changes view, show them grouped together instead of as one flat list, so related actions are visually clustered."
+ },
+ "vscode-6ca640df55": {
+  "request": "Can you remove the rounded buttons appearance option? We don't need workbench buttons rendered as fully rounded pills, and the associated stylesheet should go too."
+ },
+ "vscode-1c2dc57c63": {
+  "request": "When submitting feedback on a session, don't close the session's open editors afterward — just submit the feedback."
+ },
+ "vscode-83e1b3a96b": {
+  "request": "The omni chat input window's confirmation panel overlaps or breaks the layout instead of stacking properly inside the window — the chat area doesn't shrink to fit when other content is shown alongside it. Can you fix the window's internal layout so everything fits and resizes correctly together?"
+ },
+ "vscode-39132193ba": {
+  "request": "The tree view's resource renderer never gets disposed, causing a memory leak. Make sure it's cleaned up along with the other renderers when the view is torn down."
+ },
+ "vscode-9b8114892b": {
+  "request": "In the terminal execute strategies, avoid leaking a disposable store every time execute() is called on the same strategy instance—right now each call's store stays registered with the strategy for its whole lifetime instead of being released once that execution finishes, so long-lived sessions accumulate stale references."
+ },
+ "vscode-1a8ef07a81": {
+  "request": "When replaying prior turns' thinking on the Messages API, only do it for models that actually support adaptive thinking — budget-mode models like Haiku 4.5 reject re-sent thinking blocks with a 400. Update the tests to cover both cases: adaptive-thinking models (e.g. Opus/Sonnet 4.6+) should keep historical thinking, budget-mode models should still drop it."
+ },
+ "vscode-e7f179aec1": {
+  "request": "The \"code agent\" completions for the CLI let you repeat flags like --host or --port multiple times and treat their values as optional, but these options should only take exactly one required value and shouldn't be repeatable. Also, there's no test coverage for the \"agent\" subcommand's completions (host, ps, stop, kill, logs, help) — please add tests for those."
+ },
+ "vscode-e2f2e833c0": {
+  "request": "The Changes view sometimes shows stale or leftover file changes when a repository can't actually be read (e.g. session ended mid-error). Can it instead skip updating changes entirely when the repo state can't be determined, and also show whether the repo has a GitHub remote?"
+ },
+ "vscode-98b093a62b": {
+  "request": "Chat tabs look flat compared to editor tabs — can you give each tab a fill/background element so its visual presentation matches the editor tab style?"
+ },
+ "vscode-4b33c4ade4": {
+  "request": "When I switch the chat mode, the panel's title doesn't update to reflect it—can you make the title refresh automatically whenever the mode changes?"
+ },
+ "vscode-628f6fe5e4": {
+  "request": "Turn on the browser tool integration for chat by default instead of leaving it off, and remove the tip that nudges people to enable it manually since it won't be needed once it's on."
+ },
+ "vscode-84c57e3cd3": {
+  "request": "When installing extensions during onboarding, show a subtitle hint that tells users the keyboard shortcut for opening the Extension Marketplace, similar to how the personalize step already has a custom subtitle."
+ },
+ "vscode-b214987c92": {
+  "request": "The reasoning effort override setting currently applies to any agent host, but it should really only apply when using Copilot. Can you scope that setting's ID so it's namespaced under Copilot, consistent with the other Copilot-specific settings?"
+ },
+ "vscode-129eff3d91": {
+  "request": "After reconnecting to an agent host, the output channel for its logs isn't showing new output—can you make sure the log channel gets reused or re-registered properly on reconnect instead of silently failing?"
+ },
+ "vscode-6d2d406f02": {
+  "request": "When the local-agent-host continuation tip appears in chat, add a way to mute it so it won't keep coming back, and stop showing it in the current window once the user dismisses it."
+ },
+ "vscode-ec1b365290": {
+  "request": "When the SSH auth prompt is dismissed, cancel the connection attempt instead of sending empty credentials to the server and letting the auth fail normally."
+ },
+ "vscode-190016f576": {
+  "request": "The Changes view shows an endless loading spinner for chat sessions when the workspace folder isn't a git repository. It should just show no changes instead of spinning forever."
+ },
+ "vscode-53db5e07d6": {
+  "request": "When formatting files from the CLI with the verify flag, make error messages and behavior consistent with how a full replace/verify pass would evaluate the file, rather than only comparing against the initial read of the file before any write happens."
+ },
+ "vscode-b456b81a85": {
+  "request": "When I'm signed out and viewing the Agent Host welcome screen in the sessions window, the model picker disappears even though there are usable models available. It should stay visible in that case, but only for the Copilot agent host provider and not for other providers or windows, and it should respect the setting that allows using it while signed out."
+ },
+ "vscode-fc03e3346d": {
+  "request": "When I switch to a different chat session while a voice transcript is showing, the overlay from the old session stays visible instead of hiding or updating for the newly active session."
+ },
+ "vscode-f32c7986c2": {
+  "request": "Visibility tracking for toolbar items breaks in environments where the browser API it relies on isn't available, and it also doesn't work correctly across multiple windows (e.g. floating/popped-out windows) since it only tracks one shared observer. Fix it to work per-window and degrade gracefully by treating elements as visible when the API isn't supported."
  }
 }

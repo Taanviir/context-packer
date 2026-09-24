@@ -1,0 +1,449 @@
+{
+ "repo": "vscode",
+ "url": "https://github.com/microsoft/vscode",
+ "head": "ceeb50ecd8021211707307a9d44cf85120b68c02",
+ "eligible": 69285,
+ "dev": [
+  {
+   "id": "vscode-8270e9efd0",
+   "repo": "vscode",
+   "commit": "8270e9efd0bd9f3864083f0c0feced34f30678dd",
+   "parent": "b094a73d28cd1a1ea553645b157b9dd2d5e72d37",
+   "task": "filter local AHP actions by subscription",
+   "gold": [
+    "src/vs/platform/agentHost/common/state/agentSubscription.ts",
+    "src/vs/platform/agentHost/electron-browser/localAgentHostService.ts",
+    "src/vs/platform/agentHost/node/protocolServerHandler.ts",
+    "src/vs/platform/agentHost/test/common/agentSubscription.test.ts"
+   ]
+  },
+  {
+   "id": "vscode-b55aa827d2",
+   "repo": "vscode",
+   "commit": "b55aa827d2d7e363361d338133706df93789741b",
+   "parent": "977ad51b14ed4580fa44ec9500b985d7dca5e963",
+   "task": "Strip Markdown when announcing chat input notification to screen readers",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/widget/input/chatInputNotificationService.ts"
+   ]
+  },
+  {
+   "id": "vscode-f5e16866d1",
+   "repo": "vscode",
+   "commit": "f5e16866d1a73b0768c91dab889d0fc252b663da",
+   "parent": "50b1915ca1a37c9c8165650675013b7f54b6c035",
+   "task": "keep the response selection intact for the Ask Question widget",
+   "gold": [
+    "src/vs/sessions/contrib/chat/browser/responseSelectionResolver.ts",
+    "src/vs/sessions/contrib/chat/browser/responseSelectionSideChatController.ts",
+    "src/vs/sessions/contrib/chat/test/browser/responseSelectionResolver.test.ts",
+    "src/vs/sessions/contrib/chat/test/browser/responseSelectionSideChatController.test.ts"
+   ]
+  },
+  {
+   "id": "vscode-c498c28d7a",
+   "repo": "vscode",
+   "commit": "c498c28d7a9e89b50b21ba0772d9bea68b90b6c5",
+   "parent": "1cd7c1c0975544fcdb074575ad180b1277bb5cad",
+   "task": "Strip NODE_OPTIONS in removeDangerousEnvVariables",
+   "gold": [
+    "src/vs/base/common/processes.ts"
+   ]
+  },
+  {
+   "id": "vscode-4d9b77435c",
+   "repo": "vscode",
+   "commit": "4d9b77435c4e26a666529ae8dd7e147c12523a71",
+   "parent": "ea8e43b23fd8812b123f139de25209f8705945ad",
+   "task": "Update font size and weight variables for agents UI components",
+   "gold": [
+    "src/vs/sessions/common/sizes.ts"
+   ]
+  },
+  {
+   "id": "vscode-dc51f4a3ae",
+   "repo": "vscode",
+   "commit": "dc51f4a3aed1be6e2debd16e320705aadc241d99",
+   "parent": "4470c4eb3293c6b2792d1ccbb0df5a966ac4ef83",
+   "task": "require confirmation for .mcp.json and .npmrc edits",
+   "gold": [
+    "extensions/copilot/src/extension/tools/node/editFileToolUtils.tsx",
+    "extensions/copilot/src/extension/tools/node/test/editFileToolUtils.spec.ts",
+    "src/vs/platform/agentHost/test/node/sessionPermissions.test.ts",
+    "src/vs/platform/chat/common/chatSettings.ts"
+   ]
+  },
+  {
+   "id": "vscode-d0433224a8",
+   "repo": "vscode",
+   "commit": "d0433224a85f44c58cc8631b69276e791d24265c",
+   "parent": "a76b95248e53a8c1d5577afd2851345383b0cb8b",
+   "task": "Add one-time migration of legacy secrets to shared keychain",
+   "gold": [
+    "src/vs/workbench/services/secrets/electron-browser/secretStorageService.ts"
+   ]
+  },
+  {
+   "id": "vscode-cb902adda1",
+   "repo": "vscode",
+   "commit": "cb902adda1601208748f2010ca1ad9a44ee5e02a",
+   "parent": "13897599858a5c0d897cbe9ba99df2e1a0557563",
+   "task": "polish light theme surfaces",
+   "gold": [
+    "src/vs/sessions/browser/parts/sessionCompositeBar.ts",
+    "src/vs/sessions/common/theme.ts",
+    "src/vs/sessions/contrib/files/browser/files.contribution.ts",
+    "src/vs/sessions/electron-browser/sessions.ts",
+    "src/vs/sessions/sessions.common.main.ts"
+   ]
+  },
+  {
+   "id": "vscode-0ff895b5cb",
+   "repo": "vscode",
+   "commit": "0ff895b5cb2d92d7632da9a736351606741a17b7",
+   "parent": "449d9aff4d1c0e8f069345226cbf9c70ba68704e",
+   "task": "Agents - add changesets to the AHP sessions",
+   "gold": [
+    "src/vs/sessions/contrib/providers/agentHost/browser/baseAgentHostSessionsProvider.ts",
+    "src/vs/sessions/contrib/providers/agentHost/browser/localAgentHostSessionsProvider.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHostSessionsProvider.ts"
+   ]
+  },
+  {
+   "id": "vscode-86dfe76c5b",
+   "repo": "vscode",
+   "commit": "86dfe76c5b0f820c8a2c4cc308b43d6e06b93029",
+   "parent": "a4048cac63871269a3e95465bc1b0885599b55ad",
+   "task": "Fix double microphone entries in Voice: Select Microphone",
+   "gold": [
+    "src/vs/workbench/contrib/agentsVoice/browser/agentsVoice.contribution.ts"
+   ]
+  }
+ ],
+ "test": [
+  {
+   "id": "vscode-5635ce9a00",
+   "repo": "vscode",
+   "commit": "5635ce9a00d504c3f852f5f05b2bbdaf146451df",
+   "parent": "8974e74593602890cd85b4bbcddeeee0c232a698",
+   "task": "Defer EditorMouseEvent position computation",
+   "gold": [
+    "src/vs/editor/browser/editorDom.ts"
+   ]
+  },
+  {
+   "id": "vscode-4797e59d67",
+   "repo": "vscode",
+   "commit": "4797e59d671eddb6e53071348ee396a6583d4224",
+   "parent": "44f9066aa253934a00d9db040bf53bd03459c824",
+   "task": "add 'Add File as Context' action to agent sessions",
+   "gold": [
+    "src/vs/sessions/contrib/editor/browser/editor.contribution.ts"
+   ]
+  },
+  {
+   "id": "vscode-334c30150b",
+   "repo": "vscode",
+   "commit": "334c30150b6d579aa4b18e07e91d3e9775d7e5f7",
+   "parent": "25d12d11177c8f6fe774735d7e8ba26ceaa1b60d",
+   "task": "refine monitoring status copy",
+   "gold": [
+    "extensions/copilot/src/extension/otel/vscode-node/otelContrib.ts"
+   ]
+  },
+  {
+   "id": "vscode-cbfbdb0f51",
+   "repo": "vscode",
+   "commit": "cbfbdb0f51718ea7df8a9baddcf4e44eed7636be",
+   "parent": "2dc7fc5f80965a78591c0ccfe9e33e9de4b5c417",
+   "task": "Update Agent Host Skill complletions",
+   "gold": [
+    "src/vs/platform/agentHost/node/agentHostSkillCompletionProvider.ts",
+    "src/vs/platform/agentHost/node/agentService.ts",
+    "src/vs/platform/agentHost/test/node/agentHostSkillCompletionProvider.test.ts"
+   ]
+  },
+  {
+   "id": "vscode-449d7cc584",
+   "repo": "vscode",
+   "commit": "449d7cc584e1be7f58b3a7a6e2a8e9e3110390d6",
+   "parent": "7c54fda801c73e35072ac759b6d93f8c69c65d7b",
+   "task": "Shorten session action labels",
+   "gold": [
+    "src/vs/sessions/contrib/sessions/browser/sessionsActions.ts",
+    "src/vs/sessions/contrib/sessions/test/browser/sessionsActions.test.ts"
+   ]
+  },
+  {
+   "id": "vscode-c8cdcb16dc",
+   "repo": "vscode",
+   "commit": "c8cdcb16dc32ff78ad511db1b995d6bcd84b403b",
+   "parent": "32776b54d4a7114c555e63f6111a9ecfd14e6f56",
+   "task": "Detect dead connections via keepalive timeout",
+   "gold": [
+    "src/vs/base/parts/ipc/common/ipc.net.ts",
+    "src/vs/base/parts/ipc/test/node/ipc.net.test.ts"
+   ]
+  },
+  {
+   "id": "vscode-4b04bed81a",
+   "repo": "vscode",
+   "commit": "4b04bed81a929b4603b508ce4a21993ae5fee2af",
+   "parent": "5f3991ae7ea5c328fb870c1b5c56c856ffb3cad9",
+   "task": "agent host: clear sticky incompatible status after upgrade reconnect",
+   "gold": [
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHost.contribution.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/tunnelAgentHost.contribution.ts"
+   ]
+  },
+  {
+   "id": "vscode-083af3b3af",
+   "repo": "vscode",
+   "commit": "083af3b3afdb172cbd72cb3360646ee449b62758",
+   "parent": "018a47f3df8dd2121e9bf96c5e24cbbabd8ed9da",
+   "task": "[cherry-pick] Remove ReviewPlanTool from BuiltinToolsContribution",
+   "gold": [
+    "src/vs/workbench/contrib/chat/common/tools/builtinTools/tools.ts"
+   ]
+  },
+  {
+   "id": "vscode-f436d18836",
+   "repo": "vscode",
+   "commit": "f436d18836f75e66be4b5019b3712397789a7fec",
+   "parent": "b82871d0b18cd32c9d0990746db385c2c07cbd55",
+   "task": "AgentHost - show changeset operations in groups",
+   "gold": [
+    "src/vs/platform/agentHost/node/agentHostCommitOperationProvider.ts",
+    "src/vs/platform/agentHost/node/agentHostPullRequestOperationProvider.ts",
+    "src/vs/sessions/contrib/changes/browser/changesView.ts",
+    "src/vs/sessions/contrib/providers/agentHost/browser/agentHostSessionChangesets.ts",
+    "src/vs/sessions/services/sessions/common/session.ts"
+   ]
+  },
+  {
+   "id": "vscode-6ca640df55",
+   "repo": "vscode",
+   "commit": "6ca640df5591c01e3e9f729d54dd99536c44794d",
+   "parent": "741aab3903d5119e7ceef7deab1e2eded3c879e9",
+   "task": "Remove rounded buttons style override module and associated CSS import",
+   "gold": [
+    "src/vs/workbench/contrib/styleOverrides/browser/styleOverrides.contribution.ts"
+   ]
+  },
+  {
+   "id": "vscode-1c2dc57c63",
+   "repo": "vscode",
+   "commit": "1c2dc57c63f6ad24693144660b318d3268f5d6cf",
+   "parent": "2de6a9ad05334486b78f46c03b2fd9a357c43039",
+   "task": "Remove unused imports and editor closing logic from feedback submission actions",
+   "gold": [
+    "src/vs/sessions/contrib/agentFeedback/browser/agentFeedbackEditorActions.ts"
+   ]
+  },
+  {
+   "id": "vscode-83e1b3a96b",
+   "repo": "vscode",
+   "commit": "83e1b3a96b7bdf13c45ac331aa48f744cef3aa94",
+   "parent": "619c81623f996c37c5ee96d45ffaa41f3c456cf8",
+   "task": "Fix omni chat confirmation layout",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/chatInputWindow/chatInputWindowService.ts"
+   ]
+  },
+  {
+   "id": "vscode-39132193ba",
+   "repo": "vscode",
+   "commit": "39132193baf0ab3d86ebd9245db336b90934f66e",
+   "parent": "c2409728e706547ca8a6c87e0b90e6d69cd8b69c",
+   "task": "memory leak in source control view",
+   "gold": [
+    "src/vs/workbench/contrib/scm/browser/scmViewPane.ts"
+   ]
+  },
+  {
+   "id": "vscode-9b8114892b",
+   "repo": "vscode",
+   "commit": "9b8114892b0531e22474e4189b594de973803f51",
+   "parent": "b3af291aac85a658da0d1309a3e8b7e8bd19c105",
+   "task": "Fix DisposableStore reference leak in terminal execute strategies",
+   "gold": [
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/executeStrategy/basicExecuteStrategy.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/executeStrategy/richExecuteStrategy.ts"
+   ]
+  },
+  {
+   "id": "vscode-1a8ef07a81",
+   "repo": "vscode",
+   "commit": "1a8ef07a81d1e0f6b18db9bb511a14388d9320de",
+   "parent": "aefd1103fb3087077524a1f20cf823a1a0afadc3",
+   "task": "Update tool calling prompts and tests",
+   "gold": [
+    "extensions/copilot/src/extension/prompts/node/panel/toolCalling.tsx",
+    "extensions/copilot/src/extension/tools/node/test/toolCalling.spec.tsx"
+   ]
+  },
+  {
+   "id": "vscode-e7f179aec1",
+   "repo": "vscode",
+   "commit": "e7f179aec129649a9574e8954f8a7b5438a97ed5",
+   "parent": "f5c5e23a76ce2e101209bc8552fe154655b833db",
+   "task": "terminal-suggest: address review - fix agent option arity and add tests",
+   "gold": [
+    "extensions/terminal-suggest/src/completions/code.ts",
+    "extensions/terminal-suggest/src/test/completions/code.test.ts"
+   ]
+  },
+  {
+   "id": "vscode-e2f2e833c0",
+   "repo": "vscode",
+   "commit": "e2f2e833c01b9e72db40156e4dcf6f3e759192ee",
+   "parent": "7938dfe267d23b4decf2972823ba1d880cb672c6",
+   "task": "Agents - switch over to using metadata for the changes view",
+   "gold": [
+    "extensions/copilot/src/extension/chatSessions/vscode-node/chatSessionWorkspaceFolderServiceImpl.ts",
+    "extensions/copilot/src/extension/chatSessions/vscode-node/chatSessionWorktreeServiceImpl.ts",
+    "extensions/git/src/model.ts",
+    "src/vs/sessions/contrib/changes/browser/changesViewModel.ts"
+   ]
+  },
+  {
+   "id": "vscode-98b093a62b",
+   "repo": "vscode",
+   "commit": "98b093a62be2e53345804414c3f9b7c7762272d0",
+   "parent": "36cb0da730a61b80beb0e12f31c8f915ed0afebb",
+   "task": "align chat tabs with modern editor tabs",
+   "gold": [
+    "src/vs/sessions/browser/parts/chatCompositeBar.ts",
+    "src/vs/sessions/test/browser/chatCompositeBar.test.ts"
+   ]
+  },
+  {
+   "id": "vscode-4b33c4ade4",
+   "repo": "vscode",
+   "commit": "4b33c4ade413bcd7316c1100df9f764f3893fc61",
+   "parent": "1eb30178567682ca5965e72b61936c7d599a4d4b",
+   "task": "Update the chat panel title when the mode changes",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts"
+   ]
+  },
+  {
+   "id": "vscode-628f6fe5e4",
+   "repo": "vscode",
+   "commit": "628f6fe5e46f1436cde1fb1eb1d37c1906f997c9",
+   "parent": "557cfb020af518f47c7ea912cb09fc91e6b49c84",
+   "task": "Match ExP value for setting `workbench.browser.enableChatTools`",
+   "gold": [
+    "src/vs/workbench/contrib/browserView/electron-browser/features/browserEditorChatFeatures.ts",
+    "src/vs/workbench/contrib/chat/browser/chatTipCatalog.ts",
+    "src/vs/workbench/contrib/chat/test/browser/chatTipService.test.ts"
+   ]
+  },
+  {
+   "id": "vscode-84c57e3cd3",
+   "repo": "vscode",
+   "commit": "84c57e3cd34c666727e5fef1cf3f91cfc98694da",
+   "parent": "1c425f74f2ecb0275f3119e5ac0a97c2fc600716",
+   "task": "add Extension Marketplace keybinding tip to extensions step",
+   "gold": [
+    "src/vs/workbench/contrib/welcomeOnboarding/browser/onboardingVariationA.ts"
+   ]
+  },
+  {
+   "id": "vscode-b214987c92",
+   "repo": "vscode",
+   "commit": "b214987c92c0b33fc802e95b336e79f03eda8f46",
+   "parent": "b3f7c8c60bb130df69135dded3f9865c92cdc85c",
+   "task": "Scope reasoning effort override setting to Copilot",
+   "gold": [
+    "src/vs/platform/agentHost/common/copilotCliConfig.ts"
+   ]
+  },
+  {
+   "id": "vscode-129eff3d91",
+   "repo": "vscode",
+   "commit": "129eff3d915b590517ba6663491d7dea9dcbbda6",
+   "parent": "f414e325cb82667c1b1bc67bebd65e40b011929a",
+   "task": "Fix IPC output channel after reconnection",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentHost/loggingAgentConnection.ts"
+   ]
+  },
+  {
+   "id": "vscode-6d2d406f02",
+   "repo": "vscode",
+   "commit": "6d2d406f0239da88677d43738ea4f3bc407bb7b1",
+   "parent": "0cd0e6fc1b10e904f8533b69d8b2a7fb0fb06970",
+   "task": "Add mute button for local agent host continuation tip",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/agentSessions/localAgentDisabledInputTipContribution.ts",
+    "src/vs/workbench/contrib/chat/test/browser/agentSessions/localAgentDisabledInputTipContribution.test.ts"
+   ]
+  },
+  {
+   "id": "vscode-ec1b365290",
+   "repo": "vscode",
+   "commit": "ec1b365290ff968040267dfb853ec5b4c2cf1bdf",
+   "parent": "1e1f6fbd32e59d04b50e89da04dcc637e0560519",
+   "task": "agent-host: Cancel SSH connect when auth prompt is dismissed",
+   "gold": [
+    "src/vs/platform/agentHost/common/sshRemoteAgentHost.ts",
+    "src/vs/platform/agentHost/electron-browser/sshRemoteAgentHostServiceImpl.ts",
+    "src/vs/platform/agentHost/node/sshRemoteAgentHostService.ts",
+    "src/vs/platform/agentHost/test/node/sshRemoteAgentHostService.test.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHostActions.ts"
+   ]
+  },
+  {
+   "id": "vscode-190016f576",
+   "repo": "vscode",
+   "commit": "190016f57611359bf4bafe2395ce27c074a6317d",
+   "parent": "2ea5be85d32478b09065ae4d919fcf74e4f76c34",
+   "task": "fix endless spinner in Changes view for non-git folders",
+   "gold": [
+    "src/vs/sessions/contrib/providers/copilotChatSessions/browser/copilotChatSessionsChangesets.ts"
+   ]
+  },
+  {
+   "id": "vscode-53db5e07d6",
+   "repo": "vscode",
+   "commit": "53db5e07d6ff0aa29287b6e9f49324aeb8824d9c",
+   "parent": "91e2d5c1964dbce11ca34786f5e1fb53b811621a",
+   "task": "use verifyFormatting in CLI path for consistent line-ending normalization",
+   "gold": [
+    "build/lib/formatter.ts"
+   ]
+  },
+  {
+   "id": "vscode-b456b81a85",
+   "repo": "vscode",
+   "commit": "b456b81a85932b852de8ff351e0245bca5c1a00e",
+   "parent": "1a12d7a02ce7ccda5bea3d895696d7dc2daedcbd",
+   "task": "Keep signed-out Agent Host model picker visible",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/actions/chatExecuteActions.ts",
+    "src/vs/workbench/contrib/chat/test/browser/actions/chatExecuteActions.test.ts"
+   ]
+  },
+  {
+   "id": "vscode-fc03e3346d",
+   "repo": "vscode",
+   "commit": "fc03e3346d592b493ddadaef8e65995ab7f3dd79",
+   "parent": "2addbe55c94b1131980b757ce4de983168057269",
+   "task": "Fix voice transcript overlay persisting across session switches",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts"
+   ]
+  },
+  {
+   "id": "vscode-f32c7986c2",
+   "repo": "vscode",
+   "commit": "f32c7986c2715a9533bc69492b369b62de450816",
+   "parent": "957e119f8a10984b727dc0a8855d0a99db1d55d7",
+   "task": "address review: per-window observer + fallback",
+   "gold": [
+    "src/vs/platform/actions/browser/toolbar.ts"
+   ]
+  }
+ ]
+}

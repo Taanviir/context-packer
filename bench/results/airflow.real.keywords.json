@@ -1,0 +1,1153 @@
+{
+ "repo": "airflow",
+ "split": "real",
+ "variant": "keywords",
+ "results": [
+  {
+   "id": "airflow-e5a88cc75a",
+   "task": "Loading a serialized DAG whenever we fetch the latest DAG version was added recently, but it's unnecessary overhead here — stop eager-loading it and just load the task instances for that query.",
+   "gold": [
+    "airflow-core/src/airflow/models/serialized_dag.py"
+   ],
+   "candidates": 7068,
+   "ranked": [
+    "airflow-core/src/airflow/api_fastapi/core_api/routes/ui/grid.py",
+    "airflow-core/src/airflow/models/taskinstance.py",
+    "airflow-core/src/airflow/dag_processing/manager.py",
+    "airflow-core/src/airflow/jobs/triggerer_job_runner.py",
+    "airflow-core/tests/unit/models/test_cleartasks.py",
+    "airflow-core/tests/unit/jobs/test_triggerer_job.py",
+    "dev/airflow_perf/scheduler_dag_execution_timing.py",
+    "airflow-core/src/airflow/utils/log/file_task_handler.py",
+    "airflow-core/tests/unit/dag_processing/test_manager.py",
+    "airflow-core/src/airflow/cli/commands/task_command.py",
+    "airflow-core/src/airflow/api_fastapi/execution_api/routes/xcoms.py",
+    "airflow-core/src/airflow/utils/sqlalchemy.py",
+    "providers/opensearch/src/airflow/providers/opensearch/log/os_task_handler.py",
+    "airflow-core/src/airflow/api_fastapi/execution_api/routes/task_instances.py",
+    "airflow-core/src/airflow/models/trigger.py",
+    "airflow-core/src/airflow/settings.py",
+    "airflow-core/src/airflow/dag_processing/bundles/base.py",
+    "airflow-core/src/airflow/models/serialized_dag.py",
+    "airflow-core/src/airflow/models/dagrun.py",
+    "airflow-core/tests/unit/models/test_backfill.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 434,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-7c3eacc3cf",
+   "task": "The UI log viewer crashes when fetching worker logs for a task instance that has no hostname set. Instead of crashing, it should show a clear message telling the user that the hostname isn't available and to check their hostname configuration.",
+   "gold": [
+    "airflow-core/src/airflow/utils/log/file_task_handler.py",
+    "airflow-core/tests/unit/utils/log/test_file_task_handler.py"
+   ],
+   "candidates": 7969,
+   "ranked": [
+    "airflow-core/src/airflow/utils/log/file_task_handler.py",
+    "providers/google/src/airflow/providers/google/cloud/log/stackdriver_task_handler.py",
+    "providers/celery/src/airflow/providers/celery/cli/celery_command.py",
+    "airflow-core/tests/unit/utils/log/test_file_task_handler.py",
+    "airflow-core/src/airflow/cli/cli_config.py",
+    "airflow-core/src/airflow/api_fastapi/execution_api/routes/task_instances.py",
+    "airflow-core/tests/unit/utils/test_log_handlers.py",
+    "task-sdk/src/airflow/sdk/execution_time/supervisor.py",
+    "airflow-core/src/airflow/settings.py",
+    "airflow-core/src/airflow/providers_manager.py",
+    "task-sdk/src/airflow/sdk/providers_manager_runtime.py",
+    "airflow-core/src/airflow/executors/base_executor.py",
+    "providers/snowflake/src/airflow/providers/snowflake/utils/openlineage.py",
+    "airflow-core/src/airflow/models/taskinstance.py",
+    "providers/edge3/src/airflow/providers/edge3/cli/worker.py",
+    "airflow-core/src/airflow/api_fastapi/execution_api/datamodels/taskinstance.py",
+    "airflow-core/src/airflow/cli/commands/config_command.py",
+    "shared/configuration/src/airflow_shared/configuration/parser.py",
+    "airflow-core/tests/unit/core/test_configuration.py",
+    "task-sdk/src/airflow/sdk/configuration.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 462,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-71a1f29213",
+   "task": "When running Beam pipelines through Dataflow with Python or Go, setting a service account in the dataflow config doesn't actually get passed to the job — Java pipelines pick it up fine, but Python and Go jobs launch under the default service account instead. Each SDK should send the service account using the flag name it actually recognizes.",
+   "gold": [
+    "providers/apache/beam/src/airflow/providers/apache/beam/operators/beam.py",
+    "providers/apache/beam/tests/unit/apache/beam/operators/test_beam.py"
+   ],
+   "candidates": 9349,
+   "ranked": [
+    "providers/google/src/airflow/providers/google/cloud/operators/dataflow.py",
+    "providers/apache/beam/src/airflow/providers/apache/beam/operators/beam.py",
+    "providers/google/src/airflow/providers/google/cloud/hooks/dataflow.py",
+    "providers/apache/beam/src/airflow/providers/apache/beam/hooks/beam.py",
+    "providers/apache/beam/tests/unit/apache/beam/operators/test_beam.py",
+    "providers/google/tests/unit/google/cloud/hooks/test_dataflow.py",
+    "providers/apache/beam/tests/unit/apache/beam/hooks/test_beam.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/get_provider_info.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/executors/kubernetes_executor.py",
+    "providers/google/tests/unit/google/cloud/operators/test_dataflow.py",
+    "providers/google/tests/system/google/cloud/dataflow/resources/wordcount.go",
+    "providers/apache/beam/src/airflow/providers/apache/beam/triggers/beam.py",
+    "providers/edge3/src/airflow/providers/edge3/cli/worker.py",
+    "providers/google/tests/system/google/cloud/dataflow/example_dataflow_native_java.py",
+    "airflow-e2e-tests/tests/airflow_e2e_tests/conftest.py",
+    "providers/celery/src/airflow/providers/celery/get_provider_info.py",
+    "providers/amazon/src/airflow/providers/amazon/aws/hooks/sagemaker.py",
+    "providers/google/tests/system/google/cloud/dataflow/example_dataflow_native_python_async.py",
+    "providers/apache/beam/tests/system/apache/beam/utils.py",
+    "providers/celery/src/airflow/providers/celery/executors/celery_executor.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 589,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-0014422047",
+   "task": "Connection secrets stored as JSON sometimes omit conn_type entirely. Deserializing these should still succeed instead of failing, and this backward-compatible behavior should be documented and covered by a test.",
+   "gold": [
+    "shared/secrets_backend/src/airflow_shared/secrets_backend/base.py",
+    "shared/secrets_backend/tests/secrets_backend/test_base.py"
+   ],
+   "candidates": 8921,
+   "ranked": [
+    "airflow-core/src/airflow/models/connection.py",
+    "airflow-core/tests/unit/api_fastapi/core_api/routes/public/test_connections.py",
+    "go-sdk/pkg/execution/client.go",
+    "go-sdk/pkg/execution/messages_test.go",
+    "airflow-core/src/airflow/api_fastapi/core_api/datamodels/connections.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/get_provider_info.py",
+    "task-sdk/src/airflow/sdk/execution_time/context.py",
+    "providers/elasticsearch/tests/unit/elasticsearch/test__compat.py",
+    "airflow-core/tests/unit/always/test_secrets_metastore.py",
+    "shared/secrets_backend/src/airflow_shared/secrets_backend/base.py",
+    "providers/zendesk/src/airflow/providers/zendesk/hooks/zendesk.py",
+    "task-sdk/src/airflow/sdk/definitions/connection.py",
+    "shared/secrets_backend/tests/secrets_backend/test_base.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/operators/pod.py",
+    "task-sdk/tests/task_sdk/definitions/test_connection.py",
+    "providers/amazon/src/airflow/providers/amazon/aws/secrets/secrets_manager.py",
+    "airflow-core/tests/unit/cli/commands/test_connection_command.py",
+    "airflow-core/src/airflow/models/variable.py",
+    "providers/common/ai/src/airflow/providers/common/ai/hooks/pydantic_ai.py",
+    "chart/tests/helm_tests/other/test_keda.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 527,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-c682ae0b5a",
+   "task": "Auto-triage should flag PRs that still have open review comment threads from maintainers, not just failing CI or merge conflicts, so those don't get silently closed or merged without addressing the feedback.",
+   "gold": [
+    "dev/breeze/src/airflow_breeze/commands/pr_commands.py",
+    "dev/breeze/src/airflow_breeze/utils/github.py"
+   ],
+   "candidates": 7714,
+   "ranked": [
+    "dev/breeze/src/airflow_breeze/commands/pr_commands.py",
+    "dev/stats/get_important_pr_candidates.py",
+    "dev/breeze/src/airflow_breeze/utils/github.py",
+    "dev/breeze/src/airflow_breeze/commands/ci_commands.py",
+    "shared/secrets_masker/src/airflow_shared/secrets_masker/secrets_masker.py",
+    "dev/system_tests/update_issue_status.py",
+    "dev/breeze/tests/test_set_milestone.py",
+    "dev/backport/update_backport_status.py",
+    "dev/breeze/src/airflow_breeze/utils/llm_utils.py",
+    "dev/breeze/src/airflow_breeze/utils/selective_checks.py",
+    "dev/registry/merge_registry_data.py",
+    "dev/breeze/src/airflow_breeze/utils/kubernetes_utils.py",
+    "providers/amazon/src/airflow/providers/amazon/aws/log/s3_task_handler.py",
+    "airflow-core/src/airflow/utils/log/logging_mixin.py",
+    "scripts/in_container/run_generate_constraints.py",
+    "providers/opensearch/src/airflow/providers/opensearch/log/os_task_handler.py",
+    "providers/alibaba/src/airflow/providers/alibaba/cloud/log/oss_task_handler.py",
+    "task-sdk/src/airflow/sdk/execution_time/supervisor.py",
+    "providers/asana/src/airflow/providers/asana/hooks/asana.py",
+    "scripts/ci/prek/mypy_folder.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 430,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-0d2011a3a5",
+   "task": "Add support for specifying a client ID when authenticating to Databricks via Azure managed identity, so it works with a user-assigned managed identity instead of only the system-assigned one.",
+   "gold": [
+    "providers/databricks/src/airflow/providers/databricks/hooks/databricks_base.py",
+    "providers/databricks/tests/unit/databricks/hooks/test_databricks_base.py"
+   ],
+   "candidates": 8075,
+   "ranked": [
+    "providers/databricks/src/airflow/providers/databricks/hooks/databricks_base.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/utils.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/secrets/key_vault.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/synapse.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/asb.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/data_lake.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/operators/container_instances.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/base_azure.py",
+    "providers/databricks/tests/unit/databricks/hooks/test_databricks.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/cosmos.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/adx.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/data_factory.py",
+    "providers/databricks/tests/unit/databricks/hooks/test_databricks_base.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/container_volume.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/fs/adls.py",
+    "providers/microsoft/azure/tests/unit/microsoft/azure/test_utils.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/wasb.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/container_registry.py",
+    "providers/microsoft/azure/tests/unit/microsoft/azure/hooks/test_data_factory.py",
+    "providers/postgres/src/airflow/providers/postgres/hooks/postgres.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 465,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-027c7cfc27",
+   "task": "When accessing a public repository with no Airflow connection configured, the bundle should still work instead of failing—only require a connection if the repository location isn't specified some other way.",
+   "gold": [
+    "providers/git/src/airflow/providers/git/bundles/git.py",
+    "providers/git/tests/unit/git/bundles/test_git.py"
+   ],
+   "candidates": 7412,
+   "ranked": [
+    "airflow-core/src/airflow/dag_processing/bundles/base.py",
+    "airflow-core/src/airflow/utils/sqlalchemy.py",
+    "airflow-core/src/airflow/api_fastapi/auth/managers/simple/ui/rules/typescript.js",
+    "airflow-core/src/airflow/ui/rules/typescript.js",
+    "airflow-core/src/airflow/models/variable.py",
+    "airflow-core/tests/unit/api_fastapi/core_api/routes/test_routes.py",
+    "scripts/docker/entrypoint_prod.sh",
+    "providers/google/src/airflow/providers/google/cloud/operators/functions.py",
+    "providers/git/src/airflow/providers/git/bundles/git.py",
+    "providers/git/tests/unit/git/bundles/test_git.py",
+    "task-sdk/src/airflow/sdk/execution_time/supervisor.py",
+    "airflow-core/tests/unit/dag_processing/test_dagbag.py",
+    "dev/breeze/src/airflow_breeze/commands/developer_commands.py",
+    "airflow-core/src/airflow/cli/cli_config.py",
+    "airflow-core/tests/unit/dag_processing/bundles/test_dag_bundle_manager.py",
+    "dev/breeze/src/airflow_breeze/commands/testing_commands.py",
+    "airflow-core/tests/unit/api_fastapi/core_api/routes/ui/test_dags.py",
+    "airflow-core/src/airflow/ui/rules/core.js",
+    "airflow-core/src/airflow/api_fastapi/auth/managers/simple/ui/rules/core.js",
+    "dev/breeze/src/airflow_breeze/commands/ci_commands.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 401,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-6a58dd9bd3",
+   "task": "When the login form for the simple auth backend gets a failed authentication response, it just shows a generic or garbled error instead of the actual status and reason from the server. Please make it surface the real HTTP status and error detail so users can tell what went wrong.",
+   "gold": [
+    "airflow-core/src/airflow/api_fastapi/auth/managers/simple/ui/src/alert/ErrorAlert.tsx",
+    "airflow-core/src/airflow/api_fastapi/auth/managers/simple/ui/src/queries/useCreateToken.ts",
+    "airflow-core/src/airflow/api_fastapi/auth/managers/simple/ui/src/queryClient.ts"
+   ],
+   "candidates": 7842,
+   "ranked": [
+    "task-sdk/src/airflow/sdk/api/client.py",
+    "task-sdk/src/airflow/sdk/execution_time/supervisor.py",
+    "task-sdk/tests/task_sdk/api/test_client.py",
+    "providers/amazon/src/airflow/providers/amazon/aws/auth_manager/routes/login.py",
+    "airflow-core/src/airflow/api_fastapi/auth/managers/simple/ui/src/login/Login.tsx",
+    "providers/fab/tests/unit/fab/auth_manager/test_fab_auth_manager.py",
+    "scripts/in_container/check_environment.sh",
+    "airflow-core/src/airflow/jobs/triggerer_job_runner.py",
+    "airflow-ctl/src/airflowctl/api/client.py",
+    "airflow-core/tests/unit/api_fastapi/common/test_exceptions.py",
+    "airflow-core/src/airflow/cli/commands/standalone_command.py",
+    "providers/salesforce/src/airflow/providers/salesforce/hooks/salesforce.py",
+    "airflow-core/src/airflow/api_fastapi/execution_api/routes/xcoms.py",
+    "providers/databricks/src/airflow/providers/databricks/hooks/databricks_base.py",
+    "airflow-core/src/airflow/executors/local_executor.py",
+    "airflow-core/src/airflow/api_fastapi/auth/managers/simple/simple_auth_manager.py",
+    "airflow-ctl/tests/airflow_ctl/api/test_client.py",
+    "providers/opensearch/tests/unit/opensearch/log/test_os_task_handler.py",
+    "providers/microsoft/azure/tests/unit/microsoft/azure/hooks/test_msgraph.py",
+    "scripts/docker/entrypoint_prod.sh"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 433,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-0cf2026e41",
+   "task": "Requests to Keycloak's token endpoint fail when the configured server URL has a trailing slash, because it produces a double slash before \"realms\" that Keycloak rejects. Normalize the server URL so the token URL is built correctly regardless of trailing slashes.",
+   "gold": [
+    "providers/keycloak/src/airflow/providers/keycloak/auth_manager/keycloak_auth_manager.py",
+    "providers/keycloak/tests/unit/keycloak/auth_manager/test_keycloak_auth_manager.py"
+   ],
+   "candidates": 7403,
+   "ranked": [
+    "providers/edge3/src/airflow/providers/edge3/plugins/edge_executor_plugin.py",
+    "providers/keycloak/src/airflow/providers/keycloak/auth_manager/keycloak_auth_manager.py",
+    "task-sdk/src/airflow/sdk/execution_time/supervisor.py",
+    "airflow-core/tests/unit/executors/test_local_executor.py",
+    "providers/google/src/airflow/providers/google/cloud/hooks/kubernetes_engine.py",
+    "providers/keycloak/src/airflow/providers/keycloak/get_provider_info.py",
+    "go-sdk/pkg/api/client.go",
+    "task-sdk/src/airflow/sdk/api/client.py",
+    "go-sdk/pkg/logging/server/server.go",
+    "dev/breeze/src/airflow_breeze/utils/cdxgen.py",
+    "airflow-core/src/airflow/api_fastapi/execution_api/app.py",
+    "providers/keycloak/tests/unit/keycloak/auth_manager/test_keycloak_auth_manager.py",
+    "providers/amazon/src/airflow/providers/amazon/aws/hooks/base_aws.py",
+    "providers/google/src/airflow/providers/google/cloud/operators/vertex_ai/custom_job.py",
+    "providers/snowflake/src/airflow/providers/snowflake/hooks/snowflake.py",
+    "providers/amazon/src/airflow/providers/amazon/aws/hooks/mwaa.py",
+    "airflow-core/src/airflow/utils/db.py",
+    "providers/fab/src/airflow/providers/fab/www/views.py",
+    "airflow-core/src/airflow/executors/local_executor.py",
+    "airflow-core/tests/unit/api_fastapi/execution_api/versions/head/test_xcoms.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 412,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-d2161ae04c",
+   "task": "When any of the DAG run or task instance states in the Dashboard hits the state count cap, don't show percentage breakdowns for that group's states — since the true total is unknown once counting is capped, the computed percentages are misleading and should be hidden entirely rather than shown for just the capped state.",
+   "gold": [
+    "airflow-core/src/airflow/ui/src/pages/Dashboard/HistoricalMetrics/DagRunMetrics.tsx",
+    "airflow-core/src/airflow/ui/src/pages/Dashboard/HistoricalMetrics/MetricSection.tsx",
+    "airflow-core/src/airflow/ui/src/pages/Dashboard/HistoricalMetrics/TaskInstanceMetrics.tsx"
+   ],
+   "candidates": 8442,
+   "ranked": [
+    "airflow-core/src/airflow/api_fastapi/core_api/routes/ui/dashboard.py",
+    "airflow-core/tests/unit/api_fastapi/core_api/routes/ui/test_dashboard.py",
+    "airflow-core/src/airflow/ui/src/pages/Dashboard/HistoricalMetrics/MetricSection.tsx",
+    "airflow-core/tests/unit/jobs/test_triggerer_job.py",
+    "providers/standard/src/airflow/providers/standard/sensors/external_task.py",
+    "airflow-core/src/airflow/ti_deps/deps/trigger_rule_dep.py",
+    "airflow-core/src/airflow/ui/tests/e2e/pages/DagCalendarTab.ts",
+    "providers/common/ai/src/airflow/providers/common/ai/example_dags/example_aip_progress_tracker.py",
+    "airflow-core/src/airflow/models/dagrun.py",
+    "airflow-core/src/airflow/api_fastapi/core_api/routes/ui/partitioned_dag_runs.py",
+    "task-sdk/src/airflow/sdk/execution_time/comms.py",
+    "task-sdk/src/airflow/sdk/execution_time/task_runner.py",
+    "airflow-core/src/airflow/jobs/triggerer_job_runner.py",
+    "task-sdk/tests/task_sdk/definitions/test_mappedoperator.py",
+    "airflow-core/src/airflow/ui/src/layouts/Details/Gantt/GanttTimeline.tsx",
+    "airflow-core/src/airflow/cli/cli_config.py",
+    "airflow-core/src/airflow/utils/log/file_task_handler.py",
+    "task-sdk/src/airflow/sdk/bases/operator.py",
+    "airflow-core/src/airflow/ui/src/layouts/Details/DetailsLayout.tsx",
+    "providers/elasticsearch/src/airflow/providers/elasticsearch/log/es_task_handler.py"
+   ],
+   "recall": {
+    "5": 0.3333333333333333,
+    "10": 0.3333333333333333,
+    "20": 0.3333333333333333
+   },
+   "ms": 504,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-c6cb72c208",
+   "task": "When deciding whether to patch a pod to mark it as already checked, the condition mixes \"pod failed\" with \"user wants to keep the pod\" in one confusing boolean expression. Can you restructure the check so it's clear when the pod is being retained versus when it just hasn't succeeded, without changing the actual behavior?",
+   "gold": [
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/operators/pod.py"
+   ],
+   "candidates": 8529,
+   "ranked": [
+    "kubernetes-tests/tests/kubernetes_tests/test_kubernetes_pod_operator.py",
+    "providers/cncf/kubernetes/tests/unit/cncf/kubernetes/triggers/test_pod.py",
+    "airflow-core/src/airflow/triggers/base.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/operators/pod.py",
+    "providers/cncf/kubernetes/tests/unit/cncf/kubernetes/hooks/test_kubernetes.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/utils/pod_manager.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/operators/job.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/executors/kubernetes_executor.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/hooks/kubernetes.py",
+    "providers/cncf/kubernetes/tests/unit/cncf/kubernetes/utils/test_pod_manager.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/operators/spark_kubernetes.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/triggers/pod.py",
+    "airflow-core/tests/unit/models/test_backfill.py",
+    "airflow-core/tests/unit/utils/test_sqlalchemy.py",
+    "providers/apache/spark/src/airflow/providers/apache/spark/hooks/spark_submit.py",
+    "providers/common/sql/src/airflow/providers/common/sql/operators/sql.py",
+    "airflow-core/src/airflow/ui/src/components/Clear/TaskInstance/ClearTaskInstanceDialog.tsx",
+    "airflow-core/src/airflow/timetables/base.py",
+    "airflow-core/tests/unit/utils/test_db.py",
+    "providers/openlineage/tests/system/openlineage/operator.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 488,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-43038e0118",
+   "task": "The Azure Data Factory hook calls (updating a factory, dataflow, or trigger, and getting linked services or dataflows) are failing after upgrading azure-mgmt-datafactory to version 10. Please fix the hook so etag/if-match handling works correctly with the new SDK version.",
+   "gold": [
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/data_factory.py",
+    "providers/microsoft/azure/tests/unit/microsoft/azure/hooks/test_data_factory.py"
+   ],
+   "candidates": 8869,
+   "ranked": [
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/data_factory.py",
+    "providers/microsoft/azure/tests/unit/microsoft/azure/hooks/test_data_factory.py",
+    "providers/microsoft/azure/tests/unit/microsoft/azure/triggers/test_data_factory.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/operators/container_instances.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/triggers/data_factory.py",
+    "dev/registry/extract_metadata.py",
+    "providers/microsoft/azure/tests/unit/microsoft/azure/operators/test_data_factory.py",
+    "shared/observability/tests/observability/metrics/test_otel_logger.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/compute.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/asb.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/container_instance.py",
+    "task-sdk/src/airflow/sdk/definitions/dag.py",
+    "providers/postgres/src/airflow/providers/postgres/hooks/postgres.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/operators/data_factory.py",
+    "airflow-core/src/airflow/jobs/triggerer_job_runner.py",
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/base_azure.py",
+    "providers/google/src/airflow/providers/google/cloud/operators/dataflow.py",
+    "providers/databricks/src/airflow/providers/databricks/hooks/databricks_base.py",
+    "providers/sftp/tests/unit/sftp/pools/test_sftp.py",
+    "providers/google/src/airflow/providers/google/cloud/hooks/dataflow.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 506,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-cdecb7efbb",
+   "task": "The `--daemon` flag on the api-server forks and returns immediately, but in CI I need the option to keep it running in the foreground (backgrounded with `&`) instead, controlled by an environment variable, so logs stay attached to the process for debugging.",
+   "gold": [
+    "scripts/docker/entrypoint_ci.sh"
+   ],
+   "candidates": 7317,
+   "ranked": [
+    "airflow-core/src/airflow/cli/commands/api_server_command.py",
+    "dev/breeze/src/airflow_breeze/commands/developer_commands.py",
+    "providers/edge3/src/airflow/providers/edge3/cli/worker.py",
+    "task-sdk/src/airflow/sdk/execution_time/supervisor.py",
+    "dev/breeze/src/airflow_breeze/commands/common_options.py",
+    "scripts/ci/prek/mypy.py",
+    "scripts/ci/prek/mypy_folder.py",
+    "airflow-core/tests/unit/cli/commands/test_api_server_command.py",
+    "airflow-core/src/airflow/cli/cli_config.py",
+    "scripts/docker/entrypoint_ci.sh",
+    "dev/breeze/src/airflow_breeze/params/shell_params.py",
+    "airflow-core/src/airflow/jobs/triggerer_job_runner.py",
+    "dev/breeze/src/airflow_breeze/commands/testing_commands.py",
+    "task-sdk/src/airflow/sdk/execution_time/comms.py",
+    "dev/breeze/src/airflow_breeze/utils/run_utils.py",
+    "airflow-core/src/airflow/executors/base_executor.py",
+    "dev/breeze/src/airflow_breeze/commands/kubernetes_commands.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/get_provider_info.py",
+    "providers/docker/src/airflow/providers/docker/operators/docker_swarm.py",
+    "providers/apache/beam/src/airflow/providers/apache/beam/hooks/beam.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 398,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-b916de6dab",
+   "task": "The active runs count on the Dag detail page includes queued runs, so it doesn't match what \"active runs\" should mean. It should only count runs that are actually executing, and the label next to it should reflect that it's the current active count (not a max).",
+   "gold": [
+    "airflow-core/src/airflow/api_fastapi/core_api/routes/public/dags.py",
+    "airflow-core/src/airflow/ui/src/pages/Dag/Header.test.tsx",
+    "airflow-core/src/airflow/ui/src/pages/Dag/Header.tsx"
+   ],
+   "candidates": 9167,
+   "ranked": [
+    "airflow-core/src/airflow/ui/tests/e2e/pages/BackfillPage.ts",
+    "providers/amazon/tests/unit/amazon/aws/executors/ecs/test_ecs_executor.py",
+    "airflow-core/tests/unit/models/test_backfill.py",
+    "providers/common/ai/src/airflow/providers/common/ai/toolsets/sql.py",
+    "dev/airflow_perf/scheduler_dag_execution_timing.py",
+    "airflow-core/src/airflow/api_fastapi/execution_api/routes/task_instances.py",
+    "airflow-core/src/airflow/models/dag.py",
+    "task-sdk/src/airflow/sdk/definitions/dag.py",
+    "providers/elasticsearch/src/airflow/providers/elasticsearch/log/es_task_handler.py",
+    "airflow-core/tests/unit/models/test_cleartasks.py",
+    "airflow-core/src/airflow/ui/tests/e2e/pages/DagsPage.ts",
+    "airflow-core/src/airflow/ui/src/pages/DagsList/DagRunStateCounts.tsx",
+    "airflow-core/src/airflow/models/deadline.py",
+    "airflow-core/src/airflow/ui/src/components/DataTable/DataTable.tsx",
+    "airflow-core/src/airflow/api_fastapi/core_api/routes/ui/assets.py",
+    "airflow-core/src/airflow/serialization/definitions/dag.py",
+    "airflow-core/tests/unit/api_fastapi/core_api/routes/ui/test_dags.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/executors/kubernetes_executor.py",
+    "airflow-core/src/airflow/api_fastapi/core_api/routes/ui/partitioned_dag_runs.py",
+    "airflow-core/tests/unit/api_fastapi/core_api/routes/ui/test_partitioned_dag_runs.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 574,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-d868c8c714",
+   "task": "Breeze setup fails when a previous uv-based global install is corrupted: `uv tool list` silently drops the broken tool, so setup doesn't detect the leftover install or its ~/.local/bin/breeze shim, and can't recover or ask to remove it. Make setup detect this case too and handle it the same way it handles a normal legacy install.",
+   "gold": [
+    "dev/breeze/src/airflow_breeze/utils/path_utils.py",
+    "dev/breeze/tests/test_shim_version_check.py"
+   ],
+   "candidates": 9117,
+   "ranked": [
+    "dev/breeze/src/airflow_breeze/utils/path_utils.py",
+    "dev/breeze/tests/test_shim_version_check.py",
+    "dev/breeze/src/airflow_breeze/utils/reinstall.py",
+    "scripts/docker/entrypoint_ci.sh",
+    "airflow-core/src/airflow/policies.py",
+    "dev/ide_setup/setup_idea.py",
+    "scripts/ci/prek/common_prek_utils.py",
+    "dev/breeze/src/airflow_breeze/prepare_providers/provider_distributions.py",
+    "providers/common/ai/src/airflow/providers/common/ai/toolsets/langchain_bridge.py",
+    "scripts/tests/ci/prek/test_upgrade_important_versions.py",
+    "scripts/in_container/run_generate_constraints.py",
+    "providers/common/ai/src/airflow/providers/common/ai/toolsets/sandbox.py",
+    "scripts/ci/prek/upgrade_important_versions.py",
+    "scripts/ci/prek/run_mypy_full_dist_local_venv_or_breeze_in_ci.py",
+    "scripts/docker/install_airflow_when_building_images.sh",
+    "scripts/docker/common.sh",
+    "dev/breeze/src/airflow_breeze/utils/docker_command_utils.py",
+    "providers/common/ai/src/airflow/providers/common/ai/sandbox/base.py",
+    "airflow-core/src/airflow/settings.py",
+    "providers/common/ai/src/airflow/providers/common/ai/toolsets/managed_agent.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 567,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-b72df7bd48",
+   "task": "Scheduler tests that use a real executor are looping and polling too aggressively—can we back off the poll interval when no tasks are runnable and a real executor is in use, so it's not hammering external calls every second?",
+   "gold": [
+    "task-sdk/src/airflow/sdk/definitions/dag.py"
+   ],
+   "candidates": 7166,
+   "ranked": [
+    "providers/amazon/src/airflow/providers/amazon/aws/hooks/batch_client.py",
+    "providers/amazon/src/airflow/providers/amazon/aws/executors/aws_lambda/lambda_executor.py",
+    "task-sdk/src/airflow/sdk/definitions/dag.py",
+    "dev/airflow_perf/scheduler_dag_execution_timing.py",
+    "airflow-core/src/airflow/executors/local_executor.py",
+    "providers/amazon/src/airflow/providers/amazon/aws/executors/batch/batch_executor.py",
+    "providers/amazon/src/airflow/providers/amazon/aws/executors/ecs/ecs_executor.py",
+    "providers/cncf/kubernetes/tests/unit/cncf/kubernetes/executors/test_kubernetes_executor.py",
+    "task-sdk/tests/conftest.py",
+    "providers/amazon/tests/unit/amazon/aws/executors/aws_lambda/test_lambda_executor.py",
+    "providers/amazon/src/airflow/providers/amazon/aws/hooks/elasticache_replication_group.py",
+    "airflow-core/src/airflow/models/dagrun.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/executors/kubernetes_executor.py",
+    "providers/amazon/tests/unit/amazon/aws/executors/batch/test_batch_executor.py",
+    "providers/apache/spark/src/airflow/providers/apache/spark/hooks/spark_submit.py",
+    "task-sdk/src/airflow/sdk/bases/operator.py",
+    "airflow-core/tests/integration/otel/test_otel.py",
+    "airflow-core/src/airflow/models/taskinstance.py",
+    "task-sdk/src/airflow/sdk/execution_time/supervisor.py",
+    "airflow-core/src/airflow/cli/commands/standalone_command.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 392,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-b9ff1d7769",
+   "task": "`airflow dags list` shows the same DAG multiple times when it has more than one serialized version stored — it should only show each DAG ID once.",
+   "gold": [
+    "airflow-core/src/airflow/cli/commands/dag_command.py",
+    "airflow-core/tests/unit/cli/commands/test_dag_command.py"
+   ],
+   "candidates": 9010,
+   "ranked": [
+    "airflow-core/tests/unit/cli/commands/test_dag_command.py",
+    "airflow-core/src/airflow/dag_processing/bundles/manager.py",
+    "airflow-core/tests/unit/api_fastapi/core_api/routes/ui/test_deadlines.py",
+    "airflow-core/src/airflow/timetables/base.py",
+    "airflow-core/src/airflow/api_fastapi/core_api/services/ui/dependencies.py",
+    "airflow-core/tests/unit/api_fastapi/core_api/routes/ui/test_partitioned_dag_runs.py",
+    "airflow-core/src/airflow/cli/cli_config.py",
+    "airflow-core/tests/unit/models/test_serialized_dag.py",
+    "airflow-core/tests/unit/dag_processing/test_collection.py",
+    "task-sdk/src/airflow/sdk/definitions/timetables/trigger.py",
+    "airflow-core/src/airflow/dag_processing/collection.py",
+    "airflow-core/src/airflow/assets/manager.py",
+    "airflow-core/src/airflow/models/dagbag.py",
+    "providers/common/ai/src/airflow/providers/common/ai/utils/sql_validation.py",
+    "airflow-core/src/airflow/api_fastapi/common/partition_helpers.py",
+    "airflow-core/tests/unit/models/test_dagbag.py",
+    "airflow-core/src/airflow/models/trigger.py",
+    "task-sdk/src/airflow/sdk/bases/operator.py",
+    "airflow-core/tests/unit/cli/commands/test_config_command.py",
+    "shared/state/src/airflow_shared/state/__init__.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 541,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-905f4752d4",
+   "task": "When building the provider LICENSE file, copy it into the top-level provider directory instead of the base package path, so it doesn't get bundled into a subpackage.",
+   "gold": [
+    "dev/breeze/src/airflow_breeze/prepare_providers/provider_documentation.py"
+   ],
+   "candidates": 7102,
+   "ranked": [
+    "devel-common/src/docs/provider_conf.py",
+    "airflow-ctl/docs/conf.py",
+    "airflow-core/docs/conf.py",
+    "providers-summary-docs/conf.py",
+    "scripts/ci/prek/common_prek_utils.py",
+    "scripts/docker/install_airflow_when_building_images.sh",
+    "task-sdk/src/airflow/sdk/module_loading.py",
+    "docker-stack-docs/conf.py",
+    "scripts/ci/prek/update_providers_dependencies.py",
+    "scripts/ci/testing/summarize_captured_warnings.py",
+    "airflow-core/src/airflow/utils/db.py",
+    "chart/docs/conf.py",
+    "scripts/in_container/verify_providers.py",
+    "task-sdk/src/airflow/sdk/definitions/deadline.py",
+    "shared/logging/src/airflow_shared/logging/structlog.py",
+    "dev/breeze/src/airflow_breeze/utils/packages.py",
+    "scripts/in_container/in_container_utils.py",
+    "providers/apache/hive/src/airflow/providers/apache/hive/transfers/s3_to_hive.py",
+    "dev/breeze/src/airflow_breeze/prepare_providers/provider_distributions.py",
+    "devel-common/src/sphinx_exts/providers_extensions.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 389,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-2031171934",
+   "task": "Can you add `ParamsDict` and `literal` to the top-level SDK exports so they can be imported directly like `Param`, instead of needing their internal module paths?",
+   "gold": [
+    "task-sdk/src/airflow/sdk/__init__.py",
+    "task-sdk/tests/task_sdk/docs/test_public_api.py"
+   ],
+   "candidates": 7255,
+   "ranked": [
+    "airflow-core/src/airflow/dag_processing/dagbag.py",
+    "task-sdk/src/airflow/sdk/definitions/callback.py",
+    "scripts/in_container/verify_providers.py",
+    "task-sdk/src/airflow/sdk/definitions/param.py",
+    "airflow-core/docs/conf.py",
+    "task-sdk/src/airflow/sdk/bases/operator.py",
+    "task-sdk/src/airflow/sdk/definitions/dag.py",
+    "airflow-ctl/docs/conf.py",
+    "chart/docs/conf.py",
+    "shared/logging/src/airflow_shared/logging/structlog.py",
+    "devel-common/src/tests_common/test_utils/compat.py",
+    "devel-common/src/sphinx_exts/providers_extensions.py",
+    "airflow-core/src/airflow/utils/file.py",
+    "airflow-core/src/airflow/serialization/definitions/param.py",
+    "airflow-core/src/airflow/__init__.py",
+    "airflow-core/src/airflow/jobs/triggerer_job_runner.py",
+    "task-sdk/src/airflow/sdk/definitions/taskgroup.py",
+    "shared/secrets_masker/src/airflow_shared/secrets_masker/secrets_masker.py",
+    "task-sdk/src/airflow/sdk/serde/__init__.py",
+    "task-sdk/src/airflow/sdk/definitions/_internal/templater.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 412,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-6206ea1b17",
+   "task": "When someone is shown as the assigned user for a human-in-the-loop task, the display should show their user ID as well as their username, not just the username, so I can tell apart accounts with similar names when assigning them.",
+   "gold": [
+    "airflow-core/src/airflow/ui/src/layouts/Nav/UserSettingsButton.tsx"
+   ],
+   "candidates": 7546,
+   "ranked": [
+    "task-sdk/src/airflow/sdk/api/client.py",
+    "providers/standard/src/airflow/providers/standard/operators/hitl.py",
+    "task-sdk/src/airflow/sdk/definitions/decorators/task_group.py",
+    "task-sdk/src/airflow/sdk/bases/operator.py",
+    "airflow-core/src/airflow/models/trigger.py",
+    "airflow-core/src/airflow/api_fastapi/core_api/routes/public/hitl.py",
+    "airflow-core/src/airflow/jobs/triggerer_job_runner.py",
+    "airflow-core/src/airflow/api_fastapi/execution_api/datamodels/hitl.py",
+    "airflow-core/src/airflow/api_fastapi/core_api/datamodels/hitl.py",
+    "providers/google/src/airflow/providers/google/cloud/hooks/vertex_ai/auto_ml.py",
+    "airflow-core/tests/integration/otel/test_otel.py",
+    "airflow-core/src/airflow/api_fastapi/execution_api/routes/hitl.py",
+    "task-sdk/src/airflow/sdk/api/datamodels/_generated.py",
+    "task-sdk/src/airflow/sdk/definitions/_internal/abstractoperator.py",
+    "dev/breeze/src/airflow_breeze/utils/visuals.py",
+    "airflow-core/tests/unit/api_fastapi/core_api/routes/public/test_hitl.py",
+    "airflow-ctl/src/airflowctl/api/datamodels/generated.py",
+    "airflow-core/tests/unit/models/test_trigger.py",
+    "providers/standard/src/airflow/providers/standard/triggers/hitl.py",
+    "providers/google/src/airflow/providers/google/cloud/operators/vertex_ai/custom_job.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 433,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-139cd980af",
+   "task": "When importing pools or connections, I want to control what happens if an entry already exists, like we already support for variable imports. Add an option to choose whether existing entries get overwritten, skipped, or the import fails.",
+   "gold": [
+    "airflow-ctl/src/airflowctl/ctl/cli_config.py",
+    "airflow-ctl/src/airflowctl/ctl/commands/connection_command.py",
+    "airflow-ctl/src/airflowctl/ctl/commands/pool_command.py",
+    "airflow-ctl/tests/airflow_ctl/ctl/commands/test_connections_command.py",
+    "airflow-ctl/tests/airflow_ctl/ctl/commands/test_pool_command.py"
+   ],
+   "candidates": 7701,
+   "ranked": [
+    "airflow-core/src/airflow/settings.py",
+    "airflow-core/src/airflow/exceptions.py",
+    "airflow-core/src/airflow/__init__.py",
+    "airflow-core/src/airflow/cli/cli_config.py",
+    "airflow-core/src/airflow/configuration.py",
+    "providers/celery/src/airflow/providers/celery/cli/celery_command.py",
+    "airflow-core/src/airflow/dag_processing/dagbag.py",
+    "airflow-core/src/airflow/api_fastapi/core_api/routes/public/variables.py",
+    "airflow-ctl/tests/airflow_ctl/api/test_operations.py",
+    "airflow-ctl/src/airflowctl/api/operations.py",
+    "airflow-core/src/airflow/api_fastapi/core_api/security.py",
+    "scripts/ci/prek/check_shared_distributions_usage.py",
+    "dev/breeze/tests/test_release_candidate_command.py",
+    "airflow-core/tests/unit/api_fastapi/common/test_exceptions.py",
+    "dev/breeze/tests/test_release_command.py",
+    "task-sdk/src/airflow/sdk/api/client.py",
+    "providers/yandex/src/airflow/providers/yandex/secrets/lockbox.py",
+    "providers/standard/src/airflow/providers/standard/operators/trigger_dagrun.py",
+    "airflow-ctl/src/airflowctl/ctl/cli_config.py",
+    "airflow-core/src/airflow/providers_manager.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0.2
+   },
+   "ms": 433,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-16e1abaaea",
+   "task": "The namespace-level logging config (a string of `<logger>=<level>` pairs) throws an unhandled error and crashes startup if an entry is malformed or has an invalid level name. Can we make this best-effort instead, skipping bad entries and logging an error for each one instead of raising?",
+   "gold": [
+    "shared/logging/src/airflow_shared/logging/structlog.py",
+    "shared/logging/tests/logging/test_structlog.py"
+   ],
+   "candidates": 8630,
+   "ranked": [
+    "java-sdk/sdk/src/main/kotlin/org/apache/airflow/sdk/execution/Logger.kt",
+    "shared/logging/src/airflow_shared/logging/structlog.py",
+    "java-sdk/sdk/src/test/kotlin/org/apache/airflow/sdk/execution/NamespaceLevelsTest.kt",
+    "providers/common/ai/src/airflow/providers/common/ai/durable/storage.py",
+    "airflow-core/src/airflow/jobs/triggerer_job_runner.py",
+    "devel-common/src/tests_common/test_utils/logs.py",
+    "providers/google/src/airflow/providers/google/cloud/log/stackdriver_task_handler.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/operators/pod.py",
+    "task-sdk/src/airflow/sdk/execution_time/task_runner.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/utils/pod_manager.py",
+    "providers/common/ai/src/airflow/providers/common/ai/toolsets/sql.py",
+    "shared/template_rendering/src/airflow_shared/template_rendering/__init__.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/triggers/pod.py",
+    "shared/logging/tests/logging/test_structlog.py",
+    "airflow-core/src/airflow/utils/log/logging_mixin.py",
+    "airflow-core/src/airflow/utils/log/file_task_handler.py",
+    "go-sdk/pkg/execution/comms_test.go",
+    "task-sdk/src/airflow/sdk/bases/operator.py",
+    "airflow-core/src/airflow/settings.py",
+    "task-sdk/src/airflow/sdk/definitions/callback.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 521,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-b2a48f72ae",
+   "task": "When triaging PRs with breeze, let me filter to only show PRs where a review is currently requested from me, instead of scanning through everything.",
+   "gold": [
+    "dev/breeze/src/airflow_breeze/commands/pr_commands.py",
+    "dev/breeze/src/airflow_breeze/commands/pr_commands_config.py"
+   ],
+   "candidates": 7747,
+   "ranked": [
+    "dev/breeze/src/airflow_breeze/commands/pr_commands.py",
+    "dev/stats/get_important_pr_candidates.py",
+    "providers/common/ai/src/airflow/providers/common/ai/utils/hitl_review.py",
+    "dev/breeze/src/airflow_breeze/utils/llm_utils.py",
+    "docker-tests/tests/docker_tests/docker_utils.py",
+    "airflow-core/src/airflow/ui/tests/e2e/pages/DagsPage.ts",
+    "scripts/ci/prek/mypy_folder.py",
+    "airflow-core/src/airflow/models/xcom.py",
+    "scripts/ci/prek/mypy.py",
+    "airflow-core/src/airflow/ui/src/pages/DagsList/DagsFilters/DagsFilters.tsx",
+    "airflow-core/src/airflow/ui/src/pages/DagsList/DagsList.tsx",
+    "airflow-core/src/airflow/cli/cli_config.py",
+    "dev/breeze/src/airflow_breeze/commands/common_options.py",
+    "helm-tests/tests/helm_tests/airflow_core/test_dag_processor.py",
+    "providers/common/ai/tests/unit/common/ai/mixins/test_hitl_review.py",
+    "providers/common/ai/tests/unit/common/ai/plugins/test_hitl_review.py",
+    "providers/edge3/src/airflow/providers/edge3/get_provider_info.py",
+    "airflow-core/src/airflow/api_fastapi/common/db/dags.py",
+    "dev/breeze/src/airflow_breeze/utils/selective_checks.py",
+    "shared/configuration/src/airflow_shared/configuration/parser.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 433,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-a42b88b59a",
+   "task": "Asset objects should be hashable with consistent hash values so equal assets hash the same way (e.g. for use in sets or as dict keys), but right now hashing fails or is unreliable because the underlying representation isn't hashable/deterministic.",
+   "gold": [
+    "task-sdk/src/airflow/sdk/definitions/asset/__init__.py",
+    "task-sdk/tests/task_sdk/definitions/test_asset.py"
+   ],
+   "candidates": 7373,
+   "ranked": [
+    "airflow-core/tests/unit/models/test_serialized_dag.py",
+    "task-sdk/src/airflow/sdk/execution_time/context.py",
+    "airflow-core/src/airflow/timetables/simple.py",
+    "task-sdk/src/airflow/sdk/definitions/asset/__init__.py",
+    "airflow-core/src/airflow/dag_processing/collection.py",
+    "airflow-core/tests/unit/serialization/test_serialized_objects.py",
+    "airflow-core/src/airflow/timetables/base.py",
+    "airflow-core/tests/unit/lineage/test_hook.py",
+    "providers/common/compat/src/airflow/providers/common/compat/lineage/hook.py",
+    "task-sdk/src/airflow/sdk/bases/decorator.py",
+    "airflow-core/src/airflow/serialization/definitions/assets.py",
+    "task-sdk/src/airflow/sdk/execution_time/task_runner.py",
+    "task-sdk/src/airflow/sdk/definitions/dag.py",
+    "airflow-core/src/airflow/models/taskinstance.py",
+    "airflow-core/src/airflow/utils/sqlalchemy.py",
+    "providers/salesforce/src/airflow/providers/salesforce/hooks/salesforce.py",
+    "airflow-core/src/airflow/lineage/hook.py",
+    "airflow-core/src/airflow/serialization/serialized_objects.py",
+    "airflow-core/src/airflow/triggers/base.py",
+    "providers/openlineage/src/airflow/providers/openlineage/utils/utils.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 394,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-40f6ec1c60",
+   "task": "The grid structure endpoint uses too much memory on DAGs with a lot of history — it loads all serialized DAG versions into memory at once before merging them. Can it process and merge each version one at a time and release it afterward instead, so peak memory stays low regardless of how many versions there are?",
+   "gold": [
+    "airflow-core/src/airflow/api_fastapi/core_api/routes/ui/grid.py"
+   ],
+   "candidates": 7403,
+   "ranked": [
+    "airflow-core/src/airflow/models/trigger.py",
+    "airflow-core/src/airflow/dag_processing/manager.py",
+    "airflow-core/src/airflow/executors/local_executor.py",
+    "performance/src/performance_dags/performance_dag/performance_dag.py",
+    "task-sdk/src/airflow/sdk/definitions/dag.py",
+    "airflow-core/src/airflow/dag_processing/bundles/base.py",
+    "airflow-core/src/airflow/utils/db.py",
+    "airflow-core/src/airflow/models/serialized_dag.py",
+    "airflow-core/src/airflow/dag_processing/dagbag.py",
+    "airflow-core/tests/unit/api_fastapi/core_api/routes/ui/test_grid.py",
+    "airflow-core/src/airflow/policies.py",
+    "task-sdk/src/airflow/sdk/execution_time/supervisor.py",
+    "airflow-core/src/airflow/utils/log/file_task_handler.py",
+    "airflow-core/tests/integration/otel/test_otel.py",
+    "airflow-core/src/airflow/serialization/serialized_objects.py",
+    "providers/celery/src/airflow/providers/celery/executors/celery_executor.py",
+    "airflow-core/src/airflow/api_fastapi/core_api/routes/ui/grid.py",
+    "providers/openlineage/src/airflow/providers/openlineage/get_provider_info.py",
+    "task-sdk/src/airflow/sdk/definitions/timetables/trigger.py",
+    "dev/airflow_perf/dags/elastic_dag.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 426,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-c0cbd097ea",
+   "task": "When a Kubernetes pod's log output for a task spans multiple lines (e.g. a multi-line traceback), our progress callback fires once per raw line instead of once per complete log message, so the same logical log entry gets reported repeatedly. It should invoke the callback once per complete log line, and pass along which container it came from, the pod, and the line's timestamp.",
+   "gold": [
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/callbacks.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/utils/pod_manager.py",
+    "providers/cncf/kubernetes/tests/unit/cncf/kubernetes/utils/test_pod_manager.py"
+   ],
+   "candidates": 7302,
+   "ranked": [
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/utils/pod_manager.py",
+    "airflow-core/src/airflow/utils/log/file_task_handler.py",
+    "devel-common/src/tests_common/test_utils/otel_utils.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/operators/pod.py",
+    "providers/cncf/kubernetes/tests/unit/cncf/kubernetes/utils/test_pod_manager.py",
+    "providers/cncf/kubernetes/tests/unit/cncf/kubernetes/executors/test_kubernetes_executor.py",
+    "kubernetes-tests/tests/kubernetes_tests/test_kubernetes_pod_operator.py",
+    "providers/elasticsearch/src/airflow/providers/elasticsearch/log/es_task_handler.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/callbacks.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/executors/kubernetes_executor_utils.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/get_provider_info.py",
+    "providers/opensearch/src/airflow/providers/opensearch/log/os_task_handler.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/executors/kubernetes_executor.py",
+    "devel-common/src/tests_common/test_utils/logs.py",
+    "providers/microsoft/psrp/src/airflow/providers/microsoft/psrp/hooks/psrp.py",
+    "airflow-core/tests/unit/utils/test_log_handlers.py",
+    "dev/breeze/src/airflow_breeze/commands/kubernetes_commands.py",
+    "task-sdk/src/airflow/sdk/bases/operator.py",
+    "shared/logging/src/airflow_shared/logging/structlog.py",
+    "airflow-core/src/airflow/models/dagrun.py"
+   ],
+   "recall": {
+    "5": 0.6666666666666666,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 405,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-8850c326bd",
+   "task": "The i18n locale check in CI is failing because it's picking up hidden scratch directories (like `.claude`) under the locales folder as if they were language codes, and treating them as missing translations. Can we make that check skip any directory whose name starts with a dot?",
+   "gold": [
+    "scripts/ci/prek/boring_cyborg.py"
+   ],
+   "candidates": 9167,
+   "ranked": [
+    "dev/breeze/src/airflow_breeze/commands/ui_commands.py",
+    "dev/breeze/tests/test_ui_commands.py",
+    "dev/breeze/src/airflow_breeze/prepare_providers/provider_distributions.py",
+    "airflow-core/src/airflow/ui/src/i18n/config.ts",
+    "dev/breeze/src/airflow_breeze/utils/path_utils.py",
+    "airflow-core/src/airflow/utils/log/logging_mixin.py",
+    "dev/ide_setup/setup_idea.py",
+    "dev/breeze/src/airflow_breeze/commands/ci_commands.py",
+    "airflow-core/src/airflow/ui/src/i18n/dayjsLocale.ts",
+    "dev/breeze/src/airflow_breeze/utils/run_utils.py",
+    "dev/breeze/src/airflow_breeze/utils/docker_command_utils.py",
+    "scripts/ci/prek/common_prek_utils.py",
+    "scripts/ci/prek/sync_translation_namespaces.py",
+    "airflow-core/src/airflow/ui/src/i18n/config.test.ts",
+    "airflow-core/src/airflow/models/trigger.py",
+    "airflow-e2e-tests/tests/airflow_e2e_tests/conftest.py",
+    "dev/breeze/src/airflow_breeze/utils/release_validator.py",
+    "airflow-core/src/airflow/ui/src/components/DataTable/modelName.test.ts",
+    "dev/breeze/src/airflow_breeze/commands/developer_commands.py",
+    "dev/breeze/tests/integration_tests/test_airflow_release_validator_integration.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 559,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "airflow-434c1cc9f2",
+   "task": "The Kubernetes executor's task and result queues should let producers wait until items have actually been processed, not just enqueued, so we can properly track when queued work is done.",
+   "gold": [
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/executors/kubernetes_executor.py"
+   ],
+   "candidates": 7781,
+   "ranked": [
+    "airflow-core/src/airflow/executors/local_executor.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/executors/kubernetes_executor.py",
+    "airflow-core/src/airflow/executors/base_executor.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/executors/local_kubernetes_executor.py",
+    "providers/celery/src/airflow/providers/celery/executors/celery_executor.py",
+    "providers/amazon/src/airflow/providers/amazon/aws/executors/aws_lambda/lambda_executor.py",
+    "providers/celery/src/airflow/providers/celery/executors/celery_kubernetes_executor.py",
+    "providers/apache/spark/src/airflow/providers/apache/spark/hooks/spark_submit.py",
+    "providers/cncf/kubernetes/tests/unit/cncf/kubernetes/executors/test_kubernetes_executor.py",
+    "airflow-core/src/airflow/models/trigger.py",
+    "airflow-core/src/airflow/models/taskinstance.py",
+    "airflow-core/src/airflow/utils/log/logging_mixin.py",
+    "task-sdk/src/airflow/sdk/bases/operator.py",
+    "airflow-core/tests/unit/utils/test_sqlalchemy.py",
+    "airflow-core/tests/unit/cli/test_cli_parser.py",
+    "airflow-core/src/airflow/utils/state.py",
+    "airflow-core/src/airflow/utils/sqlalchemy.py",
+    "airflow-core/src/airflow/jobs/triggerer_job_runner.py",
+    "providers/celery/src/airflow/providers/celery/get_provider_info.py",
+    "task-sdk/src/airflow/sdk/definitions/dag.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 446,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  }
+ ]
+}

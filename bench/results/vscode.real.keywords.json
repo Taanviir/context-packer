@@ -1,0 +1,1231 @@
+{
+ "repo": "vscode",
+ "split": "real",
+ "variant": "keywords",
+ "results": [
+  {
+   "id": "vscode-5635ce9a00",
+   "task": "Mouse events in the editor compute the editor's page position and the position relative to the editor for every event, even when callers never read those values. Can we make that computation lazy, so it only runs the first time each property is actually accessed?",
+   "gold": [
+    "src/vs/editor/browser/editorDom.ts"
+   ],
+   "candidates": 10208,
+   "ranked": [
+    "src/vs/workbench/browser/parts/notifications/notificationsToasts.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/hiddenModelBPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54ConcisePrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54LargePrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54Prompt.tsx",
+    "src/vs/base/browser/ui/scrollbar/scrollableElementOptions.ts",
+    "src/vs/platform/agentHost/node/agentSideEffects.ts",
+    "src/vs/platform/files/node/watcher/nodejs/nodejsWatcherLib.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/defaultAgentInstructions.tsx",
+    "extensions/copilot/src/util/vs/base/common/async.ts",
+    "src/vs/base/common/async.ts",
+    "src/vs/workbench/contrib/debug/browser/debugEditorContribution.ts",
+    "extensions/terminal-suggest/src/completions/upstream/less.ts",
+    "src/vs/editor/browser/editorDom.ts",
+    "extensions/copilot/src/extension/completions-core/vscode-node/lib/src/telemetry.ts",
+    "src/vs/editor/browser/controller/editContext/textArea/textAreaEditContext.ts",
+    "src/vs/editor/browser/controller/mouseHandler.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51CodexPrompt.tsx",
+    "src/vs/platform/files/common/files.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 936,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-4797e59d67",
+   "task": "When I'm in an agent session with a file open in the editor, I want a quick way to attach that file as context to the chat, instead of having to drag it in or type its path manually.",
+   "gold": [
+    "src/vs/sessions/contrib/editor/browser/editor.contribution.ts"
+   ],
+   "candidates": 11520,
+   "ranked": [
+    "src/vs/workbench/contrib/chat/browser/actions/chatAccessibilityHelp.ts",
+    "src/vs/workbench/contrib/terminal/browser/terminal.ts",
+    "src/vs/workbench/browser/workbench.contribution.ts",
+    "src/vs/workbench/contrib/chat/browser/promptSyntax/newPromptFileActions.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/hiddenModelMPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "src/vs/workbench/contrib/browserView/electron-browser/features/browserEditorChatFeatures.ts",
+    "src/vs/sessions/contrib/chat/browser/newChatContextAttachments.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "src/vs/workbench/contrib/terminal/common/terminalConfiguration.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5CodexPrompt.tsx",
+    "src/vs/workbench/contrib/chat/browser/chat.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt55BasePrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "src/vs/workbench/contrib/chat/browser/actions/chatContextActions.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5Prompt.tsx",
+    "src/vs/workbench/contrib/browserView/electron-browser/widgets/browserUrlBarWidget.ts",
+    "extensions/copilot/src/extension/prompts/node/test/fixtures/tempo-chatContextActions.ts",
+    "src/vs/workbench/contrib/chat/electron-browser/chat.contribution.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51CodexPrompt.tsx"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 1028,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-334c30150b",
+   "task": "The monitoring status item's tooltip and detail text are too technical and jargon-heavy — can you rewrite the copy to plainly explain that agent usage is being monitored, where it's exported to, and whether sensitive content capture is on, instead of listing raw data categories?",
+   "gold": [
+    "extensions/copilot/src/extension/otel/vscode-node/otelContrib.ts"
+   ],
+   "candidates": 11649,
+   "ranked": [
+    "extensions/copilot/src/extension/otel/vscode-node/otelContrib.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt55BasePrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/hiddenModelMPrompt.tsx",
+    "extensions/copilot/src/extension/prompt/common/promptCategorizationTaxonomy.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/summarizedConversationHistory.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/vscModelPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "extensions/copilot/src/extension/completions-core/vscode-node/types/src/contextProviderApiV1.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5CodexPrompt.tsx",
+    "extensions/copilot/src/platform/inlineCompletions/common/api.ts",
+    "src/vs/workbench/contrib/files/browser/fileActions.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5Prompt.tsx",
+    "src/vscode-dts/vscode.proposed.chatParticipantAdditions.d.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/tools/monitoring/outputMonitor.ts",
+    "src/vs/platform/agentHost/common/agentService.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54Prompt.tsx",
+    "src/vs/base/browser/ui/hover/hover.ts",
+    "extensions/copilot/src/extension/intents/node/toolCallingLoop.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1047,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-cbfbdb0f51",
+   "task": "Slash completions for skills are pulling from too many places and getting slow and hard to follow — can we simplify it so it just lists the skills already resolved for the current session, filtered by what's typed after the slash, without doing its own file reading or caching?",
+   "gold": [
+    "src/vs/platform/agentHost/node/agentHostSkillCompletionProvider.ts",
+    "src/vs/platform/agentHost/node/agentService.ts",
+    "src/vs/platform/agentHost/test/node/agentHostSkillCompletionProvider.test.ts"
+   ],
+   "candidates": 11420,
+   "ranked": [
+    "extensions/copilot/src/extension/prompts/node/agent/anthropicPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt55BasePrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/hiddenModelMPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51CodexPrompt.tsx",
+    "extensions/terminal-suggest/src/completions/index.d.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/vscModelPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/backgroundTodoPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/defaultAgentInstructions.tsx",
+    "src/vs/sessions/contrib/chat/electron-browser/chat.contribution.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/defaultOpenAIPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/geminiPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5Prompt.tsx",
+    "src/vs/platform/agentHost/node/agentService.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/xAIPrompts.tsx",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentHost/agentHostUntitledProvisionalSessionService.ts",
+    "extensions/terminal-suggest/src/completions/upstream/less.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0.3333333333333333
+   },
+   "ms": 1017,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-449d7cc584",
+   "task": "The toolbar action labels for sessions repeat \"Session View\" in every button, which is redundant. Shorten them to just the verb (e.g. \"Pin\", \"Close\", \"Maximize\") for a cleaner toolbar.",
+   "gold": [
+    "src/vs/sessions/contrib/sessions/browser/sessionsActions.ts",
+    "src/vs/sessions/contrib/sessions/test/browser/sessionsActions.test.ts"
+   ],
+   "candidates": 13186,
+   "ranked": [
+    "src/vs/sessions/contrib/sessions/browser/sessionsActions.ts",
+    "src/vs/sessions/contrib/sessions/test/browser/sessionsActions.test.ts",
+    "src/vs/sessions/contrib/sessions/browser/sessionsTitleBarWidget.ts",
+    "src/vs/workbench/browser/parts/editor/singleEditorTabsControl.ts",
+    "src/vs/sessions/contrib/chat/browser/runScriptAction.ts",
+    "src/vs/sessions/contrib/sessions/browser/views/sessionsViewActions.ts",
+    "src/vs/workbench/contrib/agentsVoice/browser/agentsVoice.contribution.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentSessionsActions.ts",
+    "src/vs/sessions/contrib/chat/browser/sessionChatInputToolbar.ts",
+    "src/vs/sessions/contrib/editor/browser/editor.contribution.ts",
+    "test/automation/src/agentsWindow.ts",
+    "test/smoke/src/utils.ts",
+    "src/vs/workbench/browser/parts/editor/modalEditorPart.ts",
+    "src/vs/sessions/contrib/layout/browser/singlePane/singlePaneDockedTabsCoordinator.ts",
+    "src/vs/sessions/contrib/chat/browser/sessionChatInputToolbarDebug.ts",
+    "src/vs/sessions/contrib/chat/browser/sessionsChatAccessibilityHelp.ts",
+    "src/vs/workbench/contrib/chat/browser/promptTimeline/promptTimelineGutterRail.ts",
+    "src/vs/workbench/contrib/chat/test/browser/widget/chatTurnPills.test.ts",
+    "src/vs/sessions/browser/parts/mobile/mobileTitlebarPart.ts",
+    "src/vs/sessions/contrib/chat/browser/newChatInput.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1238,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-c8cdcb16dc",
+   "task": "Our protocol doesn't notice when a connection dies silently if there are no unacknowledged messages waiting—both sides just send keepalives with nothing checking whether the other side is actually still responding. Can we add a check that fires a timeout event when we've gone too long without receiving any data, as long as the system isn't just under heavy load?",
+   "gold": [
+    "src/vs/base/parts/ipc/common/ipc.net.ts",
+    "src/vs/base/parts/ipc/test/node/ipc.net.test.ts"
+   ],
+   "candidates": 10201,
+   "ranked": [
+    "src/vs/base/parts/ipc/common/ipc.net.ts",
+    "src/vs/base/parts/ipc/test/node/ipc.net.test.ts",
+    "src/vs/workbench/api/node/extensionHostProcess.ts",
+    "src/vs/platform/secrets/electron-main/macOSCrossAppSecretSharing.ts",
+    "src/vs/platform/windows/electron-main/windowImpl.ts",
+    "extensions/terminal-suggest/src/completions/index.d.ts",
+    "src/vs/code/electron-main/app.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "src/vs/base/parts/ipc/common/ipc.ts",
+    "src/vs/platform/terminal/common/terminal.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "src/vs/sessions/contrib/remoteAgentHost/browser/tunnelAgentHost.contribution.ts",
+    "src/vs/platform/lifecycle/electron-main/lifecycleMainService.ts",
+    "src/vs/workbench/services/timer/browser/timerService.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/hiddenModelBPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/vscModelPrompts.tsx",
+    "extensions/copilot/src/extension/completions-core/vscode-node/lib/src/ghostText/ghostText.ts",
+    "extensions/terminal-suggest/src/completions/upstream/wget.ts",
+    "extensions/terminal-suggest/src/completions/upstream/ping.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 932,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-4b04bed81a",
+   "task": "After a session host is upgraded and reconnects, its status stays stuck on \"incompatible\" instead of updating to reflect the new connection state. The status should only stay incompatible while there's genuinely no connection info for it yet; once the connection service reports a fresh status, that should take over.",
+   "gold": [
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHost.contribution.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/tunnelAgentHost.contribution.ts"
+   ],
+   "candidates": 10746,
+   "ranked": [
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHost.contribution.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/tunnelAgentHost.contribution.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/backgroundTodoPrompt.tsx",
+    "src/vs/platform/agentHost/browser/remoteAgentHostProtocolClient.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt55BasePrompt.tsx",
+    "src/vs/platform/agentHost/common/remoteAgentHostService.ts",
+    "cli/src/tunnels/agent_host.rs",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/hiddenModelMPrompt.tsx",
+    "src/vs/sessions/contrib/providers/agentHost/browser/baseAgentHostSessionsProvider.ts",
+    "src/vs/sessions/contrib/chat/browser/newChatViewPane.ts",
+    "src/vs/platform/agentHost/common/agentService.ts",
+    "src/vs/platform/agentHost/browser/remoteAgentHostServiceImpl.ts",
+    "src/vs/platform/agentHost/test/electron-browser/remoteAgentHostProtocolClient.test.ts",
+    "cli/src/commands/agent_host.rs",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteHostOptions.ts",
+    "src/vs/sessions/contrib/chat/browser/sessionWorkspacePicker.ts",
+    "src/vs/platform/agentHost/node/agentHostChangesetService.ts",
+    "src/vs/platform/agentHost/node/copilot/copilotAgent.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/vscModelPrompts.tsx",
+    "src/vs/platform/agentHost/node/agentHostStateManager.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 994,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-083af3b3af",
+   "task": "The review plan tool got added to the tool set twice—once as a registered tool and once via the tool set registration. Please remove the extra registration so it's only added once.",
+   "gold": [
+    "src/vs/workbench/contrib/chat/common/tools/builtinTools/tools.ts"
+   ],
+   "candidates": 10211,
+   "ranked": [
+    "src/vs/platform/agentHost/test/node/protocol/toolApprovalRealSdk.integrationTest.ts",
+    "src/vs/platform/agentHost/test/node/copilotAgent.test.ts",
+    "src/vs/platform/agentHost/test/node/agentService.test.ts",
+    "src/vs/workbench/contrib/chat/test/browser/widget/chatContentParts/chatPlanReviewPart.test.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "extensions/copilot/src/platform/parser/test/node/fixtures/chatSetup.ts",
+    "extensions/copilot/src/extension/agents/vscode-node/test/planAgentProvider.spec.ts",
+    "extensions/copilot/test/scenarios/test-tools/workspace/chatSetup.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/chatContentParts/chatPlanReviewPart.ts",
+    "scripts/chat-simulation/common/perf-scenarios.js",
+    "src/vs/workbench/contrib/chat/common/chatService/chatService.ts",
+    "src/vs/workbench/contrib/chat/common/tools/builtinTools/tools.ts",
+    "extensions/copilot/src/extension/chatSessions/copilotcli/vscode-node/test/openDiff.spec.ts",
+    "extensions/copilot/src/extension/chatSessions/claude/node/test/claudeToolPermissionService.spec.ts",
+    "src/vs/workbench/contrib/chat/common/tools/builtinTools/reviewPlanTool.ts",
+    "extensions/copilot/src/extension/agents/vscode-node/planAgentProvider.ts",
+    "extensions/github-authentication/src/github.ts",
+    "extensions/copilot/src/extension/chatSessions/copilotcli/node/test/exitPlanModeHandler.spec.ts",
+    "extensions/vscode-api-tests/src/singlefolder-tests/chat.runInTerminal.test.ts",
+    "src/vs/workbench/services/textfile/common/textFileEditorModelManager.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 919,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-f436d18836",
+   "task": "When I have multiple changeset operations like commit and pull request actions available in the changes view, show them grouped together instead of as one flat list, so related actions are visually clustered.",
+   "gold": [
+    "src/vs/platform/agentHost/node/agentHostCommitOperationProvider.ts",
+    "src/vs/platform/agentHost/node/agentHostPullRequestOperationProvider.ts",
+    "src/vs/sessions/contrib/changes/browser/changesView.ts",
+    "src/vs/sessions/contrib/providers/agentHost/browser/agentHostSessionChangesets.ts",
+    "src/vs/sessions/services/sessions/common/session.ts"
+   ],
+   "candidates": 11665,
+   "ranked": [
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51CodexPrompt.tsx",
+    "src/vs/platform/agentHost/common/state/protocol/channels-changeset/state.ts",
+    "src/vs/sessions/services/sessions/common/session.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/anthropicPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/vscModelPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5CodexPrompt.tsx",
+    "src/vs/sessions/contrib/changes/browser/changesView.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/defaultAgentInstructions.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/xAIPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/familyHPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/minimaxPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt55BasePrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/hiddenModelMPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/defaultOpenAIPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/geminiPrompts.tsx"
+   ],
+   "recall": {
+    "5": 0.2,
+    "10": 0.2,
+    "20": 0.4
+   },
+   "ms": 1045,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-6ca640df55",
+   "task": "Can you remove the rounded buttons appearance option? We don't need workbench buttons rendered as fully rounded pills, and the associated stylesheet should go too.",
+   "gold": [
+    "src/vs/workbench/contrib/styleOverrides/browser/styleOverrides.contribution.ts"
+   ],
+   "candidates": 11609,
+   "ranked": [
+    "src/vs/workbench/contrib/styleOverrides/browser/styleOverrides.contribution.ts",
+    "extensions/copilot/src/extension/agents/vscode-node/planAgentProvider.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/hiddenModelMPrompt.tsx",
+    "src/vs/workbench/electron-browser/desktop.contribution.ts",
+    "src/vs/workbench/contrib/browserView/electron-browser/widgets/browserUrlBarWidget.ts",
+    "src/vs/workbench/services/history/browser/historyService.ts",
+    "extensions/terminal-suggest/src/completions/index.d.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt55BasePrompt.tsx",
+    "src/vscode-dts/vscode.proposed.chatSessionsProvider.d.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "src/vs/workbench/contrib/editSessions/browser/editSessions.contribution.ts",
+    "src/vs/workbench/services/workingCopy/common/fileWorkingCopyManager.ts",
+    "src/vs/platform/quickinput/common/quickInput.ts",
+    "src/vs/editor/browser/controller/mouseHandler.ts",
+    "extensions/copilot/src/extension/completions-core/vscode-node/lib/src/prompt/render/renderNode.ts",
+    "src/vs/workbench/contrib/workspace/browser/workspace.contribution.ts",
+    "src/vs/workbench/browser/workbench.contribution.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54Prompt.tsx"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 996,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-1c2dc57c63",
+   "task": "When submitting feedback on a session, don't close the session's open editors afterward — just submit the feedback.",
+   "gold": [
+    "src/vs/sessions/contrib/agentFeedback/browser/agentFeedbackEditorActions.ts"
+   ],
+   "candidates": 10656,
+   "ranked": [
+    "src/vs/sessions/contrib/agentFeedback/browser/agentFeedbackEditorActions.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/chatContentParts/chatPlanReviewPart.ts",
+    "src/vs/sessions/contrib/agentFeedback/browser/agentFeedbackService.ts",
+    "extensions/copilot/src/extension/inlineEdits/vscode-node/components/nesFeedbackSubmitter.ts",
+    "src/vs/sessions/contrib/agentFeedback/browser/agentFeedbackEditorInputContribution.ts",
+    "src/vs/workbench/contrib/issue/browser/baseIssueReporterService.ts",
+    "src/vs/workbench/contrib/chat/test/browser/widget/chatContentParts/chatPlanReviewPart.test.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/experiments/agentSessionProjectionService.ts",
+    "src/vs/sessions/contrib/agentFeedback/browser/agentFeedback.contribution.ts",
+    "src/vs/sessions/contrib/layout/test/browser/sessionLayoutController.test.ts",
+    "src/vs/sessions/contrib/agentFeedback/browser/agentFeedbackAttachment.ts",
+    "src/vs/workbench/contrib/welcomeAgentSessions/browser/agentSessionsWelcome.ts",
+    "src/vs/workbench/contrib/inlineChat/test/browser/inlineChatZoneMenus.test.ts",
+    "extensions/copilot/src/extension/conversation/vscode-node/chatParticipants.ts",
+    "src/vs/sessions/common/sessionsTelemetry.ts",
+    "src/vs/sessions/contrib/agentFeedback/browser/nullAgentFeedbackService.contribution.ts",
+    "extensions/copilot/src/extension/inlineEdits/vscode-node/components/expectedEditCaptureController.ts",
+    "extensions/copilot/src/extension/review/node/test/doReview.spec.ts",
+    "extensions/copilot/src/platform/test/node/simulationWorkspaceServices.ts",
+    "src/vs/workbench/contrib/files/browser/views/openEditorsView.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 996,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-83e1b3a96b",
+   "task": "The omni chat input window's confirmation panel overlaps or breaks the layout instead of stacking properly inside the window — the chat area doesn't shrink to fit when other content is shown alongside it. Can you fix the window's internal layout so everything fits and resizes correctly together?",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/chatInputWindow/chatInputWindowService.ts"
+   ],
+   "candidates": 12773,
+   "ranked": [
+    "src/vs/workbench/contrib/chat/browser/chatInputWindow/chatInputWindowService.ts",
+    "src/vs/workbench/browser/workbench.contribution.ts",
+    "src/vs/workbench/contrib/chat/browser/actions/chatAccessibilityHelp.ts",
+    "src/vs/sessions/contrib/sessions/browser/sessionsTitleBarWidget.ts",
+    "src/vs/sessions/contrib/chat/browser/sessionsChatAccessibilityHelp.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt56Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/vscModelPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt55Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt55BasePrompt.tsx",
+    "src/vs/sessions/test/browser/workbench.test.ts",
+    "src/vs/sessions/browser/parts/sessionsPart.ts",
+    "test/automation/src/chat.ts",
+    "src/vs/sessions/browser/singlePaneWorkbench.ts",
+    "src/vs/platform/agentHost/common/state/protocol/channels-chat/state.ts",
+    "src/vs/workbench/contrib/chat/browser/speechToText/dictationOnboarding.ts",
+    "src/vscode-dts/vscode.proposed.chatParticipantPrivate.d.ts",
+    "src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts",
+    "src/vs/platform/actionWidget/browser/actionList.ts",
+    "src/vs/sessions/contrib/sessions/browser/blockedSessionsList.ts",
+    "src/vs/workbench/contrib/browserView/electron-browser/browserEditor.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1162,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-39132193ba",
+   "task": "The tree view's resource renderer never gets disposed, causing a memory leak. Make sure it's cleaned up along with the other renderers when the view is torn down.",
+   "gold": [
+    "src/vs/workbench/contrib/scm/browser/scmViewPane.ts"
+   ],
+   "candidates": 12906,
+   "ranked": [
+    "src/vs/workbench/contrib/webviewView/browser/webviewViewService.ts",
+    "scripts/chat-simulation/common/perf-scenarios.js",
+    "src/vs/workbench/contrib/chat/browser/speechToText/chatSpeechToTextService.ts",
+    "src/vs/workbench/browser/parts/editor/editorDropTarget.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/chatListWidget.ts",
+    "src/vs/workbench/contrib/terminal/browser/terminal.ts",
+    "src/vs/workbench/contrib/terminalContrib/chat/test/browser/terminalChatService.test.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/executeStrategy/richExecuteStrategy.ts",
+    "src/vs/platform/agentHost/electron-browser/sshRemoteAgentHostServiceImpl.ts",
+    "src/vs/base/browser/ui/list/listWidget.ts",
+    "src/vs/workbench/test/browser/componentFixtures/fixtureUtils.ts",
+    "src/vs/platform/agentHost/common/sessionDataService.ts",
+    "src/vs/workbench/contrib/notebook/browser/notebookExtensionPoint.ts",
+    "src/vs/workbench/services/untitled/common/untitledTextEditorInput.ts",
+    "src/vs/base/browser/ui/tree/tree.ts",
+    "src/vs/workbench/contrib/preferences/browser/settingsEditor2.ts",
+    "src/vs/workbench/contrib/browserView/electron-browser/browserEditor.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/anthropicPrompts.tsx",
+    "src/vs/base/common/lifecycle.ts",
+    "extensions/copilot/src/util/vs/base/common/lifecycle.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 1163,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-9b8114892b",
+   "task": "In the terminal execute strategies, avoid leaking a disposable store every time execute() is called on the same strategy instance—right now each call's store stays registered with the strategy for its whole lifetime instead of being released once that execution finishes, so long-lived sessions accumulate stale references.",
+   "gold": [
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/executeStrategy/basicExecuteStrategy.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/executeStrategy/richExecuteStrategy.ts"
+   ],
+   "candidates": 10321,
+   "ranked": [
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/executeStrategy/executeStrategy.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/executeStrategy/basicExecuteStrategy.ts",
+    "extensions/terminal-suggest/src/completions/index.d.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5Prompt.tsx",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/tools/monitoring/outputMonitor.ts",
+    "scripts/chat-simulation/common/perf-scenarios.js",
+    "extensions/terminal-suggest/src/completions/pnpm.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "src/vs/platform/agentHost/node/copilot/copilotShellTools.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentHost/agentHostSessionHandler.ts",
+    "extensions/php-language-features/src/features/phpGlobals.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/hiddenModelBPrompt.tsx",
+    "src/vs/platform/agentHost/node/agentService.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/anthropicPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54ConcisePrompt.tsx",
+    "extensions/vscode-api-tests/src/singlefolder-tests/chat.runInTerminal.test.ts",
+    "src/vs/base/common/event.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54LargePrompt.tsx"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 949,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-1a8ef07a81",
+   "task": "When replaying prior turns' thinking on the Messages API, only do it for models that actually support adaptive thinking — budget-mode models like Haiku 4.5 reject re-sent thinking blocks with a 400. Update the tests to cover both cases: adaptive-thinking models (e.g. Opus/Sonnet 4.6+) should keep historical thinking, budget-mode models should still drop it.",
+   "gold": [
+    "extensions/copilot/src/extension/prompts/node/panel/toolCalling.tsx",
+    "extensions/copilot/src/extension/tools/node/test/toolCalling.spec.tsx"
+   ],
+   "candidates": 11520,
+   "ranked": [
+    "extensions/copilot/src/platform/networking/common/anthropic.ts",
+    "extensions/copilot/src/platform/endpoint/test/node/messagesApi.spec.ts",
+    "scripts/chat-simulation/common/mock-llm-server.ts",
+    "extensions/copilot/src/extension/tools/node/test/toolCalling.spec.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/summarizedConversationHistory.tsx",
+    "extensions/copilot/src/platform/endpoint/node/messagesApi.ts",
+    "extensions/copilot/src/extension/chatSessions/claude/node/claudeLanguageModelServer.ts",
+    "extensions/copilot/src/extension/intents/node/agentIntent.ts",
+    "src/vs/platform/agentHost/test/node/claudeProxyService.test.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/anthropicPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/panel/toolCalling.tsx",
+    "extensions/copilot/src/platform/endpoint/node/chatEndpoint.ts",
+    "extensions/copilot/src/extension/chatSessions/claude/node/test/claudeCodeModels.spec.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "src/vs/platform/agentHost/node/claude/claudeReplayMapper.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/backgroundTodoAgent/backgroundTodoAgentPrompt.tsx",
+    "extensions/copilot/src/extension/chatSessions/vscode-node/test/chatHistoryBuilder.spec.ts",
+    "extensions/copilot/src/platform/networking/common/networking.ts",
+    "src/vs/platform/agentHost/node/claude/claudeAgent.ts"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 1018,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-e7f179aec1",
+   "task": "The \"code agent\" completions for the CLI let you repeat flags like --host or --port multiple times and treat their values as optional, but these options should only take exactly one required value and shouldn't be repeatable. Also, there's no test coverage for the \"agent\" subcommand's completions (host, ps, stop, kill, logs, help) — please add tests for those.",
+   "gold": [
+    "extensions/terminal-suggest/src/completions/code.ts",
+    "extensions/terminal-suggest/src/test/completions/code.test.ts"
+   ],
+   "candidates": 11471,
+   "ranked": [
+    "extensions/terminal-suggest/src/completions/index.d.ts",
+    "extensions/terminal-suggest/src/completions/code.ts",
+    "cli/src/commands/args.rs",
+    "src/vs/platform/environment/node/argv.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "extensions/terminal-suggest/src/completions/upstream/docker-compose.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt55BasePrompt.tsx",
+    "extensions/terminal-suggest/src/completions/upstream/grep.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/hiddenModelMPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5CodexPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51CodexPrompt.tsx",
+    "extensions/terminal-suggest/src/test/completions/code.test.ts",
+    "extensions/terminal-suggest/src/completions/npm.ts",
+    "src/vs/code/node/cli.ts",
+    "src/vs/platform/agentHost/node/sshRemoteAgentHostHelpers.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/defaultAgentInstructions.tsx"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 1022,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-e2f2e833c0",
+   "task": "The Changes view sometimes shows stale or leftover file changes when a repository can't actually be read (e.g. session ended mid-error). Can it instead skip updating changes entirely when the repo state can't be determined, and also show whether the repo has a GitHub remote?",
+   "gold": [
+    "extensions/copilot/src/extension/chatSessions/vscode-node/chatSessionWorkspaceFolderServiceImpl.ts",
+    "extensions/copilot/src/extension/chatSessions/vscode-node/chatSessionWorktreeServiceImpl.ts",
+    "extensions/git/src/model.ts",
+    "src/vs/sessions/contrib/changes/browser/changesViewModel.ts"
+   ],
+   "candidates": 10145,
+   "ranked": [
+    "src/vs/sessions/contrib/copilotChatSessions/browser/copilotChatSessionsProvider.ts",
+    "extensions/terminal-suggest/src/completions/gh.ts",
+    "src/vs/sessions/services/sessions/common/session.ts",
+    "extensions/copilot/src/extension/inlineEdits/vscode-node/components/nesFeedbackSubmitter.ts",
+    "extensions/copilot/src/extension/chatSessions/vscode-node/sessionOptionGroupBuilder.ts",
+    "extensions/copilot/src/extension/prompts/node/test/fixtures/pullRequestModel.ts",
+    "extensions/copilot/test/simulation/fixtures/edit-add-explicit-type-issue-3759/pullRequestModel.ts",
+    "extensions/terminal-suggest/src/completions/index.d.ts",
+    "extensions/copilot/src/platform/ignore/node/remoteContentExclusion.ts",
+    "extensions/copilot/src/extension/chatSessions/vscode-node/folderRepositoryManagerImpl.ts",
+    "src/vs/sessions/contrib/terminal/test/browser/sessionsTerminalContribution.test.ts",
+    "extensions/github/src/links.ts",
+    "extensions/copilot/src/extension/chatSessions/vscode-node/copilotCLIChatSessions.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentSessionsViewer.ts",
+    "extensions/terminal-suggest/src/completions/azd.ts",
+    "src/vs/workbench/contrib/chat/browser/actions/chatContinueInAction.ts",
+    "src/vs/sessions/contrib/changes/browser/changesView.ts",
+    "extensions/copilot/src/extension/conversation/vscode-node/remoteAgents.ts",
+    "extensions/copilot/src/platform/workspaceChunkSearch/node/codeSearch/codeSearchChunkSearch.ts",
+    "src/vs/sessions/contrib/remoteAgentHost/browser/remoteAgentHostSessionsProvider.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 901,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-98b093a62b",
+   "task": "Chat tabs look flat compared to editor tabs — can you give each tab a fill/background element so its visual presentation matches the editor tab style?",
+   "gold": [
+    "src/vs/sessions/browser/parts/chatCompositeBar.ts",
+    "src/vs/sessions/test/browser/chatCompositeBar.test.ts"
+   ],
+   "candidates": 12806,
+   "ranked": [
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt55Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt55BasePrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt56Prompt.tsx",
+    "src/vs/sessions/browser/parts/sessionView.ts",
+    "src/vs/sessions/browser/parts/chatCompositeBar.ts",
+    "extensions/copilot/src/extension/prompts/node/panel/startDebugging.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51CodexPrompt.tsx",
+    "src/vs/sessions/contrib/sessions/browser/sessionsActions.ts",
+    "src/vs/workbench/contrib/terminal/common/terminalConfiguration.ts",
+    "src/vs/sessions/contrib/chat/browser/sessionWorkspacePicker.ts",
+    "src/vs/sessions/contrib/chat/browser/sessionsChatAccessibilityHelp.ts",
+    "src/vs/workbench/contrib/agentsVoice/browser/voiceModeOnboarding.ts",
+    "src/vs/workbench/contrib/browserView/electron-browser/browserEditor.ts",
+    "src/vs/sessions/contrib/aquarium/browser/fish.ts",
+    "src/vs/workbench/browser/workbench.contribution.ts",
+    "src/vs/editor/browser/viewParts/minimap/minimap.ts",
+    "src/vs/sessions/browser/parts/auxiliaryBarPart.ts",
+    "src/vs/platform/browserView/electron-browser/preload-browserView.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/vscModelPrompts.tsx"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 1133,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-4b33c4ade4",
+   "task": "When I switch the chat mode, the panel's title doesn't update to reflect it—can you make the title refresh automatically whenever the mode changes?",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts"
+   ],
+   "candidates": 10166,
+   "ranked": [
+    "extensions/copilot/src/extension/prompts/node/agent/xAIPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/defaultAgentInstructions.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/hiddenModelBPrompt.tsx",
+    "extensions/copilot/src/extension/conversation/vscode-node/chatParticipants.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/anthropicPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/panel/codebaseAgentPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/geminiPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/defaultOpenAIPrompt.tsx",
+    "src/vs/workbench/browser/workbench.contribution.ts",
+    "extensions/copilot/test/prompts/settingsEditorSearchResultsSelector.stest.ts",
+    "extensions/debug-auto-launch/src/extension.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54ConcisePrompt.tsx",
+    "extensions/copilot/src/platform/authentication/common/authentication.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54LargePrompt.tsx",
+    "src/vs/workbench/electron-browser/desktop.contribution.ts",
+    "src/vscode-dts/vscode.proposed.chatSessionsProvider.d.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 905,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-628f6fe5e4",
+   "task": "Turn on the browser tool integration for chat by default instead of leaving it off, and remove the tip that nudges people to enable it manually since it won't be needed once it's on.",
+   "gold": [
+    "src/vs/workbench/contrib/browserView/electron-browser/features/browserEditorChatFeatures.ts",
+    "src/vs/workbench/contrib/chat/browser/chatTipCatalog.ts",
+    "src/vs/workbench/contrib/chat/test/browser/chatTipService.test.ts"
+   ],
+   "candidates": 11451,
+   "ranked": [
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/common/terminalChatAgentToolsConfiguration.ts",
+    "extensions/copilot/src/platform/networking/common/networking.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/vscModelPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/defaultOpenAIPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/zaiPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/anthropicPrompts.tsx",
+    "src/vs/platform/agentHost/common/state/protocol/channels-session/actions.ts",
+    "src/vs/workbench/contrib/chat/test/browser/agentSessions/agentHostClientTools.test.ts",
+    "extensions/copilot/src/extension/prompt/common/conversation.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/geminiPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/xAIPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/hiddenModelMPrompt.tsx",
+    "src/vs/workbench/contrib/chat/common/constants.ts",
+    "extensions/copilot/src/extension/intents/node/agentIntent.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt55BasePrompt.tsx",
+    "extensions/copilot/test/simulation/fixtures/fix/issue-7894/shellIntegration.ps1",
+    "extensions/copilot/src/extension/prompts/node/agent/defaultAgentInstructions.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/agentPrompt.tsx",
+    "src/vs/workbench/contrib/terminal/common/terminalConfiguration.ts",
+    "src/vs/workbench/contrib/chat/browser/chatTipCatalog.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0.3333333333333333
+   },
+   "ms": 1020,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-84c57e3cd3",
+   "task": "When installing extensions during onboarding, show a subtitle hint that tells users the keyboard shortcut for opening the Extension Marketplace, similar to how the personalize step already has a custom subtitle.",
+   "gold": [
+    "src/vs/workbench/contrib/welcomeOnboarding/browser/onboardingVariationA.ts"
+   ],
+   "candidates": 10098,
+   "ranked": [
+    "src/vs/workbench/contrib/welcomeOnboarding/browser/onboardingVariationA.ts",
+    "src/vs/workbench/contrib/welcomeOnboarding/common/onboardingTypes.ts",
+    "src/vs/sessions/contrib/welcome/browser/sessionsWalkthrough.ts",
+    "src/vs/platform/editor/common/editor.ts",
+    "src/vs/workbench/browser/workbench.contribution.ts",
+    "src/vs/workbench/contrib/issue/browser/baseIssueReporterService.ts",
+    "src/vs/workbench/contrib/welcomeGettingStarted/common/gettingStartedContent.ts",
+    "src/vs/base/common/product.ts",
+    "src/vs/workbench/contrib/welcomeGettingStarted/browser/gettingStarted.contribution.ts",
+    "src/vs/workbench/browser/web.api.ts",
+    "extensions/terminal-suggest/src/completions/index.d.ts",
+    "src/vs/workbench/services/extensions/common/extensionsRegistry.ts",
+    "src/vs/workbench/contrib/welcomeGettingStarted/browser/startupPage.ts",
+    "src/vs/workbench/contrib/welcomeGettingStarted/browser/gettingStarted.ts",
+    "src/vs/workbench/contrib/chat/browser/aiCustomization/customizationCreatorService.ts",
+    "extensions/copilot/src/extension/agents/vscode-node/planAgentProvider.ts",
+    "src/vs/workbench/contrib/chat/browser/aiCustomization/aiCustomizationWelcomePageClassic.ts",
+    "src/vs/workbench/contrib/chat/browser/aiCustomization/aiCustomizationWelcomePagePromptLaunchers.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/anthropicPrompts.tsx",
+    "src/vs/workbench/electron-browser/desktop.contribution.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 900,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-b214987c92",
+   "task": "The reasoning effort override setting currently applies to any agent host, but it should really only apply when using Copilot. Can you scope that setting's ID so it's namespaced under Copilot, consistent with the other Copilot-specific settings?",
+   "gold": [
+    "src/vs/platform/agentHost/common/copilotCliConfig.ts"
+   ],
+   "candidates": 12735,
+   "ranked": [
+    "src/vs/platform/agentHost/node/copilot/copilotSessionLauncher.ts",
+    "src/vs/platform/agentHost/common/copilotCliConfig.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54Prompt.tsx",
+    "src/vs/platform/agentHost/common/state/protocol/channels-chat/state.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "test/smoke/src/areas/agentsWindow/agentsWindow.test.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt55Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt55BasePrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt56Prompt.tsx",
+    "src/vs/workbench/electron-browser/desktop.contribution.ts",
+    "extensions/copilot/src/platform/configuration/common/configurationService.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/vscModelPrompts.tsx",
+    "src/vs/workbench/browser/workbench.contribution.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/defaultAgentInstructions.tsx",
+    "src/vs/platform/agentHost/common/state/protocol/channels-changeset/state.ts",
+    "extensions/copilot/src/platform/endpoint/node/chatEndpoint.ts",
+    "test/smoke/src/areas/chat/chatModelConfig.test.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1154,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-129eff3d91",
+   "task": "After reconnecting to an agent host, the output channel for its logs isn't showing new output—can you make sure the log channel gets reused or re-registered properly on reconnect instead of silently failing?",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentHost/loggingAgentConnection.ts"
+   ],
+   "candidates": 10094,
+   "ranked": [
+    "src/vs/sessions/contrib/remoteAgentHost/browser/remoteAgentHost.contribution.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54LargePrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/vscModelPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/xAIPrompts.tsx",
+    "src/vs/platform/agentHost/test/node/sshRemoteAgentHostService.test.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/defaultAgentInstructions.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54ConcisePrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/defaultOpenAIPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/anthropicPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/geminiPrompts.tsx",
+    "src/vs/platform/agentHost/node/sshRemoteAgentHostService.ts",
+    "src/vs/workbench/contrib/remote/common/remote.contribution.ts",
+    "src/vs/platform/remote/common/remoteAgentConnection.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/tools/monitoring/outputMonitor.ts",
+    "src/vs/platform/agentHost/common/sshRemoteAgentHost.ts",
+    "cli/src/tunnels/dev_tunnels.rs"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 909,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-6d2d406f02",
+   "task": "When the local-agent-host continuation tip appears in chat, add a way to mute it so it won't keep coming back, and stop showing it in the current window once the user dismisses it.",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/agentSessions/localAgentDisabledInputTipContribution.ts",
+    "src/vs/workbench/contrib/chat/test/browser/agentSessions/localAgentDisabledInputTipContribution.test.ts"
+   ],
+   "candidates": 11755,
+   "ranked": [
+    "src/vs/workbench/contrib/chat/electron-browser/agentSessions/agentSessionsActions.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/input/chatInputNotificationService.ts",
+    "src/vs/workbench/contrib/chat/browser/actions/chatAccessibilityHelp.ts",
+    "src/vs/workbench/contrib/welcomeOnboarding/browser/onboardingVariationA.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/input/chatPhoneInputPresenter.ts",
+    "src/vs/workbench/contrib/chat/browser/chatTipService.ts",
+    "extensions/copilot/src/extension/intents/node/toolCallingLoop.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54Prompt.tsx",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/executeStrategy/strategyHelpers.ts",
+    "extensions/copilot/src/extension/prompt/common/conversation.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/agentHostSandboxForwarder.ts",
+    "src/vs/workbench/contrib/chat/browser/chatDebug/agentHostChatDebugProvider.ts",
+    "src/vs/workbench/contrib/chat/test/browser/chatTipService.test.ts",
+    "src/vs/workbench/contrib/chat/browser/actions/chatContinueInAction.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "src/vs/sessions/contrib/chat/browser/sessionWorkspacePicker.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt55Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt55BasePrompt.tsx",
+    "src/vs/workbench/contrib/chat/browser/chatTipCatalog.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 1065,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-ec1b365290",
+   "task": "When the SSH auth prompt is dismissed, cancel the connection attempt instead of sending empty credentials to the server and letting the auth fail normally.",
+   "gold": [
+    "src/vs/platform/agentHost/common/sshRemoteAgentHost.ts",
+    "src/vs/platform/agentHost/electron-browser/sshRemoteAgentHostServiceImpl.ts",
+    "src/vs/platform/agentHost/node/sshRemoteAgentHostService.ts",
+    "src/vs/platform/agentHost/test/node/sshRemoteAgentHostService.test.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHostActions.ts"
+   ],
+   "candidates": 10590,
+   "ranked": [
+    "src/vs/platform/agentHost/common/sshRemoteAgentHost.ts",
+    "src/vs/platform/agentHost/node/sshRemoteAgentHostService.ts",
+    "src/vs/platform/agentHost/electron-browser/sshRemoteAgentHostServiceImpl.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHost.contribution.ts",
+    "src/vs/platform/agentHost/test/node/sshRemoteAgentHostService.test.ts",
+    "extensions/terminal-suggest/src/completions/upstream/scp.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHostActions.ts",
+    "extensions/git/src/askpass.ts",
+    "extensions/terminal-suggest/src/completions/upstream/ssh.ts",
+    "src/vs/platform/agentHost/common/remoteAgentHostService.ts",
+    "src/vs/platform/agentHost/browser/remoteAgentHostProtocolClient.ts",
+    "src/vs/base/test/common/oauth.test.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/tunnelAgentHost.contribution.ts",
+    "extensions/terminal-suggest/src/completions/upstream/wget.ts",
+    "src/vs/platform/request/test/node/requestService.test.ts",
+    "src/vs/platform/native/electron-main/auth.ts",
+    "src/vs/platform/remote/common/remoteAgentConnection.ts",
+    "extensions/terminal-suggest/src/completions/upstream/curl.ts",
+    "src/vs/platform/agentHost/browser/remoteAgentHostServiceImpl.ts",
+    "cli/src/commands/tunnels.rs"
+   ],
+   "recall": {
+    "5": 0.8,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 981,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-190016f576",
+   "task": "The Changes view shows an endless loading spinner for chat sessions when the workspace folder isn't a git repository. It should just show no changes instead of spinning forever.",
+   "gold": [
+    "src/vs/sessions/contrib/providers/copilotChatSessions/browser/copilotChatSessionsChangesets.ts"
+   ],
+   "candidates": 11916,
+   "ranked": [
+    "src/vs/sessions/services/sessions/common/session.ts",
+    "src/vs/sessions/contrib/chat/browser/newChatWidget.ts",
+    "src/vs/sessions/services/sessions/common/sessionsManagement.ts",
+    "src/vs/sessions/contrib/changes/browser/changesView.ts",
+    "src/vs/sessions/services/sessions/common/sessionsProvider.ts",
+    "src/vs/sessions/common/contextkeys.ts",
+    "extensions/copilot/src/extension/chatSessions/vscode-node/sessionOptionGroupBuilder.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/chatContentParts/chatProgressContentPart.ts",
+    "src/vs/sessions/contrib/changes/browser/changesViewService.ts",
+    "src/vs/sessions/contrib/terminal/test/browser/sessionsTerminalContribution.test.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentSessionsViewer.ts",
+    "src/vs/workbench/contrib/chat/browser/widgetHosts/editor/chatEditor.ts",
+    "extensions/copilot/src/extension/chatSessions/common/folderRepositoryManager.ts",
+    "src/vs/sessions/contrib/terminal/browser/sessionsTerminalContribution.ts",
+    "src/vs/sessions/browser/parts/sessionHeader.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentHost/agentHostFolderPickerActionItem.ts",
+    "src/vs/sessions/services/sessions/browser/sessionsService.ts",
+    "src/vs/workbench/contrib/chat/browser/chat.ts",
+    "extensions/copilot/src/extension/chatSessions/vscode-node/test/sessionOptionGroupBuilder.spec.ts",
+    "src/vs/sessions/contrib/chat/browser/modelPicker.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 1052,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-53db5e07d6",
+   "task": "When formatting files from the CLI with the verify flag, make error messages and behavior consistent with how a full replace/verify pass would evaluate the file, rather than only comparing against the initial read of the file before any write happens.",
+   "gold": [
+    "build/lib/formatter.ts"
+   ],
+   "candidates": 10307,
+   "ranked": [
+    "extensions/copilot/src/extension/prompts/node/agent/vscModelPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54LargePrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54ConcisePrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/hiddenModelBPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51CodexPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/familyHPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/minimaxPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/defaultAgentInstructions.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/xAIPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/geminiPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5CodexPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/anthropicPrompts.tsx",
+    "src/vs/code/node/cli.ts",
+    "extensions/terminal-suggest/src/completions/upstream/less.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/defaultOpenAIPrompt.tsx"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 923,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-b456b81a85",
+   "task": "When I'm signed out and viewing the Agent Host welcome screen in the sessions window, the model picker disappears even though there are usable models available. It should stay visible in that case, but only for the Copilot agent host provider and not for other providers or windows, and it should respect the setting that allows using it while signed out.",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/actions/chatExecuteActions.ts",
+    "src/vs/workbench/contrib/chat/test/browser/actions/chatExecuteActions.test.ts"
+   ],
+   "candidates": 12779,
+   "ranked": [
+    "src/vs/workbench/contrib/chat/browser/agentSessions/sessionTypeAvailability.ts",
+    "src/vs/sessions/contrib/chat/browser/sessionTypePicker.ts",
+    "src/vs/sessions/browser/sessionsAuthGate.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/input/sessionTargetPickerActionItem.ts",
+    "src/vs/sessions/browser/sessionsSetUpService.ts",
+    "src/vs/platform/agentHost/node/claude/claudeTransportMode.ts",
+    "src/vs/sessions/contrib/providers/agentHost/test/browser/sessionTypeAuthRequirement.test.ts",
+    "src/vs/workbench/contrib/chat/common/chatSessionsService.ts",
+    "src/vs/sessions/contrib/chat/browser/newChatWidget.ts",
+    "src/vs/workbench/contrib/chat/test/browser/agentSessions/sessionTypeAvailability.test.ts",
+    "test/automation/src/agentsWindow.ts",
+    "src/vs/sessions/contrib/accountMenu/browser/account.contribution.ts",
+    "src/vs/sessions/services/sessions/common/session.ts",
+    "src/vs/sessions/contrib/providers/agentHost/browser/agentHostDiscoveredConfigNotification.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentHost/agentHostSignedOutModelsNotification.ts",
+    "src/vs/sessions/browser/parts/mobile/mobileTitlebarPart.ts",
+    "src/vs/workbench/browser/web.api.ts",
+    "src/vs/sessions/common/contextkeys.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHostSessionsProvider.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/input/chatInputModelUtils.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 1169,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-fc03e3346d",
+   "task": "When I switch to a different chat session while a voice transcript is showing, the overlay from the old session stays visible instead of hiding or updating for the newly active session.",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts"
+   ],
+   "candidates": 11757,
+   "ranked": [
+    "src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts",
+    "src/vs/workbench/contrib/agentsVoice/browser/agentsVoiceWidget.ts",
+    "src/vs/workbench/contrib/agentsVoice/browser/agentsVoice.contribution.ts",
+    "src/vs/platform/agentHost/node/claude/claudeAgent.ts",
+    "src/vs/workbench/contrib/chat/common/voicePlaybackService.ts",
+    "src/vs/workbench/contrib/agentsVoice/browser/components/transcriptComponent.ts",
+    "src/vs/workbench/contrib/agentsVoice/browser/agentsVoiceWidgetBinding.ts",
+    "src/vs/sessions/contrib/terminal/browser/sessionsTerminalContribution.ts",
+    "src/vs/workbench/contrib/chat/browser/voiceClient/voiceClientService.ts",
+    "src/vs/workbench/contrib/chat/common/voiceClient/voiceClientService.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentHost/agentHostUntitledProvisionalSessionService.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/experiments/unifiedQuickAccess.ts",
+    "src/vs/workbench/contrib/agentsVoice/common/voiceTranscriptStore.ts",
+    "src/vs/workbench/contrib/chat/browser/voiceClient/voiceToolDispatchService.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentSessionsControl.ts",
+    "test/automation/src/agentsWindow.ts",
+    "src/vs/sessions/contrib/chat/browser/modelPicker.ts",
+    "src/vs/workbench/contrib/agentsVoice/browser/transcriptsView/voiceTranscriptsView.ts",
+    "src/vs/sessions/contrib/layout/browser/sessionLayoutController.ts",
+    "src/vs/workbench/contrib/chat/electron-browser/actions/voiceChatActions.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1054,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-f32c7986c2",
+   "task": "Visibility tracking for toolbar items breaks in environments where the browser API it relies on isn't available, and it also doesn't work correctly across multiple windows (e.g. floating/popped-out windows) since it only tracks one shared observer. Fix it to work per-window and degrade gracefully by treating elements as visible when the API isn't supported.",
+   "gold": [
+    "src/vs/platform/actions/browser/toolbar.ts"
+   ],
+   "candidates": 10273,
+   "ranked": [
+    "src/vs/workbench/browser/workbench.contribution.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/hiddenModelBPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/anthropicPrompts.tsx",
+    "src/vs/base/parts/sandbox/electron-browser/electronTypes.ts",
+    "src/vs/workbench/electron-browser/desktop.contribution.ts",
+    "src/vs/platform/actions/browser/toolbar.ts",
+    "src/vs/base/browser/dom.ts",
+    "src/vs/base/parts/sandbox/common/electronTypes.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "src/vs/platform/windows/electron-main/windowImpl.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "src/vs/platform/editor/common/editor.ts",
+    "scripts/chat-simulation/common/perf-scenarios.js",
+    "src/vs/platform/layout/browser/layoutService.ts",
+    "src/vs/workbench/services/editor/common/editorGroupsService.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/chatContentParts/chatMarkdownContentPart.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/defaultAgentInstructions.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/familyHPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/minimaxPrompts.tsx"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 928,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  }
+ ]
+}

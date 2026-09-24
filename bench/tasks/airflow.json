@@ -1,0 +1,455 @@
+{
+ "repo": "airflow",
+ "url": "https://github.com/apache/airflow",
+ "head": "8851f2f05d1f67668d2261ede444ae342f77fd8d",
+ "eligible": 15887,
+ "dev": [
+  {
+   "id": "airflow-6e6d0af05e",
+   "repo": "airflow",
+   "commit": "6e6d0af05e5575d19ca46f0fbfd1098b39793d60",
+   "parent": "a52424284b5c3a511ce9c7b120b27ac9bf5ae776",
+   "task": "Add cloud-based auth (aws_iam, gcp, azure_ad) to Akeyless secrets backend",
+   "gold": [
+    "providers/akeyless/src/airflow/providers/akeyless/secrets/akeyless.py",
+    "providers/akeyless/tests/unit/akeyless/secrets/test_akeyless.py"
+   ]
+  },
+  {
+   "id": "airflow-3f3d0f5c1e",
+   "repo": "airflow",
+   "commit": "3f3d0f5c1eb7f446e944abfce5e20b353e65f710",
+   "parent": "fe734000108c684e3d9078ec2ee3033bfeb85b8d",
+   "task": "Fix hanging API calls",
+   "gold": [
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/hooks/kubernetes.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/kubernetes_helper_functions.py",
+    "providers/cncf/kubernetes/tests/unit/cncf/kubernetes/hooks/test_kubernetes.py"
+   ]
+  },
+  {
+   "id": "airflow-0cd76c07e1",
+   "repo": "airflow",
+   "commit": "0cd76c07e1a2465b1520306e277b5729695f753b",
+   "parent": "7f9ca03889828f3d482676a8f976fba184438121",
+   "task": "Fix task log filters not working in fullscreen mode #62699",
+   "gold": [
+    "airflow-core/src/airflow/ui/src/pages/TaskInstance/Logs/Logs.tsx",
+    "airflow-core/src/airflow/ui/src/pages/TaskInstance/Logs/TaskLogHeader.tsx"
+   ]
+  },
+  {
+   "id": "airflow-fa60a7a02f",
+   "repo": "airflow",
+   "commit": "fa60a7a02f1a0c5485e70e5a3397cb3dac326221",
+   "parent": "b2f8b9fce27935c9ddd5c0bc98d6d1daf6fd37d3",
+   "task": "Migrate retry handler in task SDK API client to use tenacity instead of retryhttp",
+   "gold": [
+    "task-sdk/src/airflow/sdk/api/client.py",
+    "task-sdk/tests/task_sdk/api/test_client.py"
+   ]
+  },
+  {
+   "id": "airflow-772a865689",
+   "repo": "airflow",
+   "commit": "772a8656890bfe8265d1be98a60ecb538be54343",
+   "parent": "f5e3c1ef26db950cb673205df736e1e8fb77c43e",
+   "task": "Stop registry blips from failing integration test jobs",
+   "gold": [
+    "dev/breeze/src/airflow_breeze/commands/testing_commands.py",
+    "dev/breeze/src/airflow_breeze/utils/docker_command_utils.py",
+    "dev/breeze/tests/test_docker_command_utils.py",
+    "scripts/ci/testing/run_integration_tests_with_retry.sh"
+   ]
+  },
+  {
+   "id": "airflow-98f129f0cd",
+   "repo": "airflow",
+   "commit": "98f129f0cd43838c87dbe30d0f49a8c2b57513a8",
+   "parent": "d27198d4818f542870e7fb338c9a6379864b18b9",
+   "task": "Improve DurationChart labels and disable animation during auto-refresh",
+   "gold": [
+    "airflow-core/src/airflow/ui/src/components/DurationChart.tsx",
+    "airflow-core/src/airflow/ui/src/pages/Dag/Overview/Overview.tsx"
+   ]
+  },
+  {
+   "id": "airflow-944e131141",
+   "repo": "airflow",
+   "commit": "944e1311416f523a912abaf602c0ef47f7dd5845",
+   "parent": "d8865dd42499d1ded98640ddf9d88f37a8209904",
+   "task": "Migrate BigQueryInsertJobTrigger to on_kill() for user-initiated kills",
+   "gold": [
+    "providers/google/src/airflow/providers/google/cloud/triggers/bigquery.py",
+    "providers/google/tests/unit/google/cloud/triggers/test_bigquery.py"
+   ]
+  },
+  {
+   "id": "airflow-01f5f66033",
+   "repo": "airflow",
+   "commit": "01f5f66033bdc119b4710718cebb58d0de61208f",
+   "parent": "7dca298eb8113dc635cb7539646140dcf6699aba",
+   "task": "set `object_name`, `payload`, `external_id_field` as templated fields in `SalesforceBulkOperator`",
+   "gold": [
+    "providers/salesforce/src/airflow/providers/salesforce/operators/bulk.py",
+    "providers/salesforce/tests/unit/salesforce/operators/test_bulk.py"
+   ]
+  },
+  {
+   "id": "airflow-cacc2eb8dc",
+   "repo": "airflow",
+   "commit": "cacc2eb8dcac7e0343f26685e00f3d5700899a69",
+   "parent": "fc315f3d77f4029c469ebc7d8be35983edcbfc27",
+   "task": "Add exclude-newer-package=false for all workspace components in uv config",
+   "gold": [
+    "scripts/ci/prek/update_airflow_pyproject_toml.py",
+    "scripts/in_container/install_airflow_and_providers.py"
+   ]
+  },
+  {
+   "id": "airflow-67e4de3247",
+   "repo": "airflow",
+   "commit": "67e4de3247e12b080d4d71d12f7996f9b6245bb1",
+   "parent": "af7bc4786bd8f8e50ee9087a36d171c08584555e",
+   "task": "Fix KubernetesExecutor open slots metric",
+   "gold": [
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/executors/kubernetes_executor.py",
+    "providers/cncf/kubernetes/tests/unit/cncf/kubernetes/executors/test_kubernetes_executor.py"
+   ]
+  }
+ ],
+ "test": [
+  {
+   "id": "airflow-e5a88cc75a",
+   "repo": "airflow",
+   "commit": "e5a88cc75a46b3281940addc5e3bd56b08cd23e7",
+   "parent": "552e60505a9473f32494a6bb3dd3078f9b1c038a",
+   "task": "Eliminate serdag loading added in #56422",
+   "gold": [
+    "airflow-core/src/airflow/models/serialized_dag.py"
+   ]
+  },
+  {
+   "id": "airflow-7c3eacc3cf",
+   "repo": "airflow",
+   "commit": "7c3eacc3cfb9104128def18faed221fd4f4b2cd3",
+   "parent": "aa54031f3cece54b1492bb13648bd521d5bf3082",
+   "task": "Fix UI log fetch crash when ti.hostname is empty",
+   "gold": [
+    "airflow-core/src/airflow/utils/log/file_task_handler.py",
+    "airflow-core/tests/unit/utils/log/test_file_task_handler.py"
+   ]
+  },
+  {
+   "id": "airflow-71a1f29213",
+   "repo": "airflow",
+   "commit": "71a1f29213e244f9f7b351d9f08df11c47cd259e",
+   "parent": "471b82e12f7c64bfd85385fa879d60ebf36bf3d3",
+   "task": "Fix dataflow_config service_account for Beam Python and Go pipelines",
+   "gold": [
+    "providers/apache/beam/src/airflow/providers/apache/beam/operators/beam.py",
+    "providers/apache/beam/tests/unit/apache/beam/operators/test_beam.py"
+   ]
+  },
+  {
+   "id": "airflow-bd06decb0d",
+   "repo": "airflow",
+   "commit": "bd06decb0dc59a94149864474c3625921ac49fa4",
+   "parent": "04d39ab97416b6128e830c5c0a2dd904cba9fc1f",
+   "task": "Fix unformatted Google trigger error messages",
+   "gold": [
+    "providers/google/src/airflow/providers/google/cloud/triggers/bigquery.py",
+    "providers/google/src/airflow/providers/google/cloud/triggers/dataproc.py",
+    "providers/google/tests/unit/google/cloud/triggers/test_dataproc.py"
+   ]
+  },
+  {
+   "id": "airflow-0014422047",
+   "repo": "airflow",
+   "commit": "0014422047c49184540e2e1c0b9c819749d925fa",
+   "parent": "8c486754a07d62726eadd3bb9a61775c5c06e769",
+   "task": "Document that connection secrets without conn_type remain supported",
+   "gold": [
+    "shared/secrets_backend/src/airflow_shared/secrets_backend/base.py",
+    "shared/secrets_backend/tests/secrets_backend/test_base.py"
+   ]
+  },
+  {
+   "id": "airflow-c682ae0b5a",
+   "repo": "airflow",
+   "commit": "c682ae0b5abcd1d782286c4900ac78897d768ed9",
+   "parent": "a9c0bf31a8fdd081561c48e9fe28d2c79ee43edc",
+   "task": "Add unresolved review comments check to auto-triage",
+   "gold": [
+    "dev/breeze/src/airflow_breeze/commands/pr_commands.py",
+    "dev/breeze/src/airflow_breeze/utils/github.py"
+   ]
+  },
+  {
+   "id": "airflow-0d2011a3a5",
+   "repo": "airflow",
+   "commit": "0d2011a3a5267d34ff06448533d2c4718227237c",
+   "parent": "d7e7cd5d44e00304ffe52d9fd04ef5b1a3c38aa0",
+   "task": "Support user-assigned managed identity for Azure VM auth",
+   "gold": [
+    "providers/databricks/src/airflow/providers/databricks/hooks/databricks_base.py",
+    "providers/databricks/tests/unit/databricks/hooks/test_databricks_base.py"
+   ]
+  },
+  {
+   "id": "airflow-027c7cfc27",
+   "repo": "airflow",
+   "commit": "027c7cfc276372264e78df6a9b73cc844858ba65",
+   "parent": "b906080fe82cd72c9024dd62cf1b64c15f403ed8",
+   "task": "Fix public repository access in GitDagBundle",
+   "gold": [
+    "providers/git/src/airflow/providers/git/bundles/git.py",
+    "providers/git/tests/unit/git/bundles/test_git.py"
+   ]
+  },
+  {
+   "id": "airflow-6a58dd9bd3",
+   "repo": "airflow",
+   "commit": "6a58dd9bd387bcd8722d16c0824efe0e1d14ffce",
+   "parent": "b3ee9286dd7eb2e0675f456e7b9872cf0761f091",
+   "task": "Fix SAM login showing cryptic error on failed authentication",
+   "gold": [
+    "airflow-core/src/airflow/api_fastapi/auth/managers/simple/ui/src/alert/ErrorAlert.tsx",
+    "airflow-core/src/airflow/api_fastapi/auth/managers/simple/ui/src/queries/useCreateToken.ts",
+    "airflow-core/src/airflow/api_fastapi/auth/managers/simple/ui/src/queryClient.ts"
+   ]
+  },
+  {
+   "id": "airflow-0cf2026e41",
+   "repo": "airflow",
+   "commit": "0cf2026e4152b42e7e2b081c072cec3bb9054d96",
+   "parent": "784e1a9344c0f27f59d4130d8f38f5fc1692f581",
+   "task": "Fix Keycloak double-slash URL bug (#61121)",
+   "gold": [
+    "providers/keycloak/src/airflow/providers/keycloak/auth_manager/keycloak_auth_manager.py",
+    "providers/keycloak/tests/unit/keycloak/auth_manager/test_keycloak_auth_manager.py"
+   ]
+  },
+  {
+   "id": "airflow-d2161ae04c",
+   "repo": "airflow",
+   "commit": "d2161ae04cb7a888ef2276e4dca893674bcbc565",
+   "parent": "0effe0af7ce1db0fb1dc7d9b392bb2639122f38f",
+   "task": "Hide Dashboard metric percentages when a state count is capped",
+   "gold": [
+    "airflow-core/src/airflow/ui/src/pages/Dashboard/HistoricalMetrics/DagRunMetrics.tsx",
+    "airflow-core/src/airflow/ui/src/pages/Dashboard/HistoricalMetrics/MetricSection.tsx",
+    "airflow-core/src/airflow/ui/src/pages/Dashboard/HistoricalMetrics/TaskInstanceMetrics.tsx"
+   ]
+  },
+  {
+   "id": "airflow-c6cb72c208",
+   "repo": "airflow",
+   "commit": "c6cb72c208cb4638e60ef455b2ea0edc70b97108",
+   "parent": "10136e51e4a8dd44208c238dacf4c5f67220287a",
+   "task": "Make pod patching logic explicitly reflect when a pod is retained",
+   "gold": [
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/operators/pod.py"
+   ]
+  },
+  {
+   "id": "airflow-43038e0118",
+   "repo": "airflow",
+   "commit": "43038e011829eae8082f25a233dade5deef0c145",
+   "parent": "4e0f297dc44424f903285f3eed3c08647b39cc17",
+   "task": "Fix Azure Data Factory hook broken with azure-mgmt-datafactory 10",
+   "gold": [
+    "providers/microsoft/azure/src/airflow/providers/microsoft/azure/hooks/data_factory.py",
+    "providers/microsoft/azure/tests/unit/microsoft/azure/hooks/test_data_factory.py"
+   ]
+  },
+  {
+   "id": "airflow-cdecb7efbb",
+   "repo": "airflow",
+   "commit": "cdecb7efbb3092e6c15ae5476436aa12add90fb8",
+   "parent": "fb21525f83cc759d359419df52a36996dcf88f09",
+   "task": "Run the api-server in background instead of daemon mode",
+   "gold": [
+    "scripts/docker/entrypoint_ci.sh"
+   ]
+  },
+  {
+   "id": "airflow-b916de6dab",
+   "repo": "airflow",
+   "commit": "b916de6dab0a34e6ff80a9e54e68c5b5b68ebcb9",
+   "parent": "8850c326bdc66ef08506e51b98d2fc80e478df41",
+   "task": "Label Dag active runs accurately",
+   "gold": [
+    "airflow-core/src/airflow/api_fastapi/core_api/routes/public/dags.py",
+    "airflow-core/src/airflow/ui/src/pages/Dag/Header.test.tsx",
+    "airflow-core/src/airflow/ui/src/pages/Dag/Header.tsx"
+   ]
+  },
+  {
+   "id": "airflow-d868c8c714",
+   "repo": "airflow",
+   "commit": "d868c8c714448eff8f020b9aa0d56772b0db7021",
+   "parent": "02dbd2f6170448bcd8bf83e83617fe84c1bddb21",
+   "task": "Make breeze setup recover from a broken legacy uv tool install",
+   "gold": [
+    "dev/breeze/src/airflow_breeze/utils/path_utils.py",
+    "dev/breeze/tests/test_shim_version_check.py"
+   ]
+  },
+  {
+   "id": "airflow-b72df7bd48",
+   "repo": "airflow",
+   "commit": "b72df7bd487ed836849bc5dd585e8082768d73fd",
+   "parent": "da9bb786fe4b57135e508bca0f6895eb4ed7c863",
+   "task": "Increase scheduler loop sleep in dag.test for executors",
+   "gold": [
+    "task-sdk/src/airflow/sdk/definitions/dag.py"
+   ]
+  },
+  {
+   "id": "airflow-b9ff1d7769",
+   "repo": "airflow",
+   "commit": "b9ff1d776943c07e09cf541e4f4139e35cfb6570",
+   "parent": "b476b22f264a5de9736319ee9fc5843ac0b27eb2",
+   "task": "Show each Dag only once in airflow dags list",
+   "gold": [
+    "airflow-core/src/airflow/cli/commands/dag_command.py",
+    "airflow-core/tests/unit/cli/commands/test_dag_command.py"
+   ]
+  },
+  {
+   "id": "airflow-905f4752d4",
+   "repo": "airflow",
+   "commit": "905f4752d475837021574f80e2376366fc8260f0",
+   "parent": "4ca86a82fbdacb9588f18f0fb995a711532d48b3",
+   "task": "Delete all unnecessary LICENSE Files",
+   "gold": [
+    "dev/breeze/src/airflow_breeze/prepare_providers/provider_documentation.py"
+   ]
+  },
+  {
+   "id": "airflow-2031171934",
+   "repo": "airflow",
+   "commit": "20311719342318ccc4ae3bac68a067a70281eb67",
+   "parent": "2ead075ee2287f30a8f6bc07dce8202f1a939c99",
+   "task": "Expose literal and ParamsDict at SDK top level",
+   "gold": [
+    "task-sdk/src/airflow/sdk/__init__.py",
+    "task-sdk/tests/task_sdk/docs/test_public_api.py"
+   ]
+  },
+  {
+   "id": "airflow-6206ea1b17",
+   "repo": "airflow",
+   "commit": "6206ea1b178c81e5a989f4083743673db00dd101",
+   "parent": "5c9171af1a56b5b60bb121537159ceb9c4de9f73",
+   "task": "Display User ID of the current user to use in HITL assigned_users.",
+   "gold": [
+    "airflow-core/src/airflow/ui/src/layouts/Nav/UserSettingsButton.tsx"
+   ]
+  },
+  {
+   "id": "airflow-db04a4ef8c",
+   "repo": "airflow",
+   "commit": "db04a4ef8c2042c0e770e23749b66e2525c39569",
+   "parent": "2b306ca05a8503eb46577a6bd13f580e67b46a10",
+   "task": "Fix older and custom secrets backends breaking on Airflow 3.2",
+   "gold": [
+    "airflow-core/src/airflow/models/connection.py",
+    "airflow-core/src/airflow/models/variable.py",
+    "airflow-core/tests/unit/always/test_secrets.py",
+    "shared/secrets_backend/src/airflow_shared/secrets_backend/base.py",
+    "shared/secrets_backend/tests/secrets_backend/test_base.py"
+   ]
+  },
+  {
+   "id": "airflow-139cd980af",
+   "repo": "airflow",
+   "commit": "139cd980afbe5e8853507ed30d4205d353e20d93",
+   "parent": "9f7cb12449a54c24d62f9e392d7265b616275d91",
+   "task": "Add `--action-on-existing-key` to `pools import` and `connections import`",
+   "gold": [
+    "airflow-ctl/src/airflowctl/ctl/cli_config.py",
+    "airflow-ctl/src/airflowctl/ctl/commands/connection_command.py",
+    "airflow-ctl/src/airflowctl/ctl/commands/pool_command.py",
+    "airflow-ctl/tests/airflow_ctl/ctl/commands/test_connections_command.py",
+    "airflow-ctl/tests/airflow_ctl/ctl/commands/test_pool_command.py"
+   ]
+  },
+  {
+   "id": "airflow-16e1abaaea",
+   "repo": "airflow",
+   "commit": "16e1abaaeac6aa7041daada0c29a20843e491fa6",
+   "parent": "a0d7ae6070ba2854dc889383a20f20486b634efe",
+   "task": "Improve namespace logging level config parsing",
+   "gold": [
+    "shared/logging/src/airflow_shared/logging/structlog.py",
+    "shared/logging/tests/logging/test_structlog.py"
+   ]
+  },
+  {
+   "id": "airflow-b2a48f72ae",
+   "repo": "airflow",
+   "commit": "b2a48f72aea34da31c839f945b6b91d2bb22c947",
+   "parent": "793d704eefd5b10920dc1b8c2432d2ee1b82b932",
+   "task": "Add --review-requested filter to breeze pr auto-triage",
+   "gold": [
+    "dev/breeze/src/airflow_breeze/commands/pr_commands.py",
+    "dev/breeze/src/airflow_breeze/commands/pr_commands_config.py"
+   ]
+  },
+  {
+   "id": "airflow-a42b88b59a",
+   "repo": "airflow",
+   "commit": "a42b88b59a1ab6ef5777259185df83df9304e8c6",
+   "parent": "b651403e7a6ab1b6637ff90152618254f0806538",
+   "task": "make Asset objects hashable",
+   "gold": [
+    "task-sdk/src/airflow/sdk/definitions/asset/__init__.py",
+    "task-sdk/tests/task_sdk/definitions/test_asset.py"
+   ]
+  },
+  {
+   "id": "airflow-40f6ec1c60",
+   "repo": "airflow",
+   "commit": "40f6ec1c6021f242e80e010043273d2a4cbd4887",
+   "parent": "daad42d90cb3fe41c2ffc7053eef22fecb2d877a",
+   "task": "Flatten grid structure endpoint memory consumption",
+   "gold": [
+    "airflow-core/src/airflow/api_fastapi/core_api/routes/ui/grid.py"
+   ]
+  },
+  {
+   "id": "airflow-c0cbd097ea",
+   "repo": "airflow",
+   "commit": "c0cbd097eafcf10b35dbf5fc507564e532b8eac4",
+   "parent": "3deb615f5ba7047c7df77cd5bb79c8e02b70233a",
+   "task": "Kubernetes Pod Operator callbacks repeating log line",
+   "gold": [
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/callbacks.py",
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/utils/pod_manager.py",
+    "providers/cncf/kubernetes/tests/unit/cncf/kubernetes/utils/test_pod_manager.py"
+   ]
+  },
+  {
+   "id": "airflow-8850c326bd",
+   "repo": "airflow",
+   "commit": "8850c326bdc66ef08506e51b98d2fc80e478df41",
+   "parent": "7d5fe632a629d8dd383770f6cb65a9090bd38adc",
+   "task": "Stop agent scratch directories from breaking the boring-cyborg check",
+   "gold": [
+    "scripts/ci/prek/boring_cyborg.py"
+   ]
+  },
+  {
+   "id": "airflow-434c1cc9f2",
+   "repo": "airflow",
+   "commit": "434c1cc9f2b50c5cffd3cf6c2d8b4f2ab3526808",
+   "parent": "208eab43bc86e193e3bed55d0e9b3232a45ad951",
+   "task": "use joinable manager queues",
+   "gold": [
+    "providers/cncf/kubernetes/src/airflow/providers/cncf/kubernetes/executors/kubernetes_executor.py"
+   ]
+  }
+ ]
+}

@@ -8,7 +8,7 @@ const COMMANDS = [
   { label: "Install", hint: "page", href: `${base}/#install` },
   { label: "Blog", hint: "page", href: `${base}/blog/` },
   { label: "How the ranking works", hint: "post", href: `${base}/blog/how-it-ranks.html` },
-  { label: "What 120 real changes showed", hint: "post", href: `${base}/blog/what-we-measured.html` },
+  { label: "What the tests showed", hint: "post", href: `${base}/blog/what-we-measured.html` },
   { label: "Copy: npx @taanviir/context-packer pack", hint: "copy", copy: 'npx -y @taanviir/context-packer pack "describe the change"' },
   { label: "Copy: /plugin marketplace add", hint: "copy", copy: "/plugin marketplace add Taanviir/context-packer" },
   { label: "Copy: claude mcp add", hint: "copy", copy: "claude mcp add context-packer -- npx -y @taanviir/context-packer mcp" },

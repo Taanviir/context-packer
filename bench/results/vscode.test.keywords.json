@@ -1,0 +1,1231 @@
+{
+ "repo": "vscode",
+ "split": "test",
+ "variant": "keywords",
+ "results": [
+  {
+   "id": "vscode-5635ce9a00",
+   "task": "Defer EditorMouseEvent position computation",
+   "gold": [
+    "src/vs/editor/browser/editorDom.ts"
+   ],
+   "candidates": 10208,
+   "ranked": [
+    "src/vs/editor/browser/editorBrowser.ts",
+    "src/vs/editor/contrib/hover/browser/contentHoverController.ts",
+    "src/vs/sessions/contrib/agentFeedback/browser/agentFeedbackEditorInputContribution.ts",
+    "src/vs/editor/contrib/links/browser/links.ts",
+    "src/vs/editor/contrib/hover/browser/hoverOperation.ts",
+    "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViews/inlineEditsLineReplacementView.ts",
+    "src/vs/workbench/contrib/chat/browser/chatEditing/chatEditingTextModelChangeService.ts",
+    "src/vs/workbench/browser/parts/notifications/notificationsToasts.ts",
+    "src/vs/editor/browser/view/viewUserInputEvents.ts",
+    "src/vs/editor/contrib/dnd/browser/dnd.ts",
+    "src/vs/editor/browser/controller/dragScrolling.ts",
+    "src/vs/editor/browser/controller/mouseHandler.ts",
+    "extensions/copilot/src/extension/prompts/node/test/fixtures/codeEditorWidget.3.summarized.ts",
+    "src/vs/editor/contrib/stickyScroll/browser/stickyScrollController.ts",
+    "src/vs/editor/browser/editorDom.ts",
+    "src/vs/editor/contrib/gotoSymbol/browser/link/goToDefinitionAtPosition.ts",
+    "src/vs/editor/browser/view/viewController.ts",
+    "extensions/copilot/src/extension/prompts/node/test/fixtures/codeEditorWidget.2.summarized.ts",
+    "src/vs/workbench/contrib/chat/browser/widgetHosts/chatQuick.ts",
+    "src/vs/editor/contrib/hover/test/browser/hoverUtils.test.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 899,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-4797e59d67",
+   "task": "add 'Add File as Context' action to agent sessions",
+   "gold": [
+    "src/vs/sessions/contrib/editor/browser/editor.contribution.ts"
+   ],
+   "candidates": 11520,
+   "ranked": [
+    "src/vs/workbench/contrib/chat/browser/actions/chatContinueInAction.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHostActions.ts",
+    "src/vs/platform/agentHost/test/node/copilotAgent.test.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/experiments/agentTitleBarStatusWidget.ts",
+    "src/vs/sessions/contrib/chat/test/browser/sessionWorkspacePicker.test.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/input/editor/chatInputCompletions.ts",
+    "src/vs/workbench/contrib/welcomeAgentSessions/browser/agentSessionsWelcome.ts",
+    "src/vs/sessions/contrib/providers/agentHost/test/browser/agentHostSkillButtons.test.ts",
+    "src/vs/sessions/contrib/changes/browser/changesView.ts",
+    "src/vs/sessions/contrib/changes/browser/changesViewRenderer.ts",
+    "src/vs/workbench/contrib/chat/browser/actions/chatExecuteActions.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentSessionsFilter.ts",
+    "src/vs/sessions/contrib/providers/agentHost/browser/agentHostSessionConfigPicker.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/experiments/agentSessionsExperiments.contribution.ts",
+    "src/vs/workbench/contrib/chat/browser/chatSessions/chatSessions.contribution.ts",
+    "src/vs/sessions/contrib/editor/browser/editor.contribution.ts",
+    "src/vs/workbench/contrib/welcomeGettingStarted/browser/gettingStarted.contribution.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/manageRemoteAgentHosts.ts",
+    "src/vs/sessions/contrib/sessions/browser/sessionsTitleBarWidget.ts",
+    "src/vs/sessions/contrib/chat/browser/sessionWorkspacePicker.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 1010,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-334c30150b",
+   "task": "refine monitoring status copy",
+   "gold": [
+    "extensions/copilot/src/extension/otel/vscode-node/otelContrib.ts"
+   ],
+   "candidates": 11649,
+   "ranked": [
+    "extensions/copilot/src/extension/otel/vscode-node/otelContrib.ts",
+    "src/vs/workbench/contrib/notebook/browser/notebook.contribution.ts",
+    "src/vs/platform/environment/electron-main/environmentMainService.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/tools/monitoring/outputMonitor.ts",
+    "src/vs/base/browser/globalPointerMoveMonitor.ts",
+    "src/vs/workbench/services/extensionManagement/common/extensionManagement.ts",
+    "extensions/copilot/src/extension/inlineChat/vscode-node/inlineChatCodeActions.ts",
+    "src/vs/workbench/services/workingCopy/common/workingCopyService.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/test/browser/outputMonitor.test.ts",
+    "src/vs/workbench/services/environment/common/environmentService.ts",
+    "src/vs/editor/contrib/colorPicker/browser/colorPickerParts/colorPickerSaturationBox.ts",
+    "src/vs/workbench/services/themes/common/workbenchThemeService.ts",
+    "src/vs/platform/agentHost/common/agentService.ts",
+    "src/vs/editor/browser/editorDom.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/tools/monitoring/utils.ts",
+    "src/vs/platform/telemetry/common/serverTelemetryService.ts",
+    "src/vs/platform/extensionManagement/node/extensionManagementService.ts",
+    "src/vs/workbench/contrib/chat/browser/chatDebug/chatDebugToolCallContentRenderer.ts",
+    "extensions/copilot/src/util/vs/editor/common/diff/defaultLinesDiffComputer/defaultLinesDiffComputer.ts",
+    "src/vs/editor/common/diff/defaultLinesDiffComputer/defaultLinesDiffComputer.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1003,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-cbfbdb0f51",
+   "task": "Update Agent Host Skill complletions",
+   "gold": [
+    "src/vs/platform/agentHost/node/agentHostSkillCompletionProvider.ts",
+    "src/vs/platform/agentHost/node/agentService.ts",
+    "src/vs/platform/agentHost/test/node/agentHostSkillCompletionProvider.test.ts"
+   ],
+   "candidates": 11420,
+   "ranked": [
+    "src/vs/sessions/contrib/providers/agentHost/browser/agentHostSkillButtons.ts",
+    "src/vs/sessions/contrib/providers/agentHost/test/browser/agentHostSkillButtons.test.ts",
+    "src/vs/workbench/api/browser/mainThreadChatAgents2.ts",
+    "src/vs/workbench/contrib/chat/common/promptSyntax/service/extensionPromptFileService.ts",
+    "src/vs/platform/agentHost/node/copilot/copilotToolDisplay.ts",
+    "src/vs/platform/agentHost/test/node/agentHostSkillCompletionProvider.test.ts",
+    "src/vs/sessions/contrib/chat/browser/aiCustomizationWorkspaceService.ts",
+    "src/vs/platform/agentHost/node/agentHostSkillCompletionProvider.ts",
+    "src/vs/workbench/api/common/extHostChatAgents2.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/test/browser/remoteAgentHostCustomizationHarness.test.ts",
+    "src/vs/workbench/contrib/chat/test/browser/agentHost/agentCustomizationContentExpander.test.ts",
+    "src/vs/workbench/contrib/chat/test/browser/aiCustomization/aiCustomizationItemsModel.test.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentHost/syncedCustomizationBundler.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentHost/stateToProgressAdapter.ts",
+    "src/vs/workbench/contrib/chat/test/browser/agentSessions/syncedCustomizationBundler.test.ts",
+    "src/vs/platform/agentHost/test/node/copilotToolDisplay.test.ts",
+    "src/vs/platform/agentHost/node/shared/sessionPluginBundler.ts",
+    "src/vs/workbench/contrib/chat/test/browser/agentSessions/resolveCustomizationRefs.test.ts",
+    "src/vs/workbench/contrib/chat/test/browser/agentSessions/enumerateLocalCustomizationsForHarness.test.ts",
+    "src/vs/workbench/contrib/chat/common/promptSyntax/utils/promptFilesLocator.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0.6666666666666666,
+    "20": 0.6666666666666666
+   },
+   "ms": 976,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-449d7cc584",
+   "task": "Shorten session action labels",
+   "gold": [
+    "src/vs/sessions/contrib/sessions/browser/sessionsActions.ts",
+    "src/vs/sessions/contrib/sessions/test/browser/sessionsActions.test.ts"
+   ],
+   "candidates": 13186,
+   "ranked": [
+    "src/vs/base/test/common/labels.test.ts",
+    "src/vs/workbench/common/editor/diffEditorInput.ts",
+    "src/vs/platform/agentHost/node/agentHostFileCompletionProvider.ts",
+    "src/vs/workbench/contrib/scm/browser/scmRepositoryRenderer.ts",
+    "src/vs/sessions/contrib/providers/copilotChatSessions/test/browser/branchPicker.test.ts",
+    "src/vs/platform/agentHost/node/codex/codexMapAppServerEvents.ts",
+    "src/vs/sessions/contrib/automations/test/browser/automationDialog.test.ts",
+    "src/vs/sessions/contrib/providers/agentHost/browser/agentHostSessionConfigPicker.ts",
+    "src/vs/sessions/contrib/agentFeedback/browser/agentFeedbackContextView.ts",
+    "src/vs/sessions/contrib/changes/browser/sessionFilesWidget.ts",
+    "src/vs/sessions/contrib/providers/agentHost/browser/agentHostModePicker.ts",
+    "src/vs/sessions/contrib/chat/browser/sessionChatInputToolbar.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/chatContentParts/chatTurnPillsPart.ts",
+    "src/vs/workbench/contrib/chat/test/browser/widget/chatTurnPills.test.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/chatContentParts/chatChangesSummaryPart.ts",
+    "src/vs/sessions/contrib/providers/agentHost/test/browser/agentHostClaudePermissionModePicker.test.ts",
+    "src/vs/sessions/contrib/providers/agentHost/test/browser/agentHost/agentHostSessionConfigPicker.test.ts",
+    "src/vs/sessions/test/browser/sessionReadOnlyBanner.fixture.ts",
+    "src/vs/workbench/contrib/codeEditor/browser/emptyTextEditorHint/emptyTextEditorHint.ts",
+    "src/vs/sessions/contrib/chat/browser/sessionsTasksService.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 1127,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-c8cdcb16dc",
+   "task": "Detect dead connections via keepalive timeout",
+   "gold": [
+    "src/vs/base/parts/ipc/common/ipc.net.ts",
+    "src/vs/base/parts/ipc/test/node/ipc.net.test.ts"
+   ],
+   "candidates": 10201,
+   "ranked": [
+    "src/vs/platform/agentHost/node/sshRemoteAgentHostService.ts",
+    "src/vs/sessions/contrib/remoteAgentHost/browser/tunnelAgentHost.contribution.ts",
+    "extensions/terminal-suggest/src/completions/upstream/curl.ts",
+    "src/vs/platform/agentHost/browser/remoteAgentHostServiceImpl.ts",
+    "cli/src/commands/serve_web.rs",
+    "src/vs/sessions/contrib/tunnelHost/electron-browser/toggleRemoteConnectionsActionViewItem.ts",
+    "src/vs/workbench/contrib/terminalContrib/links/browser/terminalLocalLinkDetector.ts",
+    "src/vs/platform/agentHost/common/sshRemoteAgentHost.ts",
+    "extensions/copilot/src/extension/chatSessions/vscode-node/pullRequestDetectionService.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/experiments/unifiedQuickAccess.ts",
+    "src/vs/platform/agentHost/common/tunnelAgentHost.ts",
+    "extensions/vscode-colorize-tests/test/colorize-fixtures/test.ts",
+    "extensions/vscode-colorize-perf-tests/test/colorize-fixtures/test.ts",
+    "src/vs/sessions/electron-browser/sessions.ts",
+    "src/vs/platform/meteredConnection/common/meteredConnection.config.contribution.ts",
+    "src/vs/platform/agentHost/electron-browser/sshRemoteAgentHostServiceImpl.ts",
+    "src/vs/workbench/contrib/terminal/common/terminalEnvironment.ts",
+    "src/vs/sessions/contrib/remoteAgentHost/browser/remoteAgentHost.contribution.ts",
+    "src/vs/platform/files/test/node/fixtures/resolver/examples/conway.js",
+    "src/vs/platform/files/test/node/fixtures/service/deep/conway.js"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 905,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-4b04bed81a",
+   "task": "agent host: clear sticky incompatible status after upgrade reconnect",
+   "gold": [
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHost.contribution.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/tunnelAgentHost.contribution.ts"
+   ],
+   "candidates": 10746,
+   "ranked": [
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteHostOptions.ts",
+    "src/vs/platform/agentHost/browser/remoteAgentHostServiceImpl.ts",
+    "src/vs/platform/agentHost/common/remoteAgentHostService.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/tunnelAgentHost.contribution.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHost.contribution.ts",
+    "src/vs/platform/agentHost/test/node/protocolServerHandler.test.ts",
+    "src/vs/platform/agentHost/node/protocolServerHandler.ts",
+    "src/vs/platform/agentHost/browser/remoteAgentHostProtocolClient.ts",
+    "src/vs/platform/agentHost/common/state/protocolUpgrade.ts",
+    "src/vs/sessions/services/agentHostFilter/browser/agentHostFilterService.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHostSessionsProvider.ts",
+    "src/vs/sessions/contrib/chat/test/browser/sessionWorkspacePicker.test.ts",
+    "src/vs/sessions/contrib/chat/browser/sessionWorkspacePicker.ts",
+    "cli/src/tunnels/agent_host.rs",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHostLogForwarder.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/test/browser/remoteHostOptions.test.ts",
+    "src/vs/workbench/contrib/terminal/test/browser/agentHostPty.test.ts",
+    "src/vs/platform/agentHost/node/agentHostUpgradeChannel.ts",
+    "src/vs/platform/agentHost/test/electron-browser/sshRemoteAgentHostService.test.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/test/browser/remoteAgentHost.contribution.test.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 966,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-083af3b3af",
+   "task": "[cherry-pick] Remove ReviewPlanTool from BuiltinToolsContribution",
+   "gold": [
+    "src/vs/workbench/contrib/chat/common/tools/builtinTools/tools.ts"
+   ],
+   "candidates": 10211,
+   "ranked": [
+    "src/vs/workbench/contrib/chat/common/tools/builtinTools/tools.ts",
+    "src/vs/workbench/contrib/chat/common/tools/builtinTools/reviewPlanTool.ts",
+    "src/vs/workbench/contrib/chat/common/model/chatProgressTypes/chatPlanReviewData.ts",
+    "extensions/copilot/src/extension/chatSessions/copilotcli/common/test/copilotCLITools.spec.ts",
+    "extensions/copilot/src/extension/chatSessions/copilotcli/common/copilotCLITools.ts",
+    "extensions/copilot/src/extension/chatSessions/copilotcli/node/exitPlanModeHandler.ts",
+    "src/vs/workbench/contrib/chat/browser/actions/chatToolPicker.ts",
+    "src/vs/workbench/test/browser/componentFixtures/chat/chatInput.fixture.ts",
+    "extensions/copilot/src/extension/agents/vscode-node/planAgentProvider.ts",
+    "src/vs/workbench/contrib/chat/common/tools/languageModelToolsContribution.ts",
+    "extensions/copilot/src/extension/chatSessions/claude/node/test/claudeToolPermissionService.spec.ts",
+    "src/vs/workbench/contrib/chat/common/tools/builtinTools/chatExternalPathConfirmation.ts",
+    "src/vs/workbench/contrib/chat/electron-browser/builtInTools/tools.ts",
+    "src/vs/workbench/contrib/chat/common/chatService/chatService.ts",
+    "extensions/copilot/src/extension/chatSessions/copilotcli/node/test/exitPlanModeHandler.spec.ts",
+    "src/vs/workbench/contrib/chat/browser/chatSetup/chatSetupContributions.ts",
+    "extensions/copilot/src/extension/agents/vscode-node/test/planAgentProvider.spec.ts",
+    "src/vs/workbench/contrib/chat/common/tools/builtinTools/setArtifactRulesTool.ts",
+    "src/vs/workbench/contrib/chat/common/tools/builtinTools/setArtifactsTool.ts",
+    "src/vs/workbench/contrib/chat/test/common/tools/builtinTools/modifiedFilesConfirmationTool.test.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 985,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-f436d18836",
+   "task": "AgentHost - show changeset operations in groups",
+   "gold": [
+    "src/vs/platform/agentHost/node/agentHostCommitOperationProvider.ts",
+    "src/vs/platform/agentHost/node/agentHostPullRequestOperationProvider.ts",
+    "src/vs/sessions/contrib/changes/browser/changesView.ts",
+    "src/vs/sessions/contrib/providers/agentHost/browser/agentHostSessionChangesets.ts",
+    "src/vs/sessions/services/sessions/common/session.ts"
+   ],
+   "candidates": 11665,
+   "ranked": [
+    "src/vs/sessions/contrib/providers/agentHost/browser/agentHostSessionChangesets.ts",
+    "src/vs/platform/agentHost/node/agentHostChangesetOperationService.ts",
+    "src/vs/platform/agentHost/node/agentHostChangesetCoordinator.ts",
+    "src/vs/platform/agentHost/test/node/agentHostChangesetOperationService.test.ts",
+    "src/vs/platform/agentHost/test/node/agentHostPullRequestOperationProvider.test.ts",
+    "src/vs/sessions/services/sessions/common/session.ts",
+    "src/vs/platform/agentHost/common/agentHostChangesetOperationService.ts",
+    "src/vs/platform/agentHost/test/node/agentHostCommitOperationProvider.test.ts",
+    "src/vs/platform/agentHost/common/state/protocol/channels-changeset/state.ts",
+    "src/vs/platform/agentHost/node/agentHostPullRequestOperationProvider.ts",
+    "src/vs/platform/agentHost/node/agentHostCommitOperationProvider.ts",
+    "src/vs/platform/agentHost/common/state/protocol/channels-changeset/reducer.ts",
+    "src/vs/platform/agentHost/common/state/protocol/channels-changeset/actions.ts",
+    "src/vs/platform/agentHost/node/agentHostDiscardChangesOperationProvider.ts",
+    "src/vs/platform/agentHost/common/state/protocol/channels-changeset/commands.ts",
+    "src/vs/sessions/contrib/changes/browser/changesViewRenderer.ts",
+    "src/vs/platform/agentHost/test/node/reducers.test.ts",
+    "src/vs/platform/agentHost/node/agentHostPullRequestOperationHandler.ts",
+    "src/vs/platform/agentHost/common/state/protocol/common/actions.ts",
+    "src/vs/sessions/contrib/changes/browser/changesView.ts"
+   ],
+   "recall": {
+    "5": 0.2,
+    "10": 0.6,
+    "20": 1
+   },
+   "ms": 1030,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-6ca640df55",
+   "task": "Remove rounded buttons style override module and associated CSS import",
+   "gold": [
+    "src/vs/workbench/contrib/styleOverrides/browser/styleOverrides.contribution.ts"
+   ],
+   "candidates": 11609,
+   "ranked": [
+    "src/vs/workbench/contrib/styleOverrides/browser/styleOverrides.contribution.ts",
+    "src/vs/editor/browser/viewParts/selections/selections.ts",
+    "src/vs/sessions/contrib/chat/test/browser/newChatInput.fixture.ts",
+    "src/vs/workbench/contrib/welcomeGettingStarted/browser/gettingStartedDetailsRenderer.ts",
+    "src/vs/editor/contrib/zoneWidget/browser/zoneWidget.ts",
+    "src/vs/workbench/browser/parts/views/viewPane.ts",
+    "src/vs/workbench/contrib/markdown/browser/markedKatexSupport.ts",
+    "src/vs/base/browser/ui/button/button.ts",
+    "src/vs/platform/quickinput/browser/tree/quickInputTreeRenderer.ts",
+    "src/vs/sessions/electron-browser/sessions.ts",
+    "src/vs/editor/browser/gpu/renderStrategy/viewportRenderStrategy.ts",
+    "src/vs/workbench/contrib/notebook/browser/contrib/find/notebookFindReplaceWidget.ts",
+    "src/vs/base/browser/ui/dialog/dialog.ts",
+    "src/vs/editor/common/model.ts",
+    "src/vs/workbench/browser/parts/views/viewPaneContainer.ts",
+    "src/vs/workbench/contrib/codeEditor/browser/suggestEnabledInput/suggestEnabledInput.ts",
+    "src/vs/base/browser/ui/inputbox/inputBox.ts",
+    "src/vs/code/electron-browser/workbench/workbench.ts",
+    "src/vs/platform/quickinput/browser/quickInputList.ts",
+    "src/vs/base/browser/domStylesheets.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1017,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-1c2dc57c63",
+   "task": "Remove unused imports and editor closing logic from feedback submission actions",
+   "gold": [
+    "src/vs/sessions/contrib/agentFeedback/browser/agentFeedbackEditorActions.ts"
+   ],
+   "candidates": 10656,
+   "ranked": [
+    "extensions/typescript-language-features/src/languageFeatures/organizeImports.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/chatContentParts/chatPlanReviewPart.ts",
+    "extensions/typescript-language-features/src/languageFeatures/fixAll.ts",
+    "src/vs/workbench/contrib/chat/test/browser/widget/chatContentParts/chatPlanReviewPart.test.ts",
+    "src/vs/workbench/contrib/chat/browser/planReviewFeedback/planReviewFeedbackEditorContribution.ts",
+    "extensions/typescript-language-features/src/test/smoke/quickFix.test.ts",
+    "extensions/typescript-language-features/src/typeConverters.ts",
+    "extensions/copilot/src/extension/inlineEdits/vscode-node/components/nesFeedbackSubmitter.ts",
+    "src/vs/sessions/contrib/agentFeedback/browser/agentFeedbackEditorWidgetContribution.ts",
+    "src/vs/workbench/test/browser/componentFixtures/editor/codeActionList.fixture.ts",
+    "extensions/typescript-language-features/src/languageFeatures/fileConfigurationManager.ts",
+    "src/vs/sessions/contrib/agentFeedback/browser/agentFeedbackEditorOverlay.ts",
+    "extensions/typescript-language-features/src/tsServer/protocol/protocol.const.ts",
+    "src/vs/sessions/contrib/agentFeedback/test/browser/agentFeedbackEditorWidget.fixture.ts",
+    "src/vs/sessions/contrib/agentFeedback/browser/agentFeedbackEditorInputContribution.ts",
+    "src/vs/editor/contrib/codeAction/browser/codeActionCommands.ts",
+    "src/vs/sessions/contrib/agentFeedback/browser/agentFeedbackEditorActions.ts",
+    "src/vs/sessions/contrib/agentFeedback/browser/agentFeedbackHover.ts",
+    "src/vs/editor/common/cursor/cursor.ts",
+    "extensions/copilot/test/simulation/notebookEdits.stest.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 958,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-83e1b3a96b",
+   "task": "Fix omni chat confirmation layout",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/chatInputWindow/chatInputWindowService.ts"
+   ],
+   "candidates": 12773,
+   "ranked": [
+    "src/vs/workbench/contrib/chat/browser/chatInputWindow/chatInputWindowService.ts",
+    "src/vs/workbench/test/browser/componentFixtures/sessions/sessionsTitleBarWidget.fixture.ts",
+    "src/vs/workbench/contrib/chat/common/sessionRouter.ts",
+    "src/vs/workbench/contrib/chat/browser/actions/chatAccessibilityHelp.ts",
+    "src/vs/workbench/contrib/chat/common/chatInputWindow.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/chatContentParts/toolInvocationParts/chatSandboxPrerequisiteConfirmationSubPart.ts",
+    "src/vs/sessions/contrib/sessions/browser/sessionsTitleBarWidget.ts",
+    "src/vs/workbench/contrib/chat/browser/chatInputWindow/chatInputWindow.contribution.ts",
+    "src/vs/workbench/contrib/chat/common/voiceClient/voiceClientService.ts",
+    "src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/chatContentParts/chatToolInputOutputContentPart.ts",
+    "src/vs/sessions/browser/parts/dialogs/mobileAwareDialogHandler.ts",
+    "src/vs/workbench/test/browser/componentFixtures/chat/chatWidget.fixture.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/chatContentParts/chatSubagentContentPart.ts",
+    "src/vs/sessions/contrib/sessions/browser/sessions.contribution.ts",
+    "src/vs/platform/agentHost/test/node/protocol/toolApproval.integrationTest.ts",
+    "src/vs/workbench/contrib/chat/browser/actions/chatActions.ts",
+    "src/vs/workbench/contrib/inlineChat/browser/inlineChatAffordanceWidget.ts",
+    "src/vs/platform/agentHost/node/claude/claudeSubagentSignals.ts",
+    "src/vs/sessions/contrib/sessions/browser/blockedSessionsList.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1111,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-39132193ba",
+   "task": "memory leak in source control view",
+   "gold": [
+    "src/vs/workbench/contrib/scm/browser/scmViewPane.ts"
+   ],
+   "candidates": 12906,
+   "ranked": [
+    "scripts/chat-simulation/test-chat-mem-leaks.js",
+    "src/vs/workbench/contrib/debug/browser/disassemblyView.ts",
+    "scripts/chat-simulation/merge-ci-summary.js",
+    "src/vs/workbench/contrib/terminalContrib/chat/test/browser/terminalChatService.test.ts",
+    "src/vs/platform/agentHost/test/node/codex/codexReplayMapper.test.ts",
+    "src/vs/platform/agentHost/node/codex/protocol/generated/v2/index.ts",
+    "src/vs/workbench/contrib/processExplorer/browser/processExplorerControl.ts",
+    "extensions/copilot/src/platform/endpoint/common/endpointTypes.ts",
+    "src/vs/workbench/contrib/scm/browser/scmAccessibilityHelp.ts",
+    "src/vs/workbench/contrib/scm/browser/scm.contribution.ts",
+    "extensions/github/src/historyItemDetailsProvider.ts",
+    "src/vs/workbench/contrib/chat/browser/tools/languageModelToolsConfirmationService.ts",
+    "extensions/copilot/src/util/vs/base/common/network.ts",
+    "src/vs/workbench/contrib/chat/common/tools/builtinTools/setArtifactRulesTool.ts",
+    "src/vs/base/common/network.ts",
+    "src/vs/editor/browser/controller/editContext/clipboardUtils.ts",
+    "src/vscode-dts/vscode.proposed.scmMultiDiffEditor.d.ts",
+    "src/vs/workbench/contrib/onboarding/test/browser/onboardingService.test.ts",
+    "src/vs/workbench/contrib/chat/test/browser/chatPromoNotification.test.ts",
+    "src/vs/workbench/contrib/debug/common/debug.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 1140,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-9b8114892b",
+   "task": "Fix DisposableStore reference leak in terminal execute strategies",
+   "gold": [
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/executeStrategy/basicExecuteStrategy.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/executeStrategy/richExecuteStrategy.ts"
+   ],
+   "candidates": 10321,
+   "ranked": [
+    "src/vs/workbench/contrib/terminalContrib/chat/test/browser/terminalChatService.test.ts",
+    "scripts/chat-simulation/common/perf-scenarios.js",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/executeStrategy/noneExecuteStrategy.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/test/browser/noneExecuteStrategy.test.ts",
+    "src/vs/workbench/contrib/terminalContrib/quickFix/browser/quickFixAddon.ts",
+    "src/vs/workbench/api/browser/mainThreadTerminalService.ts",
+    "extensions/copilot/src/extension/conversation/vscode-node/conversationFeature.ts",
+    "src/vs/workbench/contrib/terminalContrib/quickFix/browser/terminal.quickFix.contribution.ts",
+    "src/vs/workbench/api/common/extHostTerminalService.ts",
+    "src/vs/base/test/common/lifecycle.test.ts",
+    "src/vscode-dts/vscode.proposed.terminalQuickFixProvider.d.ts",
+    "src/vs/base/common/lifecycle.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/test/browser/outputMonitor.test.ts",
+    "extensions/copilot/src/util/vs/base/common/lifecycle.ts",
+    "src/vs/workbench/contrib/terminalContrib/quickFix/browser/quickFix.ts",
+    "extensions/copilot/src/extension/onboardDebug/vscode-node/onboardTerminalTestsContribution.ts",
+    "extensions/copilot/src/extension/vscode-api.d.ts",
+    "extensions/copilot/src/extension/test/node/services.ts",
+    "src/vs/base/common/event.ts",
+    "extensions/copilot/src/util/vs/base/common/event.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 920,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-1a8ef07a81",
+   "task": "Update tool calling prompts and tests",
+   "gold": [
+    "extensions/copilot/src/extension/prompts/node/panel/toolCalling.tsx",
+    "extensions/copilot/src/extension/tools/node/test/toolCalling.spec.tsx"
+   ],
+   "candidates": 11520,
+   "ranked": [
+    "extensions/copilot/src/extension/prompts/node/agent/xAIPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5CodexPrompt.tsx",
+    "extensions/copilot/src/extension/mcp/vscode-node/mcpToolCallingLoopPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/vscModelPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/defaultAgentInstructions.tsx",
+    "extensions/copilot/src/extension/tools/node/codebaseTool.tsx",
+    "extensions/copilot/src/extension/prompt/node/codebaseToolCalling.ts",
+    "extensions/copilot/src/extension/prompt/node/executionSubagentToolCallingLoop.ts",
+    "src/vs/workbench/contrib/chat/test/browser/promptSyntax/languageProviders/promptHovers.test.ts",
+    "extensions/copilot/src/extension/prompt/node/test/defaultIntentRequestHandler.spec.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5Prompt.tsx",
+    "extensions/copilot/src/extension/prompt/node/searchSubagentToolCallingLoop.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/backgroundTodoAgent/backgroundTodoAgentPrompt.tsx",
+    "extensions/copilot/src/extension/byok/vscode-node/test/geminiNativeProvider.spec.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/familyHPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/minimaxPrompts.tsx"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 1007,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-e7f179aec1",
+   "task": "terminal-suggest: address review - fix agent option arity and add tests",
+   "gold": [
+    "extensions/terminal-suggest/src/completions/code.ts",
+    "extensions/terminal-suggest/src/test/completions/code.test.ts"
+   ],
+   "candidates": 11471,
+   "ranked": [
+    "extensions/copilot/src/extension/common/constants.ts",
+    "extensions/copilot/src/extension/intents/node/allIntents.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5CodexPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "extensions/copilot/test/simulationTests.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/test/browser/outputMonitor.test.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/vscModelPrompts.tsx",
+    "extensions/terminal-suggest/src/completions/upstream/scp.ts",
+    "extensions/copilot/src/extension/test/vscode-node/services.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51CodexPrompt.tsx",
+    "extensions/terminal-suggest/src/fig/figInterface.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/hiddenModelMPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5Prompt.tsx",
+    "extensions/terminal-suggest/src/completions/upstream/traceroute.ts",
+    "extensions/terminal-suggest/src/completions/upstream/ssh.ts",
+    "extensions/terminal-suggest/src/completions/upstream/ping.ts",
+    "src/vscode-dts/vscode.proposed.terminalCompletionProvider.d.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/defaultAgentInstructions.tsx"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 994,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-e2f2e833c0",
+   "task": "Agents - switch over to using metadata for the changes view",
+   "gold": [
+    "extensions/copilot/src/extension/chatSessions/vscode-node/chatSessionWorkspaceFolderServiceImpl.ts",
+    "extensions/copilot/src/extension/chatSessions/vscode-node/chatSessionWorktreeServiceImpl.ts",
+    "extensions/git/src/model.ts",
+    "src/vs/sessions/contrib/changes/browser/changesViewModel.ts"
+   ],
+   "candidates": 10145,
+   "ranked": [
+    "extensions/copilot/test/e2e/scenarioTest.ts",
+    "src/vs/workbench/contrib/notebook/browser/contrib/cellDiagnostics/cellDiagnosticEditorContrib.ts",
+    "src/vs/platform/actions/common/actions.ts",
+    "extensions/copilot/src/extension/conversation/vscode-node/chatParticipants.ts",
+    "src/vs/workbench/api/browser/mainThreadNotebookDocuments.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/input/editor/chatInputEditorContrib.ts",
+    "src/vs/workbench/contrib/chat/common/constants.ts",
+    "src/vs/sessions/common/sessionsTelemetry.ts",
+    "src/vs/workbench/contrib/chat/browser/chatTipCatalog.ts",
+    "src/vs/workbench/api/browser/mainThreadChatAgents2.ts",
+    "src/vs/editor/common/services/languagesAssociations.ts",
+    "src/vs/workbench/contrib/notebook/browser/diff/notebookDiffViewModel.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentHost/agentHostChatContribution.ts",
+    "src/vs/workbench/contrib/chat/browser/actions/chatActions.ts",
+    "src/vscode-dts/vscode.proposed.chatSessionsProvider.d.ts",
+    "extensions/copilot/src/extension/vscode.proposed.chatSessionsProvider.d.ts",
+    "extensions/copilot/src/extension/chatSessions/vscode-node/test/copilotCLISDKUpgrade.spec.ts",
+    "extensions/copilot/src/extension/agents/vscode-node/test/planAgentProvider.spec.ts",
+    "src/vs/workbench/contrib/chat/common/promptSyntax/service/promptsServiceImpl.ts",
+    "src/vs/editor/test/browser/widget/observableCodeEditor.test.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 886,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-98b093a62b",
+   "task": "align chat tabs with modern editor tabs",
+   "gold": [
+    "src/vs/sessions/browser/parts/chatCompositeBar.ts",
+    "src/vs/sessions/test/browser/chatCompositeBar.test.ts"
+   ],
+   "candidates": 12806,
+   "ranked": [
+    "src/vs/workbench/test/browser/componentFixtures/editor/editorTabBar.fixture.ts",
+    "src/vs/workbench/contrib/styleOverrides/browser/styleOverrides.contribution.ts",
+    "src/vs/workbench/browser/workbench.contribution.ts",
+    "src/vs/workbench/browser/actions/layoutActions.ts",
+    "src/vs/workbench/browser/parts/editor/editorTabsControl.ts",
+    "src/vs/workbench/services/layout/browser/layoutService.ts",
+    "src/vs/workbench/contrib/styleOverrides/test/browser/styleOverrides.contribution.test.ts",
+    "extensions/copilot/src/extension/conversation/vscode-node/test/githubPullRequestTitleAndDescription.test.ts",
+    "src/vs/workbench/services/themes/common/workbenchThemeService.ts",
+    "src/vs/workbench/browser/parts/titlebar/commandCenterControl.ts",
+    "extensions/copilot/src/extension/completions-core/vscode-node/extension/src/panelShared/themes/dark-modern.ts",
+    "src/vs/editor/common/model/indentationGuesser.ts",
+    "extensions/copilot/src/extension/completions-core/vscode-node/extension/src/panelShared/themes/light-modern.ts",
+    "src/vs/base/test/common/naturalLanguage/korean.test.ts",
+    "src/vs/sessions/browser/parts/sessionView.ts",
+    "src/vs/workbench/common/theme.ts",
+    "extensions/copilot/test/simulation/panelCodeMapperSimulator.ts",
+    "src/vs/workbench/contrib/terminal/common/terminalConfiguration.ts",
+    "extensions/copilot/test/intent/intentTest.ts",
+    "src/vs/code/electron-browser/workbench/workbench.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 1134,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-4b33c4ade4",
+   "task": "Update the chat panel title when the mode changes",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts"
+   ],
+   "candidates": 10166,
+   "ranked": [
+    "src/vs/workbench/contrib/chat/browser/agentSessions/experiments/agentSessionProjectionService.ts",
+    "src/vs/workbench/contrib/chat/browser/chatDebug/chatDebugLogsView.ts",
+    "src/vs/workbench/contrib/chat/browser/chatSetup/chatSetupContributions.ts",
+    "src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts",
+    "src/vs/workbench/services/layout/browser/layoutService.ts",
+    "src/vs/sessions/browser/workbench.ts",
+    "src/vs/workbench/contrib/chat/common/constants.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/experiments/agentSessionsExperiments.contribution.ts",
+    "src/vs/sessions/contrib/changes/browser/changesView.ts",
+    "src/vs/workbench/contrib/markers/browser/markers.contribution.ts",
+    "src/vs/sessions/browser/parts/sessionCompositeBar.ts",
+    "src/vs/platform/actions/common/actions.ts",
+    "src/vs/workbench/contrib/chat/browser/actions/chatActions.ts",
+    "extensions/copilot/src/platform/parser/test/node/fixtures/chatSetup.ts",
+    "extensions/copilot/test/scenarios/test-tools/workspace/chatSetup.ts",
+    "src/vs/sessions/browser/parts/chatBarPart.ts",
+    "src/vs/sessions/contrib/copilotChatSessions/browser/copilotChatSessionsProvider.ts",
+    "extensions/copilot/test/prompts/settingsEditorSearchResultsSelector.stest.ts",
+    "src/vs/workbench/browser/workbench.contribution.ts",
+    "src/vs/workbench/contrib/chat/browser/actions/chatCodeblockActions.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 938,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-628f6fe5e4",
+   "task": "Match ExP value for setting `workbench.browser.enableChatTools`",
+   "gold": [
+    "src/vs/workbench/contrib/browserView/electron-browser/features/browserEditorChatFeatures.ts",
+    "src/vs/workbench/contrib/chat/browser/chatTipCatalog.ts",
+    "src/vs/workbench/contrib/chat/test/browser/chatTipService.test.ts"
+   ],
+   "candidates": 11451,
+   "ranked": [
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/common/terminalChatAgentToolsConfiguration.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/test/browser/commandLineSandboxAnalyzer.test.ts",
+    "src/vs/workbench/contrib/chat/browser/chatSetup/chatSetupController.ts",
+    "extensions/copilot/src/platform/parser/test/node/fixtures/chatSetup.ts",
+    "extensions/copilot/test/scenarios/test-tools/workspace/chatSetup.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/chatContentParts/toolInvocationParts/chatTerminalToolConfirmationSubPart.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/test/electron-browser/commandLineAnalyzer/npmScriptAutoApprover.test.ts",
+    "extensions/vscode-api-tests/src/singlefolder-tests/browser.tools.test.ts",
+    "src/vs/workbench/contrib/browserView/electron-browser/features/browserEditorChatFeatures.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/tools/commandLineAnalyzer/commandLineSandboxAnalyzer.ts",
+    "extensions/copilot/src/platform/configuration/common/configurationService.ts",
+    "src/vs/workbench/contrib/chat/browser/chatTipCatalog.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/tools/terminalToolAutoApprove.ts",
+    "build/lib/test/policyConversion.test.ts",
+    "test/smoke/src/areas/accessibility/accessibility.test.ts",
+    "src/vs/workbench/contrib/chat/browser/promptSyntax/newPromptFileActions.ts",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/browser/tools/commandLineAnalyzer/autoApprove/commandLineAutoApprover.ts",
+    "src/vs/workbench/contrib/terminal/terminalContribExports.ts",
+    "src/vs/workbench/contrib/browserView/electron-browser/tools/openBrowserToolNonAgentic.ts",
+    "extensions/copilot/src/extension/completions-core/vscode-node/lib/src/experiments/features.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0.3333333333333333,
+    "20": 0.6666666666666666
+   },
+   "ms": 1017,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-84c57e3cd3",
+   "task": "add Extension Marketplace keybinding tip to extensions step",
+   "gold": [
+    "src/vs/workbench/contrib/welcomeOnboarding/browser/onboardingVariationA.ts"
+   ],
+   "candidates": 10098,
+   "ranked": [
+    "src/vs/base/common/product.ts",
+    "src/vs/workbench/contrib/welcomeOnboarding/browser/onboardingVariationA.ts",
+    "src/vs/workbench/contrib/welcomeGettingStarted/browser/gettingStarted.ts",
+    "src/vs/workbench/contrib/chat/browser/chatTipCatalog.ts",
+    "src/vs/workbench/contrib/chat/browser/agentPluginsView.ts",
+    "src/vs/workbench/contrib/chat/browser/chatTipService.ts",
+    "src/vs/workbench/contrib/chat/browser/actions/createPluginAction.ts",
+    "src/vs/workbench/contrib/themes/browser/themes.contribution.ts",
+    "src/vs/workbench/contrib/chat/test/browser/chatTipService.test.ts",
+    "src/vs/workbench/contrib/chat/browser/actions/chatPluginActions.ts",
+    "src/vs/platform/extensionManagement/common/extensionTipsService.ts",
+    "src/vs/workbench/contrib/chat/browser/actions/chatActions.ts",
+    "src/vs/workbench/contrib/welcomeGettingStarted/browser/gettingStarted.contribution.ts",
+    "src/vs/workbench/contrib/debug/browser/debugCommands.ts",
+    "src/vs/platform/extensionManagement/common/extensionManagement.ts",
+    "src/vs/workbench/contrib/welcomeOnboarding/common/onboardingTypes.ts",
+    "src/vs/workbench/contrib/chat/browser/promptSyntax/newPromptFileActions.ts",
+    "src/vs/workbench/contrib/extensions/browser/exeBasedRecommendations.ts",
+    "src/vs/workbench/contrib/welcomeWalkthrough/browser/editor/vs_code_editor_walkthrough.ts",
+    "src/vs/workbench/contrib/extensions/browser/configBasedRecommendations.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 894,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-b214987c92",
+   "task": "Scope reasoning effort override setting to Copilot",
+   "gold": [
+    "src/vs/platform/agentHost/common/copilotCliConfig.ts"
+   ],
+   "candidates": 12735,
+   "ranked": [
+    "src/vs/platform/agentHost/common/copilotCliConfig.ts",
+    "src/vs/workbench/contrib/chat/test/browser/agentSessions/agentHostCopilotCliSettingsContribution.test.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentHost/agentHostCopilotCliSettingsContribution.ts",
+    "extensions/copilot/src/platform/configuration/common/configurationService.ts",
+    "extensions/copilot/src/platform/endpoint/node/chatEndpoint.ts",
+    "src/vs/platform/agentHost/node/copilot/copilotSessionLauncher.ts",
+    "test/smoke/src/areas/chat/chatModelConfig.test.ts",
+    "extensions/copilot/src/extension/chatSessions/copilotcli/node/copilotCli.ts",
+    "extensions/copilot/src/platform/endpoint/node/test/copilotChatEndpoint.spec.ts",
+    "extensions/copilot/src/extension/chatSessions/claude/node/test/claudeSessionStateService.spec.ts",
+    "extensions/copilot/src/extension/byok/node/test/openAIEndpoint.spec.ts",
+    "extensions/copilot/src/extension/byok/node/openAIEndpoint.ts",
+    "src/vs/platform/agentHost/node/codex/protocol/generated/v2/Config.ts",
+    "extensions/copilot/src/extension/chatSessions/claude/node/claudeSessionStateService.ts",
+    "src/vs/platform/agentHost/node/codex/protocol/generated/v2/ThreadSettingsUpdateParams.ts",
+    "src/vs/platform/agentHost/test/node/codex/codexSessionConfigKeys.test.ts",
+    "src/vs/platform/agentHost/node/codex/protocol/generated/v2/TurnStartParams.ts",
+    "test/smoke/src/areas/agentsWindow/agentsWindow.test.ts",
+    "extensions/copilot/src/extension/byok/vscode-node/openRouterProvider.ts",
+    "extensions/copilot/src/extension/byok/vscode-node/customOAIProvider.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1197,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-129eff3d91",
+   "task": "Fix IPC output channel after reconnection",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentHost/loggingAgentConnection.ts"
+   ],
+   "candidates": 10094,
+   "ranked": [
+    "src/vs/workbench/services/remote/common/remoteAgentEnvironmentChannel.ts",
+    "src/vs/workbench/services/remote/common/abstractRemoteAgentService.ts",
+    "src/vs/server/node/remoteAgentEnvironmentImpl.ts",
+    "src/vs/server/node/serverServices.ts",
+    "src/vs/platform/mcp/node/mcpGatewayChannel.ts",
+    "src/vs/platform/agentHost/common/sshRemoteAgentHost.ts",
+    "src/vs/server/node/remoteExtensionHostAgentServer.ts",
+    "src/vs/server/node/remoteTerminalChannel.ts",
+    "src/vs/workbench/services/remote/common/remoteAgentService.ts",
+    "src/vs/platform/remote/common/remoteAgentConnection.ts",
+    "src/vs/server/node/extensionHostConnection.ts",
+    "src/vs/workbench/api/node/extensionHostProcess.ts",
+    "src/vs/server/node/serverAgentHostManager.ts",
+    "src/vs/base/parts/ipc/test/node/ipc.net.test.ts",
+    "src/vs/platform/agentHost/node/agentHostService.ts",
+    "src/vs/workbench/contrib/remote/common/remote.contribution.ts",
+    "src/vs/platform/terminal/common/terminal.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/vscModelPrompts.tsx",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentHost/loggingAgentConnection.ts",
+    "src/vs/server/node/remoteExtensionManagement.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 883,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-6d2d406f02",
+   "task": "Add mute button for local agent host continuation tip",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/agentSessions/localAgentDisabledInputTipContribution.ts",
+    "src/vs/workbench/contrib/chat/test/browser/agentSessions/localAgentDisabledInputTipContribution.test.ts"
+   ],
+   "candidates": 11755,
+   "ranked": [
+    "src/vs/workbench/contrib/chat/electron-browser/agentSessions/agentSessionsActions.ts",
+    "src/vs/workbench/contrib/chat/test/browser/agentSessions/localAgentDisabledInputTipContribution.test.ts",
+    "extensions/copilot/test/simulation/fixtures/fix/issue-7894/shellIntegration.ps1",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/localAgentDisabledInputTipContribution.ts",
+    "src/vs/workbench/contrib/chat/test/browser/chatTipService.test.ts",
+    "src/vs/workbench/contrib/chat/browser/actions/chatContinueInAction.ts",
+    "src/vs/workbench/contrib/chat/browser/chatTipCatalog.ts",
+    "src/vs/workbench/contrib/welcomeOnboarding/browser/onboardingVariationA.ts",
+    "src/vs/workbench/contrib/chat/browser/actions/chatActions.ts",
+    "src/vs/sessions/contrib/chat/browser/newChatInSessionWidget.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/input/chatInputNotificationWidget.ts",
+    "src/vs/workbench/contrib/chat/electron-browser/chat.contribution.ts",
+    "src/vs/workbench/contrib/chat/common/constants.ts",
+    "src/vs/platform/extensionManagement/common/extensionTipsService.ts",
+    "src/vs/workbench/contrib/chat/browser/chatTipEligibilityTracker.ts",
+    "src/vs/workbench/contrib/chat/browser/chatTipService.ts",
+    "src/vs/workbench/contrib/workspace/browser/workspace.contribution.ts",
+    "src/vs/sessions/contrib/providers/agentHost/test/browser/agentHostSkillButtons.test.ts",
+    "src/vs/workbench/contrib/terminal/common/scripts/shellIntegration-rc.zsh",
+    "src/vs/workbench/contrib/chat/common/actions/chatContextKeys.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1011,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-ec1b365290",
+   "task": "agent-host: Cancel SSH connect when auth prompt is dismissed",
+   "gold": [
+    "src/vs/platform/agentHost/common/sshRemoteAgentHost.ts",
+    "src/vs/platform/agentHost/electron-browser/sshRemoteAgentHostServiceImpl.ts",
+    "src/vs/platform/agentHost/node/sshRemoteAgentHostService.ts",
+    "src/vs/platform/agentHost/test/node/sshRemoteAgentHostService.test.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHostActions.ts"
+   ],
+   "candidates": 10590,
+   "ranked": [
+    "src/vs/platform/agentHost/electron-browser/sshRemoteAgentHostServiceImpl.ts",
+    "src/vs/platform/agentHost/node/sshRemoteAgentHostService.ts",
+    "src/vs/platform/agentHost/common/sshRemoteAgentHost.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHostActions.ts",
+    "src/vs/platform/agentHost/test/node/sshRemoteAgentHostService.test.ts",
+    "src/vs/platform/agentHost/test/electron-browser/sshRemoteAgentHostService.test.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHost.contribution.ts",
+    "cli/src/commands/agent.rs",
+    "src/vs/platform/agentHost/common/remoteAgentHostService.ts",
+    "src/vs/platform/agentHost/node/tunnelHostMainService.ts",
+    "src/vs/workbench/contrib/remote/browser/remoteConnectionHealth.ts",
+    "extensions/terminal-suggest/src/completions/upstream/scp.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/tunnelAgentHost.contribution.ts",
+    "extensions/terminal-suggest/src/completions/upstream/ssh.ts",
+    "src/vs/platform/agentHost/browser/remoteAgentHostServiceImpl.ts",
+    "src/vs/platform/agentHost/common/tunnelAgentHost.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/electron-browser/tunnelAgentHostServiceImpl.ts",
+    "src/vs/platform/agentHost/browser/nullSshRemoteAgentHostService.ts",
+    "src/vs/platform/agentHost/test/electron-browser/sshRelayTransport.test.ts",
+    "src/vs/platform/remote/common/remoteAgentConnection.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 956,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-190016f576",
+   "task": "fix endless spinner in Changes view for non-git folders",
+   "gold": [
+    "src/vs/sessions/contrib/providers/copilotChatSessions/browser/copilotChatSessionsChangesets.ts"
+   ],
+   "candidates": 11916,
+   "ranked": [
+    "src/vs/workbench/test/browser/componentFixtures/sessions/sessionHeader.fixture.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentSessionsViewer.ts",
+    "extensions/copilot/src/extension/conversation/vscode-node/conversationFeature.ts",
+    "src/vs/workbench/test/browser/componentFixtures/chat/chatProgressContentPart.fixture.ts",
+    "src/vs/base/browser/animationSync.ts",
+    "extensions/copilot/src/extension/chatSessions/vscode-node/folderRepositoryManagerImpl.ts",
+    "src/vs/sessions/browser/sessionStatusIcon.ts",
+    "extensions/copilot/src/extension/chatSessions/vscode-node/sessionOptionGroupBuilder.ts",
+    "extensions/copilot/src/extension/chatSessions/vscode-node/chatSessionRepositoryTracker.ts",
+    "src/vs/sessions/contrib/chat/browser/aiCustomizationWorkspaceService.ts",
+    "src/vs/sessions/contrib/changes/browser/checksActions.ts",
+    "src/vs/sessions/contrib/files/browser/files.contribution.ts",
+    "src/vs/sessions/contrib/sessions/test/browser/sessionsLifecycleTracker.test.ts",
+    "src/vs/sessions/common/agentHostSessionWorkspace.ts",
+    "src/vs/sessions/contrib/changes/browser/changesViewService.ts",
+    "src/vs/sessions/services/sessions/common/session.ts",
+    "extensions/copilot/src/extension/chatSessions/common/folderRepositoryManager.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/test/parseAttachments.spec.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/chatContentParts/chatProgressContentPart.ts",
+    "extensions/copilot/src/extension/chatSessions/vscode-node/test/chatSessionWorkspaceFolderService.spec.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 1052,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-53db5e07d6",
+   "task": "use verifyFormatting in CLI path for consistent line-ending normalization",
+   "gold": [
+    "build/lib/formatter.ts"
+   ],
+   "candidates": 10307,
+   "ranked": [
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt52Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt53CodexPrompt.tsx",
+    "extensions/typescript-language-features/src/languageFeatures/fileConfigurationManager.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt51CodexPrompt.tsx",
+    "src/vs/workbench/contrib/terminalContrib/chatAgentTools/test/browser/strategyHelpers.test.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54ConcisePrompt.tsx",
+    "extensions/copilot/src/extension/chatSessions/claude/vscode-node/slashCommands/terminalCommand.ts",
+    "extensions/copilot/src/platform/inlineEdits/test/common/statelessNextEditProviers.spec.ts",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt5CodexPrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54LargePrompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/xAIPrompts.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/gpt54Prompt.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/defaultAgentInstructions.tsx",
+    "extensions/copilot/src/extension/prompts/node/agent/openai/defaultOpenAIPrompt.tsx",
+    "src/vs/workbench/contrib/chat/browser/promptSyntax/hookActions.ts",
+    "build/lib/formatter.ts",
+    "cli/src/commands/serve_web.rs",
+    "build/hygiene.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 916,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-b456b81a85",
+   "task": "Keep signed-out Agent Host model picker visible",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/actions/chatExecuteActions.ts",
+    "src/vs/workbench/contrib/chat/test/browser/actions/chatExecuteActions.test.ts"
+   ],
+   "candidates": 12779,
+   "ranked": [
+    "src/vs/sessions/contrib/chat/browser/newChatWidget.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/sessionTypeAvailability.ts",
+    "src/vs/workbench/contrib/chat/browser/agentSessions/agentHost/agentHostSignedOutModelsNotification.ts",
+    "src/vs/workbench/contrib/chat/test/browser/agentSessions/sessionTypeAvailability.test.ts",
+    "src/vs/platform/agentHost/node/claude/claudeTransportMode.ts",
+    "src/vs/sessions/contrib/chat/browser/sessionTypePicker.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/input/sessionTargetPickerActionItem.ts",
+    "src/vs/sessions/contrib/onboardingTours/browser/tours/newSessionViewTourShared.ts",
+    "src/vs/sessions/browser/parts/mobile/mobileTitlebarPart.ts",
+    "src/vs/workbench/services/agentHost/browser/codexAccountService.ts",
+    "src/vs/sessions/contrib/providers/agentHost/test/browser/sessionTypeAuthRequirement.test.ts",
+    "src/vs/sessions/browser/sessionsSetUpService.ts",
+    "src/vs/sessions/browser/sessionsAuthGate.ts",
+    "src/vs/workbench/services/agentHost/test/browser/codexAccountService.test.ts",
+    "src/vs/sessions/contrib/providers/remoteAgentHost/browser/remoteAgentHostActions.ts",
+    "src/vs/platform/agentHost/common/agentHostCustomizationConfig.ts",
+    "src/vs/sessions/contrib/accountMenu/browser/account.contribution.ts",
+    "src/vs/sessions/contrib/providers/agentHost/browser/mobile/mobileChatPhoneInputPresenter.ts",
+    "src/vs/sessions/contrib/providers/agentHost/browser/localAgentHost.contribution.ts",
+    "test/automation/src/chat.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 1151,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-fc03e3346d",
+   "task": "Fix voice transcript overlay persisting across session switches",
+   "gold": [
+    "src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts"
+   ],
+   "candidates": 11757,
+   "ranked": [
+    "src/vs/workbench/contrib/agentsVoice/common/agentsVoice.ts",
+    "src/vs/workbench/contrib/chat/browser/widgetHosts/viewPane/chatViewPane.ts",
+    "src/vs/workbench/contrib/agentsVoice/browser/agentsVoice.contribution.ts",
+    "src/vs/workbench/contrib/agentsVoice/common/voiceTranscriptStore.ts",
+    "src/vs/workbench/contrib/chat/common/voicePlaybackService.ts",
+    "src/vs/workbench/contrib/agentsVoice/browser/transcriptsView/voiceTranscriptsView.ts",
+    "src/vs/workbench/contrib/agentsVoice/browser/agentsVoiceWidget.ts",
+    "src/vs/workbench/contrib/agentsVoice/browser/transcriptsView/voiceEventStreamView.ts",
+    "src/vs/workbench/contrib/chat/browser/voiceClient/voiceClientService.ts",
+    "src/vs/workbench/contrib/agentsVoice/browser/agentsVoiceWidgetBinding.ts",
+    "src/vs/workbench/contrib/chat/common/voiceClient/voiceClientService.ts",
+    "src/vs/workbench/contrib/agentsVoice/browser/components/transcriptComponent.ts",
+    "src/vs/workbench/contrib/agentsVoice/browser/components/tokens.ts",
+    "src/vs/platform/agentHost/node/claude/claudeAgent.ts",
+    "src/vs/workbench/contrib/terminal/terminal.all.ts",
+    "src/vs/workbench/contrib/chat/common/voiceChatService.ts",
+    "src/vs/workbench/contrib/webviewPanel/browser/webviewWorkbenchService.ts",
+    "src/vs/workbench/contrib/chat/test/common/voiceChatService.test.ts",
+    "src/vs/workbench/contrib/agentsVoice/browser/components/feedbackDialog.ts",
+    "extensions/copilot/src/extension/test/node/services.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1027,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "vscode-f32c7986c2",
+   "task": "address review: per-window observer + fallback",
+   "gold": [
+    "src/vs/platform/actions/browser/toolbar.ts"
+   ],
+   "candidates": 10273,
+   "ranked": [
+    "src/vs/base/browser/dom.ts",
+    "src/vs/editor/browser/config/elementSizeObserver.ts",
+    "src/vs/editor/browser/widget/diffEditor/utils.ts",
+    "src/vs/sessions/contrib/codeReview/browser/codeReview.contributions.ts",
+    "src/vs/sessions/contrib/remoteAgentHost/browser/tunnelAgentHost.contribution.ts",
+    "src/vs/workbench/contrib/remote/browser/remoteIcons.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/chatContentParts/chatPlanReviewPart.ts",
+    "src/vs/workbench/services/editor/common/editorGroupColumn.ts",
+    "src/vs/server/node/serverEnvironmentService.ts",
+    "src/vs/workbench/test/browser/componentFixtures/fixtureUtils.ts",
+    "src/vs/sessions/contrib/remoteAgentHost/browser/remoteAgentHostSessionsProvider.ts",
+    "src/vs/workbench/contrib/remote/browser/remoteExplorer.ts",
+    "src/vs/workbench/services/editor/browser/editorService.ts",
+    "src/vs/workbench/contrib/browserView/electron-browser/overlayManager.ts",
+    "src/vs/workbench/contrib/relauncher/browser/relauncher.contribution.ts",
+    "src/vs/workbench/browser/parts/editor/editorsObserver.ts",
+    "src/vs/workbench/contrib/chat/browser/widget/chatContentParts/toolInvocationParts/chatToolConfirmationSubPart.ts",
+    "src/vs/editor/browser/gpu/gpuUtils.ts",
+    "src/vs/editor/contrib/inlineCompletions/browser/view/inlineEdits/inlineEditsViews/longDistanceHint/inlineEditsLongDistanceHint.ts",
+    "src/vs/platform/remote/common/sharedProcessTunnelService.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 885,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  }
+ ]
+}

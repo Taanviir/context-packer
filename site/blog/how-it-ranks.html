@@ -40,7 +40,7 @@
       <section class="section">
         <div class="wrap"><div class="prose">
           <h2 style="margin-top: 0">Start with keywords</h2>
-          <p>The baseline is BM25 over each file's path and full text. The tokenizer splits <code>cachedContentTokenCount</code> into <em>cached content token count</em>, so a task that says "token count" matches it. On the benchmark this alone puts 69% of a commit's changed files in the top ten, in about 50 milliseconds, with no model at all. It's the default provider, and anything smarter has to beat it.</p>
+          <p>The baseline is BM25 over each file's path and full text. The tokenizer splits <code>cachedContentTokenCount</code> into <em>cached content token count</em>, so a task that says "token count" matches it. In the tests this alone puts 69% of the needed files in the top 10, in about 50 milliseconds, with no model at all. It's the default provider, and anything smarter has to beat it.</p>
 
           <h2>Ask a decision model, not a chat model</h2>
           <p>Jev is TypeSafe's decision model. It doesn't write text. You give it a JSON state and a set of typed questions, and it returns a probability for each. That shape is what makes it cheap here: one request can hold a task and 60 files, each under its own key, with one question per key.</p>
@@ -60,7 +60,7 @@
             <li><strong>Fuse.</strong> Each file's score is Jev's probability plus <code>1 / (1 + keyword_rank / 10)</code>. The two count equally; that weight was chosen on dev tasks.</li>
             <li><strong>Compare.</strong> One last request asks a single <code>choice</code> question over the top ten: which file must be edited? The first two passes judge each file alone; this one makes Jev compare them. A parallel request labels files as edit, test, example or dependency, shown only when Jev is at least 50% sure.</li>
           </ol>
-          <p>All requests run in parallel, up to 48 at once. On the benchmark repositories a pack took 2.5 seconds and about $0.007 on average.</p>
+          <p>All requests run in parallel, up to 48 at once. On the test projects a search took 2.5 seconds and about $0.007 on average.</p>
 
           <h2>Failing loudly</h2>
           <p>A Jev batch that errors costs its files a zero for that pass, and the pack reports how many batches failed. If every batch fails, the pack fails. Quietly returning a keyword ranking labeled as Jev would be worse than an error. The same goes for a missing key: asking for Jev without one is an error, not a fallback.</p>

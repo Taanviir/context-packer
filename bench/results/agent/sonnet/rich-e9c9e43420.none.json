@@ -1,0 +1,31 @@
+{
+ "id": "rich-e9c9e43420",
+ "repo": "rich",
+ "arm": "none",
+ "model": "sonnet",
+ "request": "When I strip meta and links off a style, the resulting style still hangs on to the original object's cached hash, so it can end up hashing wrong if the cache was already computed before clearing. Clearing meta/links should also reset the cached hash.",
+ "gold": [
+  "rich/style.py",
+  "tests/test_style.py"
+ ],
+ "handed": [],
+ "hookSeen": false,
+ "edited": [
+  "rich/style.py"
+ ],
+ "goldEdited": 0.5,
+ "extraEdits": 0,
+ "turns": 7,
+ "tools": {
+  "Grep": 2,
+  "Read": 2,
+  "Edit": 1,
+  "Bash": 1
+ },
+ "inputTokens": 7519,
+ "outputTokens": 1300,
+ "cacheReadTokens": 196300,
+ "costUsd": 0.082308,
+ "ms": 21044,
+ "isError": false
+}

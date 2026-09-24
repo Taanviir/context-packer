@@ -146,13 +146,13 @@ function diffChart(summary) {
   lines.forEach((l, i) => {
     const y = top + i * row + row / 2 + (compact ? 6 : 0);
     const color = l.cmp.startsWith("laya") ? SERIES.laya.color : l.cmp === "jev vs keywords" ? SERIES.jev.color : "var(--color-muted)";
-    el("text", { x: 0, y: compact ? y - 12 : y + 4, class: l.name === "pooled" ? "value" : "label" }, svg).textContent = `${labelOf[l.cmp]} · ${l.name === "pooled" ? "all projects" : l.name}`;
+    el("text", { x: 0, y: compact ? y - 12 : y + 4, class: l.name === "pooled" ? "value" : "label" }, svg).textContent = `${labelOf[l.cmp]} · ${l.name === "pooled" ? "main four projects" : l.name}`;
     el("line", { x1: x(l.lo), x2: x(l.hi), y1: y, y2: y, stroke: color, "stroke-width": 2, "stroke-linecap": "round" }, svg);
     el("circle", { cx: x(l.diff), cy: y, r: l.name === "pooled" ? 6 : 4.5, fill: color, stroke: "var(--color-paper)", "stroke-width": 2 }, svg);
     const hit = el("rect", { x: x(l.lo) - 6, y: y - 10, width: Math.max(12, x(l.hi) - x(l.lo) + 12), height: 20, class: "hit" }, svg);
-    hover(hit, `${labelOf[l.cmp]}, ${l.name === "pooled" ? "all projects" : l.name}: ${signed(l.diff)} per 100 needed files (plausible range ${signed(l.lo)} to ${signed(l.hi)}), ${l.tasks} tasks`);
+    hover(hit, `${labelOf[l.cmp]}, ${l.name === "pooled" ? "main four projects" : l.name}: ${signed(l.diff)} per 100 needed files (plausible range ${signed(l.lo)} to ${signed(l.hi)}), ${l.tasks} tasks`);
   });
-  tableView(fig, ["Comparison", "Project", "Extra files per 100", "Plausible range (95%)", "Tasks"], lines.map((l) => [labelOf[l.cmp], l.name === "pooled" ? "all projects" : l.name, signed(l.diff), `${signed(l.lo)} to ${signed(l.hi)}`, String(l.tasks)]));
+  tableView(fig, ["Comparison", "Project", "Extra files per 100", "Plausible range (95%)", "Tasks"], lines.map((l) => [labelOf[l.cmp], l.name === "pooled" ? "main four projects" : l.name, signed(l.diff), `${signed(l.lo)} to ${signed(l.hi)}`, String(l.tasks)]));
 }
 
 /** Two lines over k = 5, 10, 20, pooled test split. */
