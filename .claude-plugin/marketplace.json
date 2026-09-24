@@ -1,0 +1,16 @@
+{
+  "name": "context-packer",
+  "description": "Context Packer: ranked source files for every Claude Code prompt.",
+  "owner": {
+    "name": "Taanviir",
+    "url": "https://github.com/Taanviir"
+  },
+  "plugins": [
+    {
+      "name": "context-packer",
+      "source": "./",
+      "description": "Ranks the source files a coding task needs and hands them to Claude before it starts searching.",
+      "version": "0.1.0"
+    }
+  ]
+}

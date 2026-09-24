@@ -1,0 +1,18 @@
+{
+  "name": "context-packer",
+  "displayName": "Context Packer",
+  "version": "0.1.0",
+  "description": "Ranks the source files a coding task needs and hands them to Claude before it starts searching.",
+  "author": { "name": "Taanviir", "url": "https://github.com/Taanviir" },
+  "homepage": "https://taanviir.github.io/context-packer/",
+  "repository": "https://github.com/Taanviir/context-packer",
+  "license": "MIT",
+  "keywords": ["context", "retrieval", "mcp", "bm25", "hooks"],
+  "hooks": "./hooks/hooks.json",
+  "mcpServers": {
+    "context-packer": {
+      "command": "npx",
+      "args": ["-y", "context-packer@latest", "mcp"]
+    }
+  }
+}
