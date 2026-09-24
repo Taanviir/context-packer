@@ -1,0 +1,1228 @@
+{
+ "repo": "prometheus",
+ "split": "real",
+ "variant": "keywords",
+ "results": [
+  {
+   "id": "prometheus-65b4696b88",
+   "task": "The test evaluator is printing debug output (result vectors and their metrics/timestamps/values) to stdout on failure. Please remove that leftover debug print so test failures don't clutter the output.",
+   "gold": [
+    "promql/test.go"
+   ],
+   "candidates": 656,
+   "ranked": [
+    "cmd/promtool/main.go",
+    "scrape/scrape.go",
+    "promql/parser/parse.go",
+    "rules/group.go",
+    "tsdb/wlog/watcher.go",
+    "cmd/promtool/tsdb.go",
+    "cmd/promtool/backfill.go",
+    "discovery/metrics_refresh.go",
+    "storage/interface.go",
+    "promql/functions.go",
+    "model/labels/labels_dedupelabels.go",
+    "cmd/prometheus/main_test.go",
+    "documentation/examples/remote_storage/remote_storage_adapter/influxdb/client.go",
+    "util/treecache/treecache.go",
+    "tsdb/wlog/wlog_test.go",
+    "discovery/file/file.go",
+    "tsdb/agent/db.go",
+    "storage/remote/queue_manager_test.go",
+    "cmd/prometheus/main.go",
+    "model/labels/labels_stringlabels.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 72,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-192e665317",
+   "task": "Can rules be parsed directly from raw content instead of requiring a file path, so callers who already have the rules in memory don't need to write them to disk first?",
+   "gold": [
+    "pkg/rulefmt/rulefmt.go"
+   ],
+   "candidates": 1924,
+   "ranked": [
+    "vendor/golang.org/x/net/http2/server.go",
+    "vendor/k8s.io/client-go/rest/request.go",
+    "vendor/golang.org/x/text/cases/map.go",
+    "vendor/k8s.io/apimachinery/pkg/runtime/serializer/codec_factory.go",
+    "vendor/github.com/nightlyone/lockfile/lockfile.go",
+    "vendor/github.com/golang/protobuf/jsonpb/jsonpb.go",
+    "vendor/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go",
+    "vendor/k8s.io/apimachinery/pkg/runtime/types.go",
+    "vendor/github.com/gogo/protobuf/jsonpb/jsonpb.go",
+    "vendor/github.com/alecthomas/template/doc.go",
+    "vendor/golang.org/x/sys/windows/dll_windows.go",
+    "vendor/golang.org/x/text/transform/transform.go",
+    "vendor/golang.org/x/net/http2/transport.go",
+    "vendor/k8s.io/apimachinery/pkg/util/net/http.go",
+    "vendor/golang.org/x/net/http2/write.go",
+    "vendor/github.com/ugorji/go/codec/helper.go",
+    "vendor/google.golang.org/grpc/codes/codes.go",
+    "vendor/github.com/ugorji/go/codec/encode.go",
+    "vendor/golang.org/x/sys/unix/syscall_freebsd.go",
+    "vendor/github.com/ghodss/yaml/fields.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 174,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-82c7cd320a",
+   "task": "The remote write send-duration metric's histogram buckets top out too low—can we extend the range so longer batch send times still land in a meaningful bucket instead of all piling into the last one?",
+   "gold": [
+    "storage/remote/queue_manager.go"
+   ],
+   "candidates": 3779,
+   "ranked": [
+    "vendor/github.com/prometheus/client_golang/prometheus/histogram.go",
+    "storage/remote/queue_manager.go",
+    "storage/remote/queue_manager_test.go",
+    "vendor/golang.org/x/net/trace/trace.go",
+    "vendor/github.com/prometheus/client_golang/prometheus/summary.go",
+    "vendor/github.com/prometheus/common/expfmt/text_parse.go",
+    "promql/quantile.go",
+    "documentation/examples/remote_storage/remote_storage_adapter/main.go",
+    "promql/functions.go",
+    "vendor/github.com/uber/jaeger-lib/metrics/metrics.go",
+    "config/config.go",
+    "vendor/golang.org/x/net/internal/timeseries/timeseries.go",
+    "vendor/go.opencensus.io/metric/metricdata/point.go",
+    "promql/engine.go",
+    "vendor/golang.org/x/net/trace/histogram.go",
+    "tsdb/compact.go",
+    "web/web.go",
+    "vendor/github.com/prometheus/client_golang/prometheus/registry.go",
+    "vendor/golang.org/x/net/http2/server.go",
+    "vendor/google.golang.org/grpc/internal/transport/http2_client.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 308,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-2a1b940ae4",
+   "task": "Two of the comments on the Consul discovery functions that decide whether a service should be watched are outdated—they both say the same function name even though they document two different functions. Please correct the comments to name the function each one actually describes.",
+   "gold": [
+    "discovery/consul/consul.go"
+   ],
+   "candidates": 806,
+   "ranked": [
+    "discovery/consul/consul.go",
+    "discovery/consul/consul_test.go",
+    "tsdb/chunkenc/histogram_meta.go",
+    "promql/quantile.go",
+    "prompb/io/prometheus/write/v2/types.proto",
+    "model/histogram/histogram.go",
+    "web/ui/react-app/src/vendor/flot/jquery.flot.selection.js",
+    "promql/parser/ast.go",
+    "storage/interface.go",
+    "model/histogram/float_histogram.go",
+    "documentation/examples/custom-sd/adapter-usage/main.go",
+    "discovery/marathon/marathon.go",
+    "tsdb/exemplar_test.go",
+    "tsdb/index/postings.go",
+    "prompb/types.proto",
+    "web/ui/mantine-ui/src/promql/binOp.ts",
+    "promql/parser/parse.go",
+    "util/strutil/quote.go",
+    "tsdb/head.go",
+    "promql/parser/lex.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 77,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-a197508d09",
+   "task": "Add a config test that covers Docker Swarm service discovery, and while you're in there, make sure the SD config doesn't cache a parsed URL as unmarshaled state — parse the host fresh when the discoverer runs.",
+   "gold": [
+    "config/config_test.go",
+    "discovery/dockerswarm/dockerswarm.go"
+   ],
+   "candidates": 4137,
+   "ranked": [
+    "discovery/dockerswarm/dockerswarm.go",
+    "discovery/kubernetes/kubernetes.go",
+    "discovery/consul/consul_test.go",
+    "discovery/manager.go",
+    "documentation/examples/custom-sd/adapter-usage/main.go",
+    "discovery/zookeeper/zookeeper.go",
+    "config/config_test.go",
+    "discovery/dns/dns.go",
+    "discovery/dockerswarm/tasks.go",
+    "discovery/dockerswarm/services.go",
+    "discovery/marathon/marathon.go",
+    "discovery/kubernetes/kubernetes_test.go",
+    "documentation/examples/custom-sd/adapter/adapter.go",
+    "discovery/consul/consul.go",
+    "cmd/prometheus/main.go",
+    "discovery/file/file.go",
+    "web/web.go",
+    "scrape/scrape_test.go",
+    "discovery/manager_test.go",
+    "discovery/marathon/marathon_test.go"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 324,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-39aa66e46e",
+   "task": "By default metrics get written to /tmp, which gets wiped on reboot and isn't obvious to users. Can we default the storage path to a directory relative to wherever the binary is run from instead?",
+   "gold": [
+    "main.go"
+   ],
+   "candidates": 476,
+   "ranked": [
+    "web/web.go",
+    "storage/local/test_helpers.go",
+    "storage/local/persistence.go",
+    "storage/local/interface.go",
+    "storage/local/crashrecovery.go",
+    "util/testutil/directory.go",
+    "storage/local/storage_test.go",
+    "Godeps/_workspace/src/github.com/prometheus/client_golang/prometheus/examples_test.go",
+    "main.go",
+    "Godeps/_workspace/src/gopkg.in/fsnotify.v1/windows.go",
+    "promql/test.go",
+    "Godeps/_workspace/src/github.com/prometheus/client_golang/prometheus/registry.go",
+    "retrieval/targetmanager.go",
+    "Godeps/_workspace/src/gopkg.in/fsnotify.v1/inotify.go",
+    "Godeps/_workspace/src/github.com/syndtr/goleveldb/leveldb/db.go",
+    "Godeps/_workspace/src/gopkg.in/fsnotify.v1/kqueue.go",
+    "storage/local/storage.go",
+    "Godeps/_workspace/src/github.com/julienschmidt/httprouter/path.go",
+    "promql/engine.go",
+    "Godeps/_workspace/src/github.com/julienschmidt/httprouter/router.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 45,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-7608ee87d0",
+   "task": "Add support for discovering targets from Azure Virtual Machine Scale Sets (VMSS), not just standalone VMs, including exposing the scale set name as a label on discovered instances.",
+   "gold": [
+    "discovery/azure/azure.go"
+   ],
+   "candidates": 2364,
+   "ranked": [
+    "vendor/github.com/Azure/azure-sdk-for-go/arm/compute/virtualmachinescalesets.go",
+    "vendor/github.com/Azure/azure-sdk-for-go/arm/compute/virtualmachinescalesetvms.go",
+    "discovery/azure/azure.go",
+    "vendor/github.com/Azure/azure-sdk-for-go/arm/compute/models.go",
+    "vendor/github.com/Azure/azure-sdk-for-go/arm/network/interfaces.go",
+    "scrape/target.go",
+    "web/api/v1/api.go",
+    "vendor/k8s.io/client-go/pkg/apis/extensions/types.go",
+    "scrape/scrape_test.go",
+    "notifier/notifier.go",
+    "discovery/consul/consul.go",
+    "config/config.go",
+    "scrape/scrape.go",
+    "discovery/gce/gce.go",
+    "vendor/k8s.io/client-go/pkg/apis/extensions/v1beta1/types.go",
+    "vendor/github.com/prometheus/client_golang/api/prometheus/v1/api.go",
+    "vendor/github.com/Azure/azure-sdk-for-go/arm/compute/virtualmachines.go",
+    "vendor/github.com/Azure/azure-sdk-for-go/arm/compute/availabilitysets.go",
+    "vendor/k8s.io/client-go/pkg/apis/extensions/v1beta1/generated.proto",
+    "vendor/k8s.io/client-go/pkg/apis/extensions/v1beta1/types_swagger_doc_generated.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 203,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-79869d9a4d",
+   "task": "There's a race condition around minValidTime in the head block — it's read and written without synchronization, so concurrent appenders can see a stale or torn value. Please make access to it atomic so truncation and appender creation can't race.",
+   "gold": [
+    "head.go"
+   ],
+   "candidates": 69,
+   "ranked": [
+    "head.go",
+    "db.go",
+    "block.go",
+    "wal/wal.go",
+    "wal.go",
+    "head_test.go",
+    "db_test.go",
+    "index/index.go",
+    "querier_test.go",
+    "compact.go",
+    "querier.go",
+    "compact_test.go",
+    "block_test.go",
+    "chunkenc/xor.go",
+    "wal_test.go",
+    "head_bench_test.go",
+    "tsdbutil/buffer.go",
+    "index/postings.go",
+    "wal/wal_test.go",
+    "cmd/tsdb/main.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 8,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-109f9409ed",
+   "task": "Autocomplete doesn't find metadata (type/help/unit) for OpenMetrics counters ending in `_total` — it only falls back to the base metric name for histogram/summary suffixes, so `_total` counters show up as unknown type/help/unit in the query editor and explain views.",
+   "gold": [
+    "web/ui/mantine-ui/src/pages/query/ExplainViews/Selector.tsx",
+    "web/ui/mantine-ui/src/pages/query/MetricsExplorer/MetricsExplorer.tsx",
+    "web/ui/module/codemirror-promql/src/complete/hybrid.test.ts",
+    "web/ui/module/codemirror-promql/src/complete/hybrid.ts"
+   ],
+   "candidates": 872,
+   "ranked": [
+    "web/ui/module/codemirror-promql/src/complete/hybrid.ts",
+    "storage/interface_append.go",
+    "model/textparse/protobufparse.go",
+    "storage/remote/otlptranslator/prometheusremotewrite/helper.go",
+    "storage/remote/queue_manager.go",
+    "storage/remote/queue_manager_test.go",
+    "web/ui/react-app/src/pages/graph/ExpressionInput.tsx",
+    "model/textparse/openmetricsparse.go",
+    "web/ui/mantine-ui/src/pages/query/ExplainViews/Selector.tsx",
+    "schema/labels.go",
+    "tsdb/head.go",
+    "storage/remote/otlptranslator/prometheusremotewrite/combined_appender.go",
+    "storage/remote/otlptranslator/prometheusremotewrite/metrics_to_prw.go",
+    "model/textparse/openmetricsparse_test.go",
+    "storage/remote/otlptranslator/prometheusremotewrite/metrics_to_prw_test.go",
+    "storage/remote/write_test.go",
+    "storage/remote/write_handler.go",
+    "tsdb/wlog/watcher.go",
+    "scrape/scrape.go",
+    "tsdb/record/record.go"
+   ],
+   "recall": {
+    "5": 0.25,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 81,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-7711cd5ab5",
+   "task": "Remove the deprecated `storage.tsdb.retention` flag entirely, keeping only `storage.tsdb.retention.time`, and update its help text so it no longer references the removed flag.",
+   "gold": [
+    "cmd/prometheus/main.go",
+    "web/ui/react-app/src/pages/flags/Flags.test.tsx"
+   ],
+   "candidates": 683,
+   "ranked": [
+    "cmd/prometheus/main.go",
+    "tsdb/db.go",
+    "tsdb/head.go",
+    "rules/alerting.go",
+    "tsdb/agent/db.go",
+    "storage/remote/write.go",
+    "tsdb/head_wal.go",
+    "tsdb/index/postings.go",
+    "tsdb/querier.go",
+    "tsdb/compact.go",
+    "web/web.go",
+    "documentation/examples/remote_storage/remote_storage_adapter/main.go",
+    "web/ui/react-app/src/pages/flags/Flags.test.tsx",
+    "tsdb/wlog/wlog.go",
+    "tsdb/index/index.go",
+    "config/config.go",
+    "tsdb/chunks/head_chunks.go",
+    "web/ui/react-app/src/vendor/flot/jquery.flot.selection.js",
+    "cmd/promtool/backfill_test.go",
+    "scrape/scrape.go"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 73,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-e9885ecb94",
+   "task": "Requests to the range-query endpoint with a step of 0 (or negative) cause a server crash instead of returning an error. Please validate the step parameter and return a proper bad-request error when it's zero or negative.",
+   "gold": [
+    "web/api/v1/api.go",
+    "web/api/v1/api_test.go"
+   ],
+   "candidates": 632,
+   "ranked": [
+    "web/api/v1/api_test.go",
+    "vendor/github.com/aws/aws-sdk-go/aws/config.go",
+    "web/api/v1/api.go",
+    "vendor/github.com/julienschmidt/httprouter/router.go",
+    "vendor/golang.org/x/net/context/context.go",
+    "cmd/prometheus/config.go",
+    "vendor/github.com/aws/aws-sdk-go/aws/request/request.go",
+    "vendor/github.com/dgrijalva/jwt-go/token.go",
+    "vendor/github.com/aws/aws-sdk-go/aws/ec2metadata/service.go",
+    "vendor/github.com/prometheus/client_golang/prometheus/histogram.go",
+    "vendor/github.com/aws/aws-sdk-go/aws/credentials/ec2rolecreds/ec2_role_provider.go",
+    "vendor/github.com/miekg/dns/doc.go",
+    "storage/local/storage.go",
+    "web/ui/static/js/graph.js",
+    "storage/local/persistence.go",
+    "retrieval/target_test.go",
+    "vendor/github.com/aws/aws-sdk-go/aws/corehandlers/handlers.go",
+    "web/ui/static/js/prom_console.js",
+    "vendor/github.com/syndtr/goleveldb/leveldb/util/buffer.go",
+    "vendor/github.com/Azure/go-autorest/autorest/azure/devicetoken.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 78,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-1ea3781699",
+   "task": "When recoding a chunk in the out-of-order head's ToEncodedChunks, the finished chunk keeps the old start time instead of being reset to the sample that started the recoded chunk, so the emitted chunk's min/max time range is wrong. Fix it so the min time is updated correctly when a chunk gets recoded.",
+   "gold": [
+    "tsdb/head_append.go",
+    "tsdb/ooo_head.go",
+    "tsdb/ooo_head_test.go"
+   ],
+   "candidates": 683,
+   "ranked": [
+    "tsdb/head_append.go",
+    "tsdb/ooo_head.go",
+    "tsdb/head.go",
+    "tsdb/compact_test.go",
+    "tsdb/chunkenc/histogram.go",
+    "tsdb/db.go",
+    "tsdb/chunkenc/float_histogram.go",
+    "tsdb/chunkenc/chunk.go",
+    "storage/remote/queue_manager.go",
+    "tsdb/querier.go",
+    "tsdb/ooo_head_read_test.go",
+    "tsdb/head_wal.go",
+    "storage/interface.go",
+    "cmd/prometheus/main.go",
+    "tsdb/chunks/chunks.go",
+    "web/ui/react-app/src/vendor/flot/jquery.flot.selection.js",
+    "tsdb/agent/db.go",
+    "tsdb/chunks/chunk_write_queue.go",
+    "tsdb/chunks/head_chunks.go",
+    "storage/merge.go"
+   ],
+   "recall": {
+    "5": 0.6666666666666666,
+    "10": 0.6666666666666666,
+    "20": 0.6666666666666666
+   },
+   "ms": 74,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-1801cd4196",
+   "task": "Decoding label string sizes is on a hot path — can you speed up the varint size decoder for the common case where the size fits in a single byte (0-127), instead of always looping byte-by-byte?",
+   "gold": [
+    "model/labels/labels_string.go"
+   ],
+   "candidates": 589,
+   "ranked": [
+    "tsdb/index/index.go",
+    "tsdb/wal.go",
+    "tsdb/wlog/live_reader.go",
+    "tsdb/encoding/encoding.go",
+    "tsdb/record/record.go",
+    "model/labels/labels_string.go",
+    "util/pool/pool.go",
+    "model/textparse/promparse_test.go",
+    "tsdb/chunkenc/xor.go",
+    "scrape/scrape_test.go",
+    "tsdb/index/index_test.go",
+    "tsdb/wlog/wlog.go",
+    "prompb/remote.pb.go",
+    "tsdb/wlog/watcher.go",
+    "tsdb/tombstones/tombstones.go",
+    "model/textparse/protobufparse.go",
+    "tsdb/chunks/head_chunks.go",
+    "prompb/remote.proto",
+    "tsdb/compact.go",
+    "scrape/target_test.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 68,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-a3376e8f36",
+   "task": "Add a promtool command to query a Prometheus server for all values of a given label name and print them out.",
+   "gold": [
+    "cmd/promtool/main.go"
+   ],
+   "candidates": 2364,
+   "ranked": [
+    "cmd/promtool/main.go",
+    "discovery/consul/consul.go",
+    "vendor/github.com/prometheus/client_golang/prometheus/summary.go",
+    "vendor/github.com/prometheus/client_golang/prometheus/histogram.go",
+    "promql/engine.go",
+    "documentation/examples/remote_storage/remote_storage_adapter/influxdb/client.go",
+    "web/api/v1/api_test.go",
+    "discovery/dns/dns.go",
+    "storage/remote/read.go",
+    "web/ui/static/js/graph/index.js",
+    "vendor/github.com/spf13/pflag/flag.go",
+    "vendor/github.com/prometheus/tsdb/querier.go",
+    "storage/interface.go",
+    "scrape/scrape.go",
+    "web/api/v1/api.go",
+    "scrape/target.go",
+    "scrape/target_test.go",
+    "vendor/github.com/alecthomas/template/doc.go",
+    "storage/remote/read_test.go",
+    "vendor/github.com/prometheus/tsdb/head.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 210,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-8a8eb12985",
+   "task": "We should stop using the partitioned DB variant and open a single regular TSDB database instead.",
+   "gold": [
+    "storage/tsdb/tsdb.go"
+   ],
+   "candidates": 1576,
+   "ranked": [
+    "vendor/github.com/fabxc/tsdb/db.go",
+    "storage/tsdb/tsdb.go",
+    "vendor/github.com/fabxc/tsdb/querier.go",
+    "documentation/examples/remote_storage/remote_storage_bridge/main.go",
+    "vendor/github.com/fabxc/tsdb/head.go",
+    "documentation/examples/remote_storage/remote_storage_bridge/influxdb/client.go",
+    "vendor/golang.org/x/text/language/maketables.go",
+    "vendor/golang.org/x/text/language/language.go",
+    "vendor/google.golang.org/api/googleapi/googleapi.go",
+    "util/testutil/storage.go",
+    "vendor/github.com/prometheus/client_golang/prometheus/counter.go",
+    "vendor/github.com/fabxc/tsdb/db_unix.go",
+    "documentation/examples/remote_storage/remote_storage_bridge/opentsdb/tagvalue.go",
+    "vendor/golang.org/x/text/unicode/norm/composition.go",
+    "vendor/k8s.io/client-go/1.5/pkg/util/wait/wait.go",
+    "cmd/prometheus/main.go",
+    "vendor/github.com/prometheus/client_golang/prometheus/histogram.go",
+    "vendor/github.com/prometheus/client_golang/prometheus/summary.go",
+    "vendor/k8s.io/client-go/1.5/tools/cache/controller.go",
+    "vendor/github.com/fabxc/tsdb/compact.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 148,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-383f0d4204",
+   "task": "When compacting overlapping chunks during a merge, I need control over which float encoding gets used for the re-encoded chunks (e.g. XOR2 instead of always XOR), ideally via something I can re-check per series so it can follow runtime config changes.",
+   "gold": [
+    "storage/merge.go",
+    "storage/merge_test.go",
+    "storage/series.go",
+    "storage/series_test.go"
+   ],
+   "candidates": 980,
+   "ranked": [
+    "tsdb/db.go",
+    "tsdb/compact.go",
+    "cmd/prometheus/main.go",
+    "tsdb/chunkenc/chunk.go",
+    "storage/merge.go",
+    "config/config.go",
+    "tsdb/head_wal.go",
+    "tsdb/head_append.go",
+    "storage/interface.go",
+    "tsdb/querier.go",
+    "tsdb/compact_test.go",
+    "tsdb/chunkenc/float_histogram.go",
+    "tsdb/chunkenc/histogram.go",
+    "storage/remote/queue_manager.go",
+    "tsdb/index/postings.go",
+    "scrape/scrape.go",
+    "storage/remote/codec.go",
+    "scrape/scrape_append_v2.go",
+    "tsdb/chunkenc/bstream.go",
+    "cmd/promtool/tsdb.go"
+   ],
+   "recall": {
+    "5": 0.25,
+    "10": 0.25,
+    "20": 0.25
+   },
+   "ms": 103,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-7ad55ef83c",
+   "task": "The goroutines behind our fingerprint/series iterator channels never close their channel after sending all entries, so a caller that ranges over the channel blocks forever instead of exiting the loop. Make the channel close once iteration is complete.",
+   "gold": [
+    "storage/local/series.go"
+   ],
+   "candidates": 115,
+   "ranked": [
+    "storage/local/series.go",
+    "storage/local/storage.go",
+    "storage/local/interface.go",
+    "storage/local/persistence.go",
+    "main.go",
+    "rules/ast/query_analyzer.go",
+    "storage/local/index/interface.go",
+    "storage/local/chunk.go",
+    "rules/ast/functions.go",
+    "storage/remote/queue_manager.go",
+    "retrieval/target.go",
+    "rules/ast/ast.go",
+    "storage/local/storage_test.go",
+    "rules/manager/manager.go",
+    "storage/local/delta.go",
+    "storage/local/locker.go",
+    "storage/local/index/index.go",
+    "model/data.proto",
+    "storage/local/codable/codable.go",
+    "web/static/vendor/js/handlebars.js"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 10,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-4a83e6f453",
+   "task": "When running in agent mode, config reload logs noisy warnings about unsupported alerting rules, recording rules, and read configs before silently stripping them out. Since agent mode is expected to not support these, drop the warnings and just remove the unsupported settings quietly.",
+   "gold": [
+    "cmd/prometheus/main.go"
+   ],
+   "candidates": 516,
+   "ranked": [
+    "cmd/prometheus/main.go",
+    "web/api/v1/api.go",
+    "cmd/promtool/main.go",
+    "rules/manager_test.go",
+    "config/config.go",
+    "rules/manager.go",
+    "web/api/v1/api_test.go",
+    "notifier/notifier_test.go",
+    "web/web.go",
+    "web/web_test.go",
+    "cmd/prometheus/query_log_test.go",
+    "scrape/scrape_test.go",
+    "cmd/prometheus/main_test.go",
+    "scrape/scrape.go",
+    "notifier/notifier.go",
+    "tsdb/agent/db.go",
+    "storage/remote/queue_manager.go",
+    "tsdb/head.go",
+    "promql/engine_test.go",
+    "cmd/promtool/rules_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 51,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-683b4c8c2a",
+   "task": "When compacting blocks, track and store the ULIDs of all the original source blocks that contributed to a compacted block in the block's meta.json, so we can trace which source blocks went into a given compaction result. The compaction generation should reflect the max generation among inputs plus one, not just the first block's generation.",
+   "gold": [
+    "block.go",
+    "compact.go"
+   ],
+   "candidates": 35,
+   "ranked": [
+    "compact.go",
+    "db.go",
+    "block.go",
+    "querier.go",
+    "head.go",
+    "db_test.go",
+    "chunks/xor.go",
+    "index.go",
+    "wal_test.go",
+    "wal.go",
+    "chunks.go",
+    "head_test.go",
+    "chunks/bstream.go",
+    "labels/labels.go",
+    "index_test.go",
+    "querier_test.go",
+    "tsdbutil/buffer.go",
+    "chunks/chunk_test.go",
+    "labels/selector.go",
+    "cmd/tsdb/main.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-791a2409a2",
+   "task": "The remote write queue allocates a new batch of samples on every send. Can we reuse the buffer across sends so we're not reallocating that slice each time, to cut down on GC pressure?",
+   "gold": [
+    "storage/remote/codec.go",
+    "storage/remote/queue_manager.go",
+    "storage/remote/read_test.go"
+   ],
+   "candidates": 3306,
+   "ranked": [
+    "storage/remote/queue_manager.go",
+    "config/config.go",
+    "tsdb/head.go",
+    "documentation/examples/remote_storage/remote_storage_adapter/graphite/client.go",
+    "storage/remote/wal_watcher.go",
+    "tsdb/wal_test.go",
+    "storage/remote/queue_manager_test.go",
+    "vendor/golang.org/x/net/http2/server.go",
+    "vendor/golang.org/x/tools/go/internal/gcimporter/iexport.go",
+    "documentation/examples/remote_storage/remote_storage_adapter/influxdb/client.go",
+    "vendor/google.golang.org/grpc/internal/transport/controlbuf.go",
+    "promql/engine.go",
+    "notifier/notifier_test.go",
+    "tsdb/wal.go",
+    "vendor/google.golang.org/grpc/internal/transport/http2_server.go",
+    "vendor/golang.org/x/crypto/ssh/terminal/terminal.go",
+    "vendor/github.com/miekg/dns/server.go",
+    "vendor/gopkg.in/fsnotify/fsnotify.v1/kqueue.go",
+    "vendor/google.golang.org/grpc/internal/transport/http2_client.go",
+    "vendor/k8s.io/apimachinery/pkg/util/wait/wait.go"
+   ],
+   "recall": {
+    "5": 0.3333333333333333,
+    "10": 0.3333333333333333,
+    "20": 0.3333333333333333
+   },
+   "ms": 296,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-63cdd6dbe1",
+   "task": "When there's no remote storage configured, querying still tries to merge in an empty/no-op result from it. Can we make the merge logic skip that and just return a no-op querier when there are no primaries or secondaries to merge?",
+   "gold": [
+    "storage/fanout.go",
+    "storage/merge.go"
+   ],
+   "candidates": 624,
+   "ranked": [
+    "storage/merge.go",
+    "storage/remote/storage.go",
+    "tsdb/querier.go",
+    "promql/engine.go",
+    "storage/fanout.go",
+    "tsdb/db.go",
+    "tsdb/exemplar.go",
+    "web/api/v1/api.go",
+    "storage/remote/read.go",
+    "rules/group.go",
+    "tsdb/agent/db.go",
+    "tsdb/compact.go",
+    "storage/interface.go",
+    "tsdb/head.go",
+    "promql/test.go",
+    "config/config.go",
+    "web/ui/module/codemirror-promql/src/complete/hybrid.ts",
+    "tsdb/head_read.go",
+    "scrape/scrape.go",
+    "storage/remote/codec.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 63,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-7541baff87",
+   "task": "The build script's asset compression fails on some systems because it relies on gzip options that aren't available in older gzip versions. Can you make it detect what the installed gzip supports and fall back to compatible flags?",
+   "gold": [
+    "scripts/compress_assets.sh"
+   ],
+   "candidates": 555,
+   "ranked": [
+    "tracing/tracing.go",
+    "cmd/prometheus/main.go",
+    "web/web.go",
+    "config/config.go",
+    "storage/remote/queue_manager.go",
+    "tsdb/db.go",
+    "tsdb/agent/db.go",
+    "tsdb/wal/watcher.go",
+    "tsdb/wal/live_reader.go",
+    "web/ui/react-app/src/vendor/flot/jquery.flot.selection.js",
+    "tsdb/head.go",
+    "discovery/manager.go",
+    "discovery/legacymanager/manager.go",
+    "tsdb/wal/wal.go",
+    "web/web_test.go",
+    "web/api/v1/api.go",
+    "web/ui/module/codemirror-promql/src/complete/hybrid.ts",
+    "tsdb/chunks/head_chunks.go",
+    "web/ui/react-app/src/vendor/flot/jquery.flot.crosshair.js",
+    "web/ui/module/codemirror-promql/src/client/prometheus.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 57,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-b7a5e280df",
+   "task": "When ingesting created-timestamp zero samples in remote write, we're seeing debug log noise from out-of-order errors even when they happen on the very first sample. Can we skip the CT append entirely when the sample/histogram timestamp or the created timestamp is zero, and only log a debug message for real (non-OOO) errors? Also fine to fold the sample-CT helper's logic inline instead of keeping it as a separate function.",
+   "gold": [
+    "storage/remote/write_handler.go"
+   ],
+   "candidates": 806,
+   "ranked": [
+    "storage/remote/write_handler.go",
+    "tsdb/head_append.go",
+    "storage/remote/write_handler_test.go",
+    "prompb/io/prometheus/write/v2/types.proto",
+    "tsdb/agent/db.go",
+    "scrape/scrape.go",
+    "storage/interface.go",
+    "tsdb/head.go",
+    "config/config.go",
+    "storage/remote/queue_manager.go",
+    "tsdb/chunkenc/histogram.go",
+    "scrape/manager_test.go",
+    "tsdb/chunkenc/float_histogram.go",
+    "storage/remote/write.go",
+    "cmd/prometheus/main.go",
+    "tsdb/db.go",
+    "tsdb/wlog/watcher.go",
+    "promql/functions.go",
+    "model/textparse/protobufparse.go",
+    "tsdb/chunks/head_chunks_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 73,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-0c577c547b",
+   "task": "PromQL's `offset` modifier only accepts positive durations—can we allow negative offsets too, so a query can shift a vector selector into the future instead of just the past?",
+   "gold": [
+    "promql/parser/parse.go",
+    "promql/parser/parse_test.go"
+   ],
+   "candidates": 433,
+   "ranked": [
+    "promql/parser/ast.go",
+    "promql/engine.go",
+    "promql/parser/parse.go",
+    "cmd/prometheus/main.go",
+    "web/ui/react-app/src/vendor/flot/jquery.flot.stack.js",
+    "promql/test.go",
+    "promql/functions.go",
+    "promql/engine_test.go",
+    "web/ui/static/vendor/js/popper.min.js",
+    "pkg/textparse/promparse.go",
+    "promql/parser/parse_test.go",
+    "web/ui/react-app/src/pages/graph/GraphHelpers.ts",
+    "tsdb/wal/wal.go",
+    "web/ui/static/vendor/js/jquery.hotkeys.js",
+    "web/ui/static/vendor/bootstrap-4.5.2/js/bootstrap.bundle.min.js",
+    "promql/parser/lex.go",
+    "tsdb/db_test.go",
+    "tsdb/index/index.go",
+    "web/ui/static/vendor/js/jquery-3.5.1.min.js",
+    "rules/manager.go"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 44,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-d1c8550894",
+   "task": "Add more instance metadata labels to Scaleway service discovery—things like hostname, boot type, image ID/architecture, security group, organization, region, and hypervisor/cluster/node location—so targets expose richer relabeling options beyond the current basic set.",
+   "gold": [
+    "discovery/scaleway/instance.go",
+    "discovery/scaleway/instance_test.go"
+   ],
+   "candidates": 442,
+   "ranked": [
+    "discovery/openstack/mock_test.go",
+    "config/config_test.go",
+    "discovery/ec2/ec2.go",
+    "discovery/marathon/marathon.go",
+    "discovery/consul/consul.go",
+    "discovery/digitalocean/digitalocean.go",
+    "discovery/openstack/hypervisor.go",
+    "config/config.go",
+    "discovery/scaleway/instance.go",
+    "discovery/openstack/openstack.go",
+    "discovery/dockerswarm/nodes.go",
+    "discovery/triton/triton.go",
+    "discovery/dockerswarm/tasks_test.go",
+    "documentation/examples/custom-sd/adapter-usage/main.go",
+    "discovery/gce/gce.go",
+    "discovery/dockerswarm/services.go",
+    "discovery/kubernetes/endpoints.go",
+    "discovery/scaleway/scaleway.go",
+    "discovery/eureka/eureka.go",
+    "cmd/prometheus/main.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 45,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-dffe5b3b2e",
+   "task": "The rate calculation with reset detection has a boolean expression whose precedence is ambiguous at a glance — can you add parentheses to make the intended grouping explicit without changing behavior?",
+   "gold": [
+    "promql/functions.go"
+   ],
+   "candidates": 954,
+   "ranked": [
+    "promql/histogram_stats_iterator.go",
+    "storage/remote/otlptranslator/prometheusremotewrite/histograms.go",
+    "tsdb/chunkenc/histogram.go",
+    "web/ui/mantine-ui/src/pages/query/ExplainViews/ExplainView.tsx",
+    "tsdb/ooo_head_test.go",
+    "promql/functions.go",
+    "web/ui/module/codemirror-promql/src/parser/parser.test.ts",
+    "promql/parser/lex.go",
+    "web/ui/module/codemirror-promql/src/complete/hybrid.ts",
+    "web/ui/mantine-ui/src/promql/utils.ts",
+    "scrape/scrape_append_v2.go",
+    "tsdb/chunkenc/float_histogram.go",
+    "promql/parser/printer.go",
+    "web/ui/module/codemirror-promql/src/parser/parser.ts",
+    "storage/remote/queue_manager.go",
+    "promql/parser/ast.go",
+    "web/ui/mantine-ui/src/promql/serializeAndFormat.test.ts",
+    "promql/parser/lex_test.go",
+    "promql/parser/parse.go",
+    "promql/quantile.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 95,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-372e7652b7",
+   "task": "Range queries re-scan the full lookback range from the raw iterator at every evaluation step, even though most of that data was already read for the previous step. Can we make consecutive steps reuse the overlapping samples instead of refetching them, to cut down allocations and iterator work on range queries?",
+   "gold": [
+    "promql/bench_test.go",
+    "promql/engine.go",
+    "storage/buffer.go"
+   ],
+   "candidates": 2364,
+   "ranked": [
+    "promql/engine.go",
+    "vendor/github.com/prometheus/tsdb/head.go",
+    "vendor/github.com/prometheus/tsdb/compact.go",
+    "vendor/github.com/prometheus/tsdb/db.go",
+    "vendor/github.com/google/pprof/profile/legacy_profile.go",
+    "vendor/k8s.io/apimachinery/pkg/watch/mux.go",
+    "vendor/github.com/prometheus/tsdb/chunkenc/xor.go",
+    "promql/test.go",
+    "config/config.go",
+    "vendor/golang.org/x/text/transform/transform.go",
+    "vendor/golang.org/x/text/language/language.go",
+    "storage/buffer.go",
+    "vendor/github.com/influxdata/influxdb/models/points.go",
+    "vendor/golang.org/x/text/language/match.go",
+    "vendor/golang.org/x/net/http2/server.go",
+    "storage/remote/codec.go",
+    "vendor/golang.org/x/text/language/maketables.go",
+    "cmd/prometheus/main.go",
+    "storage/remote/queue_manager.go",
+    "vendor/github.com/golang/snappy/encode_other.go"
+   ],
+   "recall": {
+    "5": 0.3333333333333333,
+    "10": 0.3333333333333333,
+    "20": 0.6666666666666666
+   },
+   "ms": 196,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-aa61e392b2",
+   "task": "The remote write client's Store call ignores the context passed in when it sets the request timeout, always using a background context instead. Fix it so the timeout context is derived from the caller's context, so cancellation and deadlines propagate properly.",
+   "gold": [
+    "storage/remote/client.go"
+   ],
+   "candidates": 3377,
+   "ranked": [
+    "vendor/golang.org/x/net/context/context.go",
+    "vendor/google.golang.org/appengine/internal/api.go",
+    "vendor/google.golang.org/grpc/internal/transport/transport.go",
+    "vendor/google.golang.org/grpc/dialoptions.go",
+    "vendor/google.golang.org/grpc/internal/transport/http2_client.go",
+    "vendor/golang.org/x/net/http2/server.go",
+    "vendor/google.golang.org/grpc/internal/transport/handler_server.go",
+    "vendor/google.golang.org/grpc/server.go",
+    "vendor/github.com/miekg/dns/server.go",
+    "vendor/github.com/miekg/dns/client.go",
+    "vendor/golang.org/x/net/context/pre_go17.go",
+    "vendor/golang.org/x/oauth2/oauth2.go",
+    "vendor/k8s.io/client-go/rest/request.go",
+    "vendor/go.opencensus.io/trace/trace.go",
+    "vendor/k8s.io/apimachinery/pkg/apis/meta/v1/types.go",
+    "storage/remote/client.go",
+    "vendor/github.com/hashicorp/consul/api/api.go",
+    "vendor/github.com/gophercloud/gophercloud/provider_client.go",
+    "scrape/scrape_test.go",
+    "vendor/google.golang.org/grpc/stream.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 301,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-2ce94ac196",
+   "task": "When I run `promtool check metrics`, I'd like an option to also see cardinality info for each metric — how many series each metric expands to and what percentage of the total that represents — so I can spot which metrics are blowing up my cardinality.",
+   "gold": [
+    "cmd/promtool/main.go",
+    "cmd/promtool/main_test.go"
+   ],
+   "candidates": 523,
+   "ranked": [
+    "web/ui/module/codemirror-promql/src/complete/hybrid.ts",
+    "tsdb/head.go",
+    "storage/remote/queue_manager.go",
+    "tsdb/wal/watcher.go",
+    "promql/engine.go",
+    "discovery/manager.go",
+    "promql/parser/ast.go",
+    "web/ui/react-app/src/vendor/flot/jquery.flot.stack.js",
+    "cmd/promtool/tsdb.go",
+    "storage/interface.go",
+    "tsdb/wal/wal.go",
+    "tsdb/wal/watcher_test.go",
+    "tsdb/exemplar.go",
+    "discovery/legacymanager/manager.go",
+    "tsdb/db.go",
+    "cmd/promtool/main.go",
+    "cmd/prometheus/main.go",
+    "scrape/scrape.go",
+    "web/ui/module/codemirror-promql/src/parser/parser.ts",
+    "rules/manager.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0.5
+   },
+   "ms": 53,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "prometheus-22db9c3413",
+   "task": "Delete the commented-out old batch-append implementations in the DB and head block code that we've kept around unused — they're dead weight now that the new append path is in place, so let's clean them out.",
+   "gold": [
+    "db.go",
+    "head.go"
+   ],
+   "candidates": 26,
+   "ranked": [
+    "db.go",
+    "head.go",
+    "querier.go",
+    "writer.go",
+    "cmd/tsdb/main.go",
+    "compact.go",
+    "chunks/xor.go",
+    "block.go",
+    "wal.go",
+    "labels/labels.go",
+    "db_unix.go",
+    "labels/selector.go",
+    "chunks/bstream.go",
+    "head_test.go",
+    "db_test.go",
+    "postings.go",
+    "chunks/chunk.go",
+    "wal_test.go",
+    "querier_test.go",
+    "reader.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  }
+ ]
+}

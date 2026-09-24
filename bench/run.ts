@@ -6,6 +6,7 @@
  * Jev responses are cached on disk by request body, so re-runs and variants that send identical
  * requests are free. BENCH_TOKEN_CAP (default 60M, about $2.50) stops the run before it bills more.
  * BENCH_IDS=a,b re-runs only those tasks and merges them into the existing results file.
+ * Split "real" is the test split with each commit subject replaced by its realistic rewrite (bench/realistic.ts).
  */
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -113,15 +114,21 @@ async function runTask(t: Task, variant: string): Promise<TaskResult> {
 
 async function main() {
   const [variant, split, ...only] = process.argv.slice(2);
-  if (!variant || !VARIANTS[variant] || (split !== "dev" && split !== "test")) {
-    throw new Error(`usage: run.ts <${Object.keys(VARIANTS).join("|")}> <dev|test> [repo...]`);
+  if (!variant || !VARIANTS[variant] || (split !== "dev" && split !== "test" && split !== "real")) {
+    throw new Error(`usage: run.ts <${Object.keys(VARIANTS).join("|")}> <dev|test|real> [repo...]`);
   }
+  const rewrites: Record<string, { request: string; rejected?: string }> =
+    split === "real" ? JSON.parse(readFileSync(path.join(TASKS, "realistic.json"), "utf8")) : {};
   const { paid } = VARIANTS[variant]!;
   const repos = REPOS.filter((r) => (only.length ? only.includes(r.name) : !paid || r.jev));
   mkdirSync(OUT, { recursive: true });
   for (const repo of repos) {
     const ids = process.env.BENCH_IDS?.split(",");
-    const all: Task[] = JSON.parse(readFileSync(path.join(TASKS, `${repo.name}.json`), "utf8"))[split];
+    const listed: Task[] = JSON.parse(readFileSync(path.join(TASKS, `${repo.name}.json`), "utf8"))[split === "real" ? "test" : split];
+    // A rejected or missing rewrite drops the task from the realistic split rather than falling back silently.
+    const all = split === "real"
+      ? listed.filter((t) => rewrites[t.id] && !rewrites[t.id]!.rejected).map((t) => ({ ...t, task: rewrites[t.id]!.request }))
+      : listed;
     const tasks = ids ? all.filter((t) => ids.includes(t.id)) : all;
     const file = path.join(OUT, `${repo.name}.${split}.${variant}.json`);
     if (tasks.length === 0) continue;

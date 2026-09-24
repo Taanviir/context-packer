@@ -1,0 +1,543 @@
+{
+ "gin-60f66918f8": {
+  "request": "Colored output from go-colorable breaks Gin when running on App Engine. Please default to plain os.Stdout/os.Stderr for the log writers instead, and just document how to opt into colorable output on Windows if someone wants it."
+ },
+ "gin-815e1ce281": {
+  "request": "Calling GetQuery (or Query) on a context with no request panics because it tries to read the URL off a nil request. It should just return an empty value instead of crashing."
+ },
+ "gin-0873992f38": {
+  "request": "Add test coverage for form binding so repeated form/query keys and array-style field names (like `array[]`) are correctly bound into slice fields, including cases with multipart form data."
+ },
+ "hono-38ac5a0d55": {
+  "request": "Redirecting to a URL that contains non-ASCII characters double-encodes it, so the final Location header ends up wrong. Only multibyte content should get encoded — a URL that's already plain ASCII (including query strings with percent-encoded parts) should be left exactly as passed in."
+ },
+ "hono-a15bec3275": {
+  "request": "When I use createHandlers with multiple middlewares that each set different context variables, the final handler's context type doesn't pick up the variables set by earlier middlewares — I want the combined env type inferred automatically across all the handlers passed in."
+ },
+ "hono-034bf6db60": {
+  "request": "The blog example's posts are stored only in memory and disappear when the worker restarts. Switch it to use persistent key-value storage instead, so posts survive across requests, and make sure the list/create/read/update/delete operations still work with the async storage lookups."
+ },
+ "hono-a3d9f1371b": {
+  "request": "When a client disconnects mid-request, the SSE writer keeps blocking forever instead of noticing the disconnect and unblocking so the handler can finish."
+ },
+ "hono-6ae021371a": {
+  "request": "When the client disconnects mid-request, the proxy should abort the upstream fetch too instead of letting it keep running — right now the original request's abort signal isn't passed through to the proxied request."
+ },
+ "hono-acb56b8d30": {
+  "request": "In AWS Lambda deployments behind ALB or API Gateway, requests sometimes arrive with multi-value headers instead of single-value ones, and our handler only reads the single-value headers object, so those requests fail or lose header data. Can we make header extraction (including the host header used for building the request URL) work correctly whether the event gives single-value or multi-value headers?"
+ },
+ "hono-3bc96ba915": {
+  "request": "Add support for caching QUERY method requests, similar to how GET requests are cached — the response should be served from cache on repeat identical requests, with cache entries varying by body content and Content-Type, and an option to cap how large a request body can be before caching is skipped."
+ },
+ "hono-b5cd193c2e": {
+  "request": "When middleware calls next() and then tries to replace the response afterward, the new response should fully take over instead of merging headers from the old one — right now setting the response to undefined first and then assigning a new response doesn't properly clear out the previous headers."
+ },
+ "hono-edfb31ee94": {
+  "request": "When the `notFound()` handler throws an error, the app crashes instead of letting the error handler catch it. Make sure errors thrown inside the not-found handler go through the same error handling as other route errors."
+ },
+ "hono-8e9b1c8099": {
+  "request": "The `request` method's input type and `json()` return type conflict with `@cloudflare/workers-types`. Can you adjust them so the types are compatible with that package?"
+ },
+ "hono-48a7ccbc0e": {
+  "request": "The bearer auth middleware's verifyToken callback gives a plain, untyped context, so I can't get typed access to env bindings inside it. Can you make bearerAuth generic over the environment type so verifyToken's context param is properly typed?"
+ },
+ "hono-955bd8f726": {
+  "request": "When I call `c.body()` with response data, the typed response loses the actual data type and just shows `unknown` for the output type — can it infer and preserve the real type of the data I pass in?"
+ },
+ "hono-b23cf8d65d": {
+  "request": "The type parameter for the middleware handler in createMiddleware isn't being passed through, so context variables set via the generic Env type aren't type-checked correctly inside the middleware callback. Can you fix it so the middleware function gets the proper generic types for Env, Path, and Input?"
+ },
+ "hono-208d77b06d": {
+  "request": "Make the status code type parameter for JSON and text response helpers optional, defaulting to the general status code type, so callers can omit it instead of being forced to specify it explicitly."
+ },
+ "hono-fa84edca71": {
+  "request": "Can you make the env helper pick up the strongly-typed env shape from the context type automatically, instead of requiring a separate generic type argument every time it's used?"
+ },
+ "hono-f251706e6e": {
+  "request": "I need to export type inference helpers for building request objects and typed response types from the client module, not just the response inference type."
+ },
+ "hono-c99f696d28": {
+  "request": "The custom renderer function I pass in needs access to the request context (like the current path or headers), not just the props — can that be passed through as well when it's invoked?"
+ },
+ "hono-ce2a2f5964": {
+  "request": "Add a way to attach the original error (its `cause`) when throwing an HTTPException, so it's preserved on the exception object for easier debugging."
+ },
+ "hono-257d5711b4": {
+  "request": "The `onError()` error handler passed to compose is only awaited synchronously — can it support async handlers that return a promise, so returning a response after an `await` inside `onError` still works correctly?"
+ },
+ "hono-4c213e4379": {
+  "request": "Basic auth middleware currently requires the \"buffer\" package to decode credentials, which breaks it in environments without Node's Buffer (like browsers or edge runtimes). Can it decode base64 using standard `atob`/`btoa` when available, only falling back to a Buffer-based approach otherwise?"
+ },
+ "hono-287498bdec": {
+  "request": "Can the validator middleware also validate route/path params, not just body, query, form, etc.? I want to run a schema against values like `:id` in a route and get typed, validated params back in the handler."
+ },
+ "hono-cea7b7b993": {
+  "request": "When rendering JSX with a context provider, if a child component is an async function that awaits something before returning the `html` template, the context value isn't available to consumers further down the tree—context should still be readable correctly even when there's an await before the `html` helper is used inside an async component."
+ },
+ "hono-4a239ad208": {
+  "request": "When there's middleware that reads or modifies the response after calling next(), a request that falls through to the 404 handler isn't getting the middleware's changes applied — the middleware wrapping seems to be skipped for not-found responses. Also, if a route handler returns nothing/undefined, it should trigger the 404 handler instead of crashing or returning an empty response."
+ },
+ "hono-3317ca128a": {
+  "request": "The `next()` function on the Cloudflare Pages event context should return a Promise, since it wraps an async fetch — right now its type says it returns a Response directly, which doesn't match reality and breaks awaiting it."
+ },
+ "hono-81d271279c": {
+  "request": "`jsonT` only accepts plain JSON-shaped types—can it also accept a TypeScript interface as the type argument and still return the correctly typed response?"
+ },
+ "hono-48a8729862": {
+  "request": "Checking a response's type breaks when running under a Deno-bundled build, because `instanceof Response` fails there even for real Response objects. Can we detect Response (and Promise) some other way that works reliably across both environments?"
+ },
+ "hono-3b0e52e879": {
+  "request": "If two overlapping routes end up using the same param name for different path segments, the router should throw an error instead of silently matching — right now it just matches without checking for that conflict."
+ },
+ "hono-bd26c3129f": {
+  "request": "Route matching with regex path params is slow because it rebuilds substrings and does extra allocations on every lookup — can we speed up the trie router's request matching without changing its behavior?"
+ },
+ "hono-b8cff18905": {
+  "request": "When a client disconnects mid-stream (cancels the reader) while nested Suspense content or an async callback is still resolving, we get an unhandled \"Invalid state: Controller is already closed\" error instead of failing silently. Streaming should handle reader cancellation gracefully and not try to enqueue or close the controller afterward."
+ },
+ "hono-7e0555d14c": {
+  "request": "When a client requests a WebSocket connection with a specific subprotocol via Sec-WebSocket-Protocol, the upgrade response should echo that protocol back so browsers like Chrome don't reject the connection. If no protocol is requested, none should be set, and an explicitly configured protocol option should still take priority over the header."
+ },
+ "rich-e9c9e43420": {
+  "request": "When I strip meta and links off a style, the resulting style still hangs on to the original object's cached hash, so it can end up hashing wrong if the cache was already computed before clearing. Clearing meta/links should also reset the cached hash."
+ },
+ "rich-655170417a": {
+  "request": "When style parsing gets an empty string, it should be treated the same as \"none\" and return the null style instead of erroring or producing something unexpected."
+ },
+ "rich-a236d8fd63": {
+  "request": "When stripping styles from segments, I need `link=None` copies to actually clear the link (and get a fresh link id) instead of reusing the original — right now the copy keeps the old link. Can you fix that and add tests covering stripping styles and stripping links from segments?"
+ },
+ "rich-18ebb427bc": {
+  "request": "Update the Unicode East Asian width data so character cell-width calculations reflect the latest wcwidth ranges (many code points' zero/double-width classifications have changed or expanded upstream)."
+ },
+ "rich-f538099efa": {
+  "request": "The test card output has a wrong month abbreviation and an extra zero in a dollar amount — can you fix those typos in the demo table?"
+ },
+ "rich-9ba01ae52b": {
+  "request": "When terminal size detection falls back to the standard streams, it should try stdin first, then stdout, then stderr, using their file descriptors directly instead of opening the stream objects each time. Also make sure the legacy Windows rendering check only tests against stdout/stderr, not stdin."
+ },
+ "rich-680d9d876e": {
+  "request": "When running in Jupyter, stopping the progress bar prints an extra blank line even though the console is treated as interactive there. Can you fix it so that blank line only gets printed for truly non-interactive consoles, not Jupyter?"
+ },
+ "rich-066c024be2": {
+  "request": "When a panel's title or subtitle text has its own inline styling, the fill characters used to pad it to the border width end up styled too, or the fill overwrites the title's own style. The border style should only apply where the title doesn't already define one, and the padding characters should visually match the border regardless of the title's alignment (left, center, or right)."
+ },
+ "rich-7f422fa661": {
+  "request": "When I call `pretty.install()` inside IPython, it should hook into IPython's own output formatting instead of just overriding `sys.displayhook`, so pretty-printed output still works properly in the IPython REPL. Fall back to the normal displayhook approach when not running under IPython."
+ },
+ "rich-260508bfa0": {
+  "request": "When splitting styled text into lines, overlapping spans that cross line boundaries aren't handled correctly — some background/style spans end up missing, duplicated, or misaligned on the wrong lines when markup regions overlap. Please fix line-splitting so overlapping spans are correctly clipped and placed on each resulting line."
+ },
+ "rich-26910c309d": {
+  "request": "When pretty-printing a namedtuple that has its own custom string representation defined, use that instead of building our own field-by-field output. Also, a namedtuple with a single field shouldn't get a trailing comma the way a regular one-element tuple does."
+ },
+ "rich-6151387adf": {
+  "request": "Long lines are wrapping unexpectedly when there's no explicit width set, and Markdown text loses its style when re-wrapped. Can we make line splitting always crop/pad to the actual console width so output doesn't overflow, and preserve the current style when appending text during Markdown rendering?"
+ },
+ "rich-665bb3360a": {
+  "request": "On Windows, the `windll` fallback variable is typed as `Any`, which suppresses type checking on it. Can you give it a more accurate type so we still get proper type errors when it's misused?"
+ },
+ "rich-0138b18950": {
+  "request": "When pretty-printing a single-element tuple like `(1,)`, the trailing comma is missing or misplaced, especially when the container is expanded across multiple lines. Fix pretty printing so one-element tuples always keep their trailing comma correctly placed, both inline and expanded."
+ },
+ "rich-9ca660bd13": {
+  "request": "When wrapping widths that allow wrapping is empty, computing the second-largest wrap width throws an error instead of just returning 0. Can you make that case return 0 without needing a try/except?"
+ },
+ "rich-4787873fc0": {
+  "request": "Some tests are failing because a debug print statement got left in the Link rendering code and a stale test fixture snapshot no longer matches actual output. Can you clean up the leftover debug code and update the test fixtures so the test suite passes again?"
+ },
+ "rich-f67f426a6b": {
+  "request": "Complex numbers like `3+2j` or `3.14 + 2.06j` in repr output aren't getting number-highlighted — only the real part matches. Can the number pattern recognize the full complex literal, including a spaced-out imaginary part?"
+ },
+ "rich-55988c6e72": {
+  "request": "Panels should support internal padding around their content, not just a border—can you add a way to specify padding on a panel so the text isn't flush against the edges?"
+ },
+ "rich-ad07ee5c52": {
+  "request": "When using Live display inside a Jupyter notebook, the output gets printed twice at the end. Please fix so it only renders once when the live session stops."
+ },
+ "rich-f8b9ba143a": {
+  "request": "Startup is slower than it should be because of a module import — can we avoid that overhead and use a cheaper check for whether we're on Windows?"
+ },
+ "rich-8e58adcab0": {
+  "request": "Allow `stylize_range` to accept any style type, not just `Style` instances, so callers can pass named styles or style strings when highlighting a range. Also make the range highlighting logic simpler by looking up each start/end position individually instead of processing them as a batch."
+ },
+ "rich-435d7a2e2d": {
+  "request": "The docstring for the print method says the `sep` and `end` parameters default to `\" \"` and `\"\\n\"`, but that's wrong since those parameters don't actually have defaults set there. Please correct the docstring so it doesn't state incorrect default values."
+ },
+ "rich-a5fa231348": {
+  "request": "When reading a file already opened in binary mode with `Progress.read`, don't let the returned reader close that handle on exit—only close handles the progress tracker opened itself from a path. Also make sure the progress display starts and stops around the read, not just wraps the whole context."
+ },
+ "rich-32196384d0": {
+  "request": "Mypy is complaining about the return type where we build the buffer after stripping color codes for no-color output — can you fix that typing error?"
+ },
+ "rich-a2385c525b": {
+  "request": "When my rendered content is taller than the terminal, the live display gets garbled. Can we detect that and show a \"terminal too small\" message instead of the broken output, falling back to normal rendering once it fits again? This should probably be on by default but overridable."
+ },
+ "rich-781689c3bb": {
+  "request": "The download progress column shows file sizes in binary units (KiB/MiB) by default — can we make it default to decimal (KB/MB) units instead, while still letting callers opt into binary units?"
+ },
+ "rich-4d80b3a558": {
+  "request": "Speed up mapping a line/column position back to its character offset in the source text—the current approach loops through every line to find the target, which seems wasteric for large files. Can you make it more efficient?"
+ },
+ "rich-3469674b52": {
+  "request": "When a traceback frame's source file is missing, the line just shows \"in <function name>\" — can you also include the line number there so it's still useful for locating the error?"
+ },
+ "rich-73ec0d586e": {
+  "request": "Add a type annotation to the separator attribute on that Node class that's missing one, unlike the other fields."
+ },
+ "rich-6e634705b7": {
+  "request": "When mapping a highlight range's start/end position to a code index, if the line number is valid but the column is past the end of that line, clamp it to the end of the line instead of dropping the whole range. Right now any out-of-range column silently cancels the highlight entirely, even though the line itself exists."
+ },
+ "gin-647535cd9b": {
+  "request": "I need a way to read query string or POST form parameters that are structured as a map, like `names[a]=x&names[b]=y`, and get back a `map[string]string` for a given key instead of just plain strings or slices."
+ },
+ "gin-3f95933c3d": {
+  "request": "Add a way to get the currently executing handler from the context, similar to how we can already get its name, so middleware can retrieve a reference to the final handler function itself."
+ },
+ "gin-dbd8a25150": {
+  "request": "Add a way to abort a request with a status code and a JSON body that skips HTML-escaping, similar to the existing JSON abort helper."
+ },
+ "gin-3c12d2a80e": {
+  "request": "The panic recovery code converts stack trace bytes to strings and back unnecessarily when extracting function names — can you rework it to work with strings directly instead of byte slices, to cut down on allocations?"
+ },
+ "gin-7149009a84": {
+  "request": "In the realtime-advanced demo, room creation is posting to the same route used for viewing a room, which seems to be causing a routing conflict. Also, the stats chart update throws an error when the messages chart hasn't been initialized yet — it should just skip updating it in that case instead of failing."
+ },
+ "gin-9221381443": {
+  "request": "Remove the SecureJSONPrefix type since it's not used anywhere in the codebase."
+ },
+ "gin-d8fb18c33b": {
+  "request": "The comments in the router group code say \"github\" in lowercase — can you fix that to the properly capitalized \"GitHub\"?"
+ },
+ "gin-6634f04d9b": {
+  "request": "Add color-coding for the HTTP request method in the request logger, similar to how the response status code is already colorized, so each method (GET, POST, PUT, DELETE, etc.) shows in a distinct color in the log output."
+ },
+ "gin-e31cbdf241": {
+  "request": "Can you make the request logs include the query string, not just the path? Right now if a request has query params like `?a=100`, the logger only shows `/example` and drops the query info."
+ },
+ "gin-440eb14ab8": {
+  "request": "The redirect logic for `X-Forwarded-Prefix` uses regexes to strip unsafe characters and collapse repeated slashes, which is slower than it needs to be on a hot path. Can we replace those regex calls with plain string-manipulation functions that do the same sanitization, without changing the behavior?"
+ },
+ "gin-f1da692fbd": {
+  "request": "The HTTP method validation in route registration recompiles the same regex on every call. Can we cache the compiled pattern so it's only built once instead of on each request?"
+ },
+ "gin-59c836e1fa": {
+  "request": "We're logging a \"headers already written\" warning every time WriteHeader is called after the response is written, even if the status code being set is the same as before — can it only warn when the new status code actually differs from the current one?"
+ },
+ "gin-a712f77d7a": {
+  "request": "Several exported Engine methods (SecureJsonPrefix, LoadHTMLGlob, LoadHTMLFiles, SetHTMLTemplate, SetFuncMap) are missing doc comments, which trips golint. Add brief comments describing what each does.",
+  "rejected": "it names SecureJsonPrefix, which appears only in the diff"
+ },
+ "gin-4867ff9634": {
+  "request": "When a handler calls Next() again and the chain gets reset or handlers change mid-request, my middleware chain panics or skips handlers. The Next() loop should recheck the handler count on every iteration instead of caching it once at the start, so resets or changes inside a handler are handled safely."
+ },
+ "gin-a210eea3bd": {
+  "request": "When a route conflicts with an existing wildcard, the panic message is vague—it just shows the conflicting wildcard and the full path. Can you make it clearer by showing exactly which path segment caused the conflict and what existing route prefix it clashes with?"
+ },
+ "gin-4e86b17e73": {
+  "request": "When running a Unix server, the socket file it creates isn't writable by other processes/users afterward. Can we make sure the permissions on that socket file allow others to write to it?"
+ },
+ "gin-4b54b86272": {
+  "request": "Go vet is warning about composite literals using unkeyed fields for the Delims struct. Please update those literals to use keyed fields instead so the warnings go away, without changing behavior."
+ },
+ "gin-bfc8ca285e": {
+  "request": "Client IP detection currently just trusts X-Forwarded-For/X-Real-IP headers from whoever connects, which lets any client spoof their IP by setting those headers directly. We should only honor those forwarded-IP headers when the request actually comes from a proxy address we've explicitly configured as trusted, falling back to the raw connection address otherwise."
+ },
+ "gin-c65e5efc9a": {
+  "request": "RouteInfo only gives me the handler's name as a string—can you also expose the actual handler function on each route so I can call or inspect it directly, not just get its name?"
+ },
+ "gin-2abbc4ad1d": {
+  "request": "When I call context.String() with a status code, the Content-Type header doesn't actually get set on the response — looks like it's being set after WriteHeader is called, so it's too late to take effect. Can you fix the ordering so the header is applied before the status code is written?"
+ },
+ "gin-9b7e7bdce6": {
+  "request": "Can you add tests covering the streaming response feature, including the case where the client disconnects mid-stream, and add any test helper needed to simulate a closed client connection?"
+ },
+ "gin-e8fc0c74b4": {
+  "request": "Fix the wording in the Abort comment — it should say \"not continue\" instead of \"do not continue.\""
+ },
+ "gin-b3f322c5fc": {
+  "request": "When a handler sets a status code of 0, the response should keep whatever status it already has instead of getting reset—right now that check also lets through negative status codes, which shouldn't count as a valid status either."
+ },
+ "gin-87811a97bd": {
+  "request": "By default, requests from IPv6 clients aren't recognized as coming from a trusted proxy—only the IPv4 wildcard is trusted out of the box. Can we make the default trusted proxies list also cover all IPv6 addresses?"
+ },
+ "gin-3fce8efcc6": {
+  "request": "Rename the LoggerInFile function to LoggerWithFile so the name reads more naturally."
+ },
+ "gin-a235e0fb32": {
+  "request": "Requests submitted as HTML form posts aren't being bound correctly — Bind only handles GET and JSON/XML content types, but form-encoded POST bodies should also be parsed into the target struct."
+ },
+ "gin-dfc25f91e0": {
+  "request": "Refactor the query and form lookup helpers to use named return values with a bare return instead of assigning to a temp variable and returning it explicitly."
+ },
+ "prometheus-65b4696b88": {
+  "request": "The test evaluator is printing debug output (result vectors and their metrics/timestamps/values) to stdout on failure. Please remove that leftover debug print so test failures don't clutter the output."
+ },
+ "prometheus-192e665317": {
+  "request": "Can rules be parsed directly from raw content instead of requiring a file path, so callers who already have the rules in memory don't need to write them to disk first?"
+ },
+ "prometheus-82c7cd320a": {
+  "request": "The remote write send-duration metric's histogram buckets top out too low—can we extend the range so longer batch send times still land in a meaningful bucket instead of all piling into the last one?"
+ },
+ "prometheus-2a1b940ae4": {
+  "request": "Two of the comments on the Consul discovery functions that decide whether a service should be watched are outdated—they both say the same function name even though they document two different functions. Please correct the comments to name the function each one actually describes."
+ },
+ "prometheus-a197508d09": {
+  "request": "Add a config test that covers Docker Swarm service discovery, and while you're in there, make sure the SD config doesn't cache a parsed URL as unmarshaled state — parse the host fresh when the discoverer runs."
+ },
+ "prometheus-39aa66e46e": {
+  "request": "By default metrics get written to /tmp, which gets wiped on reboot and isn't obvious to users. Can we default the storage path to a directory relative to wherever the binary is run from instead?"
+ },
+ "prometheus-7608ee87d0": {
+  "request": "Add support for discovering targets from Azure Virtual Machine Scale Sets (VMSS), not just standalone VMs, including exposing the scale set name as a label on discovered instances."
+ },
+ "prometheus-79869d9a4d": {
+  "request": "There's a race condition around minValidTime in the head block — it's read and written without synchronization, so concurrent appenders can see a stale or torn value. Please make access to it atomic so truncation and appender creation can't race."
+ },
+ "prometheus-109f9409ed": {
+  "request": "Autocomplete doesn't find metadata (type/help/unit) for OpenMetrics counters ending in `_total` — it only falls back to the base metric name for histogram/summary suffixes, so `_total` counters show up as unknown type/help/unit in the query editor and explain views."
+ },
+ "prometheus-7711cd5ab5": {
+  "request": "Remove the deprecated `storage.tsdb.retention` flag entirely, keeping only `storage.tsdb.retention.time`, and update its help text so it no longer references the removed flag."
+ },
+ "prometheus-e9885ecb94": {
+  "request": "Requests to the range-query endpoint with a step of 0 (or negative) cause a server crash instead of returning an error. Please validate the step parameter and return a proper bad-request error when it's zero or negative."
+ },
+ "prometheus-1ea3781699": {
+  "request": "When recoding a chunk in the out-of-order head's ToEncodedChunks, the finished chunk keeps the old start time instead of being reset to the sample that started the recoded chunk, so the emitted chunk's min/max time range is wrong. Fix it so the min time is updated correctly when a chunk gets recoded."
+ },
+ "prometheus-1801cd4196": {
+  "request": "Decoding label string sizes is on a hot path — can you speed up the varint size decoder for the common case where the size fits in a single byte (0-127), instead of always looping byte-by-byte?"
+ },
+ "prometheus-a3376e8f36": {
+  "request": "Add a promtool command to query a Prometheus server for all values of a given label name and print them out."
+ },
+ "prometheus-8a8eb12985": {
+  "request": "We should stop using the partitioned DB variant and open a single regular TSDB database instead."
+ },
+ "prometheus-383f0d4204": {
+  "request": "When compacting overlapping chunks during a merge, I need control over which float encoding gets used for the re-encoded chunks (e.g. XOR2 instead of always XOR), ideally via something I can re-check per series so it can follow runtime config changes."
+ },
+ "prometheus-7ad55ef83c": {
+  "request": "The goroutines behind our fingerprint/series iterator channels never close their channel after sending all entries, so a caller that ranges over the channel blocks forever instead of exiting the loop. Make the channel close once iteration is complete."
+ },
+ "prometheus-4a83e6f453": {
+  "request": "When running in agent mode, config reload logs noisy warnings about unsupported alerting rules, recording rules, and read configs before silently stripping them out. Since agent mode is expected to not support these, drop the warnings and just remove the unsupported settings quietly."
+ },
+ "prometheus-683b4c8c2a": {
+  "request": "When compacting blocks, track and store the ULIDs of all the original source blocks that contributed to a compacted block in the block's meta.json, so we can trace which source blocks went into a given compaction result. The compaction generation should reflect the max generation among inputs plus one, not just the first block's generation."
+ },
+ "prometheus-791a2409a2": {
+  "request": "The remote write queue allocates a new batch of samples on every send. Can we reuse the buffer across sends so we're not reallocating that slice each time, to cut down on GC pressure?"
+ },
+ "prometheus-63cdd6dbe1": {
+  "request": "When there's no remote storage configured, querying still tries to merge in an empty/no-op result from it. Can we make the merge logic skip that and just return a no-op querier when there are no primaries or secondaries to merge?"
+ },
+ "prometheus-7541baff87": {
+  "request": "The build script's asset compression fails on some systems because it relies on gzip options that aren't available in older gzip versions. Can you make it detect what the installed gzip supports and fall back to compatible flags?"
+ },
+ "prometheus-b7a5e280df": {
+  "request": "When ingesting created-timestamp zero samples in remote write, we're seeing debug log noise from out-of-order errors even when they happen on the very first sample. Can we skip the CT append entirely when the sample/histogram timestamp or the created timestamp is zero, and only log a debug message for real (non-OOO) errors? Also fine to fold the sample-CT helper's logic inline instead of keeping it as a separate function."
+ },
+ "prometheus-0c577c547b": {
+  "request": "PromQL's `offset` modifier only accepts positive durations—can we allow negative offsets too, so a query can shift a vector selector into the future instead of just the past?"
+ },
+ "prometheus-d1c8550894": {
+  "request": "Add more instance metadata labels to Scaleway service discovery—things like hostname, boot type, image ID/architecture, security group, organization, region, and hypervisor/cluster/node location—so targets expose richer relabeling options beyond the current basic set."
+ },
+ "prometheus-dffe5b3b2e": {
+  "request": "The rate calculation with reset detection has a boolean expression whose precedence is ambiguous at a glance — can you add parentheses to make the intended grouping explicit without changing behavior?"
+ },
+ "prometheus-372e7652b7": {
+  "request": "Range queries re-scan the full lookback range from the raw iterator at every evaluation step, even though most of that data was already read for the previous step. Can we make consecutive steps reuse the overlapping samples instead of refetching them, to cut down allocations and iterator work on range queries?"
+ },
+ "prometheus-aa61e392b2": {
+  "request": "The remote write client's Store call ignores the context passed in when it sets the request timeout, always using a background context instead. Fix it so the timeout context is derived from the caller's context, so cancellation and deadlines propagate properly."
+ },
+ "prometheus-2ce94ac196": {
+  "request": "When I run `promtool check metrics`, I'd like an option to also see cardinality info for each metric — how many series each metric expands to and what percentage of the total that represents — so I can spot which metrics are blowing up my cardinality."
+ },
+ "prometheus-22db9c3413": {
+  "request": "Delete the commented-out old batch-append implementations in the DB and head block code that we've kept around unused — they're dead weight now that the new append path is in place, so let's clean them out."
+ },
+ "httpx-c337938af5": {
+  "request": "When closing a socket connection over asyncio, we shouldn't block waiting for the stream to fully close — closing it and letting the event loop handle the rest later is fine, and waiting has caused issues with certain sites in the past."
+ },
+ "httpx-e53f995994": {
+  "request": "When using ASGITransport, URL-encoded characters like `@` in the path (e.g. `%40`) aren't being decoded before being passed to the ASGI app's scope, so the app sees the raw encoded path instead of the actual path. The path should be percent-decoded before it reaches the app."
+ },
+ "httpx-9b6605c3d5": {
+  "request": "Update the proxy and transport code to work with the new httpcore 0.9 release: the proxy config should take a full proxy URL instead of just the origin, and URL ports should be treated as optional (defaulting based on scheme) rather than always required."
+ },
+ "httpx-de91fdfa16": {
+  "request": "When a response has a Content-Encoding header with an unrecognized or bogus value, don't error out — just skip that encoding and return the body as-is."
+ },
+ "httpx-083d2e9aa0": {
+  "request": "When a redirect loop or request-body replay error is raised, include the original request object on the exception so callers can inspect which request triggered it, not just an error message."
+ },
+ "httpx-bdc218f8e6": {
+  "request": "Response decoding currently lets raw zlib/brotli errors bubble up when the body is malformed. Can we catch those and raise clear, decoder-specific exceptions (for deflate, gzip, and brotli) instead, so callers can handle decoding failures consistently?"
+ },
+ "httpx-04d5ffb01b": {
+  "request": "The `trust_env` option isn't working as a per-request override — I want the client-level `trust_env` setting to be used by default, but still be able to override it on individual requests when needed (e.g. for netrc lookups)."
+ },
+ "httpx-1f4b8dd054": {
+  "request": "Can you make it possible to pass extra arguments to the test command, so I can run just a single test file instead of the whole suite every time?"
+ },
+ "httpx-6752f7d6f6": {
+  "request": "The `delete()` function shouldn't accept a request body—can you drop the options for sending data, files, or JSON on DELETE requests since they don't make sense for that method?"
+ },
+ "httpx-589c6e0f2f": {
+  "request": "When multipart form data has an invalid name or value type, the TypeError message should include the actual invalid value, not just say it's the wrong type—same for the auth argument and URL type errors elsewhere in the client."
+ },
+ "httpx-ab9ace2749": {
+  "request": "Multipart file uploads only accept string content and throw when a file value is passed as raw bytes — can you make bytes content work the same way strings do (length, encoding, replay)?"
+ },
+ "httpx-67c297069f": {
+  "request": "Drop support for Python 3.6 across the project—bump the minimum supported version to 3.7 and remove the now-unnecessary backport shim for async context managers."
+ },
+ "httpx-0276ff9880": {
+  "request": "When a redirect changes the request method from POST to GET, the Content-Length header from the original request shouldn't be carried over to the new GET request."
+ },
+ "httpx-2129a9789a": {
+  "request": "When sending file-like or iterable content in a request body, can we avoid `Transfer-Encoding: chunked` when the content's total length can actually be determined upfront (e.g. from a real file or a seekable stream), and use `Content-Length` instead in those cases?"
+ },
+ "httpx-7fea0723e2": {
+  "request": "When establishing a TLS connection, the SSL context should be built using the actual negotiated protocol/ALPN settings for that connection instead of a generic loader, so the right protocol identifiers get used."
+ },
+ "httpx-b4b27ff677": {
+  "request": "The `curio` async library branch in our timer utility never gets exercised and adds dead code. Can you remove that unused check so we only support asyncio and trio?"
+ },
+ "httpx-1ce3cc3269": {
+  "request": "Add docstrings to the request functions and client so that help() and API doc generators show usage, parameters, and return types for each request method."
+ },
+ "httpx-ea137a96d9": {
+  "request": "The `delete()` request helper is missing `params` and `headers` options — a previous change accidentally dropped them and left `data`/`files` instead, which don't make sense for a DELETE call. Can you restore the ability to pass query params and headers to `delete()`?"
+ },
+ "httpx-40849bffcb": {
+  "request": "URLs with internationalized domain names in the host aren't encoding correctly against the current IDNA spec—some Unicode hostnames (including ones using deprecated mappings) end up producing the wrong punycode or failing to normalize. Can we fix URL parsing so it correctly IDNA-encodes Unicode hostnames per the 2008 spec across scheme, host, and port?"
+ },
+ "httpx-27b0dbc22d": {
+  "request": "When `raise_for_status()` triggers on a 4xx or 5xx response, it should raise a more specific exception type for status errors instead of the generic HTTP error, so callers can distinguish status errors from other HTTP failures while still catching them as HTTP errors."
+ },
+ "httpx-a226c60861": {
+  "request": "HEAD requests and client `head()` calls don't follow redirects by default, unlike other HTTP methods. Please make `allow_redirects` default to true for these too, for consistency."
+ },
+ "httpx-80eafe89c2": {
+  "request": "When the ASGI app dispatcher spawns the app coroutine as a background task, it should use the same context-managed background task abstraction as the other dispatchers instead of grabbing the event loop directly and calling create_task, so custom concurrency backends can eventually be supported there too."
+ },
+ "httpx-81f385c484": {
+  "request": "The `stream()` function doesn't apply the `timeout` argument to the client it creates, so timeouts passed to `stream()` are silently ignored. Please make it actually respect the given timeout."
+ },
+ "httpx-d7aa6e0189": {
+  "request": "I need a way to catch both request errors and HTTP status errors from a response in a single except block, since right now they don't share a common base exception. Can you add a shared base class so `try/except` around a request plus `.raise_for_status()` only needs one exception type?"
+ },
+ "httpx-78afd08e0f": {
+  "request": "When an async response is closed, the underlying stream isn't actually being closed because the code checks for the wrong attribute — it should detect the stream's async close method properly so it gets closed as expected."
+ },
+ "httpx-23f11aaa8d": {
+  "request": "Clean up the client-error and server-error status checks so the range comparisons read as a single chained comparison instead of two separate conditions."
+ },
+ "httpx-ba2e51215e": {
+  "request": "Query params with spaces should be encoded using \"+\" like a browser form submit, not \"%20\", and slashes in query values shouldn't be escaped either. Also double-check the set of characters we treat as safe when percent-encoding is correct."
+ },
+ "httpx-49d74a2e7f": {
+  "request": "When a header value that isn't a string or bytes (like None) is passed in, raise a clear error explaining that header values must be str or bytes, instead of failing with a confusing error later."
+ },
+ "httpx-2f0e0480da": {
+  "request": "Basic auth is adding a trailing newline/whitespace strip to the base64-encoded credentials before building the `Basic` header — the encoded token shouldn't be stripped since base64 output from these calls never has extra whitespace to remove."
+ },
+ "httpx-db7f2d0df3": {
+  "request": "Add support for reading the SSLKEYLOGFILE environment variable so TLS session keys can be logged for debugging with tools like Wireshark, but only when the client is trusting environment settings."
+ },
+ "ripgrep-f2f3d00df7": {
+  "request": "The rg completion menu doesn't let me filter/narrow the suggested type or color-spec names by typing — can you make it support removing already-typed prefixes as I refine my selection, like completion menus usually do?"
+ },
+ "ripgrep-15b263ff55": {
+  "request": "Add \"cs\" as a recognized filetype alias for C# files (matching *.cs), so it's quicker to type than \"csharp\"."
+ },
+ "ripgrep-020c5453a5": {
+  "request": "When stdin is piped from Powershell on a Unix-like system, the tool doesn't detect that data is available—readable stdin should also recognize sockets, not just regular files and FIFOs."
+ },
+ "ripgrep-7eb1dd129e": {
+  "request": "Can you add file type recognition for Standard ML, so `.sml` and `.sig` files are matched under an \"sml\" type?"
+ },
+ "ripgrep-dd1bc5b898": {
+  "request": "Profile shows this writer as a hot spot in benchmarks; add inlining hints to it and the other small, frequently-called accessor and trait methods nearby, and remove any unused ones you find along the way."
+ },
+ "ripgrep-d65966efbc": {
+  "request": "We're seeing a performance regression when walking directories on Windows — fetching file metadata separately for each entry is slow. Can we reuse the metadata that's already available from the directory read instead of making an extra call, while still respecting symlink-following behavior?"
+ },
+ "ripgrep-2b943eda47": {
+  "request": "File type filtering with `--type`/`--type-not` is slow on large trees. Can you speed up how file types get matched against filenames?"
+ },
+ "ripgrep-7cf560d27c": {
+  "request": "Makefiles with a `.mak` extension aren't being recognized as makefiles by the type filter — can you add that extension alongside the existing makefile patterns?"
+ },
+ "ripgrep-0473df1ef5": {
+  "request": "Case-insensitive search is producing wrong matches for non-ASCII text — searching for \"привет\" with `-i` doesn't correctly match \"Привет\" or \"ПрИвЕт\". Can you fix the Unicode case-folding behavior for literal/regex matching so this works correctly?"
+ },
+ "ripgrep-23be3cf850": {
+  "request": "A `.gitignore` file containing just `**` should ignore everything in the directory, but right now it doesn't work as expected — files that should be excluded still show up. Can you fix how a bare `**` pattern is matched?"
+ },
+ "ripgrep-351eddc17e": {
+  "request": "Add a predefined file type for C/C++ headers (`.h`/`.hpp`) so `--type h` works like the other built-in type filters."
+ },
+ "ripgrep-247a9398f4": {
+  "request": "Matching on paths in Gitignore is not thread-safe when called concurrently across threads, and the current per-call thread-local buffer setup seems awkward — can we share a single thread-local scratch buffer across all calls on the struct instead of redeclaring it inline each time?"
+ },
+ "ripgrep-46dff8f4be": {
+  "request": "When `--quiet` is set, searching should stop as soon as a match is found instead of continuing to scan every remaining file — right now it still searches everything even though the output is suppressed anyway."
+ },
+ "ripgrep-461e0c4e33": {
+  "request": "When searching, don't search the file that stdout is being redirected to — if I do `rg foo > out.txt` in the same directory, it shouldn't try to search `out.txt` while writing to it."
+ },
+ "ripgrep-17d09c0882": {
+  "request": "Bump the Homebrew formula for ripgrep to package version 0.8.1, updating the download URLs and checksums for both the macOS and Linux binaries."
+ },
+ "ripgrep-ba1023e1e4": {
+  "request": "Add an option to left-pad displayed line numbers to a fixed width (using spaces) when line numbers are shown, so results with different digit counts line up visually. It should have no effect when line numbers are suppressed, and should reject non-numeric or zero-prefixed width values."
+ },
+ "ripgrep-119407d0a9": {
+  "request": "Hyperlink generation on Windows canonicalizes the path via the filesystem, which is slow. Can we get the absolute path without touching the filesystem, while still stripping any verbatim (`\\\\?\\`) prefix so hyperlinks work correctly for both local and network paths?"
+ },
+ "ripgrep-ff898cd105": {
+  "request": "ripgrep still has an internal helper for deciding whether to colorize output, but it's dead code now that color choice is handled elsewhere — can you remove it?"
+ },
+ "ripgrep-a7f2d48234": {
+  "request": "`--files-without-match` seems to always report matching files, and using it together with `--files-with-matches` in the same kind of check gives wrong results. Can you fix the path/match handling so each mode reports correctly based on whether a match was found?"
+ },
+ "ripgrep-42223047a8": {
+  "request": "Add a file type filter for Less stylesheets so `.less` files can be matched or ignored by type."
+ },
+ "ripgrep-4d34132365": {
+  "request": "Search results are slower than they should be — some of the code paths are cloning a reference-counted handle even when they only need to borrow it. Can you pass it by reference instead of cloning where a clone isn't actually needed, and only clone when a new thread/closure genuinely takes ownership?"
+ },
+ "ripgrep-0f6181d309": {
+  "request": "Can you add USD (Universal Scene Description) file extensions to the built-in list of recognized file types, so files ending in .usd, .usda, and .usdc are matched by default?"
+ },
+ "ripgrep-bb8601b2ba": {
+  "request": "The build fails on platforms that are neither Windows nor Unix. Fix the compile errors so the project builds there too, with hostname lookup and hyperlink generation just gracefully reporting unsupported instead of failing to compile."
+ },
+ "ripgrep-224c112e05": {
+  "request": "When --max-columns is set to 0, treat that the same as not setting it at all instead of truncating every line to zero width."
+ },
+ "ripgrep-a5855a5d73": {
+  "request": "Fix a few clippy warnings in the search and test helper code: avoid an unnecessary mutable variable, use char literals instead of single-character string literals for split(), and add backticks around code identifiers in doc comments."
+ },
+ "ripgrep-920112e640": {
+  "request": "AsciiDoc files with .adoc, .asc, or .asciidoc extensions aren't recognized by the asciidoc file type filter. Can you add those extensions to it?"
+ },
+ "ripgrep-03af61fc7b": {
+  "request": "The tool that decompresses files before processing is silently skipping tar archives instead of extracting them—can we make it handle tar files like any other supported archive format?"
+ },
+ "ripgrep-f74078af5b": {
+  "request": "Can you add Swift as a recognized file type, so `*.swift` files get matched?"
+ },
+ "ripgrep-34edb8123a": {
+  "request": "When the git-common-dir file can't be opened, don't bubble up a noisy I/O error—just treat it as \"no commondir found\" and move on quietly."
+ },
+ "ripgrep-3bec8f3f0a": {
+  "request": "When I print out the ignore-directory data structure during debugging, can it show up with a `{:?}` debug format instead of erroring that it doesn't implement Debug?"
+ }
+}
