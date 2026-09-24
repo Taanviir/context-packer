@@ -1,7 +1,7 @@
 {
   "name": "context-packer",
   "displayName": "Context Packer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Ranks the source files a coding task needs and hands them to Claude before it starts searching.",
   "author": { "name": "Taanviir", "url": "https://github.com/Taanviir" },
   "homepage": "https://taanviir.github.io/context-packer/",
