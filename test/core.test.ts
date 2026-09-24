@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { rankBm25, tokens } from "../src/bm25.js";
 import { ContentRejectedError, isTest, pack, packKeywords, ScorerUnavailableError, type FileDoc, type Items, type Scorer } from "../src/packer.js";
 import { layaSketch, sketch } from "../src/sketch.js";
+import { snippets } from "../src/snippets.js";
 
 type Case = { file: string; path: string; jev: string; laya: string };
 const fixtures = new URL("./fixtures/", import.meta.url);
@@ -126,5 +127,35 @@ describe("pack", () => {
   it("rejects scorers that answer for the wrong files", async () => {
     const wrong: Scorer = { score: async () => new Map([["other", 0.5]]) };
     await expect(pack("add backoff", docs(3), wrong, small)).rejects.toThrow("exactly the requested paths");
+  });
+});
+
+describe("snippets", () => {
+  const file = [
+    ...Array.from({ length: 40 }, (_, i) => `// filler ${i}`),
+    "export async function retry(fn) {",
+    "  // exponential backoff between attempts",
+    "  await sleep(backoff(attempt));",
+    "}",
+    ...Array.from({ length: 40 }, (_, i) => `// more filler ${i}`),
+    "const retries = 3; // retry retry retry",
+  ].join("\n");
+
+  it("prefers the window with the most distinct task words", () => {
+    const [first] = snippets("add jitter to the retry backoff", file, { perFile: 1 });
+    expect(first!.text).toContain("exponential backoff");
+    expect(first!.start).toBeLessThanOrEqual(41);
+    expect(first!.end).toBeGreaterThanOrEqual(44);
+  });
+
+  it("keeps windows apart and in file order", () => {
+    const got = snippets("add jitter to the retry backoff", file, { perFile: 2, window: 10 });
+    expect(got.length).toBe(2);
+    expect(got[0]!.start).toBeLessThan(got[1]!.start);
+    expect(got[1]!.start - got[0]!.start).toBeGreaterThanOrEqual(10);
+  });
+
+  it("returns nothing when no distinctive task word occurs", () => {
+    expect(snippets("make it better please", file)).toEqual([]);
   });
 });

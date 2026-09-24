@@ -1,16 +1,10 @@
 import { projectRoot } from "./files.js";
 import { renderText } from "./render.js";
+import { STOPWORDS } from "./words.js";
 import { ContextPacker, parseProvider } from "./service.js";
 
 /** Replies to the agent rather than new work: "thanks", "commit that", "looks good". */
 const CONVERSATIONAL = /^(?:thanks|thank you|thx|ok(?:ay)?|yes|yep|no|nope|sure|great|nice|cool|perfect|continue|go ahead|go on|proceed|looks good|lgtm|sounds good|do it|commit|push|undo|stop|wait)\b/i;
-
-/** Words too common to show that a prompt is about something in this project. */
-const STOPWORDS = new Set(("the and for are but not you all any can had her was one our out has him his how its may new now old see two who "
-  + "did get let say she too use that with have this will your from they know want been good much some time very when come here just like "
-  + "long make many more only over such take than them well were what where which while why would there their could should about after "
-  + "again also back because before being between both does doing down each even every first into it's last most need other same then these "
-  + "those through under until very way work please thanks help fix add make change update code file files project something thing").split(" "));
 
 export type Skip = "short" | "command" | "conversational" | "no-match";
 
@@ -37,6 +31,8 @@ export async function runHook(input: string, env: NodeJS.ProcessEnv = process.en
     const provider = parseProvider(env.CONTEXT_PACKER_HOOK_PROVIDER || "keywords");
     const limit = Number(env.CONTEXT_PACKER_HOOK_LIMIT || 8);
     const deadline = Number(env.CONTEXT_PACKER_HOOK_DEADLINE || 25);
+    const code = Number(env.CONTEXT_PACKER_HOOK_CODE || 0);
+    if (!Number.isInteger(code) || code < 0 || code > 10) return null;
     if (!Number.isInteger(limit) || limit < 1 || limit > 20) return null;
     if (!Number.isFinite(deadline) || deadline <= 0) return null;
 
@@ -48,7 +44,8 @@ export async function runHook(input: string, env: NodeJS.ProcessEnv = process.en
       // nothing to point at, and a model provider would only spend money ranking noise.
       const keywords = await packer.pack({ task: prompt, root, provider: "keywords", limit });
       if (!keywords.result.files.some((f) => Object.keys(f.matches).some((w) => !STOPWORDS.has(w)))) return null;
-      return provider === "keywords" ? keywords : packer.pack({ task: prompt, root, provider, limit });
+      if (provider === "keywords" && code === 0) return keywords;
+      return packer.pack({ task: prompt, root, provider, limit, code });
     };
     const report = await Promise.race([work(), timeout]).finally(() => clearTimeout(timer));
     if (!report || report.result.files.length === 0) return null;

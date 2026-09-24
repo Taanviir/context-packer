@@ -108,6 +108,14 @@ describe("hook", () => {
     expect(parsed.hookSpecificOutput.additionalContext).toContain("src/http/retry.ts");
   });
 
+  it("adds the most relevant lines of the top files when asked", async () => {
+    const report = await new ContextPacker({}).pack({ task: "add exponential backoff to retries", root, code: 1, limit: 3 });
+    expect(Object.keys(report.snippets!)).toEqual(["src/http/retry.ts"]);
+    const text = renderText(report, 3, root);
+    expect(text).toContain("--- src/http/retry.ts lines 1-");
+    expect(text).toContain("exponentialBackoff");
+  });
+
   it("explains picks with matched words", async () => {
     const report = await new ContextPacker({}).pack({ task: "add exponential backoff to retries", root });
     expect(renderText(report, 1, root, { explain: true })).toContain("words: backoff×");
