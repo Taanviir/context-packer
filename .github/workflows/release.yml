@@ -17,12 +17,22 @@ jobs:
           node-version: 24
           registry-url: https://registry.npmjs.org
           cache: npm
-      - name: Tag matches package version
-        run: test "v$(node -p "require('./package.json').version")" = "$GITHUB_REF_NAME"
+      - name: Tag matches package and plugin versions
+        run: |
+          for f in package.json .claude-plugin/plugin.json; do
+            test "v$(node -p "require('./$f').version")" = "$GITHUB_REF_NAME" || { echo "$f version differs from $GITHUB_REF_NAME"; exit 1; }
+          done
+          test "v$(node -p "require('./.claude-plugin/marketplace.json').plugins[0].version")" = "$GITHUB_REF_NAME"
       - run: npm ci
       # Trusted publishing: npm exchanges the workflow's OIDC token, so no NPM_TOKEN secret is stored.
-      - run: npm publish
+      # A version already on npm (such as the first one, published by hand) is left alone.
+      - run: |
+          if npm view "context-packer@${GITHUB_REF_NAME#v}" version >/dev/null 2>&1; then
+            echo "context-packer@${GITHUB_REF_NAME#v} is already on npm"
+          else
+            npm publish
+          fi
       - name: GitHub release
-        run: gh release create "$GITHUB_REF_NAME" --generate-notes --verify-tag
+        run: gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 || gh release create "$GITHUB_REF_NAME" --generate-notes --verify-tag
         env:
           GH_TOKEN: ${{ github.token }}
