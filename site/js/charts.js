@@ -7,12 +7,15 @@ const SERIES = {
 };
 const tooltip = document.querySelector(".tooltip");
 
-/** Charts keep a readable minimum width and scroll inside their figure on narrow screens. */
+/** Charts draw at their real width, so 12px text stays 12px. Below COMPACT, row labels move above their row. */
+const COMPACT = 560;
+const widthOf = (fig) => Math.max(280, Math.round(fig.clientWidth));
 function canvas(fig, attrs) {
   const scroll = document.createElement("div");
   scroll.className = "chart-scroll";
   fig.append(scroll);
-  return el("svg", attrs, scroll);
+  const [, , w, h] = attrs.viewBox.split(" ");
+  return el("svg", { width: w, height: h, ...attrs }, scroll);
 }
 
 function el(name, attrs = {}, parent) {
@@ -83,11 +86,13 @@ const signed = (x) => `${x >= 0 ? "+" : "−"}${Math.abs(x * 100).toFixed(0)}`;
 /** Dot plot: one row per repo, a dot per provider on a shared 0–1 recall axis. */
 function repoChart(summary) {
   const fig = document.getElementById("chart-repos");
+  fig.replaceChildren();
   const repos = Object.entries(summary.repos);
   const used = ["keywords", "jev", "laya"].filter((v) => repos.some(([, r]) => r.test.variants[v]));
   caption(fig, "Needed files found in the top 10", "Each row is one project; further right is better.", used);
-  const W = 720, left = 150, right = 110, row = 40, top = 8, H = top + repos.length * row + 28;
-  const svg = canvas(fig, { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Recall at 10 by repository and provider" });
+  const W = widthOf(fig), compact = W < COMPACT;
+  const left = compact ? 16 : 190, right = 110, row = compact ? 52 : 40, top = compact ? 18 : 8, H = top + repos.length * row + 28;
+  const svg = canvas(fig, { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Share of needed files each tool found in its top 10, per project. The same numbers are in the table below." });
   const x = (v) => left + v * (W - left - right);
   const grid = el("g", { class: "grid axis" }, svg);
   for (const t of [0, 0.25, 0.5, 0.75, 1]) {
@@ -96,9 +101,9 @@ function repoChart(summary) {
   }
   const rows = [];
   repos.forEach(([name, r], i) => {
-    const y = top + i * row + row / 2;
+    const y = top + i * row + row / 2 + (compact ? 6 : 0);
     const v = r.test.variants;
-    el("text", { x: 0, y: y + 4, class: "label" }, svg).textContent = `${name} · ${r.language}`;
+    el("text", compact ? { x: 0, y: y - 16, class: "label" } : { x: 0, y: y + 4, class: "label" }, svg).textContent = `${name} · ${r.language}`;
     const vals = used.filter((s) => v[s]).map((s) => [s, v[s].recall["10"]]);
     const xs = vals.map(([, val]) => x(val));
     el("line", { x1: Math.min(...xs), x2: Math.max(...xs), y1: y, y2: y, stroke: "var(--color-rule-strong)", "stroke-width": 2 }, svg);
@@ -117,6 +122,7 @@ function repoChart(summary) {
 /** Forest plot: paired difference with its 95% interval, per repo and pooled. */
 function diffChart(summary) {
   const fig = document.getElementById("chart-diffs");
+  fig.replaceChildren();
   caption(fig, "Extra needed files found, per 100", "The dot is the measured difference. The line is the range it could plausibly be, given 30 tests per project; a line that crosses zero could be chance.", null);
   const lines = [];
   for (const [name, r] of Object.entries(summary.repos)) {
@@ -126,10 +132,11 @@ function diffChart(summary) {
   const order = ["jev vs keywords", "jev-lang vs jev", "laya vs keywords"];
   lines.sort((a, b) => order.indexOf(a.cmp) - order.indexOf(b.cmp) || (a.name === "pooled") - (b.name === "pooled"));
   const labelOf = { "jev vs keywords": "Jev vs keywords", "jev-lang vs jev": "Per-language summaries vs shipped Jev", "laya vs keywords": "Laya vs keywords" };
-  const W = 720, left = 290, right = 24, row = 30, top = 8, H = top + lines.length * row + 28;
+  const W = widthOf(fig), compact = W < COMPACT;
+  const left = compact ? 18 : 320, right = 24, row = compact ? 44 : 30, top = compact ? 18 : 8, H = top + lines.length * row + 28;
   const lo = Math.min(-0.2, ...lines.map((l) => l.lo)), hi = Math.max(0.3, ...lines.map((l) => l.hi));
   const x = (v) => left + ((v - lo) / (hi - lo)) * (W - left - right);
-  const svg = canvas(fig, { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Paired differences with confidence intervals" });
+  const svg = canvas(fig, { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Extra needed files found per 100, with the plausible range, for each comparison. The same numbers are in the table below." });
   const grid = el("g", { class: "grid axis" }, svg);
   for (let t = Math.ceil(lo * 10) / 10; t <= hi + 1e-9; t += 0.1) {
     el("line", { x1: x(t), x2: x(t), y1: top, y2: H - 24 }, grid);
@@ -137,28 +144,29 @@ function diffChart(summary) {
   }
   el("line", { x1: x(0), x2: x(0), y1: top, y2: H - 24, class: "zero" }, svg);
   lines.forEach((l, i) => {
-    const y = top + i * row + row / 2;
+    const y = top + i * row + row / 2 + (compact ? 6 : 0);
     const color = l.cmp.startsWith("laya") ? SERIES.laya.color : l.cmp === "jev vs keywords" ? SERIES.jev.color : "var(--color-muted)";
-    el("text", { x: 0, y: y + 4, class: l.name === "pooled" ? "value" : "label" }, svg).textContent = `${labelOf[l.cmp]} · ${l.name === "pooled" ? "all projects" : l.name}`;
+    el("text", { x: 0, y: compact ? y - 12 : y + 4, class: l.name === "pooled" ? "value" : "label" }, svg).textContent = `${labelOf[l.cmp]} · ${l.name === "pooled" ? "all projects" : l.name}`;
     el("line", { x1: x(l.lo), x2: x(l.hi), y1: y, y2: y, stroke: color, "stroke-width": 2, "stroke-linecap": "round" }, svg);
     el("circle", { cx: x(l.diff), cy: y, r: l.name === "pooled" ? 6 : 4.5, fill: color, stroke: "var(--color-paper)", "stroke-width": 2 }, svg);
     const hit = el("rect", { x: x(l.lo) - 6, y: y - 10, width: Math.max(12, x(l.hi) - x(l.lo) + 12), height: 20, class: "hit" }, svg);
-    hover(hit, `${labelOf[l.cmp]}, ${l.name}: ${signed(l.diff)} per 100 needed files (plausible range ${signed(l.lo)} to ${signed(l.hi)}), ${l.tasks} tasks`);
+    hover(hit, `${labelOf[l.cmp]}, ${l.name === "pooled" ? "all projects" : l.name}: ${signed(l.diff)} per 100 needed files (plausible range ${signed(l.lo)} to ${signed(l.hi)}), ${l.tasks} tasks`);
   });
-  tableView(fig, ["Comparison", "Project", "Extra files per 100", "Plausible range (95%)", "Tasks"], lines.map((l) => [labelOf[l.cmp], l.name, signed(l.diff), `${signed(l.lo)} to ${signed(l.hi)}`, String(l.tasks)]));
+  tableView(fig, ["Comparison", "Project", "Extra files per 100", "Plausible range (95%)", "Tasks"], lines.map((l) => [labelOf[l.cmp], l.name === "pooled" ? "all projects" : l.name, signed(l.diff), `${signed(l.lo)} to ${signed(l.hi)}`, String(l.tasks)]));
 }
 
 /** Two lines over k = 5, 10, 20, pooled test split. */
 function kChart(summary) {
   const fig = document.getElementById("chart-k");
+  fig.replaceChildren();
   const v = summary.pooled.test.variants;
   const used = ["keywords", "jev"].filter((s) => v[s]);
   caption(fig, "Needed files found in the top 5, 10 and 20", `All ${v.jev.tasks} tasks on the four projects Jev ran on.`, used);
   const ks = ["5", "10", "20"];
-  const W = 720, H = 260, left = 44, right = 90, top = 12, bottom = 30;
+  const W = Math.min(widthOf(fig), 720), H = 260, left = 44, right = 110, top = 12, bottom = 30;
   const x = (i) => left + (i / (ks.length - 1)) * (W - left - right);
   const y = (val) => top + (1 - (val - 0.4) / 0.6) * (H - top - bottom);
-  const svg = canvas(fig, { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Recall at 5, 10 and 20" });
+  const svg = canvas(fig, { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "Share of needed files found in the top 5, 10 and 20, keywords against Jev. The same numbers are in the table below." });
   const grid = el("g", { class: "grid axis" }, svg);
   for (const t of [0.4, 0.6, 0.8, 1]) {
     el("line", { x1: left, x2: W - right, y1: y(t), y2: y(t) }, grid);
@@ -193,7 +201,12 @@ function costTable(summary) {
 
 const summary = await fetch("data/summary.json").then((r) => r.json());
 document.querySelector("[data-generated]").textContent = `Benchmark · generated ${summary.generated}`;
-repoChart(summary);
-diffChart(summary);
-kChart(summary);
+const draw = () => { repoChart(summary); diffChart(summary); kChart(summary); };
+draw();
 costTable(summary);
+let drawnAt = innerWidth;
+addEventListener("resize", () => {
+  if (innerWidth === drawnAt) return;
+  drawnAt = innerWidth;
+  requestAnimationFrame(draw);
+});
