@@ -43,14 +43,14 @@
       <div class="wrap">
         <div class="prose">
           <h2 style="margin-top: 0">Project by project</h2>
-          <p>Thirty tests per project. Jev ran on the four projects on top; Laya ran on gin and httpx, and the two smallest projects have keyword search only.</p>
+          <p>Thirty tests per project. Jev ran on hono, rich, gin and prometheus. Laya ran on gin and httpx. ripgrep has keyword search only.</p>
         </div>
         <figure class="chart" id="chart-repos"></figure>
 
         <div class="prose">
           <h2>Is the difference real or luck?</h2>
           <p>With 30 tests per project, some difference would show up by chance alone. The line around each dot is the range the true difference plausibly sits in (a 95% bootstrap interval). When the whole line is right of zero, the gain is real; when it crosses zero, that project alone can't tell.</p>
-          <p>Across all four projects, Jev finds 9 more needed files per 100 than keyword search, somewhere between 4 and 15. Rewriting the file summaries for each language changed nothing. Laya finds about 6 fewer than keyword search, between 2 and 11 fewer.</p>
+          <p>Across all four projects, Jev finds 9 more needed files per 100 than keyword search, somewhere between 4 and 15. Rewriting the file summaries for each language made no difference. Laya finds about 6 fewer than keyword search, between 2 and 10 fewer.</p>
         </div>
         <figure class="chart" id="chart-diffs"></figure>
 
