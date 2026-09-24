@@ -62,6 +62,17 @@ export class ContextPacker {
   }
 
   async pack(request: PackRequest): Promise<PackReport> {
+    const started = performance.now();
+    request.onProgress?.("Collecting source files");
+    const files = await collect(request.root);
+    if (files.length === 0) throw new RangeError(`No source files found under ${request.root}`);
+    const collectMs = Math.round(performance.now() - started);
+    const report = await this.rank(request, files);
+    return { ...report, collectMs, totalMs: Math.round(performance.now() - started) };
+  }
+
+  /** Ranks files already in memory; `pack` collects them from disk first. The benchmark calls this directly. */
+  async rank(request: Omit<PackRequest, "root">, files: SourceFile[]): Promise<PackReport> {
     const provider = request.provider ?? this.defaultProvider();
     const task = request.task.trim();
     if (!task) throw new RangeError("Task must not be blank");
@@ -72,16 +83,11 @@ export class ContextPacker {
     const keep = request.limit ?? 20;
     if (!Number.isInteger(keep) || keep < 1 || keep > 50) throw new RangeError("limit must be between 1 and 50");
     const progress = request.onProgress ?? (() => {});
-
     const started = performance.now();
-    progress("Collecting source files");
-    const files = await collect(request.root);
-    const collectMs = Math.round(performance.now() - started);
-    if (files.length === 0) throw new RangeError(`No source files found under ${request.root}`);
 
     if (provider === "keywords") {
       const result = packKeywords(task, new Map(files.map((f) => [f.path, f.text])), keep);
-      return report(provider, "bm25", result, files.length, collectMs, started, []);
+      return report(provider, "bm25", result, files.length, started, []);
     }
 
     if (provider === "jev") {
@@ -98,7 +104,7 @@ export class ContextPacker {
         assignRoles: this.env.CONTEXT_PACKER_ROLES !== "0",
       });
       const result = await pack(task, docs, scorer, { ...DEFAULT_PACK_CONFIG, keep }, progress);
-      return report(provider, client.model, result, docs.length, collectMs, started, client.calls.slice(before));
+      return report(provider, client.model, result, docs.length, started, client.calls.slice(before));
     }
 
     const laya = new LayaScorer({
@@ -111,7 +117,7 @@ export class ContextPacker {
     const docs = shortlist.map((f): FileDoc => ({ ...f, sketch: layaSketch(f.path, f.text) }));
     const scored = await pack(task, docs, laya, { ...LAYA_CONFIG, keep }, progress);
     const result = { ...scored, candidates: files.length };
-    return report(provider, `laya/${laya.model}`, result, docs.length, collectMs, started, laya.calls);
+    return report(provider, `laya/${laya.model}`, result, docs.length, started, laya.calls);
   }
 
   /**
@@ -156,7 +162,7 @@ function shortlistFor(task: string, files: SourceFile[], limit: number): SourceF
 }
 
 function report(
-  provider: Provider, model: string, result: PackResult, scored: number, collectMs: number, started: number, calls: CallStat[],
+  provider: Provider, model: string, result: PackResult, scored: number, started: number, calls: CallStat[],
 ): PackReport {
   const inputTokens = calls.reduce((sum, c) => sum + c.inputTokens, 0);
   return {
@@ -164,7 +170,7 @@ function report(
     model,
     result,
     scored,
-    collectMs,
+    collectMs: 0,
     totalMs: Math.round(performance.now() - started),
     calls: calls.length,
     failedCalls: calls.filter((c) => c.error !== null).length,

@@ -1,4 +1,5 @@
 import { execFileSync } from "node:child_process";
+import { existsSync } from "node:fs";
 import { lstat, readFile, readdir, realpath } from "node:fs/promises";
 import path from "node:path";
 
@@ -19,6 +20,34 @@ const SKIP_DIRS = new Set([
   ".git", ".hg", ".svn", "node_modules", "dist", "build", "out", "target", "vendor", "coverage",
   ".venv", "venv", "__pycache__", ".gradle", ".idea", ".next", ".nuxt", ".cache", ".tox", "bin", "obj",
 ]);
+
+/** Files that mark the root of a project, including one package inside a monorepo. */
+const MANIFESTS = [
+  "package.json", "deno.json", "pyproject.toml", "setup.py", "go.mod", "Cargo.toml", "pom.xml", "build.gradle",
+  "build.gradle.kts", "settings.gradle.kts", "composer.json", "Gemfile", "mix.exs", "Package.swift", "CMakeLists.txt",
+];
+
+/**
+ * The project a directory belongs to: the nearest ancestor with a project manifest, stopping at the git
+ * root. Started in `repo/src`, that's the repo; started in `repo/packages/web`, it's that package.
+ */
+export function projectRoot(start: string): string {
+  const dir = path.resolve(start);
+  const top = gitTop(dir);
+  if (!top) return dir;
+  for (let d = dir; ; d = path.dirname(d)) {
+    if (d === top || MANIFESTS.some((m) => existsSync(path.join(d, m)))) return d;
+    if (path.dirname(d) === d || !isInside(top, d)) return top;
+  }
+}
+
+function gitTop(dir: string): string | null {
+  try {
+    return execFileSync("git", ["rev-parse", "--show-toplevel"], { cwd: dir, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim();
+  } catch {
+    return null;
+  }
+}
 
 export interface SourceFile {
   /** Project-relative, forward slashes. */
@@ -45,13 +74,19 @@ export function extensionsFromEnv(env: NodeJS.ProcessEnv = process.env): string[
 export async function collect(root: string, options: CollectOptions = {}): Promise<SourceFile[]> {
   const base = await realpath(root);
   const only = options.extensions ?? extensionsFromEnv();
-  const allowed = (p: string) => {
-    const ext = path.extname(p).slice(1).toLowerCase();
-    return only ? only.includes(ext) : SOURCE_EXTENSIONS.has(ext);
-  };
-  const listed = (gitFiles(base) ?? (await walk(base))).filter(allowed);
+  const listed = (gitFiles(base) ?? (await walk(base))).filter((p) => isSourcePath(p, only));
   const files = await Promise.all(listed.map((rel) => readSource(base, rel)));
   return files.filter((f): f is SourceFile => f !== null).sort((a, b) => (a.path < b.path ? -1 : a.path > b.path ? 1 : 0));
+}
+
+export function isSourcePath(p: string, only?: string[]): boolean {
+  const ext = path.extname(p).slice(1).toLowerCase();
+  return only ? only.includes(ext) : SOURCE_EXTENSIONS.has(ext);
+}
+
+/** A NUL byte means binary, as git decides it. */
+export function looksBinary(bytes: Uint8Array): boolean {
+  return bytes.includes(0);
 }
 
 function gitFiles(base: string): string[] | null {
@@ -90,7 +125,7 @@ async function readSource(base: string, rel: string): Promise<SourceFile | null>
     const hit = cache.get(full);
     if (hit && hit.mtimeMs === stat.mtimeMs && hit.size === stat.size) return hit.text === null ? null : { path: rel, text: hit.text };
     const bytes = await readFile(full);
-    const text = bytes.includes(0) ? null : bytes.toString("utf8");
+    const text = looksBinary(bytes) ? null : bytes.toString("utf8");
     cache.set(full, { mtimeMs: stat.mtimeMs, size: stat.size, text });
     return text === null ? null : { path: rel, text };
   } catch {

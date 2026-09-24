@@ -5,9 +5,10 @@ import path from "node:path";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { InMemoryTransport } from "@modelcontextprotocol/sdk/inMemory.js";
 import { beforeAll, describe, expect, it } from "vitest";
-import { collect } from "../src/files.js";
-import { runHook } from "../src/hook.js";
+import { collect, projectRoot } from "../src/files.js";
+import { runHook, skipReason } from "../src/hook.js";
 import { createServer } from "../src/mcp.js";
+import { renderText } from "../src/render.js";
 import { ContextPacker } from "../src/service.js";
 
 let root: string;
@@ -42,6 +43,24 @@ describe("collect", () => {
 
   it("honours an extension allowlist", async () => {
     expect((await collect(root, { extensions: ["tsx"] })).map((f) => f.path)).toEqual(["src/ui/button.tsx"]);
+  });
+});
+
+describe("projectRoot", () => {
+  it("picks the nearest package inside a monorepo, and the repo root elsewhere", () => {
+    const mono = mkdtempSync(path.join(tmpdir(), "cp-mono-"));
+    mkdirSync(path.join(mono, "packages/web/src"), { recursive: true });
+    mkdirSync(path.join(mono, "docs"), { recursive: true });
+    writeFileSync(path.join(mono, "packages/web/package.json"), "{}");
+    execFileSync("git", ["init", "-q"], { cwd: mono });
+    const real = (p: string) => execFileSync("realpath", [p], { encoding: "utf8" }).trim();
+    expect(real(projectRoot(path.join(mono, "packages/web/src")))).toBe(real(path.join(mono, "packages/web")));
+    expect(real(projectRoot(path.join(mono, "docs")))).toBe(real(mono));
+  });
+
+  it("uses the directory itself outside git", () => {
+    const plain = mkdtempSync(path.join(tmpdir(), "cp-plain-"));
+    expect(projectRoot(plain)).toBe(plain);
   });
 });
 
@@ -87,6 +106,22 @@ describe("hook", () => {
     const parsed = JSON.parse(out!);
     expect(parsed.hookSpecificOutput.hookEventName).toBe("UserPromptSubmit");
     expect(parsed.hookSpecificOutput.additionalContext).toContain("src/http/retry.ts");
+  });
+
+  it("explains picks with matched words", async () => {
+    const report = await new ContextPacker({}).pack({ task: "add exponential backoff to retries", root });
+    expect(renderText(report, 1, root, { explain: true })).toContain("words: backoff×");
+  });
+
+  it("recognises replies that aren't new work", () => {
+    expect(skipReason("thanks, that looks right to me")).toBe("conversational");
+    expect(skipReason("commit this and push it")).toBe("conversational");
+    expect(skipReason("add jitter to the retry backoff")).toBeNull();
+    expect(skipReason("Stop writing to the SSE stream after the client aborts")).toBeNull();
+  });
+
+  it("adds nothing when no distinctive prompt word occurs in the project", async () => {
+    expect(await runHook(JSON.stringify({ prompt: "what should we eat for lunch today", cwd: root }), {})).toBeNull();
   });
 
   it("stays silent for short prompts, slash commands and bad input", async () => {

@@ -23,15 +23,16 @@ export function createServer(defaultRoot: string, packer = new ContextPacker()):
         task: z.string().min(1).describe("The change you are about to make, in a sentence or two, e.g. \"Add exponential backoff to HTTP retries\""),
         limit: z.number().int().min(1).max(20).default(10).describe("How many files to return, 1 to 20"),
         provider: z.enum(PROVIDERS).optional().describe("keywords (local BM25), jev (API key required) or laya (local model). Defaults to CONTEXT_PACKER_PROVIDER, then keywords."),
-        root: z.string().optional().describe("Absolute project directory. Defaults to the directory the server was started in."),
+        root: z.string().optional().describe("Absolute project directory. Defaults to the project the server was started in."),
+        explain: z.boolean().default(false).describe("Add why each file was picked: matched task words, keyword rank and model scores"),
       },
       annotations: { readOnlyHint: true, openWorldHint: true },
     },
-    async ({ task, limit, provider, root }) => {
+    async ({ task, limit, provider, root, explain }) => {
       const dir = path.resolve(defaultRoot, root ?? ".");
       try {
         const report = await packer.pack({ task, root: dir, limit, ...(provider ? { provider } : {}) });
-        return { content: [{ type: "text", text: renderText(report, limit, dir) }] };
+        return { content: [{ type: "text", text: renderText(report, limit, dir, { explain }) }] };
       } catch (error) {
         return { content: [{ type: "text", text: (error as Error).message }], isError: true };
       }

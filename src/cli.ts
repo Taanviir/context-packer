@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import path from "node:path";
 import { parseArgs } from "node:util";
+import { projectRoot } from "./files.js";
 import { runHook } from "./hook.js";
 import { serveStdio } from "./mcp.js";
 import { renderJson, renderText } from "./render.js";
@@ -10,9 +11,11 @@ import { VERSION } from "./version.js";
 const USAGE = `context-packer ${VERSION}: rank the source files a coding task needs.
 
 Usage:
-  context-packer pack "<task>" [--root DIR] [--provider keywords|jev|laya] [--limit N] [--json]
+  context-packer pack "<task>" [--root DIR] [--provider keywords|jev|laya] [--limit N] [--explain] [--json]
   context-packer mcp [--root DIR]     Serve the pack_context tool over MCP stdio
   context-packer hook                 Claude Code UserPromptSubmit hook (reads the payload on stdin)
+
+Without --root, the project is the nearest directory with a manifest (package.json, go.mod, ...) up to the git root.
 
 Environment:
   CONTEXT_PACKER_PROVIDER      Default provider (keywords)
@@ -32,10 +35,11 @@ async function main(argv: string[]): Promise<number> {
       provider: { type: "string", short: "p" },
       limit: { type: "string", short: "n" },
       json: { type: "boolean" },
+      explain: { type: "boolean", short: "e" },
       help: { type: "boolean", short: "h" },
     },
   });
-  const root = path.resolve(values.root ?? ".");
+  const root = values.root ? path.resolve(values.root) : projectRoot(process.env.CLAUDE_PROJECT_DIR || process.cwd());
 
   switch (command) {
     case "pack": {
@@ -54,7 +58,7 @@ async function main(argv: string[]): Promise<number> {
         onProgress: (m) => { if (process.stderr.isTTY) process.stderr.write(`\x1b[2K\r${m}…`); },
       });
       if (process.stderr.isTTY) process.stderr.write("\x1b[2K\r");
-      process.stdout.write((values.json ? renderJson(report, limit, root) : renderText(report, limit, root)) + "\n");
+      process.stdout.write((values.json ? renderJson(report, limit, root) : renderText(report, limit, root, { explain: values.explain ?? false })) + "\n");
       return 0;
     }
     case "mcp":
