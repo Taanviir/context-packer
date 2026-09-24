@@ -183,7 +183,7 @@ function kChart(summary) {
     const [ex, ey] = pts.at(-1);
     el("text", { x: ex + 12, y: ey + 4, class: "value" }, svg).textContent = `${SERIES[s].label} ${pct(v[s].recall["20"])}`;
   }
-  tableView(fig, ["Provider", "Top 5", "Top 10", "Top 20"], used.map((s) => [SERIES[s].label, ...ks.map((k) => pct(v[s].recall[k]))]));
+  tableView(fig, ["Tool", "Top 5", "Top 10", "Top 20"], used.map((s) => [SERIES[s].label, ...ks.map((k) => pct(v[s].recall[k]))]));
 }
 
 function costTable(summary) {
@@ -196,7 +196,7 @@ function costTable(summary) {
         v.ms >= 1000 ? `${(v.ms / 1000).toFixed(1)} s` : `${v.ms} ms`, s === "jev" ? `$${v.costUsd.toFixed(4)}` : "$0", s === "keywords" ? "—" : String(v.failedBatches)]);
     }
   }
-  document.getElementById("table-cost").append(table(["Project", "Provider", "Files", "Found in top 5", "Top 10", "Top 20", "Time", "Cost", "Failed requests"], rows));
+  document.getElementById("table-cost").append(table(["Project", "Tool", "Files in project", "Top 5", "Top 10", "Top 20", "Time", "Cost", "Failed requests"], rows));
 }
 
 const summary = await fetch("data/summary.json").then((r) => r.json());
