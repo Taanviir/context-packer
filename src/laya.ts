@@ -1,4 +1,4 @@
-import type { CallStat } from "./jev.js";
+import { semaphore, type CallStat } from "./jev.js";
 import { ScorerUnavailableError, type Items, type Scorer } from "./packer.js";
 
 export const DEFAULT_LAYA_ENDPOINT = "http://127.0.0.1:8770/api/predict";
@@ -27,6 +27,8 @@ export class LayaScorer implements Scorer {
   private readonly timeoutMs: number;
   private readonly maxExcerptChars: number;
   private readonly fetch: typeof fetch;
+  /** Shared by every batch: the packer runs batches concurrently, but the server serves one request at a time. */
+  private readonly oneAtATime = semaphore(1);
 
   constructor(options: LayaOptions = {}) {
     const endpoint = options.endpoint || DEFAULT_LAYA_ENDPOINT;
@@ -54,7 +56,7 @@ export class LayaScorer implements Scorer {
    */
   async score(task: string, items: Items): Promise<Map<string, number>> {
     const scores = new Map<string, number>();
-    for (const [path, text] of items) scores.set(path, await this.predict(task, path, text));
+    for (const [path, text] of items) scores.set(path, await this.oneAtATime(() => this.predict(task, path, text)));
     return scores;
   }
 

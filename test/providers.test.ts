@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { JevClient, JevScorer, parseJevResponse } from "../src/jev.js";
 import { LayaScorer } from "../src/laya.js";
-import { ScorerUnavailableError } from "../src/packer.js";
+import { ContentRejectedError, ScorerUnavailableError } from "../src/packer.js";
 
 const fixture = (name: string) => readFileSync(new URL(`./fixtures/${name}`, import.meta.url), "utf8");
 
@@ -66,6 +66,11 @@ describe("Jev", () => {
     expect(denied.sent.length).toBe(1);
   });
 
+  it("reports an HTML 403 as rejected content, not a bad key", async () => {
+    const { impl } = fakeFetch([{ status: 403, body: "<!DOCTYPE html><title>Attention Required!</title>" }]);
+    await expect(new JevScorer(new JevClient({ apiKey: "k", fetch: impl })).score("t", [["a", ""]])).rejects.toBeInstanceOf(ContentRejectedError);
+  });
+
   it("treats missing usage as unknown, not zero", () => {
     expect(parseJevResponse('{"answers":{}}').usageKnown).toBe(false);
   });
@@ -86,6 +91,20 @@ describe("Laya", () => {
     expect([...scores.values()]).toEqual([0.4, 0.4]);
     expect(sent.length).toBe(2);
     expect(sent[0]!.body.state.length).toBe("File: a.ts\n".length + 1000);
+  });
+
+  it("sends one request at a time even when the packer scores batches in parallel", async () => {
+    let inFlight = 0;
+    let most = 0;
+    const impl = (async () => {
+      most = Math.max(most, ++inFlight);
+      await new Promise((r) => setTimeout(r, 5));
+      inFlight--;
+      return new Response(JSON.stringify({ answers: { relevant: { noul: 0.5 } } }));
+    }) as typeof fetch;
+    const laya = new LayaScorer({ fetch: impl });
+    await Promise.all([laya.score("t", [["a", ""]]), laya.score("t", [["b", ""]]), laya.score("t", [["c", ""]])]);
+    expect(most).toBe(1);
   });
 
   it("reports an unreachable server as a provider-wide outage", async () => {
