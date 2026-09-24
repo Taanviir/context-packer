@@ -1,0 +1,418 @@
+{
+ "repo": "rich",
+ "split": "dev",
+ "variant": "jev",
+ "results": [
+  {
+   "id": "rich-73ad8ef1f7",
+   "task": "Stop showing colon after exception type when there is no message",
+   "gold": [
+    "rich/traceback.py"
+   ],
+   "candidates": 166,
+   "ranked": [
+    "rich/traceback.py",
+    "rich/logging.py",
+    "rich/_inspect.py",
+    "rich/prompt.py",
+    "tests/test_traceback.py",
+    "rich/console.py",
+    "rich/live.py",
+    "rich/errors.py",
+    "rich/progress.py",
+    "tests/test_logging.py",
+    "rich/markup.py",
+    "rich/ansi.py",
+    "rich/markdown.py",
+    "rich/style.py",
+    "rich/pretty.py",
+    "rich/bar.py",
+    "rich/color.py",
+    "rich/__main__.py",
+    "tests/test_highlighter.py",
+    "rich/status.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2023,
+   "calls": 21,
+   "failedBatches": 0,
+   "inputTokens": 142334,
+   "costUsd": 0.005978028
+  },
+  {
+   "id": "rich-d6ad92a15d",
+   "task": "draw panel around value in inspect",
+   "gold": [
+    "rich/_inspect.py",
+    "rich/default_styles.py",
+    "rich/logging.py",
+    "tests/test_inspect.py"
+   ],
+   "candidates": 151,
+   "ranked": [
+    "rich/_inspect.py",
+    "rich/panel.py",
+    "rich/__init__.py",
+    "tests/test_inspect.py",
+    "rich/default_styles.py",
+    "rich/scope.py",
+    "rich/padding.py",
+    "rich/pretty.py",
+    "rich/markdown.py",
+    "rich/traceback.py",
+    "rich/rule.py",
+    "rich/table.py",
+    "rich/columns.py",
+    "tools/stress_test_pretty.py",
+    "rich/style.py",
+    "rich/diagnose.py",
+    "rich/console.py",
+    "rich/box.py",
+    "tests/test_panel.py",
+    "rich/segment.py"
+   ],
+   "recall": {
+    "5": 0.75,
+    "10": 0.75,
+    "20": 0.75
+   },
+   "ms": 1748,
+   "calls": 21,
+   "failedBatches": 0,
+   "inputTokens": 137336,
+   "costUsd": 0.005768112
+  },
+  {
+   "id": "rich-f591471cf0",
+   "task": "Fix [BUG] @ breaks highlighting in hyperlink #3327",
+   "gold": [
+    "rich/highlighter.py",
+    "tests/test_highlighter.py"
+   ],
+   "candidates": 189,
+   "ranked": [
+    "rich/markup.py",
+    "rich/highlighter.py",
+    "rich/markdown.py",
+    "rich/containers.py",
+    "rich/_wrap.py",
+    "tests/conftest.py",
+    "rich/text.py",
+    "tests/test_markdown.py",
+    "rich/json.py",
+    "rich/traceback.py",
+    "rich/jupyter.py",
+    "rich/console.py",
+    "benchmarks/snippets.py",
+    "rich/style.py",
+    "rich/_inspect.py",
+    "rich/panel.py",
+    "rich/__init__.py",
+    "rich/ansi.py",
+    "rich/logging.py",
+    "tests/test_traceback.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 1989,
+   "calls": 22,
+   "failedBatches": 0,
+   "inputTokens": 168680,
+   "costUsd": 0.00708456
+  },
+  {
+   "id": "rich-c2265eb103",
+   "task": "Add highlight for EUI-48 and EUI-64 (MAC address)",
+   "gold": [
+    "rich/default_styles.py",
+    "rich/highlighter.py"
+   ],
+   "candidates": 127,
+   "ranked": [
+    "rich/highlighter.py",
+    "rich/syntax.py",
+    "rich/text.py",
+    "rich/filesize.py",
+    "tests/_card_render.py",
+    "tests/test_text.py",
+    "rich/color.py",
+    "rich/console.py",
+    "tests/test_markdown_no_hyperlinks.py",
+    "rich/markdown.py",
+    "tests/test_syntax.py",
+    "tests/test_markdown.py",
+    "rich/default_styles.py",
+    "rich/pretty.py",
+    "examples/log.py",
+    "examples/downloader.py",
+    "tests/test_table.py",
+    "rich/theme.py",
+    "examples/table_movie.py",
+    "rich/table.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 1802,
+   "calls": 20,
+   "failedBatches": 0,
+   "inputTokens": 155653,
+   "costUsd": 0.006537426000000001
+  },
+  {
+   "id": "rich-5855c0b0f6",
+   "task": "bright standard colors, started table",
+   "gold": [
+    "rich/box.py",
+    "rich/color.py",
+    "rich/console.py",
+    "rich/style.py"
+   ],
+   "candidates": 20,
+   "ranked": [
+    "rich/default_styles.py",
+    "rich/color.py",
+    "rich/_palette.py",
+    "rich/colors.py",
+    "rich/box.py",
+    "rich/console.py",
+    "rich/__init__.py",
+    "rich/text.py",
+    "rich/syntax.py",
+    "rich/style.py",
+    "rich/_emoji_replace.py",
+    "rich/markdown.py",
+    "rich/_stack.py",
+    "rich/_tools.py",
+    "rich/emoji.py",
+    "rich/panel.py",
+    "rich/_version.py",
+    "rich/segment.py",
+    "rich/errors.py",
+    "tools/make_emoji.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1346,
+   "calls": 7,
+   "failedBatches": 0,
+   "inputTokens": 56856,
+   "costUsd": 0.002387952
+  },
+  {
+   "id": "rich-a3fcdbe210",
+   "task": "Extract ipy display hook and add tests around it",
+   "gold": [
+    "rich/pretty.py",
+    "tests/test_pretty.py"
+   ],
+   "candidates": 176,
+   "ranked": [
+    "rich/pretty.py",
+    "rich/jupyter.py",
+    "rich/live.py",
+    "rich/console.py",
+    "rich/traceback.py",
+    "tests/test_live.py",
+    "rich/_extension.py",
+    "rich/__init__.py",
+    "examples/columns.py",
+    "rich/panel.py",
+    "tests/test_pretty.py",
+    "rich/table.py",
+    "rich/_inspect.py",
+    "rich/columns.py",
+    "rich/_log_render.py",
+    "tests/test_jupyter.py",
+    "rich/tree.py",
+    "rich/progress.py",
+    "rich/prompt.py",
+    "rich/spinner.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 2707,
+   "calls": 21,
+   "failedBatches": 0,
+   "inputTokens": 154217,
+   "costUsd": 0.006477114000000001
+  },
+  {
+   "id": "rich-0fdf3cf0a6",
+   "task": "Assert that the element popped on link_close is a Link",
+   "gold": [
+    "rich/markdown.py"
+   ],
+   "candidates": 185,
+   "ranked": [
+    "rich/markup.py",
+    "rich/markdown.py",
+    "tests/test_markup.py",
+    "rich/console.py",
+    "rich/style.py",
+    "rich/pretty.py",
+    "rich/ansi.py",
+    "tests/test_style.py",
+    "rich/_stack.py",
+    "rich/logging.py",
+    "rich/live.py",
+    "rich/progress.py",
+    "tests/test_console.py",
+    "rich/segment.py",
+    "tests/test_stack.py",
+    "tests/test_logging.py",
+    "tests/test_segment.py",
+    "tests/test_align.py",
+    "rich/_ratio.py",
+    "rich/_win32_console.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2137,
+   "calls": 22,
+   "failedBatches": 0,
+   "inputTokens": 162733,
+   "costUsd": 0.006834786
+  },
+  {
+   "id": "rich-697f2c8ed9",
+   "task": "tweaks to ipython, add margin",
+   "gold": [
+    "rich/pretty.py"
+   ],
+   "candidates": 151,
+   "ranked": [
+    "rich/jupyter.py",
+    "rich/pretty.py",
+    "docs/source/conf.py",
+    "rich/columns.py",
+    "rich/console.py",
+    "rich/table.py",
+    "examples/table.py",
+    "rich/scope.py",
+    "rich/_inspect.py",
+    "rich/__main__.py",
+    "rich/padding.py",
+    "rich/syntax.py",
+    "rich/segment.py",
+    "rich/progress.py",
+    "rich/text.py",
+    "rich/panel.py",
+    "rich/box.py",
+    "rich/markdown.py",
+    "rich/live.py",
+    "rich/_log_render.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2096,
+   "calls": 20,
+   "failedBatches": 0,
+   "inputTokens": 129937,
+   "costUsd": 0.005457354
+  },
+  {
+   "id": "rich-da10ca92fc",
+   "task": "Add JUPYTER_COLUMNS/JUPYTER_LINES and tests",
+   "gold": [
+    "rich/console.py",
+    "tests/test_jupyter.py"
+   ],
+   "candidates": 186,
+   "ranked": [
+    "rich/console.py",
+    "rich/table.py",
+    "tests/test_table.py",
+    "rich/tree.py",
+    "rich/syntax.py",
+    "rich/text.py",
+    "rich/columns.py",
+    "rich/align.py",
+    "rich/progress.py",
+    "rich/padding.py",
+    "tests/test_columns.py",
+    "rich/panel.py",
+    "rich/jupyter.py",
+    "rich/pretty.py",
+    "rich/cells.py",
+    "rich/live.py",
+    "tests/test_console.py",
+    "tests/test_panel.py",
+    "rich/segment.py",
+    "tests/test_layout.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 2228,
+   "calls": 21,
+   "failedBatches": 0,
+   "inputTokens": 157935,
+   "costUsd": 0.00663327
+  },
+  {
+   "id": "rich-6ccbaee622",
+   "task": "file/dumb_terminal console will now print out the final result",
+   "gold": [
+    "rich/live.py",
+    "tests/test_live.py"
+   ],
+   "candidates": 137,
+   "ranked": [
+    "rich/console.py",
+    "tests/test_console.py",
+    "rich/live.py",
+    "tests/test_lrucache.py",
+    "rich/logging.py",
+    "rich/markdown.py",
+    "tests/test_prompt.py",
+    "tests/test_align.py",
+    "rich/progress.py",
+    "rich/__init__.py",
+    "rich/__main__.py",
+    "tests/test_rule.py",
+    "tests/test_progress.py",
+    "rich/panel.py",
+    "tests/test_markdown.py",
+    "tests/test_logging.py",
+    "rich/_windows.py",
+    "tools/make_terminal_widths.py",
+    "tests/test_panel.py",
+    "tests/test_styled.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 1802,
+   "calls": 20,
+   "failedBatches": 0,
+   "inputTokens": 124941,
+   "costUsd": 0.005247522
+  }
+ ]
+}

@@ -1,0 +1,438 @@
+{
+ "repo": "prometheus",
+ "url": "https://github.com/prometheus/prometheus",
+ "head": "5f325dd18c88077d00a0e54554b3433696a24664",
+ "eligible": 5149,
+ "dev": [
+  {
+   "id": "prometheus-e0af2aa10d",
+   "repo": "prometheus",
+   "commit": "e0af2aa10d83e3b63b04df4baad8a2ddcd1f7607",
+   "parent": "38c29bc2e26f6fe52d347c6d325552cf68810454",
+   "task": "discovery/aws: avoid panic on truncated ElastiCache ARNs",
+   "gold": [
+    "discovery/aws/elasticache.go",
+    "discovery/aws/elasticache_test.go"
+   ]
+  },
+  {
+   "id": "prometheus-a64b9fe323",
+   "repo": "prometheus",
+   "commit": "a64b9fe323cf913c212c1829fe93d1a9dbc63348",
+   "parent": "ed091a1fb95c3f46c2dc8d5b66df4e6d280534d5",
+   "task": "Report PeakSamples in query statistics",
+   "gold": [
+    "promql/engine.go",
+    "promql/engine_test.go",
+    "util/stats/query_stats.go"
+   ]
+  },
+  {
+   "id": "prometheus-e829dbe2be",
+   "repo": "prometheus",
+   "commit": "e829dbe2beac6fb4b0618f12e64ec874b254fadb",
+   "parent": "0f3110487d3d9ff8c2d1f228dc40fc2b52a55ad4",
+   "task": "comment out accept header again",
+   "gold": [
+    "retrieval/scrape.go"
+   ]
+  },
+  {
+   "id": "prometheus-20815562d2",
+   "repo": "prometheus",
+   "commit": "20815562d224f87248cd0b52b2b46b44153aed8b",
+   "parent": "05612757b488728392dd36835e49fd8d5348b884",
+   "task": "[BUGFIX] PromQL: fix more slice indexing bugs in info function",
+   "gold": [
+    "promql/info.go"
+   ]
+  },
+  {
+   "id": "prometheus-2c715d22cf",
+   "repo": "prometheus",
+   "commit": "2c715d22cf96e57851b0ce313d2192a4f2e64e75",
+   "parent": "dc22f74153c4613ea9e002edfc1cf444e085d86a",
+   "task": "Fix zk connection leak",
+   "gold": [
+    "util/treecache/treecache.go"
+   ]
+  },
+  {
+   "id": "prometheus-a00f18d78b",
+   "repo": "prometheus",
+   "commit": "a00f18d78bc67d08c8bfc139513109e144155b1f",
+   "parent": "cc989c68e1289e8f1b9f6e1f3b385358a6653597",
+   "task": "Code Review: Manual re-alignment.",
+   "gold": [
+    "storage/metric/curator.go"
+   ]
+  },
+  {
+   "id": "prometheus-f63a899744",
+   "repo": "prometheus",
+   "commit": "f63a899744b54ed212914aa943e57fc80f2f2f55",
+   "parent": "dfbda8fd3f842ac5afd76accb2a3d5074f9ad29e",
+   "task": "Change config regexes to full-string matches.",
+   "gold": [
+    "config/config.go",
+    "config/config_test.go",
+    "retrieval/relabel_test.go",
+    "retrieval/target_test.go",
+    "retrieval/targetmanager_test.go"
+   ]
+  },
+  {
+   "id": "prometheus-00ea36cdbe",
+   "repo": "prometheus",
+   "commit": "00ea36cdbe3b372b0223a3667b6108bdac181d5e",
+   "parent": "40f8da699ecfece9f6aaf8a46ebbee63fc026e8f",
+   "task": "Error on non-flag commandline arguments",
+   "gold": [
+    "cmd/prometheus/config.go"
+   ]
+  },
+  {
+   "id": "prometheus-3da825fc76",
+   "repo": "prometheus",
+   "commit": "3da825fc76252155aade2bb25203428579df42e8",
+   "parent": "d77078377747fb7ccb93c4932e7e2e3bfe861fd6",
+   "task": "Point to correct place for GraphLinkForExpression",
+   "gold": [
+    "web/ui/static/js/graph.js"
+   ]
+  },
+  {
+   "id": "prometheus-acee998df6",
+   "repo": "prometheus",
+   "commit": "acee998df69777b2f7e6b7634a87fd0031ff96f4",
+   "parent": "a6e18916ab4090a21e222e040458b52ca5053cf7",
+   "task": "CNAME responses can occur with \"Type: A\" dns_sd_config requests",
+   "gold": [
+    "discovery/dns/dns.go"
+   ]
+  }
+ ],
+ "test": [
+  {
+   "id": "prometheus-65b4696b88",
+   "repo": "prometheus",
+   "commit": "65b4696b88521197668c09dd08dd5e46777c6845",
+   "parent": "2c1f9558b26341c1842150dd235e0d01ef939b96",
+   "task": "Remove leftover debug output",
+   "gold": [
+    "promql/test.go"
+   ]
+  },
+  {
+   "id": "prometheus-192e665317",
+   "repo": "prometheus",
+   "commit": "192e665317a9bdd35469a59a7393e636b34ba1c2",
+   "parent": "0471e64ad11ad8fadf063960bbe93bc715539afe",
+   "task": "Allow parsing from bytes instead of file",
+   "gold": [
+    "pkg/rulefmt/rulefmt.go"
+   ]
+  },
+  {
+   "id": "prometheus-82c7cd320a",
+   "repo": "prometheus",
+   "commit": "82c7cd320a8a2933c353d661a26a5ab61b9e84c1",
+   "parent": "f9d21f10ecd2a343a381044f131ea4e46381ce09",
+   "task": "increase the remote write bucket range",
+   "gold": [
+    "storage/remote/queue_manager.go"
+   ]
+  },
+  {
+   "id": "prometheus-2a1b940ae4",
+   "repo": "prometheus",
+   "commit": "2a1b940ae43cb69c4f399dceda4c7b59b2593123",
+   "parent": "872e2db2a99b454498ec0278108978dcf66c28d2",
+   "task": "fix some function names in comment",
+   "gold": [
+    "discovery/consul/consul.go"
+   ]
+  },
+  {
+   "id": "prometheus-a197508d09",
+   "repo": "prometheus",
+   "commit": "a197508d09e092375b5106e81ef17ac75ebeb2e2",
+   "parent": "38fec5345d954cdf2dc09ef1b089b10b2496bea8",
+   "task": "Add docker swarm test",
+   "gold": [
+    "config/config_test.go",
+    "discovery/dockerswarm/dockerswarm.go"
+   ]
+  },
+  {
+   "id": "prometheus-39aa66e46e",
+   "repo": "prometheus",
+   "commit": "39aa66e46e894aeb7cf7de4dc310ca9409d6df11",
+   "parent": "bc09484608909a18ef7cafbb063a36a9acc16878",
+   "task": "Place storage under working directory by default.",
+   "gold": [
+    "main.go"
+   ]
+  },
+  {
+   "id": "prometheus-7608ee87d0",
+   "repo": "prometheus",
+   "commit": "7608ee87d0f816c0ea0ee359d30c4d674d3c22bc",
+   "parent": "41b0580e7e7f4c08825c0e8b65d0cbf866bb4df8",
+   "task": "Inital support for Azure VMSS",
+   "gold": [
+    "discovery/azure/azure.go"
+   ]
+  },
+  {
+   "id": "prometheus-79869d9a4d",
+   "repo": "prometheus",
+   "commit": "79869d9a4d3d29c494d626aa626724688bbcbe3d",
+   "parent": "79aa611d561e461b51d178118b52bc860f60fce0",
+   "task": "fix race for minValidTime",
+   "gold": [
+    "head.go"
+   ]
+  },
+  {
+   "id": "prometheus-109f9409ed",
+   "repo": "prometheus",
+   "commit": "109f9409ed8df64561bd01870ad16165f036558b",
+   "parent": "d10d3df34522811f01a281680f4331234811d00d",
+   "task": "[BugFix] UI : autocomplete metadata for OpenMetrics counter _total metrics",
+   "gold": [
+    "web/ui/mantine-ui/src/pages/query/ExplainViews/Selector.tsx",
+    "web/ui/mantine-ui/src/pages/query/MetricsExplorer/MetricsExplorer.tsx",
+    "web/ui/module/codemirror-promql/src/complete/hybrid.test.ts",
+    "web/ui/module/codemirror-promql/src/complete/hybrid.ts"
+   ]
+  },
+  {
+   "id": "prometheus-7711cd5ab5",
+   "repo": "prometheus",
+   "commit": "7711cd5ab5a61d974f7cafa4f83a98a99a3a34e7",
+   "parent": "8a5193d0e20ab4f281204b5beaa42abbacf52173",
+   "task": "Remove deprecated storage.tsdb.retention flag",
+   "gold": [
+    "cmd/prometheus/main.go",
+    "web/ui/react-app/src/pages/flags/Flags.test.tsx"
+   ]
+  },
+  {
+   "id": "prometheus-e9885ecb94",
+   "repo": "prometheus",
+   "commit": "e9885ecb9437be8ca83ba2767b7d5e64aadfe8f7",
+   "parent": "6bfd30269adda08a621bf5a9763f2ddab3b4d6c3",
+   "task": "Avoid divide-by-zero panic on query_range?step=0",
+   "gold": [
+    "web/api/v1/api.go",
+    "web/api/v1/api_test.go"
+   ]
+  },
+  {
+   "id": "prometheus-1ea3781699",
+   "repo": "prometheus",
+   "commit": "1ea37816996ada0873c8d136c0033580e9a0301b",
+   "parent": "9e43ad2e3710b8051c0c3b7bc70353cb65bd197f",
+   "task": "Fix ToEncodedChunks minT for recoded chunks",
+   "gold": [
+    "tsdb/head_append.go",
+    "tsdb/ooo_head.go",
+    "tsdb/ooo_head_test.go"
+   ]
+  },
+  {
+   "id": "prometheus-1801cd4196",
+   "repo": "prometheus",
+   "commit": "1801cd41966be6c9566bb0104cfa7bafc2a6a7fa",
+   "parent": "7309ac272195cb856b879306d6a27af7641d3346",
+   "task": "small optimization to stringlabels",
+   "gold": [
+    "model/labels/labels_string.go"
+   ]
+  },
+  {
+   "id": "prometheus-a3376e8f36",
+   "repo": "prometheus",
+   "commit": "a3376e8f365274593ceea5f7be0317b07ef1243f",
+   "parent": "afdb66dfacb46a665a3008b85925093faa84295c",
+   "task": "add query labels command to promtool",
+   "gold": [
+    "cmd/promtool/main.go"
+   ]
+  },
+  {
+   "id": "prometheus-8a8eb12985",
+   "repo": "prometheus",
+   "commit": "8a8eb12985f6ae5cb43f023a07c438cad5b1e08e",
+   "parent": "9eb1d6c9270f1ab7ecdd2a7e73b07d1f74df9d1f",
+   "task": "storage/tsdb: don't use partitioned DB.",
+   "gold": [
+    "storage/tsdb/tsdb.go"
+   ]
+  },
+  {
+   "id": "prometheus-383f0d4204",
+   "repo": "prometheus",
+   "commit": "383f0d4204e89b30675e77d000b31f7670dbe4b1",
+   "parent": "fa365c3a62f50e01f6ca68e4b09d5fdddc591a7c",
+   "task": "allow selecting the float chunk encoding in seriesToChunkEncoder",
+   "gold": [
+    "storage/merge.go",
+    "storage/merge_test.go",
+    "storage/series.go",
+    "storage/series_test.go"
+   ]
+  },
+  {
+   "id": "prometheus-7ad55ef83c",
+   "repo": "prometheus",
+   "commit": "7ad55ef83cb0e84d3d799c72017791825f0f3427",
+   "parent": "8fba3302bcb87c3a6290f7e3777b07d5977ea9e9",
+   "task": "Actually close the iterator channels.",
+   "gold": [
+    "storage/local/series.go"
+   ]
+  },
+  {
+   "id": "prometheus-4a83e6f453",
+   "repo": "prometheus",
+   "commit": "4a83e6f453c8bf838abe00d7d6fc9b3ea2569b90",
+   "parent": "9fae120f2a6daa420530e44559c67ce27cb6e7eb",
+   "task": "Remove agent mode warnings when loading configs",
+   "gold": [
+    "cmd/prometheus/main.go"
+   ]
+  },
+  {
+   "id": "prometheus-683b4c8c2a",
+   "repo": "prometheus",
+   "commit": "683b4c8c2aeaa7516268ec77cb2d430f3b1d0565",
+   "parent": "3a5ae6b1a421c1f794c2087919d84912dbda3fa2",
+   "task": "Add list of source head blocks to meta.json",
+   "gold": [
+    "block.go",
+    "compact.go"
+   ]
+  },
+  {
+   "id": "prometheus-791a2409a2",
+   "repo": "prometheus",
+   "commit": "791a2409a22ffa05e24f5ce754169348afc8e308",
+   "parent": "160186da18d8daa39b2318f9bb7263fc106847b9",
+   "task": "Pre-allocate pendingSamples to reduce allocations",
+   "gold": [
+    "storage/remote/codec.go",
+    "storage/remote/queue_manager.go",
+    "storage/remote/read_test.go"
+   ]
+  },
+  {
+   "id": "prometheus-63cdd6dbe1",
+   "repo": "prometheus",
+   "commit": "63cdd6dbe1fa2c113b2f50d88a1634244a89a60a",
+   "parent": "102fd8cc88be0bfce83ec6dfc527be2894ae8524",
+   "task": "skip merging when no remote storage configured",
+   "gold": [
+    "storage/fanout.go",
+    "storage/merge.go"
+   ]
+  },
+  {
+   "id": "prometheus-7541baff87",
+   "repo": "prometheus",
+   "commit": "7541baff87e47ff4e98b06ef5c7b2dbb5ab8fa23",
+   "parent": "fc1a36d476b6641b08a954fb3c882b2474259661",
+   "task": "Make build script compatible with older gzip",
+   "gold": [
+    "scripts/compress_assets.sh"
+   ]
+  },
+  {
+   "id": "prometheus-b7a5e280df",
+   "repo": "prometheus",
+   "commit": "b7a5e280dfa15c9b9acef6c0f228ad17e708e1ff",
+   "parent": "3380809b682ba65faaf6cb4ff48ddf543903efbe",
+   "task": "Inline conditionals and CT handling",
+   "gold": [
+    "storage/remote/write_handler.go"
+   ]
+  },
+  {
+   "id": "prometheus-0c577c547b",
+   "repo": "prometheus",
+   "commit": "0c577c547b3691271954aacdc3484e02bda494af",
+   "parent": "7369561305f4b895dff67a85859213e6ee4d57ef",
+   "task": "add negative offset ability",
+   "gold": [
+    "promql/parser/parse.go",
+    "promql/parser/parse_test.go"
+   ]
+  },
+  {
+   "id": "prometheus-d1c8550894",
+   "repo": "prometheus",
+   "commit": "d1c8550894f036e568c0523e0fc51614fb30554a",
+   "parent": "82ffdae1f3da6ace0fd61fddc766f88677a70e9d",
+   "task": "Scaleway SD: Add more labels to the instance role",
+   "gold": [
+    "discovery/scaleway/instance.go",
+    "discovery/scaleway/instance_test.go"
+   ]
+  },
+  {
+   "id": "prometheus-dffe5b3b2e",
+   "repo": "prometheus",
+   "commit": "dffe5b3b2e2838afea9110603033765431a88e9b",
+   "parent": "678e3b376332bb9074c8e01e8b2ba1f971f54370",
+   "task": "add parens to clarify operator precedence in extrapolatedRate",
+   "gold": [
+    "promql/functions.go"
+   ]
+  },
+  {
+   "id": "prometheus-372e7652b7",
+   "repo": "prometheus",
+   "commit": "372e7652b7cb305edd17bde63321524fd38bc94b",
+   "parent": "0be25f92e2c9b3fbfc9440ffe4a6b157f079ba62",
+   "task": "Reuse (copy) overlapping matrix samples between range evaluation steps",
+   "gold": [
+    "promql/bench_test.go",
+    "promql/engine.go",
+    "storage/buffer.go"
+   ]
+  },
+  {
+   "id": "prometheus-aa61e392b2",
+   "repo": "prometheus",
+   "commit": "aa61e392b23847a771541768e033c2a2c17bb853",
+   "parent": "56ebd5afde459dbbc53c2024279dbb36e4f66113",
+   "task": "Make remote client `Store` use passed context",
+   "gold": [
+    "storage/remote/client.go"
+   ]
+  },
+  {
+   "id": "prometheus-2ce94ac196",
+   "repo": "prometheus",
+   "commit": "2ce94ac19673a3f7faf164e9e078a79d4d52b767",
+   "parent": "931acc3ee8f0f4e0eac68b4a2c4d880df7d82944",
+   "task": "Add '--weight' flag to 'promtool check metrics' command",
+   "gold": [
+    "cmd/promtool/main.go",
+    "cmd/promtool/main_test.go"
+   ]
+  },
+  {
+   "id": "prometheus-22db9c3413",
+   "repo": "prometheus",
+   "commit": "22db9c34135d1984b94d3f96636dff340d4586b8",
+   "parent": "fde69dab49396fab96d03f49df74182ecbde3158",
+   "task": "Remove old appendBatch methods",
+   "gold": [
+    "db.go",
+    "head.go"
+   ]
+  }
+ ]
+}

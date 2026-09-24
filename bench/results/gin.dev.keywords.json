@@ -1,0 +1,398 @@
+{
+ "repo": "gin",
+ "split": "dev",
+ "variant": "keywords",
+ "results": [
+  {
+   "id": "gin-e23842ecab",
+   "task": "fix json sort the map keys",
+   "gold": [
+    "binding/json.go",
+    "context_test.go",
+    "errors.go",
+    "errors_test.go",
+    "render/json.go"
+   ],
+   "candidates": 77,
+   "ranked": [
+    "context.go",
+    "errors.go",
+    "githubapi_test.go",
+    "context_test.go",
+    "tree.go",
+    "gin.go",
+    "render/render_test.go",
+    "tree_test.go",
+    "binding/binding_test.go",
+    "binding/example/test.pb.go",
+    "errors_test.go",
+    "examples/basic/main.go",
+    "examples/realtime-advanced/resources/static/realtime.js",
+    "examples/realtime-advanced/resources/static/prismjs.min.js",
+    "middleware_test.go",
+    "logger.go",
+    "render/json.go",
+    "binding/json.go",
+    "binding/form_mapping.go",
+    "binding/binding.go"
+   ],
+   "recall": {
+    "5": 0.4,
+    "10": 0.4,
+    "20": 1
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-5eea51b6c9",
+   "task": "add cast helpers to c.Keys",
+   "gold": [
+    "context.go",
+    "context_test.go"
+   ],
+   "candidates": 76,
+   "ranked": [
+    "test_helpers.go",
+    "context.go",
+    "githubapi_test.go",
+    "context_test.go",
+    "binding/protobuf.go",
+    "examples/realtime-advanced/resources/static/prismjs.min.js",
+    "path.go",
+    "examples/realtime-chat/template.go",
+    "tree.go",
+    "routergroup.go",
+    "examples/realtime-advanced/routes.go",
+    "errors.go",
+    "ginS/gins.go",
+    "gin.go",
+    "gin_test.go",
+    "tree_test.go",
+    "binding/binding_test.go",
+    "examples/realtime-advanced/resources/static/realtime.js",
+    "routes_test.go",
+    "gin_integration_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-44d0dd7092",
+   "task": "Add pointer support for url query params (#3659)",
+   "gold": [
+    "binding/form_mapping.go",
+    "binding/form_mapping_test.go"
+   ],
+   "candidates": 93,
+   "ranked": [
+    "context.go",
+    "tree.go",
+    "binding/binding_test.go",
+    "tree_test.go",
+    "context_test.go",
+    "gin.go",
+    "logger.go",
+    "binding/binding_nomsgpack.go",
+    "binding/binding.go",
+    "gin_test.go",
+    "gin_integration_test.go",
+    "routes_test.go",
+    "binding/query.go",
+    "routergroup.go",
+    "path.go",
+    "debug.go",
+    "logger_test.go",
+    "binding/validate_test.go",
+    "debug_test.go",
+    "mode.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 9,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-22f118f3b6",
+   "task": "Adds gin.Bind() usage panic!",
+   "gold": [
+    "utils.go"
+   ],
+   "candidates": 61,
+   "ranked": [
+    "routergroup.go",
+    "utils.go",
+    "mode.go",
+    "context.go",
+    "gin.go",
+    "tree.go",
+    "binding/binding.go",
+    "recovery_test.go",
+    "examples/basic/main.go",
+    "context_test.go",
+    "errors.go",
+    "binding/binding_test.go",
+    "errors_test.go",
+    "tree_test.go",
+    "binding/form_mapping.go",
+    "auth.go",
+    "binding/json.go",
+    "binding/xml.go",
+    "binding/form.go",
+    "examples/realtime-chat/template.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 4,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-0cb7c44abc",
+   "task": "Print warning log when user create one engine using gin.Default in debug mode",
+   "gold": [
+    "debug.go",
+    "debug_test.go",
+    "gin.go"
+   ],
+   "candidates": 84,
+   "ranked": [
+    "debug.go",
+    "debug_test.go",
+    "gin.go",
+    "context.go",
+    "gin_test.go",
+    "benchmarks_test.go",
+    "recovery.go",
+    "routergroup.go",
+    "mode.go",
+    "context_test.go",
+    "utils.go",
+    "deprecated.go",
+    "response_writer.go",
+    "binding/validate_test.go",
+    "tree_test.go",
+    "examples/http2/main.go",
+    "mode_test.go",
+    "logger.go",
+    "auth.go",
+    "test_helpers.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 8,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-d91cfbade4",
+   "task": "Renames NotFound404 to NotFound",
+   "gold": [
+    "deprecated.go",
+    "gin.go"
+   ],
+   "candidates": 12,
+   "ranked": [
+    "gin.go",
+    "deprecated.go",
+    "context.go",
+    "binding/binding.go",
+    "logger.go",
+    "auth.go",
+    "examples/app-engine/hello.go",
+    "utils.go",
+    "recovery.go",
+    "examples/example_basic.go",
+    "render/render.go",
+    "response_writer.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-e4f6e053d0",
+   "task": "Fixed issue allowing to spoof ClientIP()",
+   "gold": [
+    "context.go",
+    "context_test.go"
+   ],
+   "candidates": 18,
+   "ranked": [
+    "context.go",
+    "logger.go",
+    "auth.go",
+    "gin_test.go",
+    "auth_test.go",
+    "context_test.go",
+    "routergroup.go",
+    "examples/app-engine/hello.go",
+    "binding/binding.go",
+    "utils.go",
+    "deprecated.go",
+    "recovery.go",
+    "examples/example_basic.go",
+    "gin.go",
+    "mode.go",
+    "recovery_test.go",
+    "render/render.go",
+    "response_writer.go"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-70f280f880",
+   "task": "Added support for unsigned integers in binding parameters of form posts. Also changed parsing of integer fields to take into account the size of the fields.",
+   "gold": [
+    "binding/binding.go",
+    "context_test.go"
+   ],
+   "candidates": 19,
+   "ranked": [
+    "context.go",
+    "binding/binding.go",
+    "deprecated.go",
+    "response_writer.go",
+    "utils.go",
+    "recovery.go",
+    "routergroup.go",
+    "render/render.go",
+    "context_test.go",
+    "gin.go",
+    "auth.go",
+    "examples/pluggable_renderer/example_pongo2.go",
+    "examples/example_basic.go",
+    "gin_test.go",
+    "auth_test.go",
+    "logger.go",
+    "recovery_test.go",
+    "examples/app-engine/hello.go",
+    "mode.go"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-f8d85c1b4d",
+   "task": "Fixes MarshalXML() and renames initial \"H\" tag to \"map\".",
+   "gold": [
+    "gin.go"
+   ],
+   "candidates": 9,
+   "ranked": [
+    "binding/binding.go",
+    "gin.go",
+    "auth.go",
+    "examples/example_basic.go",
+    "recovery.go",
+    "examples/app-engine/hello.go",
+    "deprecated.go",
+    "logger.go",
+    "response_writer.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-e207a3ce65",
+   "task": "Fix context.Copy() race condition",
+   "gold": [
+    "context.go",
+    "context_test.go",
+    "githubapi_test.go"
+   ],
+   "candidates": 109,
+   "ranked": [
+    "tree.go",
+    "recovery.go",
+    "tree_test.go",
+    "context.go",
+    "examples/grpc/pb/helloworld.pb.go",
+    "path.go",
+    "errors.go",
+    "routergroup.go",
+    "examples/grpc/pb/helloworld.proto",
+    "render/reader.go",
+    "gin.go",
+    "debug_test.go",
+    "context_test.go",
+    "examples/realtime-advanced/resources/static/epoch.min.js",
+    "examples/realtime-advanced/resources/static/prismjs.min.js",
+    "middleware_test.go",
+    "benchmarks_test.go",
+    "test_helpers.go",
+    "routes_test.go",
+    "gin_test.go"
+   ],
+   "recall": {
+    "5": 0.3333333333333333,
+    "10": 0.3333333333333333,
+    "20": 0.6666666666666666
+   },
+   "ms": 9,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  }
+ ]
+}

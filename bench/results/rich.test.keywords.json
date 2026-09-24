@@ -1,0 +1,1229 @@
+{
+ "repo": "rich",
+ "split": "test",
+ "variant": "keywords",
+ "results": [
+  {
+   "id": "rich-e9c9e43420",
+   "task": "Clear hashed cache when clearing meta.",
+   "gold": [
+    "rich/style.py",
+    "tests/test_style.py"
+   ],
+   "candidates": 189,
+   "ranked": [
+    "tests/test_style.py",
+    "rich/style.py",
+    "rich/text.py",
+    "rich/segment.py",
+    "tests/test_markup.py",
+    "tests/test_console.py",
+    "rich/progress.py",
+    "rich/console.py",
+    "rich/markup.py",
+    "rich/live.py",
+    "tests/test_text.py",
+    "examples/export.py",
+    "rich/cells.py",
+    "rich/control.py",
+    "rich/__main__.py",
+    "rich/_inspect.py",
+    "rich/palette.py",
+    "rich/_export_format.py",
+    "benchmarks/benchmarks.py",
+    "examples/dynamic_progress.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 17,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-655170417a",
+   "task": "special case for style defs",
+   "gold": [
+    "rich/style.py"
+   ],
+   "candidates": 155,
+   "ranked": [
+    "rich/__init__.py",
+    "rich/scope.py",
+    "rich/bar.py",
+    "rich/text.py",
+    "tests/test_highlighter.py",
+    "rich/default_styles.py",
+    "tests/test_text.py",
+    "rich/traceback.py",
+    "rich/syntax.py",
+    "rich/pretty.py",
+    "rich/table.py",
+    "rich/status.py",
+    "rich/segment.py",
+    "rich/theme.py",
+    "rich/progress_bar.py",
+    "rich/containers.py",
+    "rich/align.py",
+    "rich/markdown.py",
+    "rich/spinner.py",
+    "rich/ansi.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 10,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-a236d8fd63",
+   "task": "add tests for style",
+   "gold": [
+    "rich/segment.py",
+    "rich/style.py",
+    "tests/test_segment.py"
+   ],
+   "candidates": 128,
+   "ranked": [
+    "tests/test_tabulate.py",
+    "rich/__main__.py",
+    "rich/table.py",
+    "examples/table_movie.py",
+    "rich/syntax.py",
+    "docs/source/conf.py",
+    "rich/markdown.py",
+    "rich/_inspect.py",
+    "rich/progress.py",
+    "rich/box.py",
+    "tests/test_table.py",
+    "examples/table.py",
+    "rich/text.py",
+    "rich/jupyter.py",
+    "tests/test_style.py",
+    "tests/test_highlighter.py",
+    "rich/_log_render.py",
+    "rich/scope.py",
+    "rich/color.py",
+    "tests/test_progress.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 11,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-18ebb427bc",
+   "task": "Update wcwidth and cell widths.",
+   "gold": [
+    "rich/_cell_widths.py"
+   ],
+   "candidates": 189,
+   "ranked": [
+    "tools/make_terminal_widths.py",
+    "rich/table.py",
+    "rich/cells.py",
+    "rich/box.py",
+    "rich/segment.py",
+    "rich/_cell_widths.py",
+    "rich/measure.py",
+    "rich/layout.py",
+    "rich/panel.py",
+    "rich/_wrap.py",
+    "tests/test_box.py",
+    "tests/test_cells.py",
+    "rich/columns.py",
+    "rich/rule.py",
+    "rich/text.py",
+    "rich/containers.py",
+    "examples/dynamic_progress.py",
+    "rich/console.py",
+    "rich/tree.py",
+    "rich/_win32_console.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 23,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-f538099efa",
+   "task": "fix typos in test card",
+   "gold": [
+    "rich/__main__.py",
+    "rich/color.py",
+    "tests/_card_render.py"
+   ],
+   "candidates": 73,
+   "ranked": [
+    "tests/test_card.py",
+    "rich/__main__.py",
+    "tests/test_traceback.py",
+    "tests/test_panel.py",
+    "tools/make_terminal_widths.py",
+    "tests/test_text.py",
+    "tests/test_style.py",
+    "tests/test_segment.py",
+    "tests/test_emoji.py",
+    "rich/protocol.py",
+    "tests/test_color.py",
+    "tests/test_color_triplet.py",
+    "tests/test_console.py",
+    "tests/test_tools.py",
+    "tests/test_stack.py",
+    "rich/markup.py",
+    "rich/highlighter.py",
+    "examples/log.py",
+    "tests/_exception_render.py",
+    "tests/_card_render.py"
+   ],
+   "recall": {
+    "5": 0.3333333333333333,
+    "10": 0.3333333333333333,
+    "20": 0.6666666666666666
+   },
+   "ms": 8,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-9ba01ae52b",
+   "task": "[console] We now have `_STD_STREAMS` and `_STD_STREAMS_OUTPUT` module-scoped consts",
+   "gold": [
+    "rich/console.py"
+   ],
+   "candidates": 184,
+   "ranked": [
+    "rich/_win32_console.py",
+    "rich/console.py",
+    "rich/_windows.py",
+    "rich/logging.py",
+    "tests/render.py",
+    "tests/test_card.py",
+    "rich/filesize.py",
+    "tests/test_markdown_no_hyperlinks.py",
+    "tests/test_markdown.py",
+    "examples/fullscreen.py",
+    "rich/pretty.py",
+    "tests/test_win32_console.py",
+    "rich/_ratio.py",
+    "docs/source/conf.py",
+    "tests/test_inspect.py",
+    "benchmarks/snippets.py",
+    "rich/ansi.py",
+    "rich/traceback.py",
+    "rich/bar.py",
+    "rich/_log_render.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 23,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-680d9d876e",
+   "task": "fix empty line print on jupyter",
+   "gold": [
+    "rich/progress.py"
+   ],
+   "candidates": 189,
+   "ranked": [
+    "tests/test_pretty.py",
+    "rich/pretty.py",
+    "benchmarks/snippets.py",
+    "rich/padding.py",
+    "tests/test_inspect.py",
+    "rich/align.py",
+    "rich/console.py",
+    "rich/panel.py",
+    "rich/markdown.py",
+    "tests/test_console.py",
+    "rich/live.py",
+    "rich/jupyter.py",
+    "rich/rule.py",
+    "tests/test_style.py",
+    "rich/syntax.py",
+    "rich/text.py",
+    "rich/tree.py",
+    "tests/test_columns.py",
+    "rich/ansi.py",
+    "tests/test_segment.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 23,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-066c024be2",
+   "task": "fix for text in panel title",
+   "gold": [
+    "rich/panel.py",
+    "rich/text.py",
+    "tests/test_log.py",
+    "tests/test_panel.py"
+   ],
+   "candidates": 187,
+   "ranked": [
+    "examples/live_progress.py",
+    "rich/_inspect.py",
+    "rich/scope.py",
+    "examples/fullscreen.py",
+    "rich/panel.py",
+    "examples/spinners.py",
+    "benchmarks/snippets.py",
+    "rich/__main__.py",
+    "rich/spinner.py",
+    "tests/test_panel.py",
+    "rich/diagnose.py",
+    "rich/layout.py",
+    "rich/markdown.py",
+    "rich/traceback.py",
+    "rich/box.py",
+    "rich/tree.py",
+    "examples/dynamic_progress.py",
+    "rich/live.py",
+    "rich/rule.py",
+    "examples/columns.py"
+   ],
+   "recall": {
+    "5": 0.25,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 16,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-7f422fa661",
+   "task": "add the ability to install pretty on ipython",
+   "gold": [
+    "rich/pretty.py"
+   ],
+   "candidates": 150,
+   "ranked": [
+    "rich/pretty.py",
+    "rich/live.py",
+    "rich/jupyter.py",
+    "tests/test_pretty.py",
+    "rich/__main__.py",
+    "rich/_inspect.py",
+    "rich/tabulate.py",
+    "rich/traceback.py",
+    "rich/scope.py",
+    "rich/progress.py",
+    "rich/markdown.py",
+    "rich/console.py",
+    "rich/box.py",
+    "rich/table.py",
+    "tests/test_traceback.py",
+    "docs/source/conf.py",
+    "rich/syntax.py",
+    "rich/segment.py",
+    "examples/table.py",
+    "rich/color.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 10,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-260508bfa0",
+   "task": "fix for overlapping markip",
+   "gold": [
+    "rich/text.py",
+    "tests/test_segment.py"
+   ],
+   "candidates": 176,
+   "ranked": [
+    "examples/dynamic_progress.py",
+    "rich/_ratio.py",
+    "rich/columns.py",
+    "rich/_loop.py",
+    "rich/containers.py",
+    "examples/fullscreen.py",
+    "rich/table.py",
+    "docs/source/conf.py",
+    "examples/print_calendar.py",
+    "rich/text.py",
+    "examples/suppress.py",
+    "rich/status.py",
+    "rich/layout.py",
+    "rich/theme.py",
+    "rich/jupyter.py",
+    "rich/pretty.py",
+    "rich/syntax.py",
+    "rich/spinner.py",
+    "rich/bar.py",
+    "rich/__main__.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 13,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-26910c309d",
+   "task": "In Pretty, when namedtuples have custom reprs, use them instead of our own",
+   "gold": [
+    "rich/pretty.py",
+    "tests/test_pretty.py"
+   ],
+   "candidates": 176,
+   "ranked": [
+    "examples/dynamic_progress.py",
+    "docs/source/conf.py",
+    "tests/test_pretty.py",
+    "rich/logging.py",
+    "rich/progress.py",
+    "rich/traceback.py",
+    "rich/pretty.py",
+    "rich/__init__.py",
+    "rich/console.py",
+    "rich/live.py",
+    "rich/markdown.py",
+    "rich/_inspect.py",
+    "examples/rainbow.py",
+    "rich/rule.py",
+    "rich/segment.py",
+    "rich/scope.py",
+    "rich/filesize.py",
+    "rich/protocol.py",
+    "rich/__main__.py",
+    "rich/layout.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 14,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-6151387adf",
+   "task": "fix for text wrapping",
+   "gold": [
+    "rich/console.py",
+    "rich/markdown.py",
+    "rich/segment.py",
+    "rich/text.py"
+   ],
+   "candidates": 27,
+   "ranked": [
+    "rich/text.py",
+    "rich/containers.py",
+    "rich/segment.py",
+    "rich/syntax.py",
+    "rich/console.py",
+    "rich/markdown.py",
+    "rich/table.py",
+    "rich/style.py",
+    "rich/padding.py",
+    "rich/panel.py",
+    "rich/_emoji_replace.py",
+    "rich/emoji.py",
+    "rich/_tools.py",
+    "rich/default_styles.py",
+    "rich/color.py",
+    "rich/box.py",
+    "tools/make_emoji.py",
+    "rich/palette.py",
+    "rich/colors.py",
+    "rich/__init__.py"
+   ],
+   "recall": {
+    "5": 0.75,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-665bb3360a",
+   "task": "Type windll as object instead of Any",
+   "gold": [
+    "rich/_win32_console.py"
+   ],
+   "candidates": 178,
+   "ranked": [
+    "rich/_win32_console.py",
+    "rich/traceback.py",
+    "rich/pretty.py",
+    "rich/__init__.py",
+    "rich/json.py",
+    "rich/_inspect.py",
+    "tests/test_inspect.py",
+    "rich/protocol.py",
+    "rich/console.py",
+    "rich/_windows.py",
+    "rich/scope.py",
+    "rich/live_render.py",
+    "rich/progress.py",
+    "rich/_ratio.py",
+    "rich/syntax.py",
+    "rich/segment.py",
+    "rich/control.py",
+    "rich/repr.py",
+    "rich/markdown.py",
+    "rich/prompt.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 16,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-0138b18950",
+   "task": "fix tuple of one issue",
+   "gold": [
+    "rich/pretty.py",
+    "tests/test_pretty.py"
+   ],
+   "candidates": 137,
+   "ranked": [
+    "rich/__main__.py",
+    "rich/measure.py",
+    "rich/segment.py",
+    "tests/test_pretty.py",
+    "rich/table.py",
+    "rich/color_triplet.py",
+    "rich/text.py",
+    "rich/color.py",
+    "rich/palette.py",
+    "rich/console.py",
+    "rich/scope.py",
+    "rich/pretty.py",
+    "rich/markup.py",
+    "examples/table.py",
+    "rich/filesize.py",
+    "examples/exception.py",
+    "rich/syntax.py",
+    "rich/padding.py",
+    "rich/align.py",
+    "rich/ansi.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 9,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-9ca660bd13",
+   "task": "Remove (possibly unneeded) try/except in table.py",
+   "gold": [
+    "rich/table.py"
+   ],
+   "candidates": 127,
+   "ranked": [
+    "rich/control.py",
+    "rich/_inspect.py",
+    "rich/__main__.py",
+    "rich/progress.py",
+    "tests/test_traceback.py",
+    "tests/test_syntax.py",
+    "rich/_loop.py",
+    "rich/segment.py",
+    "examples/table_movie.py",
+    "rich/pretty.py",
+    "tests/test_logging.py",
+    "rich/syntax.py",
+    "rich/table.py",
+    "tools/make_emoji.py",
+    "rich/text.py",
+    "examples/listdir.py",
+    "rich/markup.py",
+    "tools/make_terminal_widths.py",
+    "rich/emoji.py",
+    "tests/test_table.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 9,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-4787873fc0",
+   "task": "Fix some broken tests, remove redundant code",
+   "gold": [
+    "rich/markdown.py",
+    "tests/_card_render.py",
+    "tests/test_markdown_no_hyperlinks.py"
+   ],
+   "candidates": 185,
+   "ranked": [
+    "tests/test_inspect.py",
+    "tests/test_markup.py",
+    "tests/test_traceback.py",
+    "tests/test_console.py",
+    "tests/test_jupyter.py",
+    "tests/test_repr.py",
+    "tests/test_segment.py",
+    "tests/test_pretty.py",
+    "rich/control.py",
+    "rich/segment.py",
+    "rich/tree.py",
+    "tests/test_syntax.py",
+    "examples/fullscreen.py",
+    "rich/text.py",
+    "tests/test_markdown.py",
+    "rich/pretty.py",
+    "rich/console.py",
+    "tests/test_emoji.py",
+    "rich/traceback.py",
+    "rich/syntax.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 14,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-f67f426a6b",
+   "task": "[highlighter] Add complex numbers pattern to our highlighter's `number` matching",
+   "gold": [
+    "rich/highlighter.py",
+    "tests/test_highlighter.py"
+   ],
+   "candidates": 186,
+   "ranked": [
+    "rich/syntax.py",
+    "rich/palette.py",
+    "rich/json.py",
+    "docs/source/conf.py",
+    "rich/traceback.py",
+    "rich/progress.py",
+    "rich/highlighter.py",
+    "rich/_inspect.py",
+    "tests/test_inspect.py",
+    "rich/logging.py",
+    "examples/fullscreen.py",
+    "rich/scope.py",
+    "tests/test_highlighter.py",
+    "rich/layout.py",
+    "rich/console.py",
+    "rich/__main__.py",
+    "benchmarks/benchmarks.py",
+    "rich/pretty.py",
+    "tests/test_logging.py",
+    "rich/markup.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 15,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-55988c6e72",
+   "task": "Added padding to panel",
+   "gold": [
+    "rich/panel.py"
+   ],
+   "candidates": 93,
+   "ranked": [
+    "rich/panel.py",
+    "rich/__main__.py",
+    "rich/traceback.py",
+    "rich/segment.py",
+    "rich/markdown.py",
+    "rich/_lru_cache.py",
+    "rich/table.py",
+    "rich/padding.py",
+    "rich/emoji.py",
+    "tests/test_panel.py",
+    "tests/test_padding.py",
+    "rich/tabulate.py",
+    "rich/progress.py",
+    "rich/box.py",
+    "tests/test_console.py",
+    "rich/syntax.py",
+    "rich/_log_render.py",
+    "rich/align.py",
+    "rich/text.py",
+    "rich/console.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-ad07ee5c52",
+   "task": "fix issue causing jupyter console to double print",
+   "gold": [
+    "rich/live.py"
+   ],
+   "candidates": 149,
+   "ranked": [
+    "rich/panel.py",
+    "rich/_inspect.py",
+    "rich/box.py",
+    "rich/jupyter.py",
+    "rich/__init__.py",
+    "rich/console.py",
+    "tests/test_box.py",
+    "rich/__main__.py",
+    "rich/emoji.py",
+    "rich/rule.py",
+    "rich/columns.py",
+    "rich/constrain.py",
+    "rich/align.py",
+    "rich/markdown.py",
+    "rich/padding.py",
+    "rich/live.py",
+    "rich/progress_bar.py",
+    "rich/bar.py",
+    "tests/test_jupyter.py",
+    "rich/progress.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 17,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-f8b9ba143a",
+   "task": "speedup import time using sys.platform",
+   "gold": [
+    "rich/color.py",
+    "rich/console.py",
+    "rich/syntax.py",
+    "rich/traceback.py"
+   ],
+   "candidates": 189,
+   "ranked": [
+    "tests/test_console.py",
+    "rich/_windows.py",
+    "tests/test_tree.py",
+    "tests/test_layout.py",
+    "examples/top_lite_simulator.py",
+    "rich/highlighter.py",
+    "rich/_win32_console.py",
+    "tests/test_logging.py",
+    "examples/downloader.py",
+    "tests/test_win32_console.py",
+    "rich/__main__.py",
+    "rich/ansi.py",
+    "rich/console.py",
+    "rich/box.py",
+    "tests/test_windows_renderer.py",
+    "rich/syntax.py",
+    "rich/live.py",
+    "tests/test_traceback.py",
+    "tests/test_progress.py",
+    "rich/diagnose.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0.5
+   },
+   "ms": 18,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-8e58adcab0",
+   "task": "[syntax] address PR feedback for stylized ranges",
+   "gold": [
+    "rich/syntax.py",
+    "tests/test_syntax.py"
+   ],
+   "candidates": 186,
+   "ranked": [
+    "rich/syntax.py",
+    "tests/test_syntax.py",
+    "rich/traceback.py",
+    "examples/fullscreen.py",
+    "rich/cells.py",
+    "rich/markdown.py",
+    "rich/tree.py",
+    "rich/__main__.py",
+    "rich/text.py",
+    "rich/table.py",
+    "rich/live.py",
+    "tests/test_traceback.py",
+    "rich/style.py",
+    "benchmarks/benchmarks.py",
+    "tests/test_style.py",
+    "rich/markup.py",
+    "rich/logging.py",
+    "rich/errors.py",
+    "rich/segment.py",
+    "rich/progress.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 21,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-435d7a2e2d",
+   "task": "fix defaults mentioned for positional args",
+   "gold": [
+    "rich/console.py"
+   ],
+   "candidates": 155,
+   "ranked": [
+    "rich/__init__.py",
+    "rich/console.py",
+    "rich/style.py",
+    "rich/text.py",
+    "rich/theme.py",
+    "rich/prompt.py",
+    "rich/status.py",
+    "rich/syntax.py",
+    "rich/pretty.py",
+    "rich/progress.py",
+    "rich/measure.py",
+    "rich/segment.py",
+    "rich/progress_bar.py",
+    "rich/spinner.py",
+    "rich/logging.py",
+    "rich/traceback.py",
+    "rich/columns.py",
+    "rich/scope.py",
+    "rich/table.py",
+    "rich/markdown.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 11,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-a5fa231348",
+   "task": "Update `Progress.read` to close inner file only if given a path",
+   "gold": [
+    "rich/progress.py"
+   ],
+   "candidates": 178,
+   "ranked": [
+    "rich/progress.py",
+    "examples/downloader.py",
+    "rich/markdown.py",
+    "rich/syntax.py",
+    "rich/theme.py",
+    "rich/json.py",
+    "rich/live.py",
+    "examples/fullscreen.py",
+    "rich/console.py",
+    "tests/test_progress.py",
+    "rich/progress_bar.py",
+    "rich/traceback.py",
+    "rich/pretty.py",
+    "examples/dynamic_progress.py",
+    "tests/test_console.py",
+    "docs/source/conf.py",
+    "tests/test_theme.py",
+    "tests/test_markdown_no_hyperlinks.py",
+    "rich/markup.py",
+    "tests/test_markdown.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 17,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-32196384d0",
+   "task": "Fix mypy typing issue",
+   "gold": [
+    "rich/console.py"
+   ],
+   "candidates": 185,
+   "ranked": [
+    "tests/test_logging.py",
+    "benchmarks/snippets.py",
+    "tests/test_inspect.py",
+    "rich/emoji.py",
+    "rich/console.py",
+    "rich/live_render.py",
+    "examples/top_lite_simulator.py",
+    "rich/region.py",
+    "rich/_extension.py",
+    "examples/overflow.py",
+    "rich/_stack.py",
+    "rich/palette.py",
+    "rich/_timer.py",
+    "rich/_pick.py",
+    "rich/_ratio.py",
+    "rich/control.py",
+    "rich/pager.py",
+    "examples/exception.py",
+    "examples/attrs.py",
+    "rich/color_triplet.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 15,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-a2385c525b",
+   "task": "Add the default feature of hiding the Live when the display is too large. Instead terminal too small will be displayed.",
+   "gold": [
+    "rich/live.py"
+   ],
+   "candidates": 135,
+   "ranked": [
+    "rich/progress.py",
+    "docs/source/conf.py",
+    "rich/console.py",
+    "rich/live.py",
+    "rich/markdown.py",
+    "rich/tabulate.py",
+    "rich/logging.py",
+    "rich/prompt.py",
+    "rich/color.py",
+    "rich/table.py",
+    "rich/syntax.py",
+    "rich/live_render.py",
+    "rich/jupyter.py",
+    "rich/text.py",
+    "rich/__main__.py",
+    "rich/panel.py",
+    "rich/traceback.py",
+    "rich/__init__.py",
+    "rich/pretty.py",
+    "tests/test_live_render.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 9,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-781689c3bb",
+   "task": "Default binary_units param to False",
+   "gold": [
+    "rich/progress.py"
+   ],
+   "candidates": 128,
+   "ranked": [
+    "rich/filesize.py",
+    "rich/progress.py",
+    "tests/test_progress.py",
+    "tests/test_filesize.py",
+    "tests/test_inspect.py",
+    "rich/prompt.py",
+    "rich/syntax.py",
+    "rich/console.py",
+    "rich/markdown.py",
+    "rich/text.py",
+    "rich/pretty.py",
+    "rich/color.py",
+    "rich/theme.py",
+    "rich/bar.py",
+    "rich/style.py",
+    "rich/columns.py",
+    "rich/traceback.py",
+    "rich/table.py",
+    "rich/_inspect.py",
+    "docs/source/conf.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 8,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-4d80b3a558",
+   "task": "[syntax] improved performance for `stylize_ranges()`, volume II",
+   "gold": [
+    "rich/syntax.py"
+   ],
+   "candidates": 186,
+   "ranked": [
+    "rich/syntax.py",
+    "tests/test_syntax.py",
+    "rich/text.py",
+    "rich/traceback.py",
+    "rich/markdown.py",
+    "examples/table_movie.py",
+    "examples/print_calendar.py",
+    "examples/rainbow.py",
+    "examples/fullscreen.py",
+    "examples/listdir.py",
+    "rich/_inspect.py",
+    "rich/cells.py",
+    "rich/tree.py",
+    "rich/__main__.py",
+    "examples/tree.py",
+    "rich/table.py",
+    "tests/test_text.py",
+    "rich/live.py",
+    "tests/test_traceback.py",
+    "rich/style.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 16,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-3469674b52",
+   "task": "fix traceback for missing frame file",
+   "gold": [
+    "rich/traceback.py"
+   ],
+   "candidates": 189,
+   "ranked": [
+    "tests/test_traceback.py",
+    "rich/traceback.py",
+    "rich/console.py",
+    "tests/test_log.py",
+    "rich/logging.py",
+    "tests/test_getfileno.py",
+    "rich/spinner.py",
+    "rich/_null_file.py",
+    "examples/downloader.py",
+    "rich/default_styles.py",
+    "rich/style.py",
+    "tests/_exception_render.py",
+    "rich/live.py",
+    "rich/errors.py",
+    "rich/ansi.py",
+    "examples/suppress.py",
+    "rich/status.py",
+    "rich/progress.py",
+    "benchmarks/snippets.py",
+    "examples/exception.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 15,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-73ec0d586e",
+   "task": "Add a type annotation",
+   "gold": [
+    "rich/pretty.py"
+   ],
+   "candidates": 187,
+   "ranked": [
+    "rich/table.py",
+    "rich/tree.py",
+    "rich/_log_render.py",
+    "rich/_inspect.py",
+    "rich/columns.py",
+    "rich/__main__.py",
+    "rich/color.py",
+    "rich/markdown.py",
+    "rich/protocol.py",
+    "rich/syntax.py",
+    "rich/scope.py",
+    "rich/live.py",
+    "rich/layout.py",
+    "examples/print_calendar.py",
+    "rich/progress.py",
+    "rich/spinner.py",
+    "rich/json.py",
+    "rich/box.py",
+    "rich/control.py",
+    "rich/segment.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 18,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-6e634705b7",
+   "task": "[syntax] silently clamp the column index of stylised ranges to the maximum possible value",
+   "gold": [
+    "rich/syntax.py",
+    "tests/test_syntax.py"
+   ],
+   "candidates": 186,
+   "ranked": [
+    "rich/table.py",
+    "rich/syntax.py",
+    "rich/traceback.py",
+    "tests/test_traceback.py",
+    "rich/tree.py",
+    "rich/measure.py",
+    "rich/pretty.py",
+    "rich/logging.py",
+    "examples/fullscreen.py",
+    "rich/live.py",
+    "rich/columns.py",
+    "rich/progress.py",
+    "rich/_ratio.py",
+    "rich/__main__.py",
+    "rich/text.py",
+    "rich/cells.py",
+    "rich/containers.py",
+    "rich/_win32_console.py",
+    "tests/test_syntax.py",
+    "rich/scope.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 16,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  }
+ ]
+}

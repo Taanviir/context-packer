@@ -1,0 +1,424 @@
+{
+ "repo": "hono",
+ "split": "dev",
+ "variant": "keywords",
+ "results": [
+  {
+   "id": "hono-6a9590d69c",
+   "task": "render a child or odd children with `Fragment` correctly",
+   "gold": [
+    "deno_dist/jsx/index.test.tsx",
+    "deno_dist/jsx/index.ts",
+    "src/jsx/index.test.tsx",
+    "src/jsx/index.ts"
+   ],
+   "candidates": 246,
+   "ranked": [
+    "src/jsx/index.ts",
+    "deno_dist/jsx/index.ts",
+    "src/jsx/index.test.tsx",
+    "deno_dist/jsx/index.test.tsx",
+    "benchmarks/jsx/index.tsx",
+    "src/helper/html/index.ts",
+    "deno_dist/helper/html/index.ts",
+    "src/jsx/jsx-dev-runtime.ts",
+    "deno_dist/jsx/jsx-dev-runtime.ts",
+    "src/router/trie-router/node.ts",
+    "deno_dist/router/trie-router/node.ts",
+    "src/router/reg-exp-router/node.ts",
+    "deno_dist/router/reg-exp-router/node.ts",
+    "src/client/utils.test.ts",
+    "runtime_tests/bun/index.test.tsx",
+    "src/context.test.ts",
+    "src/utils/cookie.ts",
+    "deno_dist/utils/cookie.ts",
+    "src/client/client.test.ts",
+    "src/jsx/jsx-runtime.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 22,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "hono-88e7650ee8",
+   "task": "corrected argument types for `Context` methods",
+   "gold": [
+    "deno_dist/context.ts",
+    "src/context.ts"
+   ],
+   "candidates": 229,
+   "ranked": [
+    "src/adapter/cloudflare-pages/handler.ts",
+    "src/hono-base.ts",
+    "deno_dist/hono-base.ts",
+    "src/adapter/cloudflare-pages/handler.test.ts",
+    "src/adapter/nextjs/handler.ts",
+    "src/router/trie-router/node.ts",
+    "deno_dist/router/trie-router/node.ts",
+    "src/adapter/vercel/handler.test.ts",
+    "src/middleware/jwt/index.ts",
+    "deno_dist/middleware/jwt/index.ts",
+    "src/middleware/cors/index.ts",
+    "deno_dist/middleware/cors/index.ts",
+    "src/adapter/nextjs/handler.test.ts",
+    "src/context.ts",
+    "deno_dist/context.ts",
+    "src/types.ts",
+    "deno_dist/types.ts",
+    "src/middleware/timing/index.ts",
+    "deno_dist/middleware/timing/index.ts",
+    "src/adapter/aws-lambda/handler.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 22,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "hono-405ec8cdb7",
+   "task": "don't decode space as `+`",
+   "gold": [
+    "deno_dist/utils/buffer.ts",
+    "src/utils/buffer.test.ts",
+    "src/utils/buffer.ts"
+   ],
+   "candidates": 234,
+   "ranked": [
+    "src/middleware/pretty-json/index.ts",
+    "deno_dist/middleware/pretty-json/index.ts",
+    "src/middleware/pretty-json/index.test.ts",
+    "src/utils/url.ts",
+    "deno_dist/utils/url.ts",
+    "src/utils/jwt/jwt.test.ts",
+    "src/request.ts",
+    "deno_dist/request.ts",
+    "src/utils/buffer.ts",
+    "deno_dist/utils/buffer.ts",
+    "src/utils/jwt/jwt.ts",
+    "deno_dist/utils/jwt/jwt.ts",
+    "src/utils/encode.ts",
+    "deno_dist/utils/encode.ts",
+    "src/middleware/cache/index.test.ts",
+    "src/middleware/basic-auth/index.ts",
+    "deno_dist/middleware/basic-auth/index.ts",
+    "src/utils/cookie.ts",
+    "deno_dist/utils/cookie.ts",
+    "src/utils/encode.test.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0.6666666666666666,
+    "20": 0.6666666666666666
+   },
+   "ms": 15,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "hono-f2a72d333a",
+   "task": "serialize multiple cookies correctly",
+   "gold": [
+    "src/client/client.test.ts",
+    "src/client/client.ts"
+   ],
+   "candidates": 360,
+   "ranked": [
+    "src/utils/cookie.test.ts",
+    "src/utils/cookie.ts",
+    "src/router/reg-exp-router/prepared-router.test.ts",
+    "src/client/client.ts",
+    "src/context.test.ts",
+    "runtime-tests/lambda/stream.test.ts",
+    "src/client/client.test.ts",
+    "src/helper/cookie/index.ts",
+    "src/utils/filepath.test.ts",
+    "src/helper/cookie/index.test.ts",
+    "src/adapter/aws-lambda/handler.ts",
+    "runtime-tests/lambda/index.test.ts",
+    "src/router/reg-exp-router/index.ts",
+    "src/helper/ssg/ssg.test.tsx",
+    "src/middleware/trailing-slash/index.test.ts",
+    "src/adapter/aws-lambda/handler.test.ts",
+    "src/utils/accept.test.ts",
+    "src/client/utils.test.ts",
+    "src/adapter/service-worker/handler.ts",
+    "src/adapter/lambda-edge/handler.test.ts"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 60,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "hono-aebaa28462",
+   "task": "check for json subtypes in validator",
+   "gold": [
+    "deno_dist/validator/validator.ts",
+    "src/validator/validator.test.ts",
+    "src/validator/validator.ts"
+   ],
+   "candidates": 395,
+   "ranked": [
+    "src/validator/validator.test.ts",
+    "src/validator/validator.ts",
+    "deno_dist/validator/validator.ts",
+    "src/helper/factory/index.test.ts",
+    "src/client/client.test.ts",
+    "src/helper/streaming/sse.test.ts",
+    "src/router/reg-exp-router/router.ts",
+    "deno_dist/router/reg-exp-router/router.ts",
+    "src/types.test.ts",
+    "src/validator/index.ts",
+    "deno_dist/validator/index.ts",
+    "src/helper/streaming/stream.test.ts",
+    "src/mod.ts",
+    "deno_dist/mod.ts",
+    "src/router/trie-router/router.ts",
+    "deno_dist/router/trie-router/router.ts",
+    "src/helper/ssg/ssg.test.tsx",
+    "src/router/reg-exp-router/trie.ts",
+    "deno_dist/router/reg-exp-router/trie.ts",
+    "src/context.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 30,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "hono-68cabdef27",
+   "task": "remove lookbehind assertion in event regexp",
+   "gold": [
+    "deno_dist/jsx/dom/render.ts",
+    "src/jsx/dom/index.test.tsx",
+    "src/jsx/dom/render.ts"
+   ],
+   "candidates": 388,
+   "ranked": [
+    "src/jsx/dom/render.ts",
+    "deno_dist/jsx/dom/render.ts",
+    "src/router/reg-exp-router/router.ts",
+    "deno_dist/router/reg-exp-router/router.ts",
+    "src/middleware/basic-auth/index.ts",
+    "deno_dist/middleware/basic-auth/index.ts",
+    "src/middleware/bearer-auth/index.ts",
+    "deno_dist/middleware/bearer-auth/index.ts",
+    "src/utils/mime.ts",
+    "deno_dist/utils/mime.ts",
+    "src/adapter/cloudflare-pages/handler.test.ts",
+    "src/router/reg-exp-router/trie.ts",
+    "deno_dist/router/reg-exp-router/trie.ts",
+    "src/adapter/aws-lambda/types.ts",
+    "src/router/reg-exp-router/node.ts",
+    "deno_dist/router/reg-exp-router/node.ts",
+    "src/helper/websocket/index.ts",
+    "deno_dist/helper/websocket/index.ts",
+    "runtime_tests/lambda-edge/index.test.ts",
+    "src/jsx/dom/index.test.tsx"
+   ],
+   "recall": {
+    "5": 0.6666666666666666,
+    "10": 0.6666666666666666,
+    "20": 1
+   },
+   "ms": 31,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "hono-17c3b9ed10",
+   "task": "improve a-tag types with well known values",
+   "gold": [
+    "src/jsx/intrinsic-elements.ts",
+    "src/utils/types.ts"
+   ],
+   "candidates": 320,
+   "ranked": [
+    "src/utils/types.ts",
+    "src/jsx/dom/context.ts",
+    "src/jsx/base.ts",
+    "src/client/client.test.ts",
+    "src/validator/validator.test.ts",
+    "src/middleware/etag/index.test.ts",
+    "src/jsx/intrinsic-element/components.ts",
+    "src/helper/adapter/index.ts",
+    "src/jsx/dom/render.ts",
+    "src/jsx/dom/css.ts",
+    "src/jsx/dom/intrinsic-element/components.ts",
+    "src/middleware/bearer-auth/index.ts",
+    "src/request.test.ts",
+    "src/middleware/etag/index.ts",
+    "runtime_tests/deno/hono.test.ts",
+    "src/utils/jwt/jwt.ts",
+    "src/client/client.ts",
+    "src/jsx/context.ts",
+    "src/helper/html/index.ts",
+    "src/utils/body.ts"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 35,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "hono-1dd07d0c60",
+   "task": "import cookie helper correctly",
+   "gold": [
+    "deno_dist/middleware/jwt/index.ts",
+    "src/middleware/jwt/index.ts"
+   ],
+   "candidates": 349,
+   "ranked": [
+    "src/client/client.test.ts",
+    "src/helper/cookie/index.ts",
+    "deno_dist/helper/cookie/index.ts",
+    "src/helper.ts",
+    "deno_dist/helper.ts",
+    "src/middleware/jwt/index.ts",
+    "deno_dist/middleware/jwt/index.ts",
+    "src/helper/cookie/index.test.ts",
+    "src/client/utils.test.ts",
+    "runtime_tests/lambda/index.test.ts",
+    "src/validator/validator.ts",
+    "deno_dist/validator/validator.ts",
+    "src/helper/ssg/index.test.tsx",
+    "src/utils/cookie.test.ts",
+    "src/utils/cookie.ts",
+    "deno_dist/utils/cookie.ts",
+    "src/context.test.ts",
+    "runtime_tests/bun/index.test.tsx",
+    "src/client/client.ts",
+    "deno_dist/client/client.ts"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 33,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "hono-936db9bfa1",
+   "task": "Use Signed Cookie in JWT Middleware",
+   "gold": [
+    "src/middleware/jwt/index.test.ts",
+    "src/middleware/jwt/jwt.ts"
+   ],
+   "candidates": 295,
+   "ranked": [
+    "src/middleware/jwt/jwt.ts",
+    "src/helper/cookie/index.test.ts",
+    "src/utils/cookie.test.ts",
+    "src/middleware/jwt/index.test.ts",
+    "src/utils/cookie.ts",
+    "src/helper/cookie/index.ts",
+    "runtime_tests/node/index.test.ts",
+    "runtime_tests/fastly/index.test.ts",
+    "runtime_tests/deno/middleware.test.tsx",
+    "runtime_tests/bun/index.test.tsx",
+    "src/validator/validator.ts",
+    "src/utils/jwt/jwt.test.ts",
+    "src/middleware/jwt/index.ts",
+    "src/utils/jwt/jwt.ts",
+    "src/context.ts",
+    "src/utils/jwt/types.ts",
+    "src/utils/jwt/jws.ts",
+    "src/adapter/aws-lambda/handler.ts",
+    "runtime_tests/lambda/index.test.ts",
+    "src/context.test.ts"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 21,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "hono-da7087c754",
+   "task": "simplify HandleInterface and save size",
+   "gold": [
+    "src/adapter/cloudflare-pages/handler.test.ts",
+    "src/adapter/cloudflare-pages/handler.ts",
+    "src/adapter/nextjs/handler.test.ts",
+    "src/adapter/nextjs/handler.ts"
+   ],
+   "candidates": 183,
+   "ranked": [
+    "src/adapter/nextjs/handler.ts",
+    "src/adapter/cloudflare-pages/handler.ts",
+    "src/hono.ts",
+    "deno_dist/hono.ts",
+    "src/index.ts",
+    "src/adapter/nextjs/handler.test.ts",
+    "src/adapter/cloudflare-pages/handler.test.ts",
+    "src/hono.test.ts",
+    "benchmarks/handle-event/index.js",
+    "src/adapter/nextjs/index.ts",
+    "src/adapter/cloudflare-pages/index.ts",
+    "src/validator/validator.test.ts",
+    "src/utils/url.ts",
+    "deno_dist/utils/url.ts",
+    "benchmarks/webapp/itty-router.js",
+    "src/types.ts",
+    "deno_dist/types.ts",
+    "src/router.ts",
+    "deno_dist/router.ts",
+    "benchmarks/webapp/sunder.js"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 8,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  }
+ ]
+}

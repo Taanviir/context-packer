@@ -1,0 +1,411 @@
+{
+ "repo": "ripgrep",
+ "split": "dev",
+ "variant": "keywords",
+ "results": [
+  {
+   "id": "ripgrep-263e8f92b9",
+   "task": "Update to memmap 0.6",
+   "gold": [
+    "src/worker.rs"
+   ],
+   "candidates": 42,
+   "ranked": [
+    "src/worker.rs",
+    "src/main.rs",
+    "src/search_stream.rs",
+    "wincolor/src/win.rs",
+    "src/app.rs",
+    "globset/src/glob.rs",
+    "src/printer.rs",
+    "src/decoder.rs",
+    "ignore/src/gitignore.rs",
+    "tests/workdir.rs",
+    "ignore/src/types.rs",
+    "termcolor/src/lib.rs",
+    "src/args.rs",
+    "ignore/src/walk.rs",
+    "grep/src/literals.rs",
+    "tests/tests.rs",
+    "grep/src/word_boundary.rs",
+    "globset/src/pathutil.rs",
+    "ignore/src/overrides.rs",
+    "globset/src/lib.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 9,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-0df71240ff",
+   "task": "fix -F and -f interaction bug",
+   "gold": [
+    "src/args.rs",
+    "tests/regression.rs"
+   ],
+   "candidates": 88,
+   "ranked": [
+    "build.rs",
+    "grep-regex/src/crlf.rs",
+    "ignore/src/overrides.rs",
+    "grep-pcre2/src/matcher.rs",
+    "grep-cli/src/lib.rs",
+    "grep-matcher/src/lib.rs",
+    "src/search.rs",
+    "src/args.rs",
+    "grep-searcher/src/searcher/mod.rs",
+    "ignore/src/gitignore.rs",
+    "src/app.rs",
+    "ignore/src/walk.rs",
+    "grep-searcher/src/searcher/glue.rs",
+    "grep-searcher/src/sink.rs",
+    "grep-searcher/src/lib.rs",
+    "grep-printer/src/lib.rs",
+    "tests/util.rs",
+    "grep-printer/src/json.rs",
+    "ci/build_deb.sh",
+    "grep-regex/src/ast.rs"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 19,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-d18839f3dc",
+   "task": "add into_path for DirEntry",
+   "gold": [
+    "ignore/src/walk.rs"
+   ],
+   "candidates": 84,
+   "ranked": [
+    "ignore/src/walk.rs",
+    "ignore/examples/walk.rs",
+    "globset/src/lib.rs",
+    "src/subject.rs",
+    "ignore/src/lib.rs",
+    "ignore/src/types.rs",
+    "ignore/src/dir.rs",
+    "ignore/src/gitignore.rs",
+    "tests/util.rs",
+    "src/main.rs",
+    "ignore/src/overrides.rs",
+    "tests/misc.rs",
+    "src/args.rs",
+    "ignore/tests/gitignore_matched_path_or_any_parents_tests.rs",
+    "tests/json.rs",
+    "src/app.rs",
+    "src/decompressor.rs",
+    "build.rs",
+    "grep/examples/simplegrep.rs",
+    "tests/feature.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 18,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-ed60ec736c",
+   "task": "Fix invalid UTF-8 output on Windows.",
+   "gold": [
+    "termcolor/src/lib.rs"
+   ],
+   "candidates": 40,
+   "ranked": [
+    "src/printer.rs",
+    "tests/workdir.rs",
+    "termcolor/src/lib.rs",
+    "src/atty.rs",
+    "globset/src/pathutil.rs",
+    "src/args.rs",
+    "wincolor/src/win.rs",
+    "tests/tests.rs",
+    "src/app.rs",
+    "globset/src/glob.rs",
+    "wincolor/src/lib.rs",
+    "ignore/src/types.rs",
+    "src/pathutil.rs",
+    "globset/src/lib.rs",
+    "src/search_buffer.rs",
+    "src/search_stream.rs",
+    "src/worker.rs",
+    "ignore/src/walk.rs",
+    "ignore/src/lib.rs",
+    "grep/src/search.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 8,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-0407e104f6",
+   "task": "fix problem with searching whitelisted hidden files",
+   "gold": [
+    "crates/ignore/src/dir.rs",
+    "tests/regression.rs"
+   ],
+   "candidates": 102,
+   "ranked": [
+    "crates/ignore/src/dir.rs",
+    "crates/ignore/src/walk.rs",
+    "crates/core/flags/hiargs.rs",
+    "crates/ignore/src/lib.rs",
+    "crates/ignore/src/gitignore.rs",
+    "crates/core/flags/complete/rg.zsh",
+    "crates/cli/src/lib.rs",
+    "tests/binary.rs",
+    "tests/misc.rs",
+    "crates/cli/src/decompress.rs",
+    "tests/regression.rs",
+    "crates/core/flags/lowargs.rs",
+    "crates/ignore/src/overrides.rs",
+    "crates/core/flags/config.rs",
+    "crates/core/search.rs",
+    "crates/ignore/src/pathutil.rs",
+    "crates/searcher/src/searcher/mod.rs",
+    "crates/core/main.rs",
+    "crates/cli/src/pattern.rs",
+    "crates/ignore/src/types.rs"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 25,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-bf1027a83e",
+   "task": "update brew tap to 12.0.0",
+   "gold": [
+    "pkg/brew/ripgrep-bin.rb"
+   ],
+   "candidates": 85,
+   "ranked": [
+    "pkg/brew/ripgrep-bin.rb",
+    "crates/ignore/tests/gitignore_matched_path_or_any_parents_tests.rs",
+    "crates/matcher/src/interpolate.rs",
+    "crates/globset/src/glob.rs",
+    "tests/multiline.rs",
+    "tests/regression.rs",
+    "crates/searcher/src/line_buffer.rs",
+    "crates/ignore/src/gitignore.rs",
+    "crates/searcher/src/searcher/glue.rs",
+    "crates/searcher/src/lines.rs",
+    "tests/misc.rs",
+    "crates/core/args.rs",
+    "crates/cli/src/lib.rs",
+    "crates/searcher/src/searcher/mod.rs",
+    "tests/util.rs",
+    "crates/cli/src/decompress.rs",
+    "crates/searcher/src/testutil.rs",
+    "crates/core/subject.rs",
+    "crates/matcher/src/lib.rs",
+    "crates/searcher/src/searcher/mmap.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 19,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-f0053682c0",
+   "task": "add jinja type for *.jinja and *.jinja2",
+   "gold": [
+    "src/types.rs"
+   ],
+   "candidates": 31,
+   "ranked": [
+    "src/types.rs",
+    "src/args.rs",
+    "src/ignore.rs",
+    "src/search_buffer.rs",
+    "globset/src/lib.rs",
+    "grep/src/literals.rs",
+    "src/gitignore.rs",
+    "tests/workdir.rs",
+    "tests/tests.rs",
+    "ci/install.sh",
+    "grep/src/lib.rs",
+    "benches/bench.rs",
+    "src/walk.rs",
+    "src/search_stream.rs",
+    "ci/script.sh",
+    "src/atty.rs",
+    "src/printer.rs",
+    "src/main.rs",
+    "src/out.rs",
+    "src/terminal_win.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-f2d1c582a8",
+   "task": "Use clap's overrides_with and default_value_if",
+   "gold": [
+    "src/app.rs",
+    "src/args.rs"
+   ],
+   "candidates": 40,
+   "ranked": [
+    "src/app.rs",
+    "src/args.rs",
+    "ignore/src/walk.rs",
+    "ignore/src/lib.rs",
+    "ignore/src/dir.rs",
+    "grep/src/search.rs",
+    "src/printer.rs",
+    "build.rs",
+    "ignore/src/overrides.rs",
+    "termcolor/src/lib.rs",
+    "ignore/src/gitignore.rs",
+    "src/main.rs",
+    "globset/src/glob.rs",
+    "src/worker.rs",
+    "wincolor/src/win.rs",
+    "src/search_buffer.rs",
+    "ignore/src/types.rs",
+    "src/search_stream.rs",
+    "globset/src/lib.rs",
+    "grep/src/literals.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 9,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-bd222ae93f",
+   "task": "fix HIR analysis bug",
+   "gold": [
+    "grep-regex/src/multi.rs"
+   ],
+   "candidates": 89,
+   "ranked": [
+    "grep-regex/src/config.rs",
+    "grep-regex/src/crlf.rs",
+    "grep-regex/src/ast.rs",
+    "grep-pcre2/src/matcher.rs",
+    "grep-regex/src/strip.rs",
+    "grep-regex/src/literal.rs",
+    "grep-regex/src/non_matching.rs",
+    "grep-regex/src/multi.rs",
+    "grep-regex/src/word.rs",
+    "build.rs",
+    "grep-regex/src/matcher.rs",
+    "ignore/src/overrides.rs",
+    "grep-cli/src/lib.rs",
+    "grep-matcher/src/lib.rs",
+    "src/search.rs",
+    "src/args.rs",
+    "ignore/src/gitignore.rs",
+    "grep-searcher/src/searcher/mod.rs",
+    "src/app.rs",
+    "ignore/src/walk.rs"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 19,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-507801c1f2",
+   "task": "support .git directory OR file",
+   "gold": [
+    "ignore/src/dir.rs",
+    "tests/tests.rs"
+   ],
+   "candidates": 46,
+   "ranked": [
+    "ignore/src/walk.rs",
+    "ignore/src/dir.rs",
+    "ignore/src/gitignore.rs",
+    "src/args.rs",
+    "build.rs",
+    "src/app.rs",
+    "tests/tests.rs",
+    "tests/workdir.rs",
+    "ignore/src/lib.rs",
+    "ignore/src/overrides.rs",
+    "src/main.rs",
+    "ci/utils.sh",
+    "src/search_buffer.rs",
+    "termcolor/src/lib.rs",
+    "ci/before_deploy.sh",
+    "src/decoder.rs",
+    "ignore/src/pathutil.rs",
+    "ignore/tests/gitignore_matched_path_or_any_parents_tests.rs",
+    "globset/src/pathutil.rs",
+    "src/printer.rs"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 17,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  }
+ ]
+}

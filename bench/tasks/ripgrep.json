@@ -1,0 +1,437 @@
+{
+ "repo": "ripgrep",
+ "url": "https://github.com/BurntSushi/ripgrep",
+ "head": "3fce3b5bb0236da2df6d99672afb8a719642eca7",
+ "eligible": 625,
+ "dev": [
+  {
+   "id": "ripgrep-263e8f92b9",
+   "repo": "ripgrep",
+   "commit": "263e8f92b98ca883362c59677e23255fabfff307",
+   "parent": "231698f802c0c8abdb7bdfe65f9110a9c596ba63",
+   "task": "Update to memmap 0.6",
+   "gold": [
+    "src/worker.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-0df71240ff",
+   "repo": "ripgrep",
+   "commit": "0df71240ff19fe8fa278b64d8776725f0253bcf9",
+   "parent": "f3164f2615ce18d3ea7b5ce122dfe2a381d1b3f4",
+   "task": "fix -F and -f interaction bug",
+   "gold": [
+    "src/args.rs",
+    "tests/regression.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-d18839f3dc",
+   "repo": "ripgrep",
+   "commit": "d18839f3dcf7d599dc96f8ee36627d7b97d234b8",
+   "parent": "8f978a3cf798b9652653f3bfc0eb637112070fca",
+   "task": "add into_path for DirEntry",
+   "gold": [
+    "ignore/src/walk.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-ed60ec736c",
+   "repo": "ripgrep",
+   "commit": "ed60ec736cabab43725ae24e442a407bb0455590",
+   "parent": "a7ca2d65632264b2d2f2f50b72dcff58223e5b27",
+   "task": "Fix invalid UTF-8 output on Windows.",
+   "gold": [
+    "termcolor/src/lib.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-0407e104f6",
+   "repo": "ripgrep",
+   "commit": "0407e104f611d623547897ca99d172673b31779f",
+   "parent": "bb88a1ac45c70bef97e0d6ccd6e91595610de860",
+   "task": "fix problem with searching whitelisted hidden files",
+   "gold": [
+    "crates/ignore/src/dir.rs",
+    "tests/regression.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-bf1027a83e",
+   "repo": "ripgrep",
+   "commit": "bf1027a83ed3b467d0121d981f2b9ad5ac76d4f0",
+   "parent": "031264e5fb44da11f5aadc63d01468fdbd62a190",
+   "task": "update brew tap to 12.0.0",
+   "gold": [
+    "pkg/brew/ripgrep-bin.rb"
+   ]
+  },
+  {
+   "id": "ripgrep-f0053682c0",
+   "repo": "ripgrep",
+   "commit": "f0053682c02d0b6fc8d90b6c4f2dd03cce200b35",
+   "parent": "35045d61050328cd618e1546b3d37028849802e1",
+   "task": "add jinja type for *.jinja and *.jinja2",
+   "gold": [
+    "src/types.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-f2d1c582a8",
+   "repo": "ripgrep",
+   "commit": "f2d1c582a803a237924093be2f5e0ee45e8782ee",
+   "parent": "ab70815ea276658e38c916563b00cdc86fda88e6",
+   "task": "Use clap's overrides_with and default_value_if",
+   "gold": [
+    "src/app.rs",
+    "src/args.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-bd222ae93f",
+   "repo": "ripgrep",
+   "commit": "bd222ae93fa0cabe7d51ba8db40ece99579bdaed",
+   "parent": "4359d8aac0307f7ee36faa7b1ab64646f6160efc",
+   "task": "fix HIR analysis bug",
+   "gold": [
+    "grep-regex/src/multi.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-507801c1f2",
+   "repo": "ripgrep",
+   "commit": "507801c1f2efdc45ea25227a613c2e38cdecf88b",
+   "parent": "2a9d0072614da690d8aad77a4c6a39995595af18",
+   "task": "support .git directory OR file",
+   "gold": [
+    "ignore/src/dir.rs",
+    "tests/tests.rs"
+   ]
+  }
+ ],
+ "test": [
+  {
+   "id": "ripgrep-f2f3d00df7",
+   "repo": "ripgrep",
+   "commit": "f2f3d00df7b51c9581a07b7373353cf7eef08dd8",
+   "parent": "2394f72bad8a995d0b38039c37f46639c799e94d",
+   "task": "change some compadd -q to -r",
+   "gold": [
+    "crates/core/flags/complete/rg.zsh"
+   ]
+  },
+  {
+   "id": "ripgrep-15b263ff55",
+   "repo": "ripgrep",
+   "commit": "15b263ff550004b9de6cba74286da9834c9ed15a",
+   "parent": "404785f950ff10839579ca432679611ce2e90e9f",
+   "task": "adding cs filetype for ease of use.",
+   "gold": [
+    "ignore/src/types.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-020c5453a5",
+   "repo": "ripgrep",
+   "commit": "020c5453a5880257c87949030550d24c596f5c8d",
+   "parent": "873abecbf1c4fbac2e070ac33a25e7a23fea6700",
+   "task": "fix stdin detection for Powershell on Unix",
+   "gold": [
+    "crates/cli/src/lib.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-7eb1dd129e",
+   "repo": "ripgrep",
+   "commit": "7eb1dd129ed8b5f98553d4e468a16b69cead129a",
+   "parent": "a5f82e882661c76dca8d9101c87de4a5045962ed",
+   "task": "Add support for Standard ML file types",
+   "gold": [
+    "ignore/src/types.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-dd1bc5b898",
+   "repo": "ripgrep",
+   "commit": "dd1bc5b89873295d4e81f7a93624963e99586c17",
+   "parent": "c9bfbe1e3d350bb93356167df9c4085abdbc2316",
+   "task": "sprinkle in a few #[inline] annotations",
+   "gold": [
+    "crates/printer/src/counter.rs",
+    "crates/printer/src/hyperlink.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-d65966efbc",
+   "repo": "ripgrep",
+   "commit": "d65966efbca5cfe2afdc6930e868d02e53591a43",
+   "parent": "597bf04a56d43aa9c0eb0f8fbb90c9d51c53656c",
+   "task": "fix performance regression on Windows",
+   "gold": [
+    "ignore/src/walk.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-2b943eda47",
+   "repo": "ripgrep",
+   "commit": "2b943eda4754f3b191aaab0c4cdfc4238632f845",
+   "parent": "37544c092f068761c8da1866c2eab20fd4cac146",
+   "task": "Make file type filtering a lot faster.",
+   "gold": [
+    "src/args.rs",
+    "src/types.rs",
+    "tests/tests.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-7cf560d27c",
+   "repo": "ripgrep",
+   "commit": "7cf560d27cf2e4ac589e34ab848bf76f6df1bd4d",
+   "parent": "404785f950ff10839579ca432679611ce2e90e9f",
+   "task": "adding .mak extension for makefile filetype. Fixes #217",
+   "gold": [
+    "ignore/src/types.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-0473df1ef5",
+   "repo": "ripgrep",
+   "commit": "0473df1ef5721143941fb7f883e22b17292b35bb",
+   "parent": "301a3fd71d3a923419d6d3e7604979b314121801",
+   "task": "Disable Unicode mode for literal regex.",
+   "gold": [
+    "grep/src/literals.rs",
+    "grep/src/search.rs",
+    "tests/tests.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-23be3cf850",
+   "repo": "ripgrep",
+   "commit": "23be3cf850386ec0d4d8724fb9bf5ddeaab2c27d",
+   "parent": "b48bbf527d9d533a6636fa829ee466ea4130f3a0",
+   "task": "fix handling of **",
+   "gold": [
+    "ignore/src/gitignore.rs",
+    "tests/regression.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-351eddc17e",
+   "repo": "ripgrep",
+   "commit": "351eddc17e3f7164978c2f001ff9b8e3bc328e33",
+   "parent": "277dda544ce0e3d5f6f3693c087a4564e8401fbf",
+   "task": "Add new 'h' file type.",
+   "gold": [
+    "ignore/src/types.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-247a9398f4",
+   "repo": "ripgrep",
+   "commit": "247a9398f4dd1903ed561aa1bb2ba088a70c5a79",
+   "parent": "4981991a6e4d1808d54c8d20fc4d93fcf0c1abfe",
+   "task": "Switch to thread_local crate in lieu of thread_local!.",
+   "gold": [
+    "src/gitignore.rs",
+    "src/main.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-46dff8f4be",
+   "repo": "ripgrep",
+   "commit": "46dff8f4becc9007b073a1f3f412d6a1a544440c",
+   "parent": "7aa6e87952cfa36168e3fcb02bb009b2d8d52512",
+   "task": "Be better with short circuiting with --quiet.",
+   "gold": [
+    "src/args.rs",
+    "src/main.rs",
+    "src/printer.rs",
+    "src/search_buffer.rs",
+    "src/search_stream.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-461e0c4e33",
+   "repo": "ripgrep",
+   "commit": "461e0c4e33b38532545af4f97ec92bd367963017",
+   "parent": "82df3b768587e2839db849e6eed2db518a728778",
+   "task": "Don't search stdout redirected file.",
+   "gold": [
+    "ignore/src/walk.rs",
+    "src/args.rs",
+    "src/atty.rs",
+    "src/main.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-17d09c0882",
+   "repo": "ripgrep",
+   "commit": "17d09c0882babad2681dc99507127d8562696864",
+   "parent": "c8e9f25b852fa94a7793231323bfd2b9f26fc5dd",
+   "task": "update brew tap to 0.8.1",
+   "gold": [
+    "pkg/brew/ripgrep-bin.rb"
+   ]
+  },
+  {
+   "id": "ripgrep-ba1023e1e4",
+   "repo": "ripgrep",
+   "commit": "ba1023e1e45d7bd6edffa43d06c9613d3b84de8f",
+   "parent": "5e73075ef5300fdec03f6c4685750788108b00f4",
+   "task": "add support for line number alignment",
+   "gold": [
+    "src/app.rs",
+    "src/args.rs",
+    "src/printer.rs",
+    "tests/tests.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-119407d0a9",
+   "repo": "ripgrep",
+   "commit": "119407d0a918ca54da1e0a5e8806dbb8cd7e2be0",
+   "parent": "d869038cf610f10a8b7aca24284719e65a477e1a",
+   "task": "use std::path::absolute on Windows",
+   "gold": [
+    "crates/printer/src/hyperlink.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-ff898cd105",
+   "repo": "ripgrep",
+   "commit": "ff898cd1056f4fc23181edbadb7fb495ae9646ef",
+   "parent": "2c98e5ce1eec741bf55df655c74b9d64ee5c7703",
+   "task": "Remove vestigial color function from src/args.rs",
+   "gold": [
+    "src/args.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-a7f2d48234",
+   "repo": "ripgrep",
+   "commit": "a7f2d482342eb2250b5a32ee03a8fe16990228dc",
+   "parent": "57500ad01381f8c4ed6436af627680969c6e2de2",
+   "task": "fix path handling in summarizer",
+   "gold": [
+    "grep-printer/src/summary.rs",
+    "tests/regression.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-42223047a8",
+   "repo": "ripgrep",
+   "commit": "42223047a858240cfeabcde4fd99b7395b34b297",
+   "parent": "42afb6faa5dbc9d11aa94a49691997093d21b237",
+   "task": "Add type for Less",
+   "gold": [
+    "ignore/src/types.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-4d34132365",
+   "repo": "ripgrep",
+   "commit": "4d34132365a00219f0c0baca9e05b119621dbd79",
+   "parent": "5173bfb11b00adf5ca3e05d7b7ff03f5971c2713",
+   "task": "main.rs: call Clone() on trait instead of ref-counted pointers and pass Arc<Args> by ref more often.",
+   "gold": [
+    "src/main.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-0f6181d309",
+   "repo": "ripgrep",
+   "commit": "0f6181d309d42061ed5be528503b93560c805f3c",
+   "parent": "e902e2fef40b926bdf093c6a3939be8cc6f3778a",
+   "task": "ignore/types: add USD to the default file types",
+   "gold": [
+    "crates/ignore/src/default_types.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-bb8601b2ba",
+   "repo": "ripgrep",
+   "commit": "bb8601b2bafb5e68181cbbb84e6ffa4f7a72bf16",
+   "parent": "02b47b7469ac8fc9e7dcb390415644f33e500b72",
+   "task": "make compilation on non-unix, non-windows platforms work",
+   "gold": [
+    "crates/cli/src/hostname.rs",
+    "crates/printer/src/hyperlink.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-224c112e05",
+   "repo": "ripgrep",
+   "commit": "224c112e0509ab2aeb28de05efbbce9486a55eff",
+   "parent": "8cb5833ef9fd6c4c351d10a3e950339fa89adf49",
+   "task": "tweak the meaning of zero",
+   "gold": [
+    "src/app.rs",
+    "src/args.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-a5855a5d73",
+   "repo": "ripgrep",
+   "commit": "a5855a5d733d42ba3913d78dd19083990d41ecf3",
+   "parent": "03b0d832edb821d2baed81e04fc82a0699935777",
+   "task": "couple of trivial fixes to make clippy a bit more happy",
+   "gold": [
+    "src/search_stream.rs",
+    "src/unescape.rs",
+    "tests/tests.rs",
+    "tests/workdir.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-920112e640",
+   "repo": "ripgrep",
+   "commit": "920112e6404fdc3c8915ffab89e5caf1099b8bf5",
+   "parent": "a84ffe603b4ce121e34a6961803530e694d811b6",
+   "task": "Add .adoc, .asc, asciidoc extension to asciidoc",
+   "gold": [
+    "ignore/src/types.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-03af61fc7b",
+   "repo": "ripgrep",
+   "commit": "03af61fc7bb384cb594359fee806912ee5e57a98",
+   "parent": "560dffd2476f16b4b296aae6aca7aec0f0c6ba1c",
+   "task": "don't skip tar archives",
+   "gold": [
+    "src/decompressor.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-f74078af5b",
+   "repo": "ripgrep",
+   "commit": "f74078af5b1a2d37e0d952f38320c594906793a8",
+   "parent": "5ff9b2f2a2debd68976ae2ec67529522bad92fc0",
+   "task": "Add support for the Swift programming language file type",
+   "gold": [
+    "src/types.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-34edb8123a",
+   "repo": "ripgrep",
+   "commit": "34edb8123a0b7bd69a61cd237fec8c1b26a3f786",
+   "parent": "5b30c2aed60ee8a57f438e4c981a68c3bf3bc0ff",
+   "task": "squash noisy error message",
+   "gold": [
+    "crates/ignore/src/dir.rs"
+   ]
+  },
+  {
+   "id": "ripgrep-3bec8f3f0a",
+   "repo": "ripgrep",
+   "commit": "3bec8f3f0a35b47a216f7d5e47ee59af5d5b6af3",
+   "parent": "3b37f12ec089b84879b4596a50ffa725efacfeb3",
+   "task": "Impl Debug for IgnoreDir.",
+   "gold": [
+    "src/ignore.rs"
+   ]
+  }
+ ]
+}

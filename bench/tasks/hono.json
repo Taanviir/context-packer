@@ -1,0 +1,471 @@
+{
+ "repo": "hono",
+ "url": "https://github.com/honojs/hono",
+ "head": "6cadf7537385c6e3df9cbd6d05c9b84c82ae0361",
+ "eligible": 857,
+ "dev": [
+  {
+   "id": "hono-6a9590d69c",
+   "repo": "hono",
+   "commit": "6a9590d69cc9a7104e1a7729ff161bc048699aa4",
+   "parent": "93fec337d030a3321f74b35a17a144837bef9086",
+   "task": "render a child or odd children with `Fragment` correctly",
+   "gold": [
+    "deno_dist/jsx/index.test.tsx",
+    "deno_dist/jsx/index.ts",
+    "src/jsx/index.test.tsx",
+    "src/jsx/index.ts"
+   ]
+  },
+  {
+   "id": "hono-88e7650ee8",
+   "repo": "hono",
+   "commit": "88e7650ee815eb3924504054138f2397c5a6ae45",
+   "parent": "2b274662e9ea8ed32fcb22ec9becf18bd22e82c4",
+   "task": "corrected argument types for `Context` methods",
+   "gold": [
+    "deno_dist/context.ts",
+    "src/context.ts"
+   ]
+  },
+  {
+   "id": "hono-405ec8cdb7",
+   "repo": "hono",
+   "commit": "405ec8cdb7b1dd14579cd762a664577909839d7d",
+   "parent": "dbd484176dfd8cd36ac01df15a5555b2100b424e",
+   "task": "don't decode space as `+`",
+   "gold": [
+    "deno_dist/utils/buffer.ts",
+    "src/utils/buffer.test.ts",
+    "src/utils/buffer.ts"
+   ]
+  },
+  {
+   "id": "hono-f2a72d333a",
+   "repo": "hono",
+   "commit": "f2a72d333aed37b1bf2c18540a0a1df9fdb5c58c",
+   "parent": "8a5852d4c1d0c9bc46460d679e6f54a6d88575a1",
+   "task": "serialize multiple cookies correctly",
+   "gold": [
+    "src/client/client.test.ts",
+    "src/client/client.ts"
+   ]
+  },
+  {
+   "id": "hono-aebaa28462",
+   "repo": "hono",
+   "commit": "aebaa2846228eea30a1787cde01a3d2e25fc803f",
+   "parent": "f7faf38f6f4d3c6ff4ca4f2deeffc9be18cbc739",
+   "task": "check for json subtypes in validator",
+   "gold": [
+    "deno_dist/validator/validator.ts",
+    "src/validator/validator.test.ts",
+    "src/validator/validator.ts"
+   ]
+  },
+  {
+   "id": "hono-68cabdef27",
+   "repo": "hono",
+   "commit": "68cabdef27e4369118b1283694f41be0dda8602a",
+   "parent": "ed51b0b5d8741dd0ebac2169569a19e32a720310",
+   "task": "remove lookbehind assertion in event regexp",
+   "gold": [
+    "deno_dist/jsx/dom/render.ts",
+    "src/jsx/dom/index.test.tsx",
+    "src/jsx/dom/render.ts"
+   ]
+  },
+  {
+   "id": "hono-17c3b9ed10",
+   "repo": "hono",
+   "commit": "17c3b9ed104ed0d21cf31663f9f0257a8e1703d2",
+   "parent": "1854e2414557736ec375cf8df92faf2c9aff4f2c",
+   "task": "improve a-tag types with well known values",
+   "gold": [
+    "src/jsx/intrinsic-elements.ts",
+    "src/utils/types.ts"
+   ]
+  },
+  {
+   "id": "hono-1dd07d0c60",
+   "repo": "hono",
+   "commit": "1dd07d0c6095332b3a9b11c81a6f61818deeaf53",
+   "parent": "e2e2c1452b30f91e84cf9106bfa6921f879bba33",
+   "task": "import cookie helper correctly",
+   "gold": [
+    "deno_dist/middleware/jwt/index.ts",
+    "src/middleware/jwt/index.ts"
+   ]
+  },
+  {
+   "id": "hono-936db9bfa1",
+   "repo": "hono",
+   "commit": "936db9bfa14e22685a490cc924f9750c29a2416f",
+   "parent": "42436bf799cb228fc404830b4b18c4399a9391e2",
+   "task": "Use Signed Cookie in JWT Middleware",
+   "gold": [
+    "src/middleware/jwt/index.test.ts",
+    "src/middleware/jwt/jwt.ts"
+   ]
+  },
+  {
+   "id": "hono-da7087c754",
+   "repo": "hono",
+   "commit": "da7087c754d32d33f3cf1b71fcdfb49c27569b52",
+   "parent": "bd90ec5d2b27dbd7680d35fdeae1b219d2fba3da",
+   "task": "simplify HandleInterface and save size",
+   "gold": [
+    "src/adapter/cloudflare-pages/handler.test.ts",
+    "src/adapter/cloudflare-pages/handler.ts",
+    "src/adapter/nextjs/handler.test.ts",
+    "src/adapter/nextjs/handler.ts"
+   ]
+  }
+ ],
+ "test": [
+  {
+   "id": "hono-38ac5a0d55",
+   "repo": "hono",
+   "commit": "38ac5a0d555c8b0bd7416088a467ed6993db5abc",
+   "parent": "c128f0dcfe2a31fcd7800ec9e8fa9b6f0e33d879",
+   "task": "use `isByteString` in `c.redirect`",
+   "gold": [
+    "src/context.test.ts",
+    "src/context.ts",
+    "src/utils/url.test.ts",
+    "src/utils/url.ts"
+   ]
+  },
+  {
+   "id": "hono-a15bec3275",
+   "repo": "hono",
+   "commit": "a15bec32759dd735e32121b54f279e989c7a956e",
+   "parent": "1e8ebe9f04142b57713d7ac52b30c4414bf9c47c",
+   "task": "Calculate Context<Env> Type in createHandlers",
+   "gold": [
+    "src/helper/factory/index.test.ts",
+    "src/helper/factory/index.ts",
+    "src/types.ts"
+   ]
+  },
+  {
+   "id": "hono-034bf6db60",
+   "repo": "hono",
+   "commit": "034bf6db605f4a7fac99f6e91e5bab6e9bb164ae",
+   "parent": "fbde9079c4c17a7a7d9cf98b28144adca78df1cf",
+   "task": "Use KV for blog example",
+   "gold": [
+    "example/blog/src/controller.test.ts",
+    "example/blog/src/controller.ts",
+    "example/blog/src/index.ts",
+    "example/blog/src/model.ts"
+   ]
+  },
+  {
+   "id": "hono-a3d9f1371b",
+   "repo": "hono",
+   "commit": "a3d9f1371b12844e39751d61f3d4692dd8516a97",
+   "parent": "d7b1fe8e11d5353fb9a0f99f3bc2c8b1fc0963b9",
+   "task": "Handler stuck when awaiting aborted SSE stream",
+   "gold": [
+    "deno_dist/utils/stream.ts",
+    "src/utils/stream.ts"
+   ]
+  },
+  {
+   "id": "hono-6ae021371a",
+   "repo": "hono",
+   "commit": "6ae021371a38216a02f6fbddc06eebff506dfd04",
+   "parent": "0c405b9a3a6310acc9cc1bd95ab60cee2e3d96ba",
+   "task": "include original request signal in proxy request",
+   "gold": [
+    "src/helper/proxy/index.test.ts",
+    "src/helper/proxy/index.ts"
+   ]
+  },
+  {
+   "id": "hono-acb56b8d30",
+   "repo": "hono",
+   "commit": "acb56b8d306ed5836bd41d03baa4ffd027c15301",
+   "parent": "932307efd887c5c0ad3d1499f25bca7fe91a5ede",
+   "task": "handle multi value headers in AWS Lambda",
+   "gold": [
+    "runtime_tests/lambda/index.test.ts",
+    "src/adapter/aws-lambda/handler.ts"
+   ]
+  },
+  {
+   "id": "hono-3bc96ba915",
+   "repo": "hono",
+   "commit": "3bc96ba915bf8d5b25430c955aec8f7df500ff21",
+   "parent": "75b8a4932a24a4533168600436e10f03055844bf",
+   "task": "add first-class support for QUERY requests",
+   "gold": [
+    "src/middleware/cache/index.test.ts",
+    "src/middleware/cache/index.ts"
+   ]
+  },
+  {
+   "id": "hono-b5cd193c2e",
+   "repo": "hono",
+   "commit": "b5cd193c2e643520a94b29732232d945a2f24b62",
+   "parent": "418941d01b98e15c92bf85bebc6294d178eb7be7",
+   "task": "support overwrite response after `next()`",
+   "gold": [
+    "src/context.ts",
+    "src/hono.test.ts"
+   ]
+  },
+  {
+   "id": "hono-edfb31ee94",
+   "repo": "hono",
+   "commit": "edfb31ee947ce869736a7e272adb05894b3a41ce",
+   "parent": "888e04ded1c280249f655ae20eb2499a13f93bd6",
+   "task": "make `notFound()` enables to catch errors correctly",
+   "gold": [
+    "deno_dist/hono.ts",
+    "deno_dist/utils/encode.ts",
+    "src/hono.test.ts",
+    "src/hono.ts"
+   ]
+  },
+  {
+   "id": "hono-8e9b1c8099",
+   "repo": "hono",
+   "commit": "8e9b1c809923b5ac18bd917bd6b37b31b58fe61a",
+   "parent": "451d6fe117034ec9bcd7cb1dcf8b233cbf8db7a7",
+   "task": "make compatibility with `@cloudflare/workers-types`",
+   "gold": [
+    "deno_dist/hono.ts",
+    "deno_dist/request.ts",
+    "src/hono.ts",
+    "src/request.ts"
+   ]
+  },
+  {
+   "id": "hono-48a7ccbc0e",
+   "repo": "hono",
+   "commit": "48a7ccbc0eca7df63e4f4aca6d94d9fbe68fa0d8",
+   "parent": "ff7522fdccef4a55f6aa326ece705c0cd7cd8031",
+   "task": "make bearerAuth generic for typed context in verifyToken",
+   "gold": [
+    "src/middleware/bearer-auth/index.test.ts",
+    "src/middleware/bearer-auth/index.ts"
+   ]
+  },
+  {
+   "id": "hono-955bd8f726",
+   "repo": "hono",
+   "commit": "955bd8f72615e183991e2628ca56e898694115ac",
+   "parent": "b76ca6e37dfae7cefcadd3527c83c5d79ff31793",
+   "task": "should populate `output` type for `c.body()`",
+   "gold": [
+    "src/context.ts"
+   ]
+  },
+  {
+   "id": "hono-b23cf8d65d",
+   "repo": "hono",
+   "commit": "b23cf8d65d851de9726d6388b45dda39e6fdb9ab",
+   "parent": "4ec3a9bf41ec3de004836e84757c07ec2b7b4156",
+   "task": "correct types inside of `createMiddleware()`",
+   "gold": [
+    "deno_dist/helper/factory/index.ts",
+    "src/helper/factory/index.test.ts",
+    "src/helper/factory/index.ts"
+   ]
+  },
+  {
+   "id": "hono-208d77b06d",
+   "repo": "hono",
+   "commit": "208d77b06d5bf970f4118a87007f22c6b37164d1",
+   "parent": "e1e0e0976be1c1b41b6a12fe075e848ee785f5fb",
+   "task": "default JSONRespond  and TextRespond StatusCode generic arg",
+   "gold": [
+    "src/context.ts"
+   ]
+  },
+  {
+   "id": "hono-fa84edca71",
+   "repo": "hono",
+   "commit": "fa84edca7110a622f37063701f960f9c722810ed",
+   "parent": "0560f27bde276cdc2fcb1864c3958626f2fc8a30",
+   "task": "infer env typings from context",
+   "gold": [
+    "src/adapter.ts"
+   ]
+  },
+  {
+   "id": "hono-f251706e6e",
+   "repo": "hono",
+   "commit": "f251706e6e258f6e12c1c7acbcd75dbb5570237a",
+   "parent": "2a2f73a1c43870510603c284c9d2536c83623588",
+   "task": "export types for the client",
+   "gold": [
+    "deno_dist/mod.ts",
+    "src/mod.ts"
+   ]
+  },
+  {
+   "id": "hono-c99f696d28",
+   "repo": "hono",
+   "commit": "c99f696d2821fadfbe6afe79367c4eaa25b80b68",
+   "parent": "84bcbe8a79d9bb13f2cd5f802ab6d7d4588566e6",
+   "task": "pass the context as 2nd arg",
+   "gold": [
+    "deno_dist/middleware/jsx-renderer/index.ts",
+    "src/middleware/jsx-renderer/index.test.tsx",
+    "src/middleware/jsx-renderer/index.ts"
+   ]
+  },
+  {
+   "id": "hono-ce2a2f5964",
+   "repo": "hono",
+   "commit": "ce2a2f59641b09df2a7804eac85dc5fc5ee91684",
+   "parent": "4b3cd3c6e16c16e4d9b22b872d5ebc9e38c3272a",
+   "task": "Add a \"cause\" option to HTTPException",
+   "gold": [
+    "deno_dist/http-exception.ts",
+    "src/http-exception.test.ts",
+    "src/http-exception.ts"
+   ]
+  },
+  {
+   "id": "hono-257d5711b4",
+   "repo": "hono",
+   "commit": "257d5711b4d5dab5b6dc498b0991f85875e79e66",
+   "parent": "710992fcd496a9124b50a75b6f8377373558cd07",
+   "task": "allow `onError()` handler to be async",
+   "gold": [
+    "deno_dist/compose.ts",
+    "src/compose.test.ts",
+    "src/compose.ts"
+   ]
+  },
+  {
+   "id": "hono-4c213e4379",
+   "repo": "hono",
+   "commit": "4c213e43791602faa57968603d8a3701b5dc0ed3",
+   "parent": "0fe95bc81ff9b2ae34a6efd82de756462ede3b69",
+   "task": "use `atob` for basic auth",
+   "gold": [
+    "examples/basic/index.js",
+    "src/middleware/basic-auth/basic-auth.ts"
+   ]
+  },
+  {
+   "id": "hono-287498bdec",
+   "repo": "hono",
+   "commit": "287498bdeca8556518e877071205bb2fc4a560c4",
+   "parent": "e2a174b8ac27fb42e30f4dc85cf0b2f02c8886d7",
+   "task": "Allow validator to apply validation to path param.",
+   "gold": [
+    "deno_dist/validator/validator.ts",
+    "src/validator/validator.test.ts",
+    "src/validator/validator.ts"
+   ]
+  },
+  {
+   "id": "hono-cea7b7b993",
+   "repo": "hono",
+   "commit": "cea7b7b993af682fbf10bb29937d028a55b8ab7e",
+   "parent": "f7d272abe1644e50ab5fe9cb53f5965c35d77226",
+   "task": "preserve context when using await before html helper",
+   "gold": [
+    "src/jsx/context.ts",
+    "src/jsx/index.test.tsx"
+   ]
+  },
+  {
+   "id": "hono-4a239ad208",
+   "repo": "hono",
+   "commit": "4a239ad208685c348694162a68abcb8056e1a8a3",
+   "parent": "27521e68c2a0793daab82c26879b2d46e272491b",
+   "task": "fix not found handler calling timing when one middleware",
+   "gold": [
+    "deno_dist/hono-base.ts",
+    "src/hono-base.ts",
+    "src/hono.test.ts"
+   ]
+  },
+  {
+   "id": "hono-3317ca128a",
+   "repo": "hono",
+   "commit": "3317ca128a7ae4a83cecea09f2d7ff647b577a3b",
+   "parent": "8bdbfcc49b546c1f7e60cd4023e2b6f11c937561",
+   "task": "fixed type mismatch in `EventContext`",
+   "gold": [
+    "src/adapter/cloudflare-pages/handler.ts"
+   ]
+  },
+  {
+   "id": "hono-81d271279c",
+   "repo": "hono",
+   "commit": "81d271279c77f6734869b8bbdb9b5924c6c597de",
+   "parent": "aaa1c6d4b9747fd69b168b30e984b75e4da4b508",
+   "task": "Allow `context.jsonT` to take interface as an argument",
+   "gold": [
+    "deno_dist/context.ts",
+    "deno_dist/utils/types.ts",
+    "src/client/client.test.ts",
+    "src/context.ts",
+    "src/utils/types.ts"
+   ]
+  },
+  {
+   "id": "hono-48a8729862",
+   "repo": "hono",
+   "commit": "48a87298628c7eed7c2d7ab7537312915283332b",
+   "parent": "1fc573273d5606167a073d214557f1ac6ca97a05",
+   "task": "use `constructor.name` instead of `instanceof`",
+   "gold": [
+    "deno_dist/hono-base.ts",
+    "src/hono-base.ts"
+   ]
+  },
+  {
+   "id": "hono-3b0e52e879",
+   "repo": "hono",
+   "commit": "3b0e52e8796e2ed877acfecf45771476075c8104",
+   "parent": "91357d4b8287fc54392143b89902a6cd3577e100",
+   "task": "Check for duplicate parameter names.",
+   "gold": [
+    "src/router/reg-exp-router/router.test.ts",
+    "src/router/reg-exp-router/router.ts"
+   ]
+  },
+  {
+   "id": "hono-bd26c3129f",
+   "repo": "hono",
+   "commit": "bd26c3129f8e159864d3f96522f44e900516e847",
+   "parent": "b85c1e032864322c581f4d04652d37ef59130eee",
+   "task": "improve performance (1.5x ~ 2.0x)",
+   "gold": [
+    "src/router/trie-router/node.test.ts",
+    "src/router/trie-router/node.ts"
+   ]
+  },
+  {
+   "id": "hono-b8cff18905",
+   "repo": "hono",
+   "commit": "b8cff189051d408c8c4cf57d24ca82ec8712e73d",
+   "parent": "8c4d7f3d2feea19c726bcaf3b7d01b62215eae8b",
+   "task": "Fix \"Invalid state: Controller is already closed\"",
+   "gold": [
+    "src/jsx/streaming.test.tsx",
+    "src/jsx/streaming.ts"
+   ]
+  },
+  {
+   "id": "hono-7e0555d14c",
+   "repo": "hono",
+   "commit": "7e0555d14c72d4204347ac9afaae32ba5c013ab9",
+   "parent": "f0ed2465913f2a89ebdf65cc54d6254915fc3ff6",
+   "task": "echo negotiated WebSocket subprotocol in upgrade response",
+   "gold": [
+    "src/adapter/deno/websocket.test.ts",
+    "src/adapter/deno/websocket.ts"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,965 @@
+{
+ "generated": "2026-09-24",
+ "repos": {
+  "hono": {
+   "url": "https://github.com/honojs/hono",
+   "language": "TypeScript",
+   "head": "6cadf7537385c6e3df9cbd6d05c9b84c82ae0361",
+   "jev": true,
+   "dev": {
+    "variants": {
+     "keywords": {
+      "tasks": 10,
+      "candidates": 300,
+      "recall": {
+       "5": 0.5166666666666666,
+       "10": 0.7833333333333333,
+       "20": 0.9166666666666666
+      },
+      "ms": 28,
+      "costUsd": 0,
+      "inputTokens": 0,
+      "failedBatches": 0
+     },
+     "jev": {
+      "tasks": 10,
+      "candidates": 300,
+      "recall": {
+       "5": 0.725,
+       "10": 0.9083333333333332,
+       "20": 0.9333333333333332
+      },
+      "ms": 1868,
+      "costUsd": 0.0058424058000000004,
+      "inputTokens": 139105,
+      "failedBatches": 0
+     },
+     "jev-lang": {
+      "tasks": 10,
+      "candidates": 300,
+      "recall": {
+       "5": 0.725,
+       "10": 0.8833333333333332,
+       "20": 0.9333333333333332
+      },
+      "ms": 2463,
+      "costUsd": 0.0069214362000000005,
+      "inputTokens": 164796,
+      "failedBatches": 0
+     }
+    },
+    "comparisons": {
+     "jev vs keywords": {
+      "5": {
+       "diff": 0.20833333333333331,
+       "lo": 0.008333333333333331,
+       "hi": 0.4416666666666667,
+       "tasks": 10
+      },
+      "10": {
+       "diff": 0.125,
+       "lo": -0.05,
+       "hi": 0.35,
+       "tasks": 10
+      },
+      "20": {
+       "diff": 0.016666666666666663,
+       "lo": -0.1,
+       "hi": 0.15,
+       "tasks": 10
+      }
+     },
+     "jev-lang vs jev": {
+      "5": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 10
+      },
+      "10": {
+       "diff": -0.025,
+       "lo": -0.075,
+       "hi": 0,
+       "tasks": 10
+      },
+      "20": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 10
+      }
+     }
+    }
+   },
+   "test": {
+    "variants": {
+     "keywords": {
+      "tasks": 30,
+      "candidates": 272,
+      "recall": {
+       "5": 0.4222222222222222,
+       "10": 0.6355555555555555,
+       "20": 0.73
+      },
+      "ms": 17,
+      "costUsd": 0,
+      "inputTokens": 0,
+      "failedBatches": 0
+     },
+     "jev": {
+      "tasks": 30,
+      "candidates": 272,
+      "recall": {
+       "5": 0.5494444444444445,
+       "10": 0.7438888888888889,
+       "20": 0.8327777777777778
+      },
+      "ms": 2066,
+      "costUsd": 0.005600487200000001,
+      "inputTokens": 133345,
+      "failedBatches": 3
+     },
+     "jev-lang": {
+      "tasks": 30,
+      "candidates": 272,
+      "recall": {
+       "5": 0.5494444444444445,
+       "10": 0.7438888888888889,
+       "20": 0.8411111111111111
+      },
+      "ms": 1554,
+      "costUsd": 0.006597994200000002,
+      "inputTokens": 157095,
+      "failedBatches": 3
+     }
+    },
+    "comparisons": {
+     "jev vs keywords": {
+      "5": {
+       "diff": 0.12722222222222224,
+       "lo": -0.0033333333333333327,
+       "hi": 0.2661111111111112,
+       "tasks": 30
+      },
+      "10": {
+       "diff": 0.10833333333333334,
+       "lo": -0.008333333333333333,
+       "hi": 0.24166666666666667,
+       "tasks": 30
+      },
+      "20": {
+       "diff": 0.10277777777777779,
+       "lo": 0.01944444444444444,
+       "hi": 0.2111111111111111,
+       "tasks": 30
+      }
+     },
+     "jev-lang vs jev": {
+      "5": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 30
+      },
+      "10": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 30
+      },
+      "20": {
+       "diff": 0.008333333333333333,
+       "lo": 0,
+       "hi": 0.025,
+       "tasks": 30
+      }
+     }
+    }
+   }
+  },
+  "rich": {
+   "url": "https://github.com/Textualize/rich",
+   "language": "Python",
+   "head": "9d8f9a372cc5916fd4781fec207ced7ddac2f08f",
+   "jev": true,
+   "dev": {
+    "variants": {
+     "keywords": {
+      "tasks": 10,
+      "candidates": 149,
+      "recall": {
+       "5": 0.4,
+       "10": 0.625,
+       "20": 0.725
+      },
+      "ms": 14,
+      "costUsd": 0,
+      "inputTokens": 0,
+      "failedBatches": 0
+     },
+     "jev": {
+      "tasks": 10,
+      "candidates": 149,
+      "recall": {
+       "5": 0.675,
+       "10": 0.725,
+       "20": 0.825
+      },
+      "ms": 1988,
+      "costUsd": 0.0058406123999999995,
+      "inputTokens": 139062,
+      "failedBatches": 0
+     },
+     "jev-lang": {
+      "tasks": 10,
+      "candidates": 149,
+      "recall": {
+       "5": 0.675,
+       "10": 0.725,
+       "20": 0.825
+      },
+      "ms": 1865,
+      "costUsd": 0.0063792708000000005,
+      "inputTokens": 151887,
+      "failedBatches": 0
+     }
+    },
+    "comparisons": {
+     "jev vs keywords": {
+      "5": {
+       "diff": 0.275,
+       "lo": 0.05,
+       "hi": 0.55,
+       "tasks": 10
+      },
+      "10": {
+       "diff": 0.1,
+       "lo": 0,
+       "hi": 0.25,
+       "tasks": 10
+      },
+      "20": {
+       "diff": 0.1,
+       "lo": 0,
+       "hi": 0.25,
+       "tasks": 10
+      }
+     },
+     "jev-lang vs jev": {
+      "5": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 10
+      },
+      "10": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 10
+      },
+      "20": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 10
+      }
+     }
+    }
+   },
+   "test": {
+    "variants": {
+     "keywords": {
+      "tasks": 30,
+      "candidates": 159,
+      "recall": {
+       "5": 0.5277777777777778,
+       "10": 0.6277777777777779,
+       "20": 0.7722222222222221
+      },
+      "ms": 14,
+      "costUsd": 0,
+      "inputTokens": 0,
+      "failedBatches": 0
+     },
+     "jev": {
+      "tasks": 30,
+      "candidates": 159,
+      "recall": {
+       "5": 0.7027777777777778,
+       "10": 0.7472222222222222,
+       "20": 0.8583333333333333
+      },
+      "ms": 2248,
+      "costUsd": 0.005880588000000002,
+      "inputTokens": 140014,
+      "failedBatches": 0
+     },
+     "jev-lang": {
+      "tasks": 30,
+      "candidates": 159,
+      "recall": {
+       "5": 0.7027777777777778,
+       "10": 0.7472222222222222,
+       "20": 0.85
+      },
+      "ms": 1523,
+      "costUsd": 0.0064421742,
+      "inputTokens": 153385,
+      "failedBatches": 0
+     }
+    },
+    "comparisons": {
+     "jev vs keywords": {
+      "5": {
+       "diff": 0.175,
+       "lo": 0.058333333333333334,
+       "hi": 0.31666666666666665,
+       "tasks": 30
+      },
+      "10": {
+       "diff": 0.11944444444444444,
+       "lo": 0.027777777777777776,
+       "hi": 0.23333333333333334,
+       "tasks": 30
+      },
+      "20": {
+       "diff": 0.08611111111111111,
+       "lo": -0.013888888888888888,
+       "hi": 0.2,
+       "tasks": 30
+      }
+     },
+     "jev-lang vs jev": {
+      "5": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 30
+      },
+      "10": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 30
+      },
+      "20": {
+       "diff": -0.008333333333333333,
+       "lo": -0.025,
+       "hi": 0,
+       "tasks": 30
+      }
+     }
+    }
+   }
+  },
+  "gin": {
+   "url": "https://github.com/gin-gonic/gin",
+   "language": "Go",
+   "head": "3b08cd7235bd5ad2f055aa9e38135f111f6c5926",
+   "jev": true,
+   "dev": {
+    "variants": {
+     "keywords": {
+      "tasks": 10,
+      "candidates": 56,
+      "recall": {
+       "5": 0.6733333333333333,
+       "10": 0.7733333333333333,
+       "20": 0.8666666666666666
+      },
+      "ms": 5,
+      "costUsd": 0,
+      "inputTokens": 0,
+      "failedBatches": 0
+     },
+     "jev": {
+      "tasks": 10,
+      "candidates": 56,
+      "recall": {
+       "5": 0.7033333333333334,
+       "10": 0.8433333333333334,
+       "20": 0.9466666666666667
+      },
+      "ms": 125,
+      "costUsd": 0.0030856644000000003,
+      "inputTokens": 73468,
+      "failedBatches": 3
+     },
+     "jev-lang": {
+      "tasks": 10,
+      "candidates": 56,
+      "recall": {
+       "5": 0.7033333333333334,
+       "10": 0.8433333333333334,
+       "20": 0.9466666666666667
+      },
+      "ms": 1298,
+      "costUsd": 0.0033614658,
+      "inputTokens": 80035,
+      "failedBatches": 3
+     }
+    },
+    "comparisons": {
+     "jev vs keywords": {
+      "5": {
+       "diff": 0.03,
+       "lo": -0.06000000000000001,
+       "hi": 0.15,
+       "tasks": 10
+      },
+      "10": {
+       "diff": 0.06999999999999999,
+       "lo": 0,
+       "hi": 0.16999999999999998,
+       "tasks": 10
+      },
+      "20": {
+       "diff": 0.08,
+       "lo": -0.059999999999999984,
+       "hi": 0.3,
+       "tasks": 10
+      }
+     },
+     "jev-lang vs jev": {
+      "5": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 10
+      },
+      "10": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 10
+      },
+      "20": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 10
+      }
+     }
+    }
+   },
+   "test": {
+    "variants": {
+     "keywords": {
+      "tasks": 30,
+      "candidates": 73,
+      "recall": {
+       "5": 0.7338888888888888,
+       "10": 0.8672222222222222,
+       "20": 0.9388888888888888
+      },
+      "ms": 5,
+      "costUsd": 0,
+      "inputTokens": 0,
+      "failedBatches": 0
+     },
+     "jev": {
+      "tasks": 30,
+      "candidates": 73,
+      "recall": {
+       "5": 0.8005555555555556,
+       "10": 0.8588888888888888,
+       "20": 0.9833333333333333
+      },
+      "ms": 1921,
+      "costUsd": 0.0038484879999999993,
+      "inputTokens": 91631,
+      "failedBatches": 2
+     },
+     "jev-lang": {
+      "tasks": 30,
+      "candidates": 73,
+      "recall": {
+       "5": 0.8005555555555556,
+       "10": 0.8588888888888888,
+       "20": 0.9833333333333333
+      },
+      "ms": 1069,
+      "costUsd": 0.004174000600000001,
+      "inputTokens": 99381,
+      "failedBatches": 4
+     }
+    },
+    "comparisons": {
+     "jev vs keywords": {
+      "5": {
+       "diff": 0.06666666666666667,
+       "lo": -0.03333333333333333,
+       "hi": 0.18333333333333332,
+       "tasks": 30
+      },
+      "10": {
+       "diff": -0.008333333333333333,
+       "lo": -0.10833333333333334,
+       "hi": 0.1,
+       "tasks": 30
+      },
+      "20": {
+       "diff": 0.044444444444444446,
+       "lo": -0.027777777777777773,
+       "hi": 0.13333333333333333,
+       "tasks": 30
+      }
+     },
+     "jev-lang vs jev": {
+      "5": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 30
+      },
+      "10": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 30
+      },
+      "20": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 30
+      }
+     }
+    }
+   }
+  },
+  "prometheus": {
+   "url": "https://github.com/prometheus/prometheus",
+   "language": "Go + TypeScript",
+   "head": "5f325dd18c88077d00a0e54554b3433696a24664",
+   "jev": true,
+   "dev": {
+    "variants": {
+     "keywords": {
+      "tasks": 10,
+      "candidates": 1309,
+      "recall": {
+       "5": 0.6666666666666666,
+       "10": 0.82,
+       "20": 0.9400000000000001
+      },
+      "ms": 299,
+      "costUsd": 0,
+      "inputTokens": 0,
+      "failedBatches": 0
+     },
+     "jev": {
+      "tasks": 10,
+      "candidates": 1309,
+      "recall": {
+       "5": 0.74,
+       "10": 0.9400000000000001,
+       "20": 0.9800000000000001
+      },
+      "ms": 3202,
+      "costUsd": 0.013541829,
+      "inputTokens": 322425,
+      "failedBatches": 0
+     },
+     "jev-lang": {
+      "tasks": 10,
+      "candidates": 1309,
+      "recall": {
+       "5": 0.74,
+       "10": 0.9400000000000001,
+       "20": 0.9800000000000001
+      },
+      "ms": 3705,
+      "costUsd": 0.021403976999999998,
+      "inputTokens": 509619,
+      "failedBatches": 0
+     }
+    },
+    "comparisons": {
+     "jev vs keywords": {
+      "5": {
+       "diff": 0.07333333333333333,
+       "lo": -0.32666666666666666,
+       "hi": 0.44666666666666666,
+       "tasks": 10
+      },
+      "10": {
+       "diff": 0.12,
+       "lo": 0,
+       "hi": 0.32,
+       "tasks": 10
+      },
+      "20": {
+       "diff": 0.04,
+       "lo": 0,
+       "hi": 0.12000000000000002,
+       "tasks": 10
+      }
+     },
+     "jev-lang vs jev": {
+      "5": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 10
+      },
+      "10": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 10
+      },
+      "20": {
+       "diff": 0,
+       "lo": 0,
+       "hi": 0,
+       "tasks": 10
+      }
+     }
+    }
+   },
+   "test": {
+    "variants": {
+     "keywords": {
+      "tasks": 30,
+      "candidates": 1222,
+      "recall": {
+       "5": 0.5611111111111112,
+       "10": 0.6194444444444446,
+       "20": 0.7055555555555556
+      },
+      "ms": 176,
+      "costUsd": 0,
+      "inputTokens": 0,
+      "failedBatches": 0
+     },
+     "jev": {
+      "tasks": 30,
+      "candidates": 1222,
+      "recall": {
+       "5": 0.7249999999999999,
+       "10": 0.763888888888889,
+       "20": 0.8305555555555556
+      },
+      "ms": 3632,
+      "costUsd": 0.012576135600000005,
+      "inputTokens": 299432,
+      "failedBatches": 0
+     },
+     "jev-lang": {
+      "tasks": 30,
+      "candidates": 1222,
+      "recall": {
+       "5": 0.6833333333333332,
+       "10": 0.7472222222222222,
+       "20": 0.8388888888888889
+      },
+      "ms": 3536,
+      "costUsd": 0.019893311200000003,
+      "inputTokens": 473650,
+      "failedBatches": 0
+     }
+    },
+    "comparisons": {
+     "jev vs keywords": {
+      "5": {
+       "diff": 0.1638888888888889,
+       "lo": 0.044444444444444446,
+       "hi": 0.3,
+       "tasks": 30
+      },
+      "10": {
+       "diff": 0.14444444444444446,
+       "lo": 0.03888888888888888,
+       "hi": 0.26666666666666666,
+       "tasks": 30
+      },
+      "20": {
+       "diff": 0.125,
+       "lo": 0.03333333333333333,
+       "hi": 0.23333333333333334,
+       "tasks": 30
+      }
+     },
+     "jev-lang vs jev": {
+      "5": {
+       "diff": -0.041666666666666664,
+       "lo": -0.11666666666666667,
+       "hi": 0,
+       "tasks": 30
+      },
+      "10": {
+       "diff": -0.016666666666666666,
+       "lo": -0.1,
+       "hi": 0.05,
+       "tasks": 30
+      },
+      "20": {
+       "diff": 0.008333333333333333,
+       "lo": -0.025,
+       "hi": 0.05,
+       "tasks": 30
+      }
+     }
+    }
+   }
+  },
+  "httpx": {
+   "url": "https://github.com/encode/httpx",
+   "language": "Python",
+   "head": "b5addb64f0161ff6bfe94c124ef76f6a1fba5254",
+   "jev": false,
+   "dev": {
+    "variants": {
+     "keywords": {
+      "tasks": 10,
+      "candidates": 57,
+      "recall": {
+       "5": 0.55,
+       "10": 0.85,
+       "20": 1
+      },
+      "ms": 5,
+      "costUsd": 0,
+      "inputTokens": 0,
+      "failedBatches": 0
+     }
+    },
+    "comparisons": {}
+   },
+   "test": {
+    "variants": {
+     "keywords": {
+      "tasks": 30,
+      "candidates": 58,
+      "recall": {
+       "5": 0.7322222222222222,
+       "10": 0.8711111111111113,
+       "20": 0.9255555555555556
+      },
+      "ms": 5,
+      "costUsd": 0,
+      "inputTokens": 0,
+      "failedBatches": 0
+     }
+    },
+    "comparisons": {}
+   }
+  },
+  "ripgrep": {
+   "url": "https://github.com/BurntSushi/ripgrep",
+   "language": "Rust",
+   "head": "3fce3b5bb0236da2df6d99672afb8a719642eca7",
+   "jev": false,
+   "dev": {
+    "variants": {
+     "keywords": {
+      "tasks": 10,
+      "candidates": 65,
+      "recall": {
+       "5": 0.7,
+       "10": 0.9,
+       "20": 0.95
+      },
+      "ms": 15,
+      "costUsd": 0,
+      "inputTokens": 0,
+      "failedBatches": 0
+     }
+    },
+    "comparisons": {}
+   },
+   "test": {
+    "variants": {
+     "keywords": {
+      "tasks": 30,
+      "candidates": 54,
+      "recall": {
+       "5": 0.6494444444444445,
+       "10": 0.7822222222222223,
+       "20": 0.85
+      },
+      "ms": 10,
+      "costUsd": 0,
+      "inputTokens": 0,
+      "failedBatches": 0
+     }
+    },
+    "comparisons": {}
+   }
+  }
+ },
+ "pooled": {
+  "dev": {
+   "variants": {
+    "keywords": {
+     "tasks": 40,
+     "candidates": 453,
+     "recall": {
+      "5": 0.5641666666666667,
+      "10": 0.7504166666666666,
+      "20": 0.8620833333333333
+     },
+     "ms": 86,
+     "costUsd": 0,
+     "inputTokens": 0,
+     "failedBatches": 0
+    },
+    "jev": {
+     "tasks": 40,
+     "candidates": 453,
+     "recall": {
+      "5": 0.7108333333333332,
+      "10": 0.8541666666666666,
+      "20": 0.9212499999999999
+     },
+     "ms": 1796,
+     "costUsd": 0.007077627899999999,
+     "inputTokens": 168515,
+     "failedBatches": 3
+    },
+    "jev-lang": {
+     "tasks": 40,
+     "candidates": 453,
+     "recall": {
+      "5": 0.7108333333333332,
+      "10": 0.8479166666666667,
+      "20": 0.9212499999999999
+     },
+     "ms": 2333,
+     "costUsd": 0.00951653745,
+     "inputTokens": 226584,
+     "failedBatches": 3
+    }
+   },
+   "comparisons": {
+    "jev vs keywords": {
+     "5": {
+      "diff": 0.14666666666666667,
+      "lo": 0.010833333333333337,
+      "hi": 0.2808333333333334,
+      "tasks": 40
+     },
+     "10": {
+      "diff": 0.10375000000000001,
+      "lo": 0.03,
+      "hi": 0.1925,
+      "tasks": 40
+     },
+     "20": {
+      "diff": 0.059166666666666666,
+      "lo": -0.0024999999999999966,
+      "hi": 0.13333333333333333,
+      "tasks": 40
+     }
+    },
+    "jev-lang vs jev": {
+     "5": {
+      "diff": 0,
+      "lo": 0,
+      "hi": 0,
+      "tasks": 40
+     },
+     "10": {
+      "diff": -0.00625,
+      "lo": -0.01875,
+      "hi": 0,
+      "tasks": 40
+     },
+     "20": {
+      "diff": 0,
+      "lo": 0,
+      "hi": 0,
+      "tasks": 40
+     }
+    }
+   }
+  },
+  "test": {
+   "variants": {
+    "keywords": {
+     "tasks": 120,
+     "candidates": 432,
+     "recall": {
+      "5": 0.5612499999999999,
+      "10": 0.6874999999999999,
+      "20": 0.7866666666666666
+     },
+     "ms": 53,
+     "costUsd": 0,
+     "inputTokens": 0,
+     "failedBatches": 0
+    },
+    "jev": {
+     "tasks": 120,
+     "candidates": 432,
+     "recall": {
+      "5": 0.6944444444444443,
+      "10": 0.7784722222222222,
+      "20": 0.8762500000000001
+     },
+     "ms": 2467,
+     "costUsd": 0.006976424700000001,
+     "inputTokens": 166105,
+     "failedBatches": 5
+    },
+    "jev-lang": {
+     "tasks": 120,
+     "candidates": 432,
+     "recall": {
+      "5": 0.6840277777777776,
+      "10": 0.7743055555555556,
+      "20": 0.8783333333333334
+     },
+     "ms": 1921,
+     "costUsd": 0.009276870049999997,
+     "inputTokens": 220878,
+     "failedBatches": 7
+    }
+   },
+   "comparisons": {
+    "jev vs keywords": {
+     "5": {
+      "diff": 0.13319444444444445,
+      "lo": 0.07208333333333333,
+      "hi": 0.19819444444444442,
+      "tasks": 120
+     },
+     "10": {
+      "diff": 0.09097222222222222,
+      "lo": 0.03611111111111111,
+      "hi": 0.1520833333333333,
+      "tasks": 120
+     },
+     "20": {
+      "diff": 0.08958333333333333,
+      "lo": 0.043055555555555555,
+      "hi": 0.14166666666666666,
+      "tasks": 120
+     }
+    },
+    "jev-lang vs jev": {
+     "5": {
+      "diff": -0.010416666666666666,
+      "lo": -0.029166666666666667,
+      "hi": 0,
+      "tasks": 120
+     },
+     "10": {
+      "diff": -0.004166666666666667,
+      "lo": -0.025,
+      "hi": 0.0125,
+      "tasks": 120
+     },
+     "20": {
+      "diff": 0.0020833333333333333,
+      "lo": -0.008333333333333333,
+      "hi": 0.014583333333333334,
+      "tasks": 120
+     }
+    }
+   }
+  }
+ }
+}

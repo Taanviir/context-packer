@@ -1,0 +1,1228 @@
+{
+ "repo": "prometheus",
+ "split": "test",
+ "variant": "jev",
+ "results": [
+  {
+   "id": "prometheus-65b4696b88",
+   "task": "Remove leftover debug output",
+   "gold": [
+    "promql/test.go"
+   ],
+   "candidates": 656,
+   "ranked": [
+    "cmd/promtool/debug.go",
+    "cmd/promtool/tsdb.go",
+    "cmd/promtool/main.go",
+    "tsdb/head_wal.go",
+    "rules/group.go",
+    "web/web_test.go",
+    "discovery/file/file.go",
+    "tsdb/example_test.go",
+    "web/ui/react-app/src/utils/utils.test.ts",
+    "discovery/legacymanager/manager.go",
+    "web/ui/react-app/src/pages/graph/GraphHelpers.test.ts",
+    "discovery/openstack/instance.go",
+    "documentation/examples/custom-sd/adapter/adapter_test.go",
+    "storage/remote/otlptranslator/prometheusremotewrite/helper.go",
+    "tsdb/agent/db.go",
+    "scrape/scrape.go",
+    "documentation/examples/remote_storage/remote_storage_adapter/graphite/client.go",
+    "cmd/promtool/rules.go",
+    "model/labels/labels_common.go",
+    "util/treecache/treecache.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 3065,
+   "calls": 32,
+   "failedBatches": 0,
+   "inputTokens": 280750,
+   "costUsd": 0.0117915
+  },
+  {
+   "id": "prometheus-192e665317",
+   "task": "Allow parsing from bytes instead of file",
+   "gold": [
+    "pkg/rulefmt/rulefmt.go"
+   ],
+   "candidates": 1924,
+   "ranked": [
+    "vendor/github.com/go-ini/ini/ini.go",
+    "pkg/rulefmt/rulefmt.go",
+    "vendor/golang.org/x/text/language/parse.go",
+    "vendor/github.com/alecthomas/template/parse/parse.go",
+    "vendor/github.com/prometheus/procfs/mdstat.go",
+    "vendor/github.com/ugorji/go/codec/json.go",
+    "vendor/github.com/prometheus/procfs/ipvs.go",
+    "promql/parse.go",
+    "vendor/github.com/hashicorp/consul/api/api.go",
+    "template/template.go",
+    "vendor/google.golang.org/api/googleapi/internal/uritemplates/uritemplates.go",
+    "vendor/k8s.io/apimachinery/pkg/util/yaml/decoder.go",
+    "vendor/github.com/prometheus/common/expfmt/decode.go",
+    "vendor/github.com/golang/protobuf/protoc-gen-go/descriptor/descriptor.pb.go",
+    "vendor/github.com/oklog/ulid/ulid.go",
+    "vendor/github.com/go-openapi/spec/spec.go",
+    "vendor/github.com/spf13/pflag/flag.go",
+    "vendor/github.com/docker/distribution/digest/digester.go",
+    "vendor/gopkg.in/yaml.v2/parserc.go",
+    "vendor/google.golang.org/api/gensupport/media.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3768,
+   "calls": 54,
+   "failedBatches": 0,
+   "inputTokens": 407734,
+   "costUsd": 0.017124828
+  },
+  {
+   "id": "prometheus-82c7cd320a",
+   "task": "increase the remote write bucket range",
+   "gold": [
+    "storage/remote/queue_manager.go"
+   ],
+   "candidates": 3779,
+   "ranked": [
+    "config/config.go",
+    "vendor/github.com/prometheus/client_golang/prometheus/histogram.go",
+    "web/ui/react-app/src/pages/graph/GraphControls.tsx",
+    "promql/quantile.go",
+    "storage/remote/write.go",
+    "storage/remote/storage.go",
+    "promql/functions.go",
+    "vendor/golang.org/x/net/trace/trace.go",
+    "vendor/go.opencensus.io/stats/view/view.go",
+    "web/api/v1/api.go",
+    "vendor/github.com/prometheus/common/expfmt/text_create.go",
+    "tsdb/head.go",
+    "tsdb/db.go",
+    "storage/remote/queue_manager.go",
+    "scrape/target_test.go",
+    "vendor/go.opencensus.io/trace/spanbucket.go",
+    "web/ui/static/js/graph/index.js",
+    "storage/remote/write_test.go",
+    "storage/remote/codec.go",
+    "vendor/github.com/prometheus/common/expfmt/openmetrics_create.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 3705,
+   "calls": 83,
+   "failedBatches": 0,
+   "inputTokens": 553038,
+   "costUsd": 0.023227596
+  },
+  {
+   "id": "prometheus-2a1b940ae4",
+   "task": "fix some function names in comment",
+   "gold": [
+    "discovery/consul/consul.go"
+   ],
+   "candidates": 806,
+   "ranked": [
+    "tsdb/index/postings.go",
+    "model/textparse/interface.go",
+    "model/textparse/openmetricsparse.go",
+    "discovery/manager.go",
+    "web/ui/module/codemirror-promql/src/complete/hybrid.ts",
+    "model/textparse/promparse.go",
+    "web/ui/module/codemirror-promql/src/parser/parser.ts",
+    "web/ui/react-app/src/vendor/flot/jquery.flot.selection.js",
+    "promql/parser/lex.go",
+    "scrape/manager.go",
+    "model/textparse/promparse_test.go",
+    "model/textparse/interface_test.go",
+    "web/ui/module/lezer-promql/src/highlight.js",
+    "web/ui/module/codemirror-promql/src/complete/index.ts",
+    "web/ui/mantine-ui/src/promql/utils.ts",
+    "web/ui/module/codemirror-promql/src/parser/path-finder.ts",
+    "storage/secondary.go",
+    "util/testutil/directory.go",
+    "web/ui/module/codemirror-promql/src/client/prometheus.ts",
+    "web/ui/mantine-ui/src/pages/query/ExplainViews/ExplainView.tsx"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 3374,
+   "calls": 36,
+   "failedBatches": 0,
+   "inputTokens": 280048,
+   "costUsd": 0.011762016000000002
+  },
+  {
+   "id": "prometheus-a197508d09",
+   "task": "Add docker swarm test",
+   "gold": [
+    "config/config_test.go",
+    "discovery/dockerswarm/dockerswarm.go"
+   ],
+   "candidates": 4137,
+   "ranked": [
+    "discovery/dockerswarm/services_test.go",
+    "discovery/dockerswarm/tasks_test.go",
+    "discovery/dockerswarm/nodes_test.go",
+    "vendor/github.com/docker/docker/client/swarm_inspect.go",
+    "discovery/dockerswarm/services.go",
+    "vendor/github.com/docker/docker/client/swarm_get_unlock_key.go",
+    "vendor/github.com/docker/docker/client/swarm_update.go",
+    "vendor/github.com/docker/docker/client/swarm_init.go",
+    "discovery/dockerswarm/nodes.go",
+    "vendor/github.com/docker/docker/client/swarm_join.go",
+    "discovery/dockerswarm/mock_test.go",
+    "vendor/github.com/docker/docker/client/interface.go",
+    "discovery/dockerswarm/tasks.go",
+    "vendor/github.com/docker/docker/client/swarm_unlock.go",
+    "vendor/github.com/docker/docker/client/config_inspect.go",
+    "vendor/github.com/docker/docker/client/secret_inspect.go",
+    "vendor/github.com/docker/docker/client/service_inspect.go",
+    "discovery/dockerswarm/dockerswarm.go",
+    "vendor/github.com/docker/docker/client/task_inspect.go",
+    "vendor/github.com/docker/docker/client/node_inspect.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0.5
+   },
+   "ms": 4462,
+   "calls": 87,
+   "failedBatches": 0,
+   "inputTokens": 509699,
+   "costUsd": 0.021407358
+  },
+  {
+   "id": "prometheus-39aa66e46e",
+   "task": "Place storage under working directory by default.",
+   "gold": [
+    "main.go"
+   ],
+   "candidates": 476,
+   "ranked": [
+    "main.go",
+    "util/testutil/directory.go",
+    "storage/local/crashrecovery.go",
+    "storage/local/test_helpers.go",
+    "storage/local/persistence.go",
+    "storage/local/storage.go",
+    "storage/local/instrumentation.go",
+    "storage/local/storage_test.go",
+    "storage/local/chunk.go",
+    "promql/analyzer.go",
+    "storage/local/mapper.go",
+    "storage/local/index/index.go",
+    "Godeps/_workspace/src/gopkg.in/fsnotify.v1/inotify.go",
+    "Godeps/_workspace/src/github.com/syndtr/goleveldb/leveldb/storage/file_storage.go",
+    "Godeps/_workspace/src/github.com/syndtr/goleveldb/leveldb/bench_test.go",
+    "storage/local/index/leveldb.go",
+    "web/consoles.go",
+    "Godeps/_workspace/src/github.com/prometheus/client_golang/prometheus/summary.go",
+    "rules/manager.go",
+    "Godeps/_workspace/src/github.com/prometheus/procfs/fs.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2595,
+   "calls": 27,
+   "failedBatches": 0,
+   "inputTokens": 212430,
+   "costUsd": 0.00892206
+  },
+  {
+   "id": "prometheus-7608ee87d0",
+   "task": "Inital support for Azure VMSS",
+   "gold": [
+    "discovery/azure/azure.go"
+   ],
+   "candidates": 2364,
+   "ranked": [
+    "discovery/azure/azure.go",
+    "vendor/github.com/Azure/go-autorest/autorest/autorest.go",
+    "vendor/github.com/Azure/azure-sdk-for-go/arm/compute/client.go",
+    "vendor/github.com/Azure/azure-sdk-for-go/arm/network/client.go",
+    "vendor/github.com/Azure/go-autorest/autorest/retriablerequest_1.7.go",
+    "vendor/github.com/Azure/azure-sdk-for-go/arm/compute/virtualmachinescalesetvms.go",
+    "vendor/github.com/Azure/go-autorest/autorest/azure/async.go",
+    "discovery/config/config.go",
+    "vendor/github.com/Azure/go-autorest/autorest/retriablerequest.go",
+    "vendor/github.com/Azure/go-autorest/autorest/azure/environments.go",
+    "vendor/github.com/Azure/go-autorest/autorest/azure/azure.go",
+    "vendor/github.com/Azure/go-autorest/autorest/retriablerequest_1.8.go",
+    "vendor/github.com/Azure/go-autorest/autorest/azure/rp.go",
+    "vendor/k8s.io/client-go/pkg/api/v1/defaults.go",
+    "vendor/github.com/Azure/azure-sdk-for-go/arm/network/usages.go",
+    "vendor/github.com/Azure/azure-sdk-for-go/arm/compute/virtualmachinescalesets.go",
+    "discovery/manager.go",
+    "vendor/github.com/Azure/azure-sdk-for-go/arm/compute/models.go",
+    "vendor/github.com/Azure/azure-sdk-for-go/arm/compute/virtualmachinesizes.go",
+    "vendor/github.com/Azure/azure-sdk-for-go/arm/network/subnets.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 4411,
+   "calls": 57,
+   "failedBatches": 0,
+   "inputTokens": 386310,
+   "costUsd": 0.01622502
+  },
+  {
+   "id": "prometheus-79869d9a4d",
+   "task": "fix race for minValidTime",
+   "gold": [
+    "head.go"
+   ],
+   "candidates": 69,
+   "ranked": [
+    "head.go",
+    "db.go",
+    "wal/wal.go",
+    "tombstones.go",
+    "index/index.go",
+    "compact.go",
+    "querier.go",
+    "wal.go",
+    "db_test.go",
+    "tsdbutil/buffer.go",
+    "block.go",
+    "querier_test.go",
+    "tsdbutil/chunks.go",
+    "wal_test.go",
+    "chunks/chunks.go",
+    "head_test.go",
+    "tsdbutil/buffer_test.go",
+    "fileutil/preallocate.go",
+    "checkpoint.go",
+    "compact_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2086,
+   "calls": 15,
+   "failedBatches": 0,
+   "inputTokens": 130787,
+   "costUsd": 0.005493054
+  },
+  {
+   "id": "prometheus-109f9409ed",
+   "task": "[BugFix] UI : autocomplete metadata for OpenMetrics counter _total metrics",
+   "gold": [
+    "web/ui/mantine-ui/src/pages/query/ExplainViews/Selector.tsx",
+    "web/ui/mantine-ui/src/pages/query/MetricsExplorer/MetricsExplorer.tsx",
+    "web/ui/module/codemirror-promql/src/complete/hybrid.test.ts",
+    "web/ui/module/codemirror-promql/src/complete/hybrid.ts"
+   ],
+   "candidates": 872,
+   "ranked": [
+    "web/ui/module/codemirror-promql/src/complete/hybrid.ts",
+    "model/textparse/promparse.go",
+    "web/ui/module/codemirror-promql/src/complete/index.ts",
+    "model/textparse/promparse_test.go",
+    "web/ui/mantine-ui/src/pages/query/MetricsExplorer/MetricsExplorer.tsx",
+    "web/ui/react-app/src/pages/graph/ExpressionInput.tsx",
+    "web/ui/module/codemirror-promql/src/test/utils-test.ts",
+    "web/ui/react-app/src/pages/graph/PanelList.tsx",
+    "storage/remote/queue_manager.go",
+    "tsdb/wlog/watcher.go",
+    "web/ui/module/codemirror-promql/src/complete/hybrid.test.ts",
+    "web/ui/module/codemirror-promql/src/client/prometheus.ts",
+    "tsdb/head.go",
+    "scrape/metrics.go",
+    "web/ui/mantine-ui/src/api/responseTypes/metadata.ts",
+    "util/fmtutil/format.go",
+    "storage/remote/otlptranslator/prometheusremotewrite/otlp_to_openmetrics_metadata.go",
+    "model/textparse/protobufparse.go",
+    "storage/remote/otlptranslator/prometheusremotewrite/metrics_to_prw.go",
+    "web/ui/mantine-ui/src/pages/query/ExpressionInput.tsx"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.75
+   },
+   "ms": 3270,
+   "calls": 35,
+   "failedBatches": 0,
+   "inputTokens": 260612,
+   "costUsd": 0.010945704000000002
+  },
+  {
+   "id": "prometheus-7711cd5ab5",
+   "task": "Remove deprecated storage.tsdb.retention flag",
+   "gold": [
+    "cmd/prometheus/main.go",
+    "web/ui/react-app/src/pages/flags/Flags.test.tsx"
+   ],
+   "candidates": 683,
+   "ranked": [
+    "cmd/prometheus/main.go",
+    "web/ui/react-app/src/pages/flags/Flags.test.tsx",
+    "tsdb/db.go",
+    "web/ui/react-app/src/pages/status/Status.tsx",
+    "web/ui/react-app/src/pages/status/Status.test.tsx",
+    "config/config.go",
+    "documentation/examples/remote_storage/remote_storage_adapter/main.go",
+    "util/teststorage/storage.go",
+    "web/web.go",
+    "cmd/prometheus/main_test.go",
+    "cmd/promtool/main.go",
+    "tsdb/tombstones/tombstones.go",
+    "tsdb/head_wal.go",
+    "web/api/v1/api.go",
+    "web/ui/react-app/src/setupTests.ts",
+    "cmd/promtool/tsdb.go",
+    "rules/alerting.go",
+    "web/ui/react-app/src/pages/flags/Flags.tsx",
+    "tsdb/compact.go",
+    "tsdb/head.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2693,
+   "calls": 31,
+   "failedBatches": 0,
+   "inputTokens": 239431,
+   "costUsd": 0.010056102
+  },
+  {
+   "id": "prometheus-e9885ecb94",
+   "task": "Avoid divide-by-zero panic on query_range?step=0",
+   "gold": [
+    "web/api/v1/api.go",
+    "web/api/v1/api_test.go"
+   ],
+   "candidates": 632,
+   "ranked": [
+    "web/api/v1/api.go",
+    "promql/test.go",
+    "web/ui/static/js/graph.js",
+    "web/api/v1/api_test.go",
+    "promql/engine.go",
+    "rules/manager.go",
+    "web/ui/static/js/prom_console.js",
+    "vendor/github.com/prometheus/client_golang/prometheus/summary.go",
+    "template/template.go",
+    "promql/ast.go",
+    "storage/local/storage.go",
+    "vendor/github.com/syndtr/goleveldb/leveldb/util/buffer.go",
+    "web/web.go",
+    "vendor/github.com/prometheus/client_golang/prometheus/histogram.go",
+    "promql/engine_test.go",
+    "vendor/github.com/Sirupsen/logrus/entry.go",
+    "promql/functions.go",
+    "web/ui/static/vendor/rickshaw/rickshaw.min.js",
+    "vendor/github.com/syndtr/goleveldb/leveldb/version.go",
+    "storage/local/series.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3245,
+   "calls": 30,
+   "failedBatches": 0,
+   "inputTokens": 256793,
+   "costUsd": 0.010785306
+  },
+  {
+   "id": "prometheus-1ea3781699",
+   "task": "Fix ToEncodedChunks minT for recoded chunks",
+   "gold": [
+    "tsdb/head_append.go",
+    "tsdb/ooo_head.go",
+    "tsdb/ooo_head_test.go"
+   ],
+   "candidates": 683,
+   "ranked": [
+    "tsdb/ooo_head.go",
+    "tsdb/chunkenc/histogram.go",
+    "storage/series_test.go",
+    "tsdb/chunkenc/float_histogram.go",
+    "tsdb/ooo_head_read.go",
+    "storage/merge.go",
+    "storage/remote/codec.go",
+    "tsdb/head_append.go",
+    "tsdb/compact.go",
+    "tsdb/head_read.go",
+    "tsdb/querier.go",
+    "tsdb/chunkenc/xor.go",
+    "tsdb/record/record.go",
+    "tsdb/chunkenc/chunk.go",
+    "storage/series.go",
+    "tsdb/head.go",
+    "prompb/codec.go",
+    "tsdb/chunkenc/float_histogram_test.go",
+    "tsdb/chunkenc/histogram_test.go",
+    "tsdb/chunks/chunks.go"
+   ],
+   "recall": {
+    "5": 0.3333333333333333,
+    "10": 0.6666666666666666,
+    "20": 0.6666666666666666
+   },
+   "ms": 3429,
+   "calls": 32,
+   "failedBatches": 0,
+   "inputTokens": 272362,
+   "costUsd": 0.011439204000000001
+  },
+  {
+   "id": "prometheus-1801cd4196",
+   "task": "small optimization to stringlabels",
+   "gold": [
+    "model/labels/labels_string.go"
+   ],
+   "candidates": 589,
+   "ranked": [
+    "model/labels/labels_string.go",
+    "model/labels/labels.go",
+    "web/ui/static/js/prom_console.js",
+    "web/ui/react-app/src/pages/graph/SeriesName.tsx",
+    "tsdb/chunks/head_chunks_other.go",
+    "tsdb/chunkenc/bstream.go",
+    "model/histogram/generic.go",
+    "web/ui/react-app/src/utils/utils.test.ts",
+    "util/strutil/quote.go",
+    "tsdb/querier.go",
+    "web/ui/react-app/src/pages/graph/Graph.tsx",
+    "tsdb/wlog/reader.go",
+    "storage/merge.go",
+    "util/strutil/strconv.go",
+    "tsdb/chunks/chunk_write_queue.go",
+    "promql/quantile.go",
+    "tsdb/chunkenc/xor.go",
+    "model/textparse/openmetricsparse.go",
+    "web/ui/react-app/src/pages/targets/TargetLabels.tsx",
+    "promql/engine.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3994,
+   "calls": 31,
+   "failedBatches": 0,
+   "inputTokens": 269963,
+   "costUsd": 0.011338446
+  },
+  {
+   "id": "prometheus-a3376e8f36",
+   "task": "add query labels command to promtool",
+   "gold": [
+    "cmd/promtool/main.go"
+   ],
+   "candidates": 2364,
+   "ranked": [
+    "cmd/promtool/main.go",
+    "promql/test.go",
+    "documentation/examples/remote_storage/remote_storage_adapter/influxdb/client.go",
+    "promql/engine.go",
+    "template/template_test.go",
+    "cmd/promtool/http.go",
+    "vendor/github.com/influxdata/influxdb/client/v2/client.go",
+    "cmd/promtool/debug.go",
+    "web/api/v1/api_test.go",
+    "web/ui/static/js/graph/index.js",
+    "storage/remote/read.go",
+    "rules/manager.go",
+    "storage/remote/read_test.go",
+    "web/api/v1/api.go",
+    "promql/functions_test.go",
+    "vendor/github.com/spf13/pflag/flag.go",
+    "cmd/promtool/archive.go",
+    "rules/manager_test.go",
+    "vendor/github.com/prometheus/client_golang/api/prometheus/v1/api.go",
+    "scrape/target.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 4423,
+   "calls": 59,
+   "failedBatches": 0,
+   "inputTokens": 408732,
+   "costUsd": 0.017166744
+  },
+  {
+   "id": "prometheus-8a8eb12985",
+   "task": "storage/tsdb: don't use partitioned DB.",
+   "gold": [
+    "storage/tsdb/tsdb.go"
+   ],
+   "candidates": 1576,
+   "ranked": [
+    "storage/tsdb/tsdb.go",
+    "vendor/github.com/fabxc/tsdb/querier.go",
+    "vendor/github.com/fabxc/tsdb/db.go",
+    "vendor/github.com/fabxc/tsdb/compact.go",
+    "util/testutil/storage.go",
+    "vendor/github.com/fabxc/tsdb/reader.go",
+    "vendor/github.com/fabxc/tsdb/writer.go",
+    "cmd/prometheus/config.go",
+    "vendor/github.com/fabxc/tsdb/db_unix.go",
+    "vendor/github.com/fabxc/tsdb/head.go",
+    "documentation/examples/remote_storage/remote_storage_bridge/main.go",
+    "cmd/prometheus/main.go",
+    "vendor/github.com/fabxc/tsdb/wal.go",
+    "vendor/github.com/fabxc/tsdb/db_amd64.go",
+    "documentation/examples/remote_storage/remote_storage_bridge/opentsdb/client.go",
+    "documentation/examples/remote_storage/remote_storage_bridge/influxdb/client_test.go",
+    "documentation/examples/remote_storage/remote_storage_bridge/opentsdb/tagvalue.go",
+    "vendor/github.com/fabxc/tsdb/block.go",
+    "documentation/examples/remote_storage/remote_storage_bridge/influxdb/client.go",
+    "vendor/github.com/fabxc/tsdb/labels/labels.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3275,
+   "calls": 45,
+   "failedBatches": 0,
+   "inputTokens": 315514,
+   "costUsd": 0.013251588000000002
+  },
+  {
+   "id": "prometheus-383f0d4204",
+   "task": "allow selecting the float chunk encoding in seriesToChunkEncoder",
+   "gold": [
+    "storage/merge.go",
+    "storage/merge_test.go",
+    "storage/series.go",
+    "storage/series_test.go"
+   ],
+   "candidates": 980,
+   "ranked": [
+    "tsdb/record/record.go",
+    "tsdb/db.go",
+    "tsdb/chunks/chunks.go",
+    "tsdb/head_append.go",
+    "storage/series.go",
+    "tsdb/chunkenc/chunk.go",
+    "tsdb/ooo_head.go",
+    "tsdb/compact.go",
+    "tsdb/record/record_test.go",
+    "tsdb/head_wal.go",
+    "tsdb/ooo_head_read.go",
+    "tsdb/chunks/head_chunks.go",
+    "tsdb/index/index.go",
+    "tsdb/block.go",
+    "tsdb/agent/db.go",
+    "storage/series_test.go",
+    "tsdb/head_append_v2.go",
+    "tsdb/chunkenc/float_histogram_st.go",
+    "storage/interface.go",
+    "prompb/types.proto"
+   ],
+   "recall": {
+    "5": 0.25,
+    "10": 0.25,
+    "20": 0.5
+   },
+   "ms": 4721,
+   "calls": 37,
+   "failedBatches": 0,
+   "inputTokens": 296060,
+   "costUsd": 0.012434520000000001
+  },
+  {
+   "id": "prometheus-7ad55ef83c",
+   "task": "Actually close the iterator channels.",
+   "gold": [
+    "storage/local/series.go"
+   ],
+   "candidates": 115,
+   "ranked": [
+    "storage/local/series.go",
+    "storage/local/index/leveldb.go",
+    "rules/ast/query_analyzer.go",
+    "storage/local/storage.go",
+    "storage/local/persistence.go",
+    "storage/local/chunk.go",
+    "utility/uncertaintygroup.go",
+    "storage/local/interface.go",
+    "storage/remote/queue_manager.go",
+    "storage/local/storage_test.go",
+    "web/consoles.go",
+    "retrieval/target.go",
+    "rules/ast/ast.go",
+    "utility/freelist.go",
+    "retrieval/targetpool.go",
+    "main.go",
+    "storage/local/test_helpers.go",
+    "storage/local/delta.go",
+    "storage/local/preload.go",
+    "storage/local/persistence_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3828,
+   "calls": 19,
+   "failedBatches": 0,
+   "inputTokens": 137088,
+   "costUsd": 0.005757696
+  },
+  {
+   "id": "prometheus-4a83e6f453",
+   "task": "Remove agent mode warnings when loading configs",
+   "gold": [
+    "cmd/prometheus/main.go"
+   ],
+   "candidates": 516,
+   "ranked": [
+    "config/config.go",
+    "cmd/prometheus/main.go",
+    "cmd/promtool/main.go",
+    "web/api/v1/api.go",
+    "web/ui/react-app/src/pages/graph/Panel.tsx",
+    "cmd/prometheus/main_test.go",
+    "discovery/manager.go",
+    "tsdb/head.go",
+    "web/web_test.go",
+    "web/ui/static/js/graph/index.js",
+    "storage/remote/read_test.go",
+    "notifier/notifier.go",
+    "discovery/moby/docker.go",
+    "scrape/manager.go",
+    "discovery/registry.go",
+    "tsdb/agent/db.go",
+    "storage/lazy.go",
+    "tsdb/agent/db_test.go",
+    "discovery/discovery.go",
+    "discovery/marathon/marathon.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5901,
+   "calls": 28,
+   "failedBatches": 0,
+   "inputTokens": 244361,
+   "costUsd": 0.010263162000000001
+  },
+  {
+   "id": "prometheus-683b4c8c2a",
+   "task": "Add list of source head blocks to meta.json",
+   "gold": [
+    "block.go",
+    "compact.go"
+   ],
+   "candidates": 35,
+   "ranked": [
+    "block.go",
+    "db.go",
+    "head.go",
+    "compact.go",
+    "chunks/bstream.go",
+    "head_test.go",
+    "index.go",
+    "querier.go",
+    "db_test.go",
+    "chunks/xor.go",
+    "querier_test.go",
+    "index_test.go",
+    "postings.go",
+    "tsdbutil/buffer.go",
+    "chunks.go",
+    "tombstones.go",
+    "test/conv_test.go",
+    "tombstones_test.go",
+    "test/hash_test.go",
+    "postings_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1463,
+   "calls": 9,
+   "failedBatches": 0,
+   "inputTokens": 96497,
+   "costUsd": 0.004052874000000001
+  },
+  {
+   "id": "prometheus-791a2409a2",
+   "task": "Pre-allocate pendingSamples to reduce allocations",
+   "gold": [
+    "storage/remote/codec.go",
+    "storage/remote/queue_manager.go",
+    "storage/remote/read_test.go"
+   ],
+   "candidates": 3306,
+   "ranked": [
+    "storage/remote/queue_manager.go",
+    "tsdb/head.go",
+    "storage/remote/wal_watcher.go",
+    "vendor/golang.org/x/net/internal/socket/error_windows.go",
+    "scrape/scrape.go",
+    "pkg/textparse/promparse.go",
+    "tsdb/tsdbutil/buffer.go",
+    "pkg/textparse/openmetricsparse.go",
+    "tsdb/db_test.go",
+    "storage/remote/queue_manager_test.go",
+    "storage/buffer.go",
+    "promql/engine.go",
+    "vendor/github.com/google/pprof/profile/legacy_profile.go",
+    "tsdb/wal.go",
+    "rules/manager_test.go",
+    "tsdb/checkpoint.go",
+    "promql/functions.go",
+    "config/config.go",
+    "vendor/go.opencensus.io/stats/view/worker_commands.go",
+    "vendor/google.golang.org/grpc/internal/transport/flowcontrol.go"
+   ],
+   "recall": {
+    "5": 0.3333333333333333,
+    "10": 0.3333333333333333,
+    "20": 0.3333333333333333
+   },
+   "ms": 9297,
+   "calls": 79,
+   "failedBatches": 0,
+   "inputTokens": 565808,
+   "costUsd": 0.023763936000000003
+  },
+  {
+   "id": "prometheus-63cdd6dbe1",
+   "task": "skip merging when no remote storage configured",
+   "gold": [
+    "storage/fanout.go",
+    "storage/merge.go"
+   ],
+   "candidates": 624,
+   "ranked": [
+    "storage/remote/storage.go",
+    "config/config.go",
+    "storage/remote/queue_manager.go",
+    "storage/merge.go",
+    "storage/remote/read.go",
+    "documentation/examples/remote_storage/remote_storage_adapter/main.go",
+    "tsdb/agent/db.go",
+    "tsdb/compact.go",
+    "config/config_test.go",
+    "tsdb/db.go",
+    "web/ui/react-app/src/pages/flags/Flags.test.tsx",
+    "tsdb/head.go",
+    "cmd/prometheus/main.go",
+    "storage/remote/write.go",
+    "storage/remote/read_handler.go",
+    "web/federate.go",
+    "storage/remote/otlptranslator/prometheusremotewrite/helper.go",
+    "storage/fanout_test.go",
+    "storage/remote/storage_test.go",
+    "storage/remote/write_test.go"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 2805,
+   "calls": 31,
+   "failedBatches": 0,
+   "inputTokens": 256802,
+   "costUsd": 0.010785684
+  },
+  {
+   "id": "prometheus-7541baff87",
+   "task": "Make build script compatible with older gzip",
+   "gold": [
+    "scripts/compress_assets.sh"
+   ],
+   "candidates": 555,
+   "ranked": [
+    "scripts/compress_assets.sh",
+    "cmd/promtool/backfill.go",
+    "web/ui/build_ui.sh",
+    "scripts/package_assets.sh",
+    "util/httputil/compression.go",
+    "tracing/tracing.go",
+    "web/ui/module/codemirror-promql/build.sh",
+    "cmd/promtool/rules.go",
+    "cmd/promtool/archive.go",
+    "web/ui/static/vendor/js/jquery-3.5.1.min.js",
+    "model/textparse/promparse_test.go",
+    "scripts/sync_repo_files.sh",
+    "util/httputil/compression_test.go",
+    "web/ui/module/lezer-promql/generate-types.sh",
+    "discovery/xds/kuma_mads.pb.go",
+    "web/api/v1/api.go",
+    "storage/remote/queue_manager.go",
+    "web/ui/module/lezer-promql/rollup.config.js",
+    "scrape/scrape.go",
+    "util/httputil/cors.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2306,
+   "calls": 31,
+   "failedBatches": 0,
+   "inputTokens": 197890,
+   "costUsd": 0.00831138
+  },
+  {
+   "id": "prometheus-b7a5e280df",
+   "task": "Inline conditionals and CT handling",
+   "gold": [
+    "storage/remote/write_handler.go"
+   ],
+   "candidates": 806,
+   "ranked": [
+    "storage/remote/write_handler.go",
+    "model/textparse/openmetricsparse.go",
+    "storage/remote/write_handler_test.go",
+    "model/textparse/nhcbparse.go",
+    "tsdb/head_append.go",
+    "model/textparse/openmetricsparse_test.go",
+    "discovery/puppetdb/puppetdb.go",
+    "storage/fanout.go",
+    "model/textparse/protobufparse.go",
+    "model/textparse/nhcbparse_test.go",
+    "web/ui/react-app/src/Theme.tsx",
+    "scrape/scrape.go",
+    "web/ui/react-app/src/pages/alerts/AlertContents.tsx",
+    "scrape/helpers_test.go",
+    "discovery/vultr/vultr.go",
+    "model/labels/regexp.go",
+    "storage/interface.go",
+    "tsdb/agent/db_test.go",
+    "model/textparse/benchmark_test.go",
+    "tsdb/agent/db.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3111,
+   "calls": 34,
+   "failedBatches": 0,
+   "inputTokens": 286686,
+   "costUsd": 0.012040812
+  },
+  {
+   "id": "prometheus-0c577c547b",
+   "task": "add negative offset ability",
+   "gold": [
+    "promql/parser/parse.go",
+    "promql/parser/parse_test.go"
+   ],
+   "candidates": 433,
+   "ranked": [
+    "promql/parser/lex.go",
+    "promql/parser/parse.go",
+    "promql/parser/generated_parser.y.go",
+    "promql/parser/parse_test.go",
+    "web/ui/react-app/src/vendor/flot/jquery.flot.stack.js",
+    "promql/parser/ast.go",
+    "promql/engine.go",
+    "promql/engine_test.go",
+    "promql/functions.go",
+    "web/ui/static/vendor/bootstrap3-typeahead/bootstrap3-typeahead.min.js",
+    "web/ui/static/vendor/bootstrap-4.5.2/js/bootstrap.bundle.min.js",
+    "web/ui/static/vendor/bootstrap-4.5.2/js/bootstrap.min.js",
+    "promql/parser/printer.go",
+    "web/ui/static/js/prom_console.js",
+    "tsdb/chunks/head_chunks.go",
+    "promql/parser/printer_test.go",
+    "tsdb/index/index.go",
+    "promql/parser/lex_test.go",
+    "web/ui/static/js/graph/index.js",
+    "web/ui/static/vendor/moment/moment.min.js"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 4133,
+   "calls": 27,
+   "failedBatches": 0,
+   "inputTokens": 257033,
+   "costUsd": 0.010795386
+  },
+  {
+   "id": "prometheus-d1c8550894",
+   "task": "Scaleway SD: Add more labels to the instance role",
+   "gold": [
+    "discovery/scaleway/instance.go",
+    "discovery/scaleway/instance_test.go"
+   ],
+   "candidates": 442,
+   "ranked": [
+    "discovery/scaleway/instance.go",
+    "discovery/scaleway/scaleway.go",
+    "discovery/scaleway/instance_test.go",
+    "discovery/scaleway/baremetal.go",
+    "config/config_test.go",
+    "discovery/ec2/ec2.go",
+    "discovery/kubernetes/kubernetes.go",
+    "discovery/openstack/openstack.go",
+    "discovery/openstack/instance_test.go",
+    "discovery/eureka/eureka.go",
+    "discovery/hetzner/hetzner.go",
+    "discovery/triton/triton.go",
+    "discovery/kubernetes/node_test.go",
+    "discovery/hetzner/robot.go",
+    "discovery/dockerswarm/dockerswarm.go",
+    "discovery/gce/gce.go",
+    "discovery/triton/triton_test.go",
+    "discovery/marathon/marathon.go",
+    "discovery/kubernetes/service_test.go",
+    "discovery/hetzner/robot_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3562,
+   "calls": 26,
+   "failedBatches": 0,
+   "inputTokens": 233010,
+   "costUsd": 0.00978642
+  },
+  {
+   "id": "prometheus-dffe5b3b2e",
+   "task": "add parens to clarify operator precedence in extrapolatedRate",
+   "gold": [
+    "promql/functions.go"
+   ],
+   "candidates": 954,
+   "ranked": [
+    "promql/functions.go",
+    "web/ui/mantine-ui/src/promql/utils.ts",
+    "web/ui/module/codemirror-promql/src/parser/parser.test.ts",
+    "web/ui/mantine-ui/src/promql/binOp.ts",
+    "storage/remote/ewma.go",
+    "web/ui/mantine-ui/src/promql/serializeAndFormat.test.ts",
+    "storage/remote/queue_manager.go",
+    "promql/parser/ast.go",
+    "storage/remote/write.go",
+    "web/ui/module/codemirror-promql/src/parser/parser.ts",
+    "util/annotations/annotations.go",
+    "promql/parser/parse.go",
+    "web/ui/mantine-ui/src/promql/ast.ts",
+    "web/ui/mantine-ui/src/promql/format.tsx",
+    "promql/value.go",
+    "web/ui/module/lezer-promql/src/highlight.js",
+    "web/ui/module/codemirror-promql/src/complete/hybrid.ts",
+    "web/ui/mantine-ui/src/promql/utils.test.ts",
+    "web/ui/module/codemirror-promql/src/complete/hybrid.test.ts",
+    "promql/quantile.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3325,
+   "calls": 37,
+   "failedBatches": 0,
+   "inputTokens": 285906,
+   "costUsd": 0.012008052000000002
+  },
+  {
+   "id": "prometheus-372e7652b7",
+   "task": "Reuse (copy) overlapping matrix samples between range evaluation steps",
+   "gold": [
+    "promql/bench_test.go",
+    "promql/engine.go",
+    "storage/buffer.go"
+   ],
+   "candidates": 2364,
+   "ranked": [
+    "promql/engine.go",
+    "vendor/github.com/hashicorp/serf/coordinate/phantom.go",
+    "promql/functions.go",
+    "promql/test.go",
+    "web/api/v1/api_test.go",
+    "promql/value.go",
+    "rules/manager.go",
+    "promql/bench_test.go",
+    "promql/ast.go",
+    "storage/remote/queue_manager_test.go",
+    "vendor/github.com/prometheus/common/model/value.go",
+    "promql/engine_test.go",
+    "promql/quantile.go",
+    "rules/manager_test.go",
+    "vendor/github.com/prometheus/tsdb/compact.go",
+    "vendor/github.com/prometheus/tsdb/querier.go",
+    "vendor/github.com/prometheus/tsdb/db.go",
+    "storage/fanout_test.go",
+    "promql/parse.go",
+    "vendor/github.com/hashicorp/serf/coordinate/client.go"
+   ],
+   "recall": {
+    "5": 0.3333333333333333,
+    "10": 0.6666666666666666,
+    "20": 0.6666666666666666
+   },
+   "ms": 4596,
+   "calls": 62,
+   "failedBatches": 0,
+   "inputTokens": 455999,
+   "costUsd": 0.019151958000000004
+  },
+  {
+   "id": "prometheus-aa61e392b2",
+   "task": "Make remote client `Store` use passed context",
+   "gold": [
+    "storage/remote/client.go"
+   ],
+   "candidates": 3377,
+   "ranked": [
+    "documentation/examples/remote_storage/remote_storage_adapter/opentsdb/client.go",
+    "storage/remote/queue_manager.go",
+    "storage/remote/read.go",
+    "storage/remote/client.go",
+    "documentation/examples/remote_storage/remote_storage_adapter/influxdb/client.go",
+    "storage/remote/queue_manager_test.go",
+    "vendor/k8s.io/client-go/tools/cache/store.go",
+    "discovery/kubernetes/node.go",
+    "vendor/go.opencensus.io/trace/trace.go",
+    "storage/remote/storage.go",
+    "storage/remote/write.go",
+    "documentation/examples/remote_storage/remote_storage_adapter/opentsdb/client_test.go",
+    "storage/remote/client_test.go",
+    "vendor/google.golang.org/grpc/internal/transport/http2_server.go",
+    "vendor/k8s.io/client-go/kubernetes/typed/core/v1/persistentvolumeclaim.go",
+    "vendor/google.golang.org/grpc/internal/transport/http2_client.go",
+    "vendor/google.golang.org/grpc/clientconn.go",
+    "vendor/k8s.io/client-go/kubernetes/typed/apps/v1beta2/deployment.go",
+    "vendor/github.com/Azure/azure-sdk-for-go/services/network/mgmt/2018-10-01/network/client.go",
+    "cmd/prometheus/main.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 4362,
+   "calls": 79,
+   "failedBatches": 0,
+   "inputTokens": 562115,
+   "costUsd": 0.02360883
+  },
+  {
+   "id": "prometheus-2ce94ac196",
+   "task": "Add '--weight' flag to 'promtool check metrics' command",
+   "gold": [
+    "cmd/promtool/main.go",
+    "cmd/promtool/main_test.go"
+   ],
+   "candidates": 523,
+   "ranked": [
+    "cmd/promtool/main.go",
+    "cmd/promtool/tsdb.go",
+    "cmd/prometheus/main_test.go",
+    "promql/test.go",
+    "web/ui/react-app/src/pages/flags/Flags.tsx",
+    "cmd/prometheus/main.go",
+    "cmd/promtool/main_test.go",
+    "storage/remote/queue_manager_test.go",
+    "cmd/promtool/rules_test.go",
+    "cmd/promtool/unittest.go",
+    "tsdb/wal.go",
+    "documentation/examples/remote_storage/remote_storage_adapter/main.go",
+    "cmd/promtool/sd.go",
+    "documentation/examples/remote_storage/remote_storage_adapter/influxdb/client.go",
+    "cmd/promtool/rules.go",
+    "storage/remote/queue_manager.go",
+    "tsdb/head_wal.go",
+    "storage/remote/write.go",
+    "cmd/promtool/sd_test.go",
+    "cmd/promtool/backfill.go"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2314,
+   "calls": 28,
+   "failedBatches": 0,
+   "inputTokens": 244509,
+   "costUsd": 0.010269378000000001
+  },
+  {
+   "id": "prometheus-22db9c3413",
+   "task": "Remove old appendBatch methods",
+   "gold": [
+    "db.go",
+    "head.go"
+   ],
+   "candidates": 26,
+   "ranked": [
+    "db.go",
+    "head.go",
+    "cmd/tsdb/main.go",
+    "wal.go",
+    "wal_test.go",
+    "chunks/xor.go",
+    "compact.go",
+    "writer.go",
+    "chunks/chunk_test.go",
+    "chunks/bstream.go",
+    "chunks/chunk.go",
+    "reader.go",
+    "querier.go",
+    "labels/labels.go",
+    "labels/selector.go",
+    "postings_test.go",
+    "test/hash_test.go",
+    "block.go",
+    "postings.go",
+    "querier_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1438,
+   "calls": 8,
+   "failedBatches": 0,
+   "inputTokens": 78987,
+   "costUsd": 0.003317454
+  }
+ ]
+}

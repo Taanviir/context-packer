@@ -1,0 +1,414 @@
+{
+ "repo": "prometheus",
+ "split": "dev",
+ "variant": "jev-lang",
+ "results": [
+  {
+   "id": "prometheus-e0af2aa10d",
+   "task": "discovery/aws: avoid panic on truncated ElastiCache ARNs",
+   "gold": [
+    "discovery/aws/elasticache.go",
+    "discovery/aws/elasticache_test.go"
+   ],
+   "candidates": 980,
+   "ranked": [
+    "discovery/aws/elasticache.go",
+    "discovery/aws/elasticache_test.go",
+    "discovery/aws/ecs.go",
+    "discovery/aws/rds.go",
+    "discovery/aws/msk_test.go",
+    "discovery/aws/ecs_test.go",
+    "discovery/aws/msk.go",
+    "discovery/aws/aws.go",
+    "discovery/aws/rds_test.go",
+    "web/api/v1/api.go",
+    "discovery/kubernetes/kubernetes_test.go",
+    "discovery/aws/lightsail.go",
+    "discovery/kubernetes/endpoints.go",
+    "discovery/aws/ec2.go",
+    "discovery/dns/dns.go",
+    "discovery/kubernetes/ingress_test.go",
+    "discovery/aws/aws_test.go",
+    "discovery/kubernetes/endpoints_test.go",
+    "discovery/kubernetes/endpointslice.go",
+    "discovery/kubernetes/endpointslice_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2796,
+   "calls": 38,
+   "failedBatches": 0,
+   "inputTokens": 397279,
+   "costUsd": 0.016685718000000002
+  },
+  {
+   "id": "prometheus-a64b9fe323",
+   "task": "Report PeakSamples in query statistics",
+   "gold": [
+    "promql/engine.go",
+    "promql/engine_test.go",
+    "util/stats/query_stats.go"
+   ],
+   "candidates": 522,
+   "ranked": [
+    "util/stats/query_stats.go",
+    "promql/engine.go",
+    "promql/engine_test.go",
+    "web/api/v1/api.go",
+    "util/stats/stats_test.go",
+    "scrape/scrape.go",
+    "web/api/v1/api_test.go",
+    "web/ui/react-app/src/pages/graph/QueryStatsView.tsx",
+    "web/ui/react-app/src/pages/graph/Panel.tsx",
+    "cmd/prometheus/main.go",
+    "promql/bench_test.go",
+    "rules/manager.go",
+    "storage/remote/codec_test.go",
+    "tsdb/querier_test.go",
+    "model/textparse/promparse_test.go",
+    "web/ui/react-app/src/pages/graph/QueryStatsView.test.tsx",
+    "prompb/remote.proto",
+    "storage/remote/read_handler.go",
+    "scrape/target.go",
+    "promql/quantile.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3469,
+   "calls": 28,
+   "failedBatches": 0,
+   "inputTokens": 305301,
+   "costUsd": 0.012822642000000002
+  },
+  {
+   "id": "prometheus-e829dbe2be",
+   "task": "comment out accept header again",
+   "gold": [
+    "retrieval/scrape.go"
+   ],
+   "candidates": 1583,
+   "ranked": [
+    "vendor/github.com/aws/aws-sdk-go/aws/credentials/endpointcreds/provider.go",
+    "vendor/github.com/prometheus/client_golang/prometheus/http.go",
+    "vendor/k8s.io/client-go/1.5/rest/request.go",
+    "retrieval/scrape.go",
+    "vendor/github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg/autoneg.go",
+    "vendor/github.com/miekg/dns/scan_rr.go",
+    "vendor/github.com/emicklei/go-restful/route.go",
+    "vendor/github.com/emicklei/go-restful/response.go",
+    "promql/lex.go",
+    "vendor/github.com/emicklei/go-restful/request.go",
+    "vendor/github.com/go-ini/ini/parser.go",
+    "vendor/golang.org/x/net/http2/server.go",
+    "vendor/golang.org/x/net/http2/headermap.go",
+    "vendor/github.com/emicklei/go-restful/constants.go",
+    "vendor/github.com/prometheus/common/expfmt/encode.go",
+    "vendor/golang.org/x/net/http2/transport.go",
+    "vendor/github.com/emicklei/go-restful/web_service.go",
+    "vendor/k8s.io/client-go/1.5/pkg/api/resource/quantity.go",
+    "vendor/github.com/go-ini/ini/ini.go",
+    "vendor/k8s.io/client-go/1.5/rest/config.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3227,
+   "calls": 48,
+   "failedBatches": 0,
+   "inputTokens": 621107,
+   "costUsd": 0.026086494000000002
+  },
+  {
+   "id": "prometheus-20815562d2",
+   "task": "[BUGFIX] PromQL: fix more slice indexing bugs in info function",
+   "gold": [
+    "promql/info.go"
+   ],
+   "candidates": 844,
+   "ranked": [
+    "promql/info.go",
+    "web/ui/module/codemirror-promql/src/types/function.ts",
+    "web/ui/module/codemirror-promql/src/complete/hybrid.ts",
+    "util/annotations/annotations.go",
+    "web/ui/module/codemirror-promql/src/parser/parser.ts",
+    "web/ui/mantine-ui/src/promql/utils.ts",
+    "promql/quantile.go",
+    "promql/functions.go",
+    "promql/parser/ast.go",
+    "template/template.go",
+    "promql/promqltest/test_test.go",
+    "web/ui/module/codemirror-promql/src/complete/promql.terms.ts",
+    "cmd/promtool/analyze.go",
+    "web/ui/module/codemirror-promql/src/test/utils-test.ts",
+    "promql/parser/parse.go",
+    "web/ui/module/codemirror-promql/src/promql.ts",
+    "web/ui/mantine-ui/src/pages/query/ExplainViews/Selector.tsx",
+    "web/ui/mantine-ui/src/pages/query/ExpressionInput.tsx",
+    "schema/labels.go",
+    "promql/promqltest/test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 4264,
+   "calls": 36,
+   "failedBatches": 0,
+   "inputTokens": 379878,
+   "costUsd": 0.015954876
+  },
+  {
+   "id": "prometheus-2c715d22cf",
+   "task": "Fix zk connection leak",
+   "gold": [
+    "util/treecache/treecache.go"
+   ],
+   "candidates": 3004,
+   "ranked": [
+    "vendor/github.com/samuel/go-zookeeper/zk/conn.go",
+    "util/treecache/treecache.go",
+    "discovery/zookeeper/zookeeper.go",
+    "vendor/github.com/samuel/go-zookeeper/zk/server_java.go",
+    "vendor/github.com/samuel/go-zookeeper/zk/constants.go",
+    "vendor/github.com/samuel/go-zookeeper/zk/dnshostprovider.go",
+    "vendor/github.com/samuel/go-zookeeper/zk/lock.go",
+    "vendor/github.com/samuel/go-zookeeper/zk/structs.go",
+    "vendor/github.com/samuel/go-zookeeper/zk/server_help.go",
+    "vendor/github.com/hashicorp/go-cleanhttp/doc.go",
+    "storage/remote/queue_manager.go",
+    "vendor/github.com/hashicorp/go-cleanhttp/cleanhttp.go",
+    "vendor/github.com/samuel/go-zookeeper/zk/util.go",
+    "vendor/github.com/Azure/azure-sdk-for-go/services/network/mgmt/2018-10-01/network/expressroutecrossconnectionpeerings.go",
+    "vendor/github.com/miekg/dns/xfr.go",
+    "vendor/github.com/samuel/go-zookeeper/zk/flw.go",
+    "vendor/contrib.go.opencensus.io/exporter/ocagent/ocagent.go",
+    "discovery/manager.go",
+    "scripts/sync_makefiles.sh",
+    "vendor/google.golang.org/grpc/internal/transport/http2_server.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5032,
+   "calls": 72,
+   "failedBatches": 0,
+   "inputTokens": 932313,
+   "costUsd": 0.039157146000000004
+  },
+  {
+   "id": "prometheus-a00f18d78b",
+   "task": "Code Review: Manual re-alignment.",
+   "gold": [
+    "storage/metric/curator.go"
+   ],
+   "candidates": 129,
+   "ranked": [
+    "storage/metric/samplekey.go",
+    "config/config.go",
+    "retrieval/targetpool.go",
+    "rules/lexer.l.go",
+    "web/static/vendor/bootstrap/js/bootstrap.min.js",
+    "storage/metric/operation.go",
+    "config/config_test.go",
+    "storage/raw/leveldb/batch.go",
+    "web/static/vendor/bootstrap/js/bootstrap.js",
+    "storage/metric/curator.go",
+    "utility/strconv.go",
+    "main.go",
+    "rules/parser.y.go",
+    "retrieval/scheduler.go",
+    "web/api/api.go",
+    "storage/metric/index.go",
+    "build_info.go",
+    "web/static/js/graph.js",
+    "web/static/vendor/jquery-simple-datetimepicker/jquery.simple-dtpicker.js",
+    "storage/metric/sample.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2743,
+   "calls": 20,
+   "failedBatches": 0,
+   "inputTokens": 166236,
+   "costUsd": 0.006981912
+  },
+  {
+   "id": "prometheus-f63a899744",
+   "task": "Change config regexes to full-string matches.",
+   "gold": [
+    "config/config.go",
+    "config/config_test.go",
+    "retrieval/relabel_test.go",
+    "retrieval/target_test.go",
+    "retrieval/targetmanager_test.go"
+   ],
+   "candidates": 523,
+   "ranked": [
+    "config/config.go",
+    "Godeps/_workspace/src/github.com/samuel/go-zookeeper/zk/server_java.go",
+    "retrieval/relabel.go",
+    "retrieval/target_test.go",
+    "storage/metric/matcher.go",
+    "retrieval/targetmanager.go",
+    "Godeps/_workspace/src/github.com/samuel/go-zookeeper/zk/flw.go",
+    "web/blob/static/js/prom_console.js",
+    "util/strutil/strconv.go",
+    "retrieval/target.go",
+    "Godeps/_workspace/src/github.com/prometheus/common/model/time.go",
+    "web/blob/static/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.js",
+    "retrieval/discovery/file.go",
+    "Godeps/_workspace/src/github.com/prometheus/log/log_test.go",
+    "retrieval/discovery/file_test.go",
+    "web/blob/static/js/graph.js",
+    "retrieval/relabel_test.go",
+    "Godeps/_workspace/src/github.com/prometheus/client_golang/prometheus/desc.go",
+    "cmd/prometheus/main.go",
+    "config/config_test.go"
+   ],
+   "recall": {
+    "5": 0.4,
+    "10": 0.4,
+    "20": 0.8
+   },
+   "ms": 2951,
+   "calls": 30,
+   "failedBatches": 0,
+   "inputTokens": 310071,
+   "costUsd": 0.013022982
+  },
+  {
+   "id": "prometheus-00ea36cdbe",
+   "task": "Error on non-flag commandline arguments",
+   "gold": [
+    "cmd/prometheus/config.go"
+   ],
+   "candidates": 632,
+   "ranked": [
+    "cmd/prometheus/config.go",
+    "cmd/prometheus/main.go",
+    "util/cli/cli.go",
+    "vendor/golang.org/x/sys/unix/mksyscall.pl",
+    "vendor/github.com/syndtr/goleveldb/leveldb/comparer/comparer.go",
+    "vendor/golang.org/x/sys/unix/mksyscall_solaris.pl",
+    "vendor/github.com/prometheus/common/log/log.go",
+    "template/template_test.go",
+    "vendor/golang.org/x/sys/unix/mkall.sh",
+    "web/ui/static/vendor/rickshaw/vendor/d3.layout.min.js",
+    "vendor/github.com/samuel/go-zookeeper/zk/constants.go",
+    "promql/ast.go",
+    "web/ui/static/vendor/js/jquery.min.js",
+    "vendor/github.com/hashicorp/consul/api/lock.go",
+    "web/federate.go",
+    "vendor/gopkg.in/fsnotify.v1/windows.go",
+    "storage/local/storage.go",
+    "vendor/github.com/hashicorp/consul/api/semaphore.go",
+    "storage/local/persistence.go",
+    "storage/local/storagetool/main.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3117,
+   "calls": 31,
+   "failedBatches": 0,
+   "inputTokens": 363050,
+   "costUsd": 0.0152481
+  },
+  {
+   "id": "prometheus-3da825fc76",
+   "task": "Point to correct place for GraphLinkForExpression",
+   "gold": [
+    "web/ui/static/js/graph.js"
+   ],
+   "candidates": 630,
+   "ranked": [
+    "util/strutil/strconv.go",
+    "template/template.go",
+    "template/template_test.go",
+    "rules/recording.go",
+    "web/ui/static/js/prom_console.js",
+    "web/ui/static/js/graph.js",
+    "web/web.go",
+    "promql/ast.go",
+    "rules/alerting.go",
+    "promql/test.go",
+    "promql/fuzz.go",
+    "web/ui/static/vendor/rickshaw/rickshaw.min.js",
+    "promql/printer.go",
+    "rules/manager.go",
+    "vendor/github.com/prometheus/client_golang/prometheus/summary.go",
+    "storage/local/instrumentation.go",
+    "promql/parse.go",
+    "web/ui/static/vendor/js/handlebars.js",
+    "vendor/github.com/miekg/dns/zscan.go",
+    "rules/manager_test.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3953,
+   "calls": 32,
+   "failedBatches": 0,
+   "inputTokens": 371809,
+   "costUsd": 0.015615978
+  },
+  {
+   "id": "prometheus-acee998df6",
+   "task": "CNAME responses can occur with \"Type: A\" dns_sd_config requests",
+   "gold": [
+    "discovery/dns/dns.go"
+   ],
+   "candidates": 4244,
+   "ranked": [
+    "discovery/dns/dns.go",
+    "discovery/dns/dns_test.go",
+    "discovery/triton/triton.go",
+    "vendor/github.com/miekg/dns/svcb.go",
+    "discovery/ec2/ec2.go",
+    "vendor/google.golang.org/grpc/internal/resolver/dns/dns_resolver.go",
+    "config/config_test.go",
+    "discovery/triton/triton_test.go",
+    "discovery/consul/consul.go",
+    "vendor/github.com/miekg/dns/doc.go",
+    "vendor/github.com/miekg/dns/client.go",
+    "discovery/dockerswarm/dockerswarm.go",
+    "vendor/github.com/miekg/dns/msg_truncate.go",
+    "vendor/github.com/miekg/dns/types.go",
+    "discovery/hetzner/hetzner.go",
+    "discovery/digitalocean/digitalocean.go",
+    "discovery/gce/gce.go",
+    "vendor/github.com/miekg/dns/server.go",
+    "discovery/kubernetes/endpoints.go",
+    "vendor/github.com/miekg/dns/msg.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5500,
+   "calls": 93,
+   "failedBatches": 0,
+   "inputTokens": 1249141,
+   "costUsd": 0.052463922
+  }
+ ]
+}

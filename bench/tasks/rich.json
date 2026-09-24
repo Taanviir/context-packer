@@ -1,0 +1,443 @@
+{
+ "repo": "rich",
+ "url": "https://github.com/Textualize/rich",
+ "head": "9d8f9a372cc5916fd4781fec207ced7ddac2f08f",
+ "eligible": 640,
+ "dev": [
+  {
+   "id": "rich-73ad8ef1f7",
+   "repo": "rich",
+   "commit": "73ad8ef1f7801f1a5c5ee9b184163f3776e2253c",
+   "parent": "7b17bff680cb7520326ae0e76b2b1221f429caef",
+   "task": "Stop showing colon after exception type when there is no message",
+   "gold": [
+    "rich/traceback.py"
+   ]
+  },
+  {
+   "id": "rich-d6ad92a15d",
+   "repo": "rich",
+   "commit": "d6ad92a15dd1a2d39480368ae4ec2af6226b0730",
+   "parent": "516f68599cf6cec899017f3cb727b0634eb69e60",
+   "task": "draw panel around value in inspect",
+   "gold": [
+    "rich/_inspect.py",
+    "rich/default_styles.py",
+    "rich/logging.py",
+    "tests/test_inspect.py"
+   ]
+  },
+  {
+   "id": "rich-f591471cf0",
+   "repo": "rich",
+   "commit": "f591471cf005062c9068f5ac348c01aec4ca13ef",
+   "parent": "e1e6d745f670ff3df6b8f47377c0a4006cb74066",
+   "task": "Fix [BUG] @ breaks highlighting in hyperlink #3327",
+   "gold": [
+    "rich/highlighter.py",
+    "tests/test_highlighter.py"
+   ]
+  },
+  {
+   "id": "rich-c2265eb103",
+   "repo": "rich",
+   "commit": "c2265eb103f3ade1230f057e61d2bc14568e1cc3",
+   "parent": "e75649a870745b934927040d36fed8a8321dd238",
+   "task": "Add highlight for EUI-48 and EUI-64 (MAC address)",
+   "gold": [
+    "rich/default_styles.py",
+    "rich/highlighter.py"
+   ]
+  },
+  {
+   "id": "rich-5855c0b0f6",
+   "repo": "rich",
+   "commit": "5855c0b0f62e1390037232de103c0519c8d25d92",
+   "parent": "e930cc6e08963d789d19fd0630f24ad765a5911e",
+   "task": "bright standard colors, started table",
+   "gold": [
+    "rich/box.py",
+    "rich/color.py",
+    "rich/console.py",
+    "rich/style.py"
+   ]
+  },
+  {
+   "id": "rich-a3fcdbe210",
+   "repo": "rich",
+   "commit": "a3fcdbe21099bef37a8840ea63928ceaf3ea9533",
+   "parent": "23bc0a2d7c5828fa641cefa9cceabe4914134573",
+   "task": "Extract ipy display hook and add tests around it",
+   "gold": [
+    "rich/pretty.py",
+    "tests/test_pretty.py"
+   ]
+  },
+  {
+   "id": "rich-0fdf3cf0a6",
+   "repo": "rich",
+   "commit": "0fdf3cf0a6fa0d2b2ff84113b2908fdebb93a93e",
+   "parent": "5516ed4150abdbfe907145041b8dc73b185b3237",
+   "task": "Assert that the element popped on link_close is a Link",
+   "gold": [
+    "rich/markdown.py"
+   ]
+  },
+  {
+   "id": "rich-697f2c8ed9",
+   "repo": "rich",
+   "commit": "697f2c8ed9d6f0e4823054f9c7834f70fd2f1545",
+   "parent": "f61e169bd586183a64807f9d4288abc3081483fa",
+   "task": "tweaks to ipython, add margin",
+   "gold": [
+    "rich/pretty.py"
+   ]
+  },
+  {
+   "id": "rich-da10ca92fc",
+   "repo": "rich",
+   "commit": "da10ca92fcc4c66890339d3f942dcd0f356d8da5",
+   "parent": "b0fb18a439e062f911acf44482eb80fef5729491",
+   "task": "Add JUPYTER_COLUMNS/JUPYTER_LINES and tests",
+   "gold": [
+    "rich/console.py",
+    "tests/test_jupyter.py"
+   ]
+  },
+  {
+   "id": "rich-6ccbaee622",
+   "repo": "rich",
+   "commit": "6ccbaee622734863c1c11af301d6050e217cc3e2",
+   "parent": "5a27df8f1ab11202bd75e2c28e091635f4088eae",
+   "task": "file/dumb_terminal console will now print out the final result",
+   "gold": [
+    "rich/live.py",
+    "tests/test_live.py"
+   ]
+  }
+ ],
+ "test": [
+  {
+   "id": "rich-e9c9e43420",
+   "repo": "rich",
+   "commit": "e9c9e434203e936bbc9502396d43c80321560acd",
+   "parent": "6d30ad0f30028210124c149811cbbe2b183711f9",
+   "task": "Clear hashed cache when clearing meta.",
+   "gold": [
+    "rich/style.py",
+    "tests/test_style.py"
+   ]
+  },
+  {
+   "id": "rich-655170417a",
+   "repo": "rich",
+   "commit": "655170417a907987db7529bbc853e8460c19d8ab",
+   "parent": "85eca00a7423640c7bc162d851751c2e493b0fb0",
+   "task": "special case for style defs",
+   "gold": [
+    "rich/style.py"
+   ]
+  },
+  {
+   "id": "rich-a236d8fd63",
+   "repo": "rich",
+   "commit": "a236d8fd6308933141899fd11cc1adf48ab7dec9",
+   "parent": "327d642b844f51cbcf5b5900adf9fb37ccac8129",
+   "task": "add tests for style",
+   "gold": [
+    "rich/segment.py",
+    "rich/style.py",
+    "tests/test_segment.py"
+   ]
+  },
+  {
+   "id": "rich-18ebb427bc",
+   "repo": "rich",
+   "commit": "18ebb427bcd36e0b0b200cc41bf165d5fb758e95",
+   "parent": "26152e9cc95eef9c8f363d7bf1dfda426275348d",
+   "task": "Update wcwidth and cell widths.",
+   "gold": [
+    "rich/_cell_widths.py"
+   ]
+  },
+  {
+   "id": "rich-f538099efa",
+   "repo": "rich",
+   "commit": "f538099efa161b0d26b3f89bc20fea3db5ae3b89",
+   "parent": "eef627d6eeacc9bfe82d01db490d62cdd1eec7f5",
+   "task": "fix typos in test card",
+   "gold": [
+    "rich/__main__.py",
+    "rich/color.py",
+    "tests/_card_render.py"
+   ]
+  },
+  {
+   "id": "rich-9ba01ae52b",
+   "repo": "rich",
+   "commit": "9ba01ae52b50b2df267792194a9bae1b4b60df86",
+   "parent": "d98d671c493bd3f9e10b26e7da32ccaf272cb6a5",
+   "task": "[console] We now have `_STD_STREAMS` and `_STD_STREAMS_OUTPUT` module-scoped consts",
+   "gold": [
+    "rich/console.py"
+   ]
+  },
+  {
+   "id": "rich-680d9d876e",
+   "repo": "rich",
+   "commit": "680d9d876e561f1e1ad511fcfe5f5f793a40bc2f",
+   "parent": "2eb5cbfd46b41617a4b3a906955bcda17d88fb75",
+   "task": "fix empty line print on jupyter",
+   "gold": [
+    "rich/progress.py"
+   ]
+  },
+  {
+   "id": "rich-066c024be2",
+   "repo": "rich",
+   "commit": "066c024be2d6faa7eae2f3dd2ea1cb4543a3d454",
+   "parent": "0099f505c3dbf316e03afcf16f05dc4a86d172a2",
+   "task": "fix for text in panel title",
+   "gold": [
+    "rich/panel.py",
+    "rich/text.py",
+    "tests/test_log.py",
+    "tests/test_panel.py"
+   ]
+  },
+  {
+   "id": "rich-7f422fa661",
+   "repo": "rich",
+   "commit": "7f422fa6610e0efc75e887bcdb5e83bf0de96fc1",
+   "parent": "0511792c33e15b3e71f3bef089b0d1f387c6c511",
+   "task": "add the ability to install pretty on ipython",
+   "gold": [
+    "rich/pretty.py"
+   ]
+  },
+  {
+   "id": "rich-260508bfa0",
+   "repo": "rich",
+   "commit": "260508bfa058d9d7e7f782482e91adf7ddf06342",
+   "parent": "c57e1f508af1f042d2777e876f816ea157d7a61b",
+   "task": "fix for overlapping markip",
+   "gold": [
+    "rich/text.py",
+    "tests/test_segment.py"
+   ]
+  },
+  {
+   "id": "rich-26910c309d",
+   "repo": "rich",
+   "commit": "26910c309d75b835a89348e4dffb8a588d72f652",
+   "parent": "06a3edb6b4fa2c811eca9323c78876768ad7a5c4",
+   "task": "In Pretty, when namedtuples have custom reprs, use them instead of our own",
+   "gold": [
+    "rich/pretty.py",
+    "tests/test_pretty.py"
+   ]
+  },
+  {
+   "id": "rich-6151387adf",
+   "repo": "rich",
+   "commit": "6151387adffcaea3728092f41c143ad09a5adb11",
+   "parent": "10cf475b48234cb64c3493cebbaa3484650f90b9",
+   "task": "fix for text wrapping",
+   "gold": [
+    "rich/console.py",
+    "rich/markdown.py",
+    "rich/segment.py",
+    "rich/text.py"
+   ]
+  },
+  {
+   "id": "rich-665bb3360a",
+   "repo": "rich",
+   "commit": "665bb3360ab7bb64865c2ed884efdd2eb72ed473",
+   "parent": "fa52c0dee9793df1c1e5da63f51f8e7d77b35808",
+   "task": "Type windll as object instead of Any",
+   "gold": [
+    "rich/_win32_console.py"
+   ]
+  },
+  {
+   "id": "rich-0138b18950",
+   "repo": "rich",
+   "commit": "0138b18950b3d21f6fdb52b1e2e2ab3ef459d256",
+   "parent": "15870cee965ccd75a4f9b1854bb92753620d0fdb",
+   "task": "fix tuple of one issue",
+   "gold": [
+    "rich/pretty.py",
+    "tests/test_pretty.py"
+   ]
+  },
+  {
+   "id": "rich-9ca660bd13",
+   "repo": "rich",
+   "commit": "9ca660bd13446deae77bfb21e85dbce90f096b3c",
+   "parent": "5daff036fc8cc89ae4ff613ce3d803d1410c91ba",
+   "task": "Remove (possibly unneeded) try/except in table.py",
+   "gold": [
+    "rich/table.py"
+   ]
+  },
+  {
+   "id": "rich-4787873fc0",
+   "repo": "rich",
+   "commit": "4787873fc0da30956cc72efc1a6b32a546e04184",
+   "parent": "2860e722a0ff096294003706fae0a7cbfd5d407d",
+   "task": "Fix some broken tests, remove redundant code",
+   "gold": [
+    "rich/markdown.py",
+    "tests/_card_render.py",
+    "tests/test_markdown_no_hyperlinks.py"
+   ]
+  },
+  {
+   "id": "rich-f67f426a6b",
+   "repo": "rich",
+   "commit": "f67f426a6b7deb35fd8345edec0397562fb3b91b",
+   "parent": "65227ba120a3ddcba72af4cd253ed2eabc053c87",
+   "task": "[highlighter] Add complex numbers pattern to our highlighter's `number` matching",
+   "gold": [
+    "rich/highlighter.py",
+    "tests/test_highlighter.py"
+   ]
+  },
+  {
+   "id": "rich-55988c6e72",
+   "repo": "rich",
+   "commit": "55988c6e721cc03ab4f6dc6aeca3089e7c5c13ae",
+   "parent": "a3b09979d56962b671bf445cbbd0df107c5c9b6d",
+   "task": "Added padding to panel",
+   "gold": [
+    "rich/panel.py"
+   ]
+  },
+  {
+   "id": "rich-ad07ee5c52",
+   "repo": "rich",
+   "commit": "ad07ee5c5271f4766e5ad2195ac6fa993ff17762",
+   "parent": "c8fac003f0e38fee887ffc44650dd11cfbc1e0d9",
+   "task": "fix issue causing jupyter console to double print",
+   "gold": [
+    "rich/live.py"
+   ]
+  },
+  {
+   "id": "rich-f8b9ba143a",
+   "repo": "rich",
+   "commit": "f8b9ba143a8a9381cd18faa5cb8bddb1a9c22456",
+   "parent": "349042fd8912ab5f0714ff9a46a70ef8a4be4700",
+   "task": "speedup import time using sys.platform",
+   "gold": [
+    "rich/color.py",
+    "rich/console.py",
+    "rich/syntax.py",
+    "rich/traceback.py"
+   ]
+  },
+  {
+   "id": "rich-8e58adcab0",
+   "repo": "rich",
+   "commit": "8e58adcab0750406dac30fc22f3183d415c5a559",
+   "parent": "0b3379f5283eddf1ff377b44586f24ef5d5a0a7d",
+   "task": "[syntax] address PR feedback for stylized ranges",
+   "gold": [
+    "rich/syntax.py",
+    "tests/test_syntax.py"
+   ]
+  },
+  {
+   "id": "rich-435d7a2e2d",
+   "repo": "rich",
+   "commit": "435d7a2e2dfa86cf05d42a393bdfe34d3c679f67",
+   "parent": "a278e6c97698545cbd05261a84896daa8b69908f",
+   "task": "fix defaults mentioned for positional args",
+   "gold": [
+    "rich/console.py"
+   ]
+  },
+  {
+   "id": "rich-a5fa231348",
+   "repo": "rich",
+   "commit": "a5fa23134894412f2b9c9d94a5793d034cde4799",
+   "parent": "5b2a4a77173f7326d5e62de1d92432f0d2d468a2",
+   "task": "Update `Progress.read` to close inner file only if given a path",
+   "gold": [
+    "rich/progress.py"
+   ]
+  },
+  {
+   "id": "rich-32196384d0",
+   "repo": "rich",
+   "commit": "32196384d05df629a66ed2c81a532fe6e0d8c58a",
+   "parent": "5246a29347305d0a5a7fb4b79eaa52db40637b11",
+   "task": "Fix mypy typing issue",
+   "gold": [
+    "rich/console.py"
+   ]
+  },
+  {
+   "id": "rich-a2385c525b",
+   "repo": "rich",
+   "commit": "a2385c525b36d15a34af7bf0f2f89fe8060488cf",
+   "parent": "ae15cff503ab7cb15f24a5721381ed27cf5bd148",
+   "task": "Add the default feature of hiding the Live when the display is too large. Instead terminal too small will be displayed.",
+   "gold": [
+    "rich/live.py"
+   ]
+  },
+  {
+   "id": "rich-781689c3bb",
+   "repo": "rich",
+   "commit": "781689c3bb9a90a4ef4095b2edab38bcda7586b7",
+   "parent": "5ef33ae7bfa5f0458effbbe2a9add8aaa4ee0bf5",
+   "task": "Default binary_units param to False",
+   "gold": [
+    "rich/progress.py"
+   ]
+  },
+  {
+   "id": "rich-4d80b3a558",
+   "repo": "rich",
+   "commit": "4d80b3a558239780d824ea69bb8718b81335f302",
+   "parent": "75315fabc5fedbbd441078f9e8c93d75c96f4ccc",
+   "task": "[syntax] improved performance for `stylize_ranges()`, volume II",
+   "gold": [
+    "rich/syntax.py"
+   ]
+  },
+  {
+   "id": "rich-3469674b52",
+   "repo": "rich",
+   "commit": "3469674b528d75cc541331888623ce73f65bc1cd",
+   "parent": "73093c23636ffedf5e679bee94316ee2e688179f",
+   "task": "fix traceback for missing frame file",
+   "gold": [
+    "rich/traceback.py"
+   ]
+  },
+  {
+   "id": "rich-73ec0d586e",
+   "repo": "rich",
+   "commit": "73ec0d586e76a3ef34bb9ebca7c173cd5d857ffd",
+   "parent": "5f4e93efb159af99ed51f1fbfd8b793bb36448d9",
+   "task": "Add a type annotation",
+   "gold": [
+    "rich/pretty.py"
+   ]
+  },
+  {
+   "id": "rich-6e634705b7",
+   "repo": "rich",
+   "commit": "6e634705b7ff493918080da7053b3127677440d8",
+   "parent": "b6a4cfab5a707358fab31e995cc5024aeb76bee0",
+   "task": "[syntax] silently clamp the column index of stylised ranges to the maximum possible value",
+   "gold": [
+    "rich/syntax.py",
+    "tests/test_syntax.py"
+   ]
+  }
+ ]
+}

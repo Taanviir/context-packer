@@ -1,0 +1,415 @@
+{
+ "repo": "httpx",
+ "split": "dev",
+ "variant": "keywords",
+ "results": [
+  {
+   "id": "httpx-ef9fc0f3a7",
+   "task": "Drop `raise_app_exceptions` Client argument.",
+   "gold": [
+    "httpx/client.py",
+    "httpx/dispatch/asgi.py",
+    "httpx/dispatch/wsgi.py"
+   ],
+   "candidates": 54,
+   "ranked": [
+    "httpx/dispatch/wsgi.py",
+    "httpx/dispatch/asgi.py",
+    "httpx/client.py",
+    "tests/test_asgi.py",
+    "tests/test_wsgi.py",
+    "tests/test_multipart.py",
+    "tests/dispatch/test_http2.py",
+    "tests/client/test_async_client.py",
+    "tests/client/test_client.py",
+    "tests/dispatch/utils.py",
+    "httpx/decoders.py",
+    "httpx/concurrency.py",
+    "httpx/models.py",
+    "tests/conftest.py",
+    "httpx/interfaces.py",
+    "httpx/__init__.py",
+    "httpx/exceptions.py",
+    "httpx/multipart.py",
+    "httpx/dispatch/http11.py",
+    "httpx/config.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 4,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "httpx-94323f98ac",
+   "task": "Fix support for generator-based WSGI apps",
+   "gold": [
+    "httpx/_dispatch/wsgi.py",
+    "tests/test_wsgi.py"
+   ],
+   "candidates": 69,
+   "ranked": [
+    "tests/test_wsgi.py",
+    "httpx/_auth.py",
+    "httpx/_dispatch/wsgi.py",
+    "httpx/__init__.py",
+    "httpx/_client.py",
+    "tests/client/test_auth.py",
+    "httpx/_utils.py",
+    "tests/test_config.py",
+    "httpx/_dispatch/http2.py",
+    "httpx/_config.py",
+    "httpx/_models.py",
+    "tests/test_content_streams.py",
+    "docs/js/sidecar-1.5.0.js",
+    "httpx/_backends/asyncio.py",
+    "tests/client/test_proxies.py",
+    "tests/client/test_client.py",
+    "tests/models/test_responses.py",
+    "tests/models/test_requests.py",
+    "httpx/_decoders.py",
+    "tests/test_status_codes.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "httpx-33822973c3",
+   "task": "Expose base classes for alternate backends",
+   "gold": [
+    "httpx/__init__.py"
+   ],
+   "candidates": 53,
+   "ranked": [
+    "httpx/interfaces.py",
+    "httpx/concurrency.py",
+    "httpx/dispatch/__init__.py",
+    "tests/dispatch/utils.py",
+    "tests/client/test_client.py",
+    "httpx/exceptions.py",
+    "httpx/models.py",
+    "httpx/dispatch/http2.py",
+    "httpx/dispatch/http11.py",
+    "httpx/client.py",
+    "httpx/auth.py",
+    "httpx/__init__.py",
+    "httpx/dispatch/wsgi.py",
+    "httpx/dispatch/connection_pool.py",
+    "httpx/multipart.py",
+    "httpx/decoders.py",
+    "tests/test_status_codes.py",
+    "tests/test_multipart.py",
+    "tests/models/test_responses.py",
+    "httpx/status_codes.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 3,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "httpx-99cba6ac64",
+   "task": "Fix RFC 2069 mode digest authentication",
+   "gold": [
+    "httpx/_auth.py",
+    "tests/test_auth.py"
+   ],
+   "candidates": 60,
+   "ranked": [
+    "httpx/_auth.py",
+    "tests/client/test_auth.py",
+    "httpx/_status_codes.py",
+    "httpx/_multipart.py",
+    "httpx/_config.py",
+    "tests/test_auth.py",
+    "tests/test_config.py",
+    "httpx/__init__.py",
+    "httpx/_urlparse.py",
+    "httpx/_client.py",
+    "tests/client/test_cookies.py",
+    "tests/models/test_requests.py",
+    "tests/test_multipart.py",
+    "tests/client/test_headers.py",
+    "httpx/_exceptions.py",
+    "tests/models/test_url.py",
+    "httpx/_main.py",
+    "httpx/_api.py",
+    "httpx/_models.py",
+    "httpx/_urls.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 8,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "httpx-15d09a3bbc",
+   "task": "NO_PROXY should support IPv4, IPv6 and localhost",
+   "gold": [
+    "httpx/_utils.py",
+    "tests/test_utils.py"
+   ],
+   "candidates": 63,
+   "ranked": [
+    "tests/client/test_proxies.py",
+    "tests/conftest.py",
+    "httpx/_urlparse.py",
+    "httpx/_config.py",
+    "tests/test_config.py",
+    "tests/models/test_headers.py",
+    "httpx/_transports/default.py",
+    "httpx/_utils.py",
+    "tests/test_urlparse.py",
+    "httpx/_client.py",
+    "httpx/_main.py",
+    "httpx/_content.py",
+    "httpx/_compat.py",
+    "httpx/_auth.py",
+    "httpx/_status_codes.py",
+    "httpx/_api.py",
+    "httpx/_exceptions.py",
+    "tests/test_utils.py",
+    "httpx/_types.py",
+    "httpx/__init__.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 8,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "httpx-6d162a0d3a",
+   "task": "Graceful behavior for unclosed HTTPS connections",
+   "gold": [
+    "httpcore/backends/default.py"
+   ],
+   "candidates": 37,
+   "ranked": [
+    "httpcore/models.py",
+    "httpcore/dispatch/connection_pool.py",
+    "httpcore/adapters/redirects.py",
+    "httpcore/adapters/__init__.py",
+    "httpcore/backends/default.py",
+    "httpcore/decoders.py",
+    "tests/dispatch/test_connection_pools.py",
+    "httpcore/config.py",
+    "httpcore/exceptions.py",
+    "setup.py",
+    "httpcore/dispatch/__init__.py",
+    "tests/adapters/test_redirects.py",
+    "tests/dispatch/test_connections.py",
+    "tests/models/test_url.py",
+    "tests/models/test_responses.py",
+    "tests/models/test_requests.py",
+    "tests/test_timeouts.py",
+    "httpcore/interfaces.py",
+    "httpcore/utils.py",
+    "tests/test_sync.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "httpx-16893e414f",
+   "task": "Add support for no-proxy configurations",
+   "gold": [
+    "httpx/_client.py",
+    "httpx/_types.py",
+    "tests/client/test_proxies.py"
+   ],
+   "candidates": 53,
+   "ranked": [
+    "httpx/_utils.py",
+    "httpx/_config.py",
+    "tests/test_config.py",
+    "docs/js/sidecar-1.5.0.js",
+    "tests/test_utils.py",
+    "tests/client/test_proxies.py",
+    "httpx/_client.py",
+    "httpx/_status_codes.py",
+    "httpx/_types.py",
+    "httpx/_models.py",
+    "httpx/_exceptions.py",
+    "tests/conftest.py",
+    "httpx/_transports/urllib3.py",
+    "httpx/_auth.py",
+    "httpx/__init__.py",
+    "tests/client/test_redirects.py",
+    "tests/models/test_headers.py",
+    "tests/client/test_client.py",
+    "tests/client/test_async_client.py",
+    "tests/models/test_requests.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "httpx-fb17459335",
+   "task": "Fixed multipart header params encoding",
+   "gold": [
+    "httpx/multipart.py",
+    "tests/test_multipart.py"
+   ],
+   "candidates": 53,
+   "ranked": [
+    "httpx/models.py",
+    "httpx/multipart.py",
+    "httpx/api.py",
+    "httpx/client.py",
+    "tests/test_multipart.py",
+    "httpx/utils.py",
+    "httpx/interfaces.py",
+    "httpx/__init__.py",
+    "tests/client/test_headers.py",
+    "tests/models/test_requests.py",
+    "tests/test_decoders.py",
+    "tests/models/test_responses.py",
+    "tests/models/test_headers.py",
+    "tests/models/test_queryparams.py",
+    "httpx/concurrency.py",
+    "httpx/status_codes.py",
+    "tests/models/test_url.py",
+    "tests/test_utils.py",
+    "httpx/auth.py",
+    "httpx/decoders.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "httpx-71ee50b277",
+   "task": "Add parameters to generics in `_client.py`",
+   "gold": [
+    "httpx/_client.py"
+   ],
+   "candidates": 63,
+   "ranked": [
+    "httpx/_main.py",
+    "httpx/_transports/default.py",
+    "httpx/_api.py",
+    "httpx/_client.py",
+    "httpx/_urls.py",
+    "httpx/_config.py",
+    "docs/js/sidecar-1.5.0.js",
+    "httpx/_models.py",
+    "tests/models/test_queryparams.py",
+    "tests/models/test_url.py",
+    "httpx/_utils.py",
+    "httpx/_multipart.py",
+    "httpx/_transports/wsgi.py",
+    "httpx/_transports/asgi.py",
+    "httpx/_auth.py",
+    "tests/client/test_proxies.py",
+    "tests/test_config.py",
+    "httpx/_exceptions.py",
+    "tests/client/test_auth.py",
+    "tests/test_multipart.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 8,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "httpx-112fb9c07d",
+   "task": "Remove proxies from Request docstring",
+   "gold": [
+    "httpx/_api.py"
+   ],
+   "candidates": 68,
+   "ranked": [
+    "httpx/_client.py",
+    "tests/test_utils.py",
+    "tests/client/test_proxies.py",
+    "httpx/_dispatch/connection_pool.py",
+    "httpx/_dispatch/proxy_http.py",
+    "httpx/_utils.py",
+    "tests/conftest.py",
+    "httpx/_config.py",
+    "httpx/_api.py",
+    "httpx/_models.py",
+    "tests/client/test_redirects.py",
+    "docs/js/sidecar-1.5.0.js",
+    "httpx/_auth.py",
+    "httpx/__init__.py",
+    "httpx/_dispatch/http11.py",
+    "httpx/_dispatch/base.py",
+    "httpx/_exceptions.py",
+    "httpx/_dispatch/urllib3.py",
+    "httpx/_dispatch/asgi.py",
+    "httpx/_dispatch/wsgi.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  }
+ ]
+}

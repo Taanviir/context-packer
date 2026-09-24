@@ -1,0 +1,460 @@
+{
+ "repo": "httpx",
+ "url": "https://github.com/encode/httpx",
+ "head": "b5addb64f0161ff6bfe94c124ef76f6a1fba5254",
+ "eligible": 403,
+ "dev": [
+  {
+   "id": "httpx-ef9fc0f3a7",
+   "repo": "httpx",
+   "commit": "ef9fc0f3a70b35aa98fdc3756ecc87af94f884bc",
+   "parent": "a960a2a8fd273960993551f88617f22bfeb85035",
+   "task": "Drop `raise_app_exceptions` Client argument.",
+   "gold": [
+    "httpx/client.py",
+    "httpx/dispatch/asgi.py",
+    "httpx/dispatch/wsgi.py"
+   ]
+  },
+  {
+   "id": "httpx-94323f98ac",
+   "repo": "httpx",
+   "commit": "94323f98ac812031dcf0bfecf6227beb2afd9c41",
+   "parent": "1c9b852783f065db1b495b587c1c986246355198",
+   "task": "Fix support for generator-based WSGI apps",
+   "gold": [
+    "httpx/_dispatch/wsgi.py",
+    "tests/test_wsgi.py"
+   ]
+  },
+  {
+   "id": "httpx-33822973c3",
+   "repo": "httpx",
+   "commit": "33822973c3aacf9e395e276fe3448c4f9ace2be2",
+   "parent": "db6731a3d2dc882fc9bd9b9791544a2fba2cb559",
+   "task": "Expose base classes for alternate backends",
+   "gold": [
+    "httpx/__init__.py"
+   ]
+  },
+  {
+   "id": "httpx-99cba6ac64",
+   "repo": "httpx",
+   "commit": "99cba6ac642b12f0331d069ae324402c54c4c600",
+   "parent": "ca51b4532a4495c38c8abf1a393dbd80099deae3",
+   "task": "Fix RFC 2069 mode digest authentication",
+   "gold": [
+    "httpx/_auth.py",
+    "tests/test_auth.py"
+   ]
+  },
+  {
+   "id": "httpx-15d09a3bbc",
+   "repo": "httpx",
+   "commit": "15d09a3bbc20372cd87e48f17f7c9381c8220a0f",
+   "parent": "7d7c4f15b8784e4a550d974139acfa64193b32c2",
+   "task": "NO_PROXY should support IPv4, IPv6 and localhost",
+   "gold": [
+    "httpx/_utils.py",
+    "tests/test_utils.py"
+   ]
+  },
+  {
+   "id": "httpx-6d162a0d3a",
+   "repo": "httpx",
+   "commit": "6d162a0d3a77e986e231c140cfb7971df0b53599",
+   "parent": "8a227c1f2bd9b409602f5ed4e8ccd4c20245ad6a",
+   "task": "Graceful behavior for unclosed HTTPS connections",
+   "gold": [
+    "httpcore/backends/default.py"
+   ]
+  },
+  {
+   "id": "httpx-16893e414f",
+   "repo": "httpx",
+   "commit": "16893e414fe68bd41890dc52f449328679a65134",
+   "parent": "df54890c15f49a7f6279e704941400d698b33c10",
+   "task": "Add support for no-proxy configurations",
+   "gold": [
+    "httpx/_client.py",
+    "httpx/_types.py",
+    "tests/client/test_proxies.py"
+   ]
+  },
+  {
+   "id": "httpx-fb17459335",
+   "repo": "httpx",
+   "commit": "fb17459335b7e703f1895c4186a4fe421a54d815",
+   "parent": "44beaa1c8fd2e2882dc6565c026c2fc1385c8d40",
+   "task": "Fixed multipart header params encoding",
+   "gold": [
+    "httpx/multipart.py",
+    "tests/test_multipart.py"
+   ]
+  },
+  {
+   "id": "httpx-71ee50b277",
+   "repo": "httpx",
+   "commit": "71ee50b27770b461a5d2aaba9fca1fbc261bede1",
+   "parent": "36f16234bc47006c7efd1b8d4b363000ab8b2b3d",
+   "task": "Add parameters to generics in `_client.py`",
+   "gold": [
+    "httpx/_client.py"
+   ]
+  },
+  {
+   "id": "httpx-112fb9c07d",
+   "repo": "httpx",
+   "commit": "112fb9c07dbe4b4cb9ffa60df8a23b2fb86ec169",
+   "parent": "53804173bb734ce94d13d1b34c0ebaab46abd8c3",
+   "task": "Remove proxies from Request docstring",
+   "gold": [
+    "httpx/_api.py"
+   ]
+  }
+ ],
+ "test": [
+  {
+   "id": "httpx-c337938af5",
+   "repo": "httpx",
+   "commit": "c337938af51698c31c30d992c4f165c6fb8db92e",
+   "parent": "4bb69e3e3e7bafdcefbdd13b6bf5a313594187d2",
+   "task": "Don't wait for the stream to close",
+   "gold": [
+    "httpx/concurrency/asyncio.py"
+   ]
+  },
+  {
+   "id": "httpx-e53f995994",
+   "repo": "httpx",
+   "commit": "e53f995994d835735f757f63cc763ef641ff8cbc",
+   "parent": "c923f1af912eae78fa977aa740e4e750ab04c650",
+   "task": "Fix ASGITransport path escaping",
+   "gold": [
+    "httpx/_transports/asgi.py",
+    "tests/test_asgi.py"
+   ]
+  },
+  {
+   "id": "httpx-9b6605c3d5",
+   "repo": "httpx",
+   "commit": "9b6605c3d519142db7ebaf56c13094bf779c7dea",
+   "parent": "d2816c9c48b6ea77c9644ea9229b3b212feed737",
+   "task": "Updates for httpcore 0.9 interface.",
+   "gold": [
+    "httpx/_client.py",
+    "httpx/_transports/asgi.py",
+    "httpx/_transports/urllib3.py",
+    "httpx/_transports/wsgi.py",
+    "setup.py"
+   ]
+  },
+  {
+   "id": "httpx-de91fdfa16",
+   "repo": "httpx",
+   "commit": "de91fdfa16aa4b38b4b73cbeb45b70c13a0347ae",
+   "parent": "079ab33c12b9abb5b25bb85370fd55dd21138d81",
+   "task": "Ignore Content-Encoding headers that are invalid",
+   "gold": [
+    "httpx/models.py",
+    "tests/test_decoders.py"
+   ]
+  },
+  {
+   "id": "httpx-083d2e9aa0",
+   "repo": "httpx",
+   "commit": "083d2e9aa0007cbe3f24a9bb2bdd9e5248b62091",
+   "parent": "01287bac9999e3bc34171744e2a87064e0bbc2a1",
+   "task": "Include 'request' on TooManyRedirect and RequestBodyUnavailable",
+   "gold": [
+    "httpx/_auth.py",
+    "httpx/_client.py"
+   ]
+  },
+  {
+   "id": "httpx-bdc218f8e6",
+   "repo": "httpx",
+   "commit": "bdc218f8e686a2936c4069b00acde66391eaaf4c",
+   "parent": "91a2a1b8968bceae16e3cdcbae396dd212cdf7da",
+   "task": "Wrap decoding errors with custom exceptions",
+   "gold": [
+    "httpcore/__init__.py",
+    "httpcore/decoders.py",
+    "httpcore/exceptions.py",
+    "tests/test_decoding.py"
+   ]
+  },
+  {
+   "id": "httpx-04d5ffb01b",
+   "repo": "httpx",
+   "commit": "04d5ffb01b99397a5b0185db0515e8f7b4131cff",
+   "parent": "23f11aaa8db466fd78eea2a812e35b008017d617",
+   "task": "Add trust_env property to BaseClient",
+   "gold": [
+    "httpx/api.py",
+    "httpx/client.py",
+    "tests/client/test_auth.py"
+   ]
+  },
+  {
+   "id": "httpx-1f4b8dd054",
+   "repo": "httpx",
+   "commit": "1f4b8dd054009f43a5a2c2fd7e38cbf7a539bb2f",
+   "parent": "6f4f18652266a9c138bf31c3dc3638055fc24be7",
+   "task": "Allow per file running of tests",
+   "gold": [
+    "noxfile.py"
+   ]
+  },
+  {
+   "id": "httpx-6752f7d6f6",
+   "repo": "httpx",
+   "commit": "6752f7d6f6edfc244fb4718b3360b82f2d87fd76",
+   "parent": "640667d81d4bbf0d6f5e319d061353cad083f068",
+   "task": "Remove data, json and files parameters in delete() function",
+   "gold": [
+    "httpx/api.py",
+    "httpx/client.py"
+   ]
+  },
+  {
+   "id": "httpx-589c6e0f2f",
+   "repo": "httpx",
+   "commit": "589c6e0f2f4f3821095bfc247417aa98a5dad838",
+   "parent": "1bc3b0188a65cfa3f3dc8b85a0ed0e78d437ba5e",
+   "task": "Include invalid name/value when raising TypeError in DataField",
+   "gold": [
+    "httpx/_client.py",
+    "httpx/_models.py",
+    "httpx/_multipart.py",
+    "tests/test_multipart.py"
+   ]
+  },
+  {
+   "id": "httpx-ab9ace2749",
+   "repo": "httpx",
+   "commit": "ab9ace274931b4d47f9c52a8b8625027c348661c",
+   "parent": "a58be59adb880e9c98072c4a72617509b8559c3d",
+   "task": "Fix bytes support in multipart uploads",
+   "gold": [
+    "httpx/_content_streams.py",
+    "tests/test_multipart.py"
+   ]
+  },
+  {
+   "id": "httpx-67c297069f",
+   "repo": "httpx",
+   "commit": "67c297069f3d6b034069882428e4c1dd303d693c",
+   "parent": "f7a024cee3a161a37710c7b77e7d650f981d142d",
+   "task": "Drop EOL Python 3.6",
+   "gold": [
+    "httpx/_client.py",
+    "httpx/_compat.py",
+    "setup.py"
+   ]
+  },
+  {
+   "id": "httpx-0276ff9880",
+   "repo": "httpx",
+   "commit": "0276ff9880066789994aa2299576c8b67172fcd9",
+   "parent": "b8c5e7a8528978e646c28a5837df5085ea3803fc",
+   "task": "Drop Content-Length headers on GET redirects",
+   "gold": [
+    "httpx/middleware.py"
+   ]
+  },
+  {
+   "id": "httpx-2129a9789a",
+   "repo": "httpx",
+   "commit": "2129a9789ad6a9ffb8655644fbe43a5b3e908db9",
+   "parent": "54f4194c387e1817f958ba8c25710d551cec278a",
+   "task": "Prefer `Content-Length` over `Transfer-Encoding: chunked` for `content=<file-like>` cases.",
+   "gold": [
+    "httpx/_content.py",
+    "httpx/_multipart.py",
+    "httpx/_utils.py",
+    "tests/test_content.py"
+   ]
+  },
+  {
+   "id": "httpx-7fea0723e2",
+   "repo": "httpx",
+   "commit": "7fea0723e2e6256472b12c12b2e95f2fa49c8a83",
+   "parent": "0e49f23b7537bd8fef2917a739c522aea166a918",
+   "task": "Use correct protocol idents when loading ssl context",
+   "gold": [
+    "httpx/dispatch/connection.py"
+   ]
+  },
+  {
+   "id": "httpx-b4b27ff677",
+   "repo": "httpx",
+   "commit": "b4b27ff6777c8906c2b31dd879bd4cc1d9e4f6ce",
+   "parent": "a11fc3849b94157274c98d99501acad05cbfb221",
+   "task": "Remove unused curio check",
+   "gold": [
+    "httpx/_utils.py"
+   ]
+  },
+  {
+   "id": "httpx-1ce3cc3269",
+   "repo": "httpx",
+   "commit": "1ce3cc3269eb73d28a8371906baa80a70cdc8aba",
+   "parent": "e3140a0803e91f81c37c4dc3ee8896be111fd621",
+   "task": "First pass at autodoc support",
+   "gold": [
+    "httpx/api.py",
+    "httpx/client.py",
+    "noxfile.py"
+   ]
+  },
+  {
+   "id": "httpx-ea137a96d9",
+   "repo": "httpx",
+   "commit": "ea137a96d904bdf1ea5a9eff1342b4d3a9ac5b30",
+   "parent": "71cbde8ba4cab32dd96ccb91e9db20216587fae9",
+   "task": "Fix wrongly deleted params introduced #408",
+   "gold": [
+    "httpx/api.py"
+   ]
+  },
+  {
+   "id": "httpx-40849bffcb",
+   "repo": "httpx",
+   "commit": "40849bffcb1bf9b68fd6d503bfb6b27eaae9d736",
+   "parent": "66754ad0c58d61d34489294530351aa4b17e217f",
+   "task": "Update IDNA encoding to 2008 spec",
+   "gold": [
+    "httpx/models.py",
+    "tests/models/test_url.py"
+   ]
+  },
+  {
+   "id": "httpx-27b0dbc22d",
+   "repo": "httpx",
+   "commit": "27b0dbc22da1424a020c2bb769c81490f39ce283",
+   "parent": "a89d4ad625aedeb1164e309acae4febb06b8cf5c",
+   "task": "Raise HTTPStatusError in raise_from_status",
+   "gold": [
+    "httpx/__init__.py",
+    "httpx/_exceptions.py",
+    "httpx/_models.py",
+    "tests/client/test_async_client.py",
+    "tests/client/test_client.py"
+   ]
+  },
+  {
+   "id": "httpx-a226c60861",
+   "repo": "httpx",
+   "commit": "a226c60861f651b9874e31e66b3bb7f0db46c96d",
+   "parent": "891d865044d27c229278f0fa20d84ba4007cb289",
+   "task": "Fix #1146 Set default allow_redirects to true",
+   "gold": [
+    "httpx/_api.py",
+    "httpx/_client.py"
+   ]
+  },
+  {
+   "id": "httpx-80eafe89c2",
+   "repo": "httpx",
+   "commit": "80eafe89c2c3377e9f0702952c96044c69909155",
+   "parent": "30692272fd287c83eed527e5ec488bee223e96f6",
+   "task": "Remove usage of loop.create_task in ASGIDispatch",
+   "gold": [
+    "httpx/concurrency/asyncio.py",
+    "httpx/concurrency/base.py",
+    "httpx/dispatch/asgi.py",
+    "httpx/dispatch/http11.py",
+    "httpx/dispatch/http2.py"
+   ]
+  },
+  {
+   "id": "httpx-81f385c484",
+   "repo": "httpx",
+   "commit": "81f385c484f1c2f189e8e9d05b02d16240bec199",
+   "parent": "4fbf2751ec353b09fafe9e3b22cbe07e49a26442",
+   "task": "Add missing timeout=... to top-level httpx.stream() function.",
+   "gold": [
+    "httpx/_api.py"
+   ]
+  },
+  {
+   "id": "httpx-d7aa6e0189",
+   "repo": "httpx",
+   "commit": "d7aa6e018913349166fba64cd5f3a9daba7364fb",
+   "parent": "0fb28e8cab7a2faa47dc606853515f06ae1c5ab1",
+   "task": "Keep HTTPError as a base class for .request() and .raise_for_status()",
+   "gold": [
+    "httpx/_exceptions.py"
+   ]
+  },
+  {
+   "id": "httpx-78afd08e0f",
+   "repo": "httpx",
+   "commit": "78afd08e0fc198d05f95728011d1bc7c0c213b30",
+   "parent": "8ceb34f48672f89de2458df371e2624659e2c24f",
+   "task": "Properly close stream on async response close",
+   "gold": [
+    "httpx/_client.py"
+   ]
+  },
+  {
+   "id": "httpx-23f11aaa8d",
+   "repo": "httpx",
+   "commit": "23f11aaa8db466fd78eea2a812e35b008017d617",
+   "parent": "3451028251db9518d485c89f5ccf1e2635e902a4",
+   "task": "Use chained comparison in status codes for error and success",
+   "gold": [
+    "httpx/status_codes.py"
+   ]
+  },
+  {
+   "id": "httpx-ba2e51215e",
+   "repo": "httpx",
+   "commit": "ba2e51215e4e619540f2a24282b84ed8a738e6fd",
+   "parent": "d293374b6603816420a2bb8e7f4fe5a5f09cbfcc",
+   "task": "Review urlescape percent-safe set, and use + behavior for form spaces.",
+   "gold": [
+    "httpx/_urlparse.py",
+    "httpx/_urls.py",
+    "tests/models/test_url.py"
+   ]
+  },
+  {
+   "id": "httpx-49d74a2e7f",
+   "repo": "httpx",
+   "commit": "49d74a2e7f773f88a84dd4af900d7a8543636ae2",
+   "parent": "2e01aa0075327c5c30632207e8b7a1961dda5303",
+   "task": "Clarified error when header value is None",
+   "gold": [
+    "httpx/_utils.py",
+    "tests/client/test_headers.py"
+   ]
+  },
+  {
+   "id": "httpx-2f0e0480da",
+   "repo": "httpx",
+   "commit": "2f0e0480da43330f6e6dc3aac0457cb5e6ab8470",
+   "parent": "8dea2c23d70145355951baa9c1c3a8291cc4c17f",
+   "task": "Remove needless whitespace strips",
+   "gold": [
+    "httpx/_auth.py",
+    "httpx/_config.py"
+   ]
+  },
+  {
+   "id": "httpx-db7f2d0df3",
+   "repo": "httpx",
+   "commit": "db7f2d0df365daafbcc4e60fd7e96e8abc1a466e",
+   "parent": "e34d2806731f918fd6f7230f80fd4301e4c05419",
+   "task": "Add support for SSLKEYLOGFILE",
+   "gold": [
+    "httpx/client.py",
+    "httpx/config.py",
+    "httpx/dispatch/connection.py",
+    "httpx/dispatch/connection_pool.py",
+    "tests/test_config.py"
+   ]
+  }
+ ]
+}
