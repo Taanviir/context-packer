@@ -27,8 +27,8 @@ jobs:
       # Trusted publishing: npm exchanges the workflow's OIDC token, so no NPM_TOKEN secret is stored.
       # A version already on npm (such as the first one, published by hand) is left alone.
       - run: |
-          if npm view "context-packer@${GITHUB_REF_NAME#v}" version >/dev/null 2>&1; then
-            echo "context-packer@${GITHUB_REF_NAME#v} is already on npm"
+          if npm view "@taanviir/context-packer@${GITHUB_REF_NAME#v}" version >/dev/null 2>&1; then
+            echo "@taanviir/context-packer@${GITHUB_REF_NAME#v} is already on npm"
           else
             npm publish
           fi

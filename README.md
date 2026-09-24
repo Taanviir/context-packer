@@ -1,7 +1,7 @@
 # context-packer
 
 [![CI](https://github.com/Taanviir/context-packer/actions/workflows/ci.yml/badge.svg)](https://github.com/Taanviir/context-packer/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/context-packer)](https://www.npmjs.com/package/context-packer)
+[![npm](https://img.shields.io/npm/v/@taanviir/context-packer)](https://www.npmjs.com/package/@taanviir/context-packer)
 
 Ranks the source files a coding task needs, so an agent starts with the right files instead of searching for them.
 Use it from the command line, as an MCP server, or as a Claude Code hook that adds the files to every prompt.
@@ -29,21 +29,21 @@ Needs Node 22 or newer. Without a key, everything runs on keywords.
 **Command line:**
 
 ```
-npx -y context-packer pack "describe the change" --explain
-npm install -g context-packer
+npx -y @taanviir/context-packer pack "describe the change" --explain
+npm install -g @taanviir/context-packer
 ```
 
 **MCP server** for other agents:
 
 ```
-claude mcp add context-packer -- npx -y context-packer mcp
-codex mcp add context-packer -- npx -y context-packer mcp
+claude mcp add context-packer -- npx -y @taanviir/context-packer mcp
+codex mcp add context-packer -- npx -y @taanviir/context-packer mcp
 ```
 
 For Cursor, add this to `~/.cursor/mcp.json` or `.cursor/mcp.json`:
 
 ```json
-{ "mcpServers": { "context-packer": { "command": "npx", "args": ["-y", "context-packer", "mcp"] } } }
+{ "mcpServers": { "context-packer": { "command": "npx", "args": ["-y", "@taanviir/context-packer", "mcp"] } } }
 ```
 
 The server exposes one tool, `pack_context(task, limit?, provider?, root?, explain?)`.
@@ -87,7 +87,7 @@ keyword pass, run before any paid provider.
 To install it without the plugin, put this in `.claude/settings.json`:
 
 ```json
-{"hooks": {"UserPromptSubmit": [{"hooks": [{"type": "command", "timeout": 60, "command": "npx -y context-packer hook"}]}]}}
+{"hooks": {"UserPromptSubmit": [{"hooks": [{"type": "command", "timeout": 60, "command": "npx -y @taanviir/context-packer hook"}]}]}}
 ```
 
 ### Which project

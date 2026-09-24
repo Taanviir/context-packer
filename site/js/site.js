@@ -8,10 +8,10 @@ const COMMANDS = [
   { label: "Blog", hint: "page", href: `${base}/blog/` },
   { label: "How the ranking works", hint: "post", href: `${base}/blog/how-it-ranks.html` },
   { label: "What 120 real changes showed", hint: "post", href: `${base}/blog/what-we-measured.html` },
-  { label: "Copy: npx context-packer pack", hint: "copy", copy: 'npx -y context-packer pack "describe the change"' },
-  { label: "Copy: claude mcp add", hint: "copy", copy: "claude mcp add context-packer -- npx -y context-packer mcp" },
+  { label: "Copy: npx @taanviir/context-packer pack", hint: "copy", copy: 'npx -y @taanviir/context-packer pack "describe the change"' },
+  { label: "Copy: claude mcp add", hint: "copy", copy: "claude mcp add context-packer -- npx -y @taanviir/context-packer mcp" },
   { label: "Source on GitHub", hint: "link", href: "https://github.com/Taanviir/context-packer" },
-  { label: "Package on npm", hint: "link", href: "https://www.npmjs.com/package/context-packer" },
+  { label: "Package on npm", hint: "link", href: "https://www.npmjs.com/package/@taanviir/context-packer" },
 ];
 
 function palette() {

@@ -1,5 +1,5 @@
 {
-  "name": "context-packer",
+  "name": "@taanviir/context-packer",
   "version": "0.1.0",
   "description": "Ranks the source files a coding task needs, from the command line, an MCP server, or a Claude Code hook",
   "keywords": [

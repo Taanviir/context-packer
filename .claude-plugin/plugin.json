@@ -12,7 +12,7 @@
   "mcpServers": {
     "context-packer": {
       "command": "npx",
-      "args": ["-y", "context-packer@latest", "mcp"]
+      "args": ["-y", "@taanviir/context-packer@latest", "mcp"]
     }
   }
 }
