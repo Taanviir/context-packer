@@ -58,7 +58,7 @@
 
           <h2>The idea that didn't work</h2>
           <p>The sketcher that summarizes each file for the wide pass looks for Kotlin keywords: <code>class</code>, <code>fun</code>, <code>val</code>, <code>object</code>. On a Python or Go file, that leaves little besides the path. Per-language rules looked like the obvious improvement, so I wrote them for TypeScript, Python, Go, Rust, C#, Swift and a few more, with docstrings and <code>///</code> comments.</p>
-          <p>On the decision changes they tied. On the test changes they tied again: within half a file per 100 of the simple summaries. And they cost more, because richer summaries are longer: 58% more on prometheus.</p>
+          <p>On the 10 changes per project used for decisions, they tied. On the test changes they tied again: within half a file per 100 of the simple summaries. And they cost more, because richer summaries are longer: 58% more on prometheus.</p>
           <p>The reason is in the pool size. Up to 120 files get a full-source read, and on repositories of 70 to 1,200 files, that pool already holds most of the answers, chosen partly by BM25. The sketch pass only has to add a few files to the pool, and a path plus a file name often does that as well as a list of declarations. So the per-language sketcher didn't ship. It stays in the benchmark folder so the result can be reproduced. Sketches may matter on much larger repositories, but I didn't measure that.</p>
 
           <h2>The local model</h2>
