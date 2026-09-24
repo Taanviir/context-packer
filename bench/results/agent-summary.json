@@ -1,0 +1,107 @@
+{
+ "tasks": 10,
+ "metrics": {
+  "turns": {
+   "none": {
+    "mean": 11.6,
+    "better": 0,
+    "worse": 0
+   },
+   "files": {
+    "mean": 10.5,
+    "better": 6,
+    "worse": 4
+   },
+   "code": {
+    "mean": 9,
+    "better": 8,
+    "worse": 1
+   }
+  },
+  "searches": {
+   "none": {
+    "mean": 4.8,
+    "better": 0,
+    "worse": 0
+   },
+   "files": {
+    "mean": 4.4,
+    "better": 5,
+    "worse": 3
+   },
+   "code": {
+    "mean": 3.2,
+    "better": 7,
+    "worse": 1
+   }
+  },
+  "reads": {
+   "none": {
+    "mean": 2.6,
+    "better": 0,
+    "worse": 0
+   },
+   "files": {
+    "mean": 1.7,
+    "better": 4,
+    "worse": 3
+   },
+   "code": {
+    "mean": 1.8,
+    "better": 3,
+    "worse": 3
+   }
+  },
+  "needed files edited": {
+   "none": {
+    "mean": 0.7833333333333333,
+    "better": 0,
+    "worse": 0
+   },
+   "files": {
+    "mean": 0.9,
+    "better": 3,
+    "worse": 0
+   },
+   "code": {
+    "mean": 0.85,
+    "better": 2,
+    "worse": 0
+   }
+  },
+  "cost $": {
+   "none": {
+    "mean": 0.18862890000000002,
+    "better": 0,
+    "worse": 0
+   },
+   "files": {
+    "mean": 0.19678894,
+    "better": 5,
+    "worse": 5
+   },
+   "code": {
+    "mean": 0.19568972,
+    "better": 4,
+    "worse": 6
+   }
+  },
+  "time s": {
+   "none": {
+    "mean": 38.9002,
+    "better": 0,
+    "worse": 0
+   },
+   "files": {
+    "mean": 43.51049999999999,
+    "better": 3,
+    "worse": 7
+   },
+   "code": {
+    "mean": 38.15679999999999,
+    "better": 4,
+    "worse": 6
+   }
+  }
+ }
+}

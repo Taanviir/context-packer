@@ -104,6 +104,12 @@ $ context-packer pack "Add exponential backoff with jitter to Jev HTTP retries" 
        jev 0.88 · keyword #3 · compared 0.93 · edit 0.98 · words: jev×41 backoff×12 retries×6 exponential×3 jitter×3
 ```
 
+### Include the code
+
+`--code N` (or `code: N` on the MCP tool) adds the most relevant lines of the top N files: short windows that mention
+the most distinct task words, about 8,000 characters in all, so the agent can often start without opening the files.
+For the hook, set `CONTEXT_PACKER_HOOK_CODE=3`.
+
 ## Configuration
 
 | Variable | Default | Meaning |
@@ -120,6 +126,7 @@ $ context-packer pack "Add exponential backoff with jitter to Jev HTTP retries" 
 | `CONTEXT_PACKER_EXTENSIONS` | all supported | Extension allowlist, such as `kt,kts` |
 | `CONTEXT_PACKER_HOOK_PROVIDER` | `keywords` | Provider the hook uses |
 | `CONTEXT_PACKER_HOOK_LIMIT` | `8` | Files the hook adds, 1 to 20 |
+| `CONTEXT_PACKER_HOOK_CODE` | `0` | Also add the most relevant lines of the top N files, 0 to 10 |
 | `CONTEXT_PACKER_HOOK_DEADLINE` | `25` | Seconds before the hook gives up. For CPU Laya, use 180 and a hook timeout of at least 190 |
 
 The Laya provider POSTs one file per request to the local endpoint, one request at a time:

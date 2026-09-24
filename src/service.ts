@@ -4,6 +4,7 @@ import { JEV_INPUT_PRICE, JevClient, JevScorer, type CallStat, type JevBackend }
 import { LAYA_MAX_TASK_CHARS, LayaScorer } from "./laya.js";
 import { DEFAULT_PACK_CONFIG, pack, packKeywords, type FileDoc, type PackConfig, type PackResult } from "./packer.js";
 import { layaSketch, sketch } from "./sketch.js";
+import { snippets, type Snippet } from "./snippets.js";
 
 export const PROVIDERS = ["keywords", "jev", "laya"] as const;
 export type Provider = (typeof PROVIDERS)[number];
@@ -13,6 +14,8 @@ export interface PackRequest {
   root: string;
   provider?: Provider;
   limit?: number;
+  /** Also return the most relevant lines of the top N files. */
+  code?: number;
   onProgress?: (message: string) => void;
 }
 
@@ -29,6 +32,8 @@ export interface PackReport {
   inputTokens: number;
   /** Null when any call's usage is unknown: unknown usage is not zero. */
   costUsd: number | null;
+  /** The most relevant lines of the top files, by path, when the request asked for code. */
+  snippets?: Record<string, Snippet[]>;
 }
 
 export class MissingKeyError extends Error {
@@ -73,6 +78,16 @@ export class ContextPacker {
 
   /** Ranks files already in memory; `pack` collects them from disk first. The benchmark calls this directly. */
   async rank(request: Omit<PackRequest, "root">, files: SourceFile[]): Promise<PackReport> {
+    const code = request.code ?? 0;
+    if (!Number.isInteger(code) || code < 0 || code > 10) throw new RangeError("code must be between 0 and 10 files");
+    const report = await this.score(request, files);
+    if (code === 0) return report;
+    const text = new Map(files.map((f) => [f.path, f.text]));
+    const top = report.result.files.slice(0, Math.min(code, request.limit ?? 20));
+    return { ...report, snippets: Object.fromEntries(top.map((f) => [f.path, snippets(request.task, text.get(f.path) ?? "")])) };
+  }
+
+  private async score(request: Omit<PackRequest, "root">, files: SourceFile[]): Promise<PackReport> {
     const provider = request.provider ?? this.defaultProvider();
     const task = request.task.trim();
     if (!task) throw new RangeError("Task must not be blank");

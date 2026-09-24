@@ -1,0 +1,1229 @@
+{
+ "repo": "rich",
+ "split": "real",
+ "variant": "keywords",
+ "results": [
+  {
+   "id": "rich-e9c9e43420",
+   "task": "When I strip meta and links off a style, the resulting style still hangs on to the original object's cached hash, so it can end up hashing wrong if the cache was already computed before clearing. Clearing meta/links should also reset the cached hash.",
+   "gold": [
+    "rich/style.py",
+    "tests/test_style.py"
+   ],
+   "candidates": 189,
+   "ranked": [
+    "rich/style.py",
+    "rich/text.py",
+    "rich/console.py",
+    "rich/segment.py",
+    "rich/cells.py",
+    "rich/progress.py",
+    "rich/_inspect.py",
+    "rich/syntax.py",
+    "rich/markup.py",
+    "rich/pretty.py",
+    "rich/markdown.py",
+    "rich/traceback.py",
+    "rich/live.py",
+    "rich/_ratio.py",
+    "benchmarks/snippets.py",
+    "tests/test_inspect.py",
+    "docs/source/conf.py",
+    "rich/__init__.py",
+    "rich/logging.py",
+    "tests/test_style.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 14,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-655170417a",
+   "task": "When style parsing gets an empty string, it should be treated the same as \"none\" and return the null style instead of erroring or producing something unexpected.",
+   "gold": [
+    "rich/style.py"
+   ],
+   "candidates": 155,
+   "ranked": [
+    "rich/console.py",
+    "rich/style.py",
+    "tests/test_traceback.py",
+    "rich/text.py",
+    "rich/progress.py",
+    "rich/pretty.py",
+    "rich/bar.py",
+    "rich/prompt.py",
+    "rich/live.py",
+    "docs/source/conf.py",
+    "rich/segment.py",
+    "rich/table.py",
+    "rich/_lru_cache.py",
+    "rich/syntax.py",
+    "tests/test_inspect.py",
+    "rich/logging.py",
+    "rich/__init__.py",
+    "rich/traceback.py",
+    "rich/ansi.py",
+    "tests/test_markup.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 19,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-a236d8fd63",
+   "task": "When stripping styles from segments, I need `link=None` copies to actually clear the link (and get a fresh link id) instead of reusing the original — right now the copy keeps the old link. Can you fix that and add tests covering stripping styles and stripping links from segments?",
+   "gold": [
+    "rich/segment.py",
+    "rich/style.py",
+    "tests/test_segment.py"
+   ],
+   "candidates": 128,
+   "ranked": [
+    "rich/console.py",
+    "rich/progress.py",
+    "rich/style.py",
+    "rich/text.py",
+    "rich/segment.py",
+    "rich/table.py",
+    "rich/logging.py",
+    "rich/__main__.py",
+    "rich/syntax.py",
+    "examples/table_movie.py",
+    "docs/source/conf.py",
+    "tests/test_style.py",
+    "tests/test_console.py",
+    "rich/markdown.py",
+    "rich/pretty.py",
+    "rich/theme.py",
+    "examples/downloader.py",
+    "rich/box.py",
+    "rich/align.py",
+    "tests/test_text.py"
+   ],
+   "recall": {
+    "5": 0.6666666666666666,
+    "10": 0.6666666666666666,
+    "20": 0.6666666666666666
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-18ebb427bc",
+   "task": "Update the Unicode East Asian width data so character cell-width calculations reflect the latest wcwidth ranges (many code points' zero/double-width classifications have changed or expanded upstream).",
+   "gold": [
+    "rich/_cell_widths.py"
+   ],
+   "candidates": 189,
+   "ranked": [
+    "tools/make_terminal_widths.py",
+    "rich/text.py",
+    "rich/console.py",
+    "benchmarks/snippets.py",
+    "rich/cells.py",
+    "rich/syntax.py",
+    "rich/panel.py",
+    "rich/tree.py",
+    "tests/test_console.py",
+    "rich/_export_format.py",
+    "rich/table.py",
+    "tests/test_cells.py",
+    "rich/rule.py",
+    "rich/pretty.py",
+    "rich/segment.py",
+    "rich/traceback.py",
+    "rich/markdown.py",
+    "rich/_win32_console.py",
+    "rich/box.py",
+    "rich/__init__.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 16,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-f538099efa",
+   "task": "The test card output has a wrong month abbreviation and an extra zero in a dollar amount — can you fix those typos in the demo table?",
+   "gold": [
+    "rich/__main__.py",
+    "rich/color.py",
+    "tests/_card_render.py"
+   ],
+   "candidates": 73,
+   "ranked": [
+    "rich/__main__.py",
+    "rich/console.py",
+    "rich/progress.py",
+    "rich/table.py",
+    "docs/source/conf.py",
+    "rich/traceback.py",
+    "rich/padding.py",
+    "tests/test_card.py",
+    "rich/_log_render.py",
+    "tests/test_traceback.py",
+    "rich/filesize.py",
+    "rich/markup.py",
+    "rich/style.py",
+    "tests/test_text.py",
+    "rich/logging.py",
+    "tests/_card_render.py",
+    "rich/markdown.py",
+    "rich/text.py",
+    "rich/segment.py",
+    "tools/make_terminal_widths.py"
+   ],
+   "recall": {
+    "5": 0.3333333333333333,
+    "10": 0.3333333333333333,
+    "20": 0.6666666666666666
+   },
+   "ms": 3,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-9ba01ae52b",
+   "task": "When terminal size detection falls back to the standard streams, it should try stdin first, then stdout, then stderr, using their file descriptors directly instead of opening the stream objects each time. Also make sure the legacy Windows rendering check only tests against stdout/stderr, not stdin.",
+   "gold": [
+    "rich/console.py"
+   ],
+   "candidates": 184,
+   "ranked": [
+    "rich/console.py",
+    "tests/test_console.py",
+    "rich/_win32_console.py",
+    "rich/live.py",
+    "rich/progress.py",
+    "tests/test_logging.py",
+    "rich/__init__.py",
+    "tests/test_progress.py",
+    "rich/_ratio.py",
+    "benchmarks/snippets.py",
+    "rich/syntax.py",
+    "rich/pretty.py",
+    "rich/segment.py",
+    "tests/test_win32_console.py",
+    "rich/json.py",
+    "examples/fullscreen.py",
+    "rich/progress_bar.py",
+    "rich/prompt.py",
+    "rich/style.py",
+    "rich/logging.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 11,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-680d9d876e",
+   "task": "When running in Jupyter, stopping the progress bar prints an extra blank line even though the console is treated as interactive there. Can you fix it so that blank line only gets printed for truly non-interactive consoles, not Jupyter?",
+   "gold": [
+    "rich/progress.py"
+   ],
+   "candidates": 189,
+   "ranked": [
+    "rich/live.py",
+    "rich/console.py",
+    "rich/progress.py",
+    "rich/segment.py",
+    "rich/traceback.py",
+    "benchmarks/snippets.py",
+    "rich/__init__.py",
+    "rich/syntax.py",
+    "docs/source/conf.py",
+    "rich/logging.py",
+    "examples/dynamic_progress.py",
+    "rich/bar.py",
+    "rich/table.py",
+    "rich/_ratio.py",
+    "rich/pretty.py",
+    "tests/test_pretty.py",
+    "rich/text.py",
+    "rich/_inspect.py",
+    "rich/padding.py",
+    "rich/markdown.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 17,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-066c024be2",
+   "task": "When a panel's title or subtitle text has its own inline styling, the fill characters used to pad it to the border width end up styled too, or the fill overwrites the title's own style. The border style should only apply where the title doesn't already define one, and the padding characters should visually match the border regardless of the title's alignment (left, center, or right).",
+   "gold": [
+    "rich/panel.py",
+    "rich/text.py",
+    "tests/test_log.py",
+    "tests/test_panel.py"
+   ],
+   "candidates": 187,
+   "ranked": [
+    "rich/panel.py",
+    "rich/console.py",
+    "rich/text.py",
+    "rich/table.py",
+    "rich/box.py",
+    "rich/_win32_console.py",
+    "rich/_inspect.py",
+    "rich/syntax.py",
+    "rich/segment.py",
+    "rich/rule.py",
+    "rich/markdown.py",
+    "rich/align.py",
+    "examples/fullscreen.py",
+    "rich/pretty.py",
+    "rich/layout.py",
+    "rich/__main__.py",
+    "tests/test_console.py",
+    "rich/tree.py",
+    "rich/traceback.py",
+    "rich/bar.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 12,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-7f422fa661",
+   "task": "When I call `pretty.install()` inside IPython, it should hook into IPython's own output formatting instead of just overriding `sys.displayhook`, so pretty-printed output still works properly in the IPython REPL. Fall back to the normal displayhook approach when not running under IPython.",
+   "gold": [
+    "rich/pretty.py"
+   ],
+   "candidates": 150,
+   "ranked": [
+    "rich/live.py",
+    "rich/progress.py",
+    "rich/pretty.py",
+    "rich/bar.py",
+    "rich/console.py",
+    "rich/__init__.py",
+    "docs/source/conf.py",
+    "rich/traceback.py",
+    "tests/test_pretty.py",
+    "rich/logging.py",
+    "tests/test_traceback.py",
+    "tests/test_live.py",
+    "tests/test_lrucache.py",
+    "examples/listdir.py",
+    "rich/color.py",
+    "rich/__main__.py",
+    "rich/_inspect.py",
+    "rich/style.py",
+    "rich/jupyter.py",
+    "rich/progress_bar.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 7,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-260508bfa0",
+   "task": "When splitting styled text into lines, overlapping spans that cross line boundaries aren't handled correctly — some background/style spans end up missing, duplicated, or misaligned on the wrong lines when markup regions overlap. Please fix line-splitting so overlapping spans are correctly clipped and placed on each resulting line.",
+   "gold": [
+    "rich/text.py",
+    "tests/test_segment.py"
+   ],
+   "candidates": 176,
+   "ranked": [
+    "rich/text.py",
+    "rich/syntax.py",
+    "rich/console.py",
+    "rich/layout.py",
+    "rich/segment.py",
+    "tests/test_markup.py",
+    "tests/test_text.py",
+    "rich/bar.py",
+    "rich/logging.py",
+    "rich/ansi.py",
+    "rich/box.py",
+    "rich/_ratio.py",
+    "rich/markdown.py",
+    "examples/dynamic_progress.py",
+    "rich/table.py",
+    "rich/traceback.py",
+    "rich/panel.py",
+    "rich/tree.py",
+    "rich/live_render.py",
+    "rich/markup.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 9,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-26910c309d",
+   "task": "When pretty-printing a namedtuple that has its own custom string representation defined, use that instead of building our own field-by-field output. Also, a namedtuple with a single field shouldn't get a trailing comma the way a regular one-element tuple does.",
+   "gold": [
+    "rich/pretty.py",
+    "tests/test_pretty.py"
+   ],
+   "candidates": 176,
+   "ranked": [
+    "rich/pretty.py",
+    "tests/test_pretty.py",
+    "rich/__init__.py",
+    "examples/dynamic_progress.py",
+    "rich/console.py",
+    "docs/source/conf.py",
+    "rich/progress.py",
+    "rich/live.py",
+    "rich/markdown.py",
+    "rich/traceback.py",
+    "rich/text.py",
+    "rich/segment.py",
+    "rich/logging.py",
+    "rich/markup.py",
+    "rich/syntax.py",
+    "rich/filesize.py",
+    "rich/table.py",
+    "rich/cells.py",
+    "tests/test_inspect.py",
+    "rich/layout.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 10,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-6151387adf",
+   "task": "Long lines are wrapping unexpectedly when there's no explicit width set, and Markdown text loses its style when re-wrapped. Can we make line splitting always crop/pad to the actual console width so output doesn't overflow, and preserve the current style when appending text during Markdown rendering?",
+   "gold": [
+    "rich/console.py",
+    "rich/markdown.py",
+    "rich/segment.py",
+    "rich/text.py"
+   ],
+   "candidates": 27,
+   "ranked": [
+    "rich/markdown.py",
+    "rich/console.py",
+    "rich/text.py",
+    "rich/table.py",
+    "rich/segment.py",
+    "rich/containers.py",
+    "rich/emoji.py",
+    "rich/syntax.py",
+    "rich/style.py",
+    "rich/padding.py",
+    "rich/panel.py",
+    "rich/default_styles.py",
+    "rich/_emoji_replace.py",
+    "rich/color.py",
+    "rich/errors.py",
+    "rich/box.py",
+    "rich/color_triplet.py",
+    "tools/make_emoji.py",
+    "rich/_tools.py",
+    "rich/palette.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-665bb3360a",
+   "task": "On Windows, the `windll` fallback variable is typed as `Any`, which suppresses type checking on it. Can you give it a more accurate type so we still get proper type errors when it's misused?",
+   "gold": [
+    "rich/_win32_console.py"
+   ],
+   "candidates": 178,
+   "ranked": [
+    "rich/_win32_console.py",
+    "rich/console.py",
+    "rich/live.py",
+    "rich/_windows.py",
+    "rich/progress.py",
+    "rich/__init__.py",
+    "rich/style.py",
+    "docs/source/conf.py",
+    "rich/syntax.py",
+    "rich/traceback.py",
+    "rich/table.py",
+    "rich/_ratio.py",
+    "rich/pretty.py",
+    "rich/prompt.py",
+    "rich/segment.py",
+    "rich/markdown.py",
+    "rich/measure.py",
+    "rich/text.py",
+    "rich/json.py",
+    "rich/box.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 14,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-0138b18950",
+   "task": "When pretty-printing a single-element tuple like `(1,)`, the trailing comma is missing or misplaced, especially when the container is expanded across multiple lines. Fix pretty printing so one-element tuples always keep their trailing comma correctly placed, both inline and expanded.",
+   "gold": [
+    "rich/pretty.py",
+    "tests/test_pretty.py"
+   ],
+   "candidates": 137,
+   "ranked": [
+    "rich/markdown.py",
+    "rich/pretty.py",
+    "rich/console.py",
+    "docs/source/conf.py",
+    "rich/__init__.py",
+    "rich/text.py",
+    "rich/segment.py",
+    "rich/table.py",
+    "rich/_lru_cache.py",
+    "rich/progress.py",
+    "rich/traceback.py",
+    "rich/syntax.py",
+    "rich/__main__.py",
+    "rich/cells.py",
+    "rich/logging.py",
+    "rich/markup.py",
+    "rich/filesize.py",
+    "tests/test_pretty.py",
+    "tests/test_align.py",
+    "rich/align.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 7,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-9ca660bd13",
+   "task": "When wrapping widths that allow wrapping is empty, computing the second-largest wrap width throws an error instead of just returning 0. Can you make that case return 0 without needing a try/except?",
+   "gold": [
+    "rich/table.py"
+   ],
+   "candidates": 127,
+   "ranked": [
+    "rich/table.py",
+    "rich/progress.py",
+    "rich/text.py",
+    "rich/traceback.py",
+    "rich/console.py",
+    "rich/pretty.py",
+    "rich/syntax.py",
+    "rich/logging.py",
+    "rich/__main__.py",
+    "rich/prompt.py",
+    "rich/measure.py",
+    "rich/_inspect.py",
+    "tests/test_inspect.py",
+    "examples/listdir.py",
+    "rich/segment.py",
+    "rich/style.py",
+    "docs/source/conf.py",
+    "rich/_lru_cache.py",
+    "rich/_windows.py",
+    "rich/box.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-4787873fc0",
+   "task": "Some tests are failing because a debug print statement got left in the Link rendering code and a stale test fixture snapshot no longer matches actual output. Can you clean up the leftover debug code and update the test fixtures so the test suite passes again?",
+   "gold": [
+    "rich/markdown.py",
+    "tests/_card_render.py",
+    "tests/test_markdown_no_hyperlinks.py"
+   ],
+   "candidates": 185,
+   "ranked": [
+    "rich/console.py",
+    "rich/live.py",
+    "rich/logging.py",
+    "rich/syntax.py",
+    "examples/export.py",
+    "rich/ansi.py",
+    "tests/test_logging.py",
+    "rich/markdown.py",
+    "rich/segment.py",
+    "rich/__main__.py",
+    "tests/test_markdown.py",
+    "tests/test_console.py",
+    "rich/progress.py",
+    "examples/fullscreen.py",
+    "tests/test_inspect.py",
+    "rich/text.py",
+    "docs/source/conf.py",
+    "tests/test_markdown_no_hyperlinks.py",
+    "tests/test_traceback.py",
+    "rich/highlighter.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0.3333333333333333,
+    "20": 0.6666666666666666
+   },
+   "ms": 12,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-f67f426a6b",
+   "task": "Complex numbers like `3+2j` or `3.14 + 2.06j` in repr output aren't getting number-highlighted — only the real part matches. Can the number pattern recognize the full complex literal, including a spaced-out imaginary part?",
+   "gold": [
+    "rich/highlighter.py",
+    "tests/test_highlighter.py"
+   ],
+   "candidates": 186,
+   "ranked": [
+    "docs/source/conf.py",
+    "rich/syntax.py",
+    "rich/text.py",
+    "rich/progress.py",
+    "tests/test_inspect.py",
+    "rich/console.py",
+    "tests/test_highlighter.py",
+    "rich/markup.py",
+    "rich/logging.py",
+    "rich/_win32_console.py",
+    "rich/__main__.py",
+    "examples/fullscreen.py",
+    "rich/traceback.py",
+    "rich/__init__.py",
+    "rich/markdown.py",
+    "rich/_spinners.py",
+    "rich/pretty.py",
+    "tests/test_prompt.py",
+    "rich/containers.py",
+    "rich/highlighter.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 11,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-55988c6e72",
+   "task": "Panels should support internal padding around their content, not just a border—can you add a way to specify padding on a panel so the text isn't flush against the edges?",
+   "gold": [
+    "rich/panel.py"
+   ],
+   "candidates": 93,
+   "ranked": [
+    "rich/table.py",
+    "rich/progress.py",
+    "rich/__main__.py",
+    "rich/panel.py",
+    "rich/markdown.py",
+    "rich/traceback.py",
+    "rich/padding.py",
+    "rich/segment.py",
+    "rich/console.py",
+    "tests/test_text.py",
+    "rich/tabulate.py",
+    "rich/box.py",
+    "rich/syntax.py",
+    "docs/source/conf.py",
+    "rich/style.py",
+    "tests/test_lrucache.py",
+    "rich/text.py",
+    "rich/markup.py",
+    "examples/downloader.py",
+    "examples/just.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 4,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-ad07ee5c52",
+   "task": "When using Live display inside a Jupyter notebook, the output gets printed twice at the end. Please fix so it only renders once when the live session stops.",
+   "gold": [
+    "rich/live.py"
+   ],
+   "candidates": 149,
+   "ranked": [
+    "rich/live.py",
+    "rich/progress.py",
+    "tests/test_live.py",
+    "rich/__init__.py",
+    "rich/console.py",
+    "rich/jupyter.py",
+    "rich/bar.py",
+    "docs/source/conf.py",
+    "rich/_lru_cache.py",
+    "rich/rule.py",
+    "tests/test_prompt.py",
+    "rich/prompt.py",
+    "rich/text.py",
+    "rich/spinner.py",
+    "rich/markup.py",
+    "rich/live_render.py",
+    "rich/traceback.py",
+    "rich/logging.py",
+    "rich/panel.py",
+    "rich/markdown.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 8,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-f8b9ba143a",
+   "task": "Startup is slower than it should be because of a module import — can we avoid that overhead and use a cheaper check for whether we're on Windows?",
+   "gold": [
+    "rich/color.py",
+    "rich/console.py",
+    "rich/syntax.py",
+    "rich/traceback.py"
+   ],
+   "candidates": 189,
+   "ranked": [
+    "rich/console.py",
+    "rich/_wrap.py",
+    "rich/_win32_console.py",
+    "rich/_ratio.py",
+    "rich/syntax.py",
+    "rich/pretty.py",
+    "rich/_inspect.py",
+    "rich/__init__.py",
+    "benchmarks/snippets.py",
+    "docs/source/conf.py",
+    "rich/cells.py",
+    "rich/traceback.py",
+    "tests/test_inspect.py",
+    "rich/logging.py",
+    "rich/live.py",
+    "rich/ansi.py",
+    "tests/test_markdown.py",
+    "rich/text.py",
+    "rich/prompt.py",
+    "rich/json.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.75
+   },
+   "ms": 12,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-8e58adcab0",
+   "task": "Allow `stylize_range` to accept any style type, not just `Style` instances, so callers can pass named styles or style strings when highlighting a range. Also make the range highlighting logic simpler by looking up each start/end position individually instead of processing them as a batch.",
+   "gold": [
+    "rich/syntax.py",
+    "tests/test_syntax.py"
+   ],
+   "candidates": 186,
+   "ranked": [
+    "rich/syntax.py",
+    "rich/__init__.py",
+    "rich/text.py",
+    "docs/source/conf.py",
+    "rich/_inspect.py",
+    "rich/console.py",
+    "rich/_win32_console.py",
+    "rich/progress.py",
+    "rich/live.py",
+    "rich/markup.py",
+    "rich/segment.py",
+    "rich/table.py",
+    "rich/json.py",
+    "rich/tree.py",
+    "rich/ansi.py",
+    "rich/traceback.py",
+    "rich/style.py",
+    "rich/cells.py",
+    "rich/markdown.py",
+    "rich/layout.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 11,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-435d7a2e2d",
+   "task": "The docstring for the print method says the `sep` and `end` parameters default to `\" \"` and `\"\\n\"`, but that's wrong since those parameters don't actually have defaults set there. Please correct the docstring so it doesn't state incorrect default values.",
+   "gold": [
+    "rich/console.py"
+   ],
+   "candidates": 155,
+   "ranked": [
+    "rich/console.py",
+    "rich/markup.py",
+    "rich/filesize.py",
+    "rich/live.py",
+    "rich/bar.py",
+    "rich/rule.py",
+    "rich/text.py",
+    "rich/style.py",
+    "rich/progress.py",
+    "rich/prompt.py",
+    "rich/table.py",
+    "rich/pretty.py",
+    "rich/panel.py",
+    "rich/__init__.py",
+    "rich/syntax.py",
+    "rich/markdown.py",
+    "docs/source/conf.py",
+    "tests/test_inspect.py",
+    "rich/box.py",
+    "rich/align.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 8,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-a5fa231348",
+   "task": "When reading a file already opened in binary mode with `Progress.read`, don't let the returned reader close that handle on exit—only close handles the progress tracker opened itself from a path. Also make sure the progress display starts and stops around the read, not just wraps the whole context.",
+   "gold": [
+    "rich/progress.py"
+   ],
+   "candidates": 178,
+   "ranked": [
+    "rich/progress.py",
+    "rich/console.py",
+    "rich/live.py",
+    "rich/markdown.py",
+    "rich/_win32_console.py",
+    "rich/traceback.py",
+    "examples/dynamic_progress.py",
+    "docs/source/conf.py",
+    "rich/syntax.py",
+    "examples/downloader.py",
+    "rich/prompt.py",
+    "tests/test_logging.py",
+    "rich/__init__.py",
+    "tests/test_progress.py",
+    "rich/json.py",
+    "rich/pretty.py",
+    "rich/theme.py",
+    "examples/fullscreen.py",
+    "rich/logging.py",
+    "rich/tree.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 10,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-32196384d0",
+   "task": "Mypy is complaining about the return type where we build the buffer after stripping color codes for no-color output — can you fix that typing error?",
+   "gold": [
+    "rich/console.py"
+   ],
+   "candidates": 185,
+   "ranked": [
+    "rich/console.py",
+    "rich/_win32_console.py",
+    "rich/syntax.py",
+    "rich/segment.py",
+    "rich/live.py",
+    "rich/style.py",
+    "rich/progress.py",
+    "rich/ansi.py",
+    "tests/test_win32_console.py",
+    "rich/_windows.py",
+    "rich/__init__.py",
+    "benchmarks/snippets.py",
+    "rich/pretty.py",
+    "rich/measure.py",
+    "rich/__main__.py",
+    "rich/_inspect.py",
+    "rich/traceback.py",
+    "rich/file_proxy.py",
+    "rich/text.py",
+    "rich/logging.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 11,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-a2385c525b",
+   "task": "When my rendered content is taller than the terminal, the live display gets garbled. Can we detect that and show a \"terminal too small\" message instead of the broken output, falling back to normal rendering once it fits again? This should probably be on by default but overridable.",
+   "gold": [
+    "rich/live.py"
+   ],
+   "candidates": 135,
+   "ranked": [
+    "rich/console.py",
+    "rich/progress.py",
+    "rich/prompt.py",
+    "rich/logging.py",
+    "rich/bar.py",
+    "rich/pretty.py",
+    "docs/source/conf.py",
+    "rich/text.py",
+    "rich/__init__.py",
+    "rich/live.py",
+    "rich/syntax.py",
+    "rich/traceback.py",
+    "rich/style.py",
+    "rich/table.py",
+    "rich/markdown.py",
+    "rich/segment.py",
+    "rich/_lru_cache.py",
+    "rich/color.py",
+    "rich/box.py",
+    "rich/terminal_theme.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-781689c3bb",
+   "task": "The download progress column shows file sizes in binary units (KiB/MiB) by default — can we make it default to decimal (KB/MB) units instead, while still letting callers opt into binary units?",
+   "gold": [
+    "rich/progress.py"
+   ],
+   "candidates": 128,
+   "ranked": [
+    "rich/progress.py",
+    "rich/filesize.py",
+    "tests/test_progress.py",
+    "tests/test_filesize.py",
+    "examples/downloader.py",
+    "rich/cells.py",
+    "rich/__main__.py",
+    "tools/make_terminal_widths.py",
+    "docs/source/conf.py",
+    "examples/listdir.py",
+    "rich/syntax.py",
+    "rich/prompt.py",
+    "rich/console.py",
+    "rich/logging.py",
+    "rich/table.py",
+    "rich/text.py",
+    "rich/color.py",
+    "rich/columns.py",
+    "rich/theme.py",
+    "tests/test_inspect.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-4d80b3a558",
+   "task": "Speed up mapping a line/column position back to its character offset in the source text—the current approach loops through every line to find the target, which seems wasteric for large files. Can you make it more efficient?",
+   "gold": [
+    "rich/syntax.py"
+   ],
+   "candidates": 186,
+   "ranked": [
+    "rich/_win32_console.py",
+    "rich/console.py",
+    "rich/progress.py",
+    "rich/text.py",
+    "docs/source/conf.py",
+    "rich/syntax.py",
+    "rich/live.py",
+    "rich/_inspect.py",
+    "rich/control.py",
+    "rich/progress_bar.py",
+    "rich/cells.py",
+    "rich/containers.py",
+    "rich/theme.py",
+    "rich/pretty.py",
+    "tests/test_progress.py",
+    "rich/spinner.py",
+    "rich/traceback.py",
+    "tests/test_win32_console.py",
+    "rich/__main__.py",
+    "examples/listdir.py"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 12,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-3469674b52",
+   "task": "When a traceback frame's source file is missing, the line just shows \"in <function name>\" — can you also include the line number there so it's still useful for locating the error?",
+   "gold": [
+    "rich/traceback.py"
+   ],
+   "candidates": 189,
+   "ranked": [
+    "rich/traceback.py",
+    "rich/console.py",
+    "rich/live.py",
+    "docs/source/conf.py",
+    "rich/progress.py",
+    "rich/_inspect.py",
+    "rich/__init__.py",
+    "rich/syntax.py",
+    "rich/logging.py",
+    "rich/_fileno.py",
+    "tests/test_traceback.py",
+    "rich/segment.py",
+    "rich/pretty.py",
+    "rich/_win32_console.py",
+    "tests/test_inspect.py",
+    "rich/filesize.py",
+    "rich/_ratio.py",
+    "rich/text.py",
+    "rich/markdown.py",
+    "rich/style.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 11,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-73ec0d586e",
+   "task": "Add a type annotation to the separator attribute on that Node class that's missing one, unlike the other fields.",
+   "gold": [
+    "rich/pretty.py"
+   ],
+   "candidates": 187,
+   "ranked": [
+    "rich/pretty.py",
+    "tests/test_pretty.py",
+    "rich/text.py",
+    "rich/markdown.py",
+    "rich/progress.py",
+    "tests/test_inspect.py",
+    "rich/_win32_console.py",
+    "rich/table.py",
+    "rich/style.py",
+    "rich/tree.py",
+    "rich/syntax.py",
+    "rich/console.py",
+    "rich/_inspect.py",
+    "examples/dynamic_progress.py",
+    "rich/abc.py",
+    "rich/traceback.py",
+    "rich/live.py",
+    "rich/__init__.py",
+    "rich/layout.py",
+    "rich/prompt.py"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 14,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "rich-6e634705b7",
+   "task": "When mapping a highlight range's start/end position to a code index, if the line number is valid but the column is past the end of that line, clamp it to the end of the line instead of dropping the whole range. Right now any out-of-range column silently cancels the highlight entirely, even though the line itself exists.",
+   "gold": [
+    "rich/syntax.py",
+    "tests/test_syntax.py"
+   ],
+   "candidates": 186,
+   "ranked": [
+    "rich/syntax.py",
+    "rich/text.py",
+    "rich/console.py",
+    "rich/_win32_console.py",
+    "rich/table.py",
+    "rich/live.py",
+    "rich/traceback.py",
+    "rich/cells.py",
+    "rich/progress.py",
+    "examples/fullscreen.py",
+    "rich/__main__.py",
+    "rich/pretty.py",
+    "rich/logging.py",
+    "rich/markup.py",
+    "rich/markdown.py",
+    "rich/__init__.py",
+    "rich/panel.py",
+    "rich/columns.py",
+    "rich/tree.py",
+    "rich/bar.py"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 11,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  }
+ ]
+}

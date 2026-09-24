@@ -1,4 +1,5 @@
 import type { PackedFile } from "./packer.js";
+import type { Snippet } from "./snippets.js";
 import type { PackReport } from "./service.js";
 
 /** The text an agent reads: ranked paths first, then what the ranking is and isn't. */
@@ -22,6 +23,7 @@ export function renderText(report: PackReport, limit: number, root: string, opti
       if (options.explain) lines.push(`       ${explain(f, report.provider)}`);
     }
   }
+  if (report.snippets) lines.push(...renderSnippets(report.snippets));
   const notes = [`Provider: ${report.model}; ${report.provider === "keywords" ? "ranked" : "scored"} ${report.scored} candidates.`];
   if (report.provider === "keywords") {
     notes.push("BM25 over paths and full source; ranks are lexical, not model relevance. No model requests, API fee $0.");
@@ -37,6 +39,23 @@ export function renderText(report: PackReport, limit: number, root: string, opti
   if (r.failedBatches > 0) notes.push(`WARNING: ${r.failedBatches} scoring batches failed; ranking is incomplete.`);
   notes.push("Read the top files before changing code; request more context if needed.");
   return [...lines, notes.join(" ")].join("\n");
+}
+
+/** Shared across files so a pack never floods the agent's context. */
+const MAX_CODE_CHARS = 8_000;
+
+function renderSnippets(byPath: Record<string, Snippet[]>): string[] {
+  const out = ["", "Most relevant lines of the top files:"];
+  let used = 0;
+  for (const [path, list] of Object.entries(byPath)) {
+    for (const s of list) {
+      const numbered = s.text.split("\n").map((l, i) => `${String(s.start + i).padStart(5)}  ${l}`).join("\n");
+      if (used + numbered.length > MAX_CODE_CHARS) return [...out, "(more code omitted; read the files for the rest)"];
+      used += numbered.length;
+      out.push(`--- ${path} lines ${s.start}-${s.end}`, numbered);
+    }
+  }
+  return out;
 }
 
 /** One line on why a file ranked where it did. */

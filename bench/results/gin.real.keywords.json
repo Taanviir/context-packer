@@ -1,0 +1,1154 @@
+{
+ "repo": "gin",
+ "split": "real",
+ "variant": "keywords",
+ "results": [
+  {
+   "id": "gin-60f66918f8",
+   "task": "Colored output from go-colorable breaks Gin when running on App Engine. Please default to plain os.Stdout/os.Stderr for the log writers instead, and just document how to opt into colorable output on Windows if someone wants it.",
+   "gold": [
+    "mode.go"
+   ],
+   "candidates": 66,
+   "ranked": [
+    "path.go",
+    "gin.go",
+    "logger.go",
+    "context.go",
+    "ginS/gins.go",
+    "routergroup.go",
+    "debug_test.go",
+    "mode.go",
+    "debug.go",
+    "recovery.go",
+    "examples/app-engine/hello.go",
+    "context_test.go",
+    "binding/example/test.pb.go",
+    "gin_integration_test.go",
+    "tree.go",
+    "githubapi_test.go",
+    "utils.go",
+    "examples/realtime-advanced/resources/static/epoch.min.js",
+    "binding/binding.go",
+    "routes_test.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 4,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-815e1ce281",
+   "task": "Calling GetQuery (or Query) on a context with no request panics because it tries to read the URL off a nil request. It should just return an empty value instead of crashing.",
+   "gold": [
+    "context.go",
+    "context_test.go"
+   ],
+   "candidates": 83,
+   "ranked": [
+    "context.go",
+    "tree.go",
+    "gin.go",
+    "context_test.go",
+    "binding/binding_nomsgpack.go",
+    "binding/binding.go",
+    "gin_integration_test.go",
+    "routergroup.go",
+    "ginS/gins.go",
+    "gin_test.go",
+    "path.go",
+    "tree_test.go",
+    "logger_test.go",
+    "routes_test.go",
+    "binding/form_mapping.go",
+    "debug_test.go",
+    "logger.go",
+    "auth.go",
+    "recovery.go",
+    "utils_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-0873992f38",
+   "task": "Add test coverage for form binding so repeated form/query keys and array-style field names (like `array[]`) are correctly bound into slice fields, including cases with multipart form data.",
+   "gold": [
+    "binding/form_mapping.go",
+    "context_test.go"
+   ],
+   "candidates": 61,
+   "ranked": [
+    "context.go",
+    "context_test.go",
+    "binding/form_mapping.go",
+    "binding/binding_test.go",
+    "path.go",
+    "recovery.go",
+    "examples/realtime-advanced/resources/static/prismjs.min.js",
+    "binding/binding.go",
+    "examples/realtime-advanced/resources/static/realtime.js",
+    "tree.go",
+    "gin.go",
+    "binding/form.go",
+    "errors.go",
+    "tree_test.go",
+    "routergroup.go",
+    "logger_test.go",
+    "binding/validate_test.go",
+    "routes_test.go",
+    "examples/realtime-advanced/routes.go",
+    "examples/realtime-chat/template.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-647535cd9b",
+   "task": "I need a way to read query string or POST form parameters that are structured as a map, like `names[a]=x&names[b]=y`, and get back a `map[string]string` for a given key instead of just plain strings or slices.",
+   "gold": [
+    "context.go",
+    "context_test.go"
+   ],
+   "candidates": 101,
+   "ranked": [
+    "context.go",
+    "tree.go",
+    "binding/binding.go",
+    "routergroup.go",
+    "context_test.go",
+    "gin.go",
+    "auth.go",
+    "examples/struct-lvl-validations/server.go",
+    "ginS/gins.go",
+    "utils.go",
+    "recovery.go",
+    "binding/validate_test.go",
+    "binding/binding_test.go",
+    "gin_test.go",
+    "examples/realtime-advanced/routes.go",
+    "tree_test.go",
+    "middleware_test.go",
+    "binding/form_mapping.go",
+    "path.go",
+    "routes_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-3f95933c3d",
+   "task": "Add a way to get the currently executing handler from the context, similar to how we can already get its name, so middleware can retrieve a reference to the final handler function itself.",
+   "gold": [
+    "context.go",
+    "context_test.go"
+   ],
+   "candidates": 76,
+   "ranked": [
+    "recovery.go",
+    "routergroup.go",
+    "context.go",
+    "auth.go",
+    "gin.go",
+    "path.go",
+    "tree.go",
+    "utils.go",
+    "gin_test.go",
+    "ginS/gins.go",
+    "routes_test.go",
+    "examples/realtime-advanced/resources/static/epoch.min.js",
+    "context_test.go",
+    "binding/example/test.pb.go",
+    "recovery_test.go",
+    "examples/realtime-advanced/resources/static/prismjs.min.js",
+    "binding/protobuf.go",
+    "tree_test.go",
+    "utils_test.go",
+    "binding/binding.go"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 3,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-dbd8a25150",
+   "task": "Add a way to abort a request with a status code and a JSON body that skips HTML-escaping, similar to the existing JSON abort helper.",
+   "gold": [
+    "context.go",
+    "context_test.go"
+   ],
+   "candidates": 95,
+   "ranked": [
+    "context.go",
+    "context_test.go",
+    "binding/binding_nomsgpack.go",
+    "binding/binding.go",
+    "codec/json/api.go",
+    "gin.go",
+    "middleware_test.go",
+    "auth.go",
+    "routes_test.go",
+    "benchmarks_test.go",
+    "gin_test.go",
+    "gin_integration_test.go",
+    "recovery_test.go",
+    "tree.go",
+    "render/render_test.go",
+    "logger_test.go",
+    "tree_test.go",
+    "recovery.go",
+    "binding/binding_test.go",
+    "routergroup.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 7,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-3c12d2a80e",
+   "task": "The panic recovery code converts stack trace bytes to strings and back unnecessarily when extracting function names — can you rework it to work with strings directly instead of byte slices, to cut down on allocations?",
+   "gold": [
+    "recovery.go",
+    "recovery_test.go"
+   ],
+   "candidates": 94,
+   "ranked": [
+    "recovery.go",
+    "tree.go",
+    "gin.go",
+    "path.go",
+    "routergroup.go",
+    "context.go",
+    "recovery_test.go",
+    "utils.go",
+    "context_test.go",
+    "binding/binding.go",
+    "binding/binding_nomsgpack.go",
+    "binding/form_mapping.go",
+    "tree_test.go",
+    "binding/json.go",
+    "debug.go",
+    "binding/validate_test.go",
+    "internal/bytesconv/bytesconv.go",
+    "debug_test.go",
+    "mode.go",
+    "logger.go"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 7,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-7149009a84",
+   "task": "In the realtime-advanced demo, room creation is posting to the same route used for viewing a room, which seems to be causing a routing conflict. Also, the stats chart update throws an error when the messages chart hasn't been initialized yet — it should just skip updating it in that case instead of failing.",
+   "gold": [
+    "examples/realtime-advanced/main.go",
+    "examples/realtime-advanced/resources/static/realtime.js"
+   ],
+   "candidates": 57,
+   "ranked": [
+    "context.go",
+    "tree.go",
+    "examples/realtime-advanced/resources/static/realtime.js",
+    "routergroup.go",
+    "examples/realtime-advanced/main.go",
+    "recovery.go",
+    "tree_test.go",
+    "path.go",
+    "examples/realtime-advanced/stats.go",
+    "gin.go",
+    "examples/realtime-advanced/resources/static/epoch.min.js",
+    "debug_test.go",
+    "routes_test.go",
+    "errors.go",
+    "examples/realtime-chat/template.go",
+    "recovery_test.go",
+    "examples/realtime-advanced/rooms.go",
+    "examples/realtime-advanced/limit.go",
+    "auth.go",
+    "middleware_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-9221381443",
+   "task": "Remove the SecureJSONPrefix type since it's not used anywhere in the codebase.",
+   "gold": [
+    "render/json.go"
+   ],
+   "candidates": 83,
+   "ranked": [
+    "gin.go",
+    "render/json.go",
+    "context.go",
+    "tree.go",
+    "binding/binding_nomsgpack.go",
+    "binding/binding.go",
+    "render/render_test.go",
+    "context_test.go",
+    "routergroup.go",
+    "testdata/protoexample/test.pb.go",
+    "recovery.go",
+    "routes_test.go",
+    "render/render.go",
+    "errors.go",
+    "ginS/gins.go",
+    "path.go",
+    "binding/json.go",
+    "tree_test.go",
+    "fs.go",
+    "auth.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-d8fb18c33b",
+   "task": "The comments in the router group code say \"github\" in lowercase — can you fix that to the properly capitalized \"GitHub\"?",
+   "gold": [
+    "routergroup.go"
+   ],
+   "candidates": 110,
+   "ranked": [
+    "githubapi_test.go",
+    "routergroup.go",
+    "ginS/gins.go",
+    "gin.go",
+    "routes_test.go",
+    "tree.go",
+    "examples/grpc/pb/helloworld.proto",
+    "context.go",
+    "routergroup_test.go",
+    "tree_test.go",
+    "examples/grpc/pb/helloworld.pb.go",
+    "deprecated.go",
+    "gin_integration_test.go",
+    "examples/grpc/grpc/server.go",
+    "examples/struct-lvl-validations/server.go",
+    "examples/app-engine/hello.go",
+    "gin_test.go",
+    "debug_test.go",
+    "recovery_test.go",
+    "binding/default_validator.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-6634f04d9b",
+   "task": "Add color-coding for the HTTP request method in the request logger, similar to how the response status code is already colorized, so each method (GET, POST, PUT, DELETE, etc.) shows in a distinct color in the log output.",
+   "gold": [
+    "logger.go"
+   ],
+   "candidates": 17,
+   "ranked": [
+    "gin.go",
+    "gin_test.go",
+    "logger.go",
+    "recovery.go",
+    "context.go",
+    "recovery_test.go",
+    "response_writer.go",
+    "deprecated.go",
+    "context_test.go",
+    "auth_test.go",
+    "examples/example_basic.go",
+    "binding/binding.go",
+    "auth.go",
+    "render/render.go",
+    "examples/app-engine/hello.go",
+    "utils.go",
+    "mode.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-e31cbdf241",
+   "task": "Can you make the request logs include the query string, not just the path? Right now if a request has query params like `?a=100`, the logger only shows `/example` and drops the query info.",
+   "gold": [
+    "logger.go",
+    "logger_test.go"
+   ],
+   "candidates": 77,
+   "ranked": [
+    "gin.go",
+    "context.go",
+    "logger.go",
+    "tree.go",
+    "tree_test.go",
+    "routergroup.go",
+    "context_test.go",
+    "ginS/gins.go",
+    "logger_test.go",
+    "path.go",
+    "examples/realtime-advanced/resources/static/epoch.min.js",
+    "recovery.go",
+    "githubapi_test.go",
+    "routes_test.go",
+    "gin_test.go",
+    "benchmarks_test.go",
+    "examples/realtime-advanced/routes.go",
+    "mode.go",
+    "binding/binding.go",
+    "utils.go"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 4,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-440eb14ab8",
+   "task": "The redirect logic for `X-Forwarded-Prefix` uses regexes to strip unsafe characters and collapse repeated slashes, which is slower than it needs to be on a hot path. Can we replace those regex calls with plain string-manipulation functions that do the same sanitization, without changing the behavior?",
+   "gold": [
+    "gin.go",
+    "path.go",
+    "path_test.go"
+   ],
+   "candidates": 95,
+   "ranked": [
+    "gin.go",
+    "path.go",
+    "tree.go",
+    "context.go",
+    "codec/json/api.go",
+    "binding/binding.go",
+    "binding/binding_nomsgpack.go",
+    "recovery.go",
+    "routes_test.go",
+    "routergroup.go",
+    "logger.go",
+    "tree_test.go",
+    "binding/validate_test.go",
+    "response_writer_test.go",
+    "ginS/gins.go",
+    "fs.go",
+    "logger_test.go",
+    "binding/protobuf.go",
+    "internal/bytesconv/bytesconv.go",
+    "render/html.go"
+   ],
+   "recall": {
+    "5": 0.6666666666666666,
+    "10": 0.6666666666666666,
+    "20": 0.6666666666666666
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-f1da692fbd",
+   "task": "The HTTP method validation in route registration recompiles the same regex on every call. Can we cache the compiled pattern so it's only built once instead of on each request?",
+   "gold": [
+    "routergroup.go"
+   ],
+   "candidates": 84,
+   "ranked": [
+    "context.go",
+    "ginS/gins.go",
+    "path.go",
+    "binding/binding.go",
+    "gin.go",
+    "routergroup.go",
+    "tree.go",
+    "binding/binding_nomsgpack.go",
+    "binding/json.go",
+    "routes_test.go",
+    "mode.go",
+    "binding/validate_test.go",
+    "recovery.go",
+    "debug.go",
+    "binding/protobuf.go",
+    "githubapi_test.go",
+    "fs.go",
+    "debug_test.go",
+    "context_test.go",
+    "middleware_test.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-59c836e1fa",
+   "task": "We're logging a \"headers already written\" warning every time WriteHeader is called after the response is written, even if the status code being set is the same as before — can it only warn when the new status code actually differs from the current one?",
+   "gold": [
+    "response_writer.go"
+   ],
+   "candidates": 46,
+   "ranked": [
+    "response_writer.go",
+    "gin.go",
+    "context.go",
+    "response_writer_test.go",
+    "recovery.go",
+    "auth.go",
+    "tree.go",
+    "path.go",
+    "context_test.go",
+    "debug.go",
+    "routes_test.go",
+    "recovery_test.go",
+    "logger.go",
+    "auth_test.go",
+    "render/text.go",
+    "middleware_test.go",
+    "render/data.go",
+    "render/render.go",
+    "render/html.go",
+    "render/json.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-4867ff9634",
+   "task": "When a handler calls Next() again and the chain gets reset or handlers change mid-request, my middleware chain panics or skips handlers. The Next() loop should recheck the handler count on every iteration instead of caching it once at the start, so resets or changes inside a handler are handled safely.",
+   "gold": [
+    "context.go",
+    "context_test.go",
+    "gin_test.go",
+    "routes_test.go"
+   ],
+   "candidates": 109,
+   "ranked": [
+    "context.go",
+    "path.go",
+    "gin.go",
+    "ginS/gins.go",
+    "recovery.go",
+    "routergroup.go",
+    "tree.go",
+    "logger.go",
+    "tree_test.go",
+    "debug.go",
+    "context_test.go",
+    "debug_test.go",
+    "middleware_test.go",
+    "binding/binding.go",
+    "gin_test.go",
+    "examples/struct-lvl-validations/server.go",
+    "gin_integration_test.go",
+    "utils.go",
+    "routergroup_test.go",
+    "auth.go"
+   ],
+   "recall": {
+    "5": 0.25,
+    "10": 0.25,
+    "20": 0.75
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-a210eea3bd",
+   "task": "When a route conflicts with an existing wildcard, the panic message is vague—it just shows the conflicting wildcard and the full path. Can you make it clearer by showing exactly which path segment caused the conflict and what existing route prefix it clashes with?",
+   "gold": [
+    "tree.go",
+    "tree_test.go"
+   ],
+   "candidates": 107,
+   "ranked": [
+    "tree.go",
+    "tree_test.go",
+    "gin.go",
+    "routergroup.go",
+    "examples/struct-lvl-validations/server.go",
+    "context.go",
+    "ginS/gins.go",
+    "utils.go",
+    "debug_test.go",
+    "recovery.go",
+    "render/html.go",
+    "context_test.go",
+    "render/json.go",
+    "path.go",
+    "debug.go",
+    "examples/grpc/pb/helloworld.proto",
+    "errors.go",
+    "binding/binding.go",
+    "examples/grpc/pb/helloworld.pb.go",
+    "routes_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-4e86b17e73",
+   "task": "When running a Unix server, the socket file it creates isn't writable by other processes/users afterward. Can we make sure the permissions on that socket file allow others to write to it?",
+   "gold": [
+    "gin.go"
+   ],
+   "candidates": 109,
+   "ranked": [
+    "routergroup.go",
+    "gin.go",
+    "gin_integration_test.go",
+    "ginS/gins.go",
+    "errors.go",
+    "context.go",
+    "debug.go",
+    "logger.go",
+    "render/redirect.go",
+    "recovery.go",
+    "path.go",
+    "context_test.go",
+    "debug_test.go",
+    "examples/grpc/pb/helloworld.proto",
+    "tree.go",
+    "auth.go",
+    "binding/validate_test.go",
+    "logger_test.go",
+    "fs.go",
+    "examples/realtime-advanced/stats.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-4b54b86272",
+   "task": "Go vet is warning about composite literals using unkeyed fields for the Delims struct. Please update those literals to use keyed fields instead so the warnings go away, without changing behavior.",
+   "gold": [
+    "gin.go"
+   ],
+   "candidates": 83,
+   "ranked": [
+    "gin.go",
+    "tree.go",
+    "deprecated.go",
+    "tree_test.go",
+    "context.go",
+    "path.go",
+    "debug.go",
+    "render/html.go",
+    "utils.go",
+    "debug_test.go",
+    "routergroup.go",
+    "auth.go",
+    "recovery.go",
+    "ginS/gins.go",
+    "doc.go",
+    "gin_test.go",
+    "examples/realtime-advanced/resources/static/epoch.min.js",
+    "routes_test.go",
+    "examples/upload-file/multiple/main.go",
+    "response_writer.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-bfc8ca285e",
+   "task": "Client IP detection currently just trusts X-Forwarded-For/X-Real-IP headers from whoever connects, which lets any client spoof their IP by setting those headers directly. We should only honor those forwarded-IP headers when the request actually comes from a proxy address we've explicitly configured as trusted, falling back to the raw connection address otherwise.",
+   "gold": [
+    "context.go",
+    "context_test.go",
+    "gin.go",
+    "gin_integration_test.go",
+    "gin_test.go"
+   ],
+   "candidates": 85,
+   "ranked": [
+    "context.go",
+    "gin.go",
+    "recovery.go",
+    "logger.go",
+    "context_test.go",
+    "routergroup.go",
+    "tree.go",
+    "binding/binding_nomsgpack.go",
+    "binding/binding.go",
+    "path.go",
+    "logger_test.go",
+    "routes_test.go",
+    "gin_integration_test.go",
+    "binding/json.go",
+    "recovery_test.go",
+    "gin_test.go",
+    "internal/bytesconv/bytesconv_test.go",
+    "tree_test.go",
+    "mode.go",
+    "githubapi_test.go"
+   ],
+   "recall": {
+    "5": 0.6,
+    "10": 0.6,
+    "20": 1
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-c65e5efc9a",
+   "task": "RouteInfo only gives me the handler's name as a string—can you also expose the actual handler function on each route so I can call or inspect it directly, not just get its name?",
+   "gold": [
+    "gin.go"
+   ],
+   "candidates": 107,
+   "ranked": [
+    "context.go",
+    "gin.go",
+    "examples/struct-lvl-validations/server.go",
+    "tree_test.go",
+    "tree.go",
+    "auth.go",
+    "debug.go",
+    "recovery.go",
+    "path.go",
+    "routergroup.go",
+    "gin_test.go",
+    "examples/grpc/pb/helloworld.proto",
+    "examples/grpc/pb/helloworld.pb.go",
+    "debug_test.go",
+    "ginS/gins.go",
+    "examples/realtime-advanced/resources/static/epoch.min.js",
+    "binding/binding.go",
+    "binding/default_validator.go",
+    "render/html.go",
+    "context_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-2abbc4ad1d",
+   "task": "When I call context.String() with a status code, the Content-Type header doesn't actually get set on the response — looks like it's being set after WriteHeader is called, so it's too late to take effect. Can you fix the ordering so the header is applied before the status code is written?",
+   "gold": [
+    "gin.go"
+   ],
+   "candidates": 6,
+   "ranked": [
+    "gin.go",
+    "auth.go",
+    "recovery.go",
+    "validation.go",
+    "examples/example_basic.go",
+    "logger.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 0,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-9b7e7bdce6",
+   "task": "Can you add tests covering the streaming response feature, including the case where the client disconnects mid-stream, and add any test helper needed to simulate a closed client connection?",
+   "gold": [
+    "context_test.go",
+    "test_helpers.go"
+   ],
+   "candidates": 101,
+   "ranked": [
+    "context.go",
+    "path.go",
+    "context_test.go",
+    "routes_test.go",
+    "examples/realtime-advanced/routes.go",
+    "gin.go",
+    "examples/grpc/gin/main.go",
+    "examples/grpc/pb/helloworld.proto",
+    "logger.go",
+    "binding/validate_test.go",
+    "deprecated.go",
+    "tree_test.go",
+    "binding/binding.go",
+    "routergroup_test.go",
+    "routergroup.go",
+    "examples/struct-lvl-validations/server.go",
+    "ginS/gins.go",
+    "examples/grpc/pb/helloworld.pb.go",
+    "auth.go",
+    "tree.go"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 4,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-e8fc0c74b4",
+   "task": "Fix the wording in the Abort comment — it should say \"not continue\" instead of \"do not continue.\"",
+   "gold": [
+    "context.go"
+   ],
+   "candidates": 19,
+   "ranked": [
+    "context.go",
+    "gin_test.go",
+    "context_test.go",
+    "deprecated.go",
+    "recovery_test.go",
+    "routergroup.go",
+    "auth.go",
+    "recovery.go",
+    "gin.go",
+    "binding/binding.go",
+    "logger.go",
+    "auth_test.go",
+    "examples/app-engine/hello.go",
+    "utils.go",
+    "response_writer.go",
+    "mode.go",
+    "render/render.go",
+    "examples/example_basic.go",
+    "examples/pluggable_renderer/example_pongo2.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-b3f322c5fc",
+   "task": "When a handler sets a status code of 0, the response should keep whatever status it already has instead of getting reset—right now that check also lets through negative status codes, which shouldn't count as a valid status either.",
+   "gold": [
+    "response_writer.go"
+   ],
+   "candidates": 17,
+   "ranked": [
+    "context.go",
+    "recovery.go",
+    "gin_test.go",
+    "gin.go",
+    "logger.go",
+    "deprecated.go",
+    "response_writer.go",
+    "context_test.go",
+    "recovery_test.go",
+    "auth.go",
+    "auth_test.go",
+    "render/render.go",
+    "examples/app-engine/hello.go",
+    "binding/binding.go",
+    "examples/example_basic.go",
+    "mode.go",
+    "utils.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-87811a97bd",
+   "task": "By default, requests from IPv6 clients aren't recognized as coming from a trusted proxy—only the IPv4 wildcard is trusted out of the box. Can we make the default trusted proxies list also cover all IPv6 addresses?",
+   "gold": [
+    "gin.go"
+   ],
+   "candidates": 92,
+   "ranked": [
+    "gin.go",
+    "context.go",
+    "tree.go",
+    "context_test.go",
+    "recovery.go",
+    "gin_test.go",
+    "tree_test.go",
+    "utils.go",
+    "path.go",
+    "auth.go",
+    "fs.go",
+    "routergroup.go",
+    "logger.go",
+    "testdata/protoexample/test.pb.go",
+    "debug_test.go",
+    "gin_integration_test.go",
+    "githubapi_test.go",
+    "ginS/gins.go",
+    "internal/bytesconv/bytesconv_test.go",
+    "binding/binding_nomsgpack.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-3fce8efcc6",
+   "task": "Rename the LoggerInFile function to LoggerWithFile so the name reads more naturally.",
+   "gold": [
+    "logger.go"
+   ],
+   "candidates": 28,
+   "ranked": [
+    "recovery.go",
+    "examples/app-engine/hello.go",
+    "context_test.go",
+    "logger.go",
+    "utils.go",
+    "context.go",
+    "gin.go",
+    "routergroup.go",
+    "binding/form_mapping.go",
+    "debug.go",
+    "deprecated.go",
+    "auth_test.go",
+    "auth.go",
+    "recovery_test.go",
+    "gin_test.go",
+    "errors.go",
+    "mode.go",
+    "response_writer.go",
+    "binding/json.go",
+    "binding/xml.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 1,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-a235e0fb32",
+   "task": "Requests submitted as HTML form posts aren't being bound correctly — Bind only handles GET and JSON/XML content types, but form-encoded POST bodies should also be parsed into the target struct.",
+   "gold": [
+    "gin.go"
+   ],
+   "candidates": 9,
+   "ranked": [
+    "gin.go",
+    "deprecated.go",
+    "binding/binding.go",
+    "recovery.go",
+    "examples/example_basic.go",
+    "auth.go",
+    "examples/app-engine/hello.go",
+    "logger.go",
+    "response_writer.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 0,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-dfc25f91e0",
+   "task": "Refactor the query and form lookup helpers to use named return values with a bare return instead of assigning to a temp variable and returning it explicitly.",
+   "gold": [
+    "context.go"
+   ],
+   "candidates": 86,
+   "ranked": [
+    "context.go",
+    "tree.go",
+    "binding/binding_nomsgpack.go",
+    "binding/binding.go",
+    "context_test.go",
+    "gin.go",
+    "binding/query.go",
+    "utils.go",
+    "binding/binding_test.go",
+    "render/json.go",
+    "binding/form_mapping.go",
+    "gin_integration_test.go",
+    "test_helpers.go",
+    "tree_test.go",
+    "binding/validate_test.go",
+    "debug.go",
+    "routergroup.go",
+    "ginS/gins.go",
+    "binding/multipart_form_mapping_test.go",
+    "recovery.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  }
+ ]
+}

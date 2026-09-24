@@ -1,0 +1,1230 @@
+{
+ "repo": "ripgrep",
+ "split": "real",
+ "variant": "keywords",
+ "results": [
+  {
+   "id": "ripgrep-f2f3d00df7",
+   "task": "The rg completion menu doesn't let me filter/narrow the suggested type or color-spec names by typing — can you make it support removing already-typed prefixes as I refine my selection, like completion menus usually do?",
+   "gold": [
+    "crates/core/flags/complete/rg.zsh"
+   ],
+   "candidates": 102,
+   "ranked": [
+    "crates/core/flags/complete/rg.zsh",
+    "crates/core/flags/mod.rs",
+    "crates/core/flags/lowargs.rs",
+    "crates/printer/src/hyperlink/mod.rs",
+    "crates/core/flags/parse.rs",
+    "crates/ignore/src/types.rs",
+    "crates/ignore/src/dir.rs",
+    "crates/ignore/src/walk.rs",
+    "crates/core/flags/hiargs.rs",
+    "crates/printer/src/summary.rs",
+    "crates/regex/src/literal.rs",
+    "crates/core/main.rs",
+    "crates/cli/src/lib.rs",
+    "crates/printer/src/path.rs",
+    "crates/pcre2/src/matcher.rs",
+    "crates/ignore/src/default_types.rs",
+    "crates/matcher/src/lib.rs",
+    "crates/searcher/src/testutil.rs",
+    "crates/printer/src/color.rs",
+    "tests/regression.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 13,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-15b263ff55",
+   "task": "Add \"cs\" as a recognized filetype alias for C# files (matching *.cs), so it's quicker to type than \"csharp\".",
+   "gold": [
+    "ignore/src/types.rs"
+   ],
+   "candidates": 35,
+   "ranked": [
+    "ignore/src/types.rs",
+    "src/args.rs",
+    "ignore/src/walk.rs",
+    "ignore/src/gitignore.rs",
+    "ignore/src/dir.rs",
+    "src/search_buffer.rs",
+    "globset/src/lib.rs",
+    "globset/src/glob.rs",
+    "grep/src/literals.rs",
+    "ignore/src/lib.rs",
+    "globset/src/pathutil.rs",
+    "src/search_stream.rs",
+    "tests/tests.rs",
+    "grep/src/lib.rs",
+    "ignore/src/overrides.rs",
+    "tests/workdir.rs",
+    "src/main.rs",
+    "src/printer.rs",
+    "src/pathutil.rs",
+    "src/atty.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 4,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-020c5453a5",
+   "task": "When stdin is piped from Powershell on a Unix-like system, the tool doesn't detect that data is available—readable stdin should also recognize sockets, not just regular files and FIFOs.",
+   "gold": [
+    "crates/cli/src/lib.rs"
+   ],
+   "candidates": 85,
+   "ranked": [
+    "crates/cli/src/lib.rs",
+    "crates/core/args.rs",
+    "crates/ignore/src/walk.rs",
+    "tests/util.rs",
+    "crates/globset/src/pathutil.rs",
+    "tests/binary.rs",
+    "tests/json.rs",
+    "crates/cli/src/pattern.rs",
+    "crates/searcher/src/searcher/mod.rs",
+    "crates/cli/src/process.rs",
+    "crates/printer/src/jsont.rs",
+    "crates/core/search.rs",
+    "crates/ignore/src/gitignore.rs",
+    "crates/printer/src/json.rs",
+    "crates/cli/src/decompress.rs",
+    "crates/ignore/src/lib.rs",
+    "crates/searcher/src/sink.rs",
+    "crates/ignore/src/pathutil.rs",
+    "crates/regex/src/literal.rs",
+    "crates/core/main.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 10,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-7eb1dd129e",
+   "task": "Can you add file type recognition for Standard ML, so `.sml` and `.sig` files are matched under an \"sml\" type?",
+   "gold": [
+    "ignore/src/types.rs"
+   ],
+   "candidates": 42,
+   "ranked": [
+    "src/main.rs",
+    "ignore/src/types.rs",
+    "src/args.rs",
+    "ignore/src/walk.rs",
+    "ignore/src/gitignore.rs",
+    "src/app.rs",
+    "ignore/src/dir.rs",
+    "globset/src/lib.rs",
+    "termcolor/src/lib.rs",
+    "src/search_stream.rs",
+    "ignore/src/lib.rs",
+    "src/search_buffer.rs",
+    "ignore/src/overrides.rs",
+    "grep/src/literals.rs",
+    "ignore/tests/gitignore_matched_path_or_any_parents_tests.rs",
+    "tests/tests.rs",
+    "src/printer.rs",
+    "src/worker.rs",
+    "tests/workdir.rs",
+    "globset/src/glob.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-dd1bc5b898",
+   "task": "Profile shows this writer as a hot spot in benchmarks; add inlining hints to it and the other small, frequently-called accessor and trait methods nearby, and remove any unused ones you find along the way.",
+   "gold": [
+    "crates/printer/src/counter.rs",
+    "crates/printer/src/hyperlink.rs"
+   ],
+   "candidates": 86,
+   "ranked": [
+    "crates/matcher/src/lib.rs",
+    "crates/printer/src/json.rs",
+    "crates/searcher/src/sink.rs",
+    "crates/cli/src/lib.rs",
+    "crates/printer/src/util.rs",
+    "crates/regex/src/matcher.rs",
+    "tests/util.rs",
+    "crates/globset/src/lib.rs",
+    "crates/ignore/src/default_types.rs",
+    "crates/searcher/src/lib.rs",
+    "crates/core/args.rs",
+    "crates/printer/src/hyperlink.rs",
+    "crates/cli/src/decompress.rs",
+    "crates/regex/src/literal.rs",
+    "crates/printer/src/summary.rs",
+    "crates/searcher/src/testutil.rs",
+    "crates/pcre2/src/matcher.rs",
+    "crates/ignore/src/walk.rs",
+    "crates/cli/src/wtr.rs",
+    "crates/ignore/src/types.rs"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0.5
+   },
+   "ms": 12,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-d65966efbc",
+   "task": "We're seeing a performance regression when walking directories on Windows — fetching file metadata separately for each entry is slow. Can we reuse the metadata that's already available from the directory read instead of making an extra call, while still respecting symlink-following behavior?",
+   "gold": [
+    "ignore/src/walk.rs"
+   ],
+   "candidates": 45,
+   "ranked": [
+    "ignore/src/walk.rs",
+    "src/app.rs",
+    "ignore/src/gitignore.rs",
+    "src/main.rs",
+    "src/args.rs",
+    "ignore/src/lib.rs",
+    "tests/tests.rs",
+    "src/worker.rs",
+    "ignore/src/dir.rs",
+    "termcolor/src/lib.rs",
+    "src/search_stream.rs",
+    "tests/workdir.rs",
+    "src/logger.rs",
+    "src/decoder.rs",
+    "grep/src/search.rs",
+    "src/printer.rs",
+    "src/config.rs",
+    "ignore/src/types.rs",
+    "globset/src/glob.rs",
+    "globset/src/lib.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 7,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-2b943eda47",
+   "task": "File type filtering with `--type`/`--type-not` is slow on large trees. Can you speed up how file types get matched against filenames?",
+   "gold": [
+    "src/args.rs",
+    "src/types.rs",
+    "tests/tests.rs"
+   ],
+   "candidates": 25,
+   "ranked": [
+    "src/search_stream.rs",
+    "src/types.rs",
+    "src/args.rs",
+    "tests/tests.rs",
+    "src/ignore.rs",
+    "src/gitignore.rs",
+    "src/terminal.rs",
+    "src/printer.rs",
+    "src/out.rs",
+    "src/walk.rs",
+    "src/search_buffer.rs",
+    "grep/src/search.rs",
+    "src/glob.rs",
+    "src/main.rs",
+    "tests/workdir.rs",
+    "ci/script.sh",
+    "tests/hay.rs",
+    "ci/install.sh",
+    "benches/bench.rs",
+    "grep/src/lib.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-7cf560d27c",
+   "task": "Makefiles with a `.mak` extension aren't being recognized as makefiles by the type filter — can you add that extension alongside the existing makefile patterns?",
+   "gold": [
+    "ignore/src/types.rs"
+   ],
+   "candidates": 35,
+   "ranked": [
+    "src/args.rs",
+    "globset/src/lib.rs",
+    "globset/src/glob.rs",
+    "ignore/src/dir.rs",
+    "ignore/src/types.rs",
+    "grep/src/literals.rs",
+    "ignore/src/gitignore.rs",
+    "src/main.rs",
+    "ignore/src/walk.rs",
+    "globset/src/pathutil.rs",
+    "src/search_stream.rs",
+    "tests/tests.rs",
+    "src/search_buffer.rs",
+    "ignore/src/lib.rs",
+    "ci/install.sh",
+    "src/printer.rs",
+    "src/terminal_win.rs",
+    "ignore/src/overrides.rs",
+    "src/atty.rs",
+    "grep/src/search.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-0473df1ef5",
+   "task": "Case-insensitive search is producing wrong matches for non-ASCII text — searching for \"привет\" with `-i` doesn't correctly match \"Привет\" or \"ПрИвЕт\". Can you fix the Unicode case-folding behavior for literal/regex matching so this works correctly?",
+   "gold": [
+    "grep/src/literals.rs",
+    "grep/src/search.rs",
+    "tests/tests.rs"
+   ],
+   "candidates": 40,
+   "ranked": [
+    "grep/src/search.rs",
+    "src/app.rs",
+    "globset/src/glob.rs",
+    "grep/src/literals.rs",
+    "src/args.rs",
+    "grep/src/word_boundary.rs",
+    "globset/src/lib.rs",
+    "src/search_buffer.rs",
+    "src/printer.rs",
+    "src/search_stream.rs",
+    "ignore/src/gitignore.rs",
+    "src/worker.rs",
+    "tests/tests.rs",
+    "termcolor/src/lib.rs",
+    "grep/src/nonl.rs",
+    "ignore/src/walk.rs",
+    "ignore/src/types.rs",
+    "globset/src/pathutil.rs",
+    "ignore/src/overrides.rs",
+    "ignore/src/dir.rs"
+   ],
+   "recall": {
+    "5": 0.6666666666666666,
+    "10": 0.6666666666666666,
+    "20": 1
+   },
+   "ms": 4,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-23be3cf850",
+   "task": "A `.gitignore` file containing just `**` should ignore everything in the directory, but right now it doesn't work as expected — files that should be excluded still show up. Can you fix how a bare `**` pattern is matched?",
+   "gold": [
+    "ignore/src/gitignore.rs",
+    "tests/regression.rs"
+   ],
+   "candidates": 88,
+   "ranked": [
+    "ignore/src/gitignore.rs",
+    "ignore/src/walk.rs",
+    "src/app.rs",
+    "grep-cli/src/lib.rs",
+    "tests/misc.rs",
+    "src/args.rs",
+    "tests/feature.rs",
+    "tests/regression.rs",
+    "ignore/src/overrides.rs",
+    "grep-searcher/src/sink.rs",
+    "grep-regex/src/matcher.rs",
+    "ignore/src/dir.rs",
+    "grep-pcre2/src/matcher.rs",
+    "ignore/src/lib.rs",
+    "grep-printer/src/json.rs",
+    "src/search.rs",
+    "grep-printer/src/summary.rs",
+    "ignore/src/types.rs",
+    "grep-searcher/src/searcher/mod.rs",
+    "ci/test_complete.sh"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 9,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-351eddc17e",
+   "task": "Add a predefined file type for C/C++ headers (`.h`/`.hpp`) so `--type h` works like the other built-in type filters.",
+   "gold": [
+    "ignore/src/types.rs"
+   ],
+   "candidates": 36,
+   "ranked": [
+    "ignore/src/types.rs",
+    "ignore/src/lib.rs",
+    "ignore/src/gitignore.rs",
+    "ignore/src/walk.rs",
+    "globset/src/lib.rs",
+    "ignore/src/dir.rs",
+    "globset/src/glob.rs",
+    "globset/src/pathutil.rs",
+    "tests/tests.rs",
+    "ignore/src/overrides.rs",
+    "src/args.rs",
+    "src/out.rs",
+    "src/printer.rs",
+    "ci/script.sh",
+    "src/main.rs",
+    "src/search_buffer.rs",
+    "src/atty.rs",
+    "ci/install.sh",
+    "src/terminal_win.rs",
+    "src/search_stream.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 4,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-247a9398f4",
+   "task": "Matching on paths in Gitignore is not thread-safe when called concurrently across threads, and the current per-call thread-local buffer setup seems awkward — can we share a single thread-local scratch buffer across all calls on the struct instead of redeclaring it inline each time?",
+   "gold": [
+    "src/gitignore.rs",
+    "src/main.rs"
+   ],
+   "candidates": 32,
+   "ranked": [
+    "src/args.rs",
+    "src/search_stream.rs",
+    "grep/src/search.rs",
+    "src/main.rs",
+    "src/gitignore.rs",
+    "src/printer.rs",
+    "src/search_buffer.rs",
+    "globset/src/lib.rs",
+    "src/terminal_win.rs",
+    "src/ignore.rs",
+    "src/types.rs",
+    "src/out.rs",
+    "src/walk.rs",
+    "grep/src/literals.rs",
+    "tests/workdir.rs",
+    "tests/tests.rs",
+    "globset/src/glob.rs",
+    "src/pathutil.rs",
+    "globset/src/pathutil.rs",
+    "grep/src/word_boundary.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-46dff8f4be",
+   "task": "When `--quiet` is set, searching should stop as soon as a match is found instead of continuing to scan every remaining file — right now it still searches everything even though the output is suppressed anyway.",
+   "gold": [
+    "src/args.rs",
+    "src/main.rs",
+    "src/printer.rs",
+    "src/search_buffer.rs",
+    "src/search_stream.rs"
+   ],
+   "candidates": 30,
+   "ranked": [
+    "grep/src/literals.rs",
+    "src/printer.rs",
+    "src/args.rs",
+    "src/search_stream.rs",
+    "tests/tests.rs",
+    "src/terminal_win.rs",
+    "src/search_buffer.rs",
+    "src/gitignore.rs",
+    "src/ignore.rs",
+    "src/glob.rs",
+    "src/walk.rs",
+    "src/out.rs",
+    "tests/workdir.rs",
+    "grep/src/search.rs",
+    "grep/src/lib.rs",
+    "grep/src/word_boundary.rs",
+    "src/types.rs",
+    "src/atty.rs",
+    "grep/src/nonl.rs",
+    "src/pathutil.rs"
+   ],
+   "recall": {
+    "5": 0.6,
+    "10": 0.8,
+    "20": 0.8
+   },
+   "ms": 3,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-461e0c4e33",
+   "task": "When searching, don't search the file that stdout is being redirected to — if I do `rg foo > out.txt` in the same directory, it shouldn't try to search `out.txt` while writing to it.",
+   "gold": [
+    "ignore/src/walk.rs",
+    "src/args.rs",
+    "src/atty.rs",
+    "src/main.rs"
+   ],
+   "candidates": 40,
+   "ranked": [
+    "src/app.rs",
+    "tests/tests.rs",
+    "src/search_stream.rs",
+    "globset/src/glob.rs",
+    "termcolor/src/lib.rs",
+    "ignore/src/walk.rs",
+    "ignore/src/gitignore.rs",
+    "src/args.rs",
+    "ignore/src/dir.rs",
+    "src/search_buffer.rs",
+    "src/worker.rs",
+    "ignore/src/types.rs",
+    "ignore/src/overrides.rs",
+    "tests/workdir.rs",
+    "src/printer.rs",
+    "src/atty.rs",
+    "ignore/src/lib.rs",
+    "globset/src/pathutil.rs",
+    "grep/src/search.rs",
+    "grep/src/literals.rs"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0.5,
+    "20": 0.75
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-17d09c0882",
+   "task": "Bump the Homebrew formula for ripgrep to package version 0.8.1, updating the download URLs and checksums for both the macOS and Linux binaries.",
+   "gold": [
+    "pkg/brew/ripgrep-bin.rb"
+   ],
+   "candidates": 45,
+   "ranked": [
+    "pkg/brew/ripgrep-bin.rb",
+    "ci/sha256.sh",
+    "ci/utils.sh",
+    "src/args.rs",
+    "src/app.rs",
+    "ci/before_deploy.sh",
+    "globset/src/glob.rs",
+    "ci/script.sh",
+    "build.rs",
+    "tests/workdir.rs",
+    "tests/tests.rs",
+    "ignore/src/walk.rs",
+    "ignore/src/dir.rs",
+    "termcolor/src/lib.rs",
+    "src/config.rs",
+    "ci/install.sh",
+    "src/printer.rs",
+    "src/main.rs",
+    "globset/benches/bench.rs",
+    "grep/src/literals.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-ba1023e1e4",
+   "task": "Add an option to left-pad displayed line numbers to a fixed width (using spaces) when line numbers are shown, so results with different digit counts line up visually. It should have no effect when line numbers are suppressed, and should reject non-numeric or zero-prefixed width values.",
+   "gold": [
+    "src/app.rs",
+    "src/args.rs",
+    "src/printer.rs",
+    "tests/tests.rs"
+   ],
+   "candidates": 42,
+   "ranked": [
+    "src/app.rs",
+    "src/args.rs",
+    "src/printer.rs",
+    "src/search_stream.rs",
+    "ignore/src/walk.rs",
+    "ignore/src/gitignore.rs",
+    "src/worker.rs",
+    "tests/tests.rs",
+    "termcolor/src/lib.rs",
+    "globset/src/lib.rs",
+    "globset/src/glob.rs",
+    "grep/src/literals.rs",
+    "ignore/src/types.rs",
+    "src/decoder.rs",
+    "ignore/src/dir.rs",
+    "src/search_buffer.rs",
+    "grep/src/search.rs",
+    "ignore/src/lib.rs",
+    "ignore/src/overrides.rs",
+    "tests/workdir.rs"
+   ],
+   "recall": {
+    "5": 0.75,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-119407d0a9",
+   "task": "Hyperlink generation on Windows canonicalizes the path via the filesystem, which is slow. Can we get the absolute path without touching the filesystem, while still stripping any verbatim (`\\\\?\\`) prefix so hyperlinks work correctly for both local and network paths?",
+   "gold": [
+    "crates/printer/src/hyperlink.rs"
+   ],
+   "candidates": 102,
+   "ranked": [
+    "crates/printer/src/hyperlink.rs",
+    "crates/printer/src/util.rs",
+    "crates/core/flags/hiargs.rs",
+    "crates/ignore/src/walk.rs",
+    "crates/printer/src/summary.rs",
+    "crates/core/flags/complete/rg.zsh",
+    "crates/ignore/src/dir.rs",
+    "crates/core/flags/lowargs.rs",
+    "crates/searcher/src/searcher/core.rs",
+    "crates/printer/src/path.rs",
+    "crates/ignore/src/gitignore.rs",
+    "crates/cli/src/decompress.rs",
+    "crates/regex/src/literal.rs",
+    "tests/util.rs",
+    "crates/globset/src/glob.rs",
+    "crates/regex/src/config.rs",
+    "crates/printer/src/lib.rs",
+    "crates/printer/src/json.rs",
+    "crates/pcre2/src/matcher.rs",
+    "crates/globset/src/lib.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 14,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-ff898cd105",
+   "task": "ripgrep still has an internal helper for deciding whether to colorize output, but it's dead code now that color choice is handled elsewhere — can you remove it?",
+   "gold": [
+    "src/args.rs"
+   ],
+   "candidates": 40,
+   "ranked": [
+    "termcolor/src/lib.rs",
+    "src/args.rs",
+    "tests/tests.rs",
+    "src/decoder.rs",
+    "src/printer.rs",
+    "src/app.rs",
+    "ignore/src/walk.rs",
+    "tests/workdir.rs",
+    "src/search_stream.rs",
+    "grep/src/search.rs",
+    "ignore/src/dir.rs",
+    "ignore/src/types.rs",
+    "grep/src/nonl.rs",
+    "ignore/src/gitignore.rs",
+    "src/search_buffer.rs",
+    "wincolor/src/win.rs",
+    "src/worker.rs",
+    "globset/src/glob.rs",
+    "globset/src/lib.rs",
+    "grep/src/literals.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-a7f2d48234",
+   "task": "`--files-without-match` seems to always report matching files, and using it together with `--files-with-matches` in the same kind of check gives wrong results. Can you fix the path/match handling so each mode reports correctly based on whether a match was found?",
+   "gold": [
+    "grep-printer/src/summary.rs",
+    "tests/regression.rs"
+   ],
+   "candidates": 88,
+   "ranked": [
+    "src/app.rs",
+    "src/args.rs",
+    "grep-searcher/src/searcher/mod.rs",
+    "grep-cli/src/lib.rs",
+    "grep-pcre2/src/matcher.rs",
+    "grep-matcher/src/lib.rs",
+    "grep-searcher/src/sink.rs",
+    "grep-printer/src/summary.rs",
+    "grep-printer/src/json.rs",
+    "grep-regex/src/matcher.rs",
+    "grep-cli/src/decompress.rs",
+    "ignore/src/walk.rs",
+    "grep-searcher/src/testutil.rs",
+    "grep-regex/src/literal.rs",
+    "grep-printer/src/util.rs",
+    "ignore/src/gitignore.rs",
+    "grep-searcher/src/line_buffer.rs",
+    "globset/src/lib.rs",
+    "grep-printer/src/lib.rs",
+    "src/search.rs"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0.5,
+    "20": 0.5
+   },
+   "ms": 11,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-42223047a8",
+   "task": "Add a file type filter for Less stylesheets so `.less` files can be matched or ignored by type.",
+   "gold": [
+    "ignore/src/types.rs"
+   ],
+   "candidates": 40,
+   "ranked": [
+    "ignore/src/gitignore.rs",
+    "ignore/src/types.rs",
+    "ignore/src/walk.rs",
+    "src/args.rs",
+    "src/app.rs",
+    "ignore/src/dir.rs",
+    "ignore/src/lib.rs",
+    "ignore/src/overrides.rs",
+    "src/main.rs",
+    "src/search_buffer.rs",
+    "tests/tests.rs",
+    "src/search_stream.rs",
+    "globset/src/lib.rs",
+    "src/printer.rs",
+    "src/worker.rs",
+    "globset/src/glob.rs",
+    "src/atty.rs",
+    "grep/src/search.rs",
+    "grep/src/literals.rs",
+    "tests/workdir.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 4,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-4d34132365",
+   "task": "Search results are slower than they should be — some of the code paths are cloning a reference-counted handle even when they only need to borrow it. Can you pass it by reference instead of cloning where a clone isn't actually needed, and only clone when a new thread/closure genuinely takes ownership?",
+   "gold": [
+    "src/main.rs"
+   ],
+   "candidates": 42,
+   "ranked": [
+    "src/app.rs",
+    "ignore/src/walk.rs",
+    "src/args.rs",
+    "termcolor/src/lib.rs",
+    "src/main.rs",
+    "src/search_stream.rs",
+    "ignore/src/gitignore.rs",
+    "globset/src/lib.rs",
+    "ignore/src/dir.rs",
+    "ignore/src/types.rs",
+    "src/worker.rs",
+    "grep/src/word_boundary.rs",
+    "globset/src/glob.rs",
+    "src/decoder.rs",
+    "tests/tests.rs",
+    "grep/src/search.rs",
+    "src/printer.rs",
+    "grep/src/literals.rs",
+    "tests/workdir.rs",
+    "ignore/src/lib.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-0f6181d309",
+   "task": "Can you add USD (Universal Scene Description) file extensions to the built-in list of recognized file types, so files ending in .usd, .usda, and .usdc are matched by default?",
+   "gold": [
+    "crates/ignore/src/default_types.rs"
+   ],
+   "candidates": 83,
+   "ranked": [
+    "crates/ignore/src/default_types.rs",
+    "crates/core/main.rs",
+    "crates/core/args.rs",
+    "crates/ignore/src/dir.rs",
+    "crates/ignore/src/types.rs",
+    "crates/globset/src/lib.rs",
+    "crates/ignore/src/walk.rs",
+    "crates/cli/src/decompress.rs",
+    "crates/ignore/src/lib.rs",
+    "crates/matcher/src/lib.rs",
+    "crates/ignore/src/gitignore.rs",
+    "crates/cli/src/lib.rs",
+    "crates/printer/src/json.rs",
+    "crates/printer/src/color.rs",
+    "crates/core/search.rs",
+    "crates/searcher/src/searcher/mod.rs",
+    "tests/misc.rs",
+    "tests/util.rs",
+    "crates/ignore/src/overrides.rs",
+    "tests/binary.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 11,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-bb8601b2ba",
+   "task": "The build fails on platforms that are neither Windows nor Unix. Fix the compile errors so the project builds there too, with hostname lookup and hyperlink generation just gracefully reporting unsupported instead of failing to compile.",
+   "gold": [
+    "crates/cli/src/hostname.rs",
+    "crates/printer/src/hyperlink.rs"
+   ],
+   "candidates": 100,
+   "ranked": [
+    "crates/core/flags/hiargs.rs",
+    "crates/core/flags/complete/rg.zsh",
+    "crates/printer/src/hyperlink.rs",
+    "crates/cli/src/lib.rs",
+    "crates/cli/src/hostname.rs",
+    "crates/ignore/src/walk.rs",
+    "crates/printer/src/util.rs",
+    "crates/globset/src/glob.rs",
+    "crates/core/main.rs",
+    "tests/binary.rs",
+    "crates/searcher/src/searcher/mod.rs",
+    "crates/printer/src/summary.rs",
+    "crates/core/flags/parse.rs",
+    "crates/cli/src/process.rs",
+    "crates/core/flags/lowargs.rs",
+    "crates/ignore/src/dir.rs",
+    "crates/ignore/src/gitignore.rs",
+    "crates/core/flags/config.rs",
+    "crates/cli/src/decompress.rs",
+    "crates/core/messages.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 13,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-224c112e05",
+   "task": "When --max-columns is set to 0, treat that the same as not setting it at all instead of truncating every line to zero width.",
+   "gold": [
+    "src/app.rs",
+    "src/args.rs"
+   ],
+   "candidates": 45,
+   "ranked": [
+    "src/app.rs",
+    "src/printer.rs",
+    "src/args.rs",
+    "grep/src/literals.rs",
+    "src/search_stream.rs",
+    "globset/src/lib.rs",
+    "ignore/src/walk.rs",
+    "src/logger.rs",
+    "tests/tests.rs",
+    "termcolor/src/lib.rs",
+    "ignore/src/gitignore.rs",
+    "src/worker.rs",
+    "globset/src/glob.rs",
+    "ignore/src/overrides.rs",
+    "src/search_buffer.rs",
+    "ignore/src/dir.rs",
+    "src/decoder.rs",
+    "grep/src/search.rs",
+    "ignore/src/types.rs",
+    "wincolor/src/win.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-a5855a5d73",
+   "task": "Fix a few clippy warnings in the search and test helper code: avoid an unnecessary mutable variable, use char literals instead of single-character string literals for split(), and add backticks around code identifiers in doc comments.",
+   "gold": [
+    "src/search_stream.rs",
+    "src/unescape.rs",
+    "tests/tests.rs",
+    "tests/workdir.rs"
+   ],
+   "candidates": 42,
+   "ranked": [
+    "globset/src/lib.rs",
+    "src/app.rs",
+    "grep/src/search.rs",
+    "grep/src/literals.rs",
+    "grep/src/lib.rs",
+    "globset/src/glob.rs",
+    "src/decoder.rs",
+    "src/search_stream.rs",
+    "ci/test_complete.sh",
+    "src/printer.rs",
+    "ignore/src/types.rs",
+    "termcolor/src/lib.rs",
+    "tests/workdir.rs",
+    "tests/tests.rs",
+    "src/args.rs",
+    "grep/src/nonl.rs",
+    "src/search_buffer.rs",
+    "ignore/src/gitignore.rs",
+    "ignore/src/walk.rs",
+    "src/main.rs"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0.25,
+    "20": 0.75
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-920112e640",
+   "task": "AsciiDoc files with .adoc, .asc, or .asciidoc extensions aren't recognized by the asciidoc file type filter. Can you add those extensions to it?",
+   "gold": [
+    "ignore/src/types.rs"
+   ],
+   "candidates": 35,
+   "ranked": [
+    "src/args.rs",
+    "ignore/src/walk.rs",
+    "ignore/src/gitignore.rs",
+    "ignore/src/types.rs",
+    "src/main.rs",
+    "ignore/src/dir.rs",
+    "globset/src/lib.rs",
+    "tests/tests.rs",
+    "globset/src/glob.rs",
+    "grep/src/literals.rs",
+    "ci/script.sh",
+    "src/search_buffer.rs",
+    "src/search_stream.rs",
+    "ignore/src/lib.rs",
+    "src/printer.rs",
+    "grep/src/search.rs",
+    "globset/src/pathutil.rs",
+    "ci/install.sh",
+    "grep/src/word_boundary.rs",
+    "ignore/src/overrides.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 3,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-03af61fc7b",
+   "task": "The tool that decompresses files before processing is silently skipping tar archives instead of extracting them—can we make it handle tar files like any other supported archive format?",
+   "gold": [
+    "src/decompressor.rs"
+   ],
+   "candidates": 43,
+   "ranked": [
+    "src/decompressor.rs",
+    "src/args.rs",
+    "ignore/src/walk.rs",
+    "ci/before_deploy.sh",
+    "src/app.rs",
+    "build.rs",
+    "grep/src/literals.rs",
+    "ignore/src/gitignore.rs",
+    "src/worker.rs",
+    "src/search_stream.rs",
+    "src/main.rs",
+    "ignore/src/dir.rs",
+    "src/printer.rs",
+    "tests/tests.rs",
+    "globset/src/pathutil.rs",
+    "ignore/src/types.rs",
+    "globset/src/glob.rs",
+    "src/search_buffer.rs",
+    "src/config.rs",
+    "grep/src/word_boundary.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 6,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-f74078af5b",
+   "task": "Can you add Swift as a recognized file type, so `*.swift` files get matched?",
+   "gold": [
+    "src/types.rs"
+   ],
+   "candidates": 30,
+   "ranked": [
+    "src/gitignore.rs",
+    "src/ignore.rs",
+    "src/types.rs",
+    "src/glob.rs",
+    "src/args.rs",
+    "tests/tests.rs",
+    "src/search_buffer.rs",
+    "src/search_stream.rs",
+    "src/main.rs",
+    "src/walk.rs",
+    "src/printer.rs",
+    "ci/install.sh",
+    "src/pathutil.rs",
+    "src/out.rs",
+    "ci/script.sh",
+    "tests/workdir.rs",
+    "grep/src/literals.rs",
+    "src/atty.rs",
+    "grep/src/lib.rs",
+    "src/terminal_win.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-34edb8123a",
+   "task": "When the git-common-dir file can't be opened, don't bubble up a noisy I/O error—just treat it as \"no commondir found\" and move on quietly.",
+   "gold": [
+    "crates/ignore/src/dir.rs"
+   ],
+   "candidates": 85,
+   "ranked": [
+    "crates/ignore/src/dir.rs",
+    "crates/ignore/src/walk.rs",
+    "crates/core/args.rs",
+    "crates/core/main.rs",
+    "crates/ignore/src/gitignore.rs",
+    "tests/feature.rs",
+    "crates/regex/src/literal.rs",
+    "crates/matcher/src/lib.rs",
+    "tests/misc.rs",
+    "tests/regression.rs",
+    "crates/cli/src/process.rs",
+    "tests/util.rs",
+    "tests/binary.rs",
+    "crates/searcher/src/sink.rs",
+    "crates/cli/src/lib.rs",
+    "crates/ignore/src/overrides.rs",
+    "build.rs",
+    "crates/searcher/src/searcher/mod.rs",
+    "crates/core/subject.rs",
+    "crates/printer/src/json.rs"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 10,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  },
+  {
+   "id": "ripgrep-3bec8f3f0a",
+   "task": "When I print out the ignore-directory data structure during debugging, can it show up with a `{:?}` debug format instead of erroring that it doesn't implement Debug?",
+   "gold": [
+    "src/ignore.rs"
+   ],
+   "candidates": 30,
+   "ranked": [
+    "src/args.rs",
+    "src/gitignore.rs",
+    "src/terminal_win.rs",
+    "src/search_stream.rs",
+    "src/search_buffer.rs",
+    "src/ignore.rs",
+    "tests/tests.rs",
+    "grep/src/literals.rs",
+    "src/out.rs",
+    "src/printer.rs",
+    "tests/workdir.rs",
+    "src/glob.rs",
+    "src/walk.rs",
+    "src/main.rs",
+    "grep/src/word_boundary.rs",
+    "src/types.rs",
+    "grep/src/search.rs",
+    "src/pathutil.rs",
+    "benches/bench.rs",
+    "src/atty.rs"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 2,
+   "calls": 0,
+   "failedBatches": 0,
+   "inputTokens": 0,
+   "costUsd": 0
+  }
+ ]
+}

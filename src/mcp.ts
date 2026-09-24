@@ -25,13 +25,14 @@ export function createServer(defaultRoot: string, packer = new ContextPacker()):
         provider: z.enum(PROVIDERS).optional().describe("keywords (local BM25), jev (API key required) or laya (local model). Defaults to CONTEXT_PACKER_PROVIDER, then keywords."),
         root: z.string().optional().describe("Absolute project directory. Defaults to the project the server was started in."),
         explain: z.boolean().default(false).describe("Add why each file was picked: matched task words, keyword rank and model scores"),
+        code: z.number().int().min(0).max(10).default(0).describe("Also return the most relevant lines of the top N files, up to about 8,000 characters in all"),
       },
       annotations: { readOnlyHint: true, openWorldHint: true },
     },
-    async ({ task, limit, provider, root, explain }) => {
+    async ({ task, limit, provider, root, explain, code }) => {
       const dir = path.resolve(defaultRoot, root ?? ".");
       try {
-        const report = await packer.pack({ task, root: dir, limit, ...(provider ? { provider } : {}) });
+        const report = await packer.pack({ task, root: dir, limit, code, ...(provider ? { provider } : {}) });
         return { content: [{ type: "text", text: renderText(report, limit, dir, { explain }) }] };
       } catch (error) {
         return { content: [{ type: "text", text: (error as Error).message }], isError: true };

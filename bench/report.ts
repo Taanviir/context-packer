@@ -11,7 +11,7 @@ import { KS, type TaskResult } from "./run.js";
 
 const VARIANTS = ["keywords", "jev", "jev-lang", "laya"] as const;
 const COMPARISONS = [["jev", "keywords"], ["jev-lang", "jev"], ["laya", "keywords"]] as const;
-const SPLITS = ["dev", "test"] as const;
+const SPLITS = ["dev", "test", "real"] as const;
 
 function load(repo: string, split: string, variant: string): TaskResult[] | null {
   const file = path.join(RESULTS, `${repo}.${split}.${variant}.json`);
