@@ -171,4 +171,9 @@ node scripts/demo-cast.mjs <repo> > demo.cast   # re-record the README demo
 Releases: bump `version` in `package.json` and `.claude-plugin/`, tag `vX.Y.Z`, push the tag. The release workflow
 publishes to npm with provenance and creates the GitHub release.
 
+## Acknowledgements
+
+Thanks to [@aikram42](https://github.com/aikram42) and [@mahahahad](https://github.com/mahahahad), who built the
+original context engine and its evaluation together with [@Taanviir](https://github.com/Taanviir).
+
 MIT licensed.
