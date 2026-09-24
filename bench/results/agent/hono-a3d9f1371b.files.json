@@ -1,0 +1,41 @@
+{
+ "id": "hono-a3d9f1371b",
+ "repo": "hono",
+ "arm": "files",
+ "model": "opus",
+ "request": "When a client disconnects mid-request, the SSE writer keeps blocking forever instead of noticing the disconnect and unblocking so the handler can finish.",
+ "gold": [
+  "deno_dist/utils/stream.ts",
+  "src/utils/stream.ts"
+ ],
+ "handed": [
+  "src/utils/stream.ts",
+  "src/context.ts",
+  "deno_dist/context.ts",
+  "src/helper/streaming/sse.ts",
+  "src/helper/streaming/sse.test.ts",
+  "src/request.ts",
+  "src/adapter/aws-lambda/handler.ts",
+  "deno_dist/request.ts"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "deno_dist/utils/stream.ts",
+  "src/helper/streaming/sse.test.ts",
+  "src/utils/stream.ts"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 1,
+ "turns": 9,
+ "tools": {
+  "Read": 3,
+  "Bash": 3,
+  "Edit": 2
+ },
+ "inputTokens": 11345,
+ "outputTokens": 2538,
+ "cacheReadTokens": 135708,
+ "costUsd": 0.16860559999999997,
+ "ms": 40556,
+ "isError": false
+}

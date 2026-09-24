@@ -1,0 +1,41 @@
+{
+ "id": "hono-acb56b8d30",
+ "repo": "hono",
+ "arm": "code",
+ "model": "opus",
+ "request": "In AWS Lambda deployments behind ALB or API Gateway, requests sometimes arrive with multi-value headers instead of single-value ones, and our handler only reads the single-value headers object, so those requests fail or lose header data. Can we make header extraction (including the host header used for building the request URL) work correctly whether the event gives single-value or multi-value headers?",
+ "gold": [
+  "runtime_tests/lambda/index.test.ts",
+  "src/adapter/aws-lambda/handler.ts"
+ ],
+ "handed": [
+  "src/adapter/aws-lambda/handler.ts",
+  "src/request.ts",
+  "deno_dist/request.ts",
+  "src/adapter/lambda-edge/handler.ts",
+  "runtime_tests/lambda/index.test.ts",
+  "src/hono-base.ts",
+  "src/context.ts",
+  "deno_dist/hono-base.ts"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "runtime_tests/lambda/index.test.ts",
+  "src/adapter/aws-lambda/handler.ts"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 0,
+ "turns": 14,
+ "tools": {
+  "Read": 2,
+  "Bash": 3,
+  "Grep": 2,
+  "Edit": 6
+ },
+ "inputTokens": 21298,
+ "outputTokens": 5318,
+ "cacheReadTokens": 275069,
+ "costUsd": 0.3316778,
+ "ms": 60305,
+ "isError": false
+}

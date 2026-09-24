@@ -1,0 +1,31 @@
+{
+ "id": "hono-b5cd193c2e",
+ "repo": "hono",
+ "arm": "none",
+ "model": "opus",
+ "request": "When middleware calls next() and then tries to replace the response afterward, the new response should fully take over instead of merging headers from the old one — right now setting the response to undefined first and then assigning a new response doesn't properly clear out the previous headers.",
+ "gold": [
+  "src/context.ts",
+  "src/hono.test.ts"
+ ],
+ "handed": [],
+ "hookSeen": false,
+ "edited": [
+  "deno_dist/context.ts",
+  "src/context.ts"
+ ],
+ "goldEdited": 0.5,
+ "extraEdits": 1,
+ "turns": 7,
+ "tools": {
+  "Grep": 2,
+  "Read": 2,
+  "Edit": 2
+ },
+ "inputTokens": 7879,
+ "outputTokens": 1761,
+ "cacheReadTokens": 125853,
+ "costUsd": 0.1233666,
+ "ms": 30401,
+ "isError": false
+}

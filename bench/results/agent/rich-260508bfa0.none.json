@@ -1,0 +1,30 @@
+{
+ "id": "rich-260508bfa0",
+ "repo": "rich",
+ "arm": "none",
+ "model": "opus",
+ "request": "When splitting styled text into lines, overlapping spans that cross line boundaries aren't handled correctly — some background/style spans end up missing, duplicated, or misaligned on the wrong lines when markup regions overlap. Please fix line-splitting so overlapping spans are correctly clipped and placed on each resulting line.",
+ "gold": [
+  "rich/text.py",
+  "tests/test_segment.py"
+ ],
+ "handed": [],
+ "hookSeen": false,
+ "edited": [
+  "rich/text.py"
+ ],
+ "goldEdited": 0.5,
+ "extraEdits": 0,
+ "turns": 8,
+ "tools": {
+  "Grep": 2,
+  "Bash": 2,
+  "Edit": 3
+ },
+ "inputTokens": 8646,
+ "outputTokens": 2623,
+ "cacheReadTokens": 130270,
+ "costUsd": 0.147626,
+ "ms": 33514,
+ "isError": false
+}

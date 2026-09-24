@@ -1,0 +1,44 @@
+{
+ "id": "prometheus-109f9409ed",
+ "repo": "prometheus",
+ "arm": "code",
+ "model": "opus",
+ "request": "Autocomplete doesn't find metadata (type/help/unit) for OpenMetrics counters ending in `_total` — it only falls back to the base metric name for histogram/summary suffixes, so `_total` counters show up as unknown type/help/unit in the query editor and explain views.",
+ "gold": [
+  "web/ui/mantine-ui/src/pages/query/ExplainViews/Selector.tsx",
+  "web/ui/mantine-ui/src/pages/query/MetricsExplorer/MetricsExplorer.tsx",
+  "web/ui/module/codemirror-promql/src/complete/hybrid.test.ts",
+  "web/ui/module/codemirror-promql/src/complete/hybrid.ts"
+ ],
+ "handed": [
+  "web/ui/module/codemirror-promql/src/complete/hybrid.ts",
+  "web/ui/mantine-ui/src/pages/query/MetricsExplorer/MetricsExplorer.tsx",
+  "web/ui/mantine-ui/src/pages/query/ExplainViews/Selector.tsx",
+  "web/ui/react-app/src/pages/graph/ExpressionInput.tsx",
+  "storage/interface_append.go",
+  "web/ui/mantine-ui/src/pages/query/ExpressionInput.tsx",
+  "scrape/scrape.go",
+  "web/ui/module/codemirror-promql/src/complete/hybrid.test.ts"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "web/ui/mantine-ui/src/pages/query/ExplainViews/Selector.tsx",
+  "web/ui/mantine-ui/src/pages/query/MetricsExplorer/MetricsExplorer.tsx",
+  "web/ui/module/codemirror-promql/src/complete/hybrid.ts"
+ ],
+ "goldEdited": 0.75,
+ "extraEdits": 0,
+ "turns": 12,
+ "tools": {
+  "Grep": 1,
+  "Bash": 3,
+  "Edit": 6,
+  "Read": 1
+ },
+ "inputTokens": 12229,
+ "outputTokens": 3354,
+ "cacheReadTokens": 169934,
+ "costUsd": 0.1988348,
+ "ms": 41568,
+ "isError": false
+}

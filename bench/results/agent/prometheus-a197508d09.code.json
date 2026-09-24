@@ -1,0 +1,44 @@
+{
+ "id": "prometheus-a197508d09",
+ "repo": "prometheus",
+ "arm": "code",
+ "model": "opus",
+ "request": "Add a config test that covers Docker Swarm service discovery, and while you're in there, make sure the SD config doesn't cache a parsed URL as unmarshaled state — parse the host fresh when the discoverer runs.",
+ "gold": [
+  "config/config_test.go",
+  "discovery/dockerswarm/dockerswarm.go"
+ ],
+ "handed": [
+  "discovery/dockerswarm/dockerswarm.go",
+  "config/config_test.go",
+  "discovery/manager.go",
+  "discovery/dockerswarm/services.go",
+  "scrape/scrape_test.go",
+  "discovery/manager_test.go",
+  "discovery/dockerswarm/services_test.go",
+  "discovery/dockerswarm/tasks.go"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "config/config_test.go",
+  "config/testdata/conf.good.yml",
+  "config/testdata/dockerswarm_role.bad.yml",
+  "discovery/dockerswarm/dockerswarm.go"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 2,
+ "turns": 24,
+ "tools": {
+  "Read": 5,
+  "Grep": 4,
+  "Bash": 3,
+  "Edit": 10,
+  "Write": 1
+ },
+ "inputTokens": 29395,
+ "outputTokens": 5874,
+ "cacheReadTokens": 427257,
+ "costUsd": 0.43797940000000013,
+ "ms": 79500,
+ "isError": false
+}

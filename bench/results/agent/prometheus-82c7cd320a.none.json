@@ -1,0 +1,29 @@
+{
+ "id": "prometheus-82c7cd320a",
+ "repo": "prometheus",
+ "arm": "none",
+ "model": "opus",
+ "request": "The remote write send-duration metric's histogram buckets top out too low—can we extend the range so longer batch send times still land in a meaningful bucket instead of all piling into the last one?",
+ "gold": [
+  "storage/remote/queue_manager.go"
+ ],
+ "handed": [],
+ "hookSeen": false,
+ "edited": [
+  "storage/remote/queue_manager.go"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 0,
+ "turns": 5,
+ "tools": {
+  "Grep": 1,
+  "Edit": 1,
+  "Bash": 2
+ },
+ "inputTokens": 6541,
+ "outputTokens": 1146,
+ "cacheReadTokens": 85642,
+ "costUsd": 0.09233640000000001,
+ "ms": 21860,
+ "isError": false
+}

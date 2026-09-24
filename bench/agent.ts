@@ -6,6 +6,9 @@
  *
  *   pnpm tsx bench/agent.ts [--tasks 10] [--model opus] [--arms none,files,code]
  *   pnpm tsx bench/agent.ts --report      # per-arm averages over tasks every arm finished
+ *
+ * --max-usage 0.75 (the default) stops the batch once the plan's five-hour usage window passes 75%, read from the
+ * rate_limit_event Claude Code emits in each run, so a long batch leaves room for the owner's own work.
  */
 import { execFileSync, spawn } from "node:child_process";
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
@@ -172,10 +175,17 @@ function report() {
   }
 }
 
+/** The plan's usage windows as Claude Code last reported them in this run, when it did. */
+function planUsage(events: any[]): { fiveHour: number; sevenDay: number } | null {
+  const e = [...events].reverse().find((x) => x.type === "rate_limit_event")?.rate_limit_info?.unifiedWindows;
+  return e ? { fiveHour: e.five_hour?.utilization ?? 0, sevenDay: e.seven_day?.utilization ?? 0 } : null;
+}
+
 const LIMIT_HIT = /usage limit|rate limit|limit reached|quota|try again later|overloaded/i;
 
 async function main() {
-  const { values } = parseArgs({ options: { tasks: { type: "string" }, model: { type: "string" }, arms: { type: "string" }, report: { type: "boolean" } } });
+  const { values } = parseArgs({ options: { tasks: { type: "string" }, model: { type: "string" }, arms: { type: "string" }, report: { type: "boolean" }, "max-usage": { type: "string" } } });
+  const maxUsage = Number(values["max-usage"] ?? 0.75);
   if (values.report) return report();
   const model = values.model ?? "opus";
   const arms = (values.arms?.split(",") ?? [...ARMS]) as Arm[];
@@ -205,7 +215,13 @@ async function main() {
           return;
         }
         writeFileSync(file, JSON.stringify(result, null, 1) + "\n");
-        console.log(`${t.id} ${arm.padEnd(5)} turns=${result.turns} reads=${result.tools.Read ?? 0} searches=${(result.tools.Grep ?? 0) + (result.tools.Glob ?? 0) + (result.tools.Bash ?? 0)} gold=${result.goldEdited.toFixed(2)} $${result.costUsd.toFixed(2)} ${(result.ms / 1000).toFixed(0)}s${result.error ? " ERROR " + result.error.slice(0, 80) : ""}`);
+        const usage = planUsage(run.events);
+        const usageNote = usage ? ` usage 5h ${Math.round(usage.fiveHour * 100)}% 7d ${Math.round(usage.sevenDay * 100)}%` : "";
+        console.log(`${t.id} ${arm.padEnd(5)}${usageNote} turns=${result.turns} reads=${result.tools.Read ?? 0} searches=${(result.tools.Grep ?? 0) + (result.tools.Glob ?? 0) + (result.tools.Bash ?? 0)} gold=${result.goldEdited.toFixed(2)} $${result.costUsd.toFixed(2)} ${(result.ms / 1000).toFixed(0)}s${result.error ? " ERROR " + result.error.slice(0, 80) : ""}`);
+        if (usage && usage.fiveHour >= maxUsage) {
+          console.log(`Stopping: the five-hour usage window is at ${Math.round(usage.fiveHour * 100)}%. Re-run after it resets to resume.`);
+          return;
+        }
       } finally {
         execFileSync("git", ["-C", repoDir(t.repo), "worktree", "remove", "--force", wt], { stdio: "ignore" });
       }

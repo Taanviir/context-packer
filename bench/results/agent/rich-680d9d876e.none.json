@@ -1,0 +1,29 @@
+{
+ "id": "rich-680d9d876e",
+ "repo": "rich",
+ "arm": "none",
+ "model": "opus",
+ "request": "When running in Jupyter, stopping the progress bar prints an extra blank line even though the console is treated as interactive there. Can you fix it so that blank line only gets printed for truly non-interactive consoles, not Jupyter?",
+ "gold": [
+  "rich/progress.py"
+ ],
+ "handed": [],
+ "hookSeen": false,
+ "edited": [
+  "rich/progress.py"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 0,
+ "turns": 7,
+ "tools": {
+  "Grep": 3,
+  "Read": 2,
+  "Edit": 1
+ },
+ "inputTokens": 6775,
+ "outputTokens": 1139,
+ "cacheReadTokens": 122508,
+ "costUsd": 0.10142559999999999,
+ "ms": 16742,
+ "isError": false
+}

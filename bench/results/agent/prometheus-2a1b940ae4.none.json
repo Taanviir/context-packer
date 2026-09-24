@@ -1,0 +1,29 @@
+{
+ "id": "prometheus-2a1b940ae4",
+ "repo": "prometheus",
+ "arm": "none",
+ "model": "opus",
+ "request": "Two of the comments on the Consul discovery functions that decide whether a service should be watched are outdated—they both say the same function name even though they document two different functions. Please correct the comments to name the function each one actually describes.",
+ "gold": [
+  "discovery/consul/consul.go"
+ ],
+ "handed": [],
+ "hookSeen": false,
+ "edited": [
+  "discovery/consul/consul.go"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 0,
+ "turns": 5,
+ "tools": {
+  "Grep": 1,
+  "Read": 1,
+  "Edit": 2
+ },
+ "inputTokens": 5877,
+ "outputTokens": 816,
+ "cacheReadTokens": 65704,
+ "costUsd": 0.0764448,
+ "ms": 12122,
+ "isError": false
+}

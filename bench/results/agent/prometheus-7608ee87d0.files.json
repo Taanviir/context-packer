@@ -1,0 +1,41 @@
+{
+ "id": "prometheus-7608ee87d0",
+ "repo": "prometheus",
+ "arm": "files",
+ "model": "opus",
+ "request": "Add support for discovering targets from Azure Virtual Machine Scale Sets (VMSS), not just standalone VMs, including exposing the scale set name as a label on discovered instances.",
+ "gold": [
+  "discovery/azure/azure.go"
+ ],
+ "handed": [
+  "discovery/azure/azure.go",
+  "vendor/github.com/Azure/azure-sdk-for-go/arm/compute/virtualmachinescalesets.go",
+  "vendor/github.com/Azure/azure-sdk-for-go/arm/compute/virtualmachinescalesetvms.go",
+  "scrape/scrape_test.go",
+  "web/api/v1/api_test.go",
+  "vendor/github.com/Azure/azure-sdk-for-go/arm/compute/models.go",
+  "rules/manager_test.go",
+  "scrape/scrape.go"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "discovery/azure/azure.go",
+  "docs/configuration/configuration.md"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 1,
+ "turns": 12,
+ "tools": {
+  "Read": 1,
+  "Bash": 6,
+  "Write": 1,
+  "Edit": 2,
+  "Grep": 1
+ },
+ "inputTokens": 34074,
+ "outputTokens": 15692,
+ "cacheReadTokens": 293863,
+ "costUsd": 0.6451326000000001,
+ "ms": 142243,
+ "isError": false
+}

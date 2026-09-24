@@ -1,0 +1,31 @@
+{
+ "id": "hono-3bc96ba915",
+ "repo": "hono",
+ "arm": "none",
+ "model": "opus",
+ "request": "Add support for caching QUERY method requests, similar to how GET requests are cached — the response should be served from cache on repeat identical requests, with cache entries varying by body content and Content-Type, and an option to cap how large a request body can be before caching is skipped.",
+ "gold": [
+  "src/middleware/cache/index.test.ts",
+  "src/middleware/cache/index.ts"
+ ],
+ "handed": [],
+ "hookSeen": false,
+ "edited": [
+  "src/middleware/cache/index.test.ts",
+  "src/middleware/cache/index.ts"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 0,
+ "turns": 24,
+ "tools": {
+  "Read": 1,
+  "Bash": 12,
+  "Edit": 10
+ },
+ "inputTokens": 26446,
+ "outputTokens": 11577,
+ "cacheReadTokens": 483563,
+ "costUsd": 0.5396846000000001,
+ "ms": 115754,
+ "isError": false
+}
