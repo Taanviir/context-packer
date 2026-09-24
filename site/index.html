@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>context-packer</title>
+  <title>context-packer · the files a coding task needs, ranked</title>
   <meta name="description" content="Ranks the source files a coding task needs and hands them to your agent before it starts searching. CLI, MCP server and Claude Code hook." />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,17 +33,16 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="figure tnum" aria-label="78 percent"><span data-tick="78">78</span><span class="unit">%</span></div>
-          <h1>of the files a change needs, in the top ten.</h1>
+          <h1><span class="figure tnum"><span data-tick="78">78</span><span class="unit">%</span></span> <span class="hero-line">of the files a change needs, in the top ten.</span></h1>
           <p class="lede">context-packer ranks the files a coding task needs and hands them to your agent before it starts searching. It runs as a CLI, an MCP server or a Claude Code hook.</p>
           <p class="qualifier">Keyword search alone: 69%. Measured on 120 real past changes from four open-source projects.</p>
           <div class="hero-actions">
             <a class="button" href="#install">Install</a>
-            <a class="link-arrow" href="findings.html">Read the findings →</a>
+            <a class="link-arrow" href="findings.html">Read the findings <span aria-hidden="true">→</span></a>
           </div>
         </div>
-        <div class="terminal reveal" aria-label="Example run">
-          <div class="terminal-label"><span>This repository · Jev</span><button class="copy" type="button" data-copy='npx -y @taanviir/context-packer pack "Add exponential backoff with jitter to Jev HTTP retries" -p jev -n 3'>Copy</button></div>
+        <div class="terminal reveal">
+          <div class="terminal-label"><span>Run on this repo · Jev</span><button class="copy" type="button" data-copy='npx -y @taanviir/context-packer pack "Add exponential backoff with jitter to Jev HTTP retries" -p jev -n 3'>Copy</button></div>
 <pre><span class="p">$</span> context-packer pack <span class="k">"Add exponential backoff with jitter</span>
 <span class="k">    to Jev HTTP retries"</span> -p jev -n 3
 <span class="dim">Picked 3 of 36 files in 1.9 s.</span>
@@ -75,12 +74,12 @@
         <div class="providers">
           <article class="provider reveal">
             <h3><span class="swatch" style="background: var(--color-series-jev)"></span>Jev</h3>
-            <p>TypeSafe's decision model reads a short sketch of every file, then the full source of a 120-file shortlist, and its scores are fused with keyword rank. A final call compares the top ten.</p>
+            <p>TypeSafe's decision model reads a short sketch of every file, then the full source of a 120-file shortlist. It combines those scores with keyword rank, and a final call compares the top ten.</p>
             <dl><dt>Needs</dt><dd><code>TYPESAFE_API_KEY</code></dd><dt>Cost</dt><dd>about $0.007 a search</dd><dt>Top 10</dt><dd class="tnum">78% of needed files</dd></dl>
           </article>
           <article class="provider reveal">
             <h3><span class="swatch" style="background: var(--color-series-keywords)"></span>Keywords</h3>
-            <p>BM25 over paths and full source, with camelCase and snake_case split. No model and no key.</p>
+            <p>Classic keyword ranking (BM25) over paths and full source. It splits camelCase and snake_case names into words. No model and no key.</p>
             <dl><dt>Needs</dt><dd>nothing</dd><dt>Cost</dt><dd>$0</dd><dt>Top 10</dt><dd class="tnum">69% on the same tests</dd></dl>
           </article>
           <article class="provider reveal">
@@ -99,13 +98,13 @@
           <p style="color: var(--color-on-graphite-muted)">Jev answers typed questions with calibrated probabilities. It can't write code, but it can judge hundreds of files quickly, so it does the looking and your agent does the editing.</p>
         </div>
         <ol class="steps">
-          <li><span class="n">01</span><h3>Collect</h3><p>Tracked and untracked-but-not-ignored source files. Binaries, symlinks and files over 100 KB are skipped.</p></li>
+          <li><span class="n">01</span><h3>Collect</h3><p>Source files git tracks, plus new ones it doesn't ignore. Binaries, symlinks and files over 100 KB stay out.</p></li>
           <li><span class="n">02</span><h3>Sketch</h3><p>Each file becomes a summary of about 300 tokens: its path, package, declarations and their first doc lines.</p></li>
-          <li><span class="n">03</span><h3>Wide pass</h3><p>Jev reads 60 sketches per call. BM25 ranks the full text at the same time.</p></li>
+          <li><span class="n">03</span><h3>Wide pass</h3><p>Jev reads 60 sketches per call. Keyword search ranks the full text at the same time.</p></li>
           <li><span class="n">04</span><h3>Narrow pass</h3><p>The top 60 from each go into a pool, and Jev reads their source, 6 files per call.</p></li>
           <li><span class="n">05</span><h3>Fuse and compare</h3><p>Jev's probability and keyword rank count equally. One more call compares the top ten and reorders them.</p></li>
         </ol>
-        <p style="margin-top: var(--space-xl)"><a href="blog/how-it-ranks.html">Read the long version →</a></p>
+        <p style="margin-top: var(--space-xl)"><a href="blog/how-it-ranks.html">Read how the ranking works <span aria-hidden="true">→</span></a></p>
       </div>
     </section>
 
@@ -114,7 +113,7 @@
         <div class="section-head" style="margin-bottom: 0">
           <h2>Install</h2>
           <p>Node 22 or newer. Without a key, everything runs on keywords.</p>
-          <p style="font-size: var(--text-base)">The hook is the part that changes agent behaviour. Agents tend to trust their own search and skip an offered tool; the hook ranks the project before the agent reads your prompt. It stays silent for short prompts, slash commands, replies like "thanks", and prompts whose words don't occur in the project.</p>
+          <p style="font-size: var(--text-base)">The hook is the part that changes what the agent does. Agents tend to trust their own search and skip an offered tool; the hook ranks the project before the agent reads your prompt. It stays silent for short prompts, slash commands, replies like "thanks", and prompts whose words don't occur in the project.</p>
         </div>
         <div class="installs">
           <div class="install">
@@ -126,14 +125,16 @@
           </div>
           <div class="install">
             <h3>Command line</h3>
+            <p>Run it once with npx, or install it globally.</p>
             <div class="terminal"><div class="terminal-label"><span>Shell</span><button class="copy" type="button" data-copy='npx -y @taanviir/context-packer pack "describe the change" --explain'>Copy</button></div>
 <pre>npx -y @taanviir/context-packer pack "describe the change" --explain
 <span class="dim"># or keep it installed</span>
 npm install -g @taanviir/context-packer</pre></div>
           </div>
           <div class="install">
-            <h3>MCP server for other agents</h3>
-            <div class="terminal"><div class="terminal-label"><span>Claude Code · Codex · Cursor</span><button class="copy" type="button" data-copy="claude mcp add context-packer -- npx -y @taanviir/context-packer mcp">Copy</button></div>
+            <h3>MCP server</h3>
+            <p>For Codex, Cursor, or Claude Code without the plugin.</p>
+            <div class="terminal"><div class="terminal-label"><span>Shell · Cursor config</span><button class="copy" type="button" data-copy="claude mcp add context-packer -- npx -y @taanviir/context-packer mcp">Copy</button></div>
 <pre>claude mcp add context-packer -- npx -y @taanviir/context-packer mcp
 codex mcp add context-packer -- npx -y @taanviir/context-packer mcp
 <span class="dim"># Cursor: ~/.cursor/mcp.json</span>
@@ -151,9 +152,9 @@ codex mcp add context-packer -- npx -y @taanviir/context-packer mcp
           <p>Summaries tailored to TypeScript, Python, Go and Rust found as many files as the simple ones, within half a file per 100, and cost up to 58% more, so they didn't ship. Laya, the local model, found fewer files than plain keyword search.</p>
         </div>
         <ul class="posts">
-          <li><span class="mono-label">Post</span><div><h2><a href="blog/what-we-measured.html">What 120 real changes showed</a></h2><p>How the tests work, the idea that didn't ship, and what it cost to find out.</p></div></li>
-          <li><span class="mono-label">Data</span><div><h2><a href="explorer.html">Run explorer</a></h2><p>Every test, and where each tool ranked the files the change needed.</p></div></li>
-          <li><span class="mono-label">Post</span><div><h2><a href="blog/how-it-ranks.html">Two passes and a comparison</a></h2><p>Why a decision model re-ranks instead of searching, and where the time goes.</p></div></li>
+          <li><span class="mono-label">Post</span><div><h3><a href="blog/what-we-measured.html">What 120 real changes showed</a></h3><p>How the tests work, the idea that didn't ship, and what it cost to find out.</p></div></li>
+          <li><span class="mono-label">Data</span><div><h3><a href="explorer.html">Run explorer</a></h3><p>Every test, and where each tool ranked the files the change needed.</p></div></li>
+          <li><span class="mono-label">Post</span><div><h3><a href="blog/how-it-ranks.html">Two passes and a comparison</a></h3><p>Why a decision model re-ranks instead of searching, and where the time goes.</p></div></li>
         </ul>
       </div>
     </section>
