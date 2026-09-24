@@ -131,16 +131,20 @@
   .empty { padding: 28px 0; color: var(--muted); }
   .more { margin-top: 16px; }
   .more button { font: 500 14px/1 var(--font-body); color: var(--ink); background: var(--paper); border: 1px solid var(--rule-strong); border-radius: 6px; height: 36px; padding: 0 14px; cursor: pointer; }
+  .skip-link { position: absolute; left: 12px; top: -48px; z-index: 30; background: var(--ink); color: var(--paper); padding: 8px 12px; border-radius: 6px; text-decoration: none; font-size: 14px; }
+  .skip-link:focus { top: 12px; }
   footer { margin-top: 36px; font-size: 13px; color: var(--muted); }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="page">
   <div class="top">
     <a class="wordmark" href="./">context<span>·</span>packer</a>
     <nav><a href="findings.html">Findings</a><a href="blog/">Blog</a><a href="https://github.com/Taanviir/context-packer">GitHub</a></nav>
   </div>
 
+  <main id="main">
   <header class="intro">
     <span class="mono" id="generated">Benchmark runs</span>
     <h1>Run Explorer</h1>
@@ -187,6 +191,7 @@
   <div class="key" id="key"></div>
   <ol class="tasks" id="tasks"></ol>
   <div class="more" id="more" hidden><button type="button">Show all tasks</button></div>
+  </main>
   <footer>Split "Test" holds the 30 tests per project reported on the findings page; "Dev" holds the 10 per project used to make decisions. Times and costs are per test. <a href="findings.html">How this was measured</a>.</footer>
 </div>
 
