@@ -7,7 +7,7 @@ const COMMANDS = [
   { label: "Run explorer: every task, both rankings", hint: "page", href: `${base}/explorer.html` },
   { label: "Blog", hint: "page", href: `${base}/blog/` },
   { label: "How the ranking works", hint: "post", href: `${base}/blog/how-it-ranks.html` },
-  { label: "What 120 held-out commits showed", hint: "post", href: `${base}/blog/what-we-measured.html` },
+  { label: "What 120 real changes showed", hint: "post", href: `${base}/blog/what-we-measured.html` },
   { label: "Copy: npx context-packer pack", hint: "copy", copy: 'npx -y context-packer pack "describe the change"' },
   { label: "Copy: claude mcp add", hint: "copy", copy: "claude mcp add context-packer -- npx -y context-packer mcp" },
   { label: "Source on GitHub", hint: "link", href: "https://github.com/Taanviir/context-packer" },

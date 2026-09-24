@@ -8,9 +8,11 @@ Use it from the command line, as an MCP server, or as a Claude Code hook that ad
 
 ![Keywords, then Jev, then the Claude Code hook, run on the hono repository](https://taanviir.github.io/context-packer/assets/demo.svg)
 
-On 120 held-out commits from four open-source repositories, the Jev pipeline put **0.78** of each commit's changed files
-in its top ten, against **0.69** for keyword search: +9.1 points, 95% interval +3.6 to +15.2. A pack took 2.5 s and
-cost about $0.007 on average. [Findings](https://taanviir.github.io/context-packer/findings.html) ·
+Tested on 120 real past changes from four open-source projects, where the task is the commit message and the right
+answer is the files the commit changed. **Jev put 78% of the needed files in its top 10; plain keyword search put
+69%.** A Jev search took 2.5 s and cost about $0.007.
+[Findings](https://taanviir.github.io/context-packer/findings.html) ·
+[Run explorer](https://taanviir.github.io/context-packer/explorer.html) ·
 [Blog](https://taanviir.github.io/context-packer/blog/)
 
 ## Install
@@ -48,11 +50,13 @@ The server exposes one tool, `pack_context(task, limit?, provider?, root?, expla
 
 ## Providers
 
-| Provider | Needs | What it does | Recall@10 (test) |
+| Provider | Needs | What it does | Needed files in its top 10 |
 | --- | --- | --- | --- |
-| `keywords` (default) | nothing | BM25 over paths and full source for every eligible file | 0.69 |
-| `jev` | `TYPESAFE_API_KEY` or `AI_GATEWAY_API_KEY` | Two passes with TypeSafe's Jev decision model, fused with keyword rank | 0.78 |
-| `laya` | a local Laya server | A small local model scores a 60-file keyword shortlist, one excerpt per request | see [findings](https://taanviir.github.io/context-packer/findings.html) |
+| `keywords` (default) | nothing | BM25 over paths and full source for every eligible file | 69% |
+| `jev` | `TYPESAFE_API_KEY` or `AI_GATEWAY_API_KEY` | Two passes with TypeSafe's Jev decision model, fused with keyword rank | 78% on the same tests |
+| `laya` | a local Laya server | A small local model scores a 60-file keyword shortlist, one excerpt per request | 81%, where keywords got 87% on the same two projects |
+
+Laya keeps code on your machine but found fewer files than keyword search, which is also local.
 
 There is no automatic fallback. Asking for Jev without a key is an error, not a keyword ranking labelled as Jev.
 
@@ -128,10 +132,12 @@ It expects `{"answers": {"relevant": {"noul": 0.42}}}`, with optional `usage.inp
 
 ## Benchmark
 
-Tasks are real commit subjects; the answer is the source files the commit modified, read as they were before the
-commit. Six repositories are pinned: hono, rich, gin and prometheus (keywords and Jev), plus httpx and ripgrep
-(keywords). Laya ran on gin and httpx. Choices were made on 10 dev tasks per repository and measured once on 30 test
-tasks.
+Each test is a real commit: the message is the task, and the files it changed are the answer. The tool sees the
+project as it was before the commit. The score is the share of needed files that land in the top 10. Six projects are
+pinned: hono, rich, gin and prometheus (keywords and Jev), plus httpx and ripgrep (keywords). Laya ran on gin and
+httpx. Decisions were made on 10 changes per project; the reported numbers are 30 other changes per project, run once.
+The difference between Jev and keywords is very likely between 4 and 15 more needed files per 100 (a 95% bootstrap
+interval).
 
 ```
 npx tsx bench/mine.ts                 # freeze tasks from pinned history (repos cloned into bench/.cache/repos)
@@ -139,13 +145,13 @@ npx tsx bench/run.ts jev test         # run a provider; Jev responses are cached
 npx tsx bench/report.ts               # bench/results/summary.json, with paired bootstrap intervals
 ```
 
-What was tried and didn't ship: per-language sketch rules for TypeScript, Python, Go and Rust (`bench/lang-sketch.ts`)
-tied the shipped sketcher (−0.4 points recall@10, interval −2.5 to +1.3) and sent up to 58% more tokens.
+What was tried and didn't ship: per-language file summaries for TypeScript, Python, Go and Rust
+(`bench/lang-sketch.ts`) found as many files as the simple ones, within half a file per 100, and cost up to 58% more.
 
 ## Limits
 
-- Commit subjects are shorter and vaguer than most requests to an agent, and file recall is not task success: the
-  benchmark doesn't measure whether an agent then makes the right change.
+- Commit messages are shorter and vaguer than most requests to an agent, and finding the right files isn't finishing
+  the task: the benchmark doesn't measure whether an agent then makes the right change.
 - Tasks that mostly add new files are out of scope, because there is nothing to find yet.
 - Keyword packs read every file each time. On a 14,004-file VS Code checkout that takes 3.5 s and about 620 MB.
   A Jev pack there would send about 230 sketch requests; it wasn't measured.

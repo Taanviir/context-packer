@@ -32,34 +32,36 @@
     <section class="page-head">
       <div class="wrap">
         <span class="mono-label" data-generated>Benchmark</span>
-        <h1>Jev finds more of the files a commit changed.</h1>
-        <p class="lede">Each task is a real commit subject. The answer is the source files that commit modified, and every file is read as it was before the commit, so the answer can't leak in. Choices were made on 10 dev tasks per repo; the numbers below are the 30 held-out test tasks per repo, run once.</p>
+        <h1>Jev finds more of the files a change needs.</h1>
+        <p class="lede">Each test is a real past change from an open-source project: its commit message is the task, and the files it changed are the right answer. The tool sees the project as it was before the change, so it can't cheat. The score is simple: of the files the change really needed, how many did the tool put in its top 10?</p>
+        <p class="lede">Plain keyword search finds 69 of every 100 needed files. Jev finds 78. Laya, the local model, found fewer than keyword search.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="wrap">
         <div class="prose">
-          <h2 style="margin-top: 0">Recall@10 by repository</h2>
-          <p>Recall@10 is the share of a commit's changed files that appear in the top ten. Jev ran on four repositories; the two smallest also have keyword and local Laya runs.</p>
+          <h2 style="margin-top: 0">Project by project</h2>
+          <p>Thirty tests per project. Jev ran on the four projects on top; Laya ran on gin and httpx, and the two smallest projects have keyword search only.</p>
         </div>
         <figure class="chart" id="chart-repos"></figure>
 
         <div class="prose">
-          <h2>How sure is the difference?</h2>
-          <p>Each bar is the mean per-task difference, with a 95% paired bootstrap interval (10,000 resamples, fixed seed). An interval that crosses zero means the repo alone can't separate the two.</p>
+          <h2>Is the difference real or luck?</h2>
+          <p>With 30 tests per project, some difference would show up by chance alone. The line around each dot is the range the true difference plausibly sits in (a 95% bootstrap interval). When the whole line is right of zero, the gain is real; when it crosses zero, that project alone can't tell.</p>
+          <p>Across all four projects, Jev finds 9 more needed files per 100 than keyword search, somewhere between 4 and 15. Rewriting the file summaries for each language changed nothing. Laya finds about 6 fewer than keyword search, between 2 and 11 fewer.</p>
         </div>
         <figure class="chart" id="chart-diffs"></figure>
 
         <div class="prose">
-          <h2>Recall as the list gets longer</h2>
-          <p>Pooled over the 120 test tasks. The gap is widest at five files, where a short list matters most to an agent.</p>
+          <h2>Top 5, 10 and 20</h2>
+          <p>The gap is widest when the list is shortest. In the top five, Jev finds 69% of needed files and keyword search 56%.</p>
         </div>
         <figure class="chart" id="chart-k"></figure>
 
         <div class="prose">
-          <h2>Cost and time per pack</h2>
-          <p>Times are wall-clock for ranking files already in memory, from uncached runs. Cost is Jev's reported input tokens at $0.042 per million. Failed batches are Jev calls that returned an error; their files scored zero for that pass and the pack went on.</p>
+          <h2>Cost and time</h2>
+          <p>Per test, from runs that weren't served from a cache. Jev's cost is its reported input tokens at $0.042 per million. Keyword search and Laya cost nothing but your CPU. Failed requests are Jev calls that returned an error; those files scored zero for that step and the ranking went on.</p>
         </div>
         <div class="table-scroll" id="table-cost"></div>
       </div>
@@ -71,8 +73,8 @@
         <ul>
           <li>Repositories are pinned to a commit: hono (TypeScript), rich (Python), gin (Go), prometheus (Go and TypeScript), httpx (Python), ripgrep (Rust).</li>
           <li>Tasks: non-merge commits whose subject has at least four words, that modify one to five existing source files and add, delete or move none. Commits named like chores, releases, docs or refactors are skipped. Conventional-commit prefixes and PR numbers are stripped from the task text.</li>
-          <li>Split: a fixed hash order over eligible commits; the first 10 are dev, the next 30 test.</li>
-          <li>Commit subjects are short and often vaguer than a real request to an agent. File recall is also not task success: this benchmark doesn't measure whether an agent then makes the right change.</li>
+          <li>Split: a fixed order over eligible commits; the first 10 per project were used to make decisions, and the next 30 are the tests reported here, run once.</li>
+          <li>Commit messages are short and often vaguer than a real request to an agent. Finding the right files is also not the same as making the right change; this benchmark measures only the first.</li>
           <li>The whole run, including the rejected sketcher, billed 47 million Jev input tokens, about $2.</li>
         </ul>
         <p>Browse every task and both rankings in the <a href="explorer.html">run explorer</a>.</p>

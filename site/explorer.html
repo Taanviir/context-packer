@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Run Explorer</title>
-<meta name="description" content="Every benchmark task, and where each provider ranked the files the real commit changed." />
+<meta name="description" content="Every benchmark test, and where each tool ranked the files the change needed." />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -144,12 +144,12 @@
   <header class="intro">
     <span class="mono" id="generated">Benchmark runs</span>
     <h1>Run Explorer</h1>
-    <p>Every benchmark task and where each provider ranked the files the real commit changed. Pick two runs to compare; open a task to see both rankings in full.</p>
+    <p>Each row is one test: a real past change, and the files it needed. The squares show where each tool ranked those files: 20 squares for its top 20 picks, a filled square where it picked a needed file. More filled squares, further left, is better. Open a row to see both lists in full.</p>
   </header>
 
   <form class="controls" id="controls" autocomplete="off">
     <div class="control">
-      <label for="repo">Repository</label>
+      <label for="repo">Project</label>
       <select id="repo"></select>
     </div>
     <div class="control">
@@ -160,20 +160,20 @@
       </div>
     </div>
     <div class="control">
-      <label for="a">Compare</label>
+      <label for="a">Compare tool</label>
       <select id="a"></select>
     </div>
     <span class="vs">vs</span>
     <div class="control">
-      <label for="b">With</label>
+      <label for="b">With tool</label>
       <select id="b"></select>
     </div>
     <div class="control">
       <label for="sort">Order</label>
       <select id="sort">
-        <option value="gain">Biggest gain first</option>
-        <option value="loss">Biggest loss first</option>
-        <option value="missed">Most files missed first</option>
+        <option value="gain">Second tool did better first</option>
+        <option value="loss">First tool did better first</option>
+        <option value="missed">Most needed files missed first</option>
         <option value="task">Task order</option>
       </select>
     </div>
@@ -187,7 +187,7 @@
   <div class="key" id="key"></div>
   <ol class="tasks" id="tasks"></ol>
   <div class="more" id="more" hidden><button type="button">Show all tasks</button></div>
-  <footer>Recall@10 is the share of a commit's changed files in the top ten. Times and costs are per pack; runs replayed from the response cache keep the times of their original, uncached run. <a href="findings.html">Method and intervals</a>.</footer>
+  <footer>Split "Test" holds the 30 tests per project reported on the findings page; "Dev" holds the 10 per project used to make decisions. Times and costs are per test. <a href="findings.html">How this was measured</a>.</footer>
 </div>
 
 <script>
@@ -200,7 +200,16 @@
   let data;
 
   const fmt = (x) => x.toFixed(2);
-  const pts = (x) => `${x > 0 ? "+" : x < 0 ? "−" : "±"}${Math.abs(x * 100).toFixed(0)}`;
+  const inTop = (run, k = 10) => run.gold.filter((g) => run.ranked.slice(0, k).includes(g)).length;
+  const short = (v) => LABEL[v].split(",")[0];
+  /** "found it", "missed it", "found both", "found 1 of 3", "missed all 3" */
+  function found(run) {
+    const n = inTop(run), total = run.gold.length;
+    if (total === 1) return n ? "found it" : "missed it";
+    if (n === total) return total === 2 ? "found both" : `found all ${total}`;
+    if (n === 0) return total === 2 ? "missed both" : `missed all ${total}`;
+    return `found ${n} of ${total}`;
+  }
   const time = (ms) => (ms >= 1000 ? `${(ms / 1000).toFixed(1)} s` : `${ms} ms`);
   const color = (v) => `var(--s-${v})`;
 
@@ -250,7 +259,7 @@
       return runs[state.a] && runs[state.b];
     });
     if (state.repo !== "all" && !repos.includes(state.repo)) state.repo = "all";
-    const repoLabels = { all: "All with both runs" };
+    const repoLabels = { all: "All projects" };
     for (const n of repos) repoLabels[n] = `${n} · ${data.repos[n].language}`;
     options($("repo"), ["all", ...repos], repoLabels, state.repo);
     document.querySelectorAll("[data-split]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.split === state.split)));
@@ -303,7 +312,7 @@
     box.className = "detail";
     const goldCol = document.createElement("div");
     goldCol.className = "gold";
-    goldCol.innerHTML = "<h3>Files the commit changed</h3>";
+    goldCol.innerHTML = "<h3>Files the change needed</h3>";
     const ul = document.createElement("ul");
     const rank = (run, g) => { const i = run.ranked.indexOf(g); return i < 0 ? "—" : `#${i + 1}`; };
     for (const g of p.a.gold) {
@@ -311,7 +320,7 @@
       li.innerHTML = "<span></span><span class=\"ranks\"></span>";
       li.firstChild.textContent = g;
       li.lastChild.textContent = `${rank(p.a, g)} · ${rank(p.b, g)}`;
-      li.lastChild.title = `${LABEL[state.a]} rank · ${LABEL[state.b]} rank`;
+      li.lastChild.title = `Where ${short(state.a)} and ${short(state.b)} ranked it (— means not in the top 20)`;
       ul.append(li);
     }
     goldCol.append(ul);
@@ -337,11 +346,12 @@
     const summary = $("summary");
     summary.innerHTML = "";
     const fig = (v, k) => { const d = document.createElement("div"); d.innerHTML = `<span class="v"></span><span class="k"></span>`; d.children[0].textContent = v; d.children[1].textContent = k; summary.append(d); };
-    fig(String(all.length), all.length === 1 ? "task with both runs" : "tasks with both runs");
-    fig(fmt(mean(all.map((p) => p.a.recall["10"]))), `${LABEL[state.a]} recall@10`);
-    fig(fmt(mean(all.map((p) => p.b.recall["10"]))), `${LABEL[state.b]} recall@10`);
-    fig(`${better} · ${all.length - better - worse} · ${worse}`, `${LABEL[state.b].split(",")[0]} better · same · worse`);
-    fig(bRuns.length ? time(Math.round(mean(bRuns.map((r) => r.ms)))) : "—", `${LABEL[state.b]} mean time per pack`);
+    fig(String(all.length), all.length === 1 ? "test with both tools" : "tests with both tools");
+    const share = (xs) => `${Math.round(mean(xs) * 100)}%`;
+    fig(share(all.map((p) => p.a.recall["10"])), `of needed files in ${short(state.a)}'s top 10`);
+    fig(share(all.map((p) => p.b.recall["10"])), `of needed files in ${short(state.b)}'s top 10`);
+    fig(`${better} · ${all.length - better - worse} · ${worse}`, `tests where ${short(state.b)} found more · same · fewer`);
+    fig(bRuns.length ? time(Math.round(mean(bRuns.map((r) => r.ms)))) : "—", `${short(state.b)}'s average time per test`);
 
     const key = $("key");
     key.innerHTML = "";
@@ -352,7 +362,7 @@
       key.append(s);
     }
     const note = document.createElement("span");
-    note.textContent = "Each square is a rank, 1 to 20; filled squares are files the commit changed. +N counts changed files outside the top 20.";
+    note.textContent = "Squares are ranks 1 to 20, left to right. Filled: a file the change needed. +N: needed files the tool didn't pick at all.";
     key.append(note);
 
     const ol = $("tasks");
@@ -375,14 +385,17 @@
       what.className = "what";
       what.innerHTML = `<span class="t"></span><span class="m"></span>`;
       what.children[0].textContent = p.a.task;
-      what.children[1].textContent = `${p.repo} · ${p.a.gold.length} changed file${p.a.gold.length > 1 ? "s" : ""}`;
+      what.children[1].textContent = `${p.repo} · needed ${p.a.gold.length} file${p.a.gold.length > 1 ? "s" : ""} · in the top 10, ${short(state.b)} ${found(p.b)} and ${short(state.a)} ${found(p.a)}`;
       const strips = document.createElement("div");
       strips.className = "strips";
       strips.append(strip(p.a, state.a), strip(p.b, state.b));
       const score = document.createElement("div");
       score.className = "score";
       const d = p.delta;
-      score.innerHTML = `<span class="pair">${fmt(p.a.recall["10"])} → ${fmt(p.b.recall["10"])}</span><span class="delta ${d > 1e-9 ? "up" : d < -1e-9 ? "down" : ""}">${pts(d)} pts</span>`;
+      const verdict = d > 1e-9 ? `${short(state.b)} better` : d < -1e-9 ? `${short(state.a)} better` : "Same";
+      score.innerHTML = `<span class="pair">${inTop(p.a)} → ${inTop(p.b)} of ${p.a.gold.length}</span><span class="delta ${d > 1e-9 ? "up" : d < -1e-9 ? "down" : ""}"></span>`;
+      score.lastChild.textContent = verdict;
+      score.title = `Needed files in the top 10: ${short(state.a)} ${inTop(p.a)}, ${short(state.b)} ${inTop(p.b)}`;
       row.append(what, strips, score);
       row.addEventListener("click", () => {
         state.open = state.open === p.a.id ? null : p.a.id;

@@ -32,10 +32,10 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="figure tnum" aria-label="plus 9.1 points"><span aria-hidden="true">+</span><span data-tick="9.1">9.1</span><span class="unit">pts</span></div>
+          <div class="figure tnum" aria-label="78 percent"><span data-tick="78">78</span><span class="unit">%</span></div>
           <h1>More of the right files in the top ten.</h1>
           <p class="lede">context-packer ranks the source files a coding task needs and hands them to your agent before it starts searching. It runs as a CLI, an MCP server, or a Claude Code hook.</p>
-          <p class="qualifier">Recall@10 on 120 held-out commits from four open-source repos: 0.69 with keyword search, 0.78 with the Jev pipeline. 95% interval +3.6 to +15.2 points.</p>
+          <p class="qualifier">Tested on 120 real past changes from four open-source projects: Jev put 78% of the files each change needed in its top 10. Plain keyword search managed 69%.</p>
           <div class="hero-actions">
             <a class="button" href="#install">Install</a>
             <a class="link-arrow" href="findings.html">Read the findings →</a>
@@ -58,7 +58,7 @@
 
     <section aria-label="Supporting numbers">
       <div class="wrap stats">
-        <div class="stat"><div class="value tnum">0.69 → 0.78</div><p>Recall@10, keywords to Jev, pooled over 120 test tasks.</p></div>
+        <div class="stat"><div class="value tnum">69% → 78%</div><p>Needed files in the top 10: keyword search, then Jev, over 120 real changes.</p></div>
         <div class="stat"><div class="value tnum">$0.007</div><p>Mean Jev cost per pack on repos of 73 to 1,222 files.</p></div>
         <div class="stat"><div class="value tnum">2.5 s</div><p>Mean Jev pack time on those repos. Keyword packs took 53 ms.</p></div>
         <div class="stat"><div class="value tnum">3.5 s</div><p>Keyword pack over 14,004 files of a VS Code checkout, no model.</p></div>
@@ -69,23 +69,23 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Three ways to rank</h2>
-          <p>Keywords is the default and needs nothing. Jev is the measured upgrade. Laya keeps everything on your machine.</p>
+          <p>Keywords is the default and needs nothing. Jev finds more of the right files. Laya keeps everything on your machine, at the cost of finding fewer.</p>
         </div>
         <div class="providers">
           <article class="provider reveal">
             <h3><span class="swatch" style="background: var(--color-series-jev)"></span>Jev</h3>
             <p>TypeSafe's decision model reads a short sketch of every file, then the full source of a 120-file shortlist, and its scores are fused with keyword rank. A final call compares the top ten.</p>
-            <dl><dt>Needs</dt><dd><code>TYPESAFE_API_KEY</code></dd><dt>Cost</dt><dd>about $0.007 a pack</dd><dt>Recall@10</dt><dd class="tnum">0.78 on 120 test tasks</dd></dl>
+            <dl><dt>Needs</dt><dd><code>TYPESAFE_API_KEY</code></dd><dt>Cost</dt><dd>about $0.007 a search</dd><dt>Top 10</dt><dd class="tnum">78% of needed files</dd></dl>
           </article>
           <article class="provider reveal">
             <h3><span class="swatch" style="background: var(--color-series-keywords)"></span>Keywords</h3>
             <p>BM25 over paths and full source, with camelCase and snake_case split. No model and no key.</p>
-            <dl><dt>Needs</dt><dd>nothing</dd><dt>Cost</dt><dd>$0</dd><dt>Recall@10</dt><dd class="tnum">0.69 on the same tasks</dd></dl>
+            <dl><dt>Needs</dt><dd>nothing</dd><dt>Cost</dt><dd>$0</dd><dt>Top 10</dt><dd class="tnum">69% on the same tests</dd></dl>
           </article>
           <article class="provider reveal">
             <h3><span class="swatch" style="background: var(--color-series-laya)"></span>Laya</h3>
-            <p>A small local model scores a 60-file keyword shortlist, one excerpt per request. Nothing leaves the machine.</p>
-            <dl><dt>Needs</dt><dd>a local Laya server</dd><dt>Cost</dt><dd>$0, about a minute of CPU</dd><dt>Recall@10</dt><dd class="tnum" data-laya-recall>see findings</dd></dl>
+            <p>A small local model scores a 60-file keyword shortlist, one excerpt per request. Nothing leaves the machine, but it found fewer files than keyword search.</p>
+            <dl><dt>Needs</dt><dd>a local Laya server</dd><dt>Cost</dt><dd>$0, 30–60 s of CPU</dd><dt>Top 10</dt><dd class="tnum">81%, where keywords got 87%</dd></dl>
           </article>
         </div>
       </div>
@@ -147,10 +147,11 @@ codex mcp add context-packer -- npx -y context-packer mcp
       <div class="wrap split">
         <div class="section-head" style="margin-bottom: 0">
           <h2>What didn't work</h2>
-          <p>Per-language sketches for TypeScript, Python, Go and Rust tied the Kotlin-shaped sketcher on recall and sent up to 58% more tokens, so they didn't ship. On repos this size, the shortlist covers most files and the full-source pass decides.</p>
+          <p>Summaries tailored to TypeScript, Python, Go and Rust found exactly as many files as the simple ones and cost up to 58% more, so they didn't ship. Laya, the local model, found fewer files than plain keyword search.</p>
         </div>
         <ul class="posts">
-          <li><span class="mono-label">Post</span><div><h2><a href="blog/what-we-measured.html">What 120 held-out commits showed</a></h2><p>The benchmark, the result that didn't ship, and what it cost to find out.</p></div></li>
+          <li><span class="mono-label">Post</span><div><h2><a href="blog/what-we-measured.html">What 120 real changes showed</a></h2><p>How the tests work, the idea that didn't ship, and what it cost to find out.</p></div></li>
+          <li><span class="mono-label">Data</span><div><h2><a href="explorer.html">Run explorer</a></h2><p>Every test, and where each tool ranked the files the change needed.</p></div></li>
           <li><span class="mono-label">Post</span><div><h2><a href="blog/how-it-ranks.html">Two passes and a comparison</a></h2><p>Why a decision model re-ranks instead of searching, and where the time goes.</p></div></li>
         </ul>
       </div>

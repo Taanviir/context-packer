@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>What 120 held-out commits showed · context-packer</title>
-  <meta name="description" content="Jev beat keyword search on three of four repositories. Per-language sketches didn't help, and a local model didn't beat keywords." />
+  <title>What 120 real changes showed · context-packer</title>
+  <meta name="description" content="Jev found more of the right files than keyword search on three of four projects. Per-language summaries didn't help, and a local model found fewer." />
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,38 +32,40 @@
       <header class="page-head">
         <div class="wrap">
           <time class="mono-label" datetime="2026-09-24">24 Sep 2026</time>
-          <h1>What 120 held-out commits showed</h1>
-          <p class="lede">Jev beat keyword search on three of four repositories. A change I expected to help didn't, and the local model didn't beat keywords. The whole study cost about $2 of Jev tokens.</p>
+          <h1>What 120 real changes showed</h1>
+          <p class="lede">Jev found more of the right files than keyword search on three of four projects. An improvement I expected to help didn't, and the local model found fewer files than keyword search. The whole study cost about $2 of Jev usage.</p>
         </div>
       </header>
       <section class="section">
         <div class="wrap"><div class="prose">
           <h2 style="margin-top: 0">The setup</h2>
-          <p>A ranking tool is only useful if the files it puts first are the ones the change needs. Git history already records that. So each task is a real commit subject, the answer is the set of source files that commit modified, and the candidates are the repository as it was one commit earlier, filtered exactly as the tool filters a working tree.</p>
-          <p>Six repositories are pinned to a commit: hono (TypeScript, about 270 source files at the sampled commits), rich (Python, 160), gin (Go, 73), prometheus (Go and TypeScript, 1,220), httpx (Python) and ripgrep (Rust). From each, a fixed hash order picks 10 dev tasks and 30 test tasks among commits that modify one to five existing source files and add or delete none. Anything I tuned, I tuned on dev. The test tasks ran once per variant.</p>
+          <p>A tool like this is only useful if the files it puts first are the ones the change needs. Git history already records that. So each test is a real past commit: its message is the task, the files it changed are the answer, and the tool sees the project as it was just before, so the answer can't leak in.</p>
+          <p>The score is one question: of the files the change needed, how many did the tool put in its top 10? If a change touched two files and both are in the top 10, that test scores 100%; one of them, 50%. The literature calls this recall@10.</p>
+          <p>Six projects, each frozen at one commit: hono (TypeScript, about 270 source files), rich (Python, 160), gin (Go, 73), prometheus (Go and TypeScript, 1,220), httpx (Python) and ripgrep (Rust). From each, a fixed order picks 10 changes for making decisions and 30 for testing, among commits that modify one to five existing files and add or delete none. Anything I tuned, I tuned on the first 10. The 30 test changes ran once per tool.</p>
 
           <h2>The main result</h2>
-          <p>Pooled over the 120 test tasks from the four Jev repositories:</p>
+          <p>Over the 120 test changes on the four projects Jev ran on, the share of needed files each tool found:</p>
           <div class="table-scroll"><table class="data-table">
-            <thead><tr><th>Provider</th><th>Recall@5</th><th>Recall@10</th><th>Recall@20</th><th>Time per pack</th><th>Cost per pack</th></tr></thead>
+            <thead><tr><th>Tool</th><th>In top 5</th><th>In top 10</th><th>In top 20</th><th>Time per search</th><th>Cost per search</th></tr></thead>
             <tbody>
-              <tr><td>Keywords</td><td>0.56</td><td>0.69</td><td>0.79</td><td>53 ms</td><td>$0</td></tr>
-              <tr><td>Jev</td><td>0.69</td><td>0.78</td><td>0.88</td><td>2.5 s</td><td>$0.007</td></tr>
+              <tr><td>Keywords</td><td>56%</td><td>69%</td><td>79%</td><td>53 ms</td><td>$0</td></tr>
+              <tr><td>Jev</td><td>69%</td><td>78%</td><td>88%</td><td>2.5 s</td><td>$0.007</td></tr>
             </tbody>
           </table></div>
-          <p>The paired difference at ten is +9.1 points, with a 95% bootstrap interval of +3.6 to +15.2. At five it's +13.3 (+7.2 to +19.8). The gain is largest where the list is shortest, which is where an agent's attention is.</p>
-          <p>By repository, Jev's recall@10 gain was +10.8 points on hono, +11.9 on rich and +14.4 on prometheus. Gin was a tie (−0.8, interval −10.8 to +10.0). Gin has 73 source files and keywords already found 87% of the answers there, which leaves little to gain. The <a href="../findings.html">findings page</a> has every interval.</p>
+          <p>So in the top 10, Jev finds 9 more needed files per 100. With 120 tests that could still be partly luck, so I checked with a bootstrap: the real gain is very likely between 4 and 15 per 100. In the top 5 it's 13 more (between 7 and 20). The gain is biggest where the list is shortest, which is where an agent looks first.</p>
+          <p>Project by project, Jev found 11 more per 100 on hono, 12 on rich and 14 on prometheus. Gin was a tie. Gin has only 73 source files and keyword search already found 87% of needed files there, so there was little left to find. The <a href="../findings.html">findings page</a> has the ranges for each project, and the <a href="../explorer.html">run explorer</a> shows every test.</p>
 
           <h2>The idea that didn't work</h2>
           <p>The sketcher that summarizes each file for the wide pass looks for Kotlin keywords: <code>class</code>, <code>fun</code>, <code>val</code>, <code>object</code>. On a Python or Go file, that leaves little besides the path. Per-language rules looked like the obvious improvement, so I wrote them for TypeScript, Python, Go, Rust, C#, Swift and a few more, with docstrings and <code>///</code> comments.</p>
-          <p>On dev they tied. On test they tied again: −0.4 points at ten, interval −2.5 to +1.3. And they cost more, because richer sketches are longer: 58% more tokens on prometheus.</p>
+          <p>On the decision changes they tied. On the test changes they tied again: within half a file per 100 of the simple summaries. And they cost more, because richer summaries are longer: 58% more on prometheus.</p>
           <p>The reason is in the pool size. Up to 120 files get a full-source read, and on repositories of 70 to 1,200 files, that pool already holds most of the answers, chosen partly by BM25. The sketch pass only has to add a few files to the pool, and a path plus a file name often does that as well as a list of declarations. So the per-language sketcher didn't ship. It stays in the benchmark folder so the result can be reproduced. Sketches may matter on much larger repositories, but I didn't measure that.</p>
 
           <h2>The local model</h2>
-          <p data-laya-summary>Laya's benchmark run on gin and httpx is still in progress; this paragraph will carry its numbers.</p>
+          <p>Laya is a small model that runs on your own CPU, so no code leaves the machine. It scores a 60-file keyword shortlist, one short excerpt at a time. On gin and httpx it found 81% of needed files in its top 10, where keyword search found 87%: about 6 fewer per 100, very likely between 2 and 11 fewer. Each search took 30 to 60 seconds of CPU.</p>
+          <p>So Laya is only worth it when code must not leave the machine, and even then keyword search, which also runs locally, did better on these tests.</p>
 
-          <h2>A faster keyword ranker, same answers</h2>
-          <p>On a 14,004-file checkout of VS Code, a keyword pack took 4.2 seconds and 740 MB, most of it building a term map for every word of every file. BM25 only needs counts for the query's own terms and each file's length. Counting just those brought ranking from 2.8 to 2.0 seconds and memory to 620 MB, and the rankings on all 180 keyword test tasks came out identical.</p>
+          <h2>Faster keyword search, same answers</h2>
+          <p>On a 14,004-file checkout of VS Code, a keyword pack took 4.2 seconds and 740 MB, most of it building a term map for every word of every file. BM25 only needs counts for the query's own terms and each file's length. Counting just those brought ranking from 2.8 to 2.0 seconds and memory to 620 MB, and the results on all 180 keyword tests came out identical.</p>
 
           <h2>Two bugs the benchmark found</h2>
           <ul>
@@ -73,9 +75,9 @@
 
           <h2>What this doesn't show</h2>
           <ul>
-            <li>File recall is not task success. This measures whether the right files come first, not whether an agent then makes the right change.</li>
+            <li>Finding the right files isn't finishing the task. This measures whether the right files come first, not whether an agent then makes the right change.</li>
             <li>Commit subjects are short and sometimes cryptic. Requests to an agent are usually longer, which likely helps both keyword search and Jev.</li>
-            <li>No agent comparison was run for this release. The budget went to recall.</li>
+            <li>No test with a real agent was run for this release. The budget went to the file-finding tests.</li>
           </ul>
 
           <h2>What it cost</h2>
