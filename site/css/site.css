@@ -76,7 +76,7 @@ code, kbd, pre { font-family: var(--font-mono); font-size: 0.9em; }
 .terminal .k { color: var(--color-code-key); }
 .terminal .ok { color: var(--color-code-ok); }
 .terminal .dim { color: var(--color-on-graphite-muted); }
-.copy { font: 500 var(--text-xs) / 1 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; background: none; border: var(--rule-hair) solid var(--color-graphite-rule); color: var(--color-on-graphite-muted); border-radius: 4px; padding: 0.3em 0.5em; cursor: pointer; }
+.copy { font: 500 var(--text-xs) / 1 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; background: none; border: var(--rule-hair) solid var(--color-graphite-rule); color: var(--color-on-graphite-muted); border-radius: 4px; min-height: 1.5rem; padding: 0.3em 0.6em; cursor: pointer; }
 .copy:hover { color: var(--color-on-graphite); border-color: var(--color-code-key); }
 
 /* Supporting stats */
@@ -198,6 +198,7 @@ details.table-view summary { cursor: pointer; color: var(--color-muted); }
 .palette ul { list-style: none; margin: 0; padding: var(--space-xs); max-height: 50vh; overflow: auto; }
 .palette li { padding: var(--space-sm); border-radius: var(--radius-sm); font-size: var(--text-sm); color: var(--color-body); cursor: pointer; display: flex; justify-content: space-between; gap: var(--space-md); }
 .palette li[aria-selected="true"] { background: var(--color-accent-wash); color: var(--color-ink); }
+.palette li.palette-empty { cursor: default; color: var(--color-muted); }
 .palette li .hint { color: var(--color-muted); font: 400 var(--text-xs) / 1.6 var(--font-mono); }
 
 @media (prefers-reduced-motion: no-preference) {
