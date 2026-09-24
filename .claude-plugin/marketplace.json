@@ -10,7 +10,7 @@
       "name": "context-packer",
       "source": "./",
       "description": "Ranks the source files a coding task needs and hands them to Claude before it starts searching.",
-      "version": "0.1.0"
+      "version": "0.1.1"
     }
   ]
 }
