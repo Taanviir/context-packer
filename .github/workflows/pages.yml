@@ -2,7 +2,7 @@ name: Pages
 on:
   push:
     branches: [main]
-    paths: ["site/**", "bench/results/summary.json", ".github/workflows/pages.yml"]
+    paths: ["site/**", "bench/results/*.json", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       # The findings page draws from the benchmark summary; copy it in rather than keeping two copies.
-      - run: mkdir -p site/data && cp bench/results/summary.json site/data/summary.json
+      - run: mkdir -p site/data && cp bench/results/summary.json bench/results/runs.json site/data/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

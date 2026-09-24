@@ -4,6 +4,7 @@ const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const COMMANDS = [
   { label: "Home", hint: "page", href: `${base}/` },
   { label: "Findings: the benchmark", hint: "page", href: `${base}/findings.html` },
+  { label: "Run explorer: every task, both rankings", hint: "page", href: `${base}/explorer.html` },
   { label: "Blog", hint: "page", href: `${base}/blog/` },
   { label: "How the ranking works", hint: "post", href: `${base}/blog/how-it-ranks.html` },
   { label: "What 120 held-out commits showed", hint: "post", href: `${base}/blog/what-we-measured.html` },

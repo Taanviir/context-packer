@@ -92,6 +92,21 @@ const pooledSummary = Object.fromEntries(SPLITS.map((split) => {
 const summary = { generated: new Date().toISOString().slice(0, 10), repos, pooled: pooledSummary };
 writeFileSync(path.join(RESULTS, "summary.json"), JSON.stringify(summary, null, 1) + "\n");
 
+// Every task's ranking, for the run explorer. Paths are kept to the top 20 the runs recorded.
+const runs = {
+  generated: summary.generated,
+  repos: Object.fromEntries(REPOS.map((repo) => [repo.name, {
+    url: repo.url,
+    language: repo.language,
+    splits: Object.fromEntries(SPLITS.map((split) => [split, Object.fromEntries(VARIANTS.flatMap((v) => {
+      const r = load(repo.name, split, v);
+      return r ? [[v, r.map(({ id, task, gold, candidates, ranked, recall, ms, calls, failedBatches, costUsd }) =>
+        ({ id, task, gold, candidates, ranked, recall, ms, calls, failedBatches, costUsd }))]] : [];
+    }))])),
+  }])),
+};
+writeFileSync(path.join(RESULTS, "runs.json"), JSON.stringify(runs) + "\n");
+
 const pct = (x: number) => x.toFixed(3);
 for (const split of SPLITS) {
   console.log(`\n${split}`);

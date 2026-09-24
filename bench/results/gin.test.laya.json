@@ -1,0 +1,1194 @@
+{
+ "repo": "gin",
+ "split": "test",
+ "variant": "laya",
+ "results": [
+  {
+   "id": "gin-60f66918f8",
+   "task": "go-colorable does not work in app engine",
+   "gold": [
+    "mode.go"
+   ],
+   "candidates": 66,
+   "ranked": [
+    "context.go",
+    "mode.go",
+    "path.go",
+    "examples/app-engine/hello.go",
+    "ginS/gins.go",
+    "routergroup.go",
+    "binding/form_mapping.go",
+    "gin.go",
+    "binding/binding.go",
+    "logger_test.go",
+    "context_test.go",
+    "gin_test.go",
+    "routergroup_test.go",
+    "routes_test.go",
+    "examples/realtime-advanced/resources/static/epoch.min.js",
+    "render/xml.go",
+    "binding/example/test.pb.go",
+    "test_helpers.go",
+    "examples/realtime-advanced/rooms.go",
+    "tree.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 65375,
+   "calls": 91,
+   "failedBatches": 0,
+   "inputTokens": 17165,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-815e1ce281",
+   "task": "Prevent panic in Context.GetQuery() when there is no Request",
+   "gold": [
+    "context.go",
+    "context_test.go"
+   ],
+   "candidates": 83,
+   "ranked": [
+    "context_test.go",
+    "context.go",
+    "tree_test.go",
+    "recovery.go",
+    "binding/binding_test.go",
+    "routergroup.go",
+    "binding/binding_nomsgpack.go",
+    "gin.go",
+    "logger.go",
+    "benchmarks_test.go",
+    "recovery_test.go",
+    "binding/binding.go",
+    "gin_integration_test.go",
+    "binding/query.go",
+    "routergroup_test.go",
+    "ginS/gins.go",
+    "routes_test.go",
+    "binding/form_mapping.go",
+    "gin_test.go",
+    "utils.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 72055,
+   "calls": 97,
+   "failedBatches": 0,
+   "inputTokens": 20552,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-0873992f38",
+   "task": "More unit tests for form binding",
+   "gold": [
+    "binding/form_mapping.go",
+    "context_test.go"
+   ],
+   "candidates": 61,
+   "ranked": [
+    "context.go",
+    "context_test.go",
+    "binding/form_mapping.go",
+    "binding/form.go",
+    "binding/binding_test.go",
+    "binding/binding.go",
+    "render/render_test.go",
+    "logger_test.go",
+    "path.go",
+    "examples/realtime-advanced/resources/static/realtime.js",
+    "tree_test.go",
+    "path_test.go",
+    "examples/realtime-chat/template.go",
+    "binding/validate_test.go",
+    "examples/realtime-advanced/resources/static/epoch.min.js",
+    "gin_integration_test.go",
+    "routes_test.go",
+    "binding/json.go",
+    "binding/xml.go",
+    "utils_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 63856,
+   "calls": 91,
+   "failedBatches": 0,
+   "inputTokens": 17301,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-647535cd9b",
+   "task": "Support map as query string or post form parameters",
+   "gold": [
+    "context.go",
+    "context_test.go"
+   ],
+   "candidates": 101,
+   "ranked": [
+    "binding/binding.go",
+    "context.go",
+    "context_test.go",
+    "binding/binding_test.go",
+    "examples/realtime-advanced/routes.go",
+    "gin.go",
+    "binding/query.go",
+    "tree_test.go",
+    "binding/form_mapping.go",
+    "routergroup.go",
+    "gin_test.go",
+    "examples/custom-validation/server.go",
+    "binding/form.go",
+    "mode.go",
+    "examples/realtime-advanced/resources/static/realtime.js",
+    "examples/template/main.go",
+    "examples/grpc/pb/helloworld.proto",
+    "examples/upload-file/multiple/main.go",
+    "examples/upload-file/single/main.go",
+    "middleware_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 68340,
+   "calls": 93,
+   "failedBatches": 0,
+   "inputTokens": 19347,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-3f95933c3d",
+   "task": "Add method to return main handler",
+   "gold": [
+    "context.go",
+    "context_test.go"
+   ],
+   "candidates": 76,
+   "ranked": [
+    "routergroup.go",
+    "ginS/gins.go",
+    "gin_test.go",
+    "examples/realtime-chat/template.go",
+    "logger.go",
+    "gin.go",
+    "routes_test.go",
+    "examples/auto-tls/example1.go",
+    "binding/binding_test.go",
+    "examples/auto-tls/example2.go",
+    "context_test.go",
+    "examples/realtime-advanced/routes.go",
+    "context.go",
+    "debug.go",
+    "examples/realtime-advanced/resources/static/epoch.min.js",
+    "tree_test.go",
+    "debug_test.go",
+    "examples/upload-file/multiple/main.go",
+    "binding/protobuf.go",
+    "examples/upload-file/single/main.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 66855,
+   "calls": 94,
+   "failedBatches": 0,
+   "inputTokens": 18703,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-dbd8a25150",
+   "task": "added `AbortWithStatusPureJSON()` in `Context`",
+   "gold": [
+    "context.go",
+    "context_test.go"
+   ],
+   "candidates": 95,
+   "ranked": [
+    "context_test.go",
+    "context.go",
+    "middleware_test.go",
+    "errors_test.go",
+    "recovery_test.go",
+    "render/render_test.go",
+    "auth.go",
+    "recovery.go",
+    "routes_test.go",
+    "render/json.go",
+    "routergroup_test.go",
+    "gin_integration_test.go",
+    "gin_test.go",
+    "gin.go",
+    "benchmarks_test.go",
+    "logger_test.go",
+    "binding/json_test.go",
+    "codec/json/json.go",
+    "logger.go",
+    "codec/json/go_json.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 73551,
+   "calls": 97,
+   "failedBatches": 0,
+   "inputTokens": 21154,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-3c12d2a80e",
+   "task": "replace bytes with strings in function for better performance",
+   "gold": [
+    "recovery.go",
+    "recovery_test.go"
+   ],
+   "candidates": 94,
+   "ranked": [
+    "recovery.go",
+    "gin.go",
+    "path.go",
+    "context.go",
+    "middleware_test.go",
+    "context_test.go",
+    "internal/bytesconv/bytesconv_test.go",
+    "utils.go",
+    "binding/form_mapping.go",
+    "recovery_test.go",
+    "binding/validate_test.go",
+    "tree.go",
+    "render/json.go",
+    "binding/binding_test.go",
+    "gin_test.go",
+    "utils_test.go",
+    "routergroup.go",
+    "logger.go",
+    "render/html.go",
+    "debug.go"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 67904,
+   "calls": 92,
+   "failedBatches": 0,
+   "inputTokens": 18855,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-7149009a84",
+   "task": "Fixed some bug in realtime-advanced demo",
+   "gold": [
+    "examples/realtime-advanced/main.go",
+    "examples/realtime-advanced/resources/static/realtime.js"
+   ],
+   "candidates": 57,
+   "ranked": [
+    "examples/realtime-advanced/limit.go",
+    "examples/realtime-advanced/stats.go",
+    "examples/realtime-advanced/resources/static/realtime.js",
+    "examples/realtime-advanced/rooms.go",
+    "examples/realtime-advanced/main.go",
+    "gin.go",
+    "context_test.go",
+    "examples/realtime-advanced/resources/static/epoch.min.js",
+    "render/render_test.go",
+    "routes_test.go",
+    "examples/realtime-chat/rooms.go",
+    "gin_test.go",
+    "tree_test.go",
+    "examples/realtime-advanced/resources/static/prismjs.min.js",
+    "examples/realtime-chat/template.go",
+    "examples/realtime-chat/main.go",
+    "routergroup_test.go",
+    "render/render.go",
+    "binding/form_mapping.go",
+    "context.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 61198,
+   "calls": 86,
+   "failedBatches": 0,
+   "inputTokens": 15521,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-9221381443",
+   "task": "remove a unused type SecureJSONPrefix",
+   "gold": [
+    "render/json.go"
+   ],
+   "candidates": 83,
+   "ranked": [
+    "render/json.go",
+    "gin.go",
+    "context_test.go",
+    "render/render_test.go",
+    "context.go",
+    "render/render.go",
+    "binding/binding_test.go",
+    "routes_test.go",
+    "path_test.go",
+    "binding/binding_nomsgpack.go",
+    "routergroup.go",
+    "errors_test.go",
+    "binding/json.go",
+    "ginS/gins.go",
+    "gin_integration_test.go",
+    "binding/binding.go",
+    "testdata/protoexample/test.pb.go",
+    "binding/form_mapping.go",
+    "binding/json_test.go",
+    "render/render_msgpack_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 68695,
+   "calls": 93,
+   "failedBatches": 0,
+   "inputTokens": 18513,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-d8fb18c33b",
+   "task": "Fix case of GitHub",
+   "gold": [
+    "routergroup.go"
+   ],
+   "candidates": 110,
+   "ranked": [
+    "githubapi_test.go",
+    "tree_test.go",
+    "context.go",
+    "binding/form_mapping.go",
+    "binding/binding.go",
+    "gin.go",
+    "logger.go",
+    "routergroup_test.go",
+    "path.go",
+    "examples/realtime-advanced/resources/static/epoch.min.js",
+    "mode.go",
+    "binding/binding_test.go",
+    "examples/realtime-advanced/routes.go",
+    "routes_test.go",
+    "errors.go",
+    "tree.go",
+    "context_17_test.go",
+    "middleware_test.go",
+    "examples/grpc/pb/helloworld.proto",
+    "context_17.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 0
+   },
+   "ms": 63970,
+   "calls": 90,
+   "failedBatches": 0,
+   "inputTokens": 16552,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-6634f04d9b",
+   "task": "(feature)add http method log-color,like http response status code",
+   "gold": [
+    "logger.go"
+   ],
+   "candidates": 17,
+   "ranked": [
+    "logger.go",
+    "response_writer.go",
+    "context.go",
+    "gin_test.go",
+    "gin.go",
+    "render/render.go",
+    "recovery.go",
+    "recovery_test.go",
+    "context_test.go",
+    "binding/binding.go",
+    "examples/app-engine/hello.go",
+    "auth_test.go",
+    "deprecated.go",
+    "auth.go",
+    "mode.go",
+    "examples/example_basic.go",
+    "utils.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 24945,
+   "calls": 34,
+   "failedBatches": 0,
+   "inputTokens": 8228,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-e31cbdf241",
+   "task": "show query string in logger. (#999) close #988",
+   "gold": [
+    "logger.go",
+    "logger_test.go"
+   ],
+   "candidates": 77,
+   "ranked": [
+    "recovery.go",
+    "examples/realtime-advanced/routes.go",
+    "context.go",
+    "context_test.go",
+    "logger.go",
+    "mode.go",
+    "gin.go",
+    "tree_test.go",
+    "examples/realtime-advanced/resources/static/epoch.min.js",
+    "response_writer.go",
+    "examples/realtime-chat/rooms.go",
+    "response_writer_test.go",
+    "logger_test.go",
+    "benchmarks_test.go",
+    "examples/realtime-advanced/rooms.go",
+    "examples/realtime-advanced/resources/static/realtime.js",
+    "examples/realtime-advanced/resources/static/prismjs.min.js",
+    "gin_integration_test.go",
+    "render/redirect.go",
+    "ginS/gins.go"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 86420,
+   "calls": 94,
+   "failedBatches": 0,
+   "inputTokens": 18966,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-440eb14ab8",
+   "task": "replace regex with custom functions in redirectTrailingSlash",
+   "gold": [
+    "gin.go",
+    "path.go",
+    "path_test.go"
+   ],
+   "candidates": 95,
+   "ranked": [
+    "gin.go",
+    "path.go",
+    "routes_test.go",
+    "render/render.go",
+    "tree_test.go",
+    "render/render_test.go",
+    "recovery.go",
+    "render/redirect.go",
+    "binding/form_mapping.go",
+    "path_test.go",
+    "routergroup.go",
+    "binding/form_mapping_test.go",
+    "gin_test.go",
+    "binding/validate_test.go",
+    "middleware_test.go",
+    "binding/binding_test.go",
+    "binding/json_test.go",
+    "tree.go",
+    "render/json.go",
+    "logger_test.go"
+   ],
+   "recall": {
+    "5": 0.6666666666666666,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 71595,
+   "calls": 91,
+   "failedBatches": 0,
+   "inputTokens": 18089,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-f1da692fbd",
+   "task": "RouterGroup.Handle regular match optimization of http method",
+   "gold": [
+    "routergroup.go"
+   ],
+   "candidates": 84,
+   "ranked": [
+    "routergroup.go",
+    "routergroup_test.go",
+    "gin.go",
+    "ginS/gins.go",
+    "gin_integration_test.go",
+    "routes_test.go",
+    "gin_test.go",
+    "githubapi_test.go",
+    "middleware_test.go",
+    "binding/json.go",
+    "debug.go",
+    "benchmarks_test.go",
+    "context_test.go",
+    "debug_test.go",
+    "utils_test.go",
+    "binding/binding.go",
+    "context.go",
+    "binding/binding_test.go",
+    "logger_test.go",
+    "recovery_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 82956,
+   "calls": 97,
+   "failedBatches": 0,
+   "inputTokens": 20214,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-59c836e1fa",
+   "task": "Only emit a warning is the status code changes",
+   "gold": [
+    "response_writer.go"
+   ],
+   "candidates": 46,
+   "ranked": [
+    "response_writer.go",
+    "debug.go",
+    "gin.go",
+    "response_writer_test.go",
+    "logger.go",
+    "routes_test.go",
+    "context.go",
+    "render/redirect.go",
+    "middleware_test.go",
+    "context_test.go",
+    "recovery.go",
+    "tree_test.go",
+    "path.go",
+    "auth.go",
+    "recovery_test.go",
+    "tree.go",
+    "examples/example_basic.go",
+    "githubapi_test.go",
+    "routergroup.go",
+    "debug_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 63680,
+   "calls": 79,
+   "failedBatches": 0,
+   "inputTokens": 15947,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-a712f77d7a",
+   "task": "Fix some golint warnings in gin.go",
+   "gold": [
+    "gin.go"
+   ],
+   "candidates": 87,
+   "ranked": [
+    "tree_test.go",
+    "render/render_test.go",
+    "gin.go",
+    "errors_test.go",
+    "context_test.go",
+    "routes_test.go",
+    "context.go",
+    "debug.go",
+    "examples/custom-validation/server.go",
+    "examples/http2/main.go",
+    "debug_test.go",
+    "routergroup_test.go",
+    "mode.go",
+    "fs.go",
+    "test_helpers.go",
+    "tree.go",
+    "logger.go",
+    "auth.go",
+    "ginS/gins.go",
+    "recovery_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 76420,
+   "calls": 96,
+   "failedBatches": 0,
+   "inputTokens": 18296,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-4867ff9634",
+   "task": "fix Context.Next() - recheck len of handlers every iteration",
+   "gold": [
+    "context.go",
+    "context_test.go",
+    "gin_test.go",
+    "routes_test.go"
+   ],
+   "candidates": 109,
+   "ranked": [
+    "gin.go",
+    "tree_test.go",
+    "ginS/gins.go",
+    "middleware_test.go",
+    "context.go",
+    "gin_test.go",
+    "context_test.go",
+    "debug.go",
+    "routergroup_test.go",
+    "routergroup.go",
+    "recovery.go",
+    "tree.go",
+    "logger.go",
+    "benchmarks_test.go",
+    "routes_test.go",
+    "path.go",
+    "auth.go",
+    "githubapi_test.go",
+    "debug_test.go",
+    "examples/auto-tls/example1/main.go"
+   ],
+   "recall": {
+    "5": 0.25,
+    "10": 0.75,
+    "20": 1
+   },
+   "ms": 75203,
+   "calls": 97,
+   "failedBatches": 0,
+   "inputTokens": 19788,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-a210eea3bd",
+   "task": "improve panic information when a catch-all wildcard conflict occurs",
+   "gold": [
+    "tree.go",
+    "tree_test.go"
+   ],
+   "candidates": 107,
+   "ranked": [
+    "tree_test.go",
+    "utils.go",
+    "render/redirect.go",
+    "context.go",
+    "examples/realtime-advanced/resources/static/prismjs.min.js",
+    "context_test.go",
+    "routergroup.go",
+    "render/render_test.go",
+    "binding/binding.go",
+    "examples/realtime-advanced/resources/static/epoch.min.js",
+    "examples/assets-in-binary/main.go",
+    "recovery_test.go",
+    "recovery.go",
+    "errors.go",
+    "logger.go",
+    "render/html.go",
+    "examples/struct-lvl-validations/server.go",
+    "tree.go",
+    "mode.go",
+    "gin.go"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 67714,
+   "calls": 93,
+   "failedBatches": 0,
+   "inputTokens": 17966,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-4e86b17e73",
+   "task": "Set socket to recieve writes",
+   "gold": [
+    "gin.go"
+   ],
+   "candidates": 109,
+   "ranked": [
+    "debug.go",
+    "ginS/gins.go",
+    "gin_integration_test.go",
+    "debug_test.go",
+    "context.go",
+    "context_test.go",
+    "render/html.go",
+    "recovery.go",
+    "logger.go",
+    "render/reader.go",
+    "binding/form_mapping.go",
+    "examples/grpc/gin/main.go",
+    "binding/binding.go",
+    "examples/realtime-advanced/resources/static/epoch.min.js",
+    "examples/new_relic/main.go",
+    "examples/http2/main.go",
+    "render/json_17.go",
+    "render/render.go",
+    "render/redirect.go",
+    "gin.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 0,
+    "20": 1
+   },
+   "ms": 72589,
+   "calls": 95,
+   "failedBatches": 0,
+   "inputTokens": 19055,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-4b54b86272",
+   "task": "fix composite literal uses unkeyed fields warnings, #1050",
+   "gold": [
+    "gin.go"
+   ],
+   "candidates": 83,
+   "ranked": [
+    "examples/upload-file/single/main.go",
+    "examples/upload-file/multiple/main.go",
+    "examples/app-engine/hello.go",
+    "gin.go",
+    "context.go",
+    "examples/basic/main.go",
+    "tree_test.go",
+    "binding/binding.go",
+    "binding/default_validator.go",
+    "binding/form_mapping.go",
+    "binding/binding_test.go",
+    "benchmarks_test.go",
+    "binding/example/test.pb.go",
+    "auth.go",
+    "binding/json.go",
+    "binding/msgpack.go",
+    "auth_test.go",
+    "tree.go",
+    "binding/validate_test.go",
+    "examples/realtime-advanced/rooms.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 67954,
+   "calls": 92,
+   "failedBatches": 0,
+   "inputTokens": 17677,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-bfc8ca285e",
+   "task": "add trustedproxies and remoteIP",
+   "gold": [
+    "context.go",
+    "context_test.go",
+    "gin.go",
+    "gin_integration_test.go",
+    "gin_test.go"
+   ],
+   "candidates": 85,
+   "ranked": [
+    "context_test.go",
+    "gin.go",
+    "context.go",
+    "tree_test.go",
+    "routergroup.go",
+    "binding/binding_test.go",
+    "gin_test.go",
+    "binding/binding_msgpack_test.go",
+    "ginS/gins.go",
+    "logger_test.go",
+    "logger.go",
+    "routes_test.go",
+    "binding/protobuf.go",
+    "gin_integration_test.go",
+    "binding/binding.go",
+    "debug_test.go",
+    "render/html.go",
+    "test_helpers.go",
+    "binding/default_validator.go",
+    "binding/multipart_form_mapping_test.go"
+   ],
+   "recall": {
+    "5": 0.6,
+    "10": 0.8,
+    "20": 1
+   },
+   "ms": 67082,
+   "calls": 94,
+   "failedBatches": 0,
+   "inputTokens": 18717,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-c65e5efc9a",
+   "task": "Expose HandlerFunc in RouteInfos",
+   "gold": [
+    "gin.go"
+   ],
+   "candidates": 107,
+   "ranked": [
+    "tree_test.go",
+    "gin_test.go",
+    "gin.go",
+    "debug.go",
+    "ginS/gins.go",
+    "routergroup.go",
+    "routes_test.go",
+    "examples/custom-validation/server.go",
+    "debug_test.go",
+    "benchmarks_test.go",
+    "routergroup_test.go",
+    "middleware_test.go",
+    "examples/auto-tls/example1/main.go",
+    "examples/auto-tls/example2/main.go",
+    "examples/basic/main_test.go",
+    "githubapi_test.go",
+    "context_test.go",
+    "examples/multiple-service/main.go",
+    "utils.go",
+    "recovery_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 65343,
+   "calls": 96,
+   "failedBatches": 0,
+   "inputTokens": 18110,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-2abbc4ad1d",
+   "task": "Setting response headers before calling WriteHeader in context.String()",
+   "gold": [
+    "gin.go"
+   ],
+   "candidates": 6,
+   "ranked": [
+    "gin.go",
+    "auth.go",
+    "recovery.go",
+    "validation.go",
+    "examples/example_basic.go",
+    "logger.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 4362,
+   "calls": 12,
+   "failedBatches": 0,
+   "inputTokens": 2830,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-9b7e7bdce6",
+   "task": "Add tests for context.Stream",
+   "gold": [
+    "context_test.go",
+    "test_helpers.go"
+   ],
+   "candidates": 101,
+   "ranked": [
+    "context_test.go",
+    "examples/realtime-advanced/routes.go",
+    "tree_test.go",
+    "examples/realtime-advanced/resources/static/realtime.js",
+    "routes_test.go",
+    "examples/realtime-chat/template.go",
+    "examples/realtime-chat/main.go",
+    "context.go",
+    "path_test.go",
+    "gin_test.go",
+    "examples/realtime-advanced/main.go",
+    "binding/binding_test.go",
+    "examples/realtime-advanced/resources/static/epoch.min.js",
+    "render/render_test.go",
+    "gin.go",
+    "logger_test.go",
+    "binding/validate_test.go",
+    "test_helpers.go",
+    "routergroup.go",
+    "examples/realtime-advanced/resources/static/prismjs.min.js"
+   ],
+   "recall": {
+    "5": 0.5,
+    "10": 0.5,
+    "20": 1
+   },
+   "ms": 26450,
+   "calls": 92,
+   "failedBatches": 0,
+   "inputTokens": 18348,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-e8fc0c74b4",
+   "task": "gin/context.go: Minor change in Abort comment",
+   "gold": [
+    "context.go"
+   ],
+   "candidates": 19,
+   "ranked": [
+    "logger.go",
+    "auth.go",
+    "context_test.go",
+    "recovery_test.go",
+    "context.go",
+    "gin.go",
+    "gin_test.go",
+    "examples/example_basic.go",
+    "routergroup.go",
+    "examples/pluggable_renderer/example_pongo2.go",
+    "deprecated.go",
+    "auth_test.go",
+    "mode.go",
+    "recovery.go",
+    "render/render.go",
+    "examples/app-engine/hello.go",
+    "binding/binding.go",
+    "response_writer.go",
+    "utils.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 13014,
+   "calls": 38,
+   "failedBatches": 0,
+   "inputTokens": 9267,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-b3f322c5fc",
+   "task": "Fixes bug when status code is negative",
+   "gold": [
+    "response_writer.go"
+   ],
+   "candidates": 17,
+   "ranked": [
+    "gin_test.go",
+    "logger.go",
+    "response_writer.go",
+    "gin.go",
+    "auth.go",
+    "context_test.go",
+    "context.go",
+    "recovery.go",
+    "render/render.go",
+    "deprecated.go",
+    "mode.go",
+    "binding/binding.go",
+    "examples/app-engine/hello.go",
+    "auth_test.go",
+    "examples/example_basic.go",
+    "utils.go",
+    "recovery_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 11781,
+   "calls": 34,
+   "failedBatches": 0,
+   "inputTokens": 8120,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-87811a97bd",
+   "task": "the trusted proxies should support ipv6 address by default",
+   "gold": [
+    "gin.go"
+   ],
+   "candidates": 92,
+   "ranked": [
+    "gin.go",
+    "context_test.go",
+    "gin_integration_test.go",
+    "gin_test.go",
+    "debug.go",
+    "binding/binding_test.go",
+    "debug_test.go",
+    "logger_test.go",
+    "binding/binding.go",
+    "response_writer_test.go",
+    "binding/default_validator.go",
+    "mode.go",
+    "routergroup.go",
+    "binding/form_mapping_test.go",
+    "binding/form_mapping_benchmark_test.go",
+    "githubapi_test.go",
+    "context.go",
+    "utils.go",
+    "binding/binding_nomsgpack.go",
+    "binding/validate_test.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 25687,
+   "calls": 92,
+   "failedBatches": 0,
+   "inputTokens": 18617,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-3fce8efcc6",
+   "task": "Renames LoggerInFile() to LoggerWithFile()",
+   "gold": [
+    "logger.go"
+   ],
+   "candidates": 28,
+   "ranked": [
+    "logger.go",
+    "gin.go",
+    "context_test.go",
+    "binding/form_mapping.go",
+    "deprecated.go",
+    "context.go",
+    "examples/app-engine/hello.go",
+    "errors.go",
+    "auth_test.go",
+    "response_writer.go",
+    "auth.go",
+    "routergroup.go",
+    "render/html_debug.go",
+    "recovery.go",
+    "utils.go",
+    "binding/binding.go",
+    "debug.go",
+    "recovery_test.go",
+    "binding/xml.go",
+    "examples/pluggable_renderer/example_pongo2.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 15159,
+   "calls": 53,
+   "failedBatches": 0,
+   "inputTokens": 11731,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-a235e0fb32",
+   "task": "Add HTML POST Form support in Bind",
+   "gold": [
+    "gin.go"
+   ],
+   "candidates": 9,
+   "ranked": [
+    "gin.go",
+    "binding/binding.go",
+    "examples/example_basic.go",
+    "auth.go",
+    "deprecated.go",
+    "logger.go",
+    "examples/app-engine/hello.go",
+    "response_writer.go",
+    "recovery.go"
+   ],
+   "recall": {
+    "5": 1,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 5257,
+   "calls": 18,
+   "failedBatches": 0,
+   "inputTokens": 4193,
+   "costUsd": 0
+  },
+  {
+   "id": "gin-dfc25f91e0",
+   "task": "Add short func with named return",
+   "gold": [
+    "context.go"
+   ],
+   "candidates": 86,
+   "ranked": [
+    "path_test.go",
+    "binding/binding_test.go",
+    "tree_test.go",
+    "context_test.go",
+    "gin_test.go",
+    "routes_test.go",
+    "binding/binding_msgpack_test.go",
+    "binding/protobuf.go",
+    "path.go",
+    "context.go",
+    "ginS/gins.go",
+    "debug_test.go",
+    "gin.go",
+    "recovery.go",
+    "gin_integration_test.go",
+    "binding/form_mapping.go",
+    "routergroup.go",
+    "tree.go",
+    "logger.go",
+    "render/json.go"
+   ],
+   "recall": {
+    "5": 0,
+    "10": 1,
+    "20": 1
+   },
+   "ms": 24415,
+   "calls": 93,
+   "failedBatches": 0,
+   "inputTokens": 18832,
+   "costUsd": 0
+  }
+ ]
+}
