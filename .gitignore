@@ -4,3 +4,4 @@ dist/
 *.log
 site/data/
 bench/.cache/
+.claude/worktrees/

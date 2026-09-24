@@ -1,0 +1,45 @@
+{
+ "id": "hono-034bf6db60",
+ "repo": "hono",
+ "arm": "code",
+ "model": "opus",
+ "request": "The blog example's posts are stored only in memory and disappear when the worker restarts. Switch it to use persistent key-value storage instead, so posts survive across requests, and make sure the list/create/read/update/delete operations still work with the async storage lookups.",
+ "gold": [
+  "example/blog/src/controller.test.ts",
+  "example/blog/src/controller.ts",
+  "example/blog/src/index.ts",
+  "example/blog/src/model.ts"
+ ],
+ "handed": [
+  "example/blog/src/model.ts",
+  "example/blog/src/controller.ts",
+  "example/jsx-ssr/src/index.js",
+  "example/blog/src/index.ts",
+  "example/blog/src/controller.test.ts",
+  "example/durable-objects/src/counter.ts",
+  "jest.config.js",
+  "example/basic/index.js"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "example/blog/README.md",
+  "example/blog/jest.config.js",
+  "example/blog/src/controller.ts",
+  "example/blog/src/model.ts",
+  "example/blog/wrangler.toml"
+ ],
+ "goldEdited": 0.5,
+ "extraEdits": 3,
+ "turns": 12,
+ "tools": {
+  "Bash": 4,
+  "Write": 2,
+  "Edit": 5
+ },
+ "inputTokens": 14643,
+ "outputTokens": 4248,
+ "cacheReadTokens": 155582,
+ "costUsd": 0.23316439999999997,
+ "ms": 50397,
+ "isError": false
+}

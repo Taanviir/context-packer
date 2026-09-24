@@ -1,0 +1,39 @@
+{
+ "id": "prometheus-192e665317",
+ "repo": "prometheus",
+ "arm": "code",
+ "model": "opus",
+ "request": "Can rules be parsed directly from raw content instead of requiring a file path, so callers who already have the rules in memory don't need to write them to disk first?",
+ "gold": [
+  "pkg/rulefmt/rulefmt.go"
+ ],
+ "handed": [
+  "pkg/rulefmt/rulefmt.go",
+  "web/web.go",
+  "vendor/github.com/aws/aws-sdk-go/aws/signer/v4/v4.go",
+  "vendor/golang.org/x/net/http2/server.go",
+  "vendor/github.com/go-ini/ini/ini.go",
+  "rules/manager.go",
+  "vendor/k8s.io/client-go/rest/request.go",
+  "vendor/google.golang.org/grpc/codes/codes.go"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "pkg/rulefmt/rulefmt.go"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 0,
+ "turns": 6,
+ "tools": {
+  "Grep": 1,
+  "Read": 1,
+  "Edit": 1,
+  "Bash": 2
+ },
+ "inputTokens": 10552,
+ "outputTokens": 1188,
+ "cacheReadTokens": 99602,
+ "costUsd": 0.1280564,
+ "ms": 24251,
+ "isError": false
+}

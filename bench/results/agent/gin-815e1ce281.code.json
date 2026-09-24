@@ -1,0 +1,38 @@
+{
+ "id": "gin-815e1ce281",
+ "repo": "gin",
+ "arm": "code",
+ "model": "opus",
+ "request": "Calling GetQuery (or Query) on a context with no request panics because it tries to read the URL off a nil request. It should just return an empty value instead of crashing.",
+ "gold": [
+  "context.go",
+  "context_test.go"
+ ],
+ "handed": [
+  "context.go",
+  "tree.go",
+  "gin.go",
+  "binding/query.go",
+  "gin_integration_test.go",
+  "routergroup.go",
+  "context_test.go",
+  "ginS/gins.go"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "context.go"
+ ],
+ "goldEdited": 0.5,
+ "extraEdits": 0,
+ "turns": 3,
+ "tools": {
+  "Grep": 1,
+  "Edit": 1
+ },
+ "inputTokens": 8790,
+ "outputTokens": 622,
+ "cacheReadTokens": 54023,
+ "costUsd": 0.0935406,
+ "ms": 14772,
+ "isError": false
+}

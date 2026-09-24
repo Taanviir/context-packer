@@ -1,0 +1,38 @@
+{
+ "id": "prometheus-65b4696b88",
+ "repo": "prometheus",
+ "arm": "code",
+ "model": "opus",
+ "request": "The test evaluator is printing debug output (result vectors and their metrics/timestamps/values) to stdout on failure. Please remove that leftover debug print so test failures don't clutter the output.",
+ "gold": [
+  "promql/test.go"
+ ],
+ "handed": [
+  "scrape/target_test.go",
+  "cmd/promtool/unittest.go",
+  "promql/test.go",
+  "cmd/prometheus/main_test.go",
+  "cmd/promtool/main.go",
+  "rules/manager_test.go",
+  "storage/remote/queue_manager_test.go",
+  "scrape/scrape.go"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "promql/test.go"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 0,
+ "turns": 4,
+ "tools": {
+  "Grep": 1,
+  "Read": 1,
+  "Edit": 1
+ },
+ "inputTokens": 8323,
+ "outputTokens": 651,
+ "cacheReadTokens": 73689,
+ "costUsd": 0.0943098,
+ "ms": 16313,
+ "isError": false
+}

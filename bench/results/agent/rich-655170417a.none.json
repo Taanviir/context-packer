@@ -1,0 +1,29 @@
+{
+ "id": "rich-655170417a",
+ "repo": "rich",
+ "arm": "none",
+ "model": "opus",
+ "request": "When style parsing gets an empty string, it should be treated the same as \"none\" and return the null style instead of erroring or producing something unexpected.",
+ "gold": [
+  "rich/style.py"
+ ],
+ "handed": [],
+ "hookSeen": false,
+ "edited": [
+  "rich/style.py"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 0,
+ "turns": 4,
+ "tools": {
+  "Grep": 1,
+  "Read": 1,
+  "Edit": 1
+ },
+ "inputTokens": 5440,
+ "outputTokens": 590,
+ "cacheReadTokens": 65207,
+ "costUsd": 0.0683294,
+ "ms": 13387,
+ "isError": false
+}

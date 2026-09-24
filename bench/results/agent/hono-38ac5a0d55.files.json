@@ -1,0 +1,45 @@
+{
+ "id": "hono-38ac5a0d55",
+ "repo": "hono",
+ "arm": "files",
+ "model": "opus",
+ "request": "Redirecting to a URL that contains non-ASCII characters double-encodes it, so the final Location header ends up wrong. Only multibyte content should get encoded \u2014 a URL that's already plain ASCII (including query strings with percent-encoded parts) should be left exactly as passed in.",
+ "gold": [
+  "src/context.test.ts",
+  "src/context.ts",
+  "src/utils/url.test.ts",
+  "src/utils/url.ts"
+ ],
+ "handed": [
+  "src/utils/url.ts",
+  "src/context.ts",
+  "src/utils/url.test.ts",
+  "src/utils/cookie.ts",
+  "runtime-tests/lambda/index.test.ts",
+  "src/context.test.ts",
+  "benchmarks/utils/src/get-path.ts",
+  "benchmarks/http-server/benchmark.ts"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "src/context.test.ts",
+  "src/context.ts",
+  "src/utils/url.test.ts",
+  "src/utils/url.ts"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 0,
+ "turns": 14,
+ "tools": {
+  "Grep": 2,
+  "Read": 3,
+  "Edit": 6,
+  "Bash": 2
+ },
+ "inputTokens": 12613,
+ "outputTokens": 4838,
+ "cacheReadTokens": 163249,
+ "costUsd": 0.2302498,
+ "ms": 53756,
+ "isError": false
+}

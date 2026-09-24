@@ -1,0 +1,33 @@
+{
+ "id": "gin-60f66918f8",
+ "repo": "gin",
+ "arm": "none",
+ "model": "opus",
+ "request": "Colored output from go-colorable breaks Gin when running on App Engine. Please default to plain os.Stdout/os.Stderr for the log writers instead, and just document how to opt into colorable output on Windows if someone wants it.",
+ "gold": [
+  "mode.go"
+ ],
+ "handed": [],
+ "hookSeen": false,
+ "edited": [
+  "Godeps/Godeps.json",
+  "README.md",
+  "mode.go",
+  "recovery.go"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 3,
+ "turns": 17,
+ "tools": {
+  "Grep": 4,
+  "Read": 4,
+  "Edit": 5,
+  "Bash": 3
+ },
+ "inputTokens": 11468,
+ "outputTokens": 3210,
+ "cacheReadTokens": 175675,
+ "costUsd": 0.19100700000000004,
+ "ms": 38494,
+ "isError": false
+}
