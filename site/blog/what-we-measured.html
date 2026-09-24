@@ -62,7 +62,7 @@
           <p>The reason is in the pool size. Up to 120 files get a full-source read, and on repositories of 70 to 1,200 files, that pool already holds most of the answers, chosen partly by BM25. The sketch pass only has to add a few files to the pool, and a path plus a file name often does that as well as a list of declarations. So the per-language sketcher didn't ship. It stays in the benchmark folder so the result can be reproduced. Sketches may matter on much larger repositories, but I didn't measure that.</p>
 
           <h2>The local model</h2>
-          <p>Laya is a small model that runs on your own CPU, so no code leaves the machine. It scores a 60-file keyword shortlist, one short excerpt at a time. On gin and httpx it found 81% of needed files in its top 10, where keyword search found 87%: about 6 fewer per 100, very likely between 2 and 11 fewer. Each search took 30 to 60 seconds of CPU.</p>
+          <p>Laya is a small model that runs on your own CPU, so no code leaves the machine. It scores a 60-file keyword shortlist, one short excerpt at a time. On gin and httpx it found 81% of needed files in its top 10, where keyword search found 87%: about 6 fewer per 100, very likely between 2 and 10 fewer. Each search took 27 seconds on httpx and 54 on gin, all of it CPU.</p>
           <p>So Laya is only worth it when code must not leave the machine, and even then keyword search, which also runs locally, did better on these tests.</p>
 
           <h2>Faster keyword search, same answers</h2>
