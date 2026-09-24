@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Run Explorer</title>
+<title>Run explorer · context-packer</title>
 <meta name="description" content="Every benchmark test, and where each tool ranked the files the change needed." />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -69,6 +69,7 @@
   .control label, .control .label { font: 500 12px/1.4 var(--font-mono); letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
   select, input[type="search"] { font: 400 14px/1.2 var(--font-body); color: var(--ink); background: var(--paper); border: 1px solid var(--rule-strong); border-radius: 6px; height: 34px; padding: 0 10px; }
   input[type="search"] { width: min(260px, 100%); }
+  @media (max-width: 720px) { select, input[type="search"] { font-size: 16px; height: 40px; } }
   .control.grow { flex: 1 1 200px; }
   .control.grow input { width: 100%; }
   .seg { display: inline-flex; border: 1px solid var(--rule-strong); border-radius: 6px; overflow: hidden; height: 34px; }
@@ -141,13 +142,13 @@
 <div class="page">
   <div class="top">
     <a class="wordmark" href="./">context<span>·</span>packer</a>
-    <nav><a href="findings.html">Findings</a><a href="blog/">Blog</a><a href="https://github.com/Taanviir/context-packer">GitHub</a></nav>
+    <nav aria-label="Site"><a href="findings.html">Findings</a><a href="blog/">Blog</a><a href="https://github.com/Taanviir/context-packer">GitHub</a></nav>
   </div>
 
   <main id="main">
   <header class="intro">
     <span class="mono" id="generated">Benchmark runs</span>
-    <h1>Run Explorer</h1>
+    <h1>Run explorer</h1>
     <p>Each row is one test: a real past change, and the files it needed. The squares show where each tool ranked those files: 20 squares for its top 20 picks, a filled square where it picked a needed file. More filled squares, further left, is better. Open a row to see both lists in full.</p>
   </header>
 
@@ -157,27 +158,27 @@
       <select id="repo"></select>
     </div>
     <div class="control">
-      <span class="label" id="split-label">Split</span>
+      <span class="label" id="split-label">Tests</span>
       <div class="seg" role="group" aria-labelledby="split-label">
-        <button type="button" data-split="test" aria-pressed="true">Test</button>
-        <button type="button" data-split="dev" aria-pressed="false">Dev</button>
+        <button type="button" data-split="test" aria-pressed="true">Reported</button>
+        <button type="button" data-split="dev" aria-pressed="false">Tuning</button>
       </div>
     </div>
     <div class="control">
-      <label for="a">Compare tool</label>
+      <label for="a">First tool</label>
       <select id="a"></select>
     </div>
     <span class="vs">vs</span>
     <div class="control">
-      <label for="b">With tool</label>
+      <label for="b">Second tool</label>
       <select id="b"></select>
     </div>
     <div class="control">
-      <label for="sort">Order</label>
+      <label for="sort">Show first</label>
       <select id="sort">
-        <option value="gain">Second tool did better first</option>
-        <option value="loss">First tool did better first</option>
-        <option value="missed">Most needed files missed first</option>
+        <option value="gain">Second tool did better</option>
+        <option value="loss">First tool did better</option>
+        <option value="missed">Most needed files missed</option>
         <option value="task">Task order</option>
       </select>
     </div>
@@ -192,14 +193,15 @@
   <ol class="tasks" id="tasks"></ol>
   <div class="more" id="more" hidden><button type="button">Show all tasks</button></div>
   </main>
-  <footer>Split "Test" holds the 30 tests per project reported on the findings page; "Dev" holds the 10 per project used to make decisions. Times and costs are per test. <a href="findings.html">How this was measured</a>.</footer>
+  <footer>"Reported" holds the 30 tests per project shown on the findings page. "Tuning" holds the 10 per project used to make decisions. Times and costs are per test. <a href="findings.html">How this was measured</a>.</footer>
 </div>
 
 <script>
 (() => {
-  const LABEL = { keywords: "Keywords", jev: "Jev", "jev-lang": "Jev, per-language sketches", laya: "Laya" };
+  const LABEL = { keywords: "Keywords", jev: "Jev", "jev-lang": "Jev, per-language summaries", laya: "Laya" };
   const ORDER = ["keywords", "jev", "laya", "jev-lang"];
   const PAGE = 60;
+  const SPLIT = { test: "reported", dev: "tuning" };
   const $ = (id) => document.getElementById(id);
   const state = { repo: "all", split: "test", a: "keywords", b: "jev", sort: "gain", q: "", open: location.hash.slice(1) || null, showAll: false };
   let data;
@@ -334,10 +336,10 @@
     const sha = p.a.id.split("-").pop();
     const cost = (run, v) => (v.startsWith("jev") ? ` · $${run.costUsd.toFixed(4)}` : "");
     facts.innerHTML = `<span><a href="${p.url}/commit/${sha}">Commit ${sha}</a></span>
-      <span>Candidates <b>${p.a.candidates}</b></span>
+      <span>Files ranked <b>${p.a.candidates}</b></span>
       <span>${LABEL[state.a]} <b>${time(p.a.ms)}${cost(p.a, state.a)}</b></span>
       <span>${LABEL[state.b]} <b>${time(p.b.ms)}${cost(p.b, state.b)}</b></span>` +
-      (p.b.failedBatches || p.a.failedBatches ? `<span>Failed batches <b>${p.a.failedBatches} · ${p.b.failedBatches}</b></span>` : "");
+      (p.b.failedBatches || p.a.failedBatches ? `<span>Failed requests <b>${p.a.failedBatches} · ${p.b.failedBatches}</b></span>` : "");
     box.append(goldCol, list(LABEL[state.a], state.a, p.a), list(LABEL[state.b], state.b, p.b), facts);
     return box;
   }
@@ -353,8 +355,8 @@
     const fig = (v, k) => { const d = document.createElement("div"); d.innerHTML = `<span class="v"></span><span class="k"></span>`; d.children[0].textContent = v; d.children[1].textContent = k; summary.append(d); };
     fig(String(all.length), all.length === 1 ? "test with both tools" : "tests with both tools");
     const share = (xs) => `${Math.round(mean(xs) * 100)}%`;
-    fig(share(all.map((p) => p.a.recall["10"])), `of needed files in ${short(state.a)}'s top 10`);
-    fig(share(all.map((p) => p.b.recall["10"])), `of needed files in ${short(state.b)}'s top 10`);
+    fig(share(all.map((p) => p.a.recall["10"])), `of needed files in the top 10 (${short(state.a)})`);
+    fig(share(all.map((p) => p.b.recall["10"])), `of needed files in the top 10 (${short(state.b)})`);
     fig(`${better} · ${all.length - better - worse} · ${worse}`, `tests where ${short(state.b)} found more · same · fewer`);
     fig(bRuns.length ? time(Math.round(mean(bRuns.map((r) => r.ms)))) : "—", `${short(state.b)}'s average time per test`);
 
@@ -375,7 +377,7 @@
     if (!shown.length) {
       const li = document.createElement("li");
       li.className = "empty";
-      li.textContent = all.length ? "No task matches that search." : `No ${state.split} tasks have both a ${LABEL[state.a]} and a ${LABEL[state.b]} run. Pick another pair.`;
+      li.textContent = all.length ? "No tests match that search. Clear the search box to see them all." : `No ${SPLIT[state.split]} tests have both a ${LABEL[state.a]} and a ${LABEL[state.b]} run. Pick another pair of tools.`;
       ol.append(li);
     }
     const visible = state.showAll || state.q ? shown : shown.slice(0, PAGE);
@@ -438,7 +440,7 @@
     render();
     if (state.open) document.getElementById(state.open)?.scrollIntoView({ block: "center" });
   }).catch(() => {
-    $("tasks").innerHTML = '<li class="empty">The run data could not be loaded.</li>';
+    $("tasks").innerHTML = '<li class="empty">Unable to load the run data. Reload the page to try again.</li>';
   });
 })();
 </script>
