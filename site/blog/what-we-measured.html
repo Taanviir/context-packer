@@ -74,15 +74,23 @@
             <li>The hook skipped "Stop writing to the SSE stream after the client aborts" as a conversational reply, because it starts with "stop". Only short prompts count as replies now.</li>
           </ul>
 
+          <h2>Realistic requests</h2>
+          <p>Commit subjects are short and sometimes cryptic, so I also rewrote every test change as the request a developer would type, with a language model that saw the change but wasn't allowed to name its files or anything that only appears in the diff. With those requests, keyword search found 75% of needed files in its top 10 and Jev found 91%. The gap grew from 9 to 16 per 100.</p>
+
+          <h2>Does it make Claude Code faster?</h2>
+          <p>This was the question that mattered most, so I tested it directly. Claude Code with Opus made 40 of the test changes three times each: on its own, with the hook giving it Jev's file list, and with the file list plus the most relevant lines of code.</p>
+          <p>The answer, for these changes: no. All three versions took about ten steps, cost about 20 cents and finished in about 40 seconds. With the hook, Claude changed the right files a little more often (80% against 77%) and searched a little less, but every difference was small enough to be luck.</p>
+          <p>The reason is that these changes were easy for Opus. It found the right files with a couple of quick searches, so a list of suggestions had almost nothing to save. It's like handing a map to someone who already knows the neighborhood. A trial run on 10 changes had looked better, with a fifth fewer steps; the full 40 showed that was mostly those 10 changes.</p>
+          <p>So the tool is good at its own job, putting the right files first, but that hasn't yet turned into a faster agent. Where it might: large projects where searching takes many steps, changes that touch many files, and weaker models. Those are the next tests.</p>
+
           <h2>What this doesn't show</h2>
           <ul>
-            <li>Finding the right files isn't finishing the task. This measures whether the right files come first, not whether an agent then makes the right change.</li>
-            <li>Commit subjects are short and sometimes cryptic. Requests to an agent are usually longer, which likely helps both keyword search and Jev.</li>
-            <li>No test with a real agent was run for this release. The budget went to the file-finding tests.</li>
+            <li>The agent test measured steps, cost, time and which files changed, not whether each change was correct.</li>
+            <li>It used one strong model on small changes in projects of up to 1,200 files.</li>
           </ul>
 
           <h2>What it cost</h2>
-          <p>Every Jev variant on both splits, the rejected sketcher included, billed 47.1 million input tokens: about $1.98. Responses are cached by request body, so re-running the published numbers costs nothing. The cache is attached to the release.</p>
+          <p>Every Jev run, the rejected sketcher and the realistic requests included, billed 67.6 million input tokens: about $2.84. The 120 agent runs used about a quarter of a five-hour Claude plan window. Responses are cached by request body, so re-running the published numbers costs nothing. The cache is attached to the release.</p>
           <p class="meta">Method, per-repository intervals and the raw tables are on the <a href="../findings.html">findings page</a>.</p>
         </div>
         </div>
