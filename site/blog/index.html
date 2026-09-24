@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" data-base="..">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog · context-packer</title>
+  <meta name="description" content="Notes on building and measuring context-packer." />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="wordmark" href="../">context<span>·</span>packer</a>
+      <ul class="nav-links">
+        <li><a href="../findings.html">Findings</a></li>
+        <li><a href="./" aria-current="page">Blog</a></li>
+        <li><a href="https://github.com/Taanviir/context-packer">GitHub</a></li>
+      </ul>
+      <div class="nav-end">
+        <button class="kbd-button" type="button" data-palette aria-label="Open command palette"><span class="kbd-label">Search</span><kbd>⌘K</kbd></button>
+        <a class="button" href="../#install">Install</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <h1>Blog</h1>
+        <p class="lede">How the ranking works, and what the measurements showed, including the parts that didn't work.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="wrap">
+        <ul class="posts">
+          <li><time class="mono-label" datetime="2026-09-23">23 Sep 2026</time><div><h2><a href="what-we-measured.html">What 120 held-out commits showed</a></h2><p>Jev beat keyword search on three of four repositories. Per-language sketches didn't help, and a local model didn't beat keywords.</p></div></li>
+          <li><time class="mono-label" datetime="2026-09-23">23 Sep 2026</time><div><h2><a href="how-it-ranks.html">Two passes and a comparison</a></h2><p>Why a decision model re-ranks a shortlist instead of searching, how a hundred files share one request, and why the hook matters more than the tool.</p></div></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <span class="wordmark">context<span>·</span>packer</span>
+      <span>MIT licensed.</span>
+      <nav class="footer-links" aria-label="Footer"><a href="https://github.com/Taanviir/context-packer">GitHub</a><a href="https://www.npmjs.com/package/context-packer">npm</a><a href="../findings.html">Findings</a></nav>
+    </div>
+  </footer>
+  <script type="module" src="../js/site.js"></script>
+</body>
+</html>

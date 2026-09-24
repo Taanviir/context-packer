@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en" data-base=".">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>context-packer</title>
+  <meta name="description" content="Ranks the source files a coding task needs and hands them to your agent before it starts searching. CLI, MCP server and Claude Code hook." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="wordmark" href="./">context<span>·</span>packer</a>
+      <ul class="nav-links">
+        <li><a href="findings.html">Findings</a></li>
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="https://github.com/Taanviir/context-packer">GitHub</a></li>
+      </ul>
+      <div class="nav-end">
+        <button class="kbd-button" type="button" data-palette aria-label="Open command palette"><span class="kbd-label">Search</span><kbd>⌘K</kbd></button>
+        <a class="button" href="#install">Install</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="figure tnum" aria-label="plus 9.1 points"><span aria-hidden="true">+</span><span data-tick="9.1">9.1</span><span class="unit">pts</span></div>
+          <h1>More of the right files in the top ten.</h1>
+          <p class="lede">context-packer ranks the source files a coding task needs and hands them to your agent before it starts searching. It runs as a CLI, an MCP server, or a Claude Code hook.</p>
+          <p class="qualifier">Recall@10 on 120 held-out commits from four open-source repos: 0.69 with keyword search, 0.78 with the Jev pipeline. 95% interval +3.6 to +15.2 points.</p>
+          <div class="hero-actions">
+            <a class="button" href="#install">Install</a>
+            <a class="link-arrow" href="findings.html">Read the findings →</a>
+          </div>
+        </div>
+        <div class="terminal reveal" aria-label="Example run">
+          <div class="terminal-label"><span>This repository · Jev</span><button class="copy" type="button" data-copy='npx -y context-packer pack "Add exponential backoff with jitter to Jev HTTP retries" -p jev -n 3'>Copy</button></div>
+<pre><span class="p">$</span> npx context-packer pack <span class="k">"Add exponential backoff with jitter</span>
+<span class="k">    to Jev HTTP retries"</span> -p jev -n 3
+<span class="dim">Picked 3 of 36 files in 1.9 s.</span>
+<span class="dim">score  path</span>
+0.89   src/jev.ts  <span class="ok">(edit)</span>
+0.33   src/service.ts
+0.30   test/service.test.ts  <span class="dim">(test)</span>
+<span class="dim">9 Jev requests, 65,977 input tokens,</span>
+<span class="dim">about $0.0028.</span></pre>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Supporting numbers">
+      <div class="wrap stats">
+        <div class="stat"><div class="value tnum">0.69 → 0.78</div><p>Recall@10, keywords to Jev, pooled over 120 test tasks.</p></div>
+        <div class="stat"><div class="value tnum">$0.007</div><p>Mean Jev cost per pack on repos of 73 to 1,222 files.</p></div>
+        <div class="stat"><div class="value tnum">2.5 s</div><p>Mean Jev pack time on those repos. Keyword packs took 53 ms.</p></div>
+        <div class="stat"><div class="value tnum">3.5 s</div><p>Keyword pack over 14,004 files of a VS Code checkout, no model.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Three ways to rank</h2>
+          <p>Keywords is the default and needs nothing. Jev is the measured upgrade. Laya keeps everything on your machine.</p>
+        </div>
+        <div class="providers">
+          <article class="provider reveal">
+            <h3><span class="swatch" style="background: var(--color-series-jev)"></span>Jev</h3>
+            <p>TypeSafe's decision model reads a short sketch of every file, then the full source of a 120-file shortlist, and its scores are fused with keyword rank. A final call compares the top ten.</p>
+            <dl><dt>Needs</dt><dd><code>TYPESAFE_API_KEY</code></dd><dt>Cost</dt><dd>about $0.007 a pack</dd><dt>Recall@10</dt><dd class="tnum">0.78 on 120 test tasks</dd></dl>
+          </article>
+          <article class="provider reveal">
+            <h3><span class="swatch" style="background: var(--color-series-keywords)"></span>Keywords</h3>
+            <p>BM25 over paths and full source, with camelCase and snake_case split. No model and no key.</p>
+            <dl><dt>Needs</dt><dd>nothing</dd><dt>Cost</dt><dd>$0</dd><dt>Recall@10</dt><dd class="tnum">0.69 on the same tasks</dd></dl>
+          </article>
+          <article class="provider reveal">
+            <h3><span class="swatch" style="background: var(--color-series-laya)"></span>Laya</h3>
+            <p>A small local model scores a 60-file keyword shortlist, one excerpt per request. Nothing leaves the machine.</p>
+            <dl><dt>Needs</dt><dd>a local Laya server</dd><dt>Cost</dt><dd>$0, about a minute of CPU</dd><dt>Recall@10</dt><dd class="tnum" data-laya-recall>see findings</dd></dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>How a Jev pack works</h2>
+          <p style="color: var(--color-on-graphite-muted)">Jev answers typed questions with calibrated probabilities. It can't write code, but it can judge hundreds of files quickly, so it does the looking and your agent does the editing.</p>
+        </div>
+        <ol class="steps">
+          <li><span class="n">01</span><h3>Collect</h3><p>Tracked and untracked-but-not-ignored source files. Binaries, symlinks and files over 100 KB are skipped.</p></li>
+          <li><span class="n">02</span><h3>Sketch</h3><p>Each file becomes a summary of about 300 tokens: its path, package, declarations and their first doc lines.</p></li>
+          <li><span class="n">03</span><h3>Wide pass</h3><p>Jev reads 60 sketches per call. BM25 ranks the full text at the same time.</p></li>
+          <li><span class="n">04</span><h3>Narrow pass</h3><p>The top 60 from each go into a pool, and Jev reads their source, 6 files per call.</p></li>
+          <li><span class="n">05</span><h3>Fuse and compare</h3><p>Jev's probability and keyword rank count equally. One more call compares the top ten and reorders them.</p></li>
+        </ol>
+        <p style="margin-top: var(--space-xl)"><a href="blog/how-it-ranks.html">Read the long version →</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="install">
+      <div class="wrap split">
+        <div class="section-head" style="margin-bottom: 0">
+          <h2>Install</h2>
+          <p>Node 22 or newer. Without a key, everything runs on keywords.</p>
+          <p style="font-size: var(--text-base)">The hook is the part that changes agent behaviour. Agents tend to trust their own search and skip an offered tool; the hook ranks the project before the agent reads your prompt. It stays silent for short prompts, slash commands, replies like "thanks", and prompts whose words don't occur in the project.</p>
+        </div>
+        <div class="installs">
+          <div class="install">
+            <h3>Claude Code plugin</h3>
+            <p>Adds the hook and the MCP server in one step.</p>
+            <div class="terminal"><div class="terminal-label"><span>Inside Claude Code</span><button class="copy" type="button" data-copy="/plugin marketplace add Taanviir/context-packer">Copy</button></div>
+<pre>/plugin marketplace add Taanviir/context-packer
+/plugin install context-packer@context-packer</pre></div>
+          </div>
+          <div class="install">
+            <h3>Command line</h3>
+            <div class="terminal"><div class="terminal-label"><span>Shell</span><button class="copy" type="button" data-copy='npx -y context-packer pack "describe the change" --explain'>Copy</button></div>
+<pre>npx -y context-packer pack "describe the change" --explain
+<span class="dim"># or keep it installed</span>
+npm install -g context-packer</pre></div>
+          </div>
+          <div class="install">
+            <h3>MCP server for other agents</h3>
+            <div class="terminal"><div class="terminal-label"><span>Claude Code · Codex · Cursor</span><button class="copy" type="button" data-copy="claude mcp add context-packer -- npx -y context-packer mcp">Copy</button></div>
+<pre>claude mcp add context-packer -- npx -y context-packer mcp
+codex mcp add context-packer -- npx -y context-packer mcp
+<span class="dim"># Cursor: ~/.cursor/mcp.json</span>
+{ "mcpServers": { "context-packer": {
+    "command": "npx", "args": ["-y", "context-packer", "mcp"] } } }</pre></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split">
+        <div class="section-head" style="margin-bottom: 0">
+          <h2>What didn't work</h2>
+          <p>Per-language sketches for TypeScript, Python, Go and Rust tied the Kotlin-shaped sketcher on recall and sent up to 58% more tokens, so they didn't ship. On repos this size, the shortlist covers most files and the full-source pass decides.</p>
+        </div>
+        <ul class="posts">
+          <li><span class="mono-label">Post</span><div><h2><a href="blog/what-we-measured.html">What 120 held-out commits showed</a></h2><p>The benchmark, the result that didn't ship, and what it cost to find out.</p></div></li>
+          <li><span class="mono-label">Post</span><div><h2><a href="blog/how-it-ranks.html">Two passes and a comparison</a></h2><p>Why a decision model re-ranks instead of searching, and where the time goes.</p></div></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span class="wordmark">context<span>·</span>packer</span>
+      <span>MIT licensed.</span>
+      <nav class="footer-links" aria-label="Footer"><a href="https://github.com/Taanviir/context-packer">GitHub</a><a href="https://www.npmjs.com/package/context-packer">npm</a><a href="findings.html">Findings</a></nav>
+    </div>
+  </footer>
+  <script type="module" src="js/site.js"></script>
+</body>
+</html>

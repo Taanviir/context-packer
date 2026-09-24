@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" data-base="..">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Two passes and a comparison · context-packer</title>
+  <meta name="description" content="How context-packer ranks files: a wide sketch pass, a narrow full-source pass, fusion with keyword rank, and one comparison over the top ten." />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/site.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="wordmark" href="../">context<span>·</span>packer</a>
+      <ul class="nav-links">
+        <li><a href="../findings.html">Findings</a></li>
+        <li><a href="./" aria-current="page">Blog</a></li>
+        <li><a href="https://github.com/Taanviir/context-packer">GitHub</a></li>
+      </ul>
+      <div class="nav-end">
+        <button class="kbd-button" type="button" data-palette aria-label="Open command palette"><span class="kbd-label">Search</span><kbd>⌘K</kbd></button>
+        <a class="button" href="../#install">Install</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <article>
+      <header class="page-head">
+        <div class="wrap">
+          <time class="mono-label" datetime="2026-09-23">23 Sep 2026</time>
+          <h1>Two passes and a comparison</h1>
+          <p class="lede">A coding agent's first few turns usually go to finding files. context-packer does that search up front, and this is how.</p>
+        </div>
+      </header>
+      <section class="section">
+        <div class="wrap"><div class="prose">
+          <h2 style="margin-top: 0">Start with keywords</h2>
+          <p>The baseline is BM25 over each file's path and full text. The tokenizer splits <code>cachedContentTokenCount</code> into <em>cached content token count</em>, so a task that says "token count" matches it. On the benchmark this alone puts 69% of a commit's changed files in the top ten, in about 50 milliseconds, with no model at all. It's the default provider, and anything smarter has to beat it.</p>
+
+          <h2>Ask a decision model, not a chat model</h2>
+          <p>Jev is TypeSafe's decision model. It doesn't write text. You give it a JSON state and a set of typed questions, and it returns a probability for each. That shape is what makes it cheap here: one request can hold a task and 60 files, each under its own key, with one question per key.</p>
+<pre>{ "state": { "task": "Add jitter to retry backoff",
+             "f000": "path: src/jev.ts\n- export class JevClient ...",
+             "f001": "path: src/files.ts\n- export function collect ..." },
+  "questions": { "f000": { "type": "noul", "instructions":
+    "Implementing the change described in `task` requires reading or editing the file in `f000`." }, ... } }</pre>
+          <p>The wording matters. "Requires reading or editing" ranked better than "requires editing" in earlier experiments, because the files an agent needs include ones it only reads.</p>
+
+          <h2>Two passes</h2>
+          <p>Sending every file's full source to Jev would cost too much on a large repository, so the pipeline narrows first.</p>
+          <ol>
+            <li><strong>Sketch pass.</strong> Every file becomes a sketch of about 300 tokens: its path, package, and declarations with the first line of their doc comments. Jev scores the sketches 60 to a request. BM25 ranks the full text at the same time.</li>
+            <li><strong>Pool.</strong> The top 60 files by sketch score and the top 60 by BM25 go into one shortlist of up to 120.</li>
+            <li><strong>Full-source pass.</strong> Jev reads the first 6,000 characters of each pooled file, 6 files to a request. The BM25 half of the pool starts scoring before the sketch pass finishes.</li>
+            <li><strong>Fuse.</strong> Each file's score is Jev's probability plus <code>1 / (1 + keyword_rank / 10)</code>. The two count equally; that weight was chosen on dev tasks.</li>
+            <li><strong>Compare.</strong> One last request asks a single <code>choice</code> question over the top ten: which file must be edited? The first two passes judge each file alone; this one makes Jev compare them. A parallel request labels files as edit, test, example or dependency, shown only when Jev is at least 50% sure.</li>
+          </ol>
+          <p>All requests run in parallel, up to 48 at once. On the benchmark repositories a pack took 2.5 seconds and about $0.007 on average.</p>
+
+          <h2>Failing loudly</h2>
+          <p>A Jev batch that errors costs its files a zero for that pass, and the pack reports how many batches failed. If every batch fails, the pack fails. Quietly returning a keyword ranking labelled as Jev would be worse than an error. The same goes for a missing key: asking for Jev without one is an error, not a fallback.</p>
+
+          <h2>Laya, locally</h2>
+          <p>Laya is a small encoder that runs on a CPU. Its window is 512 tokens, so each request carries one file excerpt of at most 1,000 characters, and a 60-file keyword shortlist bounds the work. The server handles one request at a time.</p>
+          <p>That last detail caused the one real bug found while writing this. The packer sends its batches concurrently, which is right for Jev. For Laya every batch is a single file, so a pack opened about 60 connections at once, and the server reset them. Unit tests with a fake server passed; the first run against a real server failed within a second. The scorer now serializes its own requests, and there's a test that counts requests in flight.</p>
+
+          <h2>Why a hook</h2>
+          <p>An MCP tool only helps if the agent calls it. In earlier testing, headless Claude Code ignored an offered <code>pack_context</code> tool even when told to use it. So the Claude Code plugin also installs a <code>UserPromptSubmit</code> hook. It runs before Claude reads the prompt and adds the ranked files as context.</p>
+          <p>A hook runs on every prompt, so it has to know when to stay out of the way. It adds nothing for prompts under four words, slash commands, replies such as "thanks" or "commit that", and prompts where no distinctive word occurs anywhere in the project. That last check is a free keyword pass, run before any paid provider.</p>
+<pre>{"hooks": {"UserPromptSubmit": [{"hooks": [{"type": "command",
+  "command": "npx -y context-packer@latest hook", "timeout": 60}]}]}}</pre>
+          <p>The hook defaults to keywords. Set <code>CONTEXT_PACKER_HOOK_PROVIDER=jev</code> to use the measured pipeline.</p>
+
+          <h2>Seeing why</h2>
+          <p><code>--explain</code> prints one line per pick: the model's probability, the keyword rank, the comparison score, the role, and which task words occur in the file and how often.</p>
+<pre>0.89   src/jev.ts  (edit)
+       jev 0.88 · keyword #3 · compared 0.93 · edit 0.98 · words: jev×41 backoff×12 retries×6</pre>
+          <p class="meta">Numbers on this page come from the <a href="../findings.html">benchmark</a>. The code is on <a href="https://github.com/Taanviir/context-packer">GitHub</a>.</p>
+        </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <span class="wordmark">context<span>·</span>packer</span>
+      <span>MIT licensed.</span>
+      <nav class="footer-links" aria-label="Footer"><a href="https://github.com/Taanviir/context-packer">GitHub</a><a href="https://www.npmjs.com/package/context-packer">npm</a><a href="./">Blog</a></nav>
+    </div>
+  </footer>
+  <script type="module" src="../js/site.js"></script>
+</body>
+</html>

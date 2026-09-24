@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" data-base=".">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Findings · context-packer</title>
+  <meta name="description" content="How context-packer's rankings were measured: 120 held-out commits, paired bootstrap intervals, cost and latency per provider." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="wordmark" href="./">context<span>·</span>packer</a>
+      <ul class="nav-links">
+        <li><a href="findings.html" aria-current="page">Findings</a></li>
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="https://github.com/Taanviir/context-packer">GitHub</a></li>
+      </ul>
+      <div class="nav-end">
+        <button class="kbd-button" type="button" data-palette aria-label="Open command palette"><span class="kbd-label">Search</span><kbd>⌘K</kbd></button>
+        <a class="button" href="./#install">Install</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <span class="mono-label" data-generated>Benchmark</span>
+        <h1>Jev finds more of the files a commit changed.</h1>
+        <p class="lede">Each task is a real commit subject. The answer is the source files that commit modified, and every file is read as it was before the commit, so the answer can't leak in. Choices were made on 10 dev tasks per repo; the numbers below are the 30 held-out test tasks per repo, run once.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="prose">
+          <h2 style="margin-top: 0">Recall@10 by repository</h2>
+          <p>Recall@10 is the share of a commit's changed files that appear in the top ten. Jev ran on four repositories; the two smallest also have keyword and local Laya runs.</p>
+        </div>
+        <figure class="chart" id="chart-repos"></figure>
+
+        <div class="prose">
+          <h2>How sure is the difference?</h2>
+          <p>Each bar is the mean per-task difference, with a 95% paired bootstrap interval (10,000 resamples, fixed seed). An interval that crosses zero means the repo alone can't separate the two.</p>
+        </div>
+        <figure class="chart" id="chart-diffs"></figure>
+
+        <div class="prose">
+          <h2>Recall as the list gets longer</h2>
+          <p>Pooled over the 120 test tasks. The gap is widest at five files, where a short list matters most to an agent.</p>
+        </div>
+        <figure class="chart" id="chart-k"></figure>
+
+        <div class="prose">
+          <h2>Cost and time per pack</h2>
+          <p>Times are wall-clock for ranking files already in memory, from uncached runs. Cost is Jev's reported input tokens at $0.042 per million. Failed batches are Jev calls that returned an error; their files scored zero for that pass and the pack went on.</p>
+        </div>
+        <div class="table-scroll" id="table-cost"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap"><div class="prose">
+        <h2 style="margin-top: 0">Method and limits</h2>
+        <ul>
+          <li>Repositories are pinned to a commit: hono (TypeScript), rich (Python), gin (Go), prometheus (Go and TypeScript), httpx (Python), ripgrep (Rust).</li>
+          <li>Tasks: non-merge commits whose subject has at least four words, that modify one to five existing source files and add, delete or move none. Commits named like chores, releases, docs or refactors are skipped. Conventional-commit prefixes and PR numbers are stripped from the task text.</li>
+          <li>Split: a fixed hash order over eligible commits; the first 10 are dev, the next 30 test.</li>
+          <li>Commit subjects are short and often vaguer than a real request to an agent. File recall is also not task success: this benchmark doesn't measure whether an agent then makes the right change.</li>
+          <li>The whole run, including the rejected sketcher, billed 47 million Jev input tokens, about $2.</li>
+        </ul>
+        <p>Everything is reproducible from the repository: <code>bench/mine.ts</code> freezes the tasks, <code>bench/run.ts</code> runs a provider, and <code>bench/report.ts</code> writes the summary this page draws from. Jev responses are cached by request, so a replay is free.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span class="wordmark">context<span>·</span>packer</span>
+      <span>MIT licensed.</span>
+      <nav class="footer-links" aria-label="Footer"><a href="https://github.com/Taanviir/context-packer">GitHub</a><a href="https://www.npmjs.com/package/context-packer">npm</a><a href="blog/">Blog</a></nav>
+    </div>
+  </footer>
+  <div class="tooltip" role="status" aria-live="polite"></div>
+  <script type="module" src="js/site.js"></script>
+  <script type="module" src="js/charts.js"></script>
+</body>
+</html>
