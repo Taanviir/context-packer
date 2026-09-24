@@ -1,0 +1,30 @@
+{
+ "id": "gin-60f66918f8",
+ "repo": "gin",
+ "arm": "none",
+ "model": "sonnet",
+ "request": "Colored output from go-colorable breaks Gin when running on App Engine. Please default to plain os.Stdout/os.Stderr for the log writers instead, and just document how to opt into colorable output on Windows if someone wants it.",
+ "gold": [
+  "mode.go"
+ ],
+ "handed": [],
+ "hookSeen": false,
+ "edited": [
+  "mode.go"
+ ],
+ "goldEdited": 1,
+ "extraEdits": 0,
+ "turns": 10,
+ "tools": {
+  "Grep": 2,
+  "Read": 2,
+  "Edit": 3,
+  "Bash": 2
+ },
+ "inputTokens": 9407,
+ "outputTokens": 2150,
+ "cacheReadTokens": 288268,
+ "costUsd": 0.1167416,
+ "ms": 24282,
+ "isError": false
+}

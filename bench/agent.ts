@@ -5,7 +5,9 @@
  * and skips runs that already have results.
  *
  *   pnpm tsx bench/agent.ts [--tasks 10] [--model opus] [--arms none,files,code]
- *   pnpm tsx bench/agent.ts --report      # per-arm averages over tasks every arm finished
+ *   pnpm tsx bench/agent.ts --report      # per-model, per-arm averages over tasks every arm finished
+ *
+ * Results live in bench/results/agent/<model>/, one file per task and arm.
  *
  * --max-usage 0.75 (the default) stops the batch once the plan's five-hour usage window passes 75%, read from the
  * rate_limit_event Claude Code emits in each run, so a long batch leaves room for the owner's own work.
@@ -151,7 +153,14 @@ function summarize(t: Task & { request: string }, arm: Arm, model: string, hande
 
 /** Averages per arm and how many tasks each hook arm beat "none" on, over tasks that every arm finished. */
 function report() {
-  const runs: AgentRun[] = readdirSync(OUT).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(readFileSync(path.join(OUT, f), "utf8")));
+  const models = readdirSync(OUT, { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name).sort();
+  const all = Object.fromEntries(models.map((m) => [m, reportModel(m)]));
+  writeFileSync(path.join(RESULTS, "agent-summary.json"), JSON.stringify(all, null, 1) + "\n");
+}
+
+function reportModel(model: string) {
+  const dir = path.join(OUT, model);
+  const runs: AgentRun[] = readdirSync(dir).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(readFileSync(path.join(dir, f), "utf8")));
   const byTask = new Map<string, Partial<Record<Arm, AgentRun>>>();
   for (const r of runs) byTask.set(r.id, { ...byTask.get(r.id), [r.arm]: r });
   const tasks = [...byTask.values()].filter((t) => ARMS.every((a) => t[a] && !t[a]!.isError)) as Array<Record<Arm, AgentRun>>;
@@ -168,11 +177,11 @@ function report() {
       return [arm, { mean: mean(tasks.map((t) => f(t[arm]))), better: d.filter((x) => (better === "lower" ? x < 0 : x > 0)).length, worse: d.filter((x) => (better === "lower" ? x > 0 : x < 0)).length }];
     }))])),
   };
-  writeFileSync(path.join(RESULTS, "agent-summary.json"), JSON.stringify(summary, null, 1) + "\n");
-  console.log(`${tasks.length} tasks with all arms`);
+  console.log(`\n${model}: ${tasks.length} tasks with all arms`);
   for (const [name, arms] of Object.entries(summary.metrics)) {
     console.log(`${name.padEnd(20)} ${ARMS.map((a) => `${a} ${arms[a]!.mean.toFixed(2)}${a === "none" ? "" : ` (better on ${arms[a]!.better}, worse on ${arms[a]!.worse})`}`).join("   ")}`);
   }
+  return summary;
 }
 
 /** The plan's usage windows as Claude Code last reported them in this run, when it did. */
@@ -190,14 +199,14 @@ async function main() {
   const model = values.model ?? "opus";
   const arms = (values.arms?.split(",") ?? [...ARMS]) as Arm[];
   const tasks = tasksFor(Number(values.tasks ?? 10));
-  mkdirSync(OUT, { recursive: true });
+  mkdirSync(path.join(OUT, model), { recursive: true });
   let n = 0;
   for (const t of tasks) {
     // Rotate the arm order per task so any drift over a long batch is spread across arms.
     const order = arms.map((_, i) => arms[(i + n) % arms.length]!);
     n++;
     for (const arm of order) {
-      const file = path.join(OUT, `${t.id}.${arm}.json`);
+      const file = path.join(OUT, model, `${t.id}.${arm}.json`);
       if (existsSync(file)) continue;
       const wt = path.join(CACHE, "worktrees", `${t.id}-${arm}`);
       rmSync(wt, { recursive: true, force: true });
@@ -208,8 +217,8 @@ async function main() {
         const handedFiles = handed(arm, wt, text);
         const run = await runClaude(wt, text, model, hookSettings(arm));
         const result = summarize(t, arm, model, handedFiles, wt, run);
-        mkdirSync(TRANSCRIPTS, { recursive: true });
-        writeFileSync(path.join(TRANSCRIPTS, `${t.id}.${arm}.jsonl`), run.events.map((e) => JSON.stringify(e)).join("\n") + "\n");
+        mkdirSync(path.join(TRANSCRIPTS, model), { recursive: true });
+        writeFileSync(path.join(TRANSCRIPTS, model, `${t.id}.${arm}.jsonl`), run.events.map((e) => JSON.stringify(e)).join("\n") + "\n");
         if (result.isError && LIMIT_HIT.test(result.error ?? "")) {
           console.log(`Stopping: ${result.error}. Completed runs are kept; re-run to resume.`);
           return;

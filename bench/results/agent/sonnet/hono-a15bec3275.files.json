@@ -1,0 +1,42 @@
+{
+ "id": "hono-a15bec3275",
+ "repo": "hono",
+ "arm": "files",
+ "model": "sonnet",
+ "request": "When I use createHandlers with multiple middlewares that each set different context variables, the final handler's context type doesn't pick up the variables set by earlier middlewares — I want the combined env type inferred automatically across all the handlers passed in.",
+ "gold": [
+  "src/helper/factory/index.test.ts",
+  "src/helper/factory/index.ts",
+  "src/types.ts"
+ ],
+ "handed": [
+  "src/helper/factory/index.ts",
+  "src/types.ts",
+  "src/context.ts",
+  "src/hono-base.ts",
+  "src/middleware/combine/index.ts",
+  "src/helper/factory/index.test.ts",
+  "src/helper/ssg/ssg.ts",
+  "src/types.test.ts"
+ ],
+ "hookSeen": true,
+ "edited": [
+  "src/helper/factory/index.ts",
+  "src/types.ts"
+ ],
+ "goldEdited": 0.6666666666666666,
+ "extraEdits": 0,
+ "turns": 26,
+ "tools": {
+  "Read": 6,
+  "Grep": 5,
+  "Edit": 2,
+  "Bash": 12
+ },
+ "inputTokens": 46155,
+ "outputTokens": 19641,
+ "cacheReadTokens": 1352264,
+ "costUsd": 0.6513788000000001,
+ "ms": 207786,
+ "isError": false
+}
