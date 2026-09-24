@@ -58,7 +58,7 @@ The server exposes one tool, `pack_context(task, limit?, provider?, root?, expla
 
 Laya keeps code on your machine but found fewer files than keyword search, which is also local.
 
-There is no automatic fallback. Asking for Jev without a key is an error, not a keyword ranking labelled as Jev.
+There is no automatic fallback. Asking for Jev without a key is an error, not a keyword ranking labeled as Jev.
 
 ### How a Jev pack works
 
